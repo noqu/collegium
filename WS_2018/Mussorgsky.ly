@@ -4,7 +4,6 @@
 \version "2.18.2"
 \language "deutsch"
 
-% %{
 \paper {
     top-margin = 10\mm
     bottom-margin = 10\mm
@@ -12,7 +11,6 @@
     right-margin = 10\mm
     ragged-last = ##t
 }
-% %}
   
 \header{
   title = "Khovantchina Overture"
@@ -57,7 +55,7 @@ clarinet_I_in_A_Music = {
         }
       }
     >>
-    c'4->~\sf \tuplet 3/2 { c16 h c } \tuplet 3/2 { a c g } \tuplet 3/2 { c fis, e' } d8->~ d r8 |
+    c'4->~\sf \tuplet 3/2 { c16 h-. c-. } \tuplet 3/2 { a-. c-. g-. } \tuplet 3/2 { c-. fis,-. e'-. } d8->~ d r8 |
     R1 |
     \tuplet 3/2 { fis,8-.\mf fis-. fis-. } e4-> \tuplet 3/2 { fis8-. fis-. fis-. } e4-> |
     \mBreak
@@ -74,7 +72,7 @@ clarinet_I_in_A_Music = {
     
 % line 3
     e(d c h) a( c h a) |
-    g4( f8 g16 f) e4~\> e8\! r8 |
+    g4( fis8 g16 fis) e4~\> e8\! r8 |
     R1
     e'2\p\>~ e8\! r8 r4 |
     R1
@@ -108,14 +106,16 @@ clarinet_I_in_A_Music = {
     f4( e d a) |
     c( h c h) |
     a2( h4 a) |
-    g2( e4) r4 \bar "||"
+    g2( e4) r4 |
+    R1*6 |
+    \bar "||"
     \mark #4
   }
 }
 
-
 clarinet_I_in_B_Music = {
   \relative c' {
+    \transposition b
     \key as \major
     \numericTimeSignature
     \time 2/2
@@ -127,7 +127,7 @@ clarinet_I_in_B_Music = {
     \mBreak
     
 % line 6
-    es2( d) |
+    es2( c) |
     des4( c b f |
     as g as g) |
     f2( g4 f) |
@@ -155,7 +155,7 @@ clarinet_I_in_B_Music = {
     
     
 % line 8
-    h2.-> r4 |
+    b2.-> r4 |
     R1*7 |
     <<
       {
@@ -180,7 +180,7 @@ clarinet_I_in_B_Music = {
     \mBreak
 
 % line 9
-    des4( es8 d c4 g |
+    des4( es8 des c4 g |	% FIXME: d or des??
     b2.)\> r4\! |
     R1*1 |
     f2( as) |
@@ -192,9 +192,60 @@ clarinet_I_in_B_Music = {
   }
 }
 
+\addQuote "clarinet_I_in_A" { \clarinet_I_in_A_Music }
 
-clarinetIIMusic = {
+clarinet_II_in_A_Music = {
   \relative c' {
+    \transposition a
+    \key g \major
+    \numericTimeSignature
+    \time 4/4
+    \tempo "Andante tranquillo" 8 = 72
+
+% line 1
+    R1*7 |
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-2
+        R1 |
+        R1 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Clar.I Solo"
+        \stemUp {
+          f'2\rest f4\rest f8.\rest c'32 c |
+          c4~ \tuplet 3/2 { c16 h-. c-. } \tuplet 3/2 { a-. c-. g-. } \tuplet 3/2 { c-. fis,-. e'-. } d8~ d g,8\rest |
+        }
+      }
+    >>
+    R1 |
+    \tuplet 3/2 { d8-.\mf cis-. d-. } cis4-> \tuplet 3/2 { d8-. cis-. d-. } cis4-> |
+    \mBreak
+
+% line 2
+    \mark #1
+    d2~\p\> d8\! r8 r4 |
+    R1*8
+    cis2\p\>~ cis8\! r8 r4 |
+    R1
+    gis2.\pp~ gis8 r8 |
+    g2.\p~ g8 r8 |
+    \bar "||" \key f \major
+    \mark #2
+    a1\p |
+    \mBreak
+  }
+}
+
+clarinet_II_in_B_Music = {
+  \relative c' {
+    \transposition b
+    \key as \major
+    \numericTimeSignature
+    \time 2/2
+    \tempo "Moderato. Alla breve" 2 = 66
+
   }
 }
 
@@ -215,6 +266,7 @@ clarinetIIMusic = {
       $(add-grace-property 'Voice 'Beam 'shorten '1)
       \set Score.markFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
+      \accidentalStyle Score.modern-cautionary
       \new Voice {
         {
           % \transpose b a
@@ -233,8 +285,23 @@ clarinetIIMusic = {
   \score {
     \new Staff {
       \compressFullBarRests
+      % Make grace notes smaller and more fragile
+      $(add-grace-property 'Voice 'NoteHead 'font-size '-5)
+      $(add-grace-property 'Voice 'Slur 'height-limit '0.5)
+      $(add-grace-property 'Voice 'Flag 'font-size '-5)
+      $(add-grace-property 'Voice 'Stem 'length '8)
+      $(add-grace-property 'Voice 'Beam 'beam-thickness '0.3)
+      $(add-grace-property 'Voice 'Beam 'length-fraction '0.5)
+      $(add-grace-property 'Voice 'Beam 'shorten '1)
+      \set Score.markFormatter = #format-mark-box-alphabet
+      \override DynamicLineSpanner.staff-padding = #3
+      \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \clarinetIIMusic
+        {
+          % \transpose b a
+          \clarinet_II_in_A_Music
+        }
+        % \clarinet_II_in_B_Music
       }
     }
   }
