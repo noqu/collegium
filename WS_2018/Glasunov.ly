@@ -21,6 +21,7 @@
 
 % Adapt this for automatic line-breaks
 mBreak = { \break }
+#(set-global-staff-size 13)
 
 % Useful snippets
 pDolce = \markup { \dynamic p \italic \bold "dolce" }
@@ -35,6 +36,106 @@ clarinet_I_in_A_Music = {
     \tempo "Andante" 4 = 72
 
     % line 1
+    R1*13 |
+    d1->\f\>~ |
+    d~ |
+    d~ |
+    d2\! r2 |
+    d1\p~ |
+    d |
+    d1~ |
+    d1~\> |
+    \mark #1
+    d4\! r4 r2 |
+    R1*12 |
+    b1->\mf\>~ |
+    b~ |
+    b2\pp r2 |
+    r1 |
+    \mBreak
+    
+    %line 2
+    \mark "Solo"
+    g''4.\p g8 g( f e d) |
+    c4( g') e2 |
+    g4. g8 g( f e d) |
+    c4( g') e2\>~ |
+    \mark #2
+    e4\pp r4 r2 |
+    R1*2 |
+    es2\mf( d |
+    cis1) |
+    R1*2 |
+    c'4\f( es d c) |
+    g( b a g) |
+    \mBreak
+    
+    %line 3
+    r4 h~\f \tuplet 3/2 { h8 h\> h } \tuplet 3/2 { h8 h\! h }  |
+    b2 b2 \> |
+    R1\! |
+    g1->\f\> |
+    \bar "||" \time 3/4 \tempo "Allegro con brio" 4 = 120
+    f8\p\! r8 r4 r4 |
+    R2. |
+    r8 a,16\f( h) c d c h a h a g |
+    a8-. a16( h) c d c h a h a g |
+    \mBreak
+    
+    % line 4
+    a8-. r r a16( h) c d c h |
+    a h a c h\< c h c h c h c |
+    d8-.\sf a16( h) c d c h a h a g |
+    a8 a16( h) c d c h a h a g |
+    \mBreak
+    
+    % line 5
+    a8 r r a16( h) c d c h |
+    a h a c h\< c h c h c h c |
+    c8\sf c, b4 b8( a) |
+    b b b4 b8( a) |
+    b b b( a) b16( a g8) |
+    \mBreak
+
+    % line 6
+    b b b4 c8( e) |
+    R2.*4 |
+    \mark #3
+    c'8\f r b,16 c d es f g a b |
+    a( b) c8~ c b16 a g( f) d8 |
+    r4 c'' d |
+    d\< d2\! |
+    d4\< d2\! |
+    c8 c,-. b c d( c16 b) |
+    \mBreak
+    
+    % line 7
+    a8-. a-. g a b( a16 g) |
+    f8 r r4 r |
+    r r b'16(\< c b c)\! |
+    d8 r8 r4 r |
+    r r d\< |
+    d8\sf r8 r4 r |
+    r r a16(\< h a g)\! |
+    a8 r8 r4 r |
+    \mBreak
+    
+    % line 8
+    r4 r h16(\< a h c) |
+    d2.\ff~ |
+    d8 r8 r4 r |
+    d,2.\f\>~ |
+    d8\! r8 r4 r |
+    R2.*3 |
+    h'8.\mf\< h16 h8-. h-. h-. h-. |
+    \mark #4
+    d\f r16 a\ff g8 a h( a16 g) |	% FIXME: Missing pesante and grace note
+    a8 g16( d f8) r8 r4 |
+    \mBreak
+    
+    
+    
+    
   }
 }
 
