@@ -203,7 +203,103 @@ clarinet_I_in_B_Music = {
     % page 2 line 3
     \mark #6
     c8) r8 r4 r |
+    R2. |
+    b'4\pp( c b\> |
+    c4 b a)\! |
+    R2.*2 |
+    b4( c b\> |
+    c4 b a)\! |
+    R2.*2 |
+    g4( as g |
+    as4\> g as)\! |
+    R2.*7 |
+    as4(\mf f8 as) as4(\> |
+    \mBreak
+
+    % page 2 line 4
+    g8) r8\! r4 r |
+    as4( f8 as) as4(\> |
+    g8) r8\! r4 r |
+    R2. |
+    \mark #7
+    R2.*8 |
+    r4 es8(\p c) d( c) |
+    R2. |
+    c'2(\p h4 |
+    b2 a4 |
+    as2 g4 |
+    fis2 f4) |
+    e2( dis4 |
+    d2. |
+    \mBreak
     
+    % page 2 line 5
+    e4. h8 a4~ |
+    a2.) |
+    des'2(\mf c4 |
+    h2 b4 |
+    a2 as4\> |
+    g2 fis4)\! |
+    f2( e4 |
+    es2 d 4 |
+    des2 c4 |
+    h2.) |
+    \mark #8
+    e,4(\p c e |
+    c e\< c)\! |
+    g'4( c, g' |
+    c, g'\> c,)\! |
+    \mBreak
+    
+    % page 2 line 6
+    e4( c e |
+    c\< e c)\! |
+    g'4( c, g' |
+    c, g'\< c,)\! |
+    ges'2.\cresc~ |
+    ges2. |
+    fes2. |
+    des''2( b4) |
+    g8(\f e) a( e) g( e) |
+    a8( e)\> g( e) a( e) |
+    g8(\mf e) a( e) g( e) |
+    \mBreak
+    
+    % page 2 line 7
+    a8(\> e) g( e) a( e)\! |
+    R2.*2 |
+    \bar "||" \tempo "Allegro con brio (come prima)"
+    R2.*8 |
+    as4(\p c2) |
+    as4( c2) |
+    as4 as8( b) as( g) |
+    as4 as8( b) as4 |
+    g8 r8 r4 r |
+    R2.*6 |
+    \mark #9
+    c,4(\p e2)
+    c4( e2)
+    \mBreak
+    
+    % page 2 line 8
+    c4 c8( d) c( h) |
+    c4 c8( d) c( h) |
+    a8 r8 r4 r |
+    R2.*8 |
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-4
+        R2.*2
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \cueClef "bass" \stemUp des,,8^"Bassi" h e4 h | des8 h e4 h | \cueClefUnset
+      }
+    >>
+    r4 a'''8(\f fis) h d |
+    cis8 h a( fis) h d |
+    cis8 h a( fis) h4 |
+    \mBreak
   }
 }
 
