@@ -25,6 +25,8 @@ mBreak = { \break }
 
 % Useful snippets
 pDolce = \markup { \dynamic p \italic \bold "dolce" }
+pesante = _\markup {\italic {"pesante"} }
+pocoRit = _\markup {\italic {"poco rit."} }
 
 
 clarinet_I_in_A_Music = {
@@ -35,7 +37,7 @@ clarinet_I_in_A_Music = {
     \time 4/4
     \tempo "Andante" 4 = 72
 
-    % line 1
+    % page 1 line 1
     R1*13 |
     d1->\f\>~ |
     d~ |
@@ -54,7 +56,7 @@ clarinet_I_in_A_Music = {
     r1 |
     \mBreak
     
-    %line 2
+    % page 1 line 2
     \mark "Solo"
     g''4.\p g8 g( f e d) |
     c4( g') e2 |
@@ -70,7 +72,7 @@ clarinet_I_in_A_Music = {
     g( b a g) |
     \mBreak
     
-    %line 3
+    % page 1 line 3
     r4 h~\f \tuplet 3/2 { h8 h\> h } \tuplet 3/2 { h8 h\! h }  |
     b2 b2 \> |
     R1\! |
@@ -82,14 +84,14 @@ clarinet_I_in_A_Music = {
     a8-. a16( h) c d c h a h a g |
     \mBreak
     
-    % line 4
+    % page 1 line 4
     a8-. r r a16( h) c d c h |
     a h a c h\< c h c h c h c |
     d8-.\sf a16( h) c d c h a h a g |
     a8 a16( h) c d c h a h a g |
     \mBreak
     
-    % line 5
+    % page 1 line 5
     a8 r r a16( h) c d c h |
     a h a c h\< c h c h c h c |
     c8\sf c, b4 b8( a) |
@@ -97,7 +99,7 @@ clarinet_I_in_A_Music = {
     b b b( a) b16( a g8) |
     \mBreak
 
-    % line 6
+    % page 1 line 6
     b b b4 c8( e) |
     R2.*4 |
     \mark #3
@@ -109,7 +111,7 @@ clarinet_I_in_A_Music = {
     c8 c,-. b c d( c16 b) |
     \mBreak
     
-    % line 7
+    % page 1 line 7
     a8-. a-. g a b( a16 g) |
     f8 r r4 r |
     r r b'16(\< c b c)\! |
@@ -120,21 +122,87 @@ clarinet_I_in_A_Music = {
     a8 r8 r4 r |
     \mBreak
     
-    % line 8
+    % page 1 line 8
     r4 r h16(\< a h c) |
-    d2.\ff~ |
-    d8 r8 r4 r |
+    d2.\ff\>~ |
+    d8\! r8 r4 r |
     d,2.\f\>~ |
     d8\! r8 r4 r |
     R2.*3 |
     h'8.\mf\< h16 h8-. h-. h-. h-. |
     \mark #4
-    d\f r16 a\ff g8 a h( a16 g) |	% FIXME: Missing pesante and grace note
+    d\f r16 a\ff g8\pesante a \acciaccatura { c8 } h( a16 g) |
     a8 g16( d f8) r8 r4 |
     \mBreak
     
+    % page 1 line 9
+    R2. |
+    r8 \mark Solo d16\p\<( d f g f e d e d c\! ) |
+    b16( a g8) r4 r |
+    r8 g'16(\< a b c b a g a g ges\! |
+    f8) r8 r4 g\mf |
+    f8 r8 r4 g |
+    \mBreak
     
+    % page 1 line 10
+    fis8 r8 r4 c'8(\> a)\! |
+    d8 r8 r4 c8(\> a)\! |
+    d8 r8 r4 r |
+    r4 as8\f\< r as\! r |
+    b8\sf b16\mf b b8 b16 b b8 b16 b |
+    b8 b16 b b8 b16 b b8\< b16 b |
+    \mBreak
     
+    % page 1 line 11
+    b8 b16 b b8 b16 b b8 b16 b\! |
+    b8 b16 b b8 b16 b b8 b16 b |
+    g8 r8 r4 r |
+    R2.*5 |
+    cis8\mf cis16 cis cis8\< cis16 cis cis8 cis16 cis |
+    \mark #5
+    c8\sf r8 r4 r4 |
+    R2.*3 |
+    R2.*4\pocoRit |
+    \mBreak
+  }
+}
+
+clarinet_I_in_B_Music = {
+  \relative c' {
+
+    % page 2 line 1
+    \mark Solo
+    g''2.\p~ |
+    g2.~ |
+    \bar "||"
+    \tempo "Allegro moderato" 4 = 100
+    \key c \major
+    g2.~ |
+    g2.\> |
+    g4\! e8( f g4~ |
+    g8) g( f e d c) |
+    e4 c8( d e4~ |
+    e8) e( d c h a) |
+    c4 a8( h c4~ |
+    c8) d( c h a g) |
+    a4 e8( g a4~ |
+    \mBreak
+    
+    % page 2 line 2
+    a8) h( c d e a) |
+    g4\mf e8( f g4~ |
+    g8) g( f e d c) |
+    e4 c8( d e4~ |
+    e8) e( d c h a) |
+    c4 as8( b c4~ |
+    c8) c( b as g f) |
+    as4 f8( g a4~\> |
+    a4) g2(\! |
+    \mBreak
+    
+    % page 2 line 3
+    \mark #6
+    c8) r8 r4 r |
     
   }
 }
@@ -174,6 +242,7 @@ clarinet_II_in_A_Music = {
           % \transpose b a
           \clarinet_I_in_A_Music
         }
+        \clarinet_I_in_B_Music
       }
     }
   }
