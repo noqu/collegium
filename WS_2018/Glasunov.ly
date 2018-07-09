@@ -29,7 +29,7 @@ pesante = _\markup {\italic {"pesante"} }
 pocoRit = _\markup {\italic {"poco rit."} }
 
 
-clarinet_I_in_A_Music = {
+clarinet_I_in_A_part_one_Music = {
   \relative c' {
     \transposition a
     \key f \major
@@ -281,7 +281,7 @@ clarinet_I_in_B_Music = {
     c4( e2)
     \mBreak
     
-    % page 2 line 8
+    % page 2 line 8 (start)
     c4 c8( d) c( h) |
     c4 c8( d) c( h) |
     a8 r8 r4 r |
@@ -296,14 +296,59 @@ clarinet_I_in_B_Music = {
         \cueClef "bass" \stemUp des,,8^"Bassi" h e4 h | des8 h e4 h | \cueClefUnset
       }
     >>
-    r4 a'''8(\f fis) h d |
+  }
+}
+
+clarinet_I_in_A_part_two_Music = {
+  \relative c' {
+    \transposition a
+
+    % page 2 line 8 (continued)
+    r4 a''8(\f fis) h d |
     cis8 h a( fis) h d |
     cis8 h a( fis) h4 |
+    \mBreak
+
+    % page 2 line 9
+    fis4 a8( fis) h4 |
+    fis4-> a-> fis-> |
+    h8-> r8 r4 r |
+    \mark #11
+    e4\ff e e8-. e-. |
+    e4 e e8-. e-. |
+    es 8 r8 es,2->\mf~ |
+    es2. |
+    R2.*2 |
+    e8(\mf\mark "Solo" cis8) fis8( cis8) e8( cis8) |
+    fis8(\> cis) e( cis) fis( cis) |
+    \mBreak
+    
+    % page 2 line 10
+    a'8(\ff fis) h( d) c-. h-. |
+    a8( fis) h( d) c-. h-. |
+    a8( fis) h( fis) a( fis) |
+    h8(\< fis) a( fis) h( fis) |
+    g8\sf\! r8 r4 r |
+    R2. |
+    f,,2.\p\startTrillSpan~ |
+    f2 f32(\<\stopTrillSpan g a h c d e f |
+    \mBreak
+
+    % page 2 line 11
+    g2.)\mf\startTrillSpan~ |
+    g2~ g8\stopTrillSpan \tuplet 6/4 { g32( a h c d e } |
+    f2.)\startTrillSpan~ |
+    f2\<~ f8\stopTrillSpan \tuplet 6/4 { es32( f g a b c } |
+    \mark #12
+    d8\!) r8 d,,2\f\startTrillSpan~ |
+    d2~ d8\stopTrillSpan \tuplet 6/4 { d32( e fis g a h } |
+    c2.)\startTrillSpan~ |
+    c2\stopTrillSpan\< c32 d e fis g a h c\! |
     \mBreak
   }
 }
 
-clarinet_II_in_A_Music = {
+clarinet_II_in_A_part_one_Music = {
   \relative c' {
     \transposition a
     \key f \major
@@ -336,9 +381,13 @@ clarinet_II_in_A_Music = {
       \new Voice {
         {
           % \transpose b a
-          \clarinet_I_in_A_Music
+          \clarinet_I_in_A_part_one_Music
         }
         \clarinet_I_in_B_Music
+        {
+          % \transpose b a
+          \clarinet_I_in_A_part_two_Music
+        }
       }
     }
   }
@@ -365,7 +414,7 @@ clarinet_II_in_A_Music = {
       \new Voice {
         {
           % \transpose b a
-          \clarinet_II_in_A_Music
+          \clarinet_II_in_A_part_one_Music
         }
       }
     }
