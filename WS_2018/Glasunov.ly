@@ -26,7 +26,8 @@ mBreak = { \break }
 % Useful snippets
 pDolce = \markup { \dynamic p \italic \bold "dolce" }
 pesante = _\markup {\italic {"pesante"} }
-pocoRit = _\markup {\italic {"poco rit."} }
+pocoRit = ^\markup {\italic {"poco rit."} }
+pocoAnimato = ^\markup {\italic {"poco animato"} }
 
 
 clarinet_I_in_A_part_one_Music = {
@@ -387,6 +388,58 @@ clarinet_I_in_A_part_two_Music = {
     
     % page 3 line 1
     fis2( dis4) |
+    d2->\mf(~ d8\> dis)\! |
+    fis4 dis8( eis fis4~\>) |
+    fis4\! e8( fis e dis) |
+    fis4( f) e->(\( |
+    dis4) e\> fis\)\! |
+    \bar "||" \key c \major
+    \mark #14
+    \repeat tremolo 12 { des16\mf \pocoAnimato } |
+    des8 b16( d des es des c) b( c des es) |
+    \repeat tremolo 12 { des16 } |
+    \mBreak
+    
+    % page 3 line 2
+    des8 b16( c des es des c) b( c des d) |
+    \repeat tremolo 12 { es16 } |
+    es8 c16( d es f es d) c( d es f) |
+    \repeat tremolo 12 { es16 } |
+    es8 c16( d es f es d) c( cis d es) |
+    \repeat tremolo 12 { d16 } |
+    \mBreak
+
+    % page 3 line 3
+    c8 c16( d es f es d) c( d c h) |
+    c8 r8 r4 \repeat tremolo 4 { des16-> } |
+    des8 r8 r4 r |
+    r4 r des'4->~ |
+    des8\> b,16(\! c des es des c) b(\> d e b') |
+    \bar "||" \key f \major \tempo "Tempo I" 4 = 120
+    d2.\f |
+    e2( dis4 |
+    \mBreak
+
+    % page 3 line 4
+    d2.)~ |
+    d4 e( dis |
+    d2)\cresc e4( |
+    dis4) d2 |
+    e8( dis) d2->\ff\>~ |
+    d2.\pp
+    \mark #15
+    R2.*2 |
+    gis,,,2.->~ |
+    gis2.
+    R2.*2 |
+    b2.->~ |
+    b2. |
+    e2.\mf |
+    h2.
+    \mBreak
+    
+    % page 3 line 5
+    f''16\f( g f es) es( f es d) d( es f g) |
   }
 }
 
