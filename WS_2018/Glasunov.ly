@@ -341,10 +341,50 @@ clarinet_I_in_A_part_two_Music = {
     f2\<~ f8\stopTrillSpan \tuplet 6/4 { es32( f g a b c } |
     \mark #12
     d8\!) r8 d,,2\f\startTrillSpan~ |
-    d2~ d8\stopTrillSpan \tuplet 6/4 { d32( e fis g a h } |
+    d2~ d8\stopTrillSpan \tuplet 6/4 { d32_( e fis g a h } |
     c2.)\startTrillSpan~ |
     c2\stopTrillSpan\< c32 d e fis g a h c\! |
     \mBreak
+    
+    % page 2 line 12
+    a8( fis) h( d) c-. h-. |
+    a8( fis) e( g) fis( a) |
+    g( e) a( c) h-. a-. |
+    g8( e) c(\< d) e-. d'-. |
+    cis8.\ff cis16 cis4~ cis8 e,8\f |
+    e8. e16 e4\>~ e8\! r8 |
+    r4 r4 r8 d,\mf |
+    \mBreak
+    
+    % page 2 line 13
+    d8. d16 d4\>~ d8\! a''8 |
+    \pitchedTrill a2_~ \startTrillSpan b a8\stopTrillSpan r8 |
+    \bar "||" \key a \major
+    R2.*4 |
+    fis,8.\mf fis16 fis2->~ |
+    fis16 d( e fis) a( fis e fis) e( d h d) |
+    d8. d16 d4. e8 |
+    fis8.\< fis16 fis4. a8\! |
+    cis8. cis16 cis4~ cis8 d\f |
+    \mBreak
+    
+    % page 2 line 14
+    fis8. fis16 fis4.\< a8\! |
+    cis8. cis16 cis4~ cis8 d\ff |
+    \mark #13
+    a8. a16 a2\> |
+    R2.\pp\pocoRit |
+    \tempo "Meno mosso"
+    d,2\mf( cis4\> |
+    his2 fis'4) |
+    d,2\mf( cis4\> |
+    his2 fis'4) |
+    e,2\mf( dis4\> |
+    cisis2 gis'4) |
+    e,2\mf( dis4\> |
+    cisis2 gis'4) |
+    \mBreak
+    
   }
 }
 
