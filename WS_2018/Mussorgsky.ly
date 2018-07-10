@@ -39,9 +39,7 @@ clarinet_I_in_A_Music = {
     <<
       {
        \override MultiMeasureRest.staff-position = #-2
-        R1 |
-        R1 |
-        R1 |
+        R1*3 |
         e2\rest e4\rest e8.\rest c''32\f^\markup { Solo } c |
         \revert MultiMeasureRest.staff-position
       }
@@ -71,7 +69,7 @@ clarinet_I_in_A_Music = {
     \mBreak
     
     % line 3
-    e(d c h) a( c h a) |
+    e8(d c h) a( c h a) |
     g4( fis8 g16 fis) e4~\> e8\! r8 |
     R1
     e'2\p\>~ e8\! r8 r4 |
@@ -81,8 +79,8 @@ clarinet_I_in_A_Music = {
     \bar "||" \key f \major
     \mark #2
     c1\p |
-    d |
-    f |
+    d1 |
+    f1 |
     d2( a) |
     \mBreak
     
@@ -92,7 +90,7 @@ clarinet_I_in_A_Music = {
     f1 |
     f4.( g8) d4.( c8) |
     h2 c4( g) |
-    e( fis) d2 |
+    e4( fis) d2 |
     h2~ h8 r8 r4
     \bar "||"
     \mark #3
@@ -102,10 +100,10 @@ clarinet_I_in_A_Music = {
     \mBreak
     
     % line 5 (start)
-    a( h c h8 a) |
+    a4( h c h8 a) |
     g2( e2) |
     f4( e d a) |
-    c( h c h) |
+    c4( h c h) |
     a2( h4 a) |
     g2( e4) r4 |
     R1*6 |
@@ -124,24 +122,24 @@ clarinet_I_in_B_Music = {
     
     % line 5 (continued)
     c'2(_\pDolce es4 c |
-    f g as g8 f) |
+    f4 g as g8 f) |
     \mBreak
     
     % line 6
     es2( c) |
     des4( c b f |
-    as g as g) |
+    as4 g as g) |
     f2( g4 f) |
     es2~ es8 r8 r4 |
     c'2( es4 c |
-    f as g8 as16 g f4) |
+    f4 as g8 as16 g f4) |
     es2( c) |
     f4( es8 des c4 b |
     \mBreak
     
     % line 7
-    c b as g) |
-    f( as g f) |
+    c4 b as g) |
+    f4( as g f) |
     es~ es8 r8 r2 |
     \mark #5
     \key es \major
@@ -161,9 +159,7 @@ clarinet_I_in_B_Music = {
     <<
       {
        \override MultiMeasureRest.staff-position = #-2
-        R1 |
-        R1 |
-        R1 |
+        R1*3
         \revert MultiMeasureRest.staff-position
       }
       \new CueVoice {
@@ -208,8 +204,7 @@ clarinet_II_in_A_Music = {
     <<
       {
        \override MultiMeasureRest.staff-position = #-2
-        R1 |
-        R1 |
+        R1*2
         \revert MultiMeasureRest.staff-position
       }
       \new CueVoice {
@@ -238,13 +233,13 @@ clarinet_II_in_A_Music = {
     \mBreak
 
     % line 3
-    a |
+    a1 |
     c2( d) |
     b4( g) a( f) |
     g2 g4~ g8 r8 |
     a1 |
     c2( d) |
-    b a |
+    b2 a |
     \mBreak
 
     % line 4
@@ -256,13 +251,13 @@ clarinet_II_in_A_Music = {
     \tempo "Piu mosso" 4 = 100
     R1*2
     e'2(\f g4 e4) |
-    a( h c h8 a) |
+    a4( h c h8 a) |
     \mBreak
 
     % line 5 (start)
     g2( e2) |
     f4( e d a) |
-    c( h c h) |
+    c4( h c h) |
     a2( h4 a) |
     g2( e4) r4 |
     R1*6 |
@@ -284,21 +279,21 @@ clarinet_II_in_B_Music = {
     \mBreak
 
     % line 6
-    f g as g8 f) |
+    f4 g as g8 f) |
     es2( c) |
     des4( c b f |
-    as g as g) |
+    as4 g as g) |
     f2( g4 f) |
     es2~ es8 r8 r4 |
     c'2( es4 c |
-    f as g8 as16 g f4) |
+    f4 as g8 as16 g f4) |
     \mBreak
 
     % line 7
     es2( c) |
     f4( es8 des c4 b |
-    c b as g) |
-    f( as g f) |
+    c4 b as g) |
+    f4( as g f) |
     es~ es8 r8 r2 |
     \mark #5
     \key es \major

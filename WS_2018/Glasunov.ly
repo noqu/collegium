@@ -40,18 +40,18 @@ clarinet_I_in_A_part_one_Music = {
     % page 1 line 1
     R1*13 |
     d1->\f\>~ |
-    d~ |
-    d~ |
+    d1~ |
+    d1~ |
     d2\! r2 |
     d1\p~ |
-    d |
+    d1 |
     d1~ |
     d1~\> |
     \mark #1
     d4\! r4 r2 |
     R1*12 |
     b1->\mf\>~ |
-    b~ |
+    b1~ |
     b2\pp r2 |
     r1 |
     \mBreak
@@ -69,7 +69,7 @@ clarinet_I_in_A_part_one_Music = {
     cis1) |
     R1*2 |
     c'4\f( es d c) |
-    g( b a g) |
+    g4( b a g) |
     \mBreak
     
     % page 1 line 3
@@ -86,27 +86,27 @@ clarinet_I_in_A_part_one_Music = {
     
     % page 1 line 4
     a8-. r r a16( h) c d c h |
-    a h a c h\< c h c h c h c |
+    a16 h a c h\< c h c h c h c |
     d8-.\sf a16( h) c d c h a h a g |
     a8 a16( h) c d c h a h a g |
     \mBreak
     
     % page 1 line 5
     a8 r r a16( h) c d c h |
-    a h a c h\< c h c h c h c |
+    a16 h a c h\< c h c h c h c |
     c8\sf c, b4 b8( a) |
-    b b b4 b8( a) |
-    b b b( a) b16( a g8) |
+    b8 b b4 b8( a) |
+    b8 b b( a) b16( a g8) |
     \mBreak
 
     % page 1 line 6
-    b b b4 c8( e) |
+    b8 b b4 c8( e) |
     R2.*4 |
     \mark #3
     c'8\f r b,16 c d es f g a b |
-    a( b) c8~ c b16 a g( f) d8 |
+    a16( b) c8~ c b16 a g( f) d8 |
     r4 c'' d |
-    d\< d2\! |
+    d4\< d2\! |
     d4\< d2\! |
     c8 c,-. b c d( c16 b) |
     \mBreak
@@ -114,11 +114,11 @@ clarinet_I_in_A_part_one_Music = {
     % page 1 line 7
     a8-. a-. g a b( a16 g) |
     f8 r r4 r |
-    r r b'16(\< c b c)\! |
+    r4 r b'16(\< c b c)\! |
     d8 r8 r4 r |
-    r r d\< |
+    r4 r d\< |
     d8\sf r8 r4 r |
-    r r a16(\< h a g)\! |
+    r4 r a16(\< h a g)\! |
     a8 r8 r4 r |
     \mBreak
     
@@ -131,7 +131,7 @@ clarinet_I_in_A_part_one_Music = {
     R2.*3 |
     h'8.\mf\< h16 h8-. h-. h-. h-. |
     \mark #4
-    d\f r16 a\ff g8\pesante a \acciaccatura { c8 } h( a16 g) |
+    d8\f r16 a\ff g8\pesante a \acciaccatura { c8 } h( a16 g) |
     a8 g16( d f8) r8 r4 |
     \mBreak
     
@@ -253,9 +253,9 @@ clarinet_I_in_B_Music = {
     
     % page 2 line 6
     e4( c e |
-    c\< e c)\! |
+    c4\< e c)\! |
     g'4( c, g' |
-    c, g'\< c,)\! |
+    c,4 g'\< c,)\! |
     ges'2.\cresc~ |
     ges2. |
     fes2. |
@@ -377,14 +377,16 @@ clarinet_I_in_A_part_two_Music = {
     \tempo "Meno mosso"
     d,2\mf( cis4\> |
     his2 fis'4) |
-    d,2\mf( cis4\> |
+    d2\mf( cis4\> |
     his2 fis'4) |
-    e,2\mf( dis4\> |
+    e2\mf( dis4\> |
     cisis2 gis'4) |
-    e,2\mf( dis4\> |
-    cisis2 gis'4) |
+    e2\mf( dis4\> |
+    cisis2 gis'4)\! |
     \mBreak
     
+    % page 3 line 1
+    fis2( dis4) |
   }
 }
 
