@@ -549,6 +549,35 @@ clarinet_I_in_A_part_two_Music = {
     
     % page 4 line 1
     r4 r8 ges16 ges b8 ges16 ges |
+    as8 c16 c as8 c16 c as8\< f16 f |
+    e8\f e16 e e8 e16 e e8(\> f8) |
+    as8\mf c16 c as8 c16 c as8\< f16 f |
+    e8\f e16\pesante e e8 e16 e e8(\> f8) |
+    \mBreak
+
+    % page 4 line 2
+    as8\mf as16 as as8 as16 as as8 as16 as |
+    as8 as16 as as8\> as16 as as8\! r8 |
+    \mark #20
+    R2.*14 |
+    \tuplet 3/2 { f,8\p\cresc f f } \tuplet 3/2 { \repeat tremolo 3 f8 } \tuplet 3/2 { \repeat tremolo 3 f8 } |
+    \repeat unfold 3 \tuplet 3/2 { \repeat tremolo 3 f8 } |
+    \mark #21
+    des''8\sf b8\ff b\pesante b b r8 |
+    R2. |
+    \mBreak
+    
+    % page 4 line 3
+    des8\sf b8\pesante b b b r8 |
+    R2. |
+    des8\sf\pocoAnimato r8 r4 r4 |
+    r8 g,16(\f\< a) b( c b a) a( b a g)\! |
+    f16( g f es) g8 r8 r4 |
+    r8 g16(\f\< a) b( c b a) a( b a g)\! |
+    \mBreak
+    
+    
+    
   }
 }
 
