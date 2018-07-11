@@ -27,8 +27,10 @@ mBreak = { \break }
 pDolce = \markup { \dynamic p \italic \bold "dolce" }
 pesante = _\markup {\italic {"pesante"} }
 pocoRit = ^\markup {\italic {"poco rit."} }
+moltoRit = ^\markup {\italic {"molto rit."} }
 pocoAnimato = ^\markup {\italic {"poco animato"} }
-
+pocoAPocoPiuAnimato = ^\markup {\italic {"poco a poco più animato"} }
+lunga = _\markup {\italic {"lunga"} }
 
 clarinet_I_in_A_part_one_Music = {
   \relative c' {
@@ -576,7 +578,47 @@ clarinet_I_in_A_part_two_Music = {
     r8 g16(\f\< a) b( c b a) a( b a g)\! |
     \mBreak
     
+    % page 4 line 4
+    b8 g16(\cresc a) b( c b a) a( b a g) |
+    b8 g16( a) b( c b a) g( b c des) |
+    es8\fff b16-. b-. es8 b8 es,8 b16-. b-. |
+    es8 b es, b16 b es8 b |
+    r4 es''8\sf r8\lunga r4\fermata |
+    \bar "||" \time 4/4 
+    \mBreak
     
+    % page 4 line 5
+    \tempo "Tempo del comincio"
+    R1*2 |
+    R1*2\moltoRit |
+    \mark #22
+    R1*2 \pocoAPocoPiuAnimato |
+    r4 g,,4\p\<~ g2\! |
+    g4( ges f a\> |
+    d8)\! r8 r4 \tuplet 3/2 { h'8(\< c cis } \tuplet 3/2 { d dis e)\! } |
+    f8 r8 r4 \tuplet 3/2 { h,8(\< c cis } \tuplet 3/2 { d e eis)\! } |
+    \bar "||" \key d \major
+    \mBreak
+
+    % page 4 line 6
+    \tempo "Andante mosso" 4 = 100
+    fis8 r8 r4 r2 |
+    \tuplet 3/2 { h,8(\f c cis } \tuplet 3/2 { d dis e } \tuplet 3/2 { eis,\< fis g } \tuplet 3/2 { gis a ais\!) } |
+    h8 r8 r4 r2 |
+    \tuplet 3/2 { h8( c cis } \tuplet 3/2 { d dis e } \tuplet 3/2 { eis,\< fis g } \tuplet 3/2 { gis a ais\!) } |
+    h8 r8 r4 r2 |
+    R1*2
+    \mBreak
+    
+    % page 4 line 7
+    \tuplet 3/2 { h8( c cis } \tuplet 3/2 { d dis e } \tuplet 3/2 { eis,\< fis g } \tuplet 3/2 { gis ais h\!) } |
+    \mark #23
+    a16( d, dis e eis fis g gis a ais h c cis d) r8 |
+    r2 \tuplet 3/2 { d8( cis c } \tuplet 3/2 { h ais h) }
+    \mBreak
+    
+    % page 4 line 8
+    c16( d, dis e eis fis g gis a ais h c cis d) r8 |
     
   }
 }
