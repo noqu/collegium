@@ -31,6 +31,9 @@ moltoRit = ^\markup {\italic {"molto rit."} }
 pocoAnimato = ^\markup {\italic {"poco animato"} }
 pocoAPocoPiuAnimato = ^\markup {\italic {"poco a poco più animato"} }
 lunga = _\markup {\italic {"lunga"} }
+string = ^\markup {\italic {"string."} }
+legato = _\markup {\italic {"legato"} }
+
 
 clarinet_I_in_A_part_one_Music = {
   \relative c' {
@@ -619,7 +622,47 @@ clarinet_I_in_A_part_two_Music = {
     
     % page 4 line 8
     c16( d, dis e eis fis g gis a ais h c cis d) r8 |
+    r2 \tuplet 3/2 { d8( cis c } \tuplet 3/2 { h ais h) } |
+    d16( g, gis a ais h c cis d) r16 r8 r4 |
+    \mBreak
     
+    % page 4 line 9
+    r4 d16( dis e f) \tuplet 3/2 { e8( dis d } \tuplet 3/2 { cis c h) } |
+    as16( f g as a b h c cis d) r8 r4 |
+    r4 r16 d( dis e) \tuplet 3/2 { f8( cis d } \tuplet 3/2 { dis e f) } |
+    \mBreak
+
+    % page 4 line 10
+    \mark 24
+    \tuplet 3/2 { g8( fis f } \tuplet 3/2 { e es d) } \tuplet 3/2 { f( e es } \tuplet 3/2 { d cis d)} |
+    \tuplet 3/2 { b8( c cis } \tuplet 3/2 { d dis e) } \tuplet 3/2 { f( f, fis } \tuplet 3/2 { g gis a) } |
+    \tuplet 3/2 { b8( d cis } \tuplet 3/2 { c h b) } \tuplet 3/2 { a( e' d } \tuplet 3/2 { cis c b) } |
+    \mBreak
+    
+    % page 4 line 11
+    \tuplet 3/2 { f'8( e es } \tuplet 3/2 { d c b) } \tuplet 3/2 { d( cis c } \tuplet 3/2 { h ais a) } |
+    d1->\cresc\string~ |
+    d1 |
+    d1~ |
+    d1 |
+    \mark #25
+    \tempo "Allegro molto"
+    fis,16(\fff d \repeat unfold 6 { fis d } fis d) |
+    \mBreak
+    
+    % page 4 line 12
+    a'16( f \repeat unfold 6 { a16 f } g d) |
+    fis16( d \repeat unfold 6 { fis d } fis d) |
+    a'16( f \repeat unfold 6 { a f } g d) |
+    \mBreak
+    
+    % page 4 line 13
+    fis16(\legato d \repeat unfold 6 { fis d } fis d) |
+    \repeat tremolo 4 { fis16( d } \repeat tremolo 4 { fis16 d) } |
+    \repeat tremolo 4 { fis16( a } \repeat tremolo 4 { fis16 a) } |
+    \repeat tremolo 4 { fis16( a } \repeat tremolo 4 { fis16 a) } |
+    fis8\sf r8 r4 r2 |
+    \bar "|."
   }
 }
 
