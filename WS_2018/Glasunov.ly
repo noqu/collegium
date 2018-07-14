@@ -92,7 +92,7 @@ clarinet_I_in_A_part_one_Music = {
     
     % page 1 line 4
     a8-. r r a16( h) c d c h |
-    a16 h a c h\< c h c h c h c |
+    a16 h a c h\< c h c %{ Fliegendreck, kein Staccato %} h c h c |
     d8-.\sf a16( h) c d c h a h a g |
     a8 a16( h) c d c h a h a g |
     \mBreak
@@ -142,24 +142,33 @@ clarinet_I_in_A_part_one_Music = {
     \mBreak
     
     % page 1 line 9
+    r8. a16\pesante g8 a \acciaccatura { c8 } h( a16 g) |
+    a8 g16( d f8) r8 r4 |
+    r8. f16\pesante e8 f \acciaccatura { a8 } g( f16 e) |
+    f8 e16( a, d8) r8 r4 |
+    r8. f16\pesante e8 f \acciaccatura { a8 } g( f16 e) |
+    f8 e16( a, d8) r8 r4 |
+    \mBreak
+    
+    % page 1 line 10
     R2. |
-    r8 \mark Solo d16\p\<( d f g f e d e d c\! ) |
+    r8 \mark Solo d16\p\<( e f g f e d e d c\! ) |
     b16( a g8) r4 r |
     r8 g'16(\< a b c b a g a g ges\! |
     f8) r8 r4 g\mf |
     f8 r8 r4 g |
     \mBreak
     
-    % page 1 line 10
-    fis8 r8 r4 c'8(\> a)\! |
-    d8 r8 r4 c8(\> a)\! |
+    % page 1 line 11
+    fis8 r8 r4 c'8(-> a) |
+    d8 r8 r4 c8(-> a) |
     d8 r8 r4 r |
     r4 as8\f\< r as\! r |
     b8\sf b16\mf b b8 b16 b b8 b16 b |
     b8 b16 b b8 b16 b b8\< b16 b |
     \mBreak
     
-    % page 1 line 11
+    % page 1 line 12
     b8 b16 b b8 b16 b b8 b16 b\! |
     b8 b16 b b8 b16 b b8 b16 b |
     g8 r8 r4 r |
@@ -240,7 +249,7 @@ clarinet_I_in_B_Music = {
     \mBreak
     
     % page 2 line 5
-    e4. h8 a4~ |
+    c4. h8 a4~ |
     a2.) |
     des'2(\mf c4 |
     h2 b4 |
@@ -252,14 +261,14 @@ clarinet_I_in_B_Music = {
     h2.) |
     \mark #8
     e,4(\p c e |
-    c e\< c)\! |
+    c\< e c)\! |
     g'4( c, g' |
     c, g'\> c,)\! |
     \mBreak
     
     % page 2 line 6
     e4( c e |
-    c4\< e c)\! |
+    c4 \<e c)\! |
     g'4( c, g' |
     c,4 g'\< c,)\! |
     ges'2.\cresc~ |
@@ -595,7 +604,7 @@ clarinet_I_in_A_part_two_Music = {
     R1*2 |
     R1*2\moltoRit |
     \mark #22
-    R1*2 \pocoAPocoPiuAnimato |
+    R1*2\pocoAPocoPiuAnimato | % FIXME: Why does that not appear after V?
     r4 g,,4\p\<~ g2\! |
     g4( ges f a\> |
     d8)\! r8 r4 \tuplet 3/2 { h'8(\< c cis } \tuplet 3/2 { d dis e)\! } |
