@@ -59,7 +59,7 @@ clarinet_I_in_A_part_one_Music = {
     b1->\mf\>~ |
     b1~ |
     b2\pp r2 |
-    r1 |
+    R1 |
     \mBreak
     
     % page 1 line 2
@@ -683,9 +683,262 @@ clarinet_II_in_A_part_one_Music = {
     \time 4/4
     \tempo "Andante" 4 = 72
 
-    % line 1
+    % page 1 line 1
+    R1*13 |
+    c1->\f\>~ |
+    c1~ |
+    c1~ |
+    c2( h4 a)\ppp  |
+    R1*4 |
+    \mark #1
+    R1*13
+    g1->\mf\>~ |
+    g1~ |
+    g2\pp r2 |
+    R1*5 |
+    \mBreak
+    
+    % page 1 line 2
+    \mark #2
+    R1*3 |
+    g'1~ |
+    g1 |
+    R1*2 |
+    es'1(\f |
+    d4) r4 r2 |
+    r4 gis~\f \tuplet 3/2 { gis8 gis\> gis } \tuplet 3/2 { gis8 gis gis\! } |
+    g2 g2 \> |
+    d2\p\< f |
+    es1->\f\> |
+    \mBreak
+
+    % page 1 line 3
+    \bar "||" \time 3/4 \tempo "Allegro con brio" 4 = 120
+    d8\p r8 r4 r4 |
+    R2. |
+    r8 a16\f( h) c d c h a h a g |
+    a8-. a16( h) c d c h a h a g |
+    a8-. r r a16( h) c d c h |
+    a16 h a c h\< c h c h c h c |
+    \mBreak
+
+    % page 1 line 4
+    d8-.\sf a16( h) c d c h a h a g |
+    a8 a16( h) c d c h a h a g |
+    a8 r r a16( h) c d c h |
+    a16 h a c h\< c h c h c h c |
+    \mBreak
+    
+    % page 1 line 5
+    c8\sf r8 r4 r4 |
+    R2.*7
+    \mark #3
+    a8\f r b,16 c d es f g a b |
+    a16( b) c8~ c b16 a g( f) d8 |
+    r4 c'' b |
+    a4\< b2\! |
+    a4\< b2\! |
+    f8 c-. b c d( c16 b) |
+    \mBreak
+
+    % page 1 line 6
+    a8-. a-. g a b( a16 g) |
+    f8 r r4 r |
+    r4 r es'\< |
+    f8\! r8 r4 r4 |
+    r4 r f16(\< g f g) |
+    a8\sf r8 r4 r |
+    r4 r a,16(\< h a g)\! |
+    a8 r8 r4 r |
+    \mBreak
+    
+    % page 1 line 7
+    r4 r h16(\< a h c) |
+    a'2.\ff\>~ |
+    a8\! r8 r4 r |
+    c,2.(\f\> |
+    h8)\! r8 r4 r |
+    R2.*3 |
+    d8.\mf\< d16 d8-. d-. d-. d-. |
+    \mark #4
+    d8\sf r16 f\ff f8\pesante f f4 |
+    f8 g,16( d f8) r8 r4 |
+    \mBreak
+    
+    % page 1 line 8
+    r8. f'16\pesante f8 f f4 |
+    f8 g,16( d f8) r8 r4 |
+    r8. a'16\pesante g8 a b4 |
+    a8 e,16( a, d8) r8 r4 
+    r8. a''16\pesante g8 a b4 |
+    a8 e16( a, d8) r8 r4 |
+    R2.*4
+    \mBreak
+    
+    % page 1 line 9
+    r4 r4 g,\mf |
+    f8 r8 r4 g |
+    fis8 r8 r4 f'4-> |
+    fis8 r8 r4 f-> |
+    fis8 r8 r4 r |
+    r4 es8\f\< r es\! r |
+    es8\sf g16\mf g g8 g16 g g8 g16 g |
+    g8 g16 g g8 g16 g g8\< g16 g |
+    \mBreak
+    
+    % page 1 line 10
+    f8 f16 f f8 f16 f f8 f16 f\! |
+    e8 e16 e e8 e16 e e8 e16 e |
+    e8 r8 r4 r |
+    R2.*5 |
+    a8\mf a16 a fis8\< fis16 fis fis8 fis16 fis |
+    \mark #5
+    gis8\sf r8 r4 r4 |
+    R2.*3 |
+    R2.*6\pocoRit |
+    \mBreak
   }
 }
+
+clarinet_II_in_B_Music = {
+  \relative c' {
+
+    % page 1 line 11
+    \bar "||"
+    \tempo "Allegro moderato" 4 = 100
+    \key c \major
+    c'2.\pp~ |
+    c2.( |
+    e,2.)~ |
+    e2.~ |
+    e2.~ |
+    e2. |
+    f2.~ |
+    f2.( |
+    e4) r4 r4 |
+    R2. |
+    b'2.(\mf |
+    a2.)( |
+    e2.)~ |
+    e2.\> |
+    f2(\! e4 |
+    \mBreak
+    
+    % page 1 line 12
+    es2.) |
+    d2.~\> d2.( |
+    \mark #6
+    e8)\! r8 r4 r4 |
+    R2. |
+    es'4\pp( g es\> |
+    g4 es f)\! |
+    R2.*2 |
+    es4( g f\> |
+    g4 es f)\! |
+    R2.*2 |
+    e4( c e |
+    c4\> e c)\! |
+    R2.*4 |
+    \mBreak
+
+    % page 2 line 1
+    f,2.~ |
+    f2.(\<( |
+    es8)\! r8 r4 r4 |
+    \mBreak
+%{
+    
+    % page 2 line 2
+    \mBreak
+    
+    % page 2 line 3
+    as4(\mf f8 as) as4(\> |
+    \mBreak
+
+    % page 2 line 4
+    g8) r8\! r4 r |
+    as4( f8 as) as4(\> |
+    g8) r8\! r4 r |
+    R2. |
+    \mark #7
+    R2.*8 |
+    r4 es8(\p c) d( c) |
+    R2. |
+    c'2(\p h4 |
+    b2 a4 |
+    as2 g4 |
+    fis2 f4) |
+    e2( dis4 |
+    d2. |
+    \mBreak
+    
+    % page 2 line 5
+    c4. h8 a4~ |
+    a2.) |
+    des'2(\mf c4 |
+    h2 b4 |
+    a2 as4\> |
+    g2 fis4)\! |
+    f2( e4 |
+    es2 d 4 |
+    des2 c4 |
+    h2.) |
+    \mark #8
+    e,4(\p c e |
+    c\< e c)\! |
+    g'4( c, g' |
+    c, g'\> c,)\! |
+    \mBreak
+    
+    % page 2 line 6
+    e4( c e |
+    c4 \<e c)\! |
+    g'4( c, g' |
+    c,4 g'\< c,)\! |
+    ges'2.\cresc~ |
+    ges2. |
+    fes2. |
+    des''2( b4) |
+    g8(\f e) a( e) g( e) |
+    a8( e)\> g( e) a( e) |
+    g8(\mf e) a( e) g( e) |
+    \mBreak
+    
+    % page 2 line 7
+    a8(\> e) g( e) a( e)\! |
+    R2.*2 |
+    \bar "||" \tempo "Allegro con brio (come prima)"
+    R2.*8 |
+    as4(\p c2) |
+    as4( c2) |
+    as4 as8( b) as( g) |
+    as4 as8( b) as4 |
+    g8 r8 r4 r |
+    R2.*6 |
+    \mark #9
+    c,4(\p e2)
+    c4( e2)
+    \mBreak
+    
+    % page 2 line 8 (start)
+    c4 c8( d) c( h) |
+    c4 c8( d) c( h) |
+    a8 r8 r4 r |
+    R2.*8 |
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-4
+        R2.*2
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \cueClef "bass" \stemUp des,,8^"Bassi" h e4 h | des8 h e4 h | \cueClefUnset
+      }
+    >>
+%}
+  }
+}
+
 
 \bookpart {
   \header{
@@ -742,6 +995,11 @@ clarinet_II_in_A_part_one_Music = {
         {
           % \transpose b a
           \clarinet_II_in_A_part_one_Music
+        }
+        \clarinet_II_in_B_Music
+        {
+          % \transpose b a
+          % \clarinet_II_in_A_part_two_Music
         }
       }
     }
