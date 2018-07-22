@@ -33,6 +33,7 @@ pocoAPocoPiuAnimato = ^\markup {\italic {"poco a poco più animato"} }
 lunga = _\markup {\italic {"lunga"} }
 string = ^\markup {\italic {"string."} }
 legato = _\markup {\italic {"legato"} }
+solo = ^\markup { "Solo" }
 
 
 clarinet_I_in_A_part_one_Music = {
@@ -63,8 +64,7 @@ clarinet_I_in_A_part_one_Music = {
     \mBreak
     
     % page 1 line 2
-    \mark "Solo"
-    g''4.\p g8 g( f e d) |
+    g''4.\p\solo g8 g( f e d) |
     c4( g') e2 |
     g4. g8 g( f e d) |
     c4( g') e2\>~ |
@@ -152,7 +152,7 @@ clarinet_I_in_A_part_one_Music = {
     
     % page 1 line 10
     R2. |
-    r8 \mark Solo d16\p\<( e f g f e d e d c\! ) |
+    r8\solo d16\p\<( e f g f e d e d c\! ) |
     b16( a g8) r4 r |
     r8 g'16(\< a b c b a g a g ges\! |
     f8) r8 r4 g\mf |
@@ -186,8 +186,7 @@ clarinet_I_in_B_Music = {
   \relative c' {
 
     % page 2 line 1
-    \mark Solo
-    g''2.\p~ |
+    g''2.\p\solo~ |
     g2.~ |
     \bar "||"
     \tempo "Allegro moderato" 4 = 100
@@ -334,7 +333,7 @@ clarinet_I_in_A_part_two_Music = {
     es 8 r8 es,2->\mf~ |
     es2. |
     R2.*2 |
-    e8(\mf\mark "Solo" cis8) fis8( cis8) e8( cis8) |
+    e8(\mf\solo cis8) fis8( cis8) e8( cis8) |
     fis8(\> cis) e( cis) fis( cis) |
     \mBreak
     
@@ -420,11 +419,11 @@ clarinet_I_in_A_part_two_Music = {
     es8 c16( d es f es d) c( d es f) |
     \repeat tremolo 12 { es16 } |
     es8 c16( d es f es d) c( cis d es) |
-    \repeat tremolo 12 { d16 } |
+    \repeat tremolo 12 { d16\< } |
     \mBreak
 
     % page 3 line 3
-    c8 c16( d es f es d) c( d c h) |
+    c8\! c16( d es f es d) c( d c h) |
     c8 r8 r4 \repeat tremolo 4 { des16-> } |
     des8 r8 r4 r |
     r4 r des'4->~ |
@@ -443,10 +442,10 @@ clarinet_I_in_A_part_two_Music = {
     d2.\pp
     \mark #15
     R2.*2 |
-    gis,,,2.->~ |
+    gis,,,2.\p->~ |
     gis2.
     R2.*2 |
-    b2.->~ |
+    b2.->~ | % FIXME: Shouldn't that also have a \p like in 2nd clarinet?
     b2. |
     e2.\mf |
     h2.
@@ -1024,159 +1023,156 @@ clarinet_II_in_A_part_two_Music = {
     
     % page 3 line 1
     \repeat tremolo 12 { c16 } |
-    \mBreak
-    
-
-%{
+    c8 c16( d es f es d) c( d es f) |
+    \repeat tremolo 12 { c16 } |
+    c8 c16( d es f es d) c( cis d es) |
+    \repeat tremolo 12 { b16\< } |
+    c8\! c16( d es f es d) c( d c h) |
     \mBreak
     
     % page 3 line 2
-    es8 c16( d es f es d) c( d es f) |
-    \repeat tremolo 12 { es16 } |
-    es8 c16( d es f es d) c( cis d es) |
-    \repeat tremolo 12 { d16 } |
-    \mBreak
-
-    % page 3 line 3
-    c8 c16( d es f es d) c( d c h) |
     c8 r8 r4 \repeat tremolo 4 { des16-> } |
-    des8 r8 r4 r |
-    r4 r des'4->~ |
-    des8\> b,16(\! c des es des c) b(\> d e b') |
+    b8 r8 r4 r |
+    r4 r as'4->( |
+    g8)\> b,16(\! c des es des c) b(\> d e\! r16) |
     \bar "||" \key f \major \tempo "Tempo I" 4 = 120
     d2.\f |
     e2( dis4 |
-    \mBreak
-
-    % page 3 line 4
     d2.)~ |
     d4 e( dis |
     d2)\cresc e4( |
+    \mBreak
+
+    % page 3 line 3
     dis4) d2 |
     e8( dis) d2->\ff\>~ |
     d2.\pp
     \mark #15
     R2.*2 |
-    gis,,,2.->~ |
+    gis,,2.->\p~ |
     gis2.
     R2.*2 |
-    b2.->~ |
-    b2. |
-    e2.\mf |
+    as2.->\p~ |
+    as2. |
+    e'2.\mf |
     h2.
+    d'16\f( es d c) c( d c b) b( c d es) |
     \mBreak
-    
-    % page 3 line 5
-    f''16\f( g f es) es( f es d) d( es f g) |
-    as16( b as g) g( as g f) f( g f es) |
-    f8 r8 r4 r |
+
+    % page 3 line 4
+    f16( g f es) es( f es d) d( es d c) |
+    d8 r8 r4 r |
     R2. |
     \bar "||"
     \mark #16
     d'8\sf r8 r4 r |
-    r4 r d\ff |
-    d8 r8 r4 r |
+    r4 r d,16(\ff e d e |
+    f8) r8 r4 r |
+    r4 r d16( e f g |
+    a8)\sf r8 r4 r |
     \mBreak
     
-    % page 3 line 6
-    r4 r d |
-    d8\sf r8 r4 r |
+    % page 3 line 5
     r4 r a16\mf\< h a g |
     a8\sf r8 r4 r |
     r4 r h16\mf\< a h c |
-    c2.->\ff |
-    h2.\> |
-    d16\f e d cis c d c h h c h a |
+    a2.->\ff |
+    a2.\> |
+    d,16\f e d cis c d c h h c h a |
+    a16 h a g g\> a g f f g f e |
+    \mBreak
+    
+    % page 3 line 6
+    d8\! r8 r4 r |
+    R2. |
+    a''8.-.\cresc a16-. a8-. a8-. a8-. a8-. |
+    a8.-. a16-. a8-. a8-. a8-. a8-. |
+    \mark #17
+    a8\sf a\fff g\pesante h a g16( d) |
+    f8 r8 r4 r |
+    r8 a g\pesante h a g16( d) | % FIXME: Does clarinet 1 have all the \pesante here?
     \mBreak
     
     % page 3 line 7
-    a16 h a g g\> a g f f g f e |
-    d8\! r8 r4 r |
-    h'8.-.\mp\< h16-. h8-. h8-. h8-. h8-. |
-    d8\! r8 r4\cresc r |
-    h8.-. h16-. \repeat tremolo 4 { h8-. } |
-    \mark #17
-    d8\sf d\fff f\pesante f f g,16( d) |
     f8 r8 r4 r |
+    r8 f e\pesante g f e16( a,) |
+    d8 r8 r4 r |
+    r8 f e\pesante g f e16( a,) |
+    d8 r8 r4 r |
+    r4 r r8 \tuplet 3/2 { d16(\mf\< es e)\! } |
+    f16( g f e d e d c b c b a) |
     \mBreak
     
     % page 3 line 8
-    r8 f' f f f g,16( d) |
-    f8 r8 r4 r |
-    r8 a\pesante g b a e16( a,) |
-    d8 r8 r4 r |
-    r8 a'\pesante g b a e16( a,) |
-    d8 r8 r4 r |
-    r4 r r8 \tuplet 3/2 { d16(\mf\< es e)\! } |
-    \mBreak
-    
-    % page 3 line 9
-    f16( g f e d e d c b c b a) |
     g16( f es) r r4 r8 \tuplet 3/2 { g16(\< as a)\! }
     b16( c b a g a g f es f es d) |
     c8 c'(\mf b) c \acciaccatura { e } d( c16 b) |
+    c8 c( b) c \acciaccatura { e } d( c16 b) |
+    a8 r r \tuplet 3/2 { e16\f f fis } g8->( e) |
+    \mBreak
+    
+    % page 3 line 9
+    a8-> r r \tuplet 3/2 { e16 f fis } g8->( e) |
+    a8 r8 r4 r |
+    r4 f'8 r as r |
+    \mark #18 
+    a8\sf r8 r4 r | % Clarinet 1 has \f here?
+    r4 r f,16(\< g f g)\! |
+    a8 r8 r4 r |
+    r4 r f16( g a b) |
+    c2.\>~ | % Apparently this isn't an accent in clarinet 1, too
+    c2.\mf |
     \mBreak
     
     % page 3 line 10
-    c8 c( b) c \acciaccatura { e } d( c16 b) |
-    a8 r r \tuplet 3/2 { e'16\f f fis } g8->( e) |
-    a8-> r r \tuplet 3/2 { e16 f fis } g8->( e) |
-    a8 r8 r4 r |
-    r4 b8 r h r |
-    \mark #18 
-    c8\f r8 r4 r |
-    r4 r f,16(\< g f g)\! |
+    cis2.( |
+    d2)( f4) |
+    d2.(~ |
+    d2 f4) |
+    f2.( |
+    a2\< f4)\! |
+    fis2.(~ |
+    fis4 g b) |
+    f2.(~ |
+    f4\> d f)\! |
+    f2.(~ |
+    f2 des4) |
+    f2.( |
+    e2.)\> |
     \mBreak
     
     % page 3 line 11
-    a8 r8 r4 r |
-    r4 r f16( g a b) |
-    a2.(->\mf |
-    f2 a4) |
-    a2.~ |
-    a2. |
-    b2.~ |
-    b2. |
-    a4.( c8 d4)~ |
-    d2.\< |
-    es2.(\! |
-    d2.) |
-    cis2.( |
-    d4\>) (a2)\! |
-    \mBreak
-    
-    % page 3 line 12
-    des2.( |
-    as2 f4) |
-    b4.( c8 des4~ |
-    des4\>) c2 |
     \mark #19
-    a8-.\mf a16-. a16-. \repeat unfold 2 { a8-. a16-. a16-. } |
-    \repeat unfold 3 { a8-. a16-. a16-. } |
-    \repeat unfold 3 { c8-. c16-. c16-. } |
-    \repeat unfold 2 { c8-. c16-. c16-. } b8-. b16-. b16-. |
+    f8-.\mf\solo f16-. f16-. \repeat unfold 2 { f8-. f16-. f16-. } | % FIXME: Should that also be Solo in clarinet 1
+    \repeat unfold 3 { f8-. f16-. f16-. } |
+    \repeat unfold 3 { as8-. as16-. as16-. } |
+    \repeat unfold 2 { as8-. as16-. as16-. } f8-. f16-. f16-. |
+    \repeat unfold 3 { f8 f16 f16 } | % FIXME: Does clarinet 1 still have staccato here?
+    \mBreak
+
+    % page 3 line 12
+    \repeat unfold 3 { f8 f16 f16 } |
+    \repeat unfold 3 { as8 as16 as16 } |
+    \repeat unfold 2 { as8 as16 as16 } f8 f16 f16 |
+    \repeat unfold 3 { f8 f16 f16 } |
+    \repeat unfold 3 { f8 f16 f16 } |
     \mBreak
 
     % page 3 line 13
-    \repeat unfold 3 { a8-. a16-. a16-. } |
-    \repeat unfold 3 { a8-. a16-. a16-. } |
-    \repeat unfold 3 { c8-. c16-. c16-. } |
-    \repeat unfold 2 { c8 c16 c16 } b8 b16 b16 |
-    \repeat unfold 3 { a8 a16 a16 } |
-    \mBreak
-    
-    % page 3 line 14
-    \repeat unfold 3 { a8 a16 a16 } |
-    a8 a16 a16 as8 as16 as16 a8 a16 a16 |
-    \repeat unfold 3 { as8 as16 as16 } |
-    ges8 r8 r4 r |
-    r4 r8 ges16\p\< ges b8 ges16 ges\! |
-    as8 r8 r4 r |
+    \repeat unfold 3 { f8 f16 f16 } |
+    \repeat unfold 3 { f8 f16 f16 } |
+    des8 r8 r4 r |
+    r4 r8 b16\p\< b des8 b16 b\! |
+    c8 r8 r4 r |
     R2.*2 |
     \mBreak
     
     % page 4 line 1
-    r4 r8 ges16 ges b8 ges16 ges |
+    r4 r8 b16 b des8 b16 b |
+    \mBreak
+%{
+    
+   
     as8 c16 c as8 c16 c as8\< f16 f |
     e8\f e16 e e8 e16 e e8(\> f8) |
     as8\mf c16 c as8 c16 c as8\< f16 f |
