@@ -355,10 +355,10 @@ clarinet_I_in_A_part_two_Music = {
     f2.)\startTrillSpan~ |
     f2\<~ f8\stopTrillSpan \tuplet 6/4 { es32( f g a b c } |
     \mark #12
-    d8\!) r8 d,,2\f\startTrillSpan~ |
+    d8\!) r8 \pitchedTrill d,,2\f\startTrillSpan~ e |
     d2~ d8\stopTrillSpan \tuplet 6/4 { d32_( e fis g a h } |
     c2.)\startTrillSpan~ |
-    c2\stopTrillSpan\< c32 d e fis g a h c\! |
+    c2\stopTrillSpan\< c32( d e fis g a h c)\! |
     \mBreak
     
     % page 2 line 12
@@ -410,7 +410,7 @@ clarinet_I_in_A_part_two_Music = {
     \bar "||" \key c \major
     \mark #14
     \repeat tremolo 12 { des16\mf \pocoAnimato } |
-    des8 b16( d des es des c) b( c des es) |
+    des8 b16( c des es des c) b( c des es) |
     \repeat tremolo 12 { des16 } |
     \mBreak
     
@@ -845,24 +845,18 @@ clarinet_II_in_B_Music = {
     f,2.~ |
     f2.(\<( |
     es8)\! r8 r4 r4 |
-    \mBreak
-%{
-    
-    % page 2 line 2
-    \mBreak
-    
-    % page 2 line 3
-    as4(\mf f8 as) as4(\> |
-    \mBreak
 
-    % page 2 line 4
-    g8) r8\! r4 r |
-    as4( f8 as) as4(\> |
-    g8) r8\! r4 r |
+    f'4(\mf as,8 f') f4(\> |
+    es8) r8\! r4 r |
+    f4( as,8 f') f4(\> |
+    es8) r8\! r4 r |
     R2. |
     \mark #7
     R2.*8 |
-    r4 es8(\p c) d( c) |
+    \mBreak
+
+    % page 2 line 2
+    r4 as,8(\p es) as( d,) |
     R2. |
     c'2(\p h4 |
     b2 a4 |
@@ -870,11 +864,11 @@ clarinet_II_in_B_Music = {
     fis2 f4) |
     e2( dis4 |
     d2. |
-    \mBreak
-    
-    % page 2 line 5
     c4. h8 a4~ |
     a2.) |
+    \mBreak
+
+    % page 2 line 3
     des'2(\mf c4 |
     h2 b4 |
     a2 as4\> |
@@ -884,46 +878,46 @@ clarinet_II_in_B_Music = {
     des2 c4 |
     h2.) |
     \mark #8
-    e,4(\p c e |
-    c\< e c)\! |
-    g'4( c, g' |
-    c, g'\> c,)\! |
+    c4(\p a c |
+    a\< c a)\! |
+    g4( c g |
+    c g\> c)\! |
+    \mBreak
+
+    % page 2 line 4
+    c4(\p a c |
+    a c a) |
+    g4( c\< g\! |
+    c g\< c)\! |
+    b2.\cresc~ |
+    b2. |
+    des2. |
+    as''2( e4) |
+    c8(\f g) c( a) c( g) |
+    c8( a)\> c( g) c( a) |
+    c8(\mf g) c( a) c( g) |
     \mBreak
     
-    % page 2 line 6
-    e4( c e |
-    c4 \<e c)\! |
-    g'4( c, g' |
-    c,4 g'\< c,)\! |
-    ges'2.\cresc~ |
-    ges2. |
-    fes2. |
-    des''2( b4) |
-    g8(\f e) a( e) g( e) |
-    a8( e)\> g( e) a( e) |
-    g8(\mf e) a( e) g( e) |
-    \mBreak
-    
-    % page 2 line 7
-    a8(\> e) g( e) a( e)\! |
+    % page 2 line 5
+    c8(\> a) c( g) c( a)\! |
     R2.*2 |
     \bar "||" \tempo "Allegro con brio (come prima)"
     R2.*8 |
-    as4(\p c2) |
-    as4( c2) |
-    as4 as8( b) as( g) |
-    as4 as8( b) as4 |
-    g8 r8 r4 r |
+    c,4(\p f2) |
+    c4( f2) |
+    c4( des4) es |
+    c4( des4) es8( c8) |
+    c8 r8 r4 r |
     R2.*6 |
-    \mark #9
-    c,4(\p e2)
-    c4( e2)
     \mBreak
     
-    % page 2 line 8 (start)
-    c4 c8( d) c( h) |
-    c4 c8( d) c( h) |
-    a8 r8 r4 r |
+    % page 2 line 6 (start)
+    \mark #9
+    g'4(\p c2)
+    g4( c2)
+    g4( a) g |
+    g4( a) g8( gis) |
+    e8 r8 r4 r |
     R2.*8 |
     <<
       {
@@ -932,13 +926,369 @@ clarinet_II_in_B_Music = {
         \revert MultiMeasureRest.staff-position
       }
       \new CueVoice {
-        \cueClef "bass" \stemUp des,,8^"Bassi" h e4 h | des8 h e4 h | \cueClefUnset
+        \cueClef "bass" \stemUp des,8^"Bassi" h e4 h | des8 h e4 h | \cueClefUnset
       }
     >>
-%}
   }
 }
 
+clarinet_II_in_A_part_two_Music = {
+  \relative c' {
+    \transposition a
+
+    % page 2 line 6 (continued)
+    r4 a''8(\f fis) h d |
+    cis8 h a( fis) h d |
+    \mBreak
+
+    % page 2 line 7
+    cis8 h a( fis) h4 |
+    fis4 a8( fis) h4 |
+    fis4-> a-> fis-> |
+    h8-> r8 r4 r |
+    \mark #11
+    c4\ff c c8-. c-. |
+    c4 c c8-. c-. |
+    b8 r8 r4 r4 |
+    R2. |
+    cis,8(\ff ais) dis( fis) e-. dis-. |
+    \mBreak
+    
+    % page 2 line 8
+    cis8( ais) dis( fis) e-. dis-. |
+    R2. |
+    a'8(\ff fis) h( d) c-. h-. |
+    a8( fis) h( d) c-. h-. |
+    a8( fis) h( fis) a( fis) |
+    h8(\< fis) a( fis) h( fis) |
+    \mBreak
+
+    % page 2 line 9
+    g8\sf\! r8 r4 r |
+    R2.*3 |
+    g,2.\mf\startTrillSpan~ |
+    g2~ g8\stopTrillSpan \tuplet 6/4 { g32( a h c d e } |
+    f2.)\startTrillSpan~ |
+    f2\<~ f8\stopTrillSpan \tuplet 6/4 { es32( f g a b c } |
+    \mark #12
+    d8\!) r8 \pitchedTrill d,,2\f\startTrillSpan~ e |
+    d2~ d8\stopTrillSpan \tuplet 6/4 { d32_( e fis g a h } |
+    \mBreak
+    
+    % page 2 line 10
+    c2.)\startTrillSpan~ |
+    c2\stopTrillSpan\< c32( d e fis g a h c)\! |
+    a8( fis) h( d) c-. h-. |
+    a8( fis) e( g) fis( a) |
+    g( e) a( c) h-. a-. |
+    g8( e) c(\< d) e-. g-. |
+    \mBreak
+
+    % page 2 line 11
+    a8.\ff a16 a4~ a8 d,8\f |
+    d8. d16 d4\>~ d8\! r8 |
+    r4 r4 r8 b,\mf |
+    b8. b16 b4\>~ b8\! r8 |
+    R2. |
+    \bar "||" \key a \major
+    R2.*4 |
+    fis'8.\mf fis16 fis2->~ |
+    fis16 d( e fis) a-> %{ FIXME: really accent? Not in 1st clarinet %} ( fis e fis) e( d h d) |
+    \mBreak
+
+    % page 2 line 12
+    d8. d16 d4. e8 |
+    a,8.\< a16 a4. fis'8\! |
+    fis8. fis16 fis4~ fis8 a\f |
+    a8. a16 a4.\< fis'8\! |
+    fis8. fis16 fis4~ fis8 fis\ff |
+    \mark #13
+    fis8. fis16 fis2\> |
+    R2.\pp\pocoRit |
+    \tempo "Meno mosso"
+    R2.*9 |
+    \mBreak
+    
+    % page 2 line 13
+    d2->\mf(~ d8\> dis)\! |
+    R2.*2 |
+    h2 e4->(\( |
+    dis4) c2\)\! |
+    \bar "||" \key c \major
+    \mark #14
+    \repeat tremolo 12 { b16\mf \pocoAnimato } |
+    b8 b16( c des es des c) b( c des es) |
+    \repeat tremolo 12 { b16 } |
+    b8 b16( c des es des c) b( c des) r16 |
+    \mBreak
+    
+    % page 3 line 1
+    \repeat tremolo 12 { c16 } |
+    \mBreak
+    
+
+%{
+    \mBreak
+    
+    % page 3 line 2
+    es8 c16( d es f es d) c( d es f) |
+    \repeat tremolo 12 { es16 } |
+    es8 c16( d es f es d) c( cis d es) |
+    \repeat tremolo 12 { d16 } |
+    \mBreak
+
+    % page 3 line 3
+    c8 c16( d es f es d) c( d c h) |
+    c8 r8 r4 \repeat tremolo 4 { des16-> } |
+    des8 r8 r4 r |
+    r4 r des'4->~ |
+    des8\> b,16(\! c des es des c) b(\> d e b') |
+    \bar "||" \key f \major \tempo "Tempo I" 4 = 120
+    d2.\f |
+    e2( dis4 |
+    \mBreak
+
+    % page 3 line 4
+    d2.)~ |
+    d4 e( dis |
+    d2)\cresc e4( |
+    dis4) d2 |
+    e8( dis) d2->\ff\>~ |
+    d2.\pp
+    \mark #15
+    R2.*2 |
+    gis,,,2.->~ |
+    gis2.
+    R2.*2 |
+    b2.->~ |
+    b2. |
+    e2.\mf |
+    h2.
+    \mBreak
+    
+    % page 3 line 5
+    f''16\f( g f es) es( f es d) d( es f g) |
+    as16( b as g) g( as g f) f( g f es) |
+    f8 r8 r4 r |
+    R2. |
+    \bar "||"
+    \mark #16
+    d'8\sf r8 r4 r |
+    r4 r d\ff |
+    d8 r8 r4 r |
+    \mBreak
+    
+    % page 3 line 6
+    r4 r d |
+    d8\sf r8 r4 r |
+    r4 r a16\mf\< h a g |
+    a8\sf r8 r4 r |
+    r4 r h16\mf\< a h c |
+    c2.->\ff |
+    h2.\> |
+    d16\f e d cis c d c h h c h a |
+    \mBreak
+    
+    % page 3 line 7
+    a16 h a g g\> a g f f g f e |
+    d8\! r8 r4 r |
+    h'8.-.\mp\< h16-. h8-. h8-. h8-. h8-. |
+    d8\! r8 r4\cresc r |
+    h8.-. h16-. \repeat tremolo 4 { h8-. } |
+    \mark #17
+    d8\sf d\fff f\pesante f f g,16( d) |
+    f8 r8 r4 r |
+    \mBreak
+    
+    % page 3 line 8
+    r8 f' f f f g,16( d) |
+    f8 r8 r4 r |
+    r8 a\pesante g b a e16( a,) |
+    d8 r8 r4 r |
+    r8 a'\pesante g b a e16( a,) |
+    d8 r8 r4 r |
+    r4 r r8 \tuplet 3/2 { d16(\mf\< es e)\! } |
+    \mBreak
+    
+    % page 3 line 9
+    f16( g f e d e d c b c b a) |
+    g16( f es) r r4 r8 \tuplet 3/2 { g16(\< as a)\! }
+    b16( c b a g a g f es f es d) |
+    c8 c'(\mf b) c \acciaccatura { e } d( c16 b) |
+    \mBreak
+    
+    % page 3 line 10
+    c8 c( b) c \acciaccatura { e } d( c16 b) |
+    a8 r r \tuplet 3/2 { e'16\f f fis } g8->( e) |
+    a8-> r r \tuplet 3/2 { e16 f fis } g8->( e) |
+    a8 r8 r4 r |
+    r4 b8 r h r |
+    \mark #18 
+    c8\f r8 r4 r |
+    r4 r f,16(\< g f g)\! |
+    \mBreak
+    
+    % page 3 line 11
+    a8 r8 r4 r |
+    r4 r f16( g a b) |
+    a2.(->\mf |
+    f2 a4) |
+    a2.~ |
+    a2. |
+    b2.~ |
+    b2. |
+    a4.( c8 d4)~ |
+    d2.\< |
+    es2.(\! |
+    d2.) |
+    cis2.( |
+    d4\>) (a2)\! |
+    \mBreak
+    
+    % page 3 line 12
+    des2.( |
+    as2 f4) |
+    b4.( c8 des4~ |
+    des4\>) c2 |
+    \mark #19
+    a8-.\mf a16-. a16-. \repeat unfold 2 { a8-. a16-. a16-. } |
+    \repeat unfold 3 { a8-. a16-. a16-. } |
+    \repeat unfold 3 { c8-. c16-. c16-. } |
+    \repeat unfold 2 { c8-. c16-. c16-. } b8-. b16-. b16-. |
+    \mBreak
+
+    % page 3 line 13
+    \repeat unfold 3 { a8-. a16-. a16-. } |
+    \repeat unfold 3 { a8-. a16-. a16-. } |
+    \repeat unfold 3 { c8-. c16-. c16-. } |
+    \repeat unfold 2 { c8 c16 c16 } b8 b16 b16 |
+    \repeat unfold 3 { a8 a16 a16 } |
+    \mBreak
+    
+    % page 3 line 14
+    \repeat unfold 3 { a8 a16 a16 } |
+    a8 a16 a16 as8 as16 as16 a8 a16 a16 |
+    \repeat unfold 3 { as8 as16 as16 } |
+    ges8 r8 r4 r |
+    r4 r8 ges16\p\< ges b8 ges16 ges\! |
+    as8 r8 r4 r |
+    R2.*2 |
+    \mBreak
+    
+    % page 4 line 1
+    r4 r8 ges16 ges b8 ges16 ges |
+    as8 c16 c as8 c16 c as8\< f16 f |
+    e8\f e16 e e8 e16 e e8(\> f8) |
+    as8\mf c16 c as8 c16 c as8\< f16 f |
+    e8\f e16\pesante e e8 e16 e e8(\> f8) |
+    \mBreak
+
+    % page 4 line 2
+    as8\mf as16 as as8 as16 as as8 as16 as |
+    as8 as16 as as8\> as16 as as8\! r8 |
+    \mark #20
+    R2.*14 |
+    \tuplet 3/2 { f,8\p\cresc f f } \tuplet 3/2 { \repeat tremolo 3 f8 } \tuplet 3/2 { \repeat tremolo 3 f8 } |
+    \repeat unfold 3 \tuplet 3/2 { \repeat tremolo 3 f8 } |
+    \mark #21
+    des''8\sf b8\ff b\pesante b b r8 |
+    R2. |
+    \mBreak
+    
+    % page 4 line 3
+    des8\sf b8\pesante b b b r8 |
+    R2. |
+    des8\sf\pocoAnimato r8 r4 r4 |
+    r8 g,16(\f\< a) b( c b a) a( b a g)\! |
+    f16( g f es) g8 r8 r4 |
+    r8 g16(\f\< a) b( c b a) a( b a g)\! |
+    \mBreak
+    
+    % page 4 line 4
+    b8 g16(\cresc a) b( c b a) a( b a g) |
+    b8 g16( a) b( c b a) g( b c des) |
+    es8\fff b16-. b-. es8 b8 es,8 b16-. b-. |
+    es8 b es, b16 b es8 b |
+    r4 es''8\sf r8\lunga r4\fermata |
+    \bar "||" \time 4/4 
+    \mBreak
+    
+    % page 4 line 5
+    \tempo "Tempo del comincio"
+    R1*2 |
+    R1*2\moltoRit |
+    \mark #22
+    R1*2\pocoAPocoPiuAnimato | % FIXME: Why does that not appear after V?
+    r4 g,,4\p\<~ g2\! |
+    g4( ges f a\> |
+    d8)\! r8 r4 \tuplet 3/2 { h'8(\< c cis } \tuplet 3/2 { d dis e)\! } |
+    f8 r8 r4 \tuplet 3/2 { h,8(\< c cis } \tuplet 3/2 { d e eis)\! } |
+    \bar "||" \key d \major
+    \mBreak
+
+    % page 4 line 6
+    \tempo "Andante mosso" 4 = 100
+    fis8 r8 r4 r2 |
+    \tuplet 3/2 { h,8(\f c cis } \tuplet 3/2 { d dis e } \tuplet 3/2 { eis,\< fis g } \tuplet 3/2 { gis a ais\!) } |
+    h8 r8 r4 r2 |
+    \tuplet 3/2 { h8( c cis } \tuplet 3/2 { d dis e } \tuplet 3/2 { eis,\< fis g } \tuplet 3/2 { gis a ais\!) } |
+    h8 r8 r4 r2 |
+    R1*2
+    \mBreak
+    
+    % page 4 line 7
+    \tuplet 3/2 { h8( c cis } \tuplet 3/2 { d dis e } \tuplet 3/2 { eis,\< fis g } \tuplet 3/2 { gis ais h\!) } |
+    \mark #23
+    a16( d, dis e eis fis g gis a ais h c cis d) r8 |
+    r2 \tuplet 3/2 { d8( cis c } \tuplet 3/2 { h ais h) }
+    \mBreak
+    
+    % page 4 line 8
+    c16( d, dis e eis fis g gis a ais h c cis d) r8 |
+    r2 \tuplet 3/2 { d8( cis c } \tuplet 3/2 { h ais h) } |
+    d16( g, gis a ais h c cis d) r16 r8 r4 |
+    \mBreak
+    
+    % page 4 line 9
+    r4 d16( dis e f) \tuplet 3/2 { e8( dis d } \tuplet 3/2 { cis c h) } |
+    as16( f g as a b h c cis d) r8 r4 |
+    r4 r16 d( dis e) \tuplet 3/2 { f8( cis d } \tuplet 3/2 { dis e f) } |
+    \mBreak
+
+    % page 4 line 10
+    \mark 24
+    \tuplet 3/2 { g8( fis f } \tuplet 3/2 { e es d) } \tuplet 3/2 { f( e es } \tuplet 3/2 { d cis d)} |
+    \tuplet 3/2 { b8( c cis } \tuplet 3/2 { d dis e) } \tuplet 3/2 { f( f, fis } \tuplet 3/2 { g gis a) } |
+    \tuplet 3/2 { b8( d cis } \tuplet 3/2 { c h b) } \tuplet 3/2 { a( e' d } \tuplet 3/2 { cis c b) } |
+    \mBreak
+    
+    % page 4 line 11
+    \tuplet 3/2 { f'8( e es } \tuplet 3/2 { d c b) } \tuplet 3/2 { d( cis c } \tuplet 3/2 { h ais a) } |
+    d1->\cresc\string~ |
+    d1 |
+    d1~ |
+    d1 |
+    \mark #25
+    \tempo "Allegro molto"
+    fis,16(\fff d \repeat unfold 6 { fis d } fis d) |
+    \mBreak
+    
+    % page 4 line 12
+    a'16( f \repeat unfold 6 { a16 f } g d) |
+    fis16( d \repeat unfold 6 { fis d } fis d) |
+    a'16( f \repeat unfold 6 { a f } g d) |
+    \mBreak
+    
+    % page 4 line 13
+    fis16(\legato d \repeat unfold 6 { fis d } fis d) |
+    \repeat tremolo 4 { fis16( d } \repeat tremolo 4 { fis16 d) } |
+    \repeat tremolo 4 { fis16( a } \repeat tremolo 4 { fis16 a) } |
+    \repeat tremolo 4 { fis16( a } \repeat tremolo 4 { fis16 a) } |
+    fis8\sf r8 r4 r2 |
+    \bar "|."
+%}
+  }
+}
 
 \bookpart {
   \header{
@@ -999,7 +1349,7 @@ clarinet_II_in_B_Music = {
         \clarinet_II_in_B_Music
         {
           % \transpose b a
-          % \clarinet_II_in_A_part_two_Music
+          \clarinet_II_in_A_part_two_Music
         }
       }
     }
