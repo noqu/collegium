@@ -1116,11 +1116,11 @@ clarinet_II_in_A_part_two_Music = {
     a8 r8 r4 r |
     r4 f'8 r as r |
     \mark #18 
-    a8\sf r8 r4 r | % Clarinet 1 has \f here?
+    a8\sf r8 r4 r | % FIXME: Clarinet 1 has \f here?
     r4 r f,16(\< g f g)\! |
     a8 r8 r4 r |
     r4 r f16( g a b) |
-    c2.\>~ | % Apparently this isn't an accent in clarinet 1, too
+    c2.\>~ | % FIXME: Apparently this isn't an accent in clarinet 1, too
     c2.\mf |
     \mBreak
     
@@ -1169,43 +1169,38 @@ clarinet_II_in_A_part_two_Music = {
     
     % page 4 line 1
     r4 r8 b16 b des8 b16 b |
+    c8 f16 f c8 f16 f c8\< c16 c |
+    des8\f des16 des des8 des16 des des4\> |
+    c8\mf f16 f c8 f16 f c8\< c16 c |
+    des8\f des16 des des8 des16 des des4\> | % FIXME: Clarinet 1 has pesante here? Probably belongs to other line
     \mBreak
-%{
     
-   
-    as8 c16 c as8 c16 c as8\< f16 f |
-    e8\f e16 e e8 e16 e e8(\> f8) |
-    as8\mf c16 c as8 c16 c as8\< f16 f |
-    e8\f e16\pesante e e8 e16 e e8(\> f8) |
-    \mBreak
-
     % page 4 line 2
-    as8\mf as16 as as8 as16 as as8 as16 as |
-    as8 as16 as as8\> as16 as as8\! r8 |
+    des8 des16 des des8 des16 des des8 des |
+    des8 des16 des des8\> des16 des as8\! r8 |
     \mark #20
     R2.*14 |
-    \tuplet 3/2 { f,8\p\cresc f f } \tuplet 3/2 { \repeat tremolo 3 f8 } \tuplet 3/2 { \repeat tremolo 3 f8 } |
-    \repeat unfold 3 \tuplet 3/2 { \repeat tremolo 3 f8 } |
+    \tuplet 3/2 { des,8-.\p\cresc des-. des-. } \tuplet 3/2 { \repeat tremolo 3 des8-. } \tuplet 3/2 { \repeat tremolo 3 des8-. } | % FIXME: Here staccato - also in clarinet 1?
+    \repeat unfold 3 \tuplet 3/2 { \repeat tremolo 3 des8-. } |
     \mark #21
-    des''8\sf b8\ff b\pesante b b r8 |
+    f'8\sf b8\ff b\pesante b b r8 |
     R2. |
     \mBreak
-    
+
     % page 4 line 3
-    des8\sf b8\pesante b b b r8 |
-    R2. |
-    des8\sf\pocoAnimato r8 r4 r4 |
+    f8\sf b b b b r8 |
+    des8\sf r8\pocoAnimato r4 r4 | % FIXME: Should the poco animato move in 1st clarinet, too?
     r8 g,16(\f\< a) b( c b a) a( b a g)\! |
     f16( g f es) g8 r8 r4 |
     r8 g16(\f\< a) b( c b a) a( b a g)\! |
     \mBreak
-    
+
     % page 4 line 4
     b8 g16(\cresc a) b( c b a) a( b a g) |
     b8 g16( a) b( c b a) g( b c des) |
-    es8\fff b16-. b-. es8 b8 es,8 b16-. b-. |
-    es8 b es, b16 b es8 b |
-    r4 es''8\sf r8\lunga r4\fermata |
+    des8\fff g,16-. g-. c8 g des8 g,16-. g-. |
+    c8 g des g,16 g c8 g |
+    r4 b''8\sf r8\lunga r4\fermata |
     \bar "||" \time 4/4 
     \mBreak
     
@@ -1215,74 +1210,73 @@ clarinet_II_in_A_part_two_Music = {
     R1*2\moltoRit |
     \mark #22
     R1*2\pocoAPocoPiuAnimato | % FIXME: Why does that not appear after V?
-    r4 g,,4\p\<~ g2\! |
-    g4( ges f a\> |
-    d8)\! r8 r4 \tuplet 3/2 { h'8(\< c cis } \tuplet 3/2 { d dis e)\! } |
-    f8 r8 r4 \tuplet 3/2 { h,8(\< c cis } \tuplet 3/2 { d e eis)\! } |
+    r4 d,,4\p\<( es2)\! |
+    e2( f\> |
+    f8)\! r8 r4 \tuplet 3/2 { d'8(\mf\< dis e } \tuplet 3/2 { f fis g)\! } | % FIXME: Also missing mf in clarinet 1?
+    gis8 r8 r4 \tuplet 3/2 { d8(\< dis e } \tuplet 3/2 { f g gis)\! } |
     \bar "||" \key d \major
     \mBreak
 
     % page 4 line 6
     \tempo "Andante mosso" 4 = 100
-    fis8 r8 r4 r2 |
-    \tuplet 3/2 { h,8(\f c cis } \tuplet 3/2 { d dis e } \tuplet 3/2 { eis,\< fis g } \tuplet 3/2 { gis a ais\!) } |
     h8 r8 r4 r2 |
-    \tuplet 3/2 { h8( c cis } \tuplet 3/2 { d dis e } \tuplet 3/2 { eis,\< fis g } \tuplet 3/2 { gis a ais\!) } |
-    h8 r8 r4 r2 |
-    R1*2
+    \tuplet 3/2 { d,8(\f dis e } \tuplet 3/2 { eis fis g } \tuplet 3/2 { gis\< a ais } \tuplet 3/2 { h c cis\!) } |
+    d8 r8 r4 r2 |
+    \tuplet 3/2 { d,8( dis e } \tuplet 3/2 { eis fis g } \tuplet 3/2 { gis\< a ais } \tuplet 3/2 { h c cis\!) } |
+    d8 r8 r4 r2 |
     \mBreak
     
     % page 4 line 7
-    \tuplet 3/2 { h8( c cis } \tuplet 3/2 { d dis e } \tuplet 3/2 { eis,\< fis g } \tuplet 3/2 { gis ais h\!) } |
+    R1*2
+    \tuplet 3/2 { d,8( dis e } \tuplet 3/2 { eis fis g } \tuplet 3/2 { gis\< a ais } \tuplet 3/2 { h cis d\!) } |
     \mark #23
-    a16( d, dis e eis fis g gis a ais h c cis d) r8 |
-    r2 \tuplet 3/2 { d8( cis c } \tuplet 3/2 { h ais h) }
+    c8 r r4 r r16 d,( dis e |
+    eis16 fis\< g gis a ais h c\!) \tuplet 3/2 { h8( ais a } \tuplet 3/2 { gis g fis) } |
     \mBreak
     
     % page 4 line 8
-    c16( d, dis e eis fis g gis a ais h c cis d) r8 |
-    r2 \tuplet 3/2 { d8( cis c } \tuplet 3/2 { h ais h) } |
-    d16( g, gis a ais h c cis d) r16 r8 r4 |
+    a8 r r4 r r16 d,(\< dis e |
+    eis16 fis g gis a ais h c\!) \tuplet 3/2 { h8( ais a } \tuplet 3/2 { gis g fis) } |
+    f8 r 8 r4 r r16 g(\< gis a |
+    ais16 h c cis) d\! r16 r8 \tuplet 3/2 { gis,( g f } \tuplet 3/2 { e dis d) } |
     \mBreak
     
     % page 4 line 9
-    r4 d16( dis e f) \tuplet 3/2 { e8( dis d } \tuplet 3/2 { cis c h) } |
-    as16( f g as a b h c cis d) r8 r4 |
-    r4 r16 d( dis e) \tuplet 3/2 { f8( cis d } \tuplet 3/2 { dis e f) } |
+    f8 r r4 r f16( fis g as |
+    a16\< b h c cis d)\! r8 \tuplet 3/2 { a8( e f } \tuplet 3/2 { g gis a) } |
+    \mark 24
+    \tuplet 3/2 { b8( a as } \tuplet 3/2 { g fis f) } \tuplet 3/2 { a( gis g } \tuplet 3/2 { f e f) } |
     \mBreak
 
     % page 4 line 10
-    \mark 24
-    \tuplet 3/2 { g8( fis f } \tuplet 3/2 { e es d) } \tuplet 3/2 { f( e es } \tuplet 3/2 { d cis d)} |
-    \tuplet 3/2 { b8( c cis } \tuplet 3/2 { d dis e) } \tuplet 3/2 { f( f, fis } \tuplet 3/2 { g gis a) } |
-    \tuplet 3/2 { b8( d cis } \tuplet 3/2 { c h b) } \tuplet 3/2 { a( e' d } \tuplet 3/2 { cis c b) } |
+    \tuplet 3/2 { d8( es e } \tuplet 3/2 { f fis g) } \tuplet 3/2 { a( d, dis } \tuplet 3/2 { e f fis) } |
+    \tuplet 3/2 { g8( b a } \tuplet 3/2 { as g fis) } \tuplet 3/2 { f( g f } \tuplet 3/2 { e es d) } |
+    \tuplet 3/2 { d'8( cis c } \tuplet 3/2 { b a g) } \tuplet 3/2 { b( a as } \tuplet 3/2 { g fis f) } |
     \mBreak
     
     % page 4 line 11
-    \tuplet 3/2 { f'8( e es } \tuplet 3/2 { d c b) } \tuplet 3/2 { d( cis c } \tuplet 3/2 { h ais a) } |
-    d1->\cresc\string~ |
-    d1 |
-    d1~ |
-    d1 |
+    g1->\cresc\string~ |
+    g1 |
+    f1~ |
+    f1 |
     \mark #25
     \tempo "Allegro molto"
-    fis,16(\fff d \repeat unfold 6 { fis d } fis d) |
-    \mBreak
-    
-    % page 4 line 12
+    fis16(\fff d \repeat unfold 6 { fis d } fis d) |
     a'16( f \repeat unfold 6 { a16 f } g d) |
-    fis16( d \repeat unfold 6 { fis d } fis d) |
-    a'16( f \repeat unfold 6 { a f } g d) |
+    \repeat tremolo 4 { fis16( d } \repeat tremolo 4 { fis16 d) } |
     \mBreak
-    
-    % page 4 line 13
-    fis16(\legato d \repeat unfold 6 { fis d } fis d) |
+
+    % page 4 line 12
+    \repeat tremolo 4 { a'16( f } \repeat unfold 3 { a f } g d) |
+    \repeat tremolo 4 { fis16(\legato d } \repeat tremolo 4 { fis16 d) } |
     \repeat tremolo 4 { fis16( d } \repeat tremolo 4 { fis16 d) } |
     \repeat tremolo 4 { fis16( a } \repeat tremolo 4 { fis16 a) } |
     \repeat tremolo 4 { fis16( a } \repeat tremolo 4 { fis16 a) } |
     fis8\sf r8 r4 r2 |
     \bar "|."
-%}
+    \mBreak
+    
+    % FIXME: Clarinet 1 has 507 bars, clarinet 2 only 505 ?
   }
 }
 
