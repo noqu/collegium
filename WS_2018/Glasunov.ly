@@ -1,6 +1,3 @@
-%{
-%}
-
 \version "2.18.2"
 \language "deutsch"
 
@@ -34,6 +31,7 @@ lunga = _\markup {\italic {"lunga"} }
 string = ^\markup {\italic {"string."} }
 legato = _\markup {\italic {"legato"} }
 solo = ^\markup { "Solo" }
+sic = ^\markup { \tiny { "sic!" } }
 
 
 clarinet_I_in_A_part_one_Music = {
@@ -44,7 +42,8 @@ clarinet_I_in_A_part_one_Music = {
     \time 4/4
     \tempo "Andante" 4 = 72
 
-    % page 1 line 1
+    % cl 1 page 1 line 1
+    \barNumberCheck #1
     R1*13 |
     d1->\f\>~ |
     d1~ |
@@ -63,7 +62,8 @@ clarinet_I_in_A_part_one_Music = {
     R1 |
     \mBreak
     
-    % page 1 line 2
+    % cl 1 page 1 line 2
+    \barNumberCheck #39
     g''4.\p\solo g8 g( f e d) |
     c4( g') e2 |
     g4. g8 g( f e d) |
@@ -78,7 +78,8 @@ clarinet_I_in_A_part_one_Music = {
     g4( b a g) |
     \mBreak
     
-    % page 1 line 3
+    % cl 1 page 1 line 3
+    \barNumberCheck #52
     r4 h~\f \tuplet 3/2 { h8 h\> h } \tuplet 3/2 { h8 h\! h }  |
     b2 b2 \> |
     R1\! |
@@ -90,14 +91,16 @@ clarinet_I_in_A_part_one_Music = {
     a8-. a16( h) c d c h a h a g |
     \mBreak
     
-    % page 1 line 4
+    % cl 1 page 1 line 4
+    \barNumberCheck #60
     a8-. r r a16( h) c d c h |
-    a16 h a c h\< c h c %{ Fliegendreck, kein Staccato %} h c h c |
+    a16 h a c h\< c h c\sic %{ SIC: Neither clarinet 2 nor score have staccato here %} h c h c |
     d8-.\sf a16( h) c d c h a h a g |
     a8 a16( h) c d c h a h a g |
     \mBreak
     
-    % page 1 line 5
+    % cl 1 page 1 line 5
+    \barNumberCheck #64
     a8 r r a16( h) c d c h |
     a16 h a c h\< c h c h c h c |
     c8\sf c, b4 b8( a) |
@@ -105,7 +108,8 @@ clarinet_I_in_A_part_one_Music = {
     b8 b b( a) b16( a g8) |
     \mBreak
 
-    % page 1 line 6
+    % cl 1 page 1 line 6
+    \barNumberCheck #69
     b8 b b4 c8( e) |
     R2.*4 |
     \mark #3
@@ -117,7 +121,8 @@ clarinet_I_in_A_part_one_Music = {
     c8 c,-. b c d( c16 b) |
     \mBreak
     
-    % page 1 line 7
+    % cl 1 page 1 line 7
+    \barNumberCheck #80
     a8-. a-. g a b( a16 g) |
     f8 r r4 r |
     r4 r b'16(\< c b c)\! |
@@ -128,7 +133,8 @@ clarinet_I_in_A_part_one_Music = {
     a8 r8 r4 r |
     \mBreak
     
-    % page 1 line 8
+    % cl 1 page 1 line 8
+    \barNumberCheck #88
     r4 r h16(\< a h c) |
     d2.\ff\>~ |
     d8\! r8 r4 r |
@@ -141,7 +147,8 @@ clarinet_I_in_A_part_one_Music = {
     a8 g16( d f8) r8 r4 |
     \mBreak
     
-    % page 1 line 9
+    % cl 1 page 1 line 9
+    \barNumberCheck #99
     r8. a16\pesante g8 a \acciaccatura { c8 } h( a16 g) |
     a8 g16( d f8) r8 r4 |
     r8. f16\pesante e8 f \acciaccatura { a8 } g( f16 e) |
@@ -150,7 +157,8 @@ clarinet_I_in_A_part_one_Music = {
     f8 e16( a, d8) r8 r4 |
     \mBreak
     
-    % page 1 line 10
+    % cl 1 page 1 line 10
+    \barNumberCheck #105
     R2. |
     r8\solo d16\p\<( e f g f e d e d c\! ) |
     b16( a g8) r4 r |
@@ -159,7 +167,8 @@ clarinet_I_in_A_part_one_Music = {
     f8 r8 r4 g |
     \mBreak
     
-    % page 1 line 11
+    % cl 1 page 1 line 11
+    \barNumberCheck #111
     fis8 r8 r4 c'8(-> a) |
     d8 r8 r4 c8(-> a) |
     d8 r8 r4 r |
@@ -168,7 +177,8 @@ clarinet_I_in_A_part_one_Music = {
     b8 b16 b b8 b16 b b8\< b16 b |
     \mBreak
     
-    % page 1 line 12
+    % cl 1 page 1 line 12
+    \barNumberCheck #117
     b8 b16 b b8 b16 b b8 b16 b\! |
     b8 b16 b b8 b16 b b8 b16 b |
     g8 r8 r4 r |
@@ -185,7 +195,8 @@ clarinet_I_in_A_part_one_Music = {
 clarinet_I_in_B_Music = {
   \relative c' {
 
-    % page 2 line 1
+    % cl 1 page 2 line 1
+    \barNumberCheck #134
     g''2.\p\solo~ |
     g2.~ |
     \bar "||"
@@ -202,7 +213,8 @@ clarinet_I_in_B_Music = {
     a4 e8( g a4~ |
     \mBreak
     
-    % page 2 line 2
+    % cl 1 page 2 line 2
+    \barNumberCheck #145
     a8) h( c d e a) |
     g4\mf e8( f g4~ |
     g8) g( f e d c) |
@@ -214,7 +226,8 @@ clarinet_I_in_B_Music = {
     a4) g2(\! |
     \mBreak
     
-    % page 2 line 3
+    % cl 1 page 2 line 3
+    \barNumberCheck #154
     \mark #6
     c8) r8 r4 r |
     R2. |
@@ -230,7 +243,8 @@ clarinet_I_in_B_Music = {
     as4(\mf f8 as) as4(\> |
     \mBreak
 
-    % page 2 line 4
+    % cl 1 page 2 line 4
+    \barNumberCheck #174
     g8) r8\! r4 r |
     as4( f8 as) as4(\> |
     g8) r8\! r4 r |
@@ -247,7 +261,8 @@ clarinet_I_in_B_Music = {
     d2. |
     \mBreak
     
-    % page 2 line 5
+    % cl 1 page 2 line 5
+    \barNumberCheck #194
     c4. h8 a4~ |
     a2.) |
     des'2(\mf c4 |
@@ -265,7 +280,8 @@ clarinet_I_in_B_Music = {
     c, g'\> c,)\! |
     \mBreak
     
-    % page 2 line 6
+    % cl 1 page 2 line 6
+    \barNumberCheck #208
     e4( c e |
     c4 \<e c)\! |
     g'4( c, g' |
@@ -279,7 +295,8 @@ clarinet_I_in_B_Music = {
     g8(\mf e) a( e) g( e) |
     \mBreak
     
-    % page 2 line 7
+    % cl 1 page 2 line 7
+    \barNumberCheck #219
     a8(\> e) g( e) a( e)\! |
     R2.*2 |
     \bar "||" \tempo "Allegro con brio (come prima)"
@@ -295,7 +312,8 @@ clarinet_I_in_B_Music = {
     c4( e2)
     \mBreak
     
-    % page 2 line 8 (start)
+    % cl 1 page 2 line 8 (start)
+    \barNumberCheck #243
     c4 c8( d) c( h) |
     c4 c8( d) c( h) |
     a8 r8 r4 r |
@@ -317,13 +335,14 @@ clarinet_I_in_A_part_two_Music = {
   \relative c' {
     \transposition a
 
-    % page 2 line 8 (continued)
+    % cl 1 page 2 line 8 (continued)
     r4 a''8(\f fis) h d |
     cis8 h a( fis) h d |
     cis8 h a( fis) h4 |
     \mBreak
 
-    % page 2 line 9
+    % cl 1 page 2 line 9
+    \barNumberCheck #259
     fis4 a8( fis) h4 |
     fis4-> a-> fis-> |
     h8-> r8 r4 r |
@@ -337,7 +356,8 @@ clarinet_I_in_A_part_two_Music = {
     fis8(\> cis) e( cis) fis( cis) |
     \mBreak
     
-    % page 2 line 10
+    % cl 1 page 2 line 10
+    \barNumberCheck #270
     a'8(\ff fis) h( d) c-. h-. |
     a8( fis) h( d) c-. h-. |
     a8( fis) h( fis) a( fis) |
@@ -348,7 +368,8 @@ clarinet_I_in_A_part_two_Music = {
     f2 f32(\<\stopTrillSpan g a h c d e f |
     \mBreak
 
-    % page 2 line 11
+    % cl 1 page 2 line 11
+    \barNumberCheck #278
     g2.)\mf\startTrillSpan~ |
     g2~ g8\stopTrillSpan \tuplet 6/4 { g32( a h c d e } |
     f2.)\startTrillSpan~ |
@@ -360,7 +381,8 @@ clarinet_I_in_A_part_two_Music = {
     c2\stopTrillSpan\< c32( d e fis g a h c)\! |
     \mBreak
     
-    % page 2 line 12
+    % cl 1 page 2 line 12
+    \barNumberCheck #286
     a8( fis) h( d) c-. h-. |
     a8( fis) e( g) fis( a) |
     g( e) a( c) h-. a-. |
@@ -370,7 +392,8 @@ clarinet_I_in_A_part_two_Music = {
     r4 r4 r8 d,\mf |
     \mBreak
     
-    % page 2 line 13
+    % cl 1 page 2 line 13
+    \barNumberCheck #293
     d8. d16 d4\>~ d8\! a''8 |
     \pitchedTrill a2_~ \startTrillSpan b a8\stopTrillSpan r8 |
     \bar "||" \key a \major
@@ -382,7 +405,8 @@ clarinet_I_in_A_part_two_Music = {
     cis8. cis16 cis4~ cis8 d\f |
     \mBreak
     
-    % page 2 line 14
+    % cl 1 page 2 line 14
+    \barNumberCheck #304
     fis8. fis16 fis4.\< a8\! |
     cis8. cis16 cis4~ cis8 d\ff |
     \mark #13
@@ -399,7 +423,8 @@ clarinet_I_in_A_part_two_Music = {
     cisis2 gis'4)\! |
     \mBreak
     
-    % page 3 line 1
+    % cl 1 page 3 line 1
+    \barNumberCheck #316
     fis2( dis4) |
     d2->\mf(~ d8\> dis)\! |
     fis4 dis8( eis fis4~\>) |
@@ -413,7 +438,8 @@ clarinet_I_in_A_part_two_Music = {
     \repeat tremolo 12 { des16 } |
     \mBreak
     
-    % page 3 line 2
+    % cl 1 page 3 line 2
+    \barNumberCheck #325
     des8 b16( c des es des c) b( c des d) |
     \repeat tremolo 12 { es16 } |
     es8 c16( d es f es d) c( d es f) |
@@ -422,7 +448,8 @@ clarinet_I_in_A_part_two_Music = {
     \repeat tremolo 12 { d16\< } |
     \mBreak
 
-    % page 3 line 3
+    % cl 1 page 3 line 3
+    \barNumberCheck #331
     c8\! c16( d es f es d) c( d c h) |
     c8 r8 r4 \repeat tremolo 4 { des16-> } |
     des8 r8 r4 r |
@@ -433,7 +460,8 @@ clarinet_I_in_A_part_two_Music = {
     e2( dis4 |
     \mBreak
 
-    % page 3 line 4
+    % cl 1 page 3 line 4
+    \barNumberCheck #338
     d2.)~ |
     d4 e( dis |
     d2)\cresc e4( |
@@ -445,13 +473,14 @@ clarinet_I_in_A_part_two_Music = {
     gis,,,2.\p->~ |
     gis2.
     R2.*2 |
-    b2.->~ | % FIXME: Shouldn't that also have a \p like in 2nd clarinet?
+    b2.\p\sic->~ | % SIC: clarinet 2 and score have another p here
     b2. |
     e2.\mf |
     h2.
     \mBreak
     
-    % page 3 line 5
+    % cl 1 page 3 line 5
+    \barNumberCheck #354
     f''16\f( g f es) es( f es d) d( es f g) |
     as16( b as g) g( as g f) f( g f es) |
     f8 r8 r4 r |
@@ -463,7 +492,8 @@ clarinet_I_in_A_part_two_Music = {
     d8 r8 r4 r |
     \mBreak
     
-    % page 3 line 6
+    % cl 1 page 3 line 6
+    \barNumberCheck #361
     r4 r d |
     d8\sf r8 r4 r |
     r4 r a16\mf\< h a g |
@@ -474,7 +504,8 @@ clarinet_I_in_A_part_two_Music = {
     d16\f e d cis c d c h h c h a |
     \mBreak
     
-    % page 3 line 7
+    % cl 1 page 3 line 7
+    \barNumberCheck #369
     a16 h a g g\> a g f f g f e |
     d8\! r8 r4 r |
     h'8.-.\mp\< h16-. h8-. h8-. h8-. h8-. |
@@ -485,7 +516,8 @@ clarinet_I_in_A_part_two_Music = {
     f8 r8 r4 r |
     \mBreak
     
-    % page 3 line 8
+    % cl 1 page 3 line 8
+    \barNumberCheck #376
     r8 f' f f f g,16( d) |
     f8 r8 r4 r |
     r8 a\pesante g b a e16( a,) |
@@ -495,29 +527,32 @@ clarinet_I_in_A_part_two_Music = {
     r4 r r8 \tuplet 3/2 { d16(\mf\< es e)\! } |
     \mBreak
     
-    % page 3 line 9
+    % cl 1 page 3 line 9
+    \barNumberCheck #383
     f16( g f e d e d c b c b a) |
     g16( f es) r r4 r8 \tuplet 3/2 { g16(\< as a)\! }
     b16( c b a g a g f es f es d) |
     c8 c'(\mf b) c \acciaccatura { e } d( c16 b) |
     \mBreak
     
-    % page 3 line 10
+    % cl 1 page 3 line 10
+    \barNumberCheck #387
     c8 c( b) c \acciaccatura { e } d( c16 b) |
     a8 r r \tuplet 3/2 { e'16\f f fis } g8->( e) |
     a8-> r r \tuplet 3/2 { e16 f fis } g8->( e) |
     a8 r8 r4 r |
     r4 b8 r h r |
     \mark #18 
-    c8\f r8 r4 r |
+    c8\sf\sic %{ SIC: clarinet 2 and score have sf here %} r8 r4 r |
     r4 r f,16(\< g f g)\! |
     \mBreak
     
-    % page 3 line 11
+    % cl 1 page 3 line 11
+    \barNumberCheck #394
     a8 r8 r4 r |
     r4 r f16( g a b) |
-    a2.(->\mf |
-    f2 a4) |
+    a2.(\>\sic | % SIC: Looks like an accent in clarinet 1 but is a decrescendo in clarinet 2 and score
+    f2\mf a4) |
     a2.~ |
     a2. |
     b2.~ |
@@ -530,7 +565,8 @@ clarinet_I_in_A_part_two_Music = {
     d4\>) (a2)\! |
     \mBreak
     
-    % page 3 line 12
+    % cl 1 page 3 line 12
+    \barNumberCheck #408
     des2.( |
     as2 f4) |
     b4.( c8 des4~ |
@@ -542,15 +578,18 @@ clarinet_I_in_A_part_two_Music = {
     \repeat unfold 2 { c8-. c16-. c16-. } b8-. b16-. b16-. |
     \mBreak
 
-    % page 3 line 13
-    \repeat unfold 3 { a8-. a16-. a16-. } |
-    \repeat unfold 3 { a8-. a16-. a16-. } |
-    \repeat unfold 3 { c8-. c16-. c16-. } |
+    % cl 1 page 3 line 13
+    \barNumberCheck #416
+    % SIC: clarinet 2 and score only have staccato for the preceding 4 bars
+    a8\sic a16 a16 \repeat unfold 2 { a8 a16 a16 } |
+    \repeat unfold 3 { a8 a16 a16 } |
+    \repeat unfold 3 { c8 c16 c16 } |
     \repeat unfold 2 { c8 c16 c16 } b8 b16 b16 |
     \repeat unfold 3 { a8 a16 a16 } |
     \mBreak
     
-    % page 3 line 14
+    % cl 1 page 3 line 14
+    \barNumberCheck #421
     \repeat unfold 3 { a8 a16 a16 } |
     a8 a16 a16 as8 as16 as16 a8 a16 a16 |
     \repeat unfold 3 { as8 as16 as16 } |
@@ -560,36 +599,41 @@ clarinet_I_in_A_part_two_Music = {
     R2.*2 |
     \mBreak
     
-    % page 4 line 1
+    % cl 1 page 4 line 1
+    \barNumberCheck #429
     r4 r8 ges16 ges b8 ges16 ges |
     as8 c16 c as8 c16 c as8\< f16 f |
     e8\f e16 e e8 e16 e e8(\> f8) |
     as8\mf c16 c as8 c16 c as8\< f16 f |
-    e8\f e16\pesante e e8 e16 e e8(\> f8) |
+    e8\f e16 e e8 e16 e e8(\> f8) |
     \mBreak
 
-    % page 4 line 2
+    % cl 1 page 4 line 2
+    \barNumberCheck #434
     as8\mf as16 as as8 as16 as as8 as16 as |
     as8 as16 as as8\> as16 as as8\! r8 |
     \mark #20
     R2.*14 |
-    \tuplet 3/2 { f,8\p\cresc f f } \tuplet 3/2 { \repeat tremolo 3 f8 } \tuplet 3/2 { \repeat tremolo 3 f8 } |
+    % SIC: clarinet 2 and score have staccato here
+    \tuplet 3/2 { f,8-.\sic\p\cresc f-. f-. } \tuplet 3/2 { \repeat tremolo 3 f8-. } \tuplet 3/2 { \repeat tremolo 3 f8-. } |
     \repeat unfold 3 \tuplet 3/2 { \repeat tremolo 3 f8 } |
     \mark #21
     des''8\sf b8\ff b\pesante b b r8 |
     R2. |
     \mBreak
     
-    % page 4 line 3
+    % cl 1 page 4 line 3
+    \barNumberCheck #454
     des8\sf b8\pesante b b b r8 |
     R2. |
-    des8\sf\pocoAnimato r8 r4 r4 |
+    des8\sf r8\pocoAnimato r4 r4 |
     r8 g,16(\f\< a) b( c b a) a( b a g)\! |
     f16( g f es) g8 r8 r4 |
     r8 g16(\f\< a) b( c b a) a( b a g)\! |
     \mBreak
     
-    % page 4 line 4
+    % cl 1 page 4 line 4
+    \barNumberCheck #460
     b8 g16(\cresc a) b( c b a) a( b a g) |
     b8 g16( a) b( c b a) g( b c des) |
     es8\fff b16-. b-. es8 b8 es,8 b16-. b-. |
@@ -598,20 +642,23 @@ clarinet_I_in_A_part_two_Music = {
     \bar "||" \time 4/4 
     \mBreak
     
-    % page 4 line 5
+    % cl 1 page 4 line 5
+    \barNumberCheck #465
     \tempo "Tempo del comincio"
     R1*2 |
     R1*2\moltoRit |
     \mark #22
-    R1*2\pocoAPocoPiuAnimato | % FIXME: Why does that not appear after V?
+    R1*2 \pocoAPocoPiuAnimato | % FIXME: Why does that not appear after V?
     r4 g,,4\p\<~ g2\! |
     g4( ges f a\> |
     d8)\! r8 r4 \tuplet 3/2 { h'8(\< c cis } \tuplet 3/2 { d dis e)\! } |
-    f8 r8 r4 \tuplet 3/2 { h,8(\< c cis } \tuplet 3/2 { d e eis)\! } |
+    % SIC: clarinet 2 and score have mf here
+    f8 r8 r4 \tuplet 3/2 { h,8(\mf\sic\< c cis } \tuplet 3/2 { d e eis)\! } |
     \bar "||" \key d \major
     \mBreak
 
-    % page 4 line 6
+    % cl 1 page 4 line 6
+    \barNumberCheck #475
     \tempo "Andante mosso" 4 = 100
     fis8 r8 r4 r2 |
     \tuplet 3/2 { h,8(\f c cis } \tuplet 3/2 { d dis e } \tuplet 3/2 { eis,\< fis g } \tuplet 3/2 { gis a ais\!) } |
@@ -621,33 +668,38 @@ clarinet_I_in_A_part_two_Music = {
     R1*2
     \mBreak
     
-    % page 4 line 7
+    % cl 1 page 4 line 7
+    \barNumberCheck #482
     \tuplet 3/2 { h8( c cis } \tuplet 3/2 { d dis e } \tuplet 3/2 { eis,\< fis g } \tuplet 3/2 { gis ais h\!) } |
     \mark #23
     a16( d, dis e eis fis g gis a ais h c cis d) r8 |
     r2 \tuplet 3/2 { d8( cis c } \tuplet 3/2 { h ais h) }
     \mBreak
     
-    % page 4 line 8
+    % cl 1 page 4 line 8
+    \barNumberCheck #485
     c16( d, dis e eis fis g gis a ais h c cis d) r8 |
     r2 \tuplet 3/2 { d8( cis c } \tuplet 3/2 { h ais h) } |
     d16( g, gis a ais h c cis d) r16 r8 r4 |
     \mBreak
     
-    % page 4 line 9
+    % cl 1 page 4 line 9
+    \barNumberCheck #488
     r4 d16( dis e f) \tuplet 3/2 { e8( dis d } \tuplet 3/2 { cis c h) } |
     as16( f g as a b h c cis d) r8 r4 |
     r4 r16 d( dis e) \tuplet 3/2 { f8( cis d } \tuplet 3/2 { dis e f) } |
     \mBreak
 
-    % page 4 line 10
+    % cl 1 page 4 line 10
+    \barNumberCheck #491
     \mark 24
     \tuplet 3/2 { g8( fis f } \tuplet 3/2 { e es d) } \tuplet 3/2 { f( e es } \tuplet 3/2 { d cis d)} |
     \tuplet 3/2 { b8( c cis } \tuplet 3/2 { d dis e) } \tuplet 3/2 { f( f, fis } \tuplet 3/2 { g gis a) } |
     \tuplet 3/2 { b8( d cis } \tuplet 3/2 { c h b) } \tuplet 3/2 { a( e' d } \tuplet 3/2 { cis c b) } |
     \mBreak
     
-    % page 4 line 11
+    % cl 1 page 4 line 11
+    \barNumberCheck #494
     \tuplet 3/2 { f'8( e es } \tuplet 3/2 { d c b) } \tuplet 3/2 { d( cis c } \tuplet 3/2 { h ais a) } |
     d1->\cresc\string~ |
     d1 |
@@ -658,19 +710,22 @@ clarinet_I_in_A_part_two_Music = {
     fis,16(\fff d \repeat unfold 6 { fis d } fis d) |
     \mBreak
     
-    % page 4 line 12
+    % cl 1 page 4 line 12
+    \barNumberCheck #500
     a'16( f \repeat unfold 6 { a16 f } g d) |
     fis16( d \repeat unfold 6 { fis d } fis d) |
     a'16( f \repeat unfold 6 { a f } g d) |
     \mBreak
     
-    % page 4 line 13
+    % cl 1 page 4 line 13
+    \barNumberCheck #503
     fis16(\legato d \repeat unfold 6 { fis d } fis d) |
     \repeat tremolo 4 { fis16( d } \repeat tremolo 4 { fis16 d) } |
     \repeat tremolo 4 { fis16( a } \repeat tremolo 4 { fis16 a) } |
     \repeat tremolo 4 { fis16( a } \repeat tremolo 4 { fis16 a) } |
     fis8\sf r8 r4 r2 |
     \bar "|."
+    \barNumberCheck #508
   }
 }
 
@@ -682,7 +737,8 @@ clarinet_II_in_A_part_one_Music = {
     \time 4/4
     \tempo "Andante" 4 = 72
 
-    % page 1 line 1
+    % cl 2 page 1 line 1
+    \barNumberCheck #1
     R1*13 |
     c1->\f\>~ |
     c1~ |
@@ -697,7 +753,8 @@ clarinet_II_in_A_part_one_Music = {
     R1*5 |
     \mBreak
     
-    % page 1 line 2
+    % cl 2 page 1 line 2
+    \barNumberCheck #43
     \mark #2
     R1*3 |
     g'1~ |
@@ -711,7 +768,8 @@ clarinet_II_in_A_part_one_Music = {
     es1->\f\> |
     \mBreak
 
-    % page 1 line 3
+    % cl 2 page 1 line 3
+    \barNumberCheck #56
     \bar "||" \time 3/4 \tempo "Allegro con brio" 4 = 120
     d8\p r8 r4 r4 |
     R2. |
@@ -721,14 +779,16 @@ clarinet_II_in_A_part_one_Music = {
     a16 h a c h\< c h c h c h c |
     \mBreak
 
-    % page 1 line 4
+    % cl 2 page 1 line 4
+    \barNumberCheck #62
     d8-.\sf a16( h) c d c h a h a g |
     a8 a16( h) c d c h a h a g |
     a8 r r a16( h) c d c h |
     a16 h a c h\< c h c h c h c |
     \mBreak
     
-    % page 1 line 5
+    % cl 2 page 1 line 5
+    \barNumberCheck #66
     c8\sf r8 r4 r4 |
     R2.*7
     \mark #3
@@ -740,7 +800,8 @@ clarinet_II_in_A_part_one_Music = {
     f8 c-. b c d( c16 b) |
     \mBreak
 
-    % page 1 line 6
+    % cl 2 page 1 line 6
+    \barNumberCheck #80
     a8-. a-. g a b( a16 g) |
     f8 r r4 r |
     r4 r es'\< |
@@ -751,7 +812,8 @@ clarinet_II_in_A_part_one_Music = {
     a8 r8 r4 r |
     \mBreak
     
-    % page 1 line 7
+    % cl 2 page 1 line 7
+    \barNumberCheck #88
     r4 r h16(\< a h c) |
     a'2.\ff\>~ |
     a8\! r8 r4 r |
@@ -764,7 +826,8 @@ clarinet_II_in_A_part_one_Music = {
     f8 g,16( d f8) r8 r4 |
     \mBreak
     
-    % page 1 line 8
+    % cl 2 page 1 line 8
+    \barNumberCheck #99
     r8. f'16\pesante f8 f f4 |
     f8 g,16( d f8) r8 r4 |
     r8. a'16\pesante g8 a b4 |
@@ -774,7 +837,8 @@ clarinet_II_in_A_part_one_Music = {
     R2.*4
     \mBreak
     
-    % page 1 line 9
+    % cl 2 page 1 line 9
+    \barNumberCheck #109
     r4 r4 g,\mf |
     f8 r8 r4 g |
     fis8 r8 r4 f'4-> |
@@ -785,7 +849,8 @@ clarinet_II_in_A_part_one_Music = {
     g8 g16 g g8 g16 g g8\< g16 g |
     \mBreak
     
-    % page 1 line 10
+    % cl 2 page 1 line 10
+    \barNumberCheck #117
     f8 f16 f f8 f16 f f8 f16 f\! |
     e8 e16 e e8 e16 e e8 e16 e |
     e8 r8 r4 r |
@@ -802,7 +867,8 @@ clarinet_II_in_A_part_one_Music = {
 clarinet_II_in_B_Music = {
   \relative c' {
 
-    % page 1 line 11
+    % cl 2 page 1 line 11
+    \barNumberCheck #136
     \bar "||"
     \tempo "Allegro moderato" 4 = 100
     \key c \major
@@ -823,7 +889,8 @@ clarinet_II_in_B_Music = {
     f2(\! e4 |
     \mBreak
     
-    % page 1 line 12
+    % cl 2 page 1 line 12
+    \barNumberCheck #151
     es2.) |
     d2.~\> d2.( |
     \mark #6
@@ -840,7 +907,8 @@ clarinet_II_in_B_Music = {
     R2.*4 |
     \mBreak
 
-    % page 2 line 1
+    % cl 2 page 2 line 1
+    \barNumberCheck #170
     f,2.~ |
     f2.(\<( |
     es8)\! r8 r4 r4 |
@@ -854,7 +922,8 @@ clarinet_II_in_B_Music = {
     R2.*8 |
     \mBreak
 
-    % page 2 line 2
+    % cl 2 page 2 line 2
+    \barNumberCheck #186
     r4 as,8(\p es) as( d,) |
     R2. |
     c'2(\p h4 |
@@ -867,7 +936,8 @@ clarinet_II_in_B_Music = {
     a2.) |
     \mBreak
 
-    % page 2 line 3
+    % cl 2 page 2 line 3
+    \barNumberCheck #196
     des'2(\mf c4 |
     h2 b4 |
     a2 as4\> |
@@ -883,7 +953,8 @@ clarinet_II_in_B_Music = {
     c g\> c)\! |
     \mBreak
 
-    % page 2 line 4
+    % cl 2 page 2 line 4
+    \barNumberCheck #208
     c4(\p a c |
     a c a) |
     g4( c\< g\! |
@@ -897,7 +968,8 @@ clarinet_II_in_B_Music = {
     c8(\mf g) c( a) c( g) |
     \mBreak
     
-    % page 2 line 5
+    % cl 2 page 2 line 5
+    \barNumberCheck #219
     c8(\> a) c( g) c( a)\! |
     R2.*2 |
     \bar "||" \tempo "Allegro con brio (come prima)"
@@ -910,7 +982,8 @@ clarinet_II_in_B_Music = {
     R2.*6 |
     \mBreak
     
-    % page 2 line 6 (start)
+    % cl 2 page 2 line 6 (start)
+    \barNumberCheck #241
     \mark #9
     g'4(\p c2)
     g4( c2)
@@ -935,12 +1008,13 @@ clarinet_II_in_A_part_two_Music = {
   \relative c' {
     \transposition a
 
-    % page 2 line 6 (continued)
+    % cl 2 page 2 line 6 (continued)
     r4 a''8(\f fis) h d |
     cis8 h a( fis) h d |
     \mBreak
 
-    % page 2 line 7
+    % cl 2 page 2 line 7
+    \barNumberCheck #258
     cis8 h a( fis) h4 |
     fis4 a8( fis) h4 |
     fis4-> a-> fis-> |
@@ -953,8 +1027,10 @@ clarinet_II_in_A_part_two_Music = {
     cis,8(\ff ais) dis( fis) e-. dis-. |
     \mBreak
     
-    % page 2 line 8
+    % cl 2 page 2 line 8
+    \barNumberCheck #267
     cis8( ais) dis( fis) e-. dis-. |
+    cis8 r8 r4 r4 |
     R2. |
     a'8(\ff fis) h( d) c-. h-. |
     a8( fis) h( d) c-. h-. |
@@ -962,7 +1038,8 @@ clarinet_II_in_A_part_two_Music = {
     h8(\< fis) a( fis) h( fis) |
     \mBreak
 
-    % page 2 line 9
+    % cl 2 page 2 line 9
+    \barNumberCheck #274
     g8\sf\! r8 r4 r |
     R2.*3 |
     g,2.\mf\startTrillSpan~ |
@@ -974,7 +1051,8 @@ clarinet_II_in_A_part_two_Music = {
     d2~ d8\stopTrillSpan \tuplet 6/4 { d32_( e fis g a h } |
     \mBreak
     
-    % page 2 line 10
+    % cl 2 page 2 line 10
+    \barNumberCheck #284
     c2.)\startTrillSpan~ |
     c2\stopTrillSpan\< c32( d e fis g a h c)\! |
     a8( fis) h( d) c-. h-. |
@@ -983,7 +1061,8 @@ clarinet_II_in_A_part_two_Music = {
     g8( e) c(\< d) e-. g-. |
     \mBreak
 
-    % page 2 line 11
+    % cl 2 page 2 line 11
+    \barNumberCheck #290
     a8.\ff a16 a4~ a8 d,8\f |
     d8. d16 d4\>~ d8\! r8 |
     r4 r4 r8 b,\mf |
@@ -992,10 +1071,11 @@ clarinet_II_in_A_part_two_Music = {
     \bar "||" \key a \major
     R2.*4 |
     fis'8.\mf fis16 fis2->~ |
-    fis16 d( e fis) a-> %{ FIXME: really accent? Not in 1st clarinet %} ( fis e fis) e( d h d) |
+    fis16 d( e fis) a\sic %{ SIC: No accent in 1st clarinet or score %} ( fis e fis) e( d h d) |
     \mBreak
 
-    % page 2 line 12
+    % cl 2 page 2 line 12
+    \barNumberCheck #301
     d8. d16 d4. e8 |
     a,8.\< a16 a4. fis'8\! |
     fis8. fis16 fis4~ fis8 a\f |
@@ -1008,7 +1088,8 @@ clarinet_II_in_A_part_two_Music = {
     R2.*9 |
     \mBreak
     
-    % page 2 line 13
+    % cl 2 page 2 line 13
+    \barNumberCheck #317
     d2->\mf(~ d8\> dis)\! |
     R2.*2 |
     h2 e4->(\( |
@@ -1021,7 +1102,8 @@ clarinet_II_in_A_part_two_Music = {
     b8 b16( c des es des c) b( c des) r16 |
     \mBreak
     
-    % page 3 line 1
+    % cl 2 page 3 line 1
+    \barNumberCheck #326
     \repeat tremolo 12 { c16 } |
     c8 c16( d es f es d) c( d es f) |
     \repeat tremolo 12 { c16 } |
@@ -1030,7 +1112,8 @@ clarinet_II_in_A_part_two_Music = {
     c8\! c16( d es f es d) c( d c h) |
     \mBreak
     
-    % page 3 line 2
+    % cl 2 page 3 line 2
+    \barNumberCheck #332
     c8 r8 r4 \repeat tremolo 4 { des16-> } |
     b8 r8 r4 r |
     r4 r as'4->( |
@@ -1043,7 +1126,8 @@ clarinet_II_in_A_part_two_Music = {
     d2)\cresc e4( |
     \mBreak
 
-    % page 3 line 3
+    % cl 2 page 3 line 3
+    \barNumberCheck #341
     dis4) d2 |
     e8( dis) d2->\ff\>~ |
     d2.\pp
@@ -1059,7 +1143,8 @@ clarinet_II_in_A_part_two_Music = {
     d'16\f( es d c) c( d c b) b( c d es) |
     \mBreak
 
-    % page 3 line 4
+    % cl 2 page 3 line 4
+    \barNumberCheck #355
     f16( g f es) es( f es d) d( es d c) |
     d8 r8 r4 r |
     R2. |
@@ -1072,7 +1157,8 @@ clarinet_II_in_A_part_two_Music = {
     a8)\sf r8 r4 r |
     \mBreak
     
-    % page 3 line 5
+    % cl 2 page 3 line 5
+    \barNumberCheck #363
     r4 r a16\mf\< h a g |
     a8\sf r8 r4 r |
     r4 r h16\mf\< a h c |
@@ -1082,7 +1168,8 @@ clarinet_II_in_A_part_two_Music = {
     a16 h a g g\> a g f f g f e |
     \mBreak
     
-    % page 3 line 6
+    % cl 2 page 3 line 6
+    \barNumberCheck #370
     d8\! r8 r4 r |
     R2. |
     a''8.-.\cresc a16-. a8-. a8-. a8-. a8-. |
@@ -1090,10 +1177,11 @@ clarinet_II_in_A_part_two_Music = {
     \mark #17
     a8\sf a\fff g\pesante h a g16( d) |
     f8 r8 r4 r |
-    r8 a g\pesante h a g16( d) | % FIXME: Does clarinet 1 have all the \pesante here?
+    r8 a g\pesante h a g16( d) |
     \mBreak
     
-    % page 3 line 7
+    % cl 2 page 3 line 7
+    \barNumberCheck #377
     f8 r8 r4 r |
     r8 f e\pesante g f e16( a,) |
     d8 r8 r4 r |
@@ -1103,7 +1191,8 @@ clarinet_II_in_A_part_two_Music = {
     f16( g f e d e d c b c b a) |
     \mBreak
     
-    % page 3 line 8
+    % cl 2 page 3 line 8
+    \barNumberCheck #384
     g16( f es) r r4 r8 \tuplet 3/2 { g16(\< as a)\! }
     b16( c b a g a g f es f es d) |
     c8 c'(\mf b) c \acciaccatura { e } d( c16 b) |
@@ -1111,20 +1200,22 @@ clarinet_II_in_A_part_two_Music = {
     a8 r r \tuplet 3/2 { e16\f f fis } g8->( e) |
     \mBreak
     
-    % page 3 line 9
+    % cl 2 page 3 line 9
+    \barNumberCheck #389
     a8-> r r \tuplet 3/2 { e16 f fis } g8->( e) |
     a8 r8 r4 r |
     r4 f'8 r as r |
     \mark #18 
-    a8\sf r8 r4 r | % FIXME: Clarinet 1 has \f here?
+    a8\sf r8 r4 r |
     r4 r f,16(\< g f g)\! |
     a8 r8 r4 r |
     r4 r f16( g a b) |
-    c2.\>~ | % FIXME: Apparently this isn't an accent in clarinet 1, too
+    c2.\>~ |
     c2.\mf |
     \mBreak
     
-    % page 3 line 10
+    % cl 2 page 3 line 10
+    \barNumberCheck #398
     cis2.( |
     d2)( f4) |
     d2.(~ |
@@ -1141,16 +1232,19 @@ clarinet_II_in_A_part_two_Music = {
     e2.)\> |
     \mBreak
     
-    % page 3 line 11
+    % cl 2 page 3 line 11
+    \barNumberCheck #412
     \mark #19
-    f8-.\mf\solo f16-. f16-. \repeat unfold 2 { f8-. f16-. f16-. } | % FIXME: Should that also be Solo in clarinet 1
+    % SIC: Not solo in clarinet 1 and score
+    f8-.\mf\sic f16-. f16-. \repeat unfold 2 { f8-. f16-. f16-. } |
     \repeat unfold 3 { f8-. f16-. f16-. } |
     \repeat unfold 3 { as8-. as16-. as16-. } |
     \repeat unfold 2 { as8-. as16-. as16-. } f8-. f16-. f16-. |
-    \repeat unfold 3 { f8 f16 f16 } | % FIXME: Does clarinet 1 still have staccato here?
+    \repeat unfold 3 { f8 f16 f16 } |
     \mBreak
 
-    % page 3 line 12
+    % cl 2 page 3 line 12
+    \barNumberCheck #417
     \repeat unfold 3 { f8 f16 f16 } |
     \repeat unfold 3 { as8 as16 as16 } |
     \repeat unfold 2 { as8 as16 as16 } f8 f16 f16 |
@@ -1158,7 +1252,8 @@ clarinet_II_in_A_part_two_Music = {
     \repeat unfold 3 { f8 f16 f16 } |
     \mBreak
 
-    % page 3 line 13
+    % cl 2 page 3 line 13
+    \barNumberCheck #422
     \repeat unfold 3 { f8 f16 f16 } |
     \repeat unfold 3 { f8 f16 f16 } |
     des8 r8 r4 r |
@@ -1167,35 +1262,40 @@ clarinet_II_in_A_part_two_Music = {
     R2.*2 |
     \mBreak
     
-    % page 4 line 1
+    % cl 2 page 4 line 1
+    \barNumberCheck #429
     r4 r8 b16 b des8 b16 b |
     c8 f16 f c8 f16 f c8\< c16 c |
     des8\f des16 des des8 des16 des des4\> |
     c8\mf f16 f c8 f16 f c8\< c16 c |
-    des8\f des16 des des8 des16 des des4\> | % FIXME: Clarinet 1 has pesante here? Probably belongs to other line
+    des8\f des16 des des8 des16 des des4\> |
     \mBreak
     
-    % page 4 line 2
+    % cl 2 page 4 line 2
+    \barNumberCheck #434
     des8 des16 des des8 des16 des des8 des |
     des8 des16 des des8\> des16 des as8\! r8 |
     \mark #20
     R2.*14 |
-    \tuplet 3/2 { des,8-.\p\cresc des-. des-. } \tuplet 3/2 { \repeat tremolo 3 des8-. } \tuplet 3/2 { \repeat tremolo 3 des8-. } | % FIXME: Here staccato - also in clarinet 1?
+    \tuplet 3/2 { des,8-.\p\cresc des-. des-. } \tuplet 3/2 { \repeat tremolo 3 des8-. } \tuplet 3/2 { \repeat tremolo 3 des8-. } |
     \repeat unfold 3 \tuplet 3/2 { \repeat tremolo 3 des8-. } |
     \mark #21
     f'8\sf b8\ff b\pesante b b r8 |
     R2. |
     \mBreak
 
-    % page 4 line 3
+    % cl 2 page 4 line 3
+    \barNumberCheck #454
     f8\sf b b b b r8 |
-    des8\sf r8\pocoAnimato r4 r4 | % FIXME: Should the poco animato move in 1st clarinet, too?
+    R2. |
+    des8\sf r8\pocoAnimato r4 r4 |
     r8 g,16(\f\< a) b( c b a) a( b a g)\! |
     f16( g f es) g8 r8 r4 |
     r8 g16(\f\< a) b( c b a) a( b a g)\! |
     \mBreak
 
-    % page 4 line 4
+    % cl 2 page 4 line 4
+    \barNumberCheck #460
     b8 g16(\cresc a) b( c b a) a( b a g) |
     b8 g16( a) b( c b a) g( b c des) |
     des8\fff g,16-. g-. c8 g des8 g,16-. g-. |
@@ -1204,20 +1304,22 @@ clarinet_II_in_A_part_two_Music = {
     \bar "||" \time 4/4 
     \mBreak
     
-    % page 4 line 5
+    % cl 2 page 4 line 5
+    \barNumberCheck #465
     \tempo "Tempo del comincio"
     R1*2 |
     R1*2\moltoRit |
     \mark #22
-    R1*2\pocoAPocoPiuAnimato | % FIXME: Why does that not appear after V?
+    R1*2 \pocoAPocoPiuAnimato | % FIXME: Why does that not appear after V?
     r4 d,,4\p\<( es2)\! |
     e2( f\> |
-    f8)\! r8 r4 \tuplet 3/2 { d'8(\mf\< dis e } \tuplet 3/2 { f fis g)\! } | % FIXME: Also missing mf in clarinet 1?
+    f8)\! r8 r4 \tuplet 3/2 { d'8(\mf\< dis e } \tuplet 3/2 { f fis g)\! } |
     gis8 r8 r4 \tuplet 3/2 { d8(\< dis e } \tuplet 3/2 { f g gis)\! } |
     \bar "||" \key d \major
     \mBreak
 
-    % page 4 line 6
+    % cl 2 page 4 line 6
+    \barNumberCheck #475
     \tempo "Andante mosso" 4 = 100
     h8 r8 r4 r2 |
     \tuplet 3/2 { d,8(\f dis e } \tuplet 3/2 { eis fis g } \tuplet 3/2 { gis\< a ais } \tuplet 3/2 { h c cis\!) } |
@@ -1226,7 +1328,8 @@ clarinet_II_in_A_part_two_Music = {
     d8 r8 r4 r2 |
     \mBreak
     
-    % page 4 line 7
+    % cl 2 page 4 line 7
+    \barNumberCheck #480
     R1*2
     \tuplet 3/2 { d,8( dis e } \tuplet 3/2 { eis fis g } \tuplet 3/2 { gis\< a ais } \tuplet 3/2 { h cis d\!) } |
     \mark #23
@@ -1234,27 +1337,31 @@ clarinet_II_in_A_part_two_Music = {
     eis16 fis\< g gis a ais h c\!) \tuplet 3/2 { h8( ais a } \tuplet 3/2 { gis g fis) } |
     \mBreak
     
-    % page 4 line 8
+    % cl 2 page 4 line 8
+    \barNumberCheck #485
     a8 r r4 r r16 d,(\< dis e |
     eis16 fis g gis a ais h c\!) \tuplet 3/2 { h8( ais a } \tuplet 3/2 { gis g fis) } |
     f8 r 8 r4 r r16 g(\< gis a |
     ais16 h c cis) d\! r16 r8 \tuplet 3/2 { gis,( g f } \tuplet 3/2 { e dis d) } |
     \mBreak
     
-    % page 4 line 9
+    % cl 2 page 4 line 9
+    \barNumberCheck #489
     f8 r r4 r f16( fis g as |
     a16\< b h c cis d)\! r8 \tuplet 3/2 { a8( e f } \tuplet 3/2 { g gis a) } |
     \mark 24
     \tuplet 3/2 { b8( a as } \tuplet 3/2 { g fis f) } \tuplet 3/2 { a( gis g } \tuplet 3/2 { f e f) } |
     \mBreak
 
-    % page 4 line 10
+    % cl 2 page 4 line 10
+    \barNumberCheck #492
     \tuplet 3/2 { d8( es e } \tuplet 3/2 { f fis g) } \tuplet 3/2 { a( d, dis } \tuplet 3/2 { e f fis) } |
     \tuplet 3/2 { g8( b a } \tuplet 3/2 { as g fis) } \tuplet 3/2 { f( g f } \tuplet 3/2 { e es d) } |
     \tuplet 3/2 { d'8( cis c } \tuplet 3/2 { b a g) } \tuplet 3/2 { b( a as } \tuplet 3/2 { g fis f) } |
     \mBreak
     
-    % page 4 line 11
+    % cl 2 page 4 line 11
+    \barNumberCheck #495
     g1->\cresc\string~ |
     g1 |
     f1~ |
@@ -1266,7 +1373,8 @@ clarinet_II_in_A_part_two_Music = {
     \repeat tremolo 4 { fis16( d } \repeat tremolo 4 { fis16 d) } |
     \mBreak
 
-    % page 4 line 12
+    % cl 2 page 4 line 12
+    \barNumberCheck #502
     \repeat tremolo 4 { a'16( f } \repeat unfold 3 { a f } g d) |
     \repeat tremolo 4 { fis16(\legato d } \repeat tremolo 4 { fis16 d) } |
     \repeat tremolo 4 { fis16( d } \repeat tremolo 4 { fis16 d) } |
@@ -1274,9 +1382,7 @@ clarinet_II_in_A_part_two_Music = {
     \repeat tremolo 4 { fis16( a } \repeat tremolo 4 { fis16 a) } |
     fis8\sf r8 r4 r2 |
     \bar "|."
-    \mBreak
-    
-    % FIXME: Clarinet 1 has 507 bars, clarinet 2 only 505 ?
+    \barNumberCheck #508
   }
 }
 
