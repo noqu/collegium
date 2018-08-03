@@ -21,6 +21,7 @@
 
 % Adapt this for automatic line-breaks
 mBreak = { \break }
+#(set-global-staff-size 13)
 
 % Useful snippets
 pDolce = \markup { \dynamic p \italic \bold "dolce" }
@@ -34,7 +35,8 @@ clarinet_I_in_A_Music = {
     \time 4/4
     \tempo "Andante tranquillo" 8 = 72
 
-    % line 1
+    % cl 1 line 1
+    \barNumberCheck #1
     R1*4
     <<
       {
@@ -58,7 +60,8 @@ clarinet_I_in_A_Music = {
     \tuplet 3/2 { fis,8-.\mf fis-. fis-. } e4-> \tuplet 3/2 { fis8-. fis-. fis-. } e4-> |
     \mBreak
     
-    % line 2
+    % cl 1 line 2
+    \barNumberCheck #12
     \mark #1
     fis2~\p\> fis8\! r8 r4 |
     r2 g,,\pp^\markup { Solo }~ |
@@ -68,7 +71,8 @@ clarinet_I_in_A_Music = {
     g4( e8) r8 a8( g16 f e8 d)
     \mBreak
     
-    % line 3
+    % cl 1 line 3
+    \barNumberCheck #18
     e8(d c h) a( c h a) |
     g4( fis8 g16 fis) e4~\> e8\! r8 |
     R1
@@ -84,7 +88,8 @@ clarinet_I_in_A_Music = {
     d2( a) |
     \mBreak
     
-    % line 4
+    % cl 1 line 4
+    \barNumberCheck #29
     h2 c4~c8 r8 |
     c2( d) |
     f1 |
@@ -99,7 +104,8 @@ clarinet_I_in_A_Music = {
     e2(\f g4 e4) |
     \mBreak
     
-    % line 5 (start)
+    % cl 1 line 5 (start)
+    \barNumberCheck #39
     a4( h c h8 a) |
     g2( e2) |
     f4( e d a) |
@@ -120,12 +126,13 @@ clarinet_I_in_B_Music = {
     \time 2/2
     \tempo "Moderato. Alla breve" 2 = 66
     
-    % line 5 (continued)
+    % cl 1 line 5 (continued)
     c'2(_\pDolce es4 c |
     f4 g as g8 f) |
     \mBreak
     
-    % line 6
+    % cl 1 line 6
+    \barNumberCheck #53
     es2( c) |
     des4( c b f |
     as4 g as g) |
@@ -137,7 +144,8 @@ clarinet_I_in_B_Music = {
     f4( es8 des c4 b |
     \mBreak
     
-    % line 7
+    % cl 1 line 7
+    \barNumberCheck #62
     c4 b as g) |
     f4( as g f) |
     es~ es8 r8 r2 |
@@ -153,7 +161,8 @@ clarinet_I_in_B_Music = {
     \mBreak
     
     
-    % line 8
+    % cl 1 line 8
+    \barNumberCheck #73
     b2.-> r4 |
     R1*7 |
     <<
@@ -176,7 +185,8 @@ clarinet_I_in_B_Music = {
     c2( es) |
     \mBreak
 
-    % line 9
+    % cl 1 line 9
+    \barNumberCheck #87
     des4( es8 des c4 g |	% FIXME: d or des??
     b2.)\> r4\! |
     R1*1 |
@@ -186,10 +196,9 @@ clarinet_I_in_B_Music = {
     R1*8 |
     R1\fermataMarkup
     \bar "|." |
+    \barNumberCheck #102
   }
 }
-
-\addQuote "clarinet_I_in_A" { \clarinet_I_in_A_Music }
 
 clarinet_II_in_A_Music = {
   \relative c' {
@@ -199,7 +208,8 @@ clarinet_II_in_A_Music = {
     \time 4/4
     \tempo "Andante tranquillo" 8 = 72
 
-    % line 1
+    % cl 2 line 1
+    \barNumberCheck #1
     R1*7 |
     <<
       {
@@ -219,7 +229,8 @@ clarinet_II_in_A_Music = {
     \tuplet 3/2 { d8-.\mf cis-. d-. } cis4-> \tuplet 3/2 { d8-. cis-. d-. } cis4-> |
     \mBreak
 
-    % line 2
+    % cl 2 line 2
+    \barNumberCheck #12
     \mark #1
     d2~\p\> d8\! r8 r4 |
     R1*8
@@ -232,7 +243,8 @@ clarinet_II_in_A_Music = {
     a1\p |
     \mBreak
 
-    % line 3
+    % cl 2 line 3
+    \barNumberCheck #26
     a1 |
     c2( d) |
     b4( g) a( f) |
@@ -242,7 +254,8 @@ clarinet_II_in_A_Music = {
     b2 a |
     \mBreak
 
-    % line 4
+    % cl 2 line 4
+    \barNumberCheck #33
     g4.( f8) e2
     c4( d) h( a) |
     gis2~ gis8 r8 r4
@@ -254,7 +267,8 @@ clarinet_II_in_A_Music = {
     a4( h c h8 a) |
     \mBreak
 
-    % line 5 (start)
+    % cl 2 line 5 (start)
+    \barNumberCheck #40
     g2( e2) |
     f4( e d a) |
     c4( h c h) |
@@ -274,11 +288,12 @@ clarinet_II_in_B_Music = {
     \time 2/2
     \tempo "Moderato. Alla breve" 2 = 66
 
-    % line 5 (continued)
+    % cl 2 line 5 (continued)
     c'2(_\pDolce es4 c |
     \mBreak
 
-    % line 6
+    % cl 2 line 6
+    \barNumberCheck #52
     f4 g as g8 f) |
     es2( c) |
     des4( c b f |
@@ -289,7 +304,8 @@ clarinet_II_in_B_Music = {
     f4 as g8 as16 g f4) |
     \mBreak
 
-    % line 7
+    % cl 2 line 7
+    \barNumberCheck #60
     es2( c) |
     f4( es8 des c4 b |
     c4 b as g) |
@@ -300,6 +316,7 @@ clarinet_II_in_B_Music = {
     R1*36 |
     R1\fermataMarkup
     \bar "|." |
+    \barNumberCheck #102
   }
 }
 
