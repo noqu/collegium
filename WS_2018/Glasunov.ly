@@ -33,6 +33,22 @@ legato = _\markup {\italic {"legato"} }
 solo = ^\markup { "Solo" }
 sic = ^\markup { \tiny { "sic!" } }
 
+% Taken from Lilypond snippet library http://lsr.di.unimi.it/LSR/Item?id=772
+% Add multiple staccato dots to a tremolo-abbreviated note
+% Usage: \repeat tremolo 3 c8-\tongue #3
+tongue =
+#(define-music-function (parser location dots) (integer?)
+  #{
+    \tweak stencil
+      #(lambda (grob)
+        (let ((stil (ly:script-interface::print grob)))
+          (let loop ((count (1- dots)) (new-stil stil))
+            (if (> count 0)
+                (loop (1- count)
+                      (ly:stencil-combine-at-edge new-stil X RIGHT stil 0.2))
+                (ly:stencil-aligned-to new-stil X CENTER)))))
+     \staccato
+  #})
 
 clarinet_I_in_A_part_one_Music = {
   \relative c' {
@@ -222,8 +238,8 @@ clarinet_I_in_B_Music = {
     e8) e( d c h a) |
     c4 as8( b c4~ |
     c8) c( b as g f) |
-    as4 f8( g a4~\> |
-    a4) g2(\! |
+    as4 f8( g as4~\> |
+    as4) g2(\! |
     \mBreak
     
     % cl 1 page 2 line 3
@@ -283,7 +299,7 @@ clarinet_I_in_B_Music = {
     % cl 1 page 2 line 6
     \barNumberCheck #208
     e4( c e |
-    c4 \<e c)\! |
+    c4 e\< c)\! |
     g'4( c, g' |
     c,4 g'\< c,)\! |
     ges'2.\cresc~ |
@@ -454,7 +470,7 @@ clarinet_I_in_A_part_two_Music = {
     c8 r8 r4 \repeat tremolo 4 { des16-> } |
     des8 r8 r4 r |
     r4 r des'4->~ |
-    des8\> b,16(\! c des es des c) b(\> d e b') |
+    des8\> b,16(\! c des es des c) b(\> des e b') |
     \bar "||" \key f \major \tempo "Tempo I" 4 = 120
     d2.\f |
     e2( dis4 |
@@ -518,7 +534,7 @@ clarinet_I_in_A_part_two_Music = {
     
     % cl 1 page 3 line 8
     \barNumberCheck #376
-    r8 f' f f f g,16( d) |
+    r8 f'\pesante f f f g,16( d) |
     f8 r8 r4 r |
     r8 a\pesante g b a e16( a,) |
     d8 r8 r4 r |
@@ -538,8 +554,8 @@ clarinet_I_in_A_part_two_Music = {
     % cl 1 page 3 line 10
     \barNumberCheck #387
     c8 c( b) c \acciaccatura { e } d( c16 b) |
-    a8 r r \tuplet 3/2 { e'16\f f fis } g8->( e) |
-    a8-> r r \tuplet 3/2 { e16 f fis } g8->( e) |
+    a8 r r \tuplet 3/2 { e'16(\f f fis) } g8->( e) |
+    a8-> r r \tuplet 3/2 { e16( f fis) } g8->( e) |
     a8 r8 r4 r |
     r4 b8 r h r |
     \mark #18 
@@ -615,8 +631,8 @@ clarinet_I_in_A_part_two_Music = {
     \mark #20
     R2.*14 |
     % SIC: clarinet 2 and score have staccato here
-    \tuplet 3/2 { f,8-.\sic\p\cresc f-. f-. } \tuplet 3/2 { \repeat tremolo 3 f8-. } \tuplet 3/2 { \repeat tremolo 3 f8-. } |
-    \repeat unfold 3 \tuplet 3/2 { \repeat tremolo 3 f8 } |
+    \tuplet 3/2 { f,8-.\sic\p\cresc f-. f-. } \tuplet 3/2 { \repeat tremolo 3 f8-\tongue #3 } \tuplet 3/2 { \repeat tremolo 3 f8-\tongue #3 } |
+    \repeat unfold 3 \tuplet 3/2 { \repeat tremolo 3 f8-\tongue #3 } |
     \mark #21
     des''8\sf b8\ff b\pesante b b r8 |
     R2. |
@@ -781,7 +797,7 @@ clarinet_II_in_A_part_one_Music = {
 
     % cl 2 page 1 line 4
     \barNumberCheck #62
-    d8-.\sf a16( h) c d c h a h a g |
+    d8-.\sf\sic a16( h) c d c h a h a g |
     a8 a16( h) c d c h a h a g |
     a8 r r a16( h) c d c h |
     a16 h a c h\< c h c h c h c |
@@ -955,7 +971,7 @@ clarinet_II_in_B_Music = {
 
     % cl 2 page 2 line 4
     \barNumberCheck #208
-    c4(\p a c |
+    c4(\p\sic a c |
     a c a) |
     g4( c\< g\! |
     c g\< c)\! |
@@ -964,7 +980,7 @@ clarinet_II_in_B_Music = {
     des2. |
     as''2( e4) |
     c8(\f g) c( a) c( g) |
-    c8( a)\> c( g) c( a) |
+    c8(\> a) c( g) c( a) |
     c8(\mf g) c( a) c( g) |
     \mBreak
     
@@ -1273,12 +1289,12 @@ clarinet_II_in_A_part_two_Music = {
     
     % cl 2 page 4 line 2
     \barNumberCheck #434
-    des8 des16 des des8 des16 des des8 des |
+    des8\mf des16 des des8 des16 des des8 des |
     des8 des16 des des8\> des16 des as8\! r8 |
     \mark #20
     R2.*14 |
-    \tuplet 3/2 { des,8-.\p\cresc des-. des-. } \tuplet 3/2 { \repeat tremolo 3 des8-. } \tuplet 3/2 { \repeat tremolo 3 des8-. } |
-    \repeat unfold 3 \tuplet 3/2 { \repeat tremolo 3 des8-. } |
+    \tuplet 3/2 { des,8-.\p\cresc des-. des-. } \tuplet 3/2 { \repeat tremolo 3 des8-\tongue #3 } \tuplet 3/2 { \repeat tremolo 3 des8-\tongue #3 } |
+    \repeat unfold 3 \tuplet 3/2 { \repeat tremolo 3 des8-\tongue #3 } |
     \mark #21
     f'8\sf b8\ff b\pesante b b r8 |
     R2. |
