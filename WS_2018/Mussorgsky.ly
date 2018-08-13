@@ -20,8 +20,9 @@
 }
 
 % Adapt this for automatic line-breaks
-mBreak = { \break }
-#(set-global-staff-size 13)
+mBreak = {}
+% mBreak = { \break }
+% #(set-global-staff-size 13)
 
 % Useful snippets
 pDolce = \markup { \dynamic p \italic \bold "dolce" }
@@ -111,7 +112,8 @@ clarinet_I_in_A_Music = {
     f4( e d a) |
     c4( h c h) |
     a2( h4 a) |
-    g2( e4) r4 |
+    % Low E goes beyond Bb-clarinet - add octave in parentheses
+    g2( < e \parenthesize \tweak font-size #-1 e' >4) r4 |
     R1*6 |
     \bar "||"
     \mark #4
@@ -234,9 +236,11 @@ clarinet_II_in_A_Music = {
     \mark #1
     d2~\p\> d8\! r8 r4 |
     R1*8
-    cis2\p\>~ cis8\! r8 r4 |
+    % des instead of cis for better transposed result
+    des2\p\>~ des8\! r8 r4 |
     R1
-    gis2.\pp~ gis8 r8 |
+    % as instead of gis for better transposed result
+    as2.\pp~ as8 r8 |
     g2.\p~ g8 r8 |
     \bar "||" \key f \major
     \mark #2
@@ -257,8 +261,9 @@ clarinet_II_in_A_Music = {
     % cl 2 line 4
     \barNumberCheck #33
     g4.( f8) e2
-    c4( d) h( a) |
-    gis2~ gis8 r8 r4
+    c4( d) h( a?) |
+    % as instead of gis for better transposed result
+    as2~ as8 r8 r4 |
     \bar "||"
     \mark #3
     \tempo "Piu mosso" 4 = 100
@@ -273,7 +278,8 @@ clarinet_II_in_A_Music = {
     f4( e d a) |
     c4( h c h) |
     a2( h4 a) |
-    g2( e4) r4 |
+    % Low E goes beyond Bb-clarinet - add octave in parentheses
+    g2( < e \parenthesize \tweak font-size #-1 e' >4) r4 |
     R1*6 |
     \bar "||"
     \mark #4
@@ -322,7 +328,7 @@ clarinet_II_in_B_Music = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
@@ -340,7 +346,7 @@ clarinet_II_in_B_Music = {
       \accidentalStyle Score.modern-cautionary
       \new Voice {
         {
-          % \transpose b a
+          \transpose b a
           \clarinet_I_in_A_Music
         }
         \clarinet_I_in_B_Music
@@ -351,7 +357,7 @@ clarinet_II_in_B_Music = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
@@ -369,7 +375,7 @@ clarinet_II_in_B_Music = {
       \accidentalStyle Score.modern-cautionary
       \new Voice {
         {
-          % \transpose b a
+          \transpose b a
           \clarinet_II_in_A_Music
         }
         \clarinet_II_in_B_Music
