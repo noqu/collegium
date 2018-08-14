@@ -17,8 +17,9 @@
 }
 
 % Adapt this for automatic line-breaks
-mBreak = { \break }
-#(set-global-staff-size 13)
+mBreak = {}
+% mBreak = { \break }
+% #(set-global-staff-size 13)
 
 % Useful snippets
 pDolce = \markup { \dynamic p \italic \bold "dolce" }
@@ -33,7 +34,7 @@ legato = _\markup {\italic {"legato"} }
 solo = ^\markup { "Solo" }
 sic = ^\markup { \tiny { "sic!" } }
 
-% Taken from Lilypond snippet library http://lsr.di.unimi.it/LSR/Item?id=772
+% Taken from LSR http://lsr.di.unimi.it/LSR/Item?id=772
 % Add multiple staccato dots to a tremolo-abbreviated note
 % Usage: \repeat tremolo 3 c8-\tongue #3
 tongue =
@@ -49,6 +50,61 @@ tongue =
                 (ly:stencil-aligned-to new-stil X CENTER)))))
      \staccato
   #})
+
+% Adapted from LSR http://lsr.di.unimi.it/LSR/Snippet?id=431
+% Force a bar number to appear at the location of the next symbol
+% Usage: \forceBarNumber a8 ...
+forceBarNumber =
+#(define-music-function (parser location music) (ly:music?)
+    #{
+      \override Score.BarNumber.break-visibility = ##(#f #t #t)
+      $music
+      \revert Score.BarNumber.break-visibility
+    #})
+
+% Taken from LSR http://lsr.di.unimi.it/LSR/Item?id=266
+% Minimize usage of accidentals (no double accidentals, no his, eis, ces, fes)
+% Usage: \naturalizeMusic \transpose {...}
+#(define (naturalize-pitch p)
+   (let ((o (ly:pitch-octave p))
+         (a (* 4 (ly:pitch-alteration p)))
+         ;; alteration, a, in quarter tone steps,
+         ;; for historical reasons
+         (n (ly:pitch-notename p)))
+     (cond
+      ((and (> a 1) (or (eq? n 6) (eq? n 2)))
+       (set! a (- a 2))
+       (set! n (+ n 1)))
+      ((and (< a -1) (or (eq? n 0) (eq? n 3)))
+       (set! a (+ a 2))
+       (set! n (- n 1))))
+     (cond
+      ((> a 2) (set! a (- a 4)) (set! n (+ n 1)))
+      ((< a -2) (set! a (+ a 4)) (set! n (- n 1))))
+     (if (< n 0) (begin (set! o (- o 1)) (set! n (+ n 7))))
+     (if (> n 6) (begin (set! o (+ o 1)) (set! n (- n 7))))
+     (ly:make-pitch o n (/ a 4))))
+#(define (naturalize music)
+   (let ((es (ly:music-property music 'elements))
+         (e (ly:music-property music 'element))
+         (p (ly:music-property music 'pitch)))
+     (if (pair? es)
+         (ly:music-set-property!
+          music 'elements
+          (map (lambda (x) (naturalize x)) es)))
+     (if (ly:music? e)
+         (ly:music-set-property!
+          music 'element
+          (naturalize e)))
+     (if (ly:pitch? p)
+         (begin
+           (set! p (naturalize-pitch p))
+           (ly:music-set-property! music 'pitch p)))
+     music))
+naturalizeMusic =
+#(define-music-function (parser location m)
+   (ly:music?)
+   (naturalize m))
 
 clarinet_I_in_A_part_one_Music = {
   \relative c' {
@@ -72,6 +128,7 @@ clarinet_I_in_A_part_one_Music = {
     \mark #1
     d4\! r4 r2 |
     R1*12 |
+    \forceBarNumber
     b1->\mf\>~ |
     b1~ |
     b2\pp r2 |
@@ -267,6 +324,7 @@ clarinet_I_in_B_Music = {
     R2. |
     \mark #7
     R2.*8 |
+    \forceBarNumber
     r4 es8(\p c) d( c) |
     R2. |
     c'2(\p h4 |
@@ -350,6 +408,8 @@ clarinet_I_in_B_Music = {
 clarinet_I_in_A_part_two_Music = {
   \relative c' {
     \transposition a
+    % Transposition: Actually c major (256-294) Clarinet changes, written key doesn't
+    \key g \major
 
     % cl 1 page 2 line 8 (continued)
     r4 a''8(\f fis) h d |
@@ -412,7 +472,8 @@ clarinet_I_in_A_part_two_Music = {
     \barNumberCheck #293
     d8. d16 d4\>~ d8\! a''8 |
     \pitchedTrill a2_~ \startTrillSpan b a8\stopTrillSpan r8 |
-    \bar "||" \key a \major
+    % Transposition: Actually a major (295-321)
+    \bar "||" % (already) \key g \major
     R2.*4 |
     fis,8.\mf fis16 fis2->~ |
     fis16 d( e fis) a( fis e fis) e( d h d) |
@@ -442,12 +503,14 @@ clarinet_I_in_A_part_two_Music = {
     % cl 1 page 3 line 1
     \barNumberCheck #316
     fis2( dis4) |
-    d2->\mf(~ d8\> dis)\! |
+    % Transposition: Actually dis
+    d2->\mf(~ d8\> es)\! |
     fis4 dis8( eis fis4~\>) |
     fis4\! e8( fis e dis) |
     fis4( f) e->(\( |
     dis4) e\> fis\)\! |
-    \bar "||" \key c \major
+    % Transposition: Actually c major (322-335)
+    \bar "||" \key as \major
     \mark #14
     \repeat tremolo 12 { des16\mf \pocoAnimato } |
     des8 b16( c des es des c) b( c des es) |
@@ -486,8 +549,9 @@ clarinet_I_in_A_part_two_Music = {
     d2.\pp
     \mark #15
     R2.*2 |
-    gis,,,2.\p->~ |
-    gis2.
+    % Transposition: Actually gis,,, gis
+    as,,2.\p->~ |
+    as2.
     R2.*2 |
     b2.\p\sic->~ | % SIC: clarinet 2 and score have another p here
     b2. |
@@ -657,20 +721,30 @@ clarinet_I_in_A_part_two_Music = {
     r4 es''8\sf r8\lunga r4\fermata |
     \bar "||" \time 4/4 
     \mBreak
-    
+  }
+}
+
+% Transposition: Separate section so that we can apply \naturalizeMusic
+clarinet_I_in_A_part_three_Music = {
+  \relative c' {
+    \transposition a
+    % Transposition: Actually f major (465-474)
+    \key des \major
+
     % cl 1 page 4 line 5
     \barNumberCheck #465
     \tempo "Tempo del comincio"
     R1*2 |
     R1*2\moltoRit |
     \mark #22
-    R1*2 \pocoAPocoPiuAnimato | % FIXME: Why does that not appear after V?
-    r4 g,,4\p\<~ g2\! |
+    R1*2 | % FIXME: Had to move the \pocoAPocoPiuAnimato, actually belongs after V?
+    r4 \pocoAPocoPiuAnimato g'4\p\<~ g2\! |
     g4( ges f a\> |
     d8)\! r8 r4 \tuplet 3/2 { h'8(\< c cis } \tuplet 3/2 { d dis e)\! } |
     % SIC: clarinet 2 and score have mf here
     f8 r8 r4 \tuplet 3/2 { h,8(\mf\sic\< c cis } \tuplet 3/2 { d e eis)\! } |
-    \bar "||" \key d \major
+    % Transposition: Actually d major (475-end)
+    \bar "||"
     \mBreak
 
     % cl 1 page 4 line 6
@@ -745,6 +819,7 @@ clarinet_I_in_A_part_two_Music = {
   }
 }
 
+
 clarinet_II_in_A_part_one_Music = {
   \relative c' {
     \transposition a
@@ -778,7 +853,8 @@ clarinet_II_in_A_part_one_Music = {
     R1*2 |
     es'1(\f |
     d4) r4 r2 |
-    r4 gis~\f \tuplet 3/2 { gis8 gis\> gis } \tuplet 3/2 { gis8 gis gis\! } |
+    % Transposition: Actually gis
+    r4 as'~\f \tuplet 3/2 { as8 as\> as } \tuplet 3/2 { as8 as as\! } |
     g2 g2 \> |
     d2\p\< f |
     es1->\f\> |
@@ -873,7 +949,8 @@ clarinet_II_in_A_part_one_Music = {
     R2.*5 |
     a8\mf a16 a fis8\< fis16 fis fis8 fis16 fis |
     \mark #5
-    gis8\sf r8 r4 r4 |
+    % Transposition: Actually gis
+    as8\sf r8 r4 r4 |
     R2.*3 |
     R2.*6\pocoRit |
     \mBreak
@@ -918,7 +995,7 @@ clarinet_II_in_B_Music = {
     es4( g f\> |
     g4 es f)\! |
     R2.*2 |
-    e4( c e |
+    e?4( c e |
     c4\> e c)\! |
     R2.*4 |
     \mBreak
@@ -1023,6 +1100,8 @@ clarinet_II_in_B_Music = {
 clarinet_II_in_A_part_two_Music = {
   \relative c' {
     \transposition a
+    % Transposition: Actually c major (256-294) Clarinet changes, written key doesn't
+    \key g \major
 
     % cl 2 page 2 line 6 (continued)
     r4 a''8(\f fis) h d |
@@ -1040,13 +1119,15 @@ clarinet_II_in_A_part_two_Music = {
     c4 c c8-. c-. |
     b8 r8 r4 r4 |
     R2. |
-    cis,8(\ff ais) dis( fis) e-. dis-. |
+    % Transposition: Actually cis, ais dis
+    des,8(\ff b) es( fis?) e-. dis-. |
     \mBreak
     
     % cl 2 page 2 line 8
     \barNumberCheck #267
-    cis8( ais) dis( fis) e-. dis-. |
-    cis8 r8 r4 r4 |
+    % Transposition: Actually cis ais dis
+    des8( b) es( fis?) e-. dis-. |
+    des8 r8 r4 r4 |
     R2. |
     a'8(\ff fis) h( d) c-. h-. |
     a8( fis) h( d) c-. h-. |
@@ -1084,7 +1165,8 @@ clarinet_II_in_A_part_two_Music = {
     r4 r4 r8 b,\mf |
     b8. b16 b4\>~ b8\! r8 |
     R2. |
-    \bar "||" \key a \major
+    % Transposition: Actually a major (295-321)
+    \bar "||" % (already) \key g \major
     R2.*4 |
     fis'8.\mf fis16 fis2->~ |
     fis16 d( e fis) a\sic %{ SIC: No accent in 1st clarinet or score %} ( fis e fis) e( d h d) |
@@ -1106,11 +1188,13 @@ clarinet_II_in_A_part_two_Music = {
     
     % cl 2 page 2 line 13
     \barNumberCheck #317
-    d2->\mf(~ d8\> dis)\! |
+    % Transposition: Actually dis
+    d2->\mf(~ d8\> es)\! |
     R2.*2 |
-    h2 e4->(\( |
+    h2 e?4->(\( |
     dis4) c2\)\! |
-    \bar "||" \key c \major
+    % Transposition: Actually c major (322-335)
+    \bar "||" \key as \major
     \mark #14
     \repeat tremolo 12 { b16\mf \pocoAnimato } |
     b8 b16( c des es des c) b( c des es) |
@@ -1149,8 +1233,9 @@ clarinet_II_in_A_part_two_Music = {
     d2.\pp
     \mark #15
     R2.*2 |
-    gis,,2.->\p~ |
-    gis2.
+    % Transposition: Actually gis,, gis
+    as,2.->\p~ |
+    as2.
     R2.*2 |
     as2.->\p~ |
     as2. |
@@ -1319,6 +1404,15 @@ clarinet_II_in_A_part_two_Music = {
     r4 b''8\sf r8\lunga r4\fermata |
     \bar "||" \time 4/4 
     \mBreak
+  }
+}
+
+% Transposition: Separate section so that we can apply \naturalizeMusic
+clarinet_II_in_A_part_three_Music = {
+  \relative c' {
+    \transposition a
+    % Transposition: Actually f major (465-474)
+    \key des \major
     
     % cl 2 page 4 line 5
     \barNumberCheck #465
@@ -1326,12 +1420,13 @@ clarinet_II_in_A_part_two_Music = {
     R1*2 |
     R1*2\moltoRit |
     \mark #22
-    R1*2 \pocoAPocoPiuAnimato | % FIXME: Why does that not appear after V?
-    r4 d,,4\p\<( es2)\! |
+    R1*2 % FIXME: Had to move the \pocoAPocoPiuAnimato, actually belongs after V?
+    r4\pocoAPocoPiuAnimato d4\p\<( es2)\! |
     e2( f\> |
     f8)\! r8 r4 \tuplet 3/2 { d'8(\mf\< dis e } \tuplet 3/2 { f fis g)\! } |
     gis8 r8 r4 \tuplet 3/2 { d8(\< dis e } \tuplet 3/2 { f g gis)\! } |
-    \bar "||" \key d \major
+    % Transposition: Actually d major (475-end)
+    \bar "||"
     \mBreak
 
     % cl 2 page 4 line 6
@@ -1409,26 +1504,22 @@ clarinet_II_in_A_part_two_Music = {
   \score {
     \new Staff {
       \compressFullBarRests
-      % Make grace notes smaller and more fragile
-      $(add-grace-property 'Voice 'NoteHead 'font-size '-5)
-      $(add-grace-property 'Voice 'Slur 'height-limit '0.5)
-      $(add-grace-property 'Voice 'Flag 'font-size '-5)
-      $(add-grace-property 'Voice 'Stem 'length '8)
-      $(add-grace-property 'Voice 'Beam 'beam-thickness '0.3)
-      $(add-grace-property 'Voice 'Beam 'length-fraction '0.5)
-      $(add-grace-property 'Voice 'Beam 'shorten '1)
       \set Score.markFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
         {
-          % \transpose b a
+          \transpose b a
           \clarinet_I_in_A_part_one_Music
         }
         \clarinet_I_in_B_Music
         {
-          % \transpose b a
+          \transpose b a
           \clarinet_I_in_A_part_two_Music
+        }
+        {
+          \naturalizeMusic \transpose b a
+          \clarinet_I_in_A_part_three_Music
         }
       }
     }
@@ -1442,26 +1533,22 @@ clarinet_II_in_A_part_two_Music = {
   \score {
     \new Staff {
       \compressFullBarRests
-      % Make grace notes smaller and more fragile
-      $(add-grace-property 'Voice 'NoteHead 'font-size '-5)
-      $(add-grace-property 'Voice 'Slur 'height-limit '0.5)
-      $(add-grace-property 'Voice 'Flag 'font-size '-5)
-      $(add-grace-property 'Voice 'Stem 'length '8)
-      $(add-grace-property 'Voice 'Beam 'beam-thickness '0.3)
-      $(add-grace-property 'Voice 'Beam 'length-fraction '0.5)
-      $(add-grace-property 'Voice 'Beam 'shorten '1)
       \set Score.markFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
         {
-          % \transpose b a
+          \transpose b a
           \clarinet_II_in_A_part_one_Music
         }
         \clarinet_II_in_B_Music
         {
-          % \transpose b a
+          \transpose b a
           \clarinet_II_in_A_part_two_Music
+        }
+        {
+          \naturalizeMusic \transpose b a
+          \clarinet_II_in_A_part_three_Music
         }
       }
     }
