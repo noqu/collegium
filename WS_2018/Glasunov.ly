@@ -106,6 +106,43 @@ naturalizeMusic =
    (ly:music?)
    (naturalize m))
 
+% Adapted from http://lsr.di.unimi.it/LSR/Snippet?id=655
+% Make title, subtitle, instrument appear on pages other than the first
+#(define (part-not-first-page layout props arg)
+   (if (not (= (chain-assoc-get 'page:page-number props -1)
+               (ly:output-def-lookup layout 'first-page-number)))
+       (interpret-markup layout props arg)
+       empty-stencil))
+
+\paper {
+  oddHeaderMarkup = \markup
+  \fill-line {
+    " "
+    \on-the-fly #part-not-first-page \fontsize #-1.0 \concat {
+      \fromproperty #'header:title
+      "     -     "
+      \fromproperty #'header:subtitle
+      "     -     "
+      \fromproperty #'header:instrument
+    }
+    \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string
+  }
+  evenHeaderMarkup = \markup
+  \fill-line {
+    \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string
+    \on-the-fly #part-not-first-page \fontsize #-1.0 \concat {
+      \fromproperty #'header:title
+      "     -     "
+      \fromproperty #'header:subtitle
+      "     -     "
+      \fromproperty #'header:instrument
+    }
+    " "
+  }
+}
+
+% ---------------------------------------------------------
+
 clarinet_I_in_A_part_one_Music = {
   \relative c' {
     \transposition a
@@ -1499,7 +1536,7 @@ clarinet_II_in_A_part_three_Music = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
@@ -1528,7 +1565,7 @@ clarinet_II_in_A_part_three_Music = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
