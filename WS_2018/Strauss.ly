@@ -247,7 +247,6 @@ clarinet_I_in_A_Music = {
     \mBreak
     
     \barNumberCheck #73
-    
   }
 }
 
@@ -261,6 +260,139 @@ clarinet_II_in_A_Music = {
 
     % cl 2 page 1 line 1
     \barNumberCheck #1
+    b4.\p~ b8 r8 r8 |
+    h4.~ h8 r8 r8 |
+    b4.~ b8 r8 r8 |
+    h4.~ h8 r8 r8 |
+    b4\pp~\( b16 es\) es4. |
+    b4~\( b16 es\) es4.\( |
+    \mBreak
+    
+    % cl 2 page 1 line 2
+    \barNumberCheck #7
+    d2.~ |
+    d4.~ d4 fis16 b |
+    \mark #1
+    d4.\) g,4\pp\( des8 |
+    d4.~ d8\) r8 r8 |
+    a'4.~ a8 r8 r8 |
+    c4.~ c8 r8 r8 |
+    b2.\( |
+    \mBreak
+
+    % cl 2 page 1 line 3
+    \barNumberCheck #14
+    des2.~ |
+    des2. |
+    f,2.\) |
+    \mark #2
+    g4.\( as4 cis,8 |
+    d4. as4 a8\) |
+    b4.\pp\( ces4. |
+    des4. ces4.\) |
+    \mBreak
+
+    % cl 2 page 1 line 4
+    \barNumberCheck #21
+    des8\p\( ges16 b, b' es\) es8\( f des |
+    ges4\) r8 h,,8\mf\( e16 g as ces |
+    es16 des ges b des8\) r4. |
+    R2.|
+    \mark #3
+    R2.|
+    \mBreak
+
+    % cl 2 page 1 line 5
+    \barNumberCheck #26
+    es,,8\p\( g16 b, b' es\) es4. |
+    es4\( f8 as b ges~ |
+    ges8 ces c~\> c d b |
+    es8\p\) r8 r8 r4.|
+    R2.*3
+    \mBreak
+
+    % cl 2 page 1 line 6
+    \barNumberCheck #33
+    \mark #4
+    e,4\p\( f8~ f fis c |
+    dis4. e4.~ |
+    e4 d8 c4.\) |
+    g8.\( c16\< e g f4.\) |
+    cis4\p\( d8~ d dis gis, |
+    eis'4. fis4.\pp\) |
+    \mBreak
+
+    % cl 2 page 1 line 7
+    \barNumberCheck #39
+    d,4\( fis16 a\) a4\( d16 fis\) |
+    fis4.\( f4. |
+    as4.~ as8 g\< fis |
+    f8 e es d cis c\) |
+    \mark #5
+    d,2.\(\p |
+    c2.\)\< |
+    d2.\( |
+    \mBreak
+    
+    
+    % cl 2 page 1 line 8
+    \barNumberCheck #46
+    cis4.\> d4.\! |
+    \bar "||" \time 9/8 
+    % \markup { \bold "Etwas ruhiger" } % FIXME
+    c8\pp e16 g, g' c\) c4\( g'16 e c8-.\) g16\( es c8-.\) |
+    e4.\( f4 h,8 c4.~ |
+    c8 e16 g, c e g2. |
+    \mBreak
+
+    % cl 2 page 1 line 9
+    \barNumberCheck #50
+    c4.\< h des~ |
+    \mark #6
+    % \ppSubito % FIXME
+    des4.\pp~ des8\) r8 r8 r4. |
+    R1*9/8 |
+    f,8\pp\( g16 c, f as c2.~ |
+    c4\) r8 r4. r4. |
+    \mBreak
+
+    % cl 2 page 1 line 10
+    \barNumberCheck #55
+    e,8\p\( gis16 h,\< h' e\) e8\( gis e h gis e\)\! |
+    R1*9/8*2 |
+    r8 e'16\p\<\( h gis8\) r8 es'16\( b ges8\) r8 d'16\( as f8\) |
+    \mBreak
+
+    % cl 2 page 1 line 11
+    \barNumberCheck #59
+    \mark #7
+    % \pSubito % FIXME
+    c'2.\p\( g4.~ |
+    g4. a e |
+    f2.~ f4.\) |
+    c''4\p\( h8\< d,4. des8 c ces |
+    b4 g16 b es4 g16 b\) b4. |
+    \mBreak
+
+    % cl 2 page 2 line 1
+    \barNumberCheck #64
+    h,2.\f\(~ h4 c8 |
+    d4 e8\> f4 g8 a4 h8 |
+    \mark #8
+    c4\p\) r8 g,2.\(~ |
+    g4. c e\)
+    \mBreak
+       
+    % cl 2 page 2 line 2
+    \barNumberCheck #68
+    a4.\p\( h dis, |
+    d2. f4.\) |
+    c'2.~ c4.~ |
+    c2.~ c4.~ |
+    c4 r8 r4. r4. |
+    \mBreak
+    
+    \barNumberCheck #73
   }
 }
 
