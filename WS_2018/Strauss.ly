@@ -22,8 +22,9 @@ mBreak = { \break }
 #(set-global-staff-size 13)
 
 % Useful snippets
-pDolce = \markup { \dynamic p \italic \bold "dolce" }
-ppSubito = \markup { \dynamic pp \italic \bold "subito" }
+pDolce = _\markup { \dynamic p \italic "dolce" }
+pSubito = _\markup { \dynamic p \italic "subito" }
+ppSubito = _\markup { \dynamic pp \italic "subito" }
 pesante = _\markup {\italic {"pesante"} }
 pocoRit = ^\markup {\italic {"poco rit."} }
 moltoRit = ^\markup {\italic {"molto rit."} }
@@ -140,7 +141,7 @@ clarinet_I_in_A_Music = {
     r4. c4\pp\( f,8 |
     fis4.~ fis8\) r8 r8 |
     R2. |
-    r4. c8\( e16 g c\> e |
+    r4. c8\p\( e16 g c\> e |
     g8\)\! r8 r8 g,8\p\( b16 des\> e g |
     b8\)\! r8 r8 r4. |
     \mBreak
@@ -149,10 +150,10 @@ clarinet_I_in_A_Music = {
     \barNumberCheck #15
     R2.*2 |
     \mark #2
-    g,8\p\( b16 d, g d\) as8\( ces16 es, a cis |
+    g,8\p\( b16 d, g d'\) as8\( ces16 es, a cis |
     d16 f b\) r16 r8 r4. |
-    r4. des8\( f16 as, des as\) |
-    des8\( ges16 b, des b'\) f8\( b16 des, as' des |
+    r4. des,8\( f16 as, des as'\) |
+    des,8\( ges16 b, des b'\) f8\( b16 des, as' des |
     \mBreak
 
     % cl 1 page 1 line 4
@@ -196,7 +197,7 @@ clarinet_I_in_A_Music = {
     e4\) eis8\(~ eis fis h, |
     a'4\> gis8 h4 a8 |
     \bar "||" \time 9/8 
-    % \markup { \bold "Etwas ruhiger" } % FIXME
+    \tempo "Etwas ruhiger"
     g4\)\pp r8 r4. r4. |
     a,4.\pp\( b4 dis,8 e4.~ | % FIXME: Really twice pp?
     \mBreak
@@ -206,8 +207,7 @@ clarinet_I_in_A_Music = {
     e4~ e16 g c2. |
     e,2.\< g4.\) |
     \mark #6
-    % \ppSubito % FIXME
-    f8\pp\( b as~ as16 e f as c des\) d4.\(~ |
+    f8\!\ppSubito\( b as~ as16 e f as c des\) d4.\(~ |
     d4. es4 gis,8 a4.~ |
     \mBreak
 
@@ -221,7 +221,7 @@ clarinet_I_in_A_Music = {
 
     % cl 1 page 1 line 10
     \barNumberCheck #57
-    e,8\( gis16 h, e gis h4 e16 gis\) gis8.\( e16 gis h\) |
+    e,8\p\( gis16 h, e gis h4 e16 gis\) gis8.\( e16 gis h\) |
     h4(\< b8) b4( a8) a4\( gis8 |
     \mark #7 g2.\)\p r4. |
     R1*9/8 * 3
@@ -244,6 +244,7 @@ clarinet_I_in_A_Music = {
     e2.~ e4.~ |
     e2.~ e4.~ |
     e4 r8 r4. r4. |
+    \bar "|."
     \mBreak
     
     \barNumberCheck #73
@@ -339,7 +340,7 @@ clarinet_II_in_A_Music = {
     \barNumberCheck #46
     cis4.\> d4.\! |
     \bar "||" \time 9/8 
-    % \markup { \bold "Etwas ruhiger" } % FIXME
+    \tempo "Etwas ruhiger"
     c8\pp e16 g, g' c\) c4\( g'16 e c8-.\) g16\( es c8-.\) |
     e4.\( f4 h,8 c4.~ |
     c8 e16 g, c e g2. |
@@ -349,8 +350,7 @@ clarinet_II_in_A_Music = {
     \barNumberCheck #50
     c4.\< h des~ |
     \mark #6
-    % \ppSubito % FIXME
-    des4.\pp~ des8\) r8 r8 r4. |
+    des4.\!\ppSubito~ des8\) r8 r8 r4. |
     R1*9/8 |
     f,8\pp\( g16 c, f as c2.~ |
     c4\) r8 r4. r4. |
@@ -366,8 +366,7 @@ clarinet_II_in_A_Music = {
     % cl 2 page 1 line 11
     \barNumberCheck #59
     \mark #7
-    % \pSubito % FIXME
-    c'2.\p\( g4.~ |
+    c'2.\!\pSubito\( g4.~ |
     g4. a e |
     f2.~ f4.\) |
     c''4\p\( h8\< d,4. des8 c ces |
@@ -390,6 +389,7 @@ clarinet_II_in_A_Music = {
     c'2.~ c4.~ |
     c2.~ c4.~ |
     c4 r8 r4. r4. |
+    \bar "|."
     \mBreak
     
     \barNumberCheck #73
