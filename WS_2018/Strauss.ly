@@ -36,6 +36,7 @@ legato = _\markup {\italic {"legato"} }
 solo = ^\markup { "Solo" }
 sic = ^\markup { \tiny { "sic!" } }
 
+%{
 % Taken from LSR http://lsr.di.unimi.it/LSR/Item?id=266
 % Minimize usage of accidentals (no double accidentals, no his, eis, ces, fes)
 % Usage: \naturalizeMusic \transpose {...}
@@ -79,6 +80,7 @@ naturalizeMusic =
 #(define-music-function (parser location m)
    (ly:music?)
    (naturalize m))
+%}
 
 % Adapted from http://lsr.di.unimi.it/LSR/Snippet?id=655
 % Make title, subtitle, instrument appear on pages other than the first
@@ -341,7 +343,7 @@ clarinet_II_in_A_Music = {
     cis4.\> d4.\! |
     \bar "||" \time 9/8 
     \tempo "Etwas ruhiger"
-    c8\pp e16 g, g' c\) c4\( g'16 e c8-.\) g16\( es c8-.\) |
+    c8\pp e16 g, g' c\) c4\( g'16 e c8-.\) g16\( e c8-.\) |
     e4.\( f4 h,8 c4.~ |
     c8 e16 g, c e g2. |
     \mBreak
@@ -384,7 +386,7 @@ clarinet_II_in_A_Music = {
        
     % cl 2 page 2 line 2
     \barNumberCheck #68
-    a4.\p\( h dis, |
+    a4.\p\( b dis, |
     d2. f4.\) |
     c'2.~ c4.~ |
     c2.~ c4.~ |
