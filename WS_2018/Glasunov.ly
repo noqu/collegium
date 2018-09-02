@@ -362,7 +362,7 @@ clarinet_I_in_B_Music = {
     \mark #7
     R2.*8 |
     \forceBarNumber
-    r4 es8(\p c) d( c) |
+    r4 es8([\p c)] d( c) |
     R2. |
     c'2(\p h4 |
     b2 a4 |
@@ -401,21 +401,21 @@ clarinet_I_in_B_Music = {
     ges2. |
     fes2. |
     des''2( b4) |
-    g8(\f e) a( e) g( e) |
-    a8( e)\> g( e) a( e) |
-    g8(\mf e) a( e) g( e) |
+    g8(\f e) a([ e)] g( e) |
+    a8( e)\> g([ e)] a( e) |
+    g8(\mf e) a([ e)] g( e) |
     \mBreak
     
     % cl 1 page 2 line 7
     \barNumberCheck #219
-    a8(\> e) g( e) a( e)\! |
+    a8(\> e) g([ e)] a( e)\! |
     R2.*2 |
     \bar "||" \tempo "Allegro con brio (come prima)"
     R2.*8 |
     as4(\p c2) |
     as4( c2) |
-    as4 as8( b) as( g) |
-    as4 as8( b) as4 |
+    as4 as8([ b)] as( g) |
+    as4 as8([ b)] as4 |
     g8 r8 r4 r |
     R2.*6 |
     \mark #9
@@ -425,8 +425,8 @@ clarinet_I_in_B_Music = {
     
     % cl 1 page 2 line 8 (start)
     \barNumberCheck #243
-    c4 c8( d) c( h) |
-    c4 c8( d) c( h) |
+    c4 c8([ d)] c( h) |
+    c4 c8([ d)] c( h) |
     a8 r8 r4 r |
     R2.*8 |
     <<
@@ -449,9 +449,9 @@ clarinet_I_in_A_part_two_Music = {
     \key g \major
 
     % cl 1 page 2 line 8 (continued)
-    r4 a''8(\f fis) h d |
-    cis8 h a( fis) h d |
-    cis8 h a( fis) h4 |
+    r4 a''8([\f fis)] h d |
+    cis8 h a([ fis)] h d |
+    cis8 h a([ fis)] h4 |
     \mBreak
 
     % cl 1 page 2 line 9
@@ -465,16 +465,16 @@ clarinet_I_in_A_part_two_Music = {
     es 8 r8 es,2->\mf~ |
     es2. |
     R2.*2 |
-    e8(\mf\solo cis8) fis8( cis8) e8( cis8) |
-    fis8(\> cis) e( cis) fis( cis) |
+    e8(\mf\solo cis8) fis8([ cis8)] e8( cis8) |
+    fis8(\> cis) e([ cis)] fis( cis) |
     \mBreak
     
     % cl 1 page 2 line 10
     \barNumberCheck #270
-    a'8(\ff fis) h( d) c-. h-. |
-    a8( fis) h( d) c-. h-. |
-    a8( fis) h( fis) a( fis) |
-    h8(\< fis) a( fis) h( fis) |
+    a'8(\ff fis) h([ d)] c-. h-. |
+    a8( fis) h([ d)] c-. h-. |
+    a8( fis) h([ fis)] a( fis) |
+    h8(\< fis) a([ fis)] h( fis) |
     g8\sf\! r8 r4 r |
     R2. |
     f,,2.\p\startTrillSpan~ |
@@ -496,10 +496,10 @@ clarinet_I_in_A_part_two_Music = {
     
     % cl 1 page 2 line 12
     \barNumberCheck #286
-    a8( fis) h( d) c-. h-. |
-    a8( fis) e( g) fis( a) |
-    g( e) a( c) h-. a-. |
-    g8( e) c(\< d) e-. d'-. |
+    a8( fis) h([ d)] c-. h-. |
+    a8( fis) e([ g)] fis( a) |
+    g( e) a([ c)] h-. a-. |
+    g8( e) c([\< d)] e-. d'-. |
     cis8.\ff cis16 cis4~ cis8 e,8\f |
     e8. e16 e4\>~ e8\! r8 |
     r4 r4 r8 d,\mf |
@@ -764,7 +764,6 @@ clarinet_I_in_A_part_two_Music = {
 % Transposition: Separate section so that we can apply \naturalizeMusic
 clarinet_I_in_A_part_three_Music = {
   \relative c' {
-    \transposition a
     % Transposition: Actually f major (465-474)
     \key des \major
 
@@ -885,7 +884,7 @@ clarinet_II_in_A_part_one_Music = {
     \barNumberCheck #43
     \mark #2
     R1*3 |
-    g'1~ |
+    g'1\mf~ |
     g1 |
     R1*2 |
     es'1(\f |
@@ -1039,7 +1038,7 @@ clarinet_II_in_B_Music = {
 
     % cl 2 page 2 line 1
     \barNumberCheck #170
-    f,2.~ |
+    f,2.\pp~ |
     f2.(\<( |
     es8)\! r8 r4 r4 |
 
@@ -1054,7 +1053,7 @@ clarinet_II_in_B_Music = {
 
     % cl 2 page 2 line 2
     \barNumberCheck #186
-    r4 as,8(\p es) as( d,) |
+    r4 as,8([\p es]) as( d,) |
     R2. |
     c'2(\p h4 |
     b2 a4 |
@@ -1093,14 +1092,14 @@ clarinet_II_in_B_Music = {
     b2. |
     des2. |
     as''2( e4) |
-    c8(\f g) c( a) c( g) |
-    c8(\> a) c( g) c( a) |
-    c8(\mf g) c( a) c( g) |
+    c8(\f g) c([ a)] c( g) |
+    c8(\> a) c([ g)] c( a) |
+    c8(\mf g) c([ a)] c( g) |
     \mBreak
     
     % cl 2 page 2 line 5
     \barNumberCheck #219
-    c8(\> a) c( g) c( a)\! |
+    c8(\> a) c([ g)] c( a)\! |
     R2.*2 |
     \bar "||" \tempo "Allegro con brio (come prima)"
     R2.*8 |
@@ -1141,13 +1140,13 @@ clarinet_II_in_A_part_two_Music = {
     \key g \major
 
     % cl 2 page 2 line 6 (continued)
-    r4 a''8(\f fis) h d |
-    cis8 h a( fis) h d |
+    r4 a''8([\f fis)] h d |
+    cis8 h a([ fis)] h d |
     \mBreak
 
     % cl 2 page 2 line 7
     \barNumberCheck #258
-    cis8 h a( fis) h4 |
+    cis8 h a([ fis)] h4 |
     fis4 a8( fis) h4 |
     fis4-> a-> fis-> |
     h8-> r8 r4 r |
@@ -1157,19 +1156,19 @@ clarinet_II_in_A_part_two_Music = {
     b8 r8 r4 r4 |
     R2. |
     % Transposition: Actually cis, ais dis
-    des,8(\ff b) es( fis?) e-. dis-. |
+    des,8(\ff b) es([ fis?)] e-. dis-. |
     \mBreak
     
     % cl 2 page 2 line 8
     \barNumberCheck #267
     % Transposition: Actually cis ais dis
-    des8( b) es( fis?) e-. dis-. |
+    des8( b) es([ fis?)] e-. dis-. |
     des8 r8 r4 r4 |
     R2. |
-    a'8(\ff fis) h( d) c-. h-. |
-    a8( fis) h( d) c-. h-. |
-    a8( fis) h( fis) a( fis) |
-    h8(\< fis) a( fis) h( fis) |
+    a'8(\ff fis) h([ d)] c-. h-. |
+    a8( fis) h([ d)] c-. h-. |
+    a8( fis) h([ fis)] a( fis) |
+    h8(\< fis) a([ fis)] h( fis) |
     \mBreak
 
     % cl 2 page 2 line 9
@@ -1189,10 +1188,10 @@ clarinet_II_in_A_part_two_Music = {
     \barNumberCheck #284
     c2.)\startTrillSpan~ |
     c2\stopTrillSpan\< c32( d e fis g a h c)\! |
-    a8( fis) h( d) c-. h-. |
-    a8( fis) e( g) fis( a) |
-    g( e) a( c) h-. a-. |
-    g8( e) c(\< d) e-. g-. |
+    a8( fis) h([ d)] c-. h-. |
+    a8( fis) e([ g)] fis( a) |
+    g( e) a([ c)] h-. a-. |
+    g8( e) c([\< d)] e-. g-. |
     \mBreak
 
     % cl 2 page 2 line 11
@@ -1229,7 +1228,7 @@ clarinet_II_in_A_part_two_Music = {
     d2->\mf(~ d8\> es)\! |
     R2.*2 |
     h2 e?4->(\( |
-    dis4) c2\)\! |
+    dis4) c2\)\> |
     % Transposition: Actually c major (322-335)
     \bar "||" \key as \major
     \mark #14
@@ -1251,7 +1250,7 @@ clarinet_II_in_A_part_two_Music = {
     
     % cl 2 page 3 line 2
     \barNumberCheck #332
-    c8 r8 r4 \repeat tremolo 4 { des16-> } |
+    c8 r8 r4 \repeat tremolo 4 { b16-> } |
     b8 r8 r4 r |
     r4 r as'4->( |
     g8)\> b,16(\! c des es des c) b(\> d e\! r16) |
@@ -1335,12 +1334,12 @@ clarinet_II_in_A_part_two_Music = {
     b16( c b a g a g f es f es d) |
     c8 c'(\mf b) c \acciaccatura { e } d( c16 b) |
     c8 c( b) c \acciaccatura { e } d( c16 b) |
-    a8 r r \tuplet 3/2 { e16\f f fis } g8->( e) |
+    a8 r r \tuplet 3/2 { e16(\f f fis) } g8->( e) |
     \mBreak
     
     % cl 2 page 3 line 9
     \barNumberCheck #389
-    a8-> r r \tuplet 3/2 { e16 f fis } g8->( e) |
+    a8-> r r \tuplet 3/2 { e16( f fis) } g8->( e) |
     a8 r8 r4 r |
     r4 f'8 r as r |
     \mark #18 
@@ -1447,7 +1446,6 @@ clarinet_II_in_A_part_two_Music = {
 % Transposition: Separate section so that we can apply \naturalizeMusic
 clarinet_II_in_A_part_three_Music = {
   \relative c' {
-    \transposition a
     % Transposition: Actually f major (465-474)
     \key des \major
     
@@ -1455,7 +1453,7 @@ clarinet_II_in_A_part_three_Music = {
     \barNumberCheck #465
     \tempo "Tempo del comincio"
     R1*2 |
-    R1*2\moltoRit |
+    R1*2\moltoRit\sic |
     \mark #22
     R1*2 % FIXME: Had to move the \pocoAPocoPiuAnimato, actually belongs after V?
     r4\pocoAPocoPiuAnimato d4\p\<( es2)\! |
