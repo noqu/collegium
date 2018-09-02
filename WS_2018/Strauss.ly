@@ -17,9 +17,9 @@
 }
 
 % Adapt this for automatic line-breaks
-% mBreak = {}
-mBreak = { \break }
-#(set-global-staff-size 13)
+mBreak = {}
+% mBreak = { \break }
+% #(set-global-staff-size 13)
 
 % Useful snippets
 pDolce = _\markup { \dynamic p \italic "dolce" }
@@ -130,9 +130,11 @@ clarinet_I_in_A_Music = {
     % cl 1 page 1 line 1
     \barNumberCheck #1
     r4. es8\p\( ges16 b, b' es |
-    h4.\) h,8\( d16 fis, fis' h |
+    % Transposition: Actually fis
+    h4.\) h,8\( d16 ges, ges' h |
     b4.\) es,8\( ges16 b, b' es |
-    h4.\) h,8\( d16 fis, fis' h |
+    % Transposition: Actually fis
+    h4.\) h,8\( d16 ges, ges' h |
     b8\pp\) r8 r8 r4. |
     \mBreak
     
@@ -141,9 +143,10 @@ clarinet_I_in_A_Music = {
     R2.*3 |
     \mark #1
     r4. c4\pp\( f,8 |
-    fis4.~ fis8\) r8 r8 |
+    % Transposition: Actually fis
+    ges4.~ ges8\) r8 r8 |
     R2. |
-    r4. c8\p\( e16 g c\> e |
+    r4. c,8\p\( e16 g? c\> e |
     g8\)\! r8 r8 g,8\p\( b16 des\> e g |
     b8\)\! r8 r8 r4. |
     \mBreak
@@ -152,7 +155,8 @@ clarinet_I_in_A_Music = {
     \barNumberCheck #15
     R2.*2 |
     \mark #2
-    g,8\p\( b16 d, g d'\) as8\( ces16 es, a cis |
+    % Transposition: Actually ces
+    g,8\p\( b16 d, g d'\) as8\( h16 es, a cis |
     d16 f b\) r16 r8 r4. |
     r4. des,8\( f16 as, des as'\) |
     des,8\( ges16 b, des b'\) f8\( b16 des, as' des |
@@ -175,7 +179,8 @@ clarinet_I_in_A_Music = {
     es4 f\) r4 |
     R2.*4 |
     \mark #4
-    g4\p\( as8~ as a dis, |
+    % Transposition: Actually dis
+    g4\p\( as8~ as a es |
     c'4 h8 e4.~ |
     e4 d8 c4 h8\) |
     h4.\( a\<\) |
@@ -188,20 +193,25 @@ clarinet_I_in_A_Music = {
     fis4 e8 d4 cis8\) |
     cis4\( h8 d4.~ |
     d4 f, g\< |
-    gis a f |
+    % Transposition: Actually gis
+    as a f |
     \mBreak
 
     % cl 1 page 1 line 7
     \barNumberCheck #43
     \mark #5
-    e4\) eis8\p\(~ eis fis h, |
+    % Transposition: Actually eis
+    e4\) f8\p\(~ f fis h, |
     a'4 \< g8~ g fis f |
-    e4\) eis8\(~ eis fis h, |
-    a'4\> gis8 h4 a8 |
+    % Transposition: Actually eis
+    e4\) f8\(~ f fis h, |
+    % Transposition: Actually gis
+    a'4\> as8 h4 a8 |
     \bar "||" \time 9/8 
     \tempo "Etwas ruhiger"
     g4\)\pp r8 r4. r4. |
-    a,4.\pp\( b4 dis,8 e4.~ | % FIXME: Really twice pp?
+    % Transposition: Actually dis
+    a,4.\pp\( b4 es,8 e4.~ | % FIXME: Really twice pp?
     \mBreak
 
     % cl 1 page 1 line 8
@@ -223,8 +233,10 @@ clarinet_I_in_A_Music = {
 
     % cl 1 page 1 line 10
     \barNumberCheck #57
-    e,8\p\( gis16 h, e gis h4 e16 gis\) gis8.\( e16 gis h\) |
-    h4(\< b8) b4( a8) a4\( gis8 |
+    % Transposition: Actually gis
+    e,8\p\( as16 h, e as h4 e16 as\) as8.\( e16 as h\) |
+    % Transposition: Actually gis
+    h4(\< b8) b4( a8) a4\( as8 |
     \mark #7 g2.\)\p r4. |
     R1*9/8 * 3
     \mBreak
@@ -298,7 +310,8 @@ clarinet_II_in_A_Music = {
     % cl 2 page 1 line 4
     \barNumberCheck #21
     des8\p\( ges16 b, b' es\) es8\( f des |
-    ges4\) r8 h,,8\mf\( e16 g as ces |
+    % Transposition: Actually ces
+    ges4\) r8 h,,8\mf\( e16 g as h |
     es16 des ges b des8\) r4. |
     R2.|
     \mark #3
@@ -318,18 +331,24 @@ clarinet_II_in_A_Music = {
     \barNumberCheck #33
     \mark #4
     e,4\p\( f8~ f fis c |
-    dis4. e4.~ |
+    % Transposition: Actually dis
+    es4. e4.~ |
     e4 d8 c4.\) |
     g8.\( c16\< e g f4.\) |
-    cis4\p\( d8~ d dis gis, |
-    eis'4. fis4.\pp\) |
+    % Transposition: Actually dis, gis
+    cis4\p\( d8~ d es as, |
+    % Transposition: Actually eis
+    f'4. fis4.\pp\) |
     \mBreak
 
     % cl 2 page 1 line 7
     \barNumberCheck #39
-    d,4\( fis16 a\) a4\( d16 fis\) |
-    fis4.\( f4. |
-    as4.~ as8 g\< fis |
+    % Transposition: Actually fis
+    d,4\( ges16 a\) a4\( d16 ges\) |
+    % Transposition: Actually fis
+    ges4.\( f4. |
+    % Transposition: Actually fis
+    as4.~ as8 g\< ges |
     f8 e es d cis c\) |
     \mark #5
     d,2.\(\p |
@@ -360,9 +379,11 @@ clarinet_II_in_A_Music = {
 
     % cl 2 page 1 line 10
     \barNumberCheck #55
-    e,8\p\( gis16 h,\< h' e\) e8\( gis e h gis e\)\! |
+    % Transposition: Actually gis
+    e,8\p\( as16 h,\< h' e\) e8\( as e h as e\)\! |
     R1*9/8*2 |
-    r8 e'16\p\<\( h gis8\) r8 es'16\( b ges8\) r8 d'16\( as f8\) |
+    % Transposition: Actually gis
+    r8 e'16\p\<\( h as8\) r8 es'16\( b ges8\) r8 d'16\( as f8\) |
     \mBreak
 
     % cl 2 page 1 line 11
@@ -386,7 +407,8 @@ clarinet_II_in_A_Music = {
        
     % cl 2 page 2 line 2
     \barNumberCheck #68
-    a4.\p\( b dis, |
+    % Transposition: Actually dis
+    a4.\p\( b es, |
     d2. f4.\) |
     c'2.~ c4.~ |
     c2.~ c4.~ |
@@ -411,7 +433,7 @@ clarinet_II_in_A_Music = {
       \accidentalStyle Score.modern-cautionary
       \new Voice {
         {
-          % \transpose b a
+          \transpose b a
           \clarinet_I_in_A_Music
         }
       }
@@ -431,7 +453,7 @@ clarinet_II_in_A_Music = {
       \accidentalStyle Score.modern-cautionary
       \new Voice {
         {
-          % \transpose b a
+          \transpose b a
           \clarinet_II_in_A_Music
         }
       }
