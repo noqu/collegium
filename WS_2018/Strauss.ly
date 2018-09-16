@@ -423,7 +423,7 @@ clarinet_II_in_A_Music = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
@@ -443,7 +443,7 @@ clarinet_II_in_A_Music = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
