@@ -26,7 +26,7 @@ mBreak = {}
 
 % Useful snippets
 pDolce = \markup { \dynamic p \italic \bold "dolce" }
-
+sic = ^\markup { \tiny { "sic!" } }
 
 clarinet_I_in_A_Music = {
   \relative c' {
@@ -189,7 +189,7 @@ clarinet_I_in_B_Music = {
 
     % cl 1 line 9
     \barNumberCheck #87
-    des4( es8 des c4 g |	% FIXME: d or des??
+    d4\sic( es8 des c4 g |	% Really d not des!
     b2.)\> r4\! |
     R1*1 |
     f2( as) |
