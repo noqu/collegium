@@ -189,7 +189,7 @@ clarinet_I_in_B_Music = {
 
     % cl 1 line 9
     \barNumberCheck #87
-    d4\sic( es8 des c4 g |	% Really d not des!
+    d4\sic( es8 d c4 g |	% Really d not des!
     b2.)\> r4\! |
     R1*1 |
     f2( as) |
