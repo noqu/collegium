@@ -29,7 +29,7 @@ pDolce = _\markup { \dynamic p \italic \bold "dolce" }
 pBienMarque = _\markup { \dynamic p \italic "bien marqué" }
 pocoSf = _\markup { \italic {"poco "} \dynamic sf }
 pesante = _\markup {\italic {"pesante"} }
-sempreCrescendo = _\markup {\italic {"sempreCrescendo"} }
+sempreCrescendo = _\markup {\italic {"sempre crescendo"} }
 pocoRit = ^\markup {\italic {"poco rit."} }
 dimMolto = _\markup {\italic {"dim. molto"} }
 crescendoMolto = _\markup {\italic {"crescendo molto"} }
@@ -117,7 +117,7 @@ clarinet_I_Music = {
     f2-^\pocoSf f4\dimMolto |
     f2-^ e4 |
     d2-^\pp e4-^ |
-    fis4-^ g-^ c,-^ |
+    fis?4-^ g-^ c,-^ |
     \break
     
     % cl 1 p1 line 5
@@ -141,7 +141,7 @@ clarinet_I_Music = {
     h4-^ g-^ a-^ |
     a8-.-^\ff r8 r4 r4 |
     R2.*2 |
-    R2.\fermata |
+    R2.\fermataMarkup |
     \bar "||"
     \break
 
@@ -171,7 +171,7 @@ clarinet_I_Music = {
     fis8 d e) fis4.~\pocoAPocoCrescendoMolto |
     fis8 a( g fis4. |
     g4. f' |
-    e8 e, fis g fis e |
+    e8 e, fis? g fis e |
     c'4. h4 a8 |
     g8) a( h c d e |
     fis,8 g a h\diminuendo c d |
@@ -226,7 +226,8 @@ clarinet_I_Music = {
     h'2-^\pocoAPocoCrescendoMolto a4-^ |
     \repeat unfold 3 { h2-^ a4-^ } |
     d2.~\ff\sempreCrescendo |
-    \repeat unfold 3 { d2.~ } |
+    \repeat unfold 2 { d2.~ } |
+    { d2. }
     d2.~\fff~ |
     d2.~ |
     d8 r8 r4 r4 |
@@ -275,7 +276,7 @@ clarinet_II_Music = {
     dis4-^ dis-^ dis-^ |
     dis8 -.-^\ff r8 r4 r4 |
     R2.*2 |
-    R2.\fermata |
+    R2.\fermataMarkup |
     \bar "||"
     \break
     
@@ -317,7 +318,8 @@ clarinet_II_Music = {
     \repeat unfold 5 { d2-^ d4-^ } |
     \normalsize
     h'2.~\ff\sempreCrescendo |
-    \repeat unfold 3 { h2.~ } |
+    \repeat unfold 2 { h2.~ } |
+    { h2. }
     h2.~\fff~ |
     h2.~ |
     h8 r8 r4 r4 |
