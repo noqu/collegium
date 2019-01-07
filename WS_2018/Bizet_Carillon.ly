@@ -20,9 +20,9 @@
 }
 
 % Adapt this for automatic line-breaks
-% mBreak = {}
-mBreak = { \break }
-#(set-global-staff-size 15)
+mBreak = {}
+% mBreak = { \break }
+% #(set-global-staff-size 15)
 
 % Useful snippets
 pDolce = _\markup { \dynamic p \italic \bold "dolce" }
@@ -350,7 +350,7 @@ clarinet_II_Music = {
         \accidentalStyle Score.modern-cautionary
         \new Voice {
           {
-            % \transpose b a
+            \transpose b a
             \clarinet_I_Music
           }
         }
@@ -370,7 +370,7 @@ clarinet_II_Music = {
         \accidentalStyle Score.modern-cautionary
         \new Voice {
           {
-            % \transpose b a
+            \transpose b a
             \clarinet_II_Music
           }
         }
