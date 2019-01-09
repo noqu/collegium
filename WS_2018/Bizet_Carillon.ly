@@ -352,7 +352,7 @@ clarinet_II_Music = {
         \accidentalStyle Score.modern-cautionary
         \new Voice {
           {
-            % \transpose b a
+            \transpose b a
             \clarinet_I_Music
           }
         }
@@ -372,7 +372,7 @@ clarinet_II_Music = {
         \accidentalStyle Score.modern-cautionary
         \new Voice {
           {
-            % \transpose b a
+            \transpose b a
             \clarinet_II_Music
           }
         }
