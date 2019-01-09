@@ -26,6 +26,7 @@ mBreak = {}
 
 % Useful snippets
 pDolce = _\markup { \dynamic p \italic \bold "dolce" }
+ppSubito = _\markup { \dynamic pp \italic \bold "subito" }
 pBienMarque = _\markup { \dynamic p \italic "bien marqué" }
 pocoSf = _\markup { \italic {"poco "} \dynamic sf }
 pesante = _\markup {\italic {"pesante"} }
@@ -43,6 +44,7 @@ string = ^\markup {\italic {"string."} }
 legato = _\markup {\italic {"legato"} }
 espress = ^\markup {\italic {"espress."} }
 solo = ^\markup { "Solo" }
+longaMarkup = _\markup {\italic {"longa"} }
 
 unisono_I = {
   % cl 1 p1 line 1
@@ -60,7 +62,7 @@ unisono_I = {
   g4-^ h-^ a-^ |
   g4-^ g-^ fis-^ |
   \mark #1
-  d'2-^\pp d4-^ |
+  d'2-^\ppSubito d4-^ |
   \break
   
   % cl 1 p1 line 3
@@ -112,9 +114,9 @@ clarinet_I_Music = {
 
     % cl 1 p1 line 4
     \barNumberCheck #33
-    f,2-^\pp f4 |
+    f,2-^\ppSubito f4 |
     \repeat unfold 3 { f2-^ f4-^ } |
-    f2-^\pocoSf f4\dimMolto |
+    f2-^\pocoSf f4\dim |
     f2-^ e4 |
     d2-^\pp e4-^ |
     fis?4-^ g-^ c,-^ |
@@ -124,7 +126,7 @@ clarinet_I_Music = {
     \barNumberCheck #41
     h4 r4 r4 |
     R2.*3 |
-    h'2-^\pocoAPocoCrescendoMolto a4-^
+    h'2-^\p a4-^\crescendoMolto
     \repeat unfold 3 { h2-^ a4-^ } |
     \mark #2
     g'2.\ff~ |
@@ -133,7 +135,7 @@ clarinet_I_Music = {
     
     % cl 1 p1 line 6
     \barNumberCheck #51
-    g8 r8 g4-^\solo a-^ |
+    g8 r8 g4-^ a-^ |
     h4-^ g-^ a-^ |
     g2.-^~ |
     g2.~ |
@@ -141,7 +143,7 @@ clarinet_I_Music = {
     h4-^ g-^ a-^ |
     a8-.-^\ff r8 r4 r4 |
     R2.*2 |
-    R2.\fermataMarkup |
+    R2.\longaMarkup\fermataMarkup |
     \bar "||"
     \break
 
@@ -160,7 +162,7 @@ clarinet_I_Music = {
     d4 h8 <cis e>8. <h d>16 <ais cis>8) |
     \normalsize
     \mark #4
-    r8\espress\clar_\markup { \tiny "(Clarinet 1 plays small notes only if there is no saxophone)" } \tiny d(\pBienMarque cis h fis d |
+    r8\espress\clar \tiny d(\pBienMarque_\markup { "(Clarinet 1 plays small notes only if there is no saxophone)" } cis h fis d |
     cis4 cis 8 e8. d16 cis8 |
     fis8) d'( cis h fis d |
     \break
@@ -223,7 +225,7 @@ clarinet_I_Music = {
     % cl 1 p2 line 6
     \barNumberCheck #136
     R2.*2 |
-    h'2-^\pocoAPocoCrescendoMolto a4-^ |
+    h'2-^\p\crescendoMolto a4-^ |
     \repeat unfold 3 { h2-^ a4-^ } |
     d2.~\ff\sempreCrescendo |
     \repeat unfold 2 { d2.~ } |
@@ -250,7 +252,7 @@ clarinet_II_Music = {
     % cl 2 p1 line 4
     \barNumberCheck #33
     \tiny
-    g,2-^\pp c4-^_\markup { \tiny "(Clarinet 2 plays small notes only if there is no saxophone - otherwise plays with clarinet 1)" } |
+    g,2-^\ppSubito c4-^_\markup { \tiny "(Clarinet 2 plays small notes only if there is no saxophone - otherwise plays with clarinet 1)" } |
     \repeat unfold 5 { g2-^ c4-^ } |
     g2-^ g4 |
     fis4-^ e-^ d-^ |
@@ -268,7 +270,7 @@ clarinet_II_Music = {
     
     % cl 2 p1 line 6
     \barNumberCheck #51
-    d8 r8 d4-^\solo d-^ |
+    d8 r8 d4-^ d-^ |
     d4-^ d-^ d-^ |
     dis2.-^~ |
     dis2.~ |
@@ -276,7 +278,7 @@ clarinet_II_Music = {
     dis4-^ dis-^ dis-^ |
     dis8 -.-^\ff r8 r4 r4 |
     R2.*2 |
-    R2.\fermataMarkup |
+    R2.\longaMarkup\fermataMarkup |
     \bar "||"
     \break
     
@@ -350,7 +352,7 @@ clarinet_II_Music = {
         \accidentalStyle Score.modern-cautionary
         \new Voice {
           {
-            \transpose b a
+            % \transpose b a
             \clarinet_I_Music
           }
         }
@@ -370,7 +372,7 @@ clarinet_II_Music = {
         \accidentalStyle Score.modern-cautionary
         \new Voice {
           {
-            \transpose b a
+            % \transpose b a
             \clarinet_II_Music
           }
         }
