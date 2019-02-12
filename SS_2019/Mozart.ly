@@ -281,7 +281,7 @@ clarinet_I_in_C_Music = {
     d4) d-. d-. d-. |
     d2 r2 |
     c2\p c |
-    e2.( f8 d) |
+    e2. f8( d) |
     \acciaccatura { d16 } c4-. c-. c-. c-. |
     c2 r2 |
     e2 e |
