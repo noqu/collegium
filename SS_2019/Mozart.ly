@@ -19,7 +19,7 @@
 % Adapt this for automatic line-breaks
 % mBreak = {}
 mBreak = { \break }
-#(set-global-staff-size 17)
+#(set-global-staff-size 18)
 
 % Useful snippets
 pDolce = \markup { \dynamic p \italic \bold "dolce" }
@@ -257,50 +257,209 @@ clarinet_I_in_C_Music = {
   
     % cl1 page 2 line 1
     % \barNumberCheck #152
+    r16 a-.\p\noBeam g8( f) |
+    \bar "||"
+    \key c \major
+    \time 2/2
+    \tempo "Tempo primo"
+    e?2\p c'2 |
+    e2.( f8 d) |
+    \acciaccatura { d16 } c4-. c-. c-. c-. |
+    c2 r2 |
+    e2 e |
+    g2.( a8 f) |
+    \acciaccatura { f16 } e4-. e-. e-. e-. |
+    e2 r2 |
+    c'2\f c |
     \mBreak
     
     % cl1 page 2 line 2
-    % \barNumberCheck #162
+    \barNumberCheck #162
+    c2. r8 \tuplet 3/2 { c16( h a } |
+    g2) g |
+    g2. r8 \tuplet 3/2 { g16( f e } |
+    d4) d-. d-. d-. |
+    d2 r2 |
+    c2\p c |
+    e2.( f8 d) |
+    \acciaccatura { d16 } c4-. c-. c-. c-. |
+    c2 r2 |
+    e2 e |
+    g2.( a8 f) |
     \mBreak
     
     % cl1 page 2 line 3
-    % \barNumberCheck #173
+    \barNumberCheck #173
+    \acciaccatura { f16 } e4-. e-. e-. e-. |
+    e2 r2 |
+    c'2\f c |
+    c2. r8 \tuplet 3/2 { c16( h a } |
+    g2) g |
+    g2. r8 \tuplet 3/2 { g16( f e } |
+    d4) d-.\p d-. d-. |
+    d2 r2 |
+    r4 c-. c-. c-. |
+    c2 r2 |
+    r4 d-. d-. d-. ||
     \mBreak
     
     % cl1 page 2 line 4
-    % \barNumberCheck #184
+    \barNumberCheck #184
+    d2 r2 |
+    \mark #4
+    c1\f
+    R1 |
+    d1 |
+    R1 |
+    e1 |
+    R1 |
+    c1~ |
+    c1~ |
+    c2 c |
+    c2 r2 |
+    R1*4 |
+    d1\f~ |
+    d1~ |
+    d2 d |
+    d1~ |
     \mBreak
     
     % cl1 page 2 line 5
-    % \barNumberCheck #203
+    \barNumberCheck #203
+    d4\p c8 b a4 a |
+    b4 a8 g fis4 fis |
+    a8( g fis g) b( a g a) |
+    b1 |
+    b1\f~ |
+    b1~ |
+    b2 b |
+    b2 r |
+    R1*4 |
+    as1\f~ |
+    as1~ |
     \mBreak
     
     % cl1 page 2 line 6
-    % \barNumberCheck #217
+    \barNumberCheck #217
+    as2 as |
+    as2 c~ |
+    c4\p b8 as g4 g |
+    as4 g8 f e4 e |
+    g8( f e f) as( g f g) |
+    as1 |
+    c1\f |
+    h?1 |
+    c1 |
+    d1 |
+    R1*3 |
     \mBreak
     
     % cl1 page 2 line 7
-    % \barNumberCheck #130
+    \barNumberCheck #230
+    g2.\f fis4 |
+    g2.\fz fis4 |
+    g2.\fz fis4 |
+    g4 fis g fis |
+    g2 g |
+    g2 r |
+    \mark #5
+    R1*8 |
+    g2\f g |
+    g2. r4 |
+    g2 g |
+    g2. r4 |
+    f2 f |
+    f2. r8 f32( e d c |
     \mBreak
     
     % cl1 page 2 line 8
-    % \barNumberCheck #250
+    \barNumberCheck #250
+    h2) h |
+    h2. r8 h32( a g f |
+    e4) r a2\p( |
+    g2 f |
+    e2) a( |
+    g2 f |
+    e2) g~ |
+    g1~ |
+    g2 g~ |
+    g1~ |
+    g4 r g'8\f( f e f) |
+    g2 g8( a g fis) |
     \mBreak
     
     % cl1 page 2 line 9
-    % \barNumberCheck #262
+    \barNumberCheck #262
+    g2 g8( f e f) |
+    g2 g8( a g fis) |
+    \mark #6
+    g1\fz |
+    e1\fz |
+    \acciaccatura { g16 } f4 f f f |
+    d1\fz |
+    R1*4 |
+    g1\fz |
+    e1\fz |
+    \acciaccatura { g16 } f4 f f f |
+    d2\fz r |
     \mBreak
     
     % cl1 page 2 line 10
-    % \barNumberCheck #276
+    \barNumberCheck #276
+    es1\p( |
+    d1 |
+    c1 |
+    h1) |
+    R1*4 |
+    e1\cresc( |
+    d1 |
+    c1 |
+    h1) |
+    \mark #7
+    c1\fp |
+    R1 |
+    f1\fp |
+    R1 |
+    g1 |
+    R1 |
+    a1\fz |
+    a1\fz |
+    a1\fz~ |
     \mBreak
     
     % cl1 page 2 line 11
-    % \barNumberCheck #297
+    \barNumberCheck #297
+    a2 a\fz |
+    g2 e |
+    f2 d |
+    a'1\fz |
+    a1\fz |
+    a1\fz~ |
+    a2 a\fz |
+    g1( |
+    e1 |
+    f1 |
+    d1) |
+    c1\ff~ |
+    c1 |
+    e1\ff~ |
+    e1 |
+    g1\ff~ |
+    g1 |
     \mBreak
     
     % cl1 page 2 line 12
-    % \barNumberCheck #314
+    \barNumberCheck #314
+    c4\ff e,8. e16 e4 g |
+    e4 g e g |
+    e4 e8. e16 e4 g |
+    e4 g e g |
+    e4 e8. e16 e4 g |
+    e4 g e g |
+    e2. r4 |
+    c'2. r4 |
+    c,1\fermata
+    \bar "|."
     \mBreak
     
   }
