@@ -91,7 +91,7 @@ clarinet_I_in_C_Music = {
     \time 2/2
     \tempo "Presto"
 
-    % cl 1 page 1 line 1
+    % cl1 page 1 line 1
     \barNumberCheck #1
     R1*8 |
     c''2\f c |
@@ -102,7 +102,7 @@ clarinet_I_in_C_Music = {
     d2 r2 |
     \mBreak
     
-    % cl 1 page 1 line 2
+    % cl1 page 1 line 2
     \barNumberCheck #15
     c2\p c |
     e2.( f8 d) |
@@ -116,7 +116,7 @@ clarinet_I_in_C_Music = {
     c2. r8 \tuplet 3/2 { c16( h a } |
     \mBreak
     
-    % cl 1 page 1 line 3
+    % cl1 page 1 line 3
     \barNumberCheck #25
     g2) g |
     g2. r8 \tuplet 3/2 { g16( f e } |
@@ -134,7 +134,7 @@ clarinet_I_in_C_Music = {
     c2 c |
     \mBreak
     
-    % cl 1 page 1 line 4
+    % cl1 page 1 line 4
     \barNumberCheck #42
     c2 r2 |
     R1*4 |
@@ -152,7 +152,7 @@ clarinet_I_in_C_Music = {
     d2. cis4 |
     \mBreak
     
-    % cl 1 page 1 line 5
+    % cl1 page 1 line 5
     \barNumberCheck #62
     d4 cis d cis |
     d2 d |
@@ -202,7 +202,7 @@ clarinet_I_in_C_Music = {
     \mBreak
     
     % cl1 page 1 line 8
-    % \barNumberCheck #110
+    \barNumberCheck #110
     c2 c4 c |
     h1 |
     c2 c4 c |
@@ -216,7 +216,7 @@ clarinet_I_in_C_Music = {
     \mBreak
 
     % cl1 page 1 line 9
-    % \barNumberCheck #119
+    \barNumberCheck #119
     \key es \major
     \time 3/8
     \tempo "Andante"
@@ -224,24 +224,24 @@ clarinet_I_in_C_Music = {
     as8-.\f g-. r |
     as4.\p |
     f8 g\f\fermata r |
-    r16 as16-.\p\noBeam g8( as) |
+    r16. as32-.\p\noBeam g8( as) |
     g16( b, g' fis g8\noBeam) |
-    r16( b, g' fis g8\noBeam) |
-    r16( h, as' g as8\noBeam) |
+    r16 b,( g' fis g8\noBeam) |
+    r16 h,( as' g as8\noBeam) |
     \mBreak
     
     % cl1 page 1 line 10
-    % \barNumberCheck #133
-    r16( h, as' g as8\noBeam) |
-    r16( c, g' fis g8\noBeam) |
-    r16( c, g' fis g8\noBeam) |
-    r16( es\cresc c' h c8\noBeam) |
-    r16( es, c' h c8\noBeam) |
+    \barNumberCheck #133
+    r16 h,( as' g as8\noBeam) |
+    r16 c,( g' fis g8\noBeam) |
+    r16 c,( g' fis g8\noBeam) |
+    r16 es(\cresc c' h c8\noBeam) |
+    r16 es,( c' h c8\noBeam) |
     d,8\f d r |
     \mBreak
     
     % cl1 page 1 line 11
-    % \barNumberCheck #139
+    \barNumberCheck #139
     R4.*3 |
     f4.\p |
     d8 g8\f\fermata r |
@@ -256,8 +256,8 @@ clarinet_I_in_C_Music = {
     \mBreak
   
     % cl1 page 2 line 1
-    % \barNumberCheck #152
-    r16 a-.\p\noBeam g8( f) |
+    \barNumberCheck #152
+    r16. a32-.\p\noBeam g8( f) |
     \bar "||"
     \key c \major
     \time 2/2
