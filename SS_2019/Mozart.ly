@@ -19,7 +19,7 @@
 % Adapt this for automatic line-breaks
 % mBreak = {}
 mBreak = { \break }
-#(set-global-staff-size 18)
+#(set-global-staff-size 17)
 
 % Useful snippets
 pDolce = \markup { \dynamic p \italic \bold "dolce" }
@@ -87,7 +87,7 @@ clarinet_I_in_C_Music = {
   \relative c' {
     \transposition c
     \key c \major
-    \numericTimeSignature
+    \defaultTimeSignature
     \time 2/2
     \tempo "Presto"
 
@@ -470,7 +470,7 @@ clarinet_II_in_C_Music = {
   \relative c' {
     \transposition c
     \key c \major
-    \numericTimeSignature
+    \defaultTimeSignature
     \time 2/2
     \tempo "Presto"
 
@@ -645,14 +645,14 @@ clarinet_II_in_C_Music = {
     \key c \major
     \time 2/2
     \tempo "Tempo primo"
-    e?2\p c'2 |
-    e2.( f8 d) |
-    \acciaccatura { d16 } c4-. c-. c-. c-. |
-    c2 r2 |
-    e2 e |
+    c2\p e?2 |
     g2.( a8 f) |
     \acciaccatura { f16 } e4-. e-. e-. e-. |
     e2 r2 |
+    c'2 c |
+    e2.( f8 d) |
+    \acciaccatura { d16 } c4-. c-. c-. c-. |
+    c2 r2 |
     c'2\f c |
     \mBreak
     
@@ -661,34 +661,34 @@ clarinet_II_in_C_Music = {
     c2. r8 \tuplet 3/2 { c16( h a } |
     g2) g |
     g2. r8 \tuplet 3/2 { g16( f e } |
-    d4) d-. d-. d-. |
-    d2 r2 |
-    c2\p c |
-    e2. f8( d) |
-    \acciaccatura { d16 } c4-. c-. c-. c-. |
-    c2 r2 |
-    e2 e |
-    g2.( a8 f) |
+    d4) h-. h-. h-. |
+    h2 r2 |
+    e,2\p e |
+    g2. a8( f) |
+    \acciaccatura { f16 } e4-. e-. e-. e-. |
+    e2 r2 |
+    c'2 c |
+    e2.( f8 d) |
     \mBreak
     
     % cl2 page 2 line 3
     \barNumberCheck #173
-    \acciaccatura { f16 } e4-. e-. e-. e-. |
-    e2 r2 |
+    \acciaccatura { d16 } c4-. c-. c-. c-. |
+    c2 r2 |
     c'2\f c |
     c2. r8 \tuplet 3/2 { c16( h a } |
     g2) g |
     g2. r8 \tuplet 3/2 { g16( f e } |
-    d4) d-.\p d-. d-. |
-    d2 r2 |
-    r4 c-. c-. c-. |
-    c2 r2 |
-    r4 d-. d-. d-. ||
+    d4) h-.\p h-. h-. |
+    h2 r2 |
+    r4 g-. g-. g-. |
+    g2 r2 |
     \mBreak
     
     % cl2 page 2 line 4
-    \barNumberCheck #184
-    d2 r2 |
+    \barNumberCheck #183
+    r4 h-. h-. h-. ||
+    h2 r2 |
     \mark #4
     c1\f
     R1 |
@@ -696,133 +696,123 @@ clarinet_II_in_C_Music = {
     R1 |
     e1 |
     R1 |
-    c1~ |
-    c1~ |
-    c2 c |
-    c2 r2 |
+    a,1~ |
+    a1~ |
+    a2 a |
+    a2 r2 |
     R1*4 |
-    d1\f~ |
-    d1~ |
-    d2 d |
-    d1~ |
+    b1\f~ |
+    b1~ |
     \mBreak
     
     % cl2 page 2 line 5
-    \barNumberCheck #203
-    d4\p c8 b a4 a |
-    b4 a8 g fis4 fis |
-    a8( g fis g) b( a g a) |
-    b1 |
-    b1\f~ |
-    b1~ |
+    \barNumberCheck #201
     b2 b |
     b2 r |
+    R1*4
+    g1\f~ |
+    g1~ |
+    g2 g |
+    g2 r |
     R1*4 |
-    as1\f~ |
-    as1~ |
+    f1\f~ |
+    f1~ |
+    f2 f |
+    f2 r |
+    R1*4 |
+    es1\f |
+    d1 |
+    es1 |
     \mBreak
     
     % cl2 page 2 line 6
-    \barNumberCheck #217
-    as2 as |
-    as2 c~ |
-    c4\p b8 as g4 g |
-    as4 g8 f e4 e |
-    g8( f e f) as( g f g) |
-    as1 |
-    c1\f |
-    h?1 |
-    c1 |
-    d1 |
+    \barNumberCheck #226
+    f1 |
     R1*3 |
+    r4 h\f c2\fz |
+    r4 h c2\fz |
+    r4 h c2\fz |
+    h4 c h c |
+    h2 h |
+    h2 r |
+    \mark #5
+    R1*8 |
+    c2\f c |
+    c2. r4 |
+    c2 c |
+    c2. r4 |
     \mBreak
     
     % cl2 page 2 line 7
-    \barNumberCheck #230
-    g2.\f fis4 |
-    g2.\fz fis4 |
-    g2.\fz fis4 |
-    g4 fis g fis |
-    g2 g |
-    g2 r |
-    \mark #5
-    R1*8 |
-    g2\f g |
-    g2. r4 |
-    g2 g |
-    g2. r4 |
+    \barNumberCheck #248
     f2 f |
     f2. r8 f32( e d c |
-    \mBreak
-    
-    % cl2 page 2 line 8
-    \barNumberCheck #250
     h2) h |
     h2. r8 h32( a g f |
-    e4) r a2\p( |
-    g2 f |
-    e2) a( |
-    g2 f |
-    e2) g~ |
-    g1~ |
-    g2 g~ |
-    g1~ |
-    g4 r g'8\f( f e f) |
-    g2 g8( a g fis) |
+    e4) r f2\p( |
+    e2 d |
+    c2) f( |
+    e2 d |
+    c2) f( |
+    e2 d |
+    c2) f( |
+    e2 d |
     \mBreak
     
     % cl2 page 2 line 9
-    \barNumberCheck #262
-    g2 g8( f e f) |
-    g2 g8( a g fis) |
+    \barNumberCheck #260
+    c4) r c'2\f~ |
+    c2 c~ |
+    c2 c~ |
+    c2 c |
     \mark #6
-    g1\fz |
     e1\fz |
-    \acciaccatura { g16 } f4 f f f |
-    d1\fz |
+    c1\fz |
+    \acciaccatura { e16 } d4 d d d |
+    h1\fz |
     R1*4 |
-    g1\fz |
     e1\fz |
-    \acciaccatura { g16 } f4 f f f |
-    d2\fz r |
+    c1\fz |
+    \acciaccatura { e16 } d4 d d d |
+    h2\fz r |
+    g1\p( |
+    f1 |
     \mBreak
     
     % cl2 page 2 line 10
-    \barNumberCheck #276
-    es1\p( |
-    d1 |
-    c1 |
-    h1) |
+    \barNumberCheck #278
+    es1 |
+    d1) |
     R1*4 |
-    e1\cresc( |
-    d1 |
-    c1 |
-    h1) |
-    \mark #7
-    c1\fp |
-    R1 |
-    f1\fp |
-    R1 |
+    cis'1\cresc( |
+    a1 |
     g1 |
+    f1) |
+    \mark #7
+    e1\fp |
+    R1 |
+    c'1\fp |
+    R1 |
+    c1 |
     R1 |
     a1\fz |
     a1\fz |
     a1\fz~ |
+    a2 a\fz |
     \mBreak
     
     % cl2 page 2 line 11
-    \barNumberCheck #297
-    a2 a\fz |
-    g2 e |
-    f2 d |
+    \barNumberCheck #298
+    g2 c |
+    d2 h |
     a'1\fz |
     a1\fz |
     a1\fz~ |
     a2 a\fz |
-    g1( |
-    e1 |
-    f1 |
-    d1) |
+    d,1( |
+    c1 |
+    d1 |
+    h1) |
     c1\ff~ |
     c1 |
     e1\ff~ |
@@ -833,14 +823,14 @@ clarinet_II_in_C_Music = {
     
     % cl2 page 2 line 12
     \barNumberCheck #314
-    c4\ff e,8. e16 e4 g |
-    e4 g e g |
-    e4 e8. e16 e4 g |
-    e4 g e g |
-    e4 e8. e16 e4 g |
-    e4 g e g |
+    c,4\ff c8. c16 c4 e |
+    c4 e c e |
+    c4 c8. c16 c4 e |
+    c4 e c e |
+    c4 c8. c16 c4 e |
+    c4 e c e |
+    c2. r4 |
     e2. r4 |
-    c'2. r4 |
     c,1\fermata
     \bar "|."
     \mBreak
