@@ -420,7 +420,7 @@ clarinet_I_in_C_Music = {
     R1 |
     f1\fp |
     R1 |
-    g1 |
+    g1\fp |
     R1 |
     a1\fz |
     a1\fz |
@@ -793,7 +793,7 @@ clarinet_II_in_C_Music = {
     R1 |
     c'1\fp |
     R1 |
-    c1 |
+    c1\fp |
     R1 |
     a1\fz |
     a1\fz |
