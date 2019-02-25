@@ -180,7 +180,7 @@ clarinet_I_in_C_Music = {
     \mark #3
     d1 |
     h1 |
-    \acciaccatura { d16 } c4-. c-. c-. c-. |
+    \acciaccatura { d16 } c?4-. c-. c-. c-. |
     \mBreak
     
     % cl1 page 1 line 7
