@@ -841,7 +841,7 @@ clarinet_II_in_C_Music = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in C"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
@@ -851,7 +851,7 @@ clarinet_II_in_C_Music = {
       \accidentalStyle Score.modern-cautionary
       \new Voice {
         {
-          % \transpose c b
+          \transpose c d
           \clarinet_I_in_C_Music
         }
       }
@@ -862,7 +862,7 @@ clarinet_II_in_C_Music = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in C"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
@@ -872,7 +872,7 @@ clarinet_II_in_C_Music = {
       \accidentalStyle Score.modern-cautionary
       \new Voice {
         {
-          % \transpose c b
+          \transpose c d
           \clarinet_II_in_C_Music
         }
       }
