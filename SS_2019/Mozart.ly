@@ -33,6 +33,8 @@ string = ^\markup {\italic {"string."} }
 legato = _\markup {\italic {"legato"} }
 solo = ^\markup { "Solo" }
 sic = ^\markup { \tiny { "sic!" } }
+accel = ^\markup { \bold { "accel." } }
+dieselben = ^\markup { \bold { "Dieselben ganzen Takte" } }
 
 % Adapted from LSR http://lsr.di.unimi.it/LSR/Snippet?id=431
 % Force a bar number to appear at the location of the next symbol
@@ -839,9 +841,177 @@ clarinet_II_in_C_Music = {
 }
 
 
+
+% \bookpart {
+%   \header{
+%     instrument = "Klarinette I in Bb"
+%   }
+%   \score {
+%     \new Staff {
+%       \compressFullBarRests
+%       \set Score.markFormatter = #format-mark-box-alphabet
+%       \override DynamicLineSpanner.staff-padding = #3
+%       \accidentalStyle Score.modern-cautionary
+%       \new Voice {
+%         {
+%           \transpose c d
+%           \clarinet_I_in_C_Music
+%         }
+%       }
+%     }
+%   }
+% }
+% 
+% 
+% \bookpart {
+%   \header{
+%     instrument = "Klarinette II in Bb"
+%   }
+%   \score {
+%     \new Staff {
+%       \compressFullBarRests
+%       \set Score.markFormatter = #format-mark-box-alphabet
+%       \override DynamicLineSpanner.staff-padding = #3
+%       \accidentalStyle Score.modern-cautionary
+%       \new Voice {
+%         {
+%           \transpose c d
+%           \clarinet_II_in_C_Music
+%         }
+%       }
+%     }
+%   }
+% }
+
+bosoni_clarinet_I_in_C_Music = {
+  \relative c' {
+    \transposition c
+    \key c \major
+    \defaultTimeSignature
+    \time 2/2
+
+    % cl1 page 1 line 1
+    \barNumberCheck #1
+    R1 |
+    fis1\f |
+    g1 |
+    fis1 |
+    g1 |
+    R1*2 |
+    es'1\p |
+    d1~ |
+    d1 |
+    h1~\dim |
+    h1\! |
+    \mBreak
+    
+    % cl1 page 1 line 2
+    \barNumberCheck #13
+    R1*8 |
+    \key es \major
+    \time 3/4
+    \tempo "Allegro assai"
+    R2.*7 |
+    r4 r g,8-.\mf g-. |
+    c4.-> r8 d-. c-. |
+    h4.-> g8 g g |
+    c4.-> es8 d c |
+    h4-. g4-. r4 |
+    \mBreak
+    
+    % cl1 page 1 line 3
+    \barNumberCheck #33
+    c8 d es f g g |
+    f8 es d es f f |
+    es8 f g c es es |
+    d8 c h a g4 |
+    R2.*4 |
+    r4 a(\p g) |
+    \mBreak
+    
+    % cl1 page 1 line 4
+    \barNumberCheck #42
+    r4 c( h) |
+    r4 es( d) |
+    r4 fis( g) |
+    c,8( h)\cresc c( h) c( h) |
+    c8( h)\! r4 r |
+    r4 es(\pp d) |
+    r4 es( d) |
+    \mBreak
+    
+    % cl1 page 1 line 5
+    \barNumberCheck #49
+    r4 es( d) |
+    r4 es( d) |
+    r4 c( h) |
+    r4 c( h) |
+    r4 c( h) |
+    r4 c( h) |
+    r4\accel c'( g)\< |
+    r4 c( g) |
+    \mBreak
+    
+    % cl1 page 1 line 6
+    \barNumberCheck #57
+    r4 c( g) |
+    r4 c( g) |
+    r4 c( g) |
+    r4 c( g) |
+    \bar "||"
+    \key c \major
+    \time 2/2
+    c2\ff\dieselben c |
+    e2.( f8 d) |
+    \mBreak
+    
+    % cl1 page 1 line 7
+    \barNumberCheck #63
+    \acciaccatura { d8 } c4 c c c |
+    c2 r |
+    e,2 e |
+    g2. \tuplet 3/2 { a8( g f) } |
+    \acciaccatura { f8 } e4 e' e e |
+    e2 r |
+    \mBreak
+    
+    % cl1 page 1 line 8
+    \barNumberCheck #69
+    c2 c |
+    c2. \tuplet 3/2 { c8( h a } |
+    g2) g |
+    g2. r8 g32( f e d |
+    c4-.) r4 r2 |
+    f2 f4 f |
+    \mBreak
+    
+    % cl1 page 1 line 9
+    \barNumberCheck #75
+    e1 |
+    f2 f4 f |
+    e2. f4 |
+    e2. f4 |
+    e4 f e f |
+    e4 f e f |
+    e2 r4 f8(\ff d |
+    \mBreak
+    
+    % cl1 page 1 line 10
+    \barNumberCheck 82
+    e8 g f d e g f d |
+    e2) r4 \tuplet 3/2 { g8( a h } |
+    c8 h c h c h c h |
+    c4) r4 e r |
+    c2 r2 |
+    \bar "|."
+    \barNumberCheck #87
+  }
+}
+
+
 \bookpart {
   \header{
-    instrument = "Klarinette I in Bb"
+    instrument = "(Bosoni) Klarinette I in C"
   }
   \score {
     \new Staff {
@@ -851,8 +1021,8 @@ clarinet_II_in_C_Music = {
       \accidentalStyle Score.modern-cautionary
       \new Voice {
         {
-          \transpose c d
-          \clarinet_I_in_C_Music
+          % \transpose c d
+          \bosoni_clarinet_I_in_C_Music
         }
       }
     }
@@ -860,22 +1030,22 @@ clarinet_II_in_C_Music = {
 }
 
 
-\bookpart {
-  \header{
-    instrument = "Klarinette II in Bb"
-  }
-  \score {
-    \new Staff {
-      \compressFullBarRests
-      \set Score.markFormatter = #format-mark-box-alphabet
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        {
-          \transpose c d
-          \clarinet_II_in_C_Music
-        }
-      }
-    }
-  }
-}
+% \bookpart {
+%   \header{
+%     instrument = "(Bosoni) Klarinette II in Bb"
+%   }
+%   \score {
+%     \new Staff {
+%       \compressFullBarRests
+%       \set Score.markFormatter = #format-mark-box-alphabet
+%       \override DynamicLineSpanner.staff-padding = #3
+%       \accidentalStyle Score.modern-cautionary
+%       \new Voice {
+%         {
+%           % \transpose c d
+%           \bosoni_clarinet_II_in_C_Music
+%         }
+%       }
+%     }
+%   }
+% }
