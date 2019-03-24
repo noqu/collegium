@@ -11,7 +11,7 @@
   
 \header{
   title = "Die Entführung aus dem Serail"
-  subtitle = "Ouvertüre"
+  subtitle = "Ouvertüre (Ende Bosoni)"
   composer = "Wolfgang Amadeus Mozart (1756 - 1791)"
   tagline = ""
 }
@@ -85,7 +85,7 @@ forceBarNumber =
 
 % ---------------------------------------------------------
 
-clarinet_I_in_C_Music = {
+clarinet_I_main = {
   \relative c' {
     \transposition c
     \key c \major
@@ -355,10 +355,17 @@ clarinet_I_in_C_Music = {
     d1 |
     R1*3 |
     \mBreak
-    
-    % cl1 page 2 line 7
+  }
+}
+
+clarinet_I_end_andre = {
+  \relative c' {
+    \transposition c
+    \key c \major
+
+    % (andre) cl1 page 2 line 7
     \barNumberCheck #230
-    g2.\f fis4 |
+    g''2.\f fis4 |
     g2.\fz fis4 |
     g2.\fz fis4 |
     g4 fis g fis |
@@ -374,7 +381,7 @@ clarinet_I_in_C_Music = {
     f2. r8 f32( e d c |
     \mBreak
     
-    % cl1 page 2 line 8
+    % (andre) cl1 page 2 line 8
     \barNumberCheck #250
     h2) h |
     h2. r8 h32( a g f |
@@ -406,7 +413,7 @@ clarinet_I_in_C_Music = {
     d2\fz r |
     \mBreak
     
-    % cl1 page 2 line 10
+    % (andre) cl1 page 2 line 10
     \barNumberCheck #276
     es1\p( |
     d1 |
@@ -429,7 +436,7 @@ clarinet_I_in_C_Music = {
     a1\fz~ |
     \mBreak
     
-    % cl1 page 2 line 11
+    % (andre) cl1 page 2 line 11
     \barNumberCheck #297
     a2 a\fz |
     g2 e |
@@ -450,7 +457,7 @@ clarinet_I_in_C_Music = {
     g1 |
     \mBreak
     
-    % cl1 page 2 line 12
+    % (andre) cl1 page 2 line 12
     \barNumberCheck #314
     c4\ff e,8. e16 e4 g |
     e4 g e g |
@@ -463,12 +470,135 @@ clarinet_I_in_C_Music = {
     c,1\fermata
     \bar "|."
     \mBreak
+  }
+}
+
+clarinet_I_end_bosoni = {
+  \relative c' {
+    \transposition c
+    \key c \major
+
+    % (bosoni) cl1 page 1 line 1
+    % \barNumberCheck #1
+    R1 |
+    fis1\f |
+    g1 |
+    fis1 |
+    g1 |
+    R1*2 |
+    es'1\p |
+    d1~ |
+    d1 |
+    h1~\dim |
+    h1\! |
+    \mBreak
     
+    % (bosoni) cl1 page 1 line 2
+    % \barNumberCheck #13
+    R1*8 |
+    \bar "||"
+    \key es \major
+    \time 3/4
+    \tempo "Allegro assai"
+    R2.*7 |
+    r4 r g,8-.\mf g-. |
+    c4.-> r8 d-. c-. |
+    h4.-> g8 g g |
+    c4.-> es8-. d-. c-. |
+    h4-. g4-. r4 |
+    \mBreak
+    
+    % (bosoni) cl1 page 1 line 3
+    % \barNumberCheck #33
+    c8 d es f g g |
+    f8 es d es f f |
+    es8 f g c es es |
+    d8 c h a g4 |
+    R2.*4 |
+    r4 a(\p g) |
+    \mBreak
+    
+    % (bosoni) cl1 page 1 line 4
+    % \barNumberCheck #42
+    r4 c( h) |
+    r4 es( d) |
+    r4 fis( g) |
+    c,8([ h)]\cresc c( h) c([ h)] |
+    c8( h)\! r4 r |
+    r4 es(\pp d) |
+    r4 es( d) |
+    \mBreak
+    
+    % (bosoni) cl1 page 1 line 5
+    % \barNumberCheck #49
+    r4 es( d) |
+    r4 es( d) |
+    r4 c( h) |
+    r4 c( h) |
+    r4 c( h) |
+    r4 c( h) |
+    r4\accel c'( g)\< |
+    r4 c( g) |
+    \mBreak
+    
+    % (bosoni) cl1 page 1 line 6
+    % \barNumberCheck #57
+    r4 c( g) |
+    r4 c( g) |
+    r4 c( g) |
+    r4 c( g) |
+    \bar "||"
+    \key c \major
+    \time 2/2
+    c2\ff\dieselben c |
+    e2.( f8 d) |
+    \mBreak
+    
+    % (bosoni) cl1 page 1 line 7
+    % \barNumberCheck #63
+    \acciaccatura { d8 } c4 c c c |
+    c2 r |
+    e,2 e |
+    g2. \tuplet 3/2 { a8( g f) } |
+    \acciaccatura { f8 } e4 e' e e |
+    e2 r |
+    \mBreak
+    
+    % (bosoni) cl1 page 1 line 8
+    % \barNumberCheck #69
+    c2 c |
+    c2. \tuplet 3/2 { c8( h a } |
+    g2) g |
+    g2. r8 g32( f e d |
+    c4-.) r4 r2 |
+    f2 f4 f |
+    \mBreak
+    
+    % (bosoni) cl1 page 1 line 9
+    % \barNumberCheck #75
+    e1 |
+    f2 f4 f |
+    e2. f4 |
+    e2. f4 |
+    e4 f e f |
+    e4 f e f |
+    e2 r4 f8(\ff d |
+    \mBreak
+    
+    % (bosoni) cl1 page 1 line 10
+    % \barNumberCheck 82
+    e8 g f d e g f d |
+    e2) r4 \tuplet 3/2 { g8( a h } |
+    c8 h c h c h c h |
+    c4) r4 e r |
+    c2 r2 |
+    \bar "|."
+    % \barNumberCheck #87
   }
 }
 
 
-clarinet_II_in_C_Music = {
+clarinet_II_main = {
   \relative c' {
     \transposition c
     \key c \major
@@ -726,12 +856,22 @@ clarinet_II_in_C_Music = {
     d1 |
     es1 |
     \mBreak
-    
-    % cl2 page 2 line 6
+
+    % cl2 page 2 line 6 (start)
     \barNumberCheck #226
     f1 |
     R1*3 |
-    r4 h\f c2\fz |
+  }
+}
+
+clarinet_II_end_andre = {
+  \relative c' {
+    \transposition c
+    \key c \major
+
+    % (andre) cl2 page 2 line 6 (continued)
+    \barNumberCheck #230
+    r4 h'\f c2\fz |
     r4 h c2\fz |
     r4 h c2\fz |
     h4 c h c |
@@ -745,7 +885,7 @@ clarinet_II_in_C_Music = {
     c2. r4 |
     \mBreak
     
-    % cl2 page 2 line 7
+    % (andre) cl2 page 2 line 7
     \barNumberCheck #248
     f2 f |
     f2. r8 f32( e d c |
@@ -761,7 +901,7 @@ clarinet_II_in_C_Music = {
     e2 d |
     \mBreak
     
-    % cl2 page 2 line 9
+    % (andre) cl2 page 2 line 9
     \barNumberCheck #260
     c4) r c'2\f~ |
     c2 c~ |
@@ -781,7 +921,7 @@ clarinet_II_in_C_Music = {
     f1 |
     \mBreak
     
-    % cl2 page 2 line 10
+    % (andre) cl2 page 2 line 10
     \barNumberCheck #278
     es1 |
     d1) |
@@ -803,7 +943,7 @@ clarinet_II_in_C_Music = {
     a2 a\fz |
     \mBreak
     
-    % cl2 page 2 line 11
+    % (andre) cl2 page 2 line 11
     \barNumberCheck #298
     g2 c |
     d2 h |
@@ -823,7 +963,7 @@ clarinet_II_in_C_Music = {
     g1 |
     \mBreak
     
-    % cl2 page 2 line 12
+    % (andre) cl2 page 2 line 12
     \barNumberCheck #314
     c,4\ff c8. c16 c4 e |
     c4 e c e |
@@ -836,78 +976,33 @@ clarinet_II_in_C_Music = {
     c,1\fermata
     \bar "|."
     \mBreak
-    
   }
 }
 
-
-
-% \bookpart {
-%   \header{
-%     instrument = "Klarinette I in Bb"
-%   }
-%   \score {
-%     \new Staff {
-%       \compressFullBarRests
-%       \set Score.markFormatter = #format-mark-box-alphabet
-%       \override DynamicLineSpanner.staff-padding = #3
-%       \accidentalStyle Score.modern-cautionary
-%       \new Voice {
-%         {
-%           \transpose c d
-%           \clarinet_I_in_C_Music
-%         }
-%       }
-%     }
-%   }
-% }
-% 
-% 
-% \bookpart {
-%   \header{
-%     instrument = "Klarinette II in Bb"
-%   }
-%   \score {
-%     \new Staff {
-%       \compressFullBarRests
-%       \set Score.markFormatter = #format-mark-box-alphabet
-%       \override DynamicLineSpanner.staff-padding = #3
-%       \accidentalStyle Score.modern-cautionary
-%       \new Voice {
-%         {
-%           \transpose c d
-%           \clarinet_II_in_C_Music
-%         }
-%       }
-%     }
-%   }
-% }
-
-bosoni_clarinet_I_in_C_Music = {
+clarinet_II_end_bosoni = {
   \relative c' {
     \transposition c
     \key c \major
-    \defaultTimeSignature
-    \time 2/2
 
-    % cl1 page 1 line 1
-    \barNumberCheck #1
+    % (bosoni) cl2 page 1 line 1
+    % \barNumberCheck #1
     R1 |
-    fis1\f |
-    g1 |
-    fis1 |
-    g1 |
+    es1\f |
+    d2( h) |
+    c2( es) |
+    d2( h) |
     R1*2 |
-    es'1\p |
-    d1~ |
-    d1 |
-    h1~\dim |
-    h1\! |
+    c'1\p |
+    h1~ |
+    h1 |
     \mBreak
     
-    % cl1 page 1 line 2
-    \barNumberCheck #13
+    % (bosoni) cl2 page 1 line 2
+    % \barNumberCheck #11
+    d,~\dim |
+    d1\! |
     R1*8 |
+    \bar "||"
     \key es \major
     \time 3/4
     \tempo "Allegro assai"
@@ -915,103 +1010,102 @@ bosoni_clarinet_I_in_C_Music = {
     r4 r g,8-.\mf g-. |
     c4.-> r8 d-. c-. |
     h4.-> g8 g g |
-    c4.-> es8 d c |
+    \mBreak
+    
+    % (bosoni) cl2 page 1 line 3
+    % \barNumberCheck #31
+    c4.-> es8-. d-. c-. |
     h4-. g4-. r4 |
-    \mBreak
-    
-    % cl1 page 1 line 3
-    \barNumberCheck #33
-    c8 d es f g g |
-    f8 es d es f f |
-    es8 f g c es es |
-    d8 c h a g4 |
+    R2.*2 |
+    c8 d es g g g |
+    f8 es d c h4 |
     R2.*4 |
-    r4 a(\p g) |
+    r4 a'(\p g) |
     \mBreak
     
-    % cl1 page 1 line 4
-    \barNumberCheck #42
-    r4 c( h) |
+    % (bosoni) cl2 page 1 line 4
+    % \barNumberCheck #42
     r4 es( d) |
+    r4 c'( h) |
     r4 fis( g) |
-    c,8( h)\cresc c( h) c( h) |
-    c8( h)\! r4 r |
-    r4 es(\pp d) |
-    r4 es( d) |
+    fis8([ g)]\cresc fis( g) fis([ g)] |
+    fis8( g)\! r4 r |
+    r4 c(\pp h) |
+    r4 c( h) |
     \mBreak
     
-    % cl1 page 1 line 5
-    \barNumberCheck #49
+    % (bosoni) cl2 page 1 line 5
+    % \barNumberCheck #49
+    r4 c( h) |
+    r4 h( h) |
+    r4 es,( d) |
     r4 es( d) |
     r4 es( d) |
-    r4 c( h) |
-    r4 c( h) |
-    r4 c( h) |
-    r4 c( h) |
+    r4 es( d) |
     r4\accel c'( g)\< |
     r4 c( g) |
     \mBreak
     
-    % cl1 page 1 line 6
-    \barNumberCheck #57
-    r4 c( g) |
+    % (bosoni) cl2 page 1 line 6
+    % \barNumberCheck #57
+    r4 c( g) |	
     r4 c( g) |
     r4 c( g) |
     r4 c( g) |
     \bar "||"
     \key c \major
     \time 2/2
-    c2\ff\dieselben c |
-    e2.( f8 d) |
+    e'2\ff\dieselben e |
+    g2.( a8 f) |
     \mBreak
     
-    % cl1 page 1 line 7
-    \barNumberCheck #63
-    \acciaccatura { d8 } c4 c c c |
-    c2 r |
-    e,2 e |
-    g2. \tuplet 3/2 { a8( g f) } |
-    \acciaccatura { f8 } e4 e' e e |
+    % (bosoni) cl2 page 1 line 7
+    % \barNumberCheck #63
+    \acciaccatura { f8 } e4 e e e |
     e2 r |
+    c2 c |
+    e2. \tuplet 3/2 { f8( e d) } |
+    \acciaccatura { d8 } c4 c' c c |
+    c2 r |
     \mBreak
     
-    % cl1 page 1 line 8
-    \barNumberCheck #69
+    % (bosoni) cl2 page 1 line 8
+    % \barNumberCheck #69
     c2 c |
     c2. \tuplet 3/2 { c8( h a } |
     g2) g |
     g2. r8 g32( f e d |
     c4-.) r4 r2 |
-    f2 f4 f |
+    h2 h4 h |
     \mBreak
     
-    % cl1 page 1 line 9
-    \barNumberCheck #75
-    e1 |
-    f2 f4 f |
-    e2. f4 |
-    e2. f4 |
-    e4 f e f |
-    e4 f e f |
-    e2 r4 f8(\ff d |
+    % (bosoni) cl2 page 1 line 9
+    % \barNumberCheck #75
+    c1 |
+    h2 h4 h |
+    c2. h4 |
+    c2. h4 |
+    c4 h c h |
+    c4 h c h |
+    c2 r4 d8(\ff h |
     \mBreak
     
-    % cl1 page 1 line 10
-    \barNumberCheck 82
-    e8 g f d e g f d |
-    e2) r4 \tuplet 3/2 { g8( a h } |
+    % (bosoni) cl2 page 1 line 10
+    % \barNumberCheck 82
+    c8 e d h c e d h |
+    c2) r4 \tuplet 3/2 { g'8( a h } |
     c8 h c h c h c h |
-    c4) r4 e r |
-    c2 r2 |
+    c4) r4 g r |
+    e2 r2 |
     \bar "|."
-    \barNumberCheck #87
+    % \barNumberCheck #87
   }
 }
 
 
 \bookpart {
   \header{
-    instrument = "(Bosoni) Klarinette I in C"
+    instrument = "Klarinette I in C"
   }
   \score {
     \new Staff {
@@ -1020,9 +1114,11 @@ bosoni_clarinet_I_in_C_Music = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
+        % \transpose c d
         {
-          % \transpose c d
-          \bosoni_clarinet_I_in_C_Music
+          \clarinet_I_main
+          % \clarinet_I_end_andre
+          \clarinet_I_end_bosoni
         }
       }
     }
@@ -1030,22 +1126,24 @@ bosoni_clarinet_I_in_C_Music = {
 }
 
 
-% \bookpart {
-%   \header{
-%     instrument = "(Bosoni) Klarinette II in Bb"
-%   }
-%   \score {
-%     \new Staff {
-%       \compressFullBarRests
-%       \set Score.markFormatter = #format-mark-box-alphabet
-%       \override DynamicLineSpanner.staff-padding = #3
-%       \accidentalStyle Score.modern-cautionary
-%       \new Voice {
-%         {
-%           % \transpose c d
-%           \bosoni_clarinet_II_in_C_Music
-%         }
-%       }
-%     }
-%   }
-% }
+\bookpart {
+  \header{
+    instrument = "Klarinette II in C"
+  }
+  \score {
+    \new Staff {
+      \compressFullBarRests
+      \set Score.markFormatter = #format-mark-box-alphabet
+      \override DynamicLineSpanner.staff-padding = #3
+      \accidentalStyle Score.modern-cautionary
+      \new Voice {
+        % \transpose c d
+        {
+          \clarinet_II_main
+          % \clarinet_II_end_andre
+          \clarinet_II_end_bosoni
+        }
+      }
+    }
+  }
+}
