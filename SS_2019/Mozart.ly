@@ -1105,7 +1105,7 @@ clarinet_II_end_bosoni = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in C"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
@@ -1114,7 +1114,7 @@ clarinet_II_end_bosoni = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        % \transpose c d
+        \transpose c d
         {
           \clarinet_I_main
           % \clarinet_I_end_andre
@@ -1128,7 +1128,7 @@ clarinet_II_end_bosoni = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in C"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
@@ -1137,7 +1137,7 @@ clarinet_II_end_bosoni = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        % \transpose c d
+        \transpose c d
         {
           \clarinet_II_main
           % \clarinet_II_end_andre
