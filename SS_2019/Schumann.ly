@@ -23,14 +23,19 @@ mBreak = { \break }
 % Useful snippets
 pDolce = \markup { \dynamic p \italic \bold "dolce" }
 pesante = _\markup {\italic {"pesante"} }
+rit = ^\markup {\italic {"rit."} }
 pocoRit = ^\markup {\italic {"poco rit."} }
 moltoRit = ^\markup {\italic {"molto rit."} }
+tranquillo = ^\markup {\italic {"tranquillo"} }
 moltoTranquillo = ^\markup {\italic {"molto tranquillo"} }
 pocoAnimato = ^\markup {\italic {"poco animato"} }
 pocoAPocoPiuAnimato = ^\markup {\italic {"poco a poco più animato"} }
+pocoAPocoStringendo = ^\markup {\italic {"poco a poco stringendo"} }
 lunga = _\markup {\italic {"lunga"} }
 string = ^\markup {\italic {"string."} }
 legato = _\markup {\italic {"legato"} }
+moltoEspressivo = _\markup {\italic {"molto espressivo"} }
+espressivo = _\markup {\italic {"espressivo"} }
 solo = ^\markup { "Solo" }
 sic = ^\markup { \tiny { "sic!" } }
 accel = ^\markup { \bold { "accel." } }
@@ -158,8 +163,7 @@ clarinet_I_main = {
         \stemDown\slurDown {
           e2\pp( des4~ |
           des4 fis f |
-          es4\p) r r |
-          R2.*2 |
+          es4) 
         }
       }
     >>
@@ -207,12 +211,187 @@ clarinet_I_main = {
         e2( gis4) |
       }
     >>
+    \mBreak
+    
+    % cl1 page 2 line 2
+    \barNumberCheck #115
+    h2 h4\< | % Why on earth do we need two ' here ?
+    d'4.\! h8\>(\pocoAPocoStringendo f d) |
+    \mark #7
+    f2\! r4 |
+    R2.*3 |
+    r4 r b,\f~ |
+    b4 a2~ |
+    \mBreak
+  
+    % cl1 page 2 line 3
+    \barNumberCheck #123
+    a4 r r |
+    R2.*19 |
+    \mark #8
+    R2.*2 |
+    r4 a\p( b) |
+    r4 a( b) |
+    R2.*4\string
+    \mBreak
+    
+    % cl1 page 2 line 4
+    \barNumberCheck #151
+    r4 es\mf d~ |
+    d4 cis es-- |
+    \mark #9
+    f8\sf r8 r4 r |
+    R2.*5 |
+    r4 b,\mp\<( a~ |
+    \mBreak
+    
+    % cl1 page 2 line 5
+    \barNumberCheck #160
+    a4 g2)~ |
+    g4\f r r |
+    R2.*5 |
+    \mark #10
+    r4 r g4\p(
+    c2\< c4 |
+    c2 c4 \! |
+    \mBreak
+    
+    % cl1 page 2 line 6
+    \barNumberCheck #170
+    c8)[ r16 a] a4..\cresc a16\f |
+    b8. fis16 g8. d16 es8. d16 |
+    c8. d16 es4. b8 |
+    a4 r r |
+    R2. |
+    \mBreak
+    
+    % cl1 page 2 line 7
+    \barNumberCheck 175
+    r4 r8 es''( c as |
+    g4 as8 ) es'([ c as] |
+    h4 c8) g'([ es c] |
+    cis4 d8) r8 r4 |
+    R2.*9\pocoRit |
+    \bar "||"
+    \mBreak
+    
+    % cl1 page 2 line 8
+    \barNumberCheck #188
+    \mark #11
+    R2.\aTempo |
+    c2\p c4 |
+    c2 r4 |
+    R2.*2 |
+    f2\p g4 |
+    g2 r4 |
+    R2.*5 |
+    \mBreak
+    
+    % cl1 page 3 line 1
+    \barNumberCheck #200
+    \mark #12
+    R2. |
+    d2\mf d4 |
+    d2 r4 |
+    R2.*4 |
+    r4 r g,\f |
+    fis4 r r |
+    r4 r as\< |
+    \mBreak
+    
+    % cl1 page 3 line 2
+    \barNumberCheck #210
+    g4\! r r |
+    \mark #13
+    R2.*2 |
+    r4 r8 fis\f( d h |
+    h'2 gis4 |
+    a4) r r |
+    R2. |
+    \mBreak
+    
+    % cl1 page 3 line 3
+    \barNumberCheck #217
+    g'2\mf( cis,4 |
+    d2) r4\rit |
+    R2.*2 |
+    \mark #14
+    R2.*15\tranquillo |
+    r4 r\moltoEspressivo a4( |
+    es'2 des8 c |
+    \mBreak
+    
+    % cl1 page 3 line 4
+    \barNumberCheck238
+    f2 b,4 |
+    des4. b8 as g |
+    es'2 c4 |
+    as2 ges4 |
+    f2) f4\p\cresc(~ |
+    f2 g4 |
+    as2 a4 |
+    \mBreak
+    
+    % cl1 page 3 line 5
+    \barNumberCheck #245
+    \mark#15
+    b4)\f r r |
+    R2.*9 |
+    \bar "||"
+    \mark #16
+    r4 r g\f( |
+    c2\cresc c4 |
+    c2 c4 |
+    c8)[ r16 a16] a4.. a16\ff |
+    \mBreak
+    
+    % cl1 page 3 line 6
+    \barNumberCheck #259
+    b8. fis16 g8. d16 es8. d16 |
+    c8. d16 es4. b8 |
+    a4 r r |
+    R2.*3 |
+    r4 r r8 es'8\f |
+    \mBreak
+    
+    % cl1 page 3 line 7
+    \barNumberCheck #266
+    e8[ r16 d16] cis4 r4 |
+    R2.*5 |
+    \mark #17
+    \barNumberCheck 272
+    R2.*9 |
+    r4 \tuplet 3/2 { r8\p es'->\espressivo( d-> } \tuplet 3/2 { c8-> b-> a-> } |
+    g4 fis4. fis8 |
+    fis8 g) r4 r |
+    \mBreak
+    
+    % cl1 page 3 line 8
+    \barNumberCheck #284
+    \mark #18
+    R2.*2 |
+    cis2\f\> dis4 |
+    d4 d c |
+    h4 c\! r |
+    R2.*2 |
+    \mBreak
+    
+    % cl1 page 3 line 9
+    \barNumberCheck #291
+    d,4\p( f es |
+    e4 d) r |
+    R2. |
+    r4 cis'4-. cis-. |
+    d4-. r r |
+    \mBreak 
+    
+    % cl1 page 4 line 1
+    \barNumberCheck #296
+    R2.*14 |
+    
   }
-  \mBreak
 
-  % cl1 page 2 line 2
-  \barNumberCheck #115
-  h2 h4 |
+  
 }
 
 clarinet_II_main = {
