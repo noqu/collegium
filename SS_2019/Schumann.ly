@@ -36,12 +36,15 @@ string = ^\markup {\italic {"string."} }
 legato = _\markup {\italic {"legato"} }
 moltoEspressivo = _\markup {\italic {"molto espressivo"} }
 espressivo = _\markup {\italic {"espressivo"} }
+marcato = _\markup {\italic {"marcato"} }
 solo = ^\markup { "Solo" }
 sic = ^\markup { \tiny { "sic!" } }
 accel = ^\markup { \bold { "accel." } }
 aTempo = ^\markup { \bold { "a tempo" } }
 dieselben = ^\markup { \bold { "Dieselben ganzen Takte" } }
 oboeI = ^\markup { "Ob.I" }
+hornInF = ^\markup { "Horn in F" }
+floete = ^\markup { "Fl." }
 
 % Adapted from LSR http://lsr.di.unimi.it/LSR/Snippet?id=431
 % Force a bar number to appear at the location of the next symbol
@@ -388,10 +391,137 @@ clarinet_I_main = {
     % cl1 page 4 line 1
     \barNumberCheck #296
     R2.*14 |
+    \bar "||"
+    \key g \major
+    R2.*19 |
+    r4 r h8.\mf( c16 |
+    cis4 d) a'8( g |
+    g8 e d2) |
+    e8( c h2) |
+    \mBreak
     
-  }
+    % cl1 page 4 line 2
+    \barNumberCheck #333
+    R2.*5\moltoTranquillo |
+    \mark #21
+    R2.*5 |
+    <<
+      {
+        d2\p\espressivo( fis,4) |
+        g2 r4 |
+        R2.*2 |
+        \mBreak
 
-  
+        % cl1 page 4 line 3a
+        \barNumberCheck #347
+        e'2( gis,4) |
+        a2 r4 |
+        R2.*2 |
+        g4.\p\espressivo\< g8\>( b fis) |
+        g2\! r4 |
+        \mBreak
+        
+        % cl1 page 4 line 4a
+        \barNumberCheck #353
+        R2.*2 |
+        gis4.\< gis8\>( h fisis) |
+        gis2\! r4 |
+        R2. |
+        \mark #22
+        R2.
+        \mBreak
+        
+      }
+      \new Staff \with {
+        \remove "Time_signature_engraver"
+        % Available with v2.20
+        % \remove "Time_signature_engraver"
+        % \magnifyStaff #2/3
+        % firstClef = ##f
+        % alignAboveContext = #"main"
+        % In v2.18, we can workaround it like this:
+        fontSize = -4
+        \override StaffSymbol.staff-space = #(magstep -4)
+        \override StaffSymbol.thickness = #(magstep -4)
+        % instrumentName = #"Ob.I"
+      } {
+        \key c \major
+        c4.\<\hornInF e8\>( f h,) |
+        c2\! f,4\<\oboeI |
+        f'4. cis8\>( d a) |
+        b2\! r4 |
+        \mBreak
+
+        % cl1 page 4 line 3b
+        \barNumberCheck #347
+        d4.\<\hornInF d8\>( f cis) |
+        d2\! g,4\oboeI\< |
+        g'4. e8\>( d g,) |
+        a4\! r r |
+        R2. |
+        r4 r f\<\floete |
+        \mBreak
+        
+        % cl1 page 4 line 4b
+        \barNumberCheck #353
+        gis'4.\floete eis8\>( cis h) |
+        a4\! r r |
+        R2. |
+        r4 r4 fis4\<\oboeI |
+        a'4. fis8(\>\pocoAPocoStringendo a a,) |
+        c2\! r4 |
+        \mBreak
+      }
+    >>
+    
+    % cl1 page 4 line 5
+    \barNumberCheck #359
+    R2. |
+    r4 r8 cis'(\f\marcato a fis |
+    e4 dis) r |
+    r4 r8 g(\f\marcato e cis |
+    h4 ais) r |
+    \mBreak
+    
+    % cl1 page 4 line 6
+    \barNumberCheck #364
+    R2.*7 |
+    a2.->\mp\pocoRit\>~ |
+    \key b \major
+    a4 r\p r | % FIXME: Otherwise the decrescendo hairpin is too short
+    R2. |
+    r4 r g\mf\<\string( |
+    g'4. f8 es d |
+    c4\f) r r |
+    \mBreak
+    
+    % cl1 page 4 line 7
+    \barNumberCheck #377
+    R2. |
+    r4 b\mf\<( a~ |
+    a4 g2~ |
+    \mark #24
+    g4\f) r r |
+    R2.*5 |
+    \mark #25
+    R2. |
+    r4 r4 r8 es\f |
+    e8[ r16 d] cis4 r4 |
+    \mBreak
+    
+    % cl1 page 4 line 8
+    \barNumberCheck #389
+    R2.*9 |
+    \mark #26
+    r4 r g'(~\p\>\moltoRit |
+    g4 fis f~ |
+    f4 e es |
+    d2~ d8\pp) r8 |
+    R2. |
+    R2.\fermataMarkup
+    \bar "|."
+    \barNumberCheck #404
+  }
 }
 
 clarinet_II_main = {
