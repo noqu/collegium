@@ -11,7 +11,7 @@
   
 \header{
   title = "Die Entführung aus dem Serail"
-  subtitle = "Ouvertüre (Ende Bosoni)"
+  subtitle = "Ouvertüre (Ende Busoni)"
   composer = "Wolfgang Amadeus Mozart (1756 - 1791)"
   tagline = ""
 }
@@ -259,7 +259,7 @@ clarinet_I_main = {
   
     % cl1 page 2 line 1
     \barNumberCheck #152
-    r16. a32-.\p\noBeam g8( f) |
+    r16. as32-.\p\noBeam g8( f) |
     \bar "||"
     \key c \major
     \time 2/2
@@ -473,12 +473,11 @@ clarinet_I_end_andre = {
   }
 }
 
-clarinet_I_end_bosoni = {
+clarinet_I_end_busoni = {
   \relative c' {
     \transposition c
-    \key c \major
 
-    % (bosoni) cl1 page 1 line 1
+    % (busoni) cl1 page 1 line 1
     % \barNumberCheck #1
     R1 |
     fis1\f |
@@ -493,7 +492,7 @@ clarinet_I_end_bosoni = {
     h1\! |
     \mBreak
     
-    % (bosoni) cl1 page 1 line 2
+    % (busoni) cl1 page 1 line 2
     % \barNumberCheck #13
     R1*8 |
     \bar "||"
@@ -508,7 +507,7 @@ clarinet_I_end_bosoni = {
     h4-. g4-. r4 |
     \mBreak
     
-    % (bosoni) cl1 page 1 line 3
+    % (busoni) cl1 page 1 line 3
     % \barNumberCheck #33
     c8 d es f g g |
     f8 es d es f f |
@@ -518,7 +517,7 @@ clarinet_I_end_bosoni = {
     r4 a(\p g) |
     \mBreak
     
-    % (bosoni) cl1 page 1 line 4
+    % (busoni) cl1 page 1 line 4
     % \barNumberCheck #42
     r4 c( h) |
     r4 es( d) |
@@ -529,7 +528,7 @@ clarinet_I_end_bosoni = {
     r4 es( d) |
     \mBreak
     
-    % (bosoni) cl1 page 1 line 5
+    % (busoni) cl1 page 1 line 5
     % \barNumberCheck #49
     r4 es( d) |
     r4 es( d) |
@@ -541,7 +540,7 @@ clarinet_I_end_bosoni = {
     r4 c( g) |
     \mBreak
     
-    % (bosoni) cl1 page 1 line 6
+    % (busoni) cl1 page 1 line 6
     % \barNumberCheck #57
     r4 c( g) |
     r4 c( g) |
@@ -554,7 +553,7 @@ clarinet_I_end_bosoni = {
     e2.( f8 d) |
     \mBreak
     
-    % (bosoni) cl1 page 1 line 7
+    % (busoni) cl1 page 1 line 7
     % \barNumberCheck #63
     \acciaccatura { d8 } c4 c c c |
     c2 r |
@@ -564,7 +563,7 @@ clarinet_I_end_bosoni = {
     e2 r |
     \mBreak
     
-    % (bosoni) cl1 page 1 line 8
+    % (busoni) cl1 page 1 line 8
     % \barNumberCheck #69
     c2 c |
     c2. \tuplet 3/2 { c8( h a } |
@@ -574,7 +573,7 @@ clarinet_I_end_bosoni = {
     f2 f4 f |
     \mBreak
     
-    % (bosoni) cl1 page 1 line 9
+    % (busoni) cl1 page 1 line 9
     % \barNumberCheck #75
     e1 |
     f2 f4 f |
@@ -585,7 +584,7 @@ clarinet_I_end_bosoni = {
     e2 r4 f8(\ff d |
     \mBreak
     
-    % (bosoni) cl1 page 1 line 10
+    % (busoni) cl1 page 1 line 10
     % \barNumberCheck 82
     e8 g f d e g f d |
     e2) r4 \tuplet 3/2 { g8( a h } |
@@ -765,7 +764,7 @@ clarinet_II_main = {
     R4. |
     es8-. d-. r |
     R4. |
-    es8-. d-. r |
+    f8-. es-. r |
     d4. |
     h8 es8\f\fermata r |
     \mBreak
@@ -979,12 +978,11 @@ clarinet_II_end_andre = {
   }
 }
 
-clarinet_II_end_bosoni = {
+clarinet_II_end_busoni = {
   \relative c' {
     \transposition c
-    \key c \major
 
-    % (bosoni) cl2 page 1 line 1
+    % (busoni) cl2 page 1 line 1
     % \barNumberCheck #1
     R1 |
     es1\f |
@@ -997,7 +995,7 @@ clarinet_II_end_bosoni = {
     h1 |
     \mBreak
     
-    % (bosoni) cl2 page 1 line 2
+    % (busoni) cl2 page 1 line 2
     % \barNumberCheck #11
     d,~\dim |
     d1\! |
@@ -1012,7 +1010,7 @@ clarinet_II_end_bosoni = {
     h4.-> g8 g g |
     \mBreak
     
-    % (bosoni) cl2 page 1 line 3
+    % (busoni) cl2 page 1 line 3
     % \barNumberCheck #31
     c4.-> es8-. d-. c-. |
     h4-. g4-. r4 |
@@ -1020,10 +1018,10 @@ clarinet_II_end_bosoni = {
     c8 d es g g g |
     f8 es d c h4 |
     R2.*4 |
-    r4 a'(\p g) |
+    r4 as'(\p g) |
     \mBreak
     
-    % (bosoni) cl2 page 1 line 4
+    % (busoni) cl2 page 1 line 4
     % \barNumberCheck #42
     r4 es( d) |
     r4 c'( h) |
@@ -1034,7 +1032,7 @@ clarinet_II_end_bosoni = {
     r4 c( h) |
     \mBreak
     
-    % (bosoni) cl2 page 1 line 5
+    % (busoni) cl2 page 1 line 5
     % \barNumberCheck #49
     r4 c( h) |
     r4 h( h) |
@@ -1046,7 +1044,7 @@ clarinet_II_end_bosoni = {
     r4 c( g) |
     \mBreak
     
-    % (bosoni) cl2 page 1 line 6
+    % (busoni) cl2 page 1 line 6
     % \barNumberCheck #57
     r4 c( g) |	
     r4 c( g) |
@@ -1059,7 +1057,7 @@ clarinet_II_end_bosoni = {
     g2.( a8 f) |
     \mBreak
     
-    % (bosoni) cl2 page 1 line 7
+    % (busoni) cl2 page 1 line 7
     % \barNumberCheck #63
     \acciaccatura { f8 } e4 e e e |
     e2 r |
@@ -1069,7 +1067,7 @@ clarinet_II_end_bosoni = {
     c2 r |
     \mBreak
     
-    % (bosoni) cl2 page 1 line 8
+    % (busoni) cl2 page 1 line 8
     % \barNumberCheck #69
     c2 c |
     c2. \tuplet 3/2 { c8( h a } |
@@ -1079,7 +1077,7 @@ clarinet_II_end_bosoni = {
     h2 h4 h |
     \mBreak
     
-    % (bosoni) cl2 page 1 line 9
+    % (busoni) cl2 page 1 line 9
     % \barNumberCheck #75
     c1 |
     h2 h4 h |
@@ -1090,7 +1088,7 @@ clarinet_II_end_bosoni = {
     c2 r4 d8(\ff h |
     \mBreak
     
-    % (bosoni) cl2 page 1 line 10
+    % (busoni) cl2 page 1 line 10
     % \barNumberCheck 82
     c8 e d h c e d h |
     c2) r4 \tuplet 3/2 { g'8( a h } |
@@ -1118,7 +1116,7 @@ clarinet_II_end_bosoni = {
         {
           \clarinet_I_main
           % \clarinet_I_end_andre
-          \clarinet_I_end_bosoni
+          \clarinet_I_end_busoni
         }
       }
     }
@@ -1141,7 +1139,7 @@ clarinet_II_end_bosoni = {
         {
           \clarinet_II_main
           % \clarinet_II_end_andre
-          \clarinet_II_end_bosoni
+          \clarinet_II_end_busoni
         }
       }
     }
