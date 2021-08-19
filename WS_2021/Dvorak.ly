@@ -169,36 +169,173 @@ clarinet_II_AllegroConBrio = {
     \mBreak
 
     % m1 page 2 line 1
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-6
+        R1*4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Cl.I"
+        \stemDown {
+          r4 c16( c' g c, c'8 c,) r4 |
+          r2 r4 \tuplet 3/2 { c8( g' c, } |
+          c'8 c,) r4 r4 \tuplet 3/2 { c8( g' c, } |
+          c'8 c,) r4 r8 c4.~ |
+        }
+      }
+    >>
+    r4 a,4( \pp b8) r r4 |
+    \mark #4
+    f''2.-> \fz \> f,8[ \p r16 f] |  
     \mBreak
 
     % m1 page 2 line 2
+    f'2.-> \fz \> f,8[ \p r16 f] |
+    f'4( \fz e8 \> d cis b a g) |
+    f2~ \p f8 r8 f8[ \p r16 f] |
+    f'2.-> \fz \> f,8[ \! r16 f] |
+    f'2.-> \fz f,8[ r16 f] |
     \mBreak
 
     % m1 page 2 line 3
+    f'4( \fz \< e8 d g,4 \> \slashedGrace b8 a8. g16) | 
+    f2~ \! f8 r r4 |
+    R1*10 |
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-6
+        R1*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \clef bass
+        \set instrumentCueName = "Fag"
+        \stemDown {
+          r2 r4 <fis, ais> |
+          <ais cis>( <gis h> \tuplet 3/2 { <h dis> <ais cis> <cis! es>) } |
+        }
+        \clef violin
+      }
+    >>
+    \mark #5
+    d'2( \pp cis |
+    eis2 d) |
     \mBreak
 
     % m1 page 2 line 4
+    d1( \< |
+    fis4) g( \> a8 gis fis e) |
+    a1 \f |
+    h1 |
+    d,1-^~ \ff |
+    d2. cis4 |
+    d4( cis8 h a g fis e) |
+    \acciaccatura d8 d'2. cis4 |
     \mBreak
 
     % m1 page 2 line 5
+    d4( cis8 h a g fis e) |
+    \acciaccatura d8 d'2. cis4 |
+    d4 r8 g fis4 r8 g |
+    fis4 r8 g fis4 r8 g |
+    d1~ \ff \startTrillSpan |
+    d1~ |
     \mBreak
 
     % m1 page 2 line 6
+    d1~ |
+    \afterGrace d1 \stopTrillSpan { cis16( d16 } |
+    a'8) r r4 r2 |
+    R1*5 |
+    f,,1~ \p |
+    f1~ |
+    f1~ |
+    f1~ |
+    f4 r r2 |
+    R1 |
+    \bar "||"
     \mBreak
 
     % m1 page 2 line 7
+    \mark #6
+    f'2( \p \< f4 f |
+    b2. \> as4) \! |
+    f2( ges4 es |
+    des4 \< f as4. ges8) \! |
+    f2( \tuplet 3/2 { es4 \> ges f } |
+    des2) \p r4 des |
+    des2 \pp des4 des |
     \mBreak
 
     % m1 page 2 line 8
+    des2.( es8 f) |
+    ges4--( \< ges4-- ges4-- ges4--) |
+    ges2 \> as |
+    ges2 \! r4 ges |
+    ges2( ges4 \dim ges \! |
+    ges2 f4 es |
+    des2 es |
+    f1~) \> |
+    f1~ |
     \mBreak
 
     % m1 page 2 line 9
+    f1~ \pp |
+    f4 r4 r2 |
+    R1*8 |
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-6
+        R1*3 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Ob."
+        \stemDown {
+          ges'4( es c es8 fis |
+          ges2) r2 |
+          ges8-. ges-. es4( c es8 ges) |
+        }
+      }
+    >>
+    \mark #7
+    c,1 \ff
+    as,2-> \mf c-> |
+    es2.->~ \dim es8 \! r8 |
     \mBreak
 
     % m1 page 2 line 10
+    R1*6 |
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-6
+        R1*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \clef bass
+        \set instrumentCueName = "Fag"
+        \stemDown {
+          <cis, eis>2 <eis! gis> |
+          <gis b>8[ r16 <eis gis!>16] <ais cis>8[ r16 <eis gis>16] <gis b>8[ r16 <eis gis>16] <ais cis>8[ r16 <eis gis>16] |
+        }
+        \clef violin
+      }
+    >>
+    r2 h''4( \ff gis) |
+    R1 |
+    r2 r4 r8. gis16( \f |
+    d'4 h gis h8. cis16) |
     \mBreak
 
     % m1 page 2 line 11
+    d4( h gis \dim h8. \! cis16) |
+    d4( \p \> gis,8 h d4 gis,8 h) |
+    d4( \pp gis,8 h d4) \tuplet 3/2 { e,8( gis? h) } |
+    \mark #8
+    a2-> \p e-> |
+    cis2. e8-.( a-.) | 
     \mBreak
 
     % m1 page 3 line 1
