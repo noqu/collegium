@@ -6,7 +6,7 @@
     bottom-margin = 10\mm
     left-margin = 10\mm
     right-margin = 10\mm
-    ragged-last = ##t
+    ragged-last = ##f
 }
 
 \header{
@@ -20,7 +20,7 @@
 % Adapt this for automatic line-breaks
 % mBreak = {}
 mBreak = { \break }
-#(set-global-staff-size 17)
+#(set-global-staff-size 19)
 
 % Useful snippets
 pCresc = _\markup { \dynamic p \italic "cresc." }
@@ -405,8 +405,9 @@ clarinet_II_AllegroConBrio = {
     f1~ |
     f4 \! r4 r2 |
     R1 |
-    \bar "||" \pocoMenoMosso
-    R1*2
+    \bar "||" 
+    \grace s8 \pocoMenoMosso
+    R1 *2 
     <<
       {
        \override MultiMeasureRest.staff-position = #-6
@@ -472,24 +473,65 @@ clarinet_II_AllegroConBrio = {
     \mBreak
 
     % m1 page 4 line 1
+    d2( \ff c) |
+    es2( d) |
+    f4-. e-. g-. f-. |
+    b4 g2-> es4 |
+    b2-> es-> |
+    b'4 g2-> es4 |
+    b2-> es-> |
+    b'4 g2-> es4 |
+    d4 r8 es d4 r8 es |
     \mBreak
 
     % m1 page 4 line 2
+    d4 r8 es d4 r8 es |
+    \mark #14
+    b8[ r16 d] d8[ r16 d] d2 |
+    d8[ r16 d] d8[ r16 d] d2 |
+    \repeat unfold 4 { d8[ r16 d] } |
     \mBreak
 
     % m1 page 4 line 3
+    \repeat unfold 4 { d8[ r16 d] } |
+    \tuplet 6/4 { b2.:8 } \ff \tuplet 6/4 { b2.:8 } |
+    \tuplet 6/4 { b2.:8 } \tuplet 6/4 { b2.:8 } |
+    \tuplet 6/4 { b2.:8 } \tuplet 6/4 { b2.:8 } |
+    \tuplet 6/4 { b2.:8 } \tuplet 6/4 { b2.:8 } |
+    d1-^ \ff |
+    e1-^ |
+    f2 fis |
     \mBreak
 
     % m1 page 4 line 4
+    g4 as2 a4 |
+    b8 r ges-. ges-. ces-. \fz ges-. ges-. es-. |
+    b'8 r ges-. ges-. es'?-. \fz ces-. ces-. es,-. |
+    d8 r8 r4 r2 |
+    R1 |
+    r2 r4 es4 \ff |
     \mBreak
 
     % m1 page 4 line 5
+    d8[ r16 e,] f8[ r16 d] d'8[ r16 a] b8[ r16 f] |
+    f'8[ r16 cis] d8[ r16 b] f'4 f8[ r16 f]  |
+    f4 a8[ r16 a] a4 a \ff |
+    f4 a8[ r16 a] a4 a |
     \mBreak
 
     % m1 page 4 line 6
+    f4 a8[ r16 a] a4 a |
+    a1~ \startTrillSpan |
+    a1 \stopTrillSpan |
+    b,16( c b) r \repeat unfold 3 { b( c b) r } |
+    \repeat unfold 4 { d( es d) r } |
     \mBreak
 
     % m1 page 4 line 7
+    d8 r d16( es d) r d8 r d16( es d) r |
+    d8 r d16( es d) r d8 r d16( es d) r |
+    d8 r d r d r d r |
+    d8 r8 r4 r2 |
     \bar "|."
   }
 }
@@ -599,7 +641,7 @@ clarinet_II_AllegroNonTroppo = {
   \score {
     \transpose a a \clarinet_II_AllegroConBrio
   }
-  \score {
-    \transpose a a \clarinet_II_AllegroNonTroppo
-  }
+  % \score {
+  %   \transpose a a \clarinet_II_AllegroNonTroppo
+  % }
 }
