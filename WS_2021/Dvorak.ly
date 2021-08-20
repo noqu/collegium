@@ -28,7 +28,7 @@ mfDim = _\markup { \dynamic mf \italic "dim." }
 pMoltoCresc = _\markup { \dynamic p \italic "molto cresc." }
 stringendo = ^\markup { \italic "stringendo" }
 allargando = _\markup { \italic "allargando" }
-pocoRit = _\markup {\italic {"poco rit."} }
+pocoMenoMosso = ^\markup {\italic \bold {"Poco meno mosso."} }
 rit = _\markup {\italic {"rit."} }
 solo = ^\markup { "Solo" }
 piuF = _\markup { \italic "più" \dynamic f }
@@ -339,33 +339,136 @@ clarinet_II_AllegroConBrio = {
     \mBreak
 
     % m1 page 3 line 1
+    h4--( h-- h-- h--) |
+    h2. a8( h) |
+    cis4--( cis-- cis-- cis--) |
+    cis2. \p a8-. \< h-. |
+    cis-.( a-.8 h-. cis4-. \! a8-. h-.) |
+    cis4( \< ais dis \> cis) |
     \mBreak
 
     % m1 page 3 line 2
+    h4( \p h,2.~ \dim) |
+    h1~ \pp |
+    h1~ |
+    h1~ |
+    h1 |
+    R1 |
+    \mark #9
+    R1*2 |
+    b'?8 \f r as r g4.( as16 \< b |
+    ces8) \fz ces-. ces-. b-. a2 |
     \mBreak
 
     % m1 page 3 line 3
+    b2 \ff ces8 r b r |
+    a4.( \< b16 c des8) \fz des-. des-. c-. |
+    as8 \ff r8 r4 r2 |
+    R1*7 |
+    \mark #10 |
+    fis'8 \ff fis fis fis r2 |
+    fis8 fis fis fis r2 |
     \mBreak
 
     % m1 page 3 line 4
+    fis8 fis fis fis r2 |
+    g1~-^ \fff |
+    g1 |
+    R1*8 |
+    r4 fis,8( \ff g) r4 fis8( g) |
+    r4 fis8( g) r4 fis8( g) |
+    r4 es'-. \ff es-. es-. |
+    e4-. e-. e-. e-. |
     \mBreak
 
     % m1 page 3 line 5
-    \mBreak
-
-    % m1 page 3 line 6
+    des2~ \ff des8 r8 r4 |
+    R1*13 |
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-6
+        R1*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \clef bass
+        \set instrumentCueName = "Timp"
+        \stemDown {
+          d,,1~ \startTrillSpan |
+          d1 \stopTrillSpan |
+        }
+        \clef violin
+      }
+    >>
+    \mark #11
+    f''1~ \ff \> |
+    f1~ |
+    f4 \! r4 r2 |
+    R1 |
+    \bar "||" \pocoMenoMosso
+    R1*2
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-6
+        R1*4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Cl.I"
+        \stemDown {
+          b,2( d |
+          f8[ r16 d] g8[ r16 d] f8[ r16 d] g8[ r16 d]) |
+          \mBreak
+          % m1 page 3 line 6
+          f4( d2.~) |
+          d8([ r16 b] g8[ r16 b] d8[ r16 b] g8[ r16 b]) |
+        }
+      }
+    >>
+    b1 \pp |
+    b1~ |
+    b1 |
+    des1~ |
+    des1~ |
+    des1~ |
+    des4 \tempoPrimo r4 r2 |
+    R1*2 |
     \mBreak
 
     % m1 page 3 line 7
+    r2 r4 f,8[ \p \< r16 f(] |
+    \mark #12
+    des'2.) \fz \> des,8[ \! r16 des(] \< |
+    des'2.) \fz \> des,8[ \! r16 des(] \< |
+    des'4)( \fz c8 \> b a4 ges8 f) |
+    des2~ \pp des8 r des[ r16 des(] \< |
+    des'2.) \fz \> des,8[ \! r16 des(] |
     \mBreak
 
     % m1 page 3 line 8
+    des'2.) \fz des,8[ \< r16 des] |
+    des'4( \> c8 b a4 \slashedGrace ges8 f8. es16) |
+    des2~ \p des8 r8 r4 |
+    ges8( \f es) ges( \> es) \! r4 r8 f \p |
+    ges8( es) r4 r4 r8 ges8 |
     \mBreak
 
     % m1 page 3 line 9
+    g8( \f e) g( e) r4 r8 fis \p |
+    g8( e) r4 r4 r8 fis |
+    g8( e) g( e) r4 r8 fis \f |
+    h8( \< g) h( g) r4 \! r8 fis |
     \mBreak
 
     % m1 page 3 line 10
+    b8( g) r4 b8( g) r4 |
+    b8( g) r4 as8( des) r4 |
+    R1*4 |
+    \mark #13
+    b2( \pp a |
+    c2 b~ |
+    b4) r4 r2 |
+    R1 |
     \mBreak
 
     % m1 page 4 line 1
