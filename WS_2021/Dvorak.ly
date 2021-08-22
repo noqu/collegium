@@ -25,16 +25,20 @@ mBreak = { \break }
 % Useful snippets
 pCresc = _\markup { \dynamic p \italic "cresc." }
 mfDim = _\markup { \dynamic mf \italic "dim." }
+ffz = _\markup { \dynamic { ffz } } 
 pMoltoCresc = _\markup { \dynamic p \italic "molto cresc." }
 stringendo = ^\markup { \italic "stringendo" }
 allargando = _\markup { \italic "allargando" }
 pocoMenoMosso = ^\markup {\italic \bold {"Poco meno mosso."} }
-rit = _\markup {\italic {"rit."} }
+rit = ^\markup {\italic {"rit."} }
+ritATempo = ^\markup { \center-align \italic {"  rit. a tempo"} }
+moltoRit = ^\markup { \italic {"molto rit."} }
+pocoRit = ^\markup {\italic {"poco rit."} }
 solo = ^\markup { "Solo" }
 piuF = _\markup { \italic "più" \dynamic f }
-piuTranquillo = ^\markup { \italic "Più tranquillo" }
+piuAnimato = ^\markup { \italic "Più animato" }
 accel = ^\markup { \bold { "accel." } }
-tempoPrimo = ^\markup { \bold { "Tempo I" } }
+tempoPrimo = ^\markup { \italic { "Tempo I" } }
 
 % Adapted from http://lsr.di.unimi.it/LSR/Snippet?id=655
 % Make title, subtitle, instrument appear on pages other than the first
@@ -536,100 +540,447 @@ clarinet_II_AllegroConBrio = {
   }
 }
 
-clarinet_II_AllegroNonTroppo = {
+clarinet_II_AllegroNonTroppo_A_start = {
+  \accidentalStyle Score.modern-cautionary
+  \compressFullBarRests
   \defaultTimeSignature
   \time 2/4
   \tempo "Allegro non troppo"
   \key b \major
-  \relative c'' {
+  \relative c {
     % m4 page 1 line 1
+    R2*16 |
+    R2 \fermataMarkup |
+    f2~ \pp
+    f2~ |
+    f8 r r4 |
+    R2*5 |
+    \mark #1
+    \repeat volta 2 {
+      R2*8 | 
+    }
+    \repeat volta 2 {
+      R2*7 | 
+    }
+    \alternative {
+      { R2 | }
+      { R2 | }
+    }
     \mBreak
 
     % m4 page 1 line 2
+    \mark #2
+    \repeat volta 2 {
+      R2*8 |
+    }
+    \repeat volta 2 {
+      R2*4 |
+      <<
+        {
+         \override MultiMeasureRest.staff-position = #-6
+          R2*4 |
+          \revert MultiMeasureRest.staff-position
+        }
+        \new CueVoice {
+          \set instrumentCueName = "Vl.I"
+          \stemDown {
+            d''16( es32 f g a b c) d8. c16 |
+            b8. a16 g8. f16 |
+            es8 c' b a |
+            g16( b) a-. f-. g8 r |
+          }
+        }
+      >>
+    }
+    \mark #3
+    d8 \ff r d r |
+    d4. d8 |
     \mBreak
 
     % m4 page 1 line 3
+    d8 c16 d es8 c |
+    d8 c16 d es8 c |
+    b16-. \< d-. e-. f-. ges-. as-. b-. c-. |
+    des4. \trill \! \ffz c8 \prall |
+    b2 \trill |
+    f8-. e-. f-. r |
     \mBreak
 
     % m4 page 1 line 4
+    d8 r d r |
+    d4. d8 |
+    d8 c16 d es8 c |
+    d8 c16 d es8 c |
+    d8 r d,16( es f fis |
+    g16 \< as a b h c d es) \! |
     \mBreak
 
     % m4 page 1 line 5
+    f16( fis) g4 \trill a8 |
+    b8 es, d r |
+    \mark #4 
+    \repeat volta 2 {
+      R2*7 |
+    }
+    \alternative {
+      { R2 | }
+      { R2 | }
+    }
+    \repeat volta 2 {
+      R2*7 |
+    }
+    \alternative {
+      { R2 | }
+      { R2 | }
+    }
     \mBreak
 
     % m4 page 1 line 6
+    \mark #5
+    d8 \ff r d r |
+    d4. d8 |
+    d8 c16 d es8 c |
+    d8 c16 d es8 c |
+    b16( \< d e f ges as b c) |
+    des4. \trill \! \fz c8 \prall |
+    b2 \trill |
+    f8 e f r |
     \mBreak
 
     % m4 page 1 line 7
+    d8 r d r |
+    d4. d8 |
+    d8 c16 d es8 c |
+    d8 c16 d es8 c |
+    d8 r d,16( es f fis |
+    g16 \< as a b h c d es) \! |
     \mBreak
 
     % m4 page 2 line 1
+    f16( fis) g4 \trill es8 |
+    d8 d es es |
+    d8 d es es |
+    d8 es d8 es |
+    d8 es d8 es |
+    \mark #6
+    d8 r8 r4 |
+    R2*10 |
+    \bar "||" 
     \mBreak
+  }
+}
 
+clarinet_II_AllegroNonTroppo_B = {
+  \accidentalStyle Score.modern-cautionary
+  \compressFullBarRests
+  \key f \major
+  \relative c' {
     % m4 page 2 line 2
+    f4-- \mp f-- |
+    f4-- r8 f |
+    f8( g a g |
+    f4) r8 f |
+    f4 f |
+    f4 r8 f |
+    f8( \< g a b |
+    c4) a \! |
     \mBreak
 
     % m4 page 2 line 3
+    d,8( e f \> g |
+    a4 g8 f) |
+    e8( \p f g e |
+    f4) r |
+    r4 d8( \p f) |
+    r4 d8( f) |
+    r4 d8( f) |
+    r4 cis8( e) |
     \mBreak
 
     % m4 page 2 line 4
+    \repeat unfold 3 { r4 cis8( e) | }
+    \repeat unfold 4 { r4 c8( es) | }
+    g4 r |
+    \mark #7 |
+    R2*11 |
     \mBreak
 
     % m4 page 2 line 5
+    f4 \ff f |
+    f4 r8 f |
+    f8( g a g |
+    f4) r8 f |
+    f4 f |
+    f4 r8 f |
+    f8( g a b |
+    c4 a) |
     \mBreak
 
     % m4 page 2 line 6
+    d,8( e f g |
+    a4 g8 f) |
+    e8( f g e |
+    f4) r |
+    \mark #8
+    r4 d16( \ff f d f) |
+    \repeat unfold 2 { r4 d16( f d f) | }
     \mBreak
 
     % m4 page 2 line 7
+    \repeat unfold 4 { r4 cis16( e cis e) | }
+    \repeat unfold 3 { r4 c16( es c es) | }
     \mBreak
 
     % m4 page 2 line 8
+    r4 c16( es c es)
+    g8 r r4 |
+    R2*7 |
+    \bar "."
+    \mark #9
+    \key c \major
+    r8 d16( \f es d8) \< g~ |
+    g8 d'16( es \! d8) r |
+    R2*2 |
+    r8 h?16 \ff h h8 g16 g |
     \mBreak
 
     % m4 page 2 line 9
+    g8 d16 es d8 g |
+    as2-^~ |
+    as2 |
+    g8 r8 r4 |
+    R2*5 |
+    \mark #10
+    h,?4 \f h |
+    h'4. h8~ |
+    h8 a16( h c8) a-. |
     \mBreak
 
     % m4 page 2 line 10
+    h8-> g-. a-> e-. |
+    dis8 fis,16( g fis8) h16( c |
+    h8) dis16( e dis8) r |
+    e8 r r4 |
+    R2*3 |
+    d'2~ \ff |
+    d2 |
     \mBreak
 
-    % m4 page 2 line 11
+    % m4 page 2 line 11 start
+    c2~ |
+    c2~ |
+    c2~ |
+    c2 |
+    \bar "."
+    \mark #11
+    h8 r r4 |
+    R2*5 |
+    \bar "||"
+  }
+}
+
+clarinet_II_AllegroNonTroppo_A_end = {
+  \accidentalStyle Score.modern-cautionary
+  \compressFullBarRests
+  \key b \major
+  \relative c {
+    % m4 page 2 line 11 end
+    f''2-^ \ff |
+    es?2-^|
+    f2 |
+    es2 |
     \mBreak
 
     % m4 page 2 line 12
-    \mBreak
-
-    % m4 page 3 line 1
+    f4-. g-. |
+    f4-. b,-. |
+    c4-. g-. |
+    a4-. g-. |
+    \mark #12
+    a8 r r4 |
+    R2 |
+    g8 r r4 |
+    R2*9 |
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-6
+        R2*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Vl.I"
+        \stemUp {
+          r8 a a gis16 a |
+          \mBreak
+          
+          % m4 page 3 line 1
+          c8-. fis,-. a-. es-. |
+        }
+      }
+    >>
+    r4  es4-. \pp |
+    fis4-. c-. |
+    d4( es |
+    d4 \dim es \! |
+    d4\pp \pocoRit es |
+    d4 es |
+    \mark #13
+    \repeat volta 2 {
+      d8) \tempoPrimo r8 r4 |
+      R2*7 |
+    }
     \mBreak
 
     % m4 page 3 line 2
+    \repeat volta 2 {
+      f4( \p \< e |
+      es4 \fz \> d) |
+      d4( \< b' |
+      a4 \> g) |
+      fis4( \f \< c' |
+      h4 \> b) |
+      b2\! \> |
+      es,4 \p f |
+      f2~ |
+      f2 |
+    }
     \mBreak
 
     % m4 page 3 line 3
+    \mark #14
+    \repeat volta 2 {
+      R2*8 |
+    }
+    R2*8 \grace s16 \ritATempo |
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-6
+        R2*8 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Vl.I"
+        \stemDown {
+          d'4( cis |
+          c4 h) |
+          h( g') |
+          f4( es) |
+          dis4 d~ |
+          d8 b( c cis) |
+          es4( d |
+          c4 b8) r |
+        }
+      }
+    >>
+    \mark #15
+    \repeat volta 2 {
+      R2*8 |
+    }
     \mBreak
 
     % m4 page 3 line 4
-    \mBreak
-
-    % m4 page 3 line 5
+    \repeat volta 2 {
+      R2*8 |
+    }
+    \mark #16
+    R2*6 |
+    R2*6 \moltoRit |
+    \bar "||"
+    <<
+      {
+       \override MultiMeasureRest.staff-position = #-6
+        R2*8 \tempoPrimo |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Ob."
+        \stemUp {
+          \repeat unfold 3 {
+            g4( b |
+            d2) |
+          }
+          g,4( b |
+          d4.) d8 |
+          \mBreak
+          
+          % m4 page 3 line 5
+          g,2( |
+          b2 |
+          d2~ |
+          d2) |
+          g,2( |
+          b2 \rit |
+          d4. es8 |
+          d2) |
+        }
+      }
+    >>
+    \mark #17
+    d8 \ff \tempoPrimo r d r |
+    d4. d8 |
+    d8 c16 d es8 c |
     \mBreak
 
     % m4 page 3 line 6
+    d8 c16 d es8 c |
+    b16-. \< d-. e-. f-. ges-. as-. b-. c-. |
+    des4. \trill \! \fz c8 \prall |
+    b2 \trill |
+    f8 e f f |
+    d8 r d r |
+    d4. d8 |
     \mBreak
 
     % m4 page 3 line 7
+    d8 c16 d es8 c |
+    d8 c16 d es8 c |
+    d8 r d,16( es f fis |
+    g16 \< as a b h c d es) \! |
+    f16( fis) g4 \trill es8 |
+    d8 c d c |
     \mBreak
 
     % m4 page 3 line 8
+    d8 c d c |
+    \mark #18
+    b4( \ff \piuAnimato h |
+    c4 cis) |
+    d8( es e f) |
+    fis8( g gis a) |
+    d,2 |
+    es4( e) |
+    f2 |
+    f4. es8 |
     \mBreak
 
     % m4 page 3 line 9
+    d?8 r des r |
+    ces8 r es r |
+    d?8 r des r |
+    ces8 r es r |
+    d?8 r des r |
+    es8 r es r |
+    d?8 r des r |
+    es8 r es r |
     \mBreak
 
     % m4 page 3 line 10
+    d2 |
+    des2 \rit |
+    es2 |
+    es2 |
+    \tuplet 3/2 { d8-> \piuAnimato d b } 
+    \repeat unfold 7 { \tuplet 3/2 { d8-> d b } } |
     \mBreak
 
     % m4 page 3 line 11
+    \repeat unfold 4 { b8-. c-. d-. f,-. } |
+    d'4 d8[ r16 d] |
+    d8 r d r |
+    d2~ |
+    d2 |
+    f8 r d r |
+    R2
     \bar "|."
   }
 }
@@ -638,10 +989,20 @@ clarinet_II_AllegroNonTroppo = {
   \header{
     instrument = "Klarinette II in A"
   }
-  \score {
-    \transpose a a \clarinet_II_AllegroConBrio
-  }
   % \score {
-  %   \transpose a a \clarinet_II_AllegroNonTroppo
+  %   \transpose a a \clarinet_II_AllegroConBrio
   % }
+  \score {
+    \new Staff {
+      \transpose a a {
+        \clarinet_II_AllegroNonTroppo_A_start
+      }
+      \transpose b b {
+        \clarinet_II_AllegroNonTroppo_B
+      }
+      \transpose a a {
+        \clarinet_II_AllegroNonTroppo_A_end
+      }
+    }
+  }
 }
