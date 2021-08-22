@@ -82,7 +82,7 @@ clarinet_II_AllegroConBrio = {
   \compressFullBarRests
   \defaultTimeSignature
   \time 4/4
-  \tempo "Allegro con brio"
+  \tempo "Allegro con brio."
   \key b \major
   \relative c' {
     % m1 page 1 line 1
@@ -118,17 +118,17 @@ clarinet_II_AllegroConBrio = {
     % m1 page 1 line 4
     f8 r8 f8[ r16 c] f8 r8 r8 c |
     f8 \cresc r8 \! f8[ r16 c] f8 r8 r8 c |
-    f8 r8 f8[ r16 c] f8 r8 r8 c |
-    f8 r8 f8[ r16 c] f8 r8 r8 c |
+    f8[ r16 c] f8 r8 f8[ r16 c] f8 r8  |
+    f8[ r16 c] f8 r8 f8[ r16 c] f8 r8  |
     \mBreak
 
     % m1 page 1 line 5
-    a'1~ \fz \startTrillSpan |
+    a1~ \fz \startTrillSpan |
     a1~ |
     a1 \stopTrillSpan |
     a8 es'-. \ff g-. c,-. es-. r8 r4 |
-    r8 c-. \f es-. g,-. c-. f-. r4 |
-    r4 f,8 \f r8 r2 |
+    r8 c-. \f es-. g,-. c-. f,-. r4 |
+    r4 f8 \f r8 r2 |
     \mark #2 
     R1*3 |
     b,2.( \p g8 b8 ) |
@@ -181,7 +181,7 @@ clarinet_II_AllegroConBrio = {
           r4 c16( c' g c, c'8 c,) r4 |
           r2 r4 \tuplet 3/2 { c8( g' c, } |
           c'8 c,) r4 r4 \tuplet 3/2 { c8( g' c, } |
-          c'8 c,) r4 r8 c4.~ |
+          c'8 cis,) r4 r8 cis4.( \grace s8) |
         }
       }
     >>
@@ -343,7 +343,7 @@ clarinet_II_AllegroConBrio = {
     h2. a8( h) |
     cis4--( cis-- cis-- cis--) |
     cis2. \p a8-. \< h-. |
-    cis-.( a-.8 h-. cis4-. \! a8-. h-.) |
+    cis4-.( a8-. h-. cis4-. \! a8-. h-.) |
     cis4( \< ais dis \> cis) |
     \mBreak
 
@@ -377,7 +377,7 @@ clarinet_II_AllegroConBrio = {
     R1*8 |
     r4 fis,8( \ff g) r4 fis8( g) |
     r4 fis8( g) r4 fis8( g) |
-    r4 es'-. \ff es-. es-. |
+    r4 e'-. \ff e-. e-. |
     e4-. e-. e-. e-. |
     \mBreak
 
@@ -403,7 +403,7 @@ clarinet_II_AllegroConBrio = {
     \mark #11
     f''1~ \ff \> |
     f1~ |
-    f4 \! r4 r2 |
+    f4 r4 \! r2 |
     R1 |
     \bar "||" 
     \grace s8 \pocoMenoMosso
@@ -442,7 +442,7 @@ clarinet_II_AllegroConBrio = {
     des'2.) \fz \> des,8[ \! r16 des(] \< |
     des'2.) \fz \> des,8[ \! r16 des(] \< |
     des'4)( \fz c8 \> b a4 ges8 f) |
-    des2~ \pp des8 r des[ r16 des(] \< |
+    des2~ \pp des8 r des[ r16 \< des(] |
     des'2.) \fz \> des,8[ \! r16 des(] |
     \mBreak
 
@@ -487,7 +487,7 @@ clarinet_II_AllegroConBrio = {
     % m1 page 4 line 2
     d4 r8 es d4 r8 es |
     \mark #14
-    b8[ r16 d] d8[ r16 d] d2 |
+    b8[ \ff r16 d] d8[ r16 d] d2 |
     d8[ r16 d] d8[ r16 d] d2 |
     \repeat unfold 4 { d8[ r16 d] } |
     \mBreak
