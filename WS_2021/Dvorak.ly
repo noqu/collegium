@@ -93,7 +93,7 @@ clarinet_II_AllegroConBrio = {
     f2( \p \< f4 f4 |
     b2. \> as4 |
     f2) \! ges4( es |
-    des4 \< f as4. g8 |
+    des4 \< f as4. ges8 |
     f2 \> \tuplet 3/2 { es4 ges f } |
     des2) \p r4 des \pp |
     \mBreak
@@ -103,7 +103,7 @@ clarinet_II_AllegroConBrio = {
     des2.( es8 \< f |
     ges4 ges-- ges--  \! ges-- |
     ges2 \> as2 |
-    ges2) r4 \! ges \pp |
+    ges2) \grace s8 \! r4 ges \pp |
     ges2( ges4-- ges-- |
     ges2 f4 es) |
     \mBreak
@@ -229,7 +229,7 @@ clarinet_II_AllegroConBrio = {
 
     % m1 page 2 line 4
     d1( \< |
-    fis4) g( \> a8 gis fis e) |
+    fis4) g( \> a8 g fis e) |
     a1 \f |
     h1 |
     d,1-^~ \ff |
@@ -989,9 +989,10 @@ clarinet_II_AllegroNonTroppo_A_end = {
   \header{
     instrument = "Klarinette II in A"
   }
-  % \score {
-  %   \transpose a a \clarinet_II_AllegroConBrio
-  % }
+  \score {
+    \transpose a a \clarinet_II_AllegroConBrio
+  }
+  \pageBreak
   \score {
     \new Staff {
       \transpose a a {
