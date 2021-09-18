@@ -700,8 +700,8 @@ clarinet_II_AllegroNonTroppo_B = {
     % m4 page 2 line 4
     \repeat unfold 3 { r4 cis8( e) | }
     \repeat unfold 4 { r4 c8( es) | }
+    \mark #7
     g4 r |
-    \mark #7 |
     R2*11 |
     \mBreak
 
@@ -936,7 +936,7 @@ clarinet_II_AllegroNonTroppo_A_end = {
     d8 c16 d es8 c |
     d8 r d,16( es f fis |
     g16 \< as a b h c d es) \! |
-    f16( fis) g4 \trill es8 |
+    f16 fis g4 \trill es8 |
     d8 c d c |
     \mBreak
 
@@ -987,21 +987,21 @@ clarinet_II_AllegroNonTroppo_A_end = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
-    \transpose a a \clarinet_II_AllegroConBrio
+    \transpose b a \clarinet_II_AllegroConBrio
   }
   \pageBreak
   \score {
     \new Staff {
-      \transpose a a {
+      \transpose b a {
         \clarinet_II_AllegroNonTroppo_A_start
       }
       \transpose b b {
         \clarinet_II_AllegroNonTroppo_B
       }
-      \transpose a a {
+      \transpose b a {
         \clarinet_II_AllegroNonTroppo_A_end
       }
     }
