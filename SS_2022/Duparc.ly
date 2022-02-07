@@ -20,23 +20,33 @@
 % Adapt this for automatic line-breaks
 % mBreak = {}
 mBreak = { \break }
-#(set-global-staff-size 19)
+#(set-global-staff-size 17)
 
 % Useful snippets
 pCresc = _\markup { \dynamic p \italic "cresc." }
 mfDim = _\markup { \dynamic mf \italic "dim." }
+pocoF = _\markup { \italic "poco" \dynamic f }
 ffz = _\markup { \dynamic { ffz } } 
+crescMolto = _\markup { \italic "cresc. molto" }
 pMoltoCresc = _\markup { \dynamic p \italic "molto cresc." }
+mfEspress = _\markup { \dynamic mf \italic "espress." }
+pEspress = _\markup { \dynamic p \italic "espress." }
 stringendo = ^\markup { \italic "stringendo" }
 allargando = _\markup { \italic "allargando" }
 pocoMenoMosso = ^\markup {\italic \bold {"Poco meno mosso."} }
 rit = ^\markup {\italic {"rit."} }
+riten = ^\markup {\italic {"riten."} }
 ritATempo = ^\markup { \center-align \italic {"  rit. a tempo"} }
+aTempo = ^\markup { \italic {"a tempo"} }
 moltoRit = ^\markup { \italic {"molto rit."} }
 pocoRit = ^\markup {\italic {"poco rit."} }
+sec = ^\markup {\italic {"sec."} }
+pocoAPocoAccel = ^\markup {\italic {"poco a poco accel."} }
+pocoAPocoAccelAlD = ^\markup {\italic {"poco a poco accel. al D"} }
+sempreAccel = ^\markup {\italic {"sempre accel."} }
 solo = ^\markup { "Solo" }
 piuF = _\markup { \italic "più" \dynamic f }
-piuAnimato = ^\markup { \italic "Più animato" }
+piuAnimato = ^\markup { \bold "Più animato" }
 accel = ^\markup { \bold { "accel." } }
 tempoPrimo = ^\markup { \italic { "Tempo I" } }
 
@@ -101,16 +111,272 @@ clarinet_I = {
     
     % p4
     a4 r4 r2 |
+    r4 r4\fermata r2 |
+    a,2(\p b) |
+    a2( b)\cresc |
+    h4( c4. cis8 d4 |
+    es2)~\dim\rit es4\fermata\! r4\aTempo |
+    r4 fes,2( es8 d|
+    \time 2/4 \bar "||"
+    es2) |
+    \time 4/4 \bar "||"
+    b'4(\mfEspress des8 ces \tuplet 3/2 { b as g } \tuplet 3/2 { as b c }
+    \time 2/4 \bar "||"
+    \mBreak
+    
+    % p5
+    b2)( |
+    \time 4/4 \bar "||"
+    \mark #1
+    es8.\sfz\> d16)\! d8 r8 r2 |
+    r2 \tuplet 3/2 { r8 a(\p c } \tuplet 3/2 { d es e) } |
+    f8.(\sfz\> e16)\! e8 r8 r2 |
+    R1 |
+    r2 \tuplet 3/2 { r8 g,,(\mf c } \tuplet 3/2 { e g c } |
+    \mBreak
+    
+    % p6
+    h8) r8 r4 r2 |
+    r16 g,(\f b d e g b d cis8) r8 r4 |
+    r16 g,(\f b d e g b d cis8) r8 r4 |
+    r2 r4 b'8 h |
+    d2(\ff d8)( cis c8. cis16) |
+    \mBreak
+    
+    % p7
+    d2~ d8( cis c) r |
+    c,8( cis\dim d)\! r r2 |
+    r2\riten r4\fermata r4\aTempo |
+    r4 ges,2(\pp es4 |
+    \time 2/4 \bar "||"
+    f2) |
+    \time 4/4 \bar "||"
+    \mark #2
+    R1 |
+    f'4.(\pEspress\pocoRit g8 gis\< as c8.\> b16 |
+    \mBreak
+    
+    % p8
+    c,4)\aTempo r4\!\pocoAPocoAccel r2 |
+    r8 f(\pocoF g a g8. f16) f8 r8 |
+    r2 f4.\f\<( d'8)~ |
+    d8(\!\sempreAccel c) r4 r \tuplet 6/4 { ges,16(\p as ges as ges as } |
+    \bar "||"
+    \mark #3
+    f8)\piuAnimato r8 r4 r \tuplet 6/4 { ges'16(\p as ges as ges as } |
+    \mBreak
+    
+    % p9
+    f8) r8 r4 r2 |
+    r2 \tuplet 6/4 { f,16(\mf g f g f g} ges8) r8 |
+    es1~\mf |
+    es8 r8 f2.~\pocoAPocoAccelAlD |
+    f8 r8 r4 r2 |
+    \mBreak
+    
+    % p10
+    R1 |
+    es''2\startTrillSpan \slashedGrace d8\stopTrillSpan es8 r8 r4 |
+    \mark #4
+    \repeat tremolo 8 { f,32( a } \repeat tremolo 8 { f32 a) } |
+    \repeat tremolo 8 { f32( a } \repeat tremolo 8 { f32 a } |
+    f8)\sec r8 r4 r2 |
+    \mBreak
+    
+    % p11
+    r2 c'8\ff f,16 f f'8 f,16 f |
+    \bar "||"
+    \mark #5
+    b8 r8 r4 \repeat tremolo 8 { ges32(\mf as } |
+    f8) r8 r4 \repeat tremolo 8 { ges32( as } |
+    f8) r8 r4 \repeat tremolo 8 { ges32( as } |
+    f8) r8 r4 \repeat tremolo 8 { f32( g) } |
+    \mBreak
+    
+    % p12
+    \repeat tremolo 8 { g32( as)\cresc } \repeat tremolo 8 { g32( a } |
+    g8) r8 r4 \repeat tremolo 8 { as32(\mf b } |
+    g8) r8 r4 \repeat tremolo 8 { as32( b } |
+    g8) r8 r4 \repeat tremolo 8 { as32(\piuF b } |
+    g8) r8 r4 \repeat tremolo 8 { g32(\cresc a } |
+    \mBreak
+    
+    % p13
+    g8) r8 r4 e,2(\f |
+    es8) r8 r4 r2 |
+    \repeat unfold 2 { \tuplet 6/4 { f'16( e d cis d e) } } \tuplet 6/4 { f16( e d cis d e } f8) r8 |
+    \mark #6
+    f'8(\p e es d) des( c h b) |
+    a8 r8 r4 r2 |
+    \mBreak
+    
+    % p14
+    \repeat tremolo 8 { e32( f } \repeat tremolo 8 { e f) } \acciaccatura e8 |
+    % FIXME: I can't get the grace note into the previous bar
+    f8\sec r8 r4 r2 |
+    R1*2 |
+    g,,8.(\mf\< f'16) f8\! r8 as,8.(\< f'16 as8.\sfz\> g16\! | 
+    \mBreak
+    
+    % p15
+    f8) r8 r4 r2 |
+    R1 |
+    d'8-.\f e16-. e-. es8-. d16-. d-. cis8-. c16-. c-. h-. h-. cis-. cis-. | 
+    \mark #7
+    d8-. r8 r4 r2 |
+    R1 |
+    \mBreak
+    
+    % p16
+    R1*2 |
+    f,8.(\mf g16 a8. b16 c8. e16 f8. f,16) |
+    ges8.( f'16 f8.\crescMolto ges,16 g8. f'16 f8. g16 |
+    as8) r8 r4 r2 |
+    \mBreak
   }
 }
 
+clarinet_II = {
+  \accidentalStyle Score.modern-cautionary
+  \compressFullBarRests
+  \defaultTimeSignature
+  \time 4/4
+  \tempo "Andante sostenuto" 4 = 56
+  \key b \major
+  \relative c' {
+    % p3
+    \partial 2 r2 |
+    R1*2 |
+    b2.(\p a4 |
+    b4. h8 c2~) |
+    c2 r |
+    R1*4 |
+    \mBreak
+    
+    % p4
+    R1 |
+    r4 r4\fermata r2 |
+    a'2(\p b) |
+    a2( b)\cresc |
+    h4( c4. cis8 d4 |
+    es2)~\dim\rit es4\fermata\! r4\aTempo |
+    r4 as,,2( f4 |
+    \time 2/4 \bar "||"
+    g2) |
+    \time 4/4 \bar "||"
+    R1
+    \time 2/4 \bar "||"
+    \mBreak
+    
+    % p5
+    R2 |
+    \time 4/4 \bar "||"
+    R1*5 |
+    \mBreak
+    
+    % p6
+    r2 \tuplet 3/2 { g8(\mf c e } \tuplet 3/2 { g c cis } |
+    d8) r8 r4 r2 |
+    h2~\f h8(a gis a) |
+    h8.( a16\cresc h4. a8 b h) |
+    d2~\ff d8( cis c8. cis16) |
+    \mBreak
+
+    % p7
+    d2~ d8( cis) c16( e, f a) |
+    c8 r8 r4 r2 |
+    r2\riten r4\fermata r4\aTempo |
+    R1 |
+    \time 2/4 \bar "||"
+    R2 |
+    \time 4/4 \bar "||"
+    \mark #2
+    R1 R1\pocoRit |
+    \mBreak
+    
+    % p8
+    R1 \aTempo\pocoAPocoAccel R1*2 |
+    r2\sempreAccel r4 \tuplet 6/4 { b,16(\p des b des b des } |
+    \bar "||"
+    \mark #3
+    a8)\piuAnimato r8 r4 r4 \tuplet 6/4 { b'16(\p des b des b des } |
+    
+    % p9
+    a8) r8 r4 r2 |
+    r2 \tuplet 6/4 { a,16(\mf c a c a c} b8) r8 |
+    c1~\mf |
+    c8 r8 a2.~\pocoAPocoAccelAlD |
+    a8 r8 r4 r2 |
+    \mBreak
+    
+    %p10
+    r2 e'2(\ff |
+    es8) c4 c8 c r r4 |
+    \mark #4
+    \repeat tremolo 8 { c'32( d } \repeat tremolo 8 { c32 d) } |
+    \repeat tremolo 8 { c32( d } \repeat tremolo 8 { c32 d } |
+    c8)\sec r8 r4 r2 |
+    \mBreak
+    
+    % p11
+    r2 c'8\ff f,16 f f8 f16 f |
+    \bar "||"
+    \mark #5
+    b8 r8 r4 \repeat tremolo 8 { des,32(\mf b } |
+    d8) r8 r4 \repeat tremolo 8 { des32( b } |
+    d8) r8 r4 \repeat tremolo 8 { ges32( des } |
+    d8) r8 r4 \repeat tremolo 8 { d32( b) } |
+    \mBreak
+    
+    % p12
+    \repeat tremolo 8 { d32( h)\cresc } \repeat tremolo 8 { dis32( h } |
+    c8) r8 r4 \repeat tremolo 8 { es32(\mf c } |
+    e8) r8 r4 \repeat tremolo 8 { es32( c } |
+    e8) r8 r4 \repeat tremolo 8 { as32(\piuF es } |
+    e8) r8 r4 \repeat tremolo 8 { es32(\cresc c } |
+    \mBreak
+    
+    % p13
+    es8) r8 r4 c,2~\f |
+    c8 r8 r4 r2 |
+    R1 |
+    \mark #6
+    f'8(\p e es d) des( c h b) |
+    a8 r8 r4 r2 |
+    \mBreak
+    
+    % p14
+    \repeat tremolo 8 { a32( gis } \repeat tremolo 8 { a gis) } |
+    a8\sec r8 r4 r2 |
+    R1*3 |
+    \mBreak
+    
+    % p15
+    R1*2 |
+    a8-.\f gis16-. gis-. g8-. fis16-. fis-. f8-. e16-. e-. dis-. dis-. e-. e-. | 
+    \mark #7
+    d8-. r8 r4 r2 |
+    R1 |
+    \mBreak
+    
+    % p16
+    R1*3 |
+    r2 r4 f'8.(\f g,16 |
+    as8) r8 r4 r2 |
+    \mBreak
+  }
+}
 % ---------------------------------------------------------
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I und II in A"
   }
   \score {
+    <<
     \transpose a a \clarinet_I
+    \\
+    \transpose a a \clarinet_II
+    >>
   }
 }
