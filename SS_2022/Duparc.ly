@@ -29,24 +29,30 @@ pocoF = _\markup { \italic "poco" \dynamic f }
 ffz = _\markup { \dynamic { ffz } } 
 crescMolto = _\markup { \italic "cresc. molto" }
 pMoltoCresc = _\markup { \dynamic p \italic "molto cresc." }
+ppiuEspress = _\markup { \dynamic p \italic "più espress." }
+pocoCresc = _\markup { \italic "poco cresc." }
 mfEspress = _\markup { \dynamic mf \italic "espress." }
 pEspress = _\markup { \dynamic p \italic "espress." }
 stringendo = ^\markup { \italic "stringendo" }
+pocoString = ^\markup { \italic "poco string." }
+sempreStringendo = ^\markup { \italic "sempre stringendo" }
 allargando = _\markup { \italic "allargando" }
 pocoMenoMosso = ^\markup {\italic \bold {"Poco meno mosso."} }
 rit = ^\markup {\italic {"rit."} }
+rall = ^\markup {\italic {"rall."} }
 riten = ^\markup {\italic {"riten."} }
 ritATempo = ^\markup { \center-align \italic {"  rit. a tempo"} }
 aTempo = ^\markup { \italic {"a tempo"} }
 moltoRit = ^\markup { \italic {"molto rit."} }
 pocoRit = ^\markup {\italic {"poco rit."} }
+pocoRiten = ^\markup {\italic {"poco riten."} }
 sec = ^\markup {\italic {"sec."} }
 pocoAPocoAccel = ^\markup {\italic {"poco a poco accel."} }
 pocoAPocoAccelAlD = ^\markup {\italic {"poco a poco accel. al D"} }
 sempreAccel = ^\markup {\italic {"sempre accel."} }
 solo = ^\markup { "Solo" }
 piuF = _\markup { \italic "più" \dynamic f }
-piuAnimato = ^\markup { \bold "Più animato" }
+lento = ^\markup { \italic "Lento" }
 accel = ^\markup { \bold { "accel." } }
 tempoPrimo = ^\markup { \italic { "Tempo I" } }
 
@@ -92,6 +98,7 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
 % ---------------------------------------------------------
 
 clarinet_I = {
+  \set Score.markFormatter = #format-mark-alphabet
   \accidentalStyle Score.modern-cautionary
   \compressFullBarRests
   \defaultTimeSignature
@@ -163,7 +170,8 @@ clarinet_I = {
     d8(\!\sempreAccel c) r4 r \tuplet 6/4 { ges,16(\p as ges as ges as } |
     \bar "||"
     \mark #3
-    f8)\piuAnimato r8 r4 r \tuplet 6/4 { ges'16(\p as ges as ges as } |
+    \tempo "Più animato"
+    f8) r8 r4 r \tuplet 6/4 { ges'16(\p as ges as ges as } |
     \mBreak
     
     % p9
@@ -233,10 +241,79 @@ clarinet_I = {
     ges8.( f'16 f8.\crescMolto ges,16 g8. f'16 f8. g16 |
     as8) r8 r4 r2 |
     \mBreak
+    
+    % p17
+    r4 g,2\startTrillSpan \grace fis8 \stopTrillSpan  g r |
+    \tuplet 6/4 { b'16( a g fis g a } \repeat unfold 3 \tuplet 6/4 { b16 a g fis g a } |
+    h8)\pocoRiten r8 r4 r2 |
+    \bar "||"
+    \mark #8
+    \tempo "Più largamente"
+    r4 d,,32(\p e d e d e d e d8) r8 d32( e d e d e d e |
+    \mBreak
+    
+    % p18
+    d8) r d32( e d e d e d e d8) r d32( e d e d e d e |
+    d8) r d32( e d e d e d e d8) r d32( e d e d e d e |
+    d8\pocoCresc) r d32( e d e d e d e d8) r r4 |
+    \mBreak
+    
+    % p19
+    R1*2 |
+    e4.(\p f8 fis8) r r4 |
+    R1\pocoString |
+    R1*2 |
+    \mBreak
+    
+    % p20
+    R1 \sempreStringendo a4.(\f\< c8\sfz\> h)\!\rall r r4 |
+    r2 \lento r4\fermata r |
+    \bar "||"
+    \tempo Andante
+    d4(\ppiuEspress f8 es d c~ \tuplet 3/2 { c d es } |
+    \bar "||"
+    \time 2/4
+    d2) |
+    \bar "||"
+    \time 4/4
+    r4 as'2(\pp g8 fis |
+    g8) r8 r4 r2 |
+    R1 |
+    \mBreak
+   
+    % p21
+    R1 \pocoRit |
+    \bar "||"
+    \mark #9
+    \tempo "Allegro non troppo"
+    g,,8.(\mf a16 b8. c16 d8. fis16 g8. g,16) |
+    a8.( g'16 g8. g,16 a8. g'16 g8. a,16) |
+    b8.( c16 d8. fis16\cresc g8. a16 b8. b,16) |
+    c8.( b'16 b8. c,16 des8.\< b'16 des8.\sfz\> c16)\! |
+    \mBreak
+    
+    % p22
+    b8.( a16 g8. e16\cresc cis8. b16 a8. g16) |
+    d'8.(\f es16 d8. g16 d8. es16 d8. g16 |
+    d16)( dis e f fis g gis a\cresc b h c cis d dis e fis |
+    g8)\ff r8 b,16( a b a g a g b des b des b |
+    g8) r8 r4 r2 |
+    \mBreak
+    
+    % p23
+    \mark #10
+    R1 |
+    \repeat tremolo 8 { f'32( g } \repeat tremolo 8 { f32 g } |
+    f8) r8 r4 r2 |
+    \repeat tremolo 8 { es32( f } \repeat tremolo 8 { es32 f } |
+    es8) r8 r4 r2 |
+    R1*2 |
+    \mBreak
   }
 }
 
 clarinet_II = {
+  \set Score.markFormatter = #format-mark-alphabet
   \accidentalStyle Score.modern-cautionary
   \compressFullBarRests
   \defaultTimeSignature
@@ -299,7 +376,8 @@ clarinet_II = {
     r2\sempreAccel r4 \tuplet 6/4 { b,16(\p des b des b des } |
     \bar "||"
     \mark #3
-    a8)\piuAnimato r8 r4 r4 \tuplet 6/4 { b'16(\p des b des b des } |
+    \tempo "Più animato"
+    a8) r8 r4 r4 \tuplet 6/4 { b'16(\p des b des b des } |
     
     % p9
     a8) r8 r4 r2 |
@@ -363,6 +441,70 @@ clarinet_II = {
     R1*3 |
     r2 r4 f'8.(\f g,16 |
     as8) r8 r4 r2 |
+    \mBreak
+    
+    % p17
+    r4 b,2\startTrillSpan b8\stopTrillSpan r |
+    \tuplet 6/4 { b'16( a g fis g a } \repeat unfold 3 \tuplet 6/4 { b16 a g fis g a } |
+    h8)\pocoRiten r8 r4 r2 |
+    \bar "||"
+    \mark #8
+    \tempo "Più largamente"
+    R1
+    \mBreak
+    
+    % p18
+    R1*3 |
+    \mBreak
+    
+    % p19
+    R1*6 |
+    \mBreak
+    
+    % p20
+    R1 \sempreStringendo |
+    R1 |
+    r2 \lento r4\fermata r |
+    \bar "||"
+    \tempo Andante
+    R1 |
+    \bar "||"
+    \time 2/4
+    R2 |
+    \bar "||"
+    \time 4/4
+    r4 as2(\pp g8 fis |
+    g8) r8 r4 r2 |
+    R1 |
+    \mBreak
+   
+    % p21
+    R1 \pocoRit |
+    \bar "||"
+    \mark #9
+    \tempo "Allegro non troppo"
+    g,8.(\mf a16 b8. c16 d8. fis16 g8. g,16) |
+    a8.( g'16 g8. g,16 a8. g'16 g8. a,16) |
+    b8.( c16 d8. fis16\cresc g8. a16 b8. b,16) |
+    c8.( b'16 b8. c,16 des8.\< b'16 des8.\sfz\> c16)\! |
+    \mBreak
+    
+    % p22
+    b8.( a16 g8. e16\cresc cis8. b16 a8. g16) |
+    d'8.(\f es16 d8. g16 d8. es16 d8. g16 |
+    d8) r8 r4 r2 |
+    g16(\ff a g a b a b a g a g b des b des b) |
+    g8.(\< a16 b8.\sfz\> a16 g8.\< b16 des8.\sfz\> b16\! |
+    \mBreak
+    
+    % p23
+    \mark #10
+    g8) r8 r4 r2 |
+    \repeat tremolo 8 { des'32( b } \repeat tremolo 8 { des32 b } |
+    a8) r8 r4 r2 |
+    \repeat tremolo 8 { as32( ces } \repeat tremolo 8 { as32 ces } |
+    b8) r8 r4 r2 |
+    R1*2 |
     \mBreak
   }
 }
