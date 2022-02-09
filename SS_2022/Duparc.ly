@@ -34,9 +34,11 @@ ppiuEspress = _\markup { \dynamic p \italic "più espress." }
 pocoCresc = _\markup { \italic "poco cresc." }
 mfEspress = _\markup { \dynamic mf \italic "espress." }
 pEspress = _\markup { \dynamic p \italic "espress." }
+string = ^\markup { \italic "string." }
 stringendo = ^\markup { \italic "stringendo" }
 pocoString = ^\markup { \italic "poco string." }
 sempreStringendo = ^\markup { \italic "sempre stringendo" }
+sempreString = ^\markup { \italic "sempre string." }
 allargando = _\markup { \italic "allargando" }
 pocoMenoMosso = ^\markup {\italic \bold {"Poco meno mosso."} }
 rit = ^\markup {\italic {"rit."} }
@@ -53,6 +55,7 @@ pocoAPocoAccelAlD = ^\markup {\italic {"poco a poco accel. al D"} }
 sempreAccel = ^\markup {\italic {"sempre accel."} }
 solo = ^\markup { "Solo" }
 piuF = _\markup { \italic "più" \dynamic f }
+piuP = _\markup { \italic "più" \dynamic p }
 lento = ^\markup { \italic "Lento" }
 accel = ^\markup { \bold { "accel." } }
 tempoPrimo = ^\markup { \italic { "Tempo I" } }
@@ -361,6 +364,79 @@ clarinet_I = {
     f8) r8 r4 \repeat tremolo 8 { ges32( as } |
     f8) r8 r4 \repeat tremolo 8 { f32( g) } |
     \mBreak
+    
+    % p30
+    \repeat tremolo 8 { g32( as } \repeat tremolo 8 { g32\cresc a } |
+    g8) r8 r4 \repeat tremolo 8 { as32(\mf b } |
+    g8) r8 r4 \repeat tremolo 8 { as32( b } |
+    g8) r8 r4 \repeat tremolo 8 { as32( b } |
+    g8) r8 r4 \repeat tremolo 8 { g32(\cresc a } |
+    g8) r8 r4 e,2(\f |
+    \mBreak
+    
+    % p31
+    es8) r8 r4 r2 |
+    r2 d''8\ff a16 a a8.-^ a16 |
+    \mark #15
+    a8 r d, r dis r e r |
+    f8 r fis r r4 g8 r |
+    f8 r r4 f8 r r4 |
+    f8 r r4 r2 |
+    R1 \rall |
+    \bar "||"
+    \mBreak
+    
+    % p32
+    \mark #16
+    \tempo "Più largamente"
+    R1*4 |
+    % FIXME: Trill should have a #, and grace note should be in this bar
+    h1 ^\markup "#" \startTrillSpan \acciaccatura ais8 \stopTrillSpan |
+    h8 r r4 r2 |
+    \mBreak
+    
+    % p33
+    r2 r4 es,8\f f |
+    fis8 r r4 cis8( eis f gis |
+    a8\cresc ais h g~ g2) |
+    fis4(\pocoString f e dis |
+    e8) r r4 r2 |
+    h'8(\f b a4~) a8 r r4 |
+    \mBreak
+    
+    % p34
+    d8(\piuF\> cis c)\! r es(\> d des b\! |
+    f8) r g8.(\piuP d16 f8 es) r4 |
+    r4\string d'8.( fis,16 a8 g) r4 |
+    R1 |
+    r2 d4.(\f\<\sempreString f8\sfz\> |
+    e8) r\! r4 r2 |
+    \mBreak
+    
+    % p35
+    cis4.(\f\< e8\sfz\>\rall dis) r8\! r4 |
+    R1\lento\fermataMarkup |
+    \bar "||"
+    \tempo Andante
+    R1 |
+    \bar "||"
+    \time 2/4 |
+    R2 |
+    \bar "||"
+    \time 4/4
+    R1 |
+    a2.(\p\< gis8\> a)\! |
+    b4(\< a2~ a8\> g\! |
+    a4) r4\pocoRiten r2 |
+    \mBreak
+    
+    % p36
+    \mark #17
+    h,1~ |
+    h1~\cresc |
+    h8\! r r4 r2 |
+    r2 g''8-.\f c,16-. c-. c'8-. c,16-. c-. |
+    f1~ |
   }
 }
 
@@ -609,6 +685,68 @@ clarinet_II = {
     d8) r8 r4 \repeat tremolo 8 { ges32( des } |
     d8) r8 r4 \repeat tremolo 8 { d32( b) } |
     \mBreak
+    
+    % p30
+    \repeat tremolo 8 { d32( h } \repeat tremolo 8 { dis\cresc h } |
+    c8) r8 r4 \repeat tremolo 8 { es32(\mf c } |
+    e8) r8 r4 \repeat tremolo 8 { es32( c } |
+    e8) r8 r4 \repeat tremolo 8 { as32( es } |
+    e8) r8 r4 \repeat tremolo 8 { e32(\cresc c } |
+    es8) r8 r4 c,2~\f |
+    \mBreak
+
+    % p31
+    c8 r8 r4 r2 |
+    r2 d'8\ff a16 a a'8.-^ a,16 |
+    \mark #15
+    a8 r d, r dis r e r |
+    f8 r fis r r4 e8 r |
+    d8 r r4 d8 r r4 |
+    a'8 r r4 r2 |
+    R1 \rall |
+    \bar "||"
+    
+    % p32
+    R1*6 |
+    \mBreak
+    
+    % p33
+    r2 r4 es'8\f f |
+    fis8 r r4 r2 |
+    R1 |
+    R1*3\pocoString |
+    \mBreak
+    
+    % p34
+    R1*2 |
+    R1*3\string |
+    R1\sempreString |
+    \mBreak
+
+    % p35
+    R1\rall |
+    R1\lento\fermataMarkup |
+    \bar "||"
+    \tempo Andante
+    R1 |
+    \bar "||"
+    \time 2/4 |
+    R2 |
+    \bar "||"
+    \time 4/4
+    R1 |
+    fis,2.(\p\< eis8\> fis)\! |
+    g2.(\< fis8\> e\! |
+    dis4) r4\pocoRiten r2 |
+    \mBreak
+    
+    % p36
+    \mark #17
+    h1~ |
+    h1~\cresc |
+    h8\! r r4 r2 |
+    R1 |
+    as'~ |
   }
 }
 % ---------------------------------------------------------
