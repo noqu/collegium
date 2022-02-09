@@ -25,6 +25,7 @@ mBreak = { \break }
 % Useful snippets
 pCresc = _\markup { \dynamic p \italic "cresc." }
 mfDim = _\markup { \dynamic mf \italic "dim." }
+sempreFf = _\markup { \italic "sempre" \dynamic ff }
 pocoF = _\markup { \italic "poco" \dynamic f }
 ffz = _\markup { \dynamic { ffz } } 
 crescMolto = _\markup { \italic "cresc. molto" }
@@ -309,6 +310,57 @@ clarinet_I = {
     es8) r8 r4 r2 |
     R1*2 |
     \mBreak
+    
+    % p24
+    dis,8.(\mf h'16 h8. dis,16 e8. h'16 h8. e,16) |
+    e8 r8 r4 r2 |
+    a16\f( h a h c d c d) e8.(\cresc c'16) c8.( e16 |
+    \mark #11
+    fis8) r8 r4 e,2~\sempreFf\! |
+    e8 r8 r4 e2~ |
+    \mBreak
+    
+    % p25
+    e8 r8 r32 h(\ff cis dis eis fis g a h8) r8 r4 |
+    h,2~ h8 r8 r4 |
+    h2. h8 r8 |
+    \mark #12
+    r16 c'(\ff d es d8-^ c) r16 c( d es d8-^ c) |
+    R1 |
+    \mBreak
+    
+    % p26
+    r16 f,( g as g8-^ f) r16 c( d es d8-^ c) |
+    R1 |
+    \tuplet 6/4 { f16( e d cis d e } fis8) r8 \tuplet 6/4 { f16( e d cis d e } fis8) r8 |
+    f8[\ff r16 ges]\mf f8. ges16 ges8. g16\crescMolto ges8. g16 |
+    \mBreak
+    
+    % p27
+    as8. a16 as8. a16 as8. a16 as8. as16 |
+    \mark #13
+    b8\fff r8 r4 b8 r8 r4 |
+    b8 r8 r4 b8\sempreFf r8 r32 d,,( e fis g a b c) |
+    d8.( c'16 b8. a16 g8. f16 e8. f16) |
+    \mBreak
+    
+    % p28
+    g8.( f16 e8. d16 cis8. b16 a8. b16) |
+    a8.( b16 a8. e'16 a,8) r8 r4 |
+    cis'16( c h b a as g ges f) r16 r8 r4 |
+    \repeat tremolo 8 { f32( a } \repeat tremolo 8 { f32 a) } |
+    \repeat tremolo 8 { f32( a } \repeat tremolo 8 { f32 a } |
+    \mBreak
+
+    % p29
+    f8)\sec r8 r4 r2 |
+    r2 c'8 f,16 f f'8 f,16 f |
+    \mark #14
+    b8 r8 r4 \repeat tremolo 8 { ges32(\mf as } |
+    f8) r8 r4 \repeat tremolo 8 { ges32( as } |
+    f8) r8 r4 \repeat tremolo 8 { ges32( as } |
+    f8) r8 r4 \repeat tremolo 8 { f32( g) } |
+    \mBreak
   }
 }
 
@@ -505,6 +557,57 @@ clarinet_II = {
     \repeat tremolo 8 { as32( ces } \repeat tremolo 8 { as32 ces } |
     b8) r8 r4 r2 |
     R1*2 |
+    \mBreak
+    
+    % p24
+    dis,8.(\mf h'16 h8. dis,16 e8. h'16 h8. e,16) |
+    e8 r8 r4 r2 |
+    a16\f( h a h c d c d) e8.(\cresc c'16) c8.( e,16 |
+    \mark #11
+    fis8) r8 r4 a,2~\sempreFf\! |
+    a8 r8 r4 a2~ |
+    \mBreak
+    
+    % p25
+    a8 r8 r4 r2 |
+    fis2~ fis8 r8 r4 |
+    fis4( f2) f8 r8 |
+    \mark #12
+    r16 c''(\ff d es d8-^ c) r16 c( d es d8-^ c) |
+    R1 |
+    \mBreak
+    
+    % p26
+    r16 f,( g as g8-^ f) r16 c( d es d8-^ c) |
+    R1 |
+    \tuplet 6/4 { f16( e d cis d e } fis8) r8 \tuplet 6/4 { f16( e d cis d e } fis8) r8 |
+    d8[\ff r16 d]\mf d8. d16 es8. es16\crescMolto es8. e16 |
+    \mBreak
+    
+    % p27
+    f8. f16 f8. f16 f8. f16 f8. fis16 |
+    \mark #13
+    g8\fff r8 r4 es8 r8 r4 |
+    d8 r8 r4 d8\sempreFf r8 r32 d,( e fis g a b c) |
+    d8.( c'16 b8. a16 g8. f16 e8. f16) |
+    \mBreak
+    
+    % p28
+    g8.( f16 e8. d16 cis8. b16 a8. b16) |
+    a8.( b16 a8. e'16 a,8) r8 r4 |
+    cis16( c h b a as g ges f) r16 r8 r4 |
+    \repeat tremolo 8 { c'32( d } \repeat tremolo 8 { c32 d) } |
+    \repeat tremolo 8 { c32( d } \repeat tremolo 8 { c32 d } |
+    \mBreak
+
+    % p29
+    c8)\sec r8 r4 r2 |
+    r2 c'8 f,16 f f8 f16 f |
+    \mark #14
+    d8 r8 r4 \repeat tremolo 8 { des32(\mf b } |
+    d8) r8 r4 \repeat tremolo 8 { des32( b } |
+    d8) r8 r4 \repeat tremolo 8 { ges32( des } |
+    d8) r8 r4 \repeat tremolo 8 { d32( b) } |
     \mBreak
   }
 }
