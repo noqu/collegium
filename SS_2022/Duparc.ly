@@ -26,10 +26,12 @@ mBreak = { \break }
 pCresc = _\markup { \dynamic p \italic "cresc." }
 mfDim = _\markup { \dynamic mf \italic "dim." }
 sempreFf = _\markup { \italic "sempre" \dynamic ff }
+sempreFff = _\markup { \italic "sempre" \dynamic fff }
 pocoF = _\markup { \italic "poco" \dynamic f }
 ffz = _\markup { \dynamic { ffz } } 
 crescMolto = _\markup { \italic "cresc. molto" }
 pMoltoCresc = _\markup { \dynamic p \italic "molto cresc." }
+sempreCresc = _\markup { \italic "sempre cresc." }
 ppiuEspress = _\markup { \dynamic p \italic "più espress." }
 pocoCresc = _\markup { \italic "poco cresc." }
 mfEspress = _\markup { \dynamic mf \italic "espress." }
@@ -39,6 +41,7 @@ stringendo = ^\markup { \italic "stringendo" }
 pocoString = ^\markup { \italic "poco string." }
 sempreStringendo = ^\markup { \italic "sempre stringendo" }
 sempreString = ^\markup { \italic "sempre string." }
+tuttaForza = ^\markup { \italic "tutta forza" }
 allargando = _\markup { \italic "allargando" }
 pocoMenoMosso = ^\markup {\italic \bold {"Poco meno mosso."} }
 rit = ^\markup {\italic {"rit."} }
@@ -432,11 +435,80 @@ clarinet_I = {
     
     % p36
     \mark #17
+    \tempo "Allegro non troppo"
     h,1~ |
     h1~\cresc |
     h8\! r r4 r2 |
     r2 g''8-.\f c,16-. c-. c'8-. c,16-. c-. |
-    f1~ |
+    f1( |
+    \mBreak
+    
+    % p37
+    e8) r r4 g8 c,16 c c'8. b16 |
+    \mark #18
+    a8 r r4 \repeat tremolo 8 { d,32( es } |
+    e8) r r4 \repeat tremolo 8 { d32 es } |
+    % FIXME: Trill should have Aufloesungszeichen
+    d2.\startTrillSpan d8\stopTrillSpan  r |
+    c8. b16 a8.\cresc b16 c8. d16 e8. fis16 |
+    \mark #19
+    g8 r r4 es,2(\f\< |
+    \mBreak
+    
+    % p38
+    e8)\sfz r r4 d'2~\f |
+    d8 r r4 g,2( |
+    f8) r r4 b'2(\f\< |
+    h8)\sfz r r4 h,2~\ff |
+    h8 r r4 r2 |
+    \mark #20
+    fis'8.(\f gis16 a8.\cresc h16\! cis8. eis,16 fis8. g16 |
+    \mBreak
+    
+    % p39
+    a8) r r4 r2 |
+    as8.(\ff b16 ces8. des,16 es8. g16 as8. b16) |
+    h8.( cis,16 d8. e16 fis8. ais16 h8. cis16) |
+    d8.( e,16 f8.\cresc g16\! a8. cis16 d8) r |
+    \mBreak
+    
+    % p40
+    \mark #21
+    \tuplet 6/4 { as,16( g f e f g } a8) r \tuplet 6/4 { as'16( g f e f g } a8) r8 |
+    des,8.\ff d16\mf des8.\crescMolto d16 d8. es16 \tuplet 3/2 { d8( es e } |
+    f8.) ges16 f8. ges16\sempreCresc f8. ges16 f8. fis16 |
+    g8\fff r r4 g8 r r4 |
+    \mBreak
+    
+    % p41
+    fis'8 r r4 fis8 r c-^ \tuplet 3/2 { c16-^ c-^ c-^ } |
+    \mark #22
+    c8\sec r g8. c16 g8.\sempreFff as16 g8. c16 |
+    b8 r r4 r4 r32 es,( f g as b c d |
+    e8) r \tuplet 3/2 { f,-^ f-^ ges-^ } f-^ r8 r4 |
+    \tuplet 3/2 { es'8 es es } es8. es16 es8. es16 es8. es16 |
+    \mBreak
+    
+    % p42
+    c8 r \grace { f,16 g a b } \tuplet 3/2 { c8-^ c-^ d-^ } c8 r r32 c,( d es f g a b |
+    \tuplet 3/2 { c8)\tuttaForza c d } \repeat unfold 3 { c8. d16 } |
+    c8\sec r r4 \afterGrace r2 { c,16( d es } |
+    f8) r r4 r4 b,(\f |
+    \bar "||"
+    \mark #24
+    \tempo "Più largamente"
+    h4 c2 h8 c |
+    \mBreak
+    
+    % p43
+    cis8 es d2) d4( |
+    f4 es2)( d8 es |
+    e8 g f2) d8( es |
+    f8\< fis g es~) es4.(\!\< c'8~) |
+    c8(\!\pocoString b a g~ g f~ \tuplet 3/2 { f8 es d } |
+    \bar "||" 
+    \tempo "Tempo I"
+    f8) r r4 r2 |
   }
 }
 
@@ -742,11 +814,79 @@ clarinet_II = {
     
     % p36
     \mark #17
+    \tempo "Allegro non troppo"
     h1~ |
     h1~\cresc |
     h8\! r r4 r2 |
     R1 |
-    as'~ |
+    as'( |
+    \mBreak
+    
+    % p37
+    g8) r r4 g'8 c,16 c e8. e16 |
+    \mark #18
+    \repeat tremolo 8 { e32( g } d8) r r4 |
+    \repeat tremolo 8 { e32( g } d8) r r4 |
+    r2 r4 a8. b16 |
+    c8. b16 a8.\cresc b16\! c8. fis,16 g8. a16 |
+    \mark #19
+    b8\! r r4 r2 |
+    \mBreak
+    
+    % p38
+    r2 g2~\f |
+    g8 r r4 g2( |
+    f8) r r4 b'2(\f\< |
+    h8)\sfz r r4 f,2~\ff |
+    f8 r r4 r2 |
+    \mark #20
+    fis'8.(\f gis16 a8.\cresc h,16\! cis8. eis16 fis8. g16 |
+    \mBreak
+
+    % p39
+    a8) r r4 r2 |
+    as,8.(\ff b16 ces8. des16 es8. g16 as8. b16) |
+    h8.( cis,16 d8. e16 fis8. ais16 h8. cis16) |
+    d8.( e,16 f8.\cresc g16\! a8. cis,16 d8.) e16 |
+    \mBreak
+    
+    % p40
+    \mark #21
+    f8 r f,8 r \tuplet 6/4 { as16( g f e f g } a8) r8 |
+    as8.\ff a16\mf as8.\crescMolto a16 a8. b16 \tuplet 3/2 { a8( b h } |
+    c8.) des16 c8. des16\sempreCresc c8. des16 c8. c16 |
+    d8\fff r r4 h8 r r4 |
+    \mBreak
+    
+    % p41
+    fis'8 r r4 fis8 r c-^ \tuplet 3/2 { c16-^ c-^ c-^ } |
+    \mark #22
+    e8\sec r e8. dis16 e8.\sempreFff d16 e8. es16 |
+    g8 r r4 r2 |
+    h8 r \tuplet 3/2 { es,-^ es-^ d-^ } es-^ r8 r4 |
+    \tuplet 3/2 { as8 as es } as8. es16 as8. es16 as8. es16 |
+    \mBreak
+    
+    % p42
+    f8 r \tuplet 3/2 { f8-^ f-^ f-^ } f8 r r4 |
+    \tuplet 3/2 { f8\tuttaForza f f } \repeat unfold 3 { f8. f16 } |
+    f8\sec r r4 \afterGrace r2 { c16( d es } |
+    f8) r r4 r4 b,(\f |
+    \bar "||"
+    \mark #24
+    \tempo "Più largamente"
+    h4 c2 h8 c |
+    \mBreak
+    
+    % p43
+    cis8 es d2) d4( |
+    f4 es2)( d8 es |
+    e8 g f2) r4 |
+    r2 f,8(\!\< fis g es') |
+    d4(\!\pocoString des c h |
+    \bar "||" 
+    \tempo "Tempo I"
+    b8) r r4 r2 |
   }
 }
 % ---------------------------------------------------------
