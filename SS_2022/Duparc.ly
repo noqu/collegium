@@ -25,6 +25,7 @@ mBreak = { \break }
 % Useful snippets
 pCresc = _\markup { \dynamic p \italic "cresc." }
 mfDim = _\markup { \dynamic mf \italic "dim." }
+smorz = _\markup { \italic "smorz." }
 sempreFf = _\markup { \italic "sempre" \dynamic ff }
 sempreFff = _\markup { \italic "sempre" \dynamic fff }
 pocoF = _\markup { \italic "poco" \dynamic f }
@@ -41,7 +42,7 @@ stringendo = ^\markup { \italic "stringendo" }
 pocoString = ^\markup { \italic "poco string." }
 sempreStringendo = ^\markup { \italic "sempre stringendo" }
 sempreString = ^\markup { \italic "sempre string." }
-tuttaForza = ^\markup { \italic "tutta forza" }
+tuttaForza = _\markup { \italic "tutta forza" }
 allargando = _\markup { \italic "allargando" }
 pocoMenoMosso = ^\markup {\italic \bold {"Poco meno mosso."} }
 rit = ^\markup {\italic {"rit."} }
@@ -53,6 +54,7 @@ moltoRit = ^\markup { \italic {"molto rit."} }
 pocoRit = ^\markup {\italic {"poco rit."} }
 pocoRiten = ^\markup {\italic {"poco riten."} }
 sec = ^\markup {\italic {"sec."} }
+pocoAPocoRall = ^\markup {\italic {"poco a poco rall."} }
 pocoAPocoAccel = ^\markup {\italic {"poco a poco accel."} }
 pocoAPocoAccelAlD = ^\markup {\italic {"poco a poco accel. al D"} }
 sempreAccel = ^\markup {\italic {"sempre accel."} }
@@ -509,6 +511,71 @@ clarinet_I = {
     \bar "||" 
     \tempo "Tempo I"
     f8) r r4 r2 |
+    \mBreak
+    
+    % p44
+    r8 r16\ff\< f,( g4~ g8\> f8~\! \tuplet 3/2 { f8 es d } | 
+    f8) r r4 r2 |
+    r8 r16\ff\< f'( g4~ g8\> f8~\! \tuplet 3/2 { f8 es d } | 
+    f8 es) r4 r2 |
+    R1\string |
+    c8( h b4~ b4.\ff\< des8)\sfz\> |
+    \mBreak
+    
+    % p45
+    c8(\! h c cis d\sempreString des) c4~ |
+    c4.(\< es8\sfz d)\> r8\! r4 |
+    R1 |
+    \tuplet 3/2 { ges,8\fff ges ges } \repeat unfold 2 \tuplet 3/2 { ges8 ges ges } \tuplet 3/2 { es8 es es } |
+    f8 r r4 r2 |
+    \repeat unfold 4 \tuplet 3/2 { ges8 ges ges } |
+    \mBreak
+    
+    % p46
+    \repeat unfold 2 \tuplet 3/2 { ges8 ges ges } \repeat unfold 2 \tuplet 3/2 { es8 es es }
+    \mark #25
+    f1~ |
+    f2(\< e4\sfz\> f\! |
+    ges8)\sec\aTempo r r4 r2 |
+    a'16\ff \repeat unfold 15 a |
+    \mBreak
+    
+    % p47
+    b8 r as,16 a b h c h c d es d es e |
+    g16 fis f fis g fis f fis g\string\cresc fis\! f fis g fis f fis |
+    g16\tuttaForza fis f fis g fis f fis g fis f fis g fis f e |
+    f8\sec r r4 r2 |
+    \mBreak
+    
+    % p48
+    R1*5\pocoAPocoRall |
+    \bar "||"
+    \tempo Andante
+    R1*6 |
+    r2 f2(\p\< |
+    \mBreak
+    
+    % p49
+    \tempo "Più lento"
+    as4\sfz\> ges)\! r8 f( es d~ |
+    d8 es8~ \tuplet 3/2 { es f ges) } f4~ f8 r |
+    R1*2 |
+    \bar "||"
+    \tempo Adagio 
+    R1 |
+    r2 es,2(\pp |
+    f2~) f8 r r4 |
+    R1\pocoRit |
+    r2 r4 es'4(\p\pocoAPocoRall |
+    \mBreak
+    
+    % p50
+    es4)( d2 des4~\dim | 
+    des4\!\rit c\smorz es a, |
+    b8)\aTempo r r4 r2 |
+    R1*8 |
+    \bar "|."
+    \mBreak
   }
 }
 
@@ -887,6 +954,64 @@ clarinet_II = {
     \bar "||" 
     \tempo "Tempo I"
     b8) r r4 r2 |
+    \mBreak
+    
+    % p44
+    r8 r16\ff\< f( g4~ g8\> f8~\! \tuplet 3/2 { f8 es d } | 
+    f8) r r4 r2 |
+    r8 r16\ff\< f( g4~ g8\> f8~\! \tuplet 3/2 { f8 es d } | 
+    f8.) es16( g8. d16 f8. es16 a8. e16 |
+    g8 f) b4.( a8\string b h |
+    c8) r r4 g4.(\ff\< b8)\sfz\> |
+    \mBreak
+    
+    % p45
+    c8(\! h c cis d\sempreString des) c4 |
+    a4.(\< c8\sfz h)\> r8\! r4 |
+    R1 |
+    \tuplet 3/2 { es,8\fff es es } \repeat unfold 2 \tuplet 3/2 { es8 es es } \tuplet 3/2 { c8 c c } |
+    d8 r r4 r2 |
+    \repeat unfold 4 \tuplet 3/2 { es8 es es } |
+    \mBreak
+    
+    % p46
+    \repeat unfold 2 \tuplet 3/2 { es8 es es } \repeat unfold 2 \tuplet 3/2 { c8 c c }
+    \mark #25
+    d1~ |
+    d2(\< cis4\sfz\> d\! |
+    es8)\sec\aTempo r r4 r2 |
+    c'16\ff \repeat unfold 15 c |
+    \mBreak
+   
+    % p47
+    b8 r as16 a b h c h c d es d es e |
+    g16 fis f fis g fis f fis g\string\cresc fis\! f fis g fis f fis |
+    g16\tuttaForza fis f fis g fis f fis g fis f fis g fis f e |
+    f8\sec r r4 r2 |
+    \mBreak
+    
+    % p48
+    R1*5\pocoAPocoRall |
+    \bar "||"
+    \tempo Andante
+    R1*7 |
+    \mBreak
+    
+    % p49
+    \tempo "Più lento"
+    R1*4 |
+    \bar "||"
+    \tempo Adagio 
+    R1 |
+    r2 c,2(\pp |
+    d2~) d8 r r4 |
+    R1*2\pocoRit |
+    \mBreak
+    
+    % p50
+    R1*11 |
+    \bar "|."
+    \mBreak
   }
 }
 % ---------------------------------------------------------
