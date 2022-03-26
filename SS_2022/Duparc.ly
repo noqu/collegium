@@ -25,6 +25,7 @@ mBreak = { \break }
 % Useful snippets
 pCresc = _\markup { \dynamic p \italic "cresc." }
 mfDim = _\markup { \dynamic mf \italic "dim." }
+fCantabile = _\markup { \dynamic f \italic "cantabile" }
 smorz = _\markup { \italic "smorz." }
 sempreFf = _\markup { \italic "sempre" \dynamic ff }
 sempreFff = _\markup { \italic "sempre" \dynamic fff }
@@ -540,7 +541,7 @@ clarinet_I = {
 
     % p3 8
     c8\sec r r4 \afterGrace r2 { c,16( d es } |
-    f8) r r4 r4 b,(\f\solo |
+    f8) r r4 r4 b,(\fCantabile\solo |
     \bar "||"
     \mark #24
     \tempo "Più largamente"
@@ -556,7 +557,7 @@ clarinet_I = {
     \bar "||" 
     \tempo "Tempo I"
     f8) r r4 r2 |
-    r8 r16\ff\< f,( g4~ g8\> f8~\! \tuplet 3/2 { f8 es d } | 
+    r8 r16\ff\< f,( g4 g8\> f8~\! \tuplet 3/2 { f8 es d } | 
     f8) r r4 r2 |
     r8 r16\ff\< f'( g4~ g8\> f8~\! \tuplet 3/2 { f8 es d } | 
     \mBreak
@@ -609,6 +610,7 @@ clarinet_I = {
       }
     >>
     r2\solo f2(\pEspress\< |
+    \bar "||"
     \tempo "Più lento"
     as4\sfz\> ges)\! r8 f( es d~ |
     \mBreak
@@ -952,17 +954,29 @@ clarinet_II = {
     \mBreak
     
     % p3 1
-    R1 |
-    fis,2.(\p\< eis8\> fis)\! |
-    g2.(\< fis8\> e\! |
-    dis4) r4\pocoRiten r2 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #+2
+        R1 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "3.Cor."
+        \stemUp {
+          f,4 a8 g \tuplet 3/2 { f e dis } \tuplet 3/2 { e f g } |
+        }
+      }
+    >>
+    fis2.(\p\< eis8\> fis\! |
+    g2.)(\< fis8\> e\! |
+    dis4) r4\pocoRit r2 |
     \mark #17
     \tempo "Allegro non troppo"
-    h1~ |
+    h1~\mf |
     h1~\cresc |
     h8\! r r4 r2 |
     R1 |
-    as'1( |
+    as'1(\f |
     g8) r r4 g'8 c,16 c e8. e16 |
     \mBreak
     
@@ -990,14 +1004,14 @@ clarinet_II = {
 
     % p3 4
     h8.( cis,16 d8. e16 fis8. ais16 h8. cis16) |
-    d8.( e,16 f8.\cresc g16\! a8. cis,16 d8.) e16 |
+    d8.( e,16 f8.\cresc g16\! a8. cis,16 d8. e16 |
     \mark #21
-    f8 r f,8 r \tuplet 6/4 { as16( g f e f g } a8) r8 |
-    as8.\ff a16\mf as8.\crescMolto a16 a8. b16 \tuplet 3/2 { a8( b h } |
+    f8) r f,8 r \tuplet 6/4 { as16( g f e f g } a8) r8 |
+    as8.\ff a16\mf as8. a16\crescMolto a8. b16 \tuplet 3/2 { a8( b h } |
     \mBreak
     
     % p3 5
-    c8.) des16 c8. des16\sempreCresc c8. des16 c8. c16 |
+    c8.) des16\sempreCresc c8. des16 c8. des16 c8. c16 |
     d8\fff r r4 h8 r r4 |
     fis'8 r r4 fis8 r c-^ \tuplet 3/2 { c16-^ c-^ c-^ } |
     \mark #22
@@ -1014,13 +1028,13 @@ clarinet_II = {
     % p3 7
     \tuplet 3/2 { f8\tuttaForza f f } \repeat unfold 3 { f8. f16 } |
     f8\sec r r4 \afterGrace r2 { c16( d es } |
-    f8) r r4 r4 b,(\f |
+    f8) r r4 r4 b,(\fCantabile\solo |
     \bar "||"
     \mark #24
     \tempo "Più largamente"
     h4 c2 h8 c |
     cis8 es d2) d4( |
-    f4 es2)( d8 es |
+    f4 es2)(\cresc d8\! es |
     e8 g f2) r4 |
     \mBreak
     
@@ -1030,16 +1044,16 @@ clarinet_II = {
     \bar "||" 
     \tempo "Tempo I"
     b8) r r4 r2 |
-    r8 r16\ff\< f( g4~ g8\> f8~\! \tuplet 3/2 { f8 es d } | 
+    r8 r16\ff\< f( g4 g8\> f8~\! \tuplet 3/2 { f8 es d } | 
     f8) r r4 r2 |
     r8 r16\ff\< f( g4~ g8\> f8~\! \tuplet 3/2 { f8 es d } | 
     \mBreak
     
     % p3 9
-    f8.) es16( g8. d16 f8. es16 a8. e16 |
+    f8. es16 g8. d16 f8. es16 a8. e16 |
     g8 f) b4.( a8\string b h |
-    c8) r r4 g4.(\ff\< b8)\sfz\> |
-    c8(\! h c cis d\sempreString des) c4 |
+    c8) r r4 g4.(\ff\< b8\sfz\> |
+    c8\! h c cis\sempreString d des) c4 |
     a4.(\< c8\sfz h)\> r8\! r4 |
     R1 |
     \mBreak
@@ -1061,7 +1075,7 @@ clarinet_II = {
     \mBreak
    
     % p3 12
-    g16 fis f fis g fis f fis g\string\cresc fis\! f fis g fis f fis |
+    g16 fis f fis g\cresc\string fis f fis g fis\! f fis g fis f fis |
     g16\tuttaForza fis f fis g fis f fis g fis f fis g fis f e |
     \mBreak
     
@@ -1071,11 +1085,24 @@ clarinet_II = {
     \bar "||"
     \tempo Andante
     R1*7 |
+    \bar "||"
     \tempo "Più lento"
     R1*4 |
     \bar "||"
     \tempo Adagio 
-    R1 |
+    <<
+      \new CueVoice {
+        \set instrumentCueName = "Ob."
+        \stemDown {
+          f4( es) r8 d( c b) |
+        }
+      }
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R1 |
+        \revert MultiMeasureRest.staff-position
+      }
+    >>
     r2 c,2(\pp |
     d2~) d8 r r4 |
     R1*13 |
