@@ -20,7 +20,7 @@
 % Adapt this for automatic line-breaks
 % mBreak = {}
 mBreak = { \break }
-#(set-global-staff-size 16)
+#(set-global-staff-size 15)
 
 % Useful snippets
 pCresc = _\markup { \dynamic p \italic "cresc." }
@@ -653,16 +653,13 @@ clarinet_II = {
   \tempo "Andante sostenuto" 4 = 56
   \key b \major
   \relative c' {
-    % p3
+    % p1 1
     \partial 2 r2 |
     R1*2 |
     b2.(\p a4 |
     b4. h8 c2~) |
     c2 r |
     R1*4 |
-    \mBreak
-    
-    % p4
     R1 |
     r4 r4\fermata r2 |
     a'2(\p b) |
@@ -675,15 +672,13 @@ clarinet_II = {
     \time 4/4 \bar "||"
     R1
     \time 2/4 \bar "||"
-    \mBreak
-    
-    % p5
     R2 |
     \time 4/4 \bar "||"
-    R1*5 |
     \mBreak
-    
-    % p6
+
+    % p1 2
+    \mark #1
+    R1*5 |
     r2 \tuplet 3/2 { g8(\mf c e } \tuplet 3/2 { g c cis } |
     d8) r8 r4 r2 |
     h2~\f h8(a gis a) |
@@ -691,7 +686,7 @@ clarinet_II = {
     d2~\ff d8( cis c8. cis16) |
     \mBreak
 
-    % p7
+    % p1 3
     d2~ d8( cis) c16( e, f a) |
     c8 r8 r4 r2 |
     r2\riten r4\fermata r4\aTempo |
@@ -700,26 +695,24 @@ clarinet_II = {
     R2 |
     \time 4/4 \bar "||"
     \mark #2
-    R1 R1\pocoRit |
-    \mBreak
-    
-    % p8
-    R1 \aTempo\pocoAPocoAccel R1*2 |
+    R1*2\rit |
+    R1*3 \aTempo |
     r2\sempreAccel r4 \tuplet 6/4 { b,16(\p des b des b des } |
     \bar "||"
+    \mBreak
+
+    % p1 4
     \mark #3
     \tempo "Più animato"
     a8) r8 r4 r4 \tuplet 6/4 { b'16(\p des b des b des } |
-    
-    % p9
     a8) r8 r4 r2 |
     r2 \tuplet 6/4 { a,16(\mf c a c a c} b8) r8 |
     c1~\mf |
     c8 r8 a2.~\pocoAPocoAccelAlD |
-    a8 r8 r4 r2 |
     \mBreak
-    
-    %p10
+
+    % p1 5
+    a8 r8 r4 r2 |
     r2 e'2(\ff |
     es8) c4 c8 c r r4 |
     \mark #4
@@ -728,7 +721,7 @@ clarinet_II = {
     c8)\sec r8 r4 r2 |
     \mBreak
     
-    % p11
+    % p1 6
     r2 c'8\ff f,16 f f8 f16 f |
     \bar "||"
     \mark #5
@@ -738,65 +731,48 @@ clarinet_II = {
     d8) r8 r4 \repeat tremolo 8 { d32( b) } |
     \mBreak
     
-    % p12
+    % p1 7
     \repeat tremolo 8 { d32( h)\cresc } \repeat tremolo 8 { dis32( h } |
     c8) r8 r4 \repeat tremolo 8 { es32(\mf c } |
     e8) r8 r4 \repeat tremolo 8 { es32( c } |
     e8) r8 r4 \repeat tremolo 8 { as32(\piuF es } |
     e8) r8 r4 \repeat tremolo 8 { es32(\cresc c } |
+    es8) r8 r4 c,2~\f |
     \mBreak
     
-    % p13
-    es8) r8 r4 c,2~\f |
+    % p1 8
     c8 r8 r4 r2 |
     R1 |
     \mark #6
     f'8(\p e es d) des( c h b) |
     a8 r8 r4 r2 |
-    \mBreak
-    
-    % p14
     \repeat tremolo 8 { a32( gis } \repeat tremolo 8 { a gis) } |
     a8\sec r8 r4 r2 |
-    R1*3 |
+    R1*5 |
     \mBreak
     
-    % p15
-    R1*2 |
+    % p1 9
     a8-.\f gis16-. gis-. g8-. fis16-. fis-. f8-. e16-. e-. dis-. dis-. e-. e-. | 
     \mark #7
     d8-. r8 r4 r2 |
-    R1 |
-    \mBreak
-    
-    % p16
-    R1*3 |
+    R1*4 |
     r2 r4 f'8.(\f g,16 |
     as8) r8 r4 r2 |
+    r4 b,2\startTrillSpan b8\stopTrillSpan r |
     \mBreak
     
-    % p17
-    r4 b,2\startTrillSpan b8\stopTrillSpan r |
+    % p1 10
     \tuplet 6/4 { b'16( a g fis g a } \repeat unfold 3 \tuplet 6/4 { b16 a g fis g a } |
     h8)\pocoRiten r8 r4 r2 |
     \bar "||"
+    \mBreak
+    
+    % p2 1
     \mark #8
     \tempo "Più largamente"
-    R1
-    \mBreak
-    
-    % p18
-    R1*3 |
-    \mBreak
-    
-    % p19
-    R1*6 |
-    \mBreak
-    
-    % p20
-    R1 \sempreStringendo |
-    R1 |
-    r2 \lento r4\fermata r |
+    R1*12 |
+    \tempo "Lento"
+    R1 \fermataMarkup |
     \bar "||"
     \tempo Andante
     R1 |
@@ -808,28 +784,28 @@ clarinet_II = {
     r4 as2(\pp g8 fis |
     g8) r8 r4 r2 |
     R1 |
+    R1*2 \pocoRit |
     \mBreak
-   
-    % p21
-    R1 \pocoRit |
+
+    % p2 2
     \bar "||"
     \mark #9
-    \tempo "Allegro non troppo"
+    \tempo "Allegro non troppo (Tempo I)"
     g,8.(\mf a16 b8. c16 d8. fis16 g8. g,16) |
     a8.( g'16 g8. g,16 a8. g'16 g8. a,16) |
     b8.( c16 d8. fis16\cresc g8. a16 b8. b,16) |
     c8.( b'16 b8. c,16 des8.\< b'16 des8.\sfz\> c16)\! |
     \mBreak
     
-    % p22
+    % p2 3
     b8.( a16 g8. e16\cresc cis8. b16 a8. g16) |
     d'8.(\f es16 d8. g16 d8. es16 d8. g16 |
     d8) r8 r4 r2 |
     g16(\ff a g a b a b a g a g b des b des b) |
-    g8.(\< a16 b8.\sfz\> a16 g8.\< b16 des8.\sfz\> b16\! |
     \mBreak
     
-    % p23
+    % p2 4
+    g8.(\< a16 b8.\sfz\> a16 g8.\< b16 des8.\sfz\> b16\! |
     \mark #10
     g8) r8 r4 r2 |
     \repeat tremolo 8 { des'32( b } \repeat tremolo 8 { des32 b } |
@@ -839,16 +815,16 @@ clarinet_II = {
     R1*2 |
     \mBreak
     
-    % p24
+    % p2 5
     dis,8.(\mf h'16 h8. dis,16 e8. h'16 h8. e,16) |
     e8 r8 r4 r2 |
     a16\f( h a h c d c d) e8.(\cresc c'16) c8.( e,16 |
     \mark #11
     fis8) r8 r4 a,2~\sempreFf\! |
-    a8 r8 r4 a2~ |
     \mBreak
     
-    % p25
+    % p2 6
+    a8 r8 r4 a2~ |
     a8 r8 r4 r2 |
     fis2~ fis8 r8 r4 |
     fis4( f2) f8 r8 |
@@ -857,105 +833,96 @@ clarinet_II = {
     R1 |
     \mBreak
     
-    % p26
+    % p2 7
     r16 f,( g as g8-^ f) r16 c( d es d8-^ c) |
     R1 |
     \tuplet 6/4 { f16( e d cis d e } fis8) r8 \tuplet 6/4 { f16( e d cis d e } fis8) r8 |
-    d8[\ff r16 d]\mf d8. d16 es8. es16\crescMolto es8. e16 |
     \mBreak
     
-    % p27
+    % p2 8
+    d8[\ff r16 d]\mf d8. d16 es8. es16\crescMolto es8. e16 |
     f8. f16 f8. f16 f8. f16 f8. fis16 |
     \mark #13
     g8\fff r8 r4 es8 r8 r4 |
     d8 r8 r4 d8\sempreFf r8 r32 d,( e fis g a b c) |
-    d8.( c'16 b8. a16 g8. f16 e8. f16) |
     \mBreak
     
-    % p28
+    % p2 9
+    d8.( c'16 b8. a16 g8. f16 e8. f16) |
     g8.( f16 e8. d16 cis8. b16 a8. b16) |
     a8.( b16 a8. e'16 a,8) r8 r4 |
     cis16( c h b a as g ges f) r16 r8 r4 |
-    \repeat tremolo 8 { c'32( d } \repeat tremolo 8 { c32 d) } |
-    \repeat tremolo 8 { c32( d } \repeat tremolo 8 { c32 d } |
     \mBreak
 
-    % p29
+    % p2 10
+    \repeat tremolo 8 { c'32( d } \repeat tremolo 8 { c32 d) } |
+    \repeat tremolo 8 { c32( d } \repeat tremolo 8 { c32 d } |
     c8)\sec r8 r4 r2 |
     r2 c'8 f,16 f f8 f16 f |
     \mark #14
     d8 r8 r4 \repeat tremolo 8 { des32(\mf b } |
     d8) r8 r4 \repeat tremolo 8 { des32( b } |
     d8) r8 r4 \repeat tremolo 8 { ges32( des } |
-    d8) r8 r4 \repeat tremolo 8 { d32( b) } |
     \mBreak
     
-    % p30
+    % p2 11
+    d8) r8 r4 \repeat tremolo 8 { d32( b) } |
     \repeat tremolo 8 { d32( h } \repeat tremolo 8 { dis\cresc h } |
     c8) r8 r4 \repeat tremolo 8 { es32(\mf c } |
     e8) r8 r4 \repeat tremolo 8 { es32( c } |
     e8) r8 r4 \repeat tremolo 8 { as32( es } |
     e8) r8 r4 \repeat tremolo 8 { e32(\cresc c } |
-    es8) r8 r4 c,2~\f |
     \mBreak
 
-    % p31
+    % p2 12
+    es8) r8 r4 c,2~\f |
     c8 r8 r4 r2 |
     r2 d'8\ff a16 a a'8.-^ a,16 |
     \mark #15
     a8 r d, r dis r e r |
     f8 r fis r r4 e8 r |
     d8 r r4 d8 r r4 |
+    \mBreak
+    
+    % p2 13
     a'8 r r4 r2 |
     R1 \rall |
     \bar "||"
-    
-    % p32
+    \mark #16
+    \tempo "Più largamente"
     R1*6 |
-    \mBreak
-    
-    % p33
     r2 r4 es'8\f f |
     fis8 r r4 r2 |
-    R1 |
-    R1*3\pocoString |
-    \mBreak
-    
-    % p34
-    R1*2 |
-    R1*3\string |
-    R1\sempreString |
-    \mBreak
-
-    % p35
-    R1\rall |
-    R1\lento\fermataMarkup |
+    R1*6\pocoString |
+    R1*5\rall |
+    \tempo "Lento"
+    R1\fermataMarkup |
     \bar "||"
-    \tempo Andante
+    \tempo "Andante"
     R1 |
     \bar "||"
     \time 2/4 |
     R2 |
     \bar "||"
     \time 4/4
+    \mBreak
+    
+    % p3 1
     R1 |
     fis,2.(\p\< eis8\> fis)\! |
     g2.(\< fis8\> e\! |
     dis4) r4\pocoRiten r2 |
-    \mBreak
-    
-    % p36
     \mark #17
     \tempo "Allegro non troppo"
     h1~ |
     h1~\cresc |
     h8\! r r4 r2 |
     R1 |
-    as'( |
+    as'1( |
+    g8) r r4 g'8 c,16 c e8. e16 |
     \mBreak
     
-    % p37
-    g8) r r4 g'8 c,16 c e8. e16 |
+    % p3 2
     \mark #18
     \repeat tremolo 8 { e32( g } d8) r r4 |
     \repeat tremolo 8 { e32( g } d8) r r4 |
@@ -963,44 +930,44 @@ clarinet_II = {
     c8. b16 a8.\cresc b16\! c8. fis,16 g8. a16 |
     \mark #19
     b8\! r r4 r2 |
-    \mBreak
-    
-    % p38
     r2 g2~\f |
     g8 r r4 g2( |
+    \mBreak
+    
+    % p3 3
     f8) r r4 b'2(\f\< |
     h8)\sfz r r4 f,2~\ff |
     f8 r r4 r2 |
     \mark #20
     fis'8.(\f gis16 a8.\cresc h,16\! cis8. eis16 fis8. g16 |
-    \mBreak
-
-    % p39
     a8) r r4 r2 |
     as,8.(\ff b16 ces8. des16 es8. g16 as8. b16) |
+    \mBreak
+
+    % p3 4
     h8.( cis,16 d8. e16 fis8. ais16 h8. cis16) |
     d8.( e,16 f8.\cresc g16\! a8. cis,16 d8.) e16 |
-    \mBreak
-    
-    % p40
     \mark #21
     f8 r f,8 r \tuplet 6/4 { as16( g f e f g } a8) r8 |
     as8.\ff a16\mf as8.\crescMolto a16 a8. b16 \tuplet 3/2 { a8( b h } |
-    c8.) des16 c8. des16\sempreCresc c8. des16 c8. c16 |
-    d8\fff r r4 h8 r r4 |
     \mBreak
     
-    % p41
+    % p3 5
+    c8.) des16 c8. des16\sempreCresc c8. des16 c8. c16 |
+    d8\fff r r4 h8 r r4 |
     fis'8 r r4 fis8 r c-^ \tuplet 3/2 { c16-^ c-^ c-^ } |
     \mark #22
     e8\sec r e8. dis16 e8.\sempreFff d16 e8. es16 |
+    \mBreak
+    
+    % p3 6
     g8 r r4 r2 |
     h8 r \tuplet 3/2 { es,-^ es-^ d-^ } es-^ r8 r4 |
     \tuplet 3/2 { as8 as es } as8. es16 as8. es16 as8. es16 |
+    f8 r \tuplet 3/2 { f8-^ f-^ f-^ } f8 r r4 |
     \mBreak
     
-    % p42
-    f8 r \tuplet 3/2 { f8-^ f-^ f-^ } f8 r r4 |
+    % p3 7
     \tuplet 3/2 { f8\tuttaForza f f } \repeat unfold 3 { f8. f16 } |
     f8\sec r r4 \afterGrace r2 { c16( d es } |
     f8) r r4 r4 b,(\f |
@@ -1008,61 +975,58 @@ clarinet_II = {
     \mark #24
     \tempo "Più largamente"
     h4 c2 h8 c |
-    \mBreak
-    
-    % p43
     cis8 es d2) d4( |
     f4 es2)( d8 es |
     e8 g f2) r4 |
+    \mBreak
+    
+    % p3 8
     r2 f,8(\!\< fis g es') |
     d4(\!\pocoString des c h |
     \bar "||" 
     \tempo "Tempo I"
     b8) r r4 r2 |
-    \mBreak
-    
-    % p44
     r8 r16\ff\< f( g4~ g8\> f8~\! \tuplet 3/2 { f8 es d } | 
     f8) r r4 r2 |
     r8 r16\ff\< f( g4~ g8\> f8~\! \tuplet 3/2 { f8 es d } | 
+    \mBreak
+    
+    % p3 9
     f8.) es16( g8. d16 f8. es16 a8. e16 |
     g8 f) b4.( a8\string b h |
     c8) r r4 g4.(\ff\< b8)\sfz\> |
-    \mBreak
-    
-    % p45
     c8(\! h c cis d\sempreString des) c4 |
     a4.(\< c8\sfz h)\> r8\! r4 |
     R1 |
+    \mBreak
+    
+    % p3 10
     \tuplet 3/2 { es,8\fff es es } \repeat unfold 2 \tuplet 3/2 { es8 es es } \tuplet 3/2 { c8 c c } |
     d8 r r4 r2 |
     \repeat unfold 4 \tuplet 3/2 { es8 es es } |
+    \repeat unfold 2 \tuplet 3/2 { es8 es es } \repeat unfold 2 \tuplet 3/2 { c8 c c }
     \mBreak
     
-    % p46
-    \repeat unfold 2 \tuplet 3/2 { es8 es es } \repeat unfold 2 \tuplet 3/2 { c8 c c }
+    % p3 11
     \mark #25
     d1~ |
     d2(\< cis4\sfz\> d\! |
     es8)\sec\aTempo r r4 r2 |
     c'16\ff \repeat unfold 15 c |
+    b8 r as16 a b h c h c d es d es e |
     \mBreak
    
-    % p47
-    b8 r as16 a b h c h c d es d es e |
+    % p3 12
     g16 fis f fis g fis f fis g\string\cresc fis\! f fis g fis f fis |
     g16\tuttaForza fis f fis g fis f fis g fis f fis g fis f e |
-    f8\sec r r4 r2 |
     \mBreak
     
-    % p48
+    % p3 13
+    f8\sec r r4 r2 |
     R1*5\pocoAPocoRall |
     \bar "||"
     \tempo Andante
     R1*7 |
-    \mBreak
-    
-    % p49
     \tempo "Più lento"
     R1*4 |
     \bar "||"
@@ -1070,11 +1034,7 @@ clarinet_II = {
     R1 |
     r2 c,2(\pp |
     d2~) d8 r r4 |
-    R1*2\pocoRit |
-    \mBreak
-    
-    % p50
-    R1*11 |
+    R1*13 |
     \bar "|."
     \mBreak
   }
@@ -1096,7 +1056,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in Bb"
+    instrument = "Klarinette I in A"
   }
   \score {
     \new Staff {
@@ -1114,7 +1074,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in Bb"
+    instrument = "Klarinette II in A"
   }
   \score {
     \new Staff {
