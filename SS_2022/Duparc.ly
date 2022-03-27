@@ -55,6 +55,7 @@ moltoRit = ^\markup { \italic {"molto rit."} }
 pocoRit = ^\markup {\italic {"poco rit."} }
 pocoRiten = ^\markup {\italic {"poco riten."} }
 sec = ^\markup {\italic {"sec."} }
+pocoRall = ^\markup {\italic {"poco rall."} }
 pocoAPocoRall = ^\markup {\italic {"poco a poco rall."} }
 pocoAPocoAccel = ^\markup {\italic {"poco a poco accel."} }
 pocoAPocoAccelAlD = ^\markup {\italic {"poco a poco accel. al D"} }
@@ -163,26 +164,26 @@ clarinet_I = {
     
     % p1 2
     h4( c4. cis8 d4 |
-    es2)~\dim\rit es4\fermata\! r4\aTempo |
-    r4 fes,2( es8 d|
+    es2)~\rit es4\dim\fermata\! r4\aTempo |
+    r4 fes,2(\p es8 d|
     \time 2/4 \bar "||"
     es2) |
     \time 4/4 \bar "||"
-    b'4(\mfEspress des8 ces \tuplet 3/2 { b as g } \tuplet 3/2 { as b c }
+    b'4(\mfEspress des8 ces \tuplet 3/2 { b as g } \tuplet 3/2 { as b ces }
     \time 2/4 \bar "||"
     b2)( |
     \time 4/4 \bar "||"
     \mark #1
-    es8.\sfz\> d16)\! d8 r8 r2 |
+    es8.\sfz\> d?16)\! d8 r8 r2 |
     r2 \tuplet 3/2 { r8 a(\p c } \tuplet 3/2 { d es e) } |
     \mBreak
     
     % p1 3
     f8.(\sfz\> e16)\! e8 r8 r2 |
     R1 |
-    r2 \tuplet 3/2 { r8 g,,(\mf c } \tuplet 3/2 { e g c } |
+    r2 \tuplet 3/2 { r8 g,,_(\mf c } \tuplet 3/2 { e g c } |
     h8) r8 r4 r2 |
-    r16 g,(\f b d e g b d cis8) r8 r4 |
+    r16 g,(\f b? d e g b d cis8) r8 r4 |
     r16 g,(\f b d e g b d cis8) r8 r4 |
     \mBreak
 
@@ -191,14 +192,14 @@ clarinet_I = {
     d2(\ff d8)( cis c8. cis16) |
     d2~ d8( cis c) r |
     c,8( cis\dim d)\! r r2 |
-    r2\riten r4\fermata r4\aTempo |
+    r2\rit r4\fermata r4\aTempo |
     r4 ges,2(\pp\solo es4 |
     \time 2/4 \bar "||"
     f2) |
     \time 4/4 \bar "||"
     \mark #2
     R1 |
-    f'4.(\pEspress\solo g8 gis\<\pocoRit as c8.\> b16 |
+    f'4.(\pEspress\solo g8 gis\<\pocoRit a c8.\> b16 |
     \mBreak
     
     % p1 5
@@ -209,17 +210,18 @@ clarinet_I = {
     \bar "||"
     \mark #3
     \tempo "Più animato"
-    f8) r8 r4 r \tuplet 6/4 { ges'16(\p as ges as ges as } |
+    f8) r8 r4 r \tuplet 6/4 { ges'16( as ges as ges as } |
     f8) r8 r4 r2 |
     \mBreak
     
     % p1 6
     r2 \tuplet 6/4 { f,16(\mf g f g f g} ges8) r8 |
     es1~\mf |
-    es8 r8 f2.~\pocoAPocoAccelAlD |
+    es8 r8 f2.~\f\pocoAPocoAccelAlD |
     f8 r8 r4 r2 |
     R1 |
-    es''2\startTrillSpan \slashedGrace d8\stopTrillSpan es8 r8 r4 |
+    % FIXME: Trill with ligature?
+    es''2\ff\startTrillSpan \slashedGrace d8\stopTrillSpan es8 r8 r4 |
     \mark #4
     \repeat tremolo 8 { f,32( a } \repeat tremolo 8 { f32 a) } |
     \repeat tremolo 8 { f32( a } \repeat tremolo 8 { f32 a } |
@@ -269,6 +271,7 @@ clarinet_I = {
     f,8.(\mf\solo g16 a8. b16 c8. e16 f8. f,16) |
     ges8.( f'16 f8.\crescMolto ges,16 g8. f'16 f8. g16 |
     as8) r8 r4 r2 |
+    % FIXME: Trill with ligature?
     r4 g,2\startTrillSpan \grace fis8 \stopTrillSpan  g r |
     \tuplet 6/4 { b'16(\f a g fis g a } \repeat unfold 3 \tuplet 6/4 { b16 a g fis g a } |
     h8) r8 r4\pocoRit r2 |
@@ -283,8 +286,8 @@ clarinet_I = {
     \mBreak
     
     % p2 2
-    d8) r d32( e d e d e d e d8) r d32( e d e d e d e |
-    d8\pocoCresc) r d32( e d e d e d e d8) r r4 |
+    d8) r d32( e d e d e d e d8) r d32( e d e d e d\pocoCresc e |
+    d8) r d32( e d e d e d e d8) r r4 |
     R1*2 |
     \mBreak
 
@@ -333,7 +336,7 @@ clarinet_I = {
 
     % p2 5
     d'8.(\f es16 d8. g16 d8. es16 d8. g16) |
-    d16( dis e f fis g gis a\cresc b h c cis d dis e fis |
+    d16( dis e f fis g gis a b\cresc h c cis d dis e fis |
     g8)\ff r8 b,16(\sfz\> a b a\! g a\< g b des\sf\> b des b\! |
     \mBreak
     
@@ -400,7 +403,7 @@ clarinet_I = {
     \repeat tremolo 8 { g32( as } \repeat tremolo 8 { g32\cresc a } |
     g8) r8 r4 \repeat tremolo 8 { as32(\mf b } |
     g8) r8 r4 \repeat tremolo 8 { as32( b } |
-    g8) r8 r4 \repeat tremolo 8 { as32( b } |
+    g8) r8\piuF r4 \repeat tremolo 8 { as32( b } |
     g8) r8 r4 \repeat tremolo 8 { g32(\cresc a } |
     g8) r8 r4 e,2(\f |
     es8) r8 r4 r2 |
@@ -437,18 +440,18 @@ clarinet_I = {
     \mBreak
     
     % p2 14
-    r2 r4 es,8(\f f |
+    r2 r4 es,?8(\f f |
     fis8) r r4 cis8( eis f gis |
     a8\cresc ais h g~ g2) |
     fis4( f e dis |
     e8) r r4 r2 |
-    h'8(\f b a4~) a8 r r4 |
+    h'8(\f\> b a4~)\! a8 r r4 |
     d8(\piuF\> cis c)\! r es(\> d des b\! |
     \mBreak
 
     % p3 1
     f8)\piuP  r g8.( d16 f8 es) r4 |
-    r4\string d'8.( fis,16 a8 g) r4 |
+    r4\string h'8.( fis16 a8 g) r4 |
     R1 |
     r2 d4.(\f\<\sempreString f8\sfz\> |
     e8) r\! r4 r2 |
@@ -481,7 +484,7 @@ clarinet_I = {
     % p3 2
     a2.(\p\< gis8\> a)\! |
     b4(\< a2~ a8\> g\! |
-    a4) r4\pocoRiten r2 |
+    a4) r4\pocoRit r2 |
     \mark #17
     \tempo "Allegro non troppo"
     h,1~ |
@@ -495,10 +498,10 @@ clarinet_I = {
     % p3 3
     \mark #18
     a8 r r4 \repeat tremolo 8 { d,32( es } |
-    e8) r r4 \repeat tremolo 8 { d32 es } |
+    e8) r r4 \repeat tremolo 8 { d32( es) } |
     % FIXME: Trill should have Aufloesungszeichen
     d2.\startTrillSpan d8\stopTrillSpan  r |
-    c8. b16 a8.\cresc b16 c8. d16 e8. fis16 |
+    c8. b16 a8. b16\cresc c8. d16 e8. fis16 |
     \mark #19
     g8 r r4 es,!2(\f\< |
     e8)\sfz r r4 d'2~\f |
@@ -516,7 +519,7 @@ clarinet_I = {
     \mBreak
 
     % p3 5
-    h8.( cis,16 d8. e16 fis8. ais16 h8. cis16) |
+    h8.( cis,16 d8. e16 fis8. ais16 h?8. cis16) |
     d8.( e,16 f8.\cresc g16\! a8. cis16 d8) r |
     \mark #21
     \tuplet 6/4 { as,16( g f e f g } a8) r \tuplet 6/4 { as'16( g f e f g } a8) r8 |
@@ -533,9 +536,9 @@ clarinet_I = {
     \mBreak
 
     % p3 7
-    e8) r \tuplet 3/2 { f,-^ f-^ ges-^ } f-^ r8 r4 |
+    es8) r \tuplet 3/2 { f,-^ f-^ ges-^ } f-^ r8 r4 |
     \tuplet 3/2 { es'8 es es } es8. es16 es8. es16 es8. es16 |
-    c8 r \grace { f,16 g a b } \tuplet 3/2 { c8-^ c-^ d-^ } c8 r r32 c,( d es f g a b |
+    c8 r \grace { f,16( g a b } \tuplet 3/2 { c8-^) c-^ d-^ } c8 r r32 c,( d es f g a b |
     \tuplet 3/2 { c8)\tuttaForza c d } \repeat unfold 3 { c8. d16 } |
     \mBreak
 
@@ -591,7 +594,7 @@ clarinet_I = {
     % p3 13
     g16\tuttaForza fis f fis g fis f fis g fis f fis g fis f e |
     f8\sec r r4 r2 |
-    R1*5\pocoAPocoRall |
+    R1*5\pocoRall |
     \bar "||"
     \tempo Andante
     R1*4 |
@@ -616,7 +619,7 @@ clarinet_I = {
     \mBreak
 
     % p3 14
-    d8 es8~ \tuplet 3/2 { es f ges) } f4~ f8 r |
+    d8 es8~ \tuplet 3/2 { es f ges } f4~ f8) r |
     R1*2 |
     \bar "||"
     \tempo Adagio 
