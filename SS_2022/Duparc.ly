@@ -1163,3 +1163,39 @@ clarinet_II = {
     }
   }
 }
+
+
+\bookpart {
+  \header{
+    instrument = "Klarinette I in Bb"
+  }
+  \score {
+    \new Staff {
+      \compressFullBarRests
+      \set Score.markFormatter = #format-mark-box-alphabet
+      \override DynamicLineSpanner.staff-padding = #3
+      \accidentalStyle Score.modern-cautionary
+      \new Voice {
+        \transpose a ais \clarinet_I
+      }
+    }
+  }
+}
+
+
+\bookpart {
+  \header{
+    instrument = "Klarinette II in Bb"
+  }
+  \score {
+    \new Staff {
+      \compressFullBarRests
+      \set Score.markFormatter = #format-mark-box-alphabet
+      \override DynamicLineSpanner.staff-padding = #3
+      \accidentalStyle Score.modern-cautionary
+      \new Voice {
+        \transpose a ais \clarinet_II
+      }
+    }
+  }
+}
