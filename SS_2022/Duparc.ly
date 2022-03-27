@@ -699,16 +699,16 @@ clarinet_II = {
     % p1 2
     \mark #1
     R1*5 |
-    r2 \tuplet 3/2 { g8(\mf c e } \tuplet 3/2 { g c cis } |
+    r2 \tuplet 3/2 { g8(\mf c\cresc e\! } \tuplet 3/2 { g c cis } |
     d8) r8 r4 r2 |
-    h2~\f h8(a gis a) |
-    h8.( a16\cresc h4. a8 b h) |
+    b2~\f b8(a gis a) |
+    b8.( a16\cresc b4. a8 b h) |
     d2~\ff d8( cis c8. cis16) |
     \mBreak
 
     % p1 3
-    d2~ d8( cis) c16( e, f a) |
-    c8 r8 r4 r2 |
+    d2~ d8( cis) c16( e, f a |
+    c8) r8 r4 r2 |
     r2 r4\fermata r4 |
     R1 |
     \time 2/4 \bar "||"
@@ -759,6 +759,7 @@ clarinet_II = {
     r2 c'8\ff f,16 f f8 f16 f |
     \bar "||"
     \mark #5
+    \tempo "Allegro non troppo"
     d8 r8 r4 \repeat tremolo 8 { des32(\mf b } |
     d8) r8 r4 \repeat tremolo 8 { des32( b } |
     d8) r8 r4 \repeat tremolo 8 { ges32( des } |
@@ -778,10 +779,10 @@ clarinet_II = {
     c8 r8 r4 r2 |
     R1 |
     \mark #6
-    f'8(\p e es d) des( c h b) |
-    a8 r8 r4 r2 |
-    \repeat tremolo 8 { a32( gis } \repeat tremolo 8 { a gis) } |
-    a8\sec r8 r4 r2 |
+    f'8(\p e es d des c h b |
+    a8) r8 r4 r2 |
+    \repeat tremolo 8 { a32(\ff gis } \repeat tremolo 8 { a gis } |
+    a8)\sec r8 r4 r2 |
     R1*5 |
     \mBreak
     
@@ -796,7 +797,7 @@ clarinet_II = {
     \mBreak
     
     % p1 10
-    \tuplet 6/4 { b'16( a g fis g a } \repeat unfold 3 \tuplet 6/4 { b16 a g fis g a } |
+    \tuplet 6/4 { b'16(\f a g fis g a } \repeat unfold 3 \tuplet 6/4 { b16 a g fis g a } |
     h8) r8 r4\pocoRit r2 |
     \bar "||"
     \mBreak
@@ -867,7 +868,7 @@ clarinet_II = {
     % p2 5
     dis,8.(\mf\solo h'16 h8. dis,16 e8. h'16 h8. e,16) |
     e8 r8 r4 r2 |
-    a16\f( h a h c d c d) e8.(\cresc c'16) c8.( e,16 |
+    a16\f( h a h c d c d) e8.( c'16\cresc c8.\! e,16 |
     \mark #11
     fis8) r8 r4 a,2~\sempreFf\! |
     \mBreak
@@ -917,7 +918,7 @@ clarinet_II = {
     d8) r8 r4 \repeat tremolo 8 { ges32( des } |
     d8) r8 r4 \repeat tremolo 8 { d32( b) } |
     \repeat tremolo 8 { d32( h } \repeat tremolo 8 { dis\cresc h } |
-    c8) r8 r4 \repeat tremolo 8 { es32(\mf c } |
+    c8) r8 r4 \repeat tremolo 8 { es?32(\mf c } |
     e8) r8 r4 \repeat tremolo 8 { es32( c } |
     e8) r8\piuF r4 \repeat tremolo 8 { as32( es } |
     e8) r8 r4 \repeat tremolo 8 { e32(\cresc c } |
@@ -965,7 +966,7 @@ clarinet_II = {
       }
       \new CueVoice {
         \set instrumentCueName = "3.Cor."
-        \stemUp {
+        \stemDown {
           f,4 a8 g \tuplet 3/2 { f e dis } \tuplet 3/2 { e f g } |
         }
       }
@@ -1000,9 +1001,9 @@ clarinet_II = {
     h8)\sfz r r4 f,2~\ff |
     f8 r r4 r2 |
     \mark #20
-    fis'8.(\f gis16 a8.\cresc h,16\! cis8. eis16 fis8. g16 |
+    fis'8.(\f gis16 a8. h,16\! cis8.\cresc eis16 fis8. g16 |
     a8) r r4 r2 |
-    as,8.(\ff b16 ces8. des16 es8. g16 as8. b16) |
+    as,8.(\ff b?16 ces8. des16 es?8. g?16 as8. b?16) |
     \mBreak
 
     % p3 4
@@ -1018,12 +1019,12 @@ clarinet_II = {
     d8\fff r r4 h8 r r4 |
     fis'8 r r4 fis8 r c-^ \tuplet 3/2 { c16-^ c-^ c-^ } |
     \mark #22
-    e8\sec r e8. dis16 e8.\sempreFff d16 e8. es16 |
+    e8\sec\sempreFff r e8. dis16 e8. d16 e8. es16 |
     \mBreak
     
     % p3 6
     g8 r r4 r2 |
-    h8 r \tuplet 3/2 { es,-^ es-^ d-^ } es-^ r8 r4 |
+    h8 r \tuplet 3/2 { es,?-^ es-^ d-^ } es-^ r8 r4 |
     \tuplet 3/2 { as8 as es } as8. es16 as8. es16 as8. es16 |
     f8 r \tuplet 3/2 { f8-^ f-^ f-^ } f8 r r4 |
     \mBreak
@@ -1031,19 +1032,19 @@ clarinet_II = {
     % p3 7
     \tuplet 3/2 { f8\tuttaForza f f } \repeat unfold 3 { f8. f16 } |
     f8\sec r r4 \afterGrace r2 { c16( d es } |
-    f8) r r4 r4 b,(\fCantabile\solo |
+    f8) r r4 r4 b,?(\fCantabile\solo |
     \bar "||"
     \mark #24
     \tempo "Più largamente"
     h4 c2 h8 c |
-    cis8 es d2) d4( |
+    cis8 es? d2) d4( |
     f4 es2)(\cresc d8\! es |
     e8 g f2) r4 |
     \mBreak
     
     % p3 8
     r2 f,8(\!\< fis g es') |
-    d4(\!\pocoString des c h |
+    d4(\! des\pocoString c h |
     \bar "||" 
     \tempo "Tempo I"
     b8) r r4 r2 |
@@ -1054,9 +1055,9 @@ clarinet_II = {
     
     % p3 9
     f8. es16 g8. d16 f8. es16 a8. e16 |
-    g8 f) b4.( a8\string b h |
+    g8 f) b4.(\string a8 b h |
     c8) r r4 g4.(\ff\< b8\sfz\> |
-    c8\! h c cis\sempreString d des) c4 |
+    c8\! h c cis\sempreString d cis c4) |
     a4.(\< c8\sfz h)\> r8\! r4 |
     R1 |
     \mBreak
