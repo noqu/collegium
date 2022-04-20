@@ -18,9 +18,9 @@
 }
 
 % Adapt this for automatic line-breaks
-% mBreak = {}
-mBreak = { \break }
-#(set-global-staff-size 14)
+mBreak = {}
+% mBreak = { \break }
+#(set-global-staff-size 16)
 
 % Useful snippets
 pCresc = _\markup { \dynamic p \italic "cresc." }
@@ -100,9 +100,14 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     }
     " "
   }
-  % markup-system-spacing.basic-distance = #12
-  % markup-system-spacing.minimum-distance = #12
-  % markup-system-spacing.padding = #10
+  % Distance between title stuff and music
+  markup-system-spacing.basic-distance = #12
+  markup-system-spacing.minimum-distance = #12
+  markup-system-spacing.padding = #10
+  % Distance between music systems
+  system-system-spacing.basic-distance = #14
+  system-system-spacing.minimum-distance = #14
+  % system-system-spacing.padding = #10
   
 }
 
@@ -1114,19 +1119,7 @@ clarinet_II = {
 }
 % ---------------------------------------------------------
 
-% \bookpart {
-%   \header{
-%     instrument = "Klarinette I und II in A"
-%   }
-%   \score {
-%     <<
-%     \transpose a a \clarinet_I
-%     \\
-%     \transpose a a \clarinet_II
-%     >>
-%   }
-% }
-
+%{
 \bookpart {
   \header{
     instrument = "Klarinette I in A"
@@ -1161,7 +1154,7 @@ clarinet_II = {
     }
   }
 }
-
+%}
 
 \bookpart {
   \header{
