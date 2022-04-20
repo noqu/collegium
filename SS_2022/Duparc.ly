@@ -159,11 +159,11 @@ clarinet_I = {
       }
     >>
     a2(\p b) |
-    a2( b)\cresc |
+    a2( b) |
     \mBreak
     
     % p1 2
-    h4( c4. cis8 d4 |
+    h4(\cresc c4. cis8 d4 |
     es2)~\rit es4\dim\fermata\! r4\aTempo |
     r4 fes,2(\p es8 d|
     \time 2/4 \bar "||"
@@ -220,8 +220,7 @@ clarinet_I = {
     es8 r8 f2.~\f\pocoAPocoAccelAlD |
     f8 r8 r4 r2 |
     R1 |
-    % FIXME: Trill with ligature?
-    es''2\ff\startTrillSpan \slashedGrace d8\stopTrillSpan es8 r8 r4 |
+    es''?2\ff\startTrillSpan \appoggiatura d8\stopTrillSpan es8 r8 r4 |
     \mark #4
     \repeat tremolo 8 { f,32( a } \repeat tremolo 8 { f32 a) } |
     \repeat tremolo 8 { f32( a } \repeat tremolo 8 { f32 a } |
@@ -255,7 +254,7 @@ clarinet_I = {
     f'8(\p e es d) des( c h b) |
     a8 r8 r4 r2 |
     \repeat tremolo 8 { e32(\ff f } \repeat tremolo 8 { e f) } \acciaccatura e8 |
-    % FIXME: I can't get the grace note into the previous bar
+    % FIXME: I can't get the grace note into the previous bar - afterGrace clashes with the tremolo
     f8\sec r8 r4 r2 |
     R1*2 |
     g,,8.(\mf\< f'16) f8\! r8 as,8.(\< f'16 as8.\sfz\> g16\! | 
@@ -271,8 +270,7 @@ clarinet_I = {
     f,8.(\mf\solo g16 a8. b16 c8. e16 f8. f,16) |
     ges8.( f'16 f8.\crescMolto ges,16 g8. f'16 f8. g16 |
     as8) r8 r4 r2 |
-    % FIXME: Trill with ligature?
-    r4 g,2\startTrillSpan \grace fis8 \stopTrillSpan  g r |
+    r4 g,2\startTrillSpan \acciaccatura fis8 \stopTrillSpan  g r |
     \tuplet 6/4 { b'16(\f a g fis g a } \repeat unfold 3 \tuplet 6/4 { b16 a g fis g a } |
     h8) r8 r4\pocoRit r2 |
     \bar "||"
@@ -312,7 +310,7 @@ clarinet_I = {
     R1\fermataMarkup |
     \bar "||"
     \tempo Andante
-    d4(\ppiuEspress\solo f8 es d c~ \tuplet 3/2 { c d es } |
+    d4(\ppiuEspress\solo f8 es? d c~ \tuplet 3/2 { c d es } |
     \bar "||"
     \time 2/4
     d2) |
@@ -401,7 +399,7 @@ clarinet_I = {
 
     % p2 12
     \repeat tremolo 8 { g32( as } \repeat tremolo 8 { g32\cresc a } |
-    g8) r8 r4 \repeat tremolo 8 { as32(\mf b } |
+    g8) r8 r4 \repeat tremolo 8 { as32(\mf b? } |
     g8) r8 r4 \repeat tremolo 8 { as32( b } |
     g8) r8\piuF r4 \repeat tremolo 8 { as32( b } |
     g8) r8 r4 \repeat tremolo 8 { g32(\cresc a } |
@@ -434,8 +432,8 @@ clarinet_I = {
         \revert MultiMeasureRest.staff-position
       }
     >>
-    % FIXME: Trill should have a #, and grace note should be in this bar
-    h1 ^\markup "#" \startTrillSpan \acciaccatura ais8 \stopTrillSpan |
+    % FIXME: I can't get the grace note into the previous bar - afterGrace clashes with the tremolo
+    h1\p ^\markup "#" \startTrillSpan \acciaccatura ais8 \stopTrillSpan |
     h8 r r4 r2 |
     \mBreak
     
@@ -446,7 +444,7 @@ clarinet_I = {
     fis4( f e dis |
     e8) r r4 r2 |
     h'8(\f\> b a4~)\! a8 r r4 |
-    d8(\piuF\> cis c)\! r es(\> d des b\! |
+    d8(\piuF\> cis c)\! r es?(\> d des b?\! |
     \mBreak
 
     % p3 1
@@ -499,7 +497,6 @@ clarinet_I = {
     \mark #18
     a8 r r4 \repeat tremolo 8 { d,32( es } |
     e8) r r4 \repeat tremolo 8 { d32( es) } |
-    % FIXME: Trill should have Aufloesungszeichen
     d2.\startTrillSpan d8\stopTrillSpan  r |
     c8. b16 a8. b16\cresc c8. d16 e8. fis16 |
     \mark #19
@@ -538,13 +535,13 @@ clarinet_I = {
     % p3 7
     es8) r \tuplet 3/2 { f,-^ f-^ ges-^ } f-^ r8 r4 |
     \tuplet 3/2 { es'8 es es } es8. es16 es8. es16 es8. es16 |
-    c8 r \grace { f,16( g a b } \tuplet 3/2 { c8-^) c-^ d-^ } c8 r r32 c,( d es f g a b |
+    c8 r \grace { f,16( g a? b } \tuplet 3/2 { c8-^) c-^ d-^ } c8 r r32 c,( d es f g a b |
     \tuplet 3/2 { c8)\tuttaForza c d } \repeat unfold 3 { c8. d16 } |
     \mBreak
 
     % p3 8
-    c8\sec r r4 \afterGrace r2 { c,16( d es } |
-    f8) r r4 r4 b,(\fCantabile\solo |
+    c8\sec r r4 r2 |
+    \grace { c,16( d es } f8) r r4 r4 b,(\fCantabile\solo |
     \bar "||"
     \mark #24
     \tempo "Più largamente"
@@ -569,7 +566,7 @@ clarinet_I = {
     f8 es) r4 r2 |
     R1\string |
     c8( h b4~ b4.\ff\< des8\sfz\> |
-    c8\! h c cis d\sempreString des) c4~ |
+    c8\! h c cis d\sempreString cis) c4~ |
     c4.(\< es8\sfz d)\> r8\! r4 |
     R1 |
     \tuplet 3/2 { ges,8\fff ges ges } \repeat unfold 2 \tuplet 3/2 { ges8 ges ges } \tuplet 3/2 { es8 es es } |
@@ -679,6 +676,7 @@ clarinet_II = {
     >>
     \clef violin
     \stemNeutral
+    % FIXME: Cannot hide the (useless) cautionary accidentals here
     b2.(\p\solo a4 |
     b4. h8 c2~) |
     c2 r |
@@ -739,7 +737,7 @@ clarinet_II = {
     \mark #3
     \tempo "Più animato"
     a8) r8 r4 r4 \tuplet 6/4 { b'16(\p des b des b des } |
-    a8) r8 r4 r2 |
+    a?8) r8 r4 r2 |
     r2 \tuplet 6/4 { a,16(\mf c a c a c} b8) r8 |
     c1~\mf |
     c8 r8 a2.~\pocoAPocoAccelAlD |
@@ -768,7 +766,7 @@ clarinet_II = {
     
     % p1 7
     \repeat tremolo 8 { d32( h)\cresc } \repeat tremolo 8 { dis32( h } |
-    c8) r8 r4 \repeat tremolo 8 { es32(\mf c } |
+    c8) r8 r4 \repeat tremolo 8 { es?32(\mf c } |
     e8) r8 r4 \repeat tremolo 8 { es32( c } |
     e8) r8 r4 \repeat tremolo 8 { as32(\piuF es } |
     e8) r8 r4 \repeat tremolo 8 { e32(\cresc c } |
@@ -868,7 +866,7 @@ clarinet_II = {
     % p2 5
     dis,8.(\mf\solo h'16 h8. dis,16 e8. h'16 h8. e,16) |
     e8 r8 r4 r2 |
-    a16\f( h a h c d c d) e8.( c'16\cresc c8.\! e,16 |
+    a16\f( h a h c d? c d) e8.( c'16\cresc c8.\! e,16 |
     \mark #11
     fis8) r8 r4 a,2~\sempreFf\! |
     \mBreak
@@ -879,12 +877,12 @@ clarinet_II = {
     fis2~ fis8 r8 r4 |
     fis4( f2) f8 r8 |
     \mark #12
-    r16 c''(\ff d es? d8-^ c) r16 c( d es d8-^ c) |
+    r16 c''?(\ff d? es? d8-^ c) r16 c( d es d8-^ c) |
     R1 |
     \mBreak
     
     % p2 7
-    r16 f,( g as g8-^ f) r16 c( d es d8-^ c) |
+    r16 f,( g as g8-^ f) r16 as( b ces b8-^ as) |
     R1 |
     \tuplet 6/4 { f16( e d cis d e } fis8) r8 \tuplet 6/4 { f16( e d cis d e } fis8) r8 |
     \mBreak
@@ -1176,7 +1174,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a ais \clarinet_I
+        \transpose b a \clarinet_I
       }
     }
   }
@@ -1194,7 +1192,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a ais \clarinet_II
+        \transpose b a \clarinet_II
       }
     }
   }
