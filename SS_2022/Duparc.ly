@@ -34,6 +34,7 @@ ffz = _\markup { \dynamic { ffz } }
 crescMolto = _\markup { \italic "cresc. molto" }
 pMoltoCresc = _\markup { \dynamic p \italic "molto cresc." }
 sempreCresc = _\markup { \italic "sempre cresc." }
+ppEspr = _\markup { \dynamic pp \italic "espr." }
 ppiuEspress = _\markup { \dynamic p \italic "più espress." }
 pocoCresc = _\markup { \italic "poco cresc." }
 mfEspress = _\markup { \dynamic mf \italic "espress." }
@@ -1091,7 +1092,22 @@ clarinet_II = {
     R1*5\pocoAPocoRall |
     \bar "||"
     \tempo Andante
-    R1*7 |
+    R1*4 |
+    <<
+      \new CueVoice {
+        \set instrumentCueName = "Fag.III"
+        \stemUp {
+        r4 f,(\ppEspr es as, |
+        es'4. f8 f2~)\dim |
+        f8\! r8 r4 r2 |
+        }
+      }
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R1*3 |
+        \revert MultiMeasureRest.staff-position
+      }
+    >>
     \bar "||"
     \tempo "Più lento"
     R1*4 |
@@ -1101,7 +1117,7 @@ clarinet_II = {
       \new CueVoice {
         \set instrumentCueName = "Ob."
         \stemDown {
-          f4( es) r8 d( c b) |
+          f'4( es) r8 d( c b) |
         }
       }
       {
