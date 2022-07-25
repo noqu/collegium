@@ -226,8 +226,104 @@ clarinet_I = {
     }
     \mBreak
     
-    %p10
+    %p1 10
     R1*2/4*7
+    \mBreak
+    
+    %p2 1
+    \repeat volta 2 {
+      R1*2/4 |
+      r8. h,16\< c-. h-. c8~\! |
+      c8 r r4 |
+      r16 d-. g-. h-. d-. h-. c-. a-. |
+      h8 r r4 |
+      r8. h,16\< c-. h-. c8~\! |
+      c8 r r4 |
+      \mBreak
+      
+      %p2 2
+      r16 h'-. g-. h-. g8 r |
+    }
+    \repeat volta 2 {
+      fis8 r fis r |
+      fis8 r r4 |
+      R1*2/4 |
+      d32\f( e fis g a h c h a g fis e d c h a) |
+      g8 r r4 |
+      \mBreak
+
+      %p2 3
+      r8. h16\< c-. h-. c8~\! |
+      c8 r r4 |
+      r16 d-. g-. h-. d-. h-. c-. a-. |
+      h8 r r4 |
+      r8. h,16\< c-. h-. c8~\! |
+      c8 r r4 |
+      \mBreak
+
+      %p2 4
+      r16 h'-. g-. h-. g8 r |
+    }
+    h2\ff |
+    h2~ |
+    h2 |
+    a2 |
+    r16 fis( g a b a b g) |
+    fis8 fis4.~ |
+    fis2~ |
+    \mBreak
+    
+    %p2 5
+    fis4\fermata r |
+    \bar "||"
+    R1*2/4*26 ^\markup { "Recit." } |
+    R1*2/4\fermataMarkup
+    \bar "||"
+    \mBreak
+    
+    %p2 6
+    \time 3/4
+    \tempo "Polacca"
+    R1*3/4*8 |
+    h8\ff \repeat unfold 5 { h8 } |
+    r8 \repeat unfold 5 { c8 } |
+    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 4 h'8 h4-> |
+    \mBreak
+    
+    %p2 7
+    h8\ff \repeat unfold 5 { h8 } |
+    r8 \repeat unfold 5 { c8 } |
+    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 4 h'8 h4-> |
+    R1*3/4*8 |
+    \mBreak
+    
+    %p2 8
+    r8 fis\ff fis fis g g |
+    r8 \repeat unfold 5 { fis } |
+    r8 \repeat unfold 3 f e e |
+    fis8 fis4 \repeat unfold 3 fis8 |
+    r8 \repeat unfold 5 h |
+    r8 \repeat unfold 5 c |
+    \mBreak
+    
+    %p2 9
+    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 4 h'8 h4 |
+    R1*3/4*2 |
+    c2.(\p |
+    h8) r8 r4 r |
+    R1*3/4*8 |
+    \mBreak
+    
+    %p2 10
+    fis2.\f |
+    g2.~ |
+    g4 r r |
+    R1*3/4*4 |
+    r8 c,8-.\pp \repeat unfold 4 c-. |
+    R1*3/4*5 |
     \mBreak
   }
 }
@@ -341,8 +437,104 @@ clarinet_II = {
     }
     \mBreak
     
-    %p10
+    %p1 10
     R1*2/4*7
+    \mBreak
+    
+    %p2 1
+    \repeat volta 2 {
+      R1*2/4 |
+      r8. gis16\< a-. gis-. a8~\! |
+      a8 r r4 |
+      r16 h-. d-. g-. h-. g-. a-. d,-. |
+      d8 r r4 |
+      r8. gis,16\< a-. gis-. a8~\! |
+      a8 r r4 |
+      \mBreak
+      
+      %p2 2
+      r16 d-. h-. d-. h8 r |
+    }
+    \repeat volta 2 {
+      d8 r d r |
+      d8 r r4 |
+      R1*2/4 |
+      d32\f( e fis g a h c h a g fis e d c h a) |
+      g8 r r4 |
+      \mBreak
+
+      %p2 3
+      r8. gis16\< a-. gis-. a8~\! |
+      a8 r r4 |
+      r16 h-. d-. g-. h-. g-. a-. d,-. |
+      d8 r r4 |
+      r8. gis,16\< a-. gis-. a8~\! |
+      a8 r r4 |
+      \mBreak
+      
+      %p2 4
+      r16 d-. h-. d-. h8 r |
+    }
+    e4\ff fis |
+    e2 |
+    f4 d |
+    es 2|
+    r16 fis,( g a b a b g) |
+    fis8 a4.~ |
+    a2~ |
+    \mBreak
+    
+    %p2 5
+    a4\fermata r |
+    \bar "||"
+    R1*2/4*26 ^\markup { "Recit." } |
+    R1*2/4\fermataMarkup
+    \bar "||"
+    \mBreak
+    
+    %p2 6
+    \time 3/4
+    \tempo "Polacca"
+    R1*3/4*8 |
+    d8\ff \repeat unfold 5 { d8 } |
+    r8 \repeat unfold 5 { e8 } |
+    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 4 d8 d4-> |
+    \mBreak
+    
+    %p2 7
+    d8\ff \repeat unfold 5 { d8 } |
+    r8 \repeat unfold 5 { e8 } |
+    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 4 d8 d4-> |
+    R1*3/4*8 |
+    \mBreak
+    
+    %p2 8
+    r8 d\ff d d cis cis |
+    r8 \repeat unfold 5 { d } |
+    r8 \repeat unfold 3 d cis cis |
+    d8 d4 \repeat unfold 3 d8 |
+    r8 \repeat unfold 5 d |
+    r8 \repeat unfold 5 e |
+    \mBreak
+    
+    %p2 9
+    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 4 d8 d4 |
+    R1*3/4*2 |
+    fis2.(\p |
+    d8) r8 r4 r |
+    R1*3/4*8 |
+    \mBreak
+    
+    %p2 10
+    dis2.\f |
+    e2.~ |
+    e4 r r |
+    R1*3/4*4 |
+    r8 a,8-.\pp \repeat unfold 4 a-. |
+    R1*3/4*5 |
     \mBreak
   }
 }
