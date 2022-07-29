@@ -153,13 +153,14 @@ clarinet_I = {
     
     %p1 4
     \time 2/4
+    \key g \major
     \repeat volta 2 {
       R1*2/4*8
     }
     \repeat volta 2 {
       R1*2/4*8
     }
-    h'4( g) |
+    h'4(\f g) |
     e8( fis g a) |
     \slashedGrace g8 fis8-. e-. fis4 |
     g4( d) |
@@ -169,7 +170,7 @@ clarinet_I = {
     h'4( g) |
     e8( fis g a) |
     \slashedGrace g8 fis8-. e-. fis4 |
-    g4. r8 |
+    g4.-. r8 |
     \repeat volta 2 {
       R1*2/4*8
     }
@@ -180,9 +181,9 @@ clarinet_I = {
     
     %p1 6
     R1*2/4 |
-    r4 r8 c,( |
-    h c d e) |
-    h4( a8) r |
+    r4 r8 c, |
+    h( c d e |
+    h4 a8) r |
     R1*2/4*4 |
     \mBreak
     
@@ -202,7 +203,7 @@ clarinet_I = {
     %p1 8
     \repeat volta 4 {
       R1*2/4*4 |
-      g8 r r4 |
+      g8\ff r r4 |
       R1*2/4 |
       a8 r r a |
       g8 r r4 |
@@ -214,11 +215,11 @@ clarinet_I = {
     
     %p1 9
     g2 |
-    fis4(\ff g8) r |
+    fis4(\ff\> g8)\! r |
     R1*2/4 |
-    a8\p a a a |
+    a8\pp a a a |
     \repeat volta 2 {
-      g4 r |
+      g4\f r |
       R1*2/4*7 |
     }
     \repeat volta 2 {
@@ -233,42 +234,42 @@ clarinet_I = {
     %p2 1
     \repeat volta 2 {
       R1*2/4 |
-      r8. h,16\< c-. h-. c8~\! |
+      r8. h,16-.\< \grace d32 c16-. h-. c8~\! |
       c8 r r4 |
-      r16 d-. g-. h-. d-. h-. c-. a-. |
+      r16 d-.\< g-. h-. d-.\> h-. c-. a-.\! |
       h8 r r4 |
-      r8. h,16\< c-. h-. c8~\! |
+      r8. h,16-.\< c-. h-. c8~\! |
       c8 r r4 |
       \mBreak
       
       %p2 2
-      r16 h'-. g-. h-. g8 r |
+      r16 h' g h g8 r |
     }
     \repeat volta 2 {
-      fis8 r fis r |
+      fis8 r g r |
       fis8 r r4 |
       R1*2/4 |
-      d32\f( e fis g a h c h a g fis e d c h a) |
+      d32\ff( e fis g a h c h a g fis e d c h a) |
       g8 r r4 |
       \mBreak
 
       %p2 3
-      r8. h16\< c-. h-. c8~\! |
+      r8. h16-.\< c-. h-. c8~\! |
       c8 r r4 |
-      r16 d-. g-. h-. d-. h-. c-. a-. |
+      r16 d-.\< g-. h-. d-.\> h-. c-. a-.\! |
       h8 r r4 |
-      r8. h,16\< c-. h-. c8~\! |
+      r8. h,16-.\< c-. h-. c8~\! |
       c8 r r4 |
       \mBreak
 
       %p2 4
-      r16 h'-. g-. h-. g8 r |
+      r16 h' g h g8 r |
     }
-    h2\ff |
+    h2~\ff |
     h2~ |
     h2 |
-    a2 |
-    r16 fis( g a b a b g) |
+    c2 |
+    r16 fis,( g a b a b g) |
     fis8 fis4.~ |
     fis2~ |
     \mBreak
@@ -287,14 +288,14 @@ clarinet_I = {
     R1*3/4*8 |
     h8\ff \repeat unfold 5 { h8 } |
     r8 \repeat unfold 5 { c8 } |
-    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 h'8 h4-> |
     \mBreak
     
     %p2 7
-    h8\ff \repeat unfold 5 { h8 } |
+    h8 \repeat unfold 5 { h8 } |
     r8 \repeat unfold 5 { c8 } |
-    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 h'8 h4-> |
     R1*3/4*8 |
     \mBreak
@@ -303,13 +304,13 @@ clarinet_I = {
     r8 fis\ff fis fis g g |
     r8 \repeat unfold 5 { fis } |
     r8 \repeat unfold 3 f e e |
-    fis8 fis4 \repeat unfold 3 fis8 |
+    d8 fis4 \repeat unfold 3 fis8 |
     r8 \repeat unfold 5 h |
     r8 \repeat unfold 5 c |
     \mBreak
     
     %p2 9
-    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 h'8 h4 |
     R1*3/4*2 |
     c2.(\p |
@@ -322,7 +323,7 @@ clarinet_I = {
     g2.~ |
     g4 r r |
     R1*3/4*4 |
-    r8 c,8-.\pp \repeat unfold 4 c-. |
+    r8 c,8-.(\pp \repeat unfold 3 c-. c-.)|
     R1*3/4*5 |
     \mBreak
     
@@ -345,16 +346,16 @@ clarinet_I = {
     %p3 3
     g2. |
     \repeat unfold 4 f8 f4 |
-    es,8\p b''4-> a16 b c b a g |
-    a8 c4 b16 c d c b a |
+    es,8\p b''4-> a16 b c b as g |
+    as8 c4 h16 c d c b as |
     g4. es16 g g fis es d |
     \mBreak
     
     %p3 4
-    d8 d16 es d4( es8) r |
+    d8 d16 es d4(\> es8)\! r |
     es,8 b''4 a16 b c b as g |
     as8 c4 h16 c d c b as |
-    g8 b4 g16 b b as g f |
+    g8 b4 g16 b b as g fis |
     \mBreak
     
     %p3 5
@@ -371,22 +372,22 @@ clarinet_I = {
     R1*3/4*11 |
     h8\ff \repeat unfold 5 h8 |
     r8 \repeat unfold 5 c |
-    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 h'8 h4-> |
     \repeat unfold 6 h8 |
     r8 \repeat unfold 5 c |
     \mBreak
     
     %p3 7
-    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 h'8 h4-> |
     R1*3/4*20 |
-    r8 g,-.\pp h-. d-. g-. h-. |
-    d4-. r c-. |
+    r8 g,-.\pp\< h-. d-. g-. h-.\! |
+    d4 r c |
     \mBreak
     
     %p3 8
-    h8-. r r4 r |
+    h8 r r4 r |
     R1*3/4*3 |
     d,2.~\pp |
     d2. |
@@ -396,9 +397,9 @@ clarinet_I = {
     \mBreak
     
     %p3 9
-    d,8 h'4-> a16( g fis a g e |
-    d8) r r4 r |
-    d8 h'4-> a16 g fis a g e |
+    d,8-. h'4(\> a16 g\! fis a g e) |
+    d8 r r4 r |
+    d8-. h'4( a16 g fis a g e) |
     d4 r r |
     \mBreak
     
@@ -406,8 +407,10 @@ clarinet_I = {
     R1*3/4*8 |
     c'2.\ff
     h2.~ |
-    h8 d-. h-. d-. h-. d-. |
-    d8.-> d16 d4 r |
+    h2. |
+    g8 h g h g h |
+    g4 g g |
+    g4 r r 
     \bar "|."
   }
 }
@@ -453,6 +456,7 @@ clarinet_II = {
     
     %p1 4
     \time 2/4
+    \key g \major
     \repeat volta 2 {
       R1*2/4*8
     }
@@ -497,10 +501,10 @@ clarinet_II = {
     %p1 8
     \repeat volta 2 {
       R1*2/4*4 |
-      d8 r r4 |
+      h8\ff r r4 |
       R1*2/4 |
-      fis8 r r fis |
-      d8 r r4 |
+      fis'8 r r fis |
+      h,8 r r4 |
     }
     dis4(\ff e8) r |
     R1*2/4 |
@@ -509,11 +513,11 @@ clarinet_II = {
     
     %p1 9
     h2 |
-    dis4(\ff e8) r |
+    dis4(\ff\> e8)\! r |
     R1*2/4 |
-    c8\p c c c |
+    c8\pp c c c |
     \repeat volta 2 {
-      h4 r |
+      h4\f r |
       R1*2/4*7 |
     }
     \repeat volta 2 {
@@ -528,36 +532,36 @@ clarinet_II = {
     %p2 1
     \repeat volta 2 {
       R1*2/4 |
-      r8. gis16\< a-. gis-. a8~\! |
+      r8. gis16-.\< a-. gis-. a8~\! |
       a8 r r4 |
-      r16 h-. d-. g-. h-. g-. a-. d,-. |
+      r16 h-.\< d-. g-. h-.\> g-. a-. d,-.\! |
       d8 r r4 |
-      r8. gis,16\< a-. gis-. a8~\! |
+      r8. gis,16-.\< a-. gis-. a8~\! |
       a8 r r4 |
       \mBreak
       
       %p2 2
-      r16 d-. h-. d-. h8 r |
+      r16 d h d h8 r |
     }
     \repeat volta 2 {
-      d8 r d r |
+      d8 r e r |
       d8 r r4 |
       R1*2/4 |
-      d32\f( e fis g a h c h a g fis e d c h a) |
+      d32\ff( e fis g a h c h a g fis e d c h a) |
       g8 r r4 |
       \mBreak
 
       %p2 3
-      r8. gis16\< a-. gis-. a8~\! |
+      r8. gis16-.\< a-. gis-. a8~\! |
       a8 r r4 |
-      r16 h-. d-. g-. h-. g-. a-. d,-. |
+      r16 h-.\< d-. g-. h-.\> g-. a-. d,-.\! |
       d8 r r4 |
-      r8. gis,16\< a-. gis-. a8~\! |
+      r8. gis,16-.\< a-. gis-. a8~\! |
       a8 r r4 |
       \mBreak
       
       %p2 4
-      r16 d-. h-. d-. h8 r |
+      r16 d h d h8 r |
     }
     e4\ff fis |
     e2 |
@@ -582,14 +586,14 @@ clarinet_II = {
     R1*3/4*8 |
     d8\ff \repeat unfold 5 { d8 } |
     r8 \repeat unfold 5 { e8 } |
-    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
     \mBreak
     
     %p2 7
-    d8\ff \repeat unfold 5 { d8 } |
+    d8 \repeat unfold 5 { d8 } |
     r8 \repeat unfold 5 { e8 } |
-    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
     R1*3/4*8 |
     \mBreak
@@ -604,8 +608,8 @@ clarinet_II = {
     \mBreak
     
     %p2 9
-    \repeat unfold 3 { a16 fis d8-> } |
-    \repeat unfold 4 d8 d4 |
+    \repeat unfold 3 { a16 fis d8 } |
+    \repeat unfold 4 d8 d4-> |
     R1*3/4*2 |
     fis2.(\p |
     d8) r8 r4 r |
@@ -617,20 +621,20 @@ clarinet_II = {
     e2.~ |
     e4 r r |
     R1*3/4*4 |
-    r8 a,8-.\pp \repeat unfold 4 a-. |
+    r8 a,8-.(\pp \repeat unfold 3 a-. a-.) |
     R1*3/4*5 |
     \mBreak
     
     %p3 1
     R1*3/4*10 |
     r8 \grace { fis'32 es d } es8\ff r es\turn r es\turn |
-    r8 \grace { es32 d c } d8 r d\turn g,4 |
+    r8 d8 r d g,4 |
     \mBreak
     
     %p3 2
     R1*3/4*2 |
     r8 \grace { fis'32 es d } es8\ff r es\turn r es\turn |
-    r8 \grace { es32 d c } d8 r d\turn g,4 |
+    r8 d8 r d g,4 |
     R1*3/4*2 |
     b2.\ff |
     f'2. |
@@ -644,7 +648,7 @@ clarinet_II = {
     
     %p3 4
     R1*3/4 |
-    r8 g4 fis16 g as g f es |
+    es,8 g'4 f16 g as g f es |
     es8 es4 d16 es f es d c |
     b8 g'4 es16 g g f es d |
     \mBreak
@@ -663,22 +667,22 @@ clarinet_II = {
     R1*3/4*11 |
     d8\ff \repeat unfold 5 d8 |
     r8 \repeat unfold 5 e |
-    \repeat unfold 3 { a16 fis d8-> } |
-    \repeat unfold 4 d8 d4-> |
+    \repeat unfold 3 { a16 fis d8 } |
+    \repeat unfold 4 d8 d4 |
     \repeat unfold 6 d8 |
     r8 \repeat unfold 5 e |
     \mBreak
     
     %p3 7
-    \repeat unfold 3 { a16 fis d8-> } |
+    \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
     R1*3/4*20 |
-    r8 d,-.\pp g-. h-. d-. d-. |
-    h'4-. r a-. |
+    r8 d,-.\pp\< g-. h-. d-. d-.\! |
+    h'4 r a |
     \mBreak
     
     %p3 8
-    g8-. r r4 r |
+    g8 r r4 r |
     R1*3/4*3 |
     h,2.~\pp |
     h2. |
@@ -695,8 +699,10 @@ clarinet_II = {
     R1*3/4*8 |
     fis2.\ff
     d2.~ |
-    d8 d-. d-. d-. d-. d-. |
-    d8.-> d16 d4 r |
+    d2. |
+    h8 d h d h d |
+    h4 h h |
+    h4 r r |
     \bar "|."
   }
 }
@@ -704,6 +710,7 @@ clarinet_II = {
 
 % ---------------------------------------------------------
 
+%{
 \bookpart {
   \header{
     instrument = "Klarinette I in A"
@@ -726,40 +733,39 @@ clarinet_II = {
     }
   }
 }
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette I in Bb"
-  }
-  \score {
-    \new Staff {
-      \compressFullBarRests
-      \set Score.markFormatter = #format-mark-box-alphabet
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b a \clarinet_I
-      }
-    }
-  }
-}
-
-
-\bookpart {
-  \header{
-    instrument = "Klarinette II in Bb"
-  }
-  \score {
-    \new Staff {
-      \compressFullBarRests
-      \set Score.markFormatter = #format-mark-box-alphabet
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b a \clarinet_II
-      }
-    }
-  }
-}
 %}
+
+\bookpart {
+  \header{
+    instrument = "Klarinette I in A"
+  }
+  \score {
+    \new Staff {
+      \compressFullBarRests
+      \set Score.markFormatter = #format-mark-box-alphabet
+      \override DynamicLineSpanner.staff-padding = #3
+      \accidentalStyle Score.modern-cautionary
+      \new Voice {
+        \transpose a a \clarinet_I
+      }
+    }
+  }
+}
+
+
+\bookpart {
+  \header{
+    instrument = "Klarinette II in A"
+  }
+  \score {
+    \new Staff {
+      \compressFullBarRests
+      \set Score.markFormatter = #format-mark-box-alphabet
+      \override DynamicLineSpanner.staff-padding = #3
+      \accidentalStyle Score.modern-cautionary
+      \new Voice {
+        \transpose a a \clarinet_II
+      }
+    }
+  }
+}
