@@ -449,7 +449,155 @@ clarinet_I = {
     ces4 ces |
     R2*4 |
     \mBreak
+    
+    % p3 1
+    \mark 7
+    as4\ff b |
+    c4 des |
+    c8 es b4 |
+    ces4 b |
+    as4 b |
+    c4 des |
+    c8 es b4 |
+    ces4 b |
+    as4 b |
+    r4 es, |
+    r4 es |
+    r4 es |
+    \mBreak
+    
+    % p3 2
+    r4 es |
+    as,2~ |
+    as2 |
+    f,2~ |
+    f2 |
+    r4 es''4 |
+    \repeat unfold 3 { r4 es } |
+    as,2~ |
+    as2 |
+    fes,2~ |
+    fes2 |
+    \mBreak
+    
+    % p3 3
+    cis'2~\f |
+    cis 2 |
+    R2*6 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R2*4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Ob.I"
+        \stemUp {
+          des'8 r es r |
+          f8 r ges r |
+          f8 b es, r |
+          d8 f ces r |
+        }
+      }
+    >>
+    b8\p r c r |
+    d8 r es r |
+    \mBreak
+    
+    % p3 4
+    d8 g c, r |
+    h8 d g, r |
+    R2*4 |
+    c8\p r d r |
+    e8 r f r |
+    e8 a d, r |
+    cis8 e a, r |
+    \mark 8
+    fis2~\p |
+    fis2 |
+    \mBreak
+    
+    % p3 4
+    g2~ |
+    g2 |
+    f2( |
+    es2) |
+    des2 |
+    ces2 |
+    b2 |
+    b'2 |
+    ces2~ |
+    ces2 |
+    a2 |
+    g2 |
+    f2 |
+    es2 |
+    R2*4 |
+    \mBreak
 
+    % p3 5
+    g8\p r a r |
+    h8 r c r |
+    h8 e a, r |
+    gis8 h e, r |
+    R2*4 |
+    a8 r h r |
+    cis8 r d r |
+    cis8 fis h, r |
+    \mBreak
+    
+    % p3 6
+    ais8 cis fis, r |
+    dis2~\p |
+    dis2 |
+    e2~ |
+    e2 |
+    d2 |
+    c2 |
+    b2 |
+    as2 |
+    g2 |
+    g'2\cresc |
+    as2~ |
+    as2 |
+    \mBreak
+    
+    % p3 7
+    fis2 |
+    e2 |
+    d2 |
+    c2 |
+    \mark 9
+    h''8\f r h a |
+    r4 g8 f |
+    e8 r e d |
+    r4 c8 h |
+    e8 r c' h |
+    r4 a8 g |
+    \mBreak
+    
+    % p3 8
+    fis8 r fis e |
+    r4 d8 cis |
+    d8 r e\cresc r |
+    fis8 r g r |
+    fis8 h e, r |
+    dis8 fis h, r |
+    g'8 r a r |
+    h8 r c r |
+    \mBreak
+    
+    % p3 9
+    h8 e a, r |
+    gis8 h e, r |
+    c'8\ff r c d |
+    r4 dis8 e |
+    fis,8 r fis g |
+    r4 gis8 ais |
+    d8 r d cis |
+    r4 gis8 fis |
+    \mBreak
+    
     \bar "|."
   }
 }
