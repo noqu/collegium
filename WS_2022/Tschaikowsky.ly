@@ -294,7 +294,161 @@ clarinet_I = {
     as2 |
     \mBreak
     
+    % p2 1
+    g2 |
+    as2 |
+    e4\ff g |
+    c2 |
+    e,4 g |
+    c2 |
+    e,8 g c e, |
+    c8 es as c, |
+    e8 g c e, |
+    c8 es as c, |
+    \mBreak
     
+    % p2 2
+    e8 fis gis e |
+    c8 d e c |
+    e8 fis gis e |
+    c8 d e4 |
+    e8 g c4 |
+    \repeat unfold 3 { e,8 g c4 }
+    \mBreak
+    
+    % p2 3
+    \mark 4 |
+    r4 f, |
+    g4 as |
+    as4 as |
+    c4 h |
+    R2*2 |
+    g4\ff h |
+    c4 c |
+    c8 c h4 |
+    a8 e e4 |
+    g4 h |
+    c4 c |
+    \mBreak
+    
+    % p2 4
+    c8 c h4 |
+    a8 e e4 |
+    c'2 |
+    \repeat unfold 3 c2 |
+    \repeat unfold 3 { c4 r } |
+    R2 |
+    \repeat unfold 2 { c4 r } |
+    \mBreak
+    
+    
+    % p2 5
+    c4 r |
+    R2*5 |
+    \mark 5 |
+    R2*12 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2*4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Viol.I"
+        \stemUp {
+          f,,8 r f g~ |
+          g4 f8( es |
+          f8) as( b c |
+          as8)
+        }
+        \set instrumentCueName = "Fl.I"
+        \stemUp {
+          es'([ as b]) |
+        }
+      }
+    >>
+    es,,8\mf e4. |
+    e8 f4 g8 |
+    \mBreak
+    
+    % p2 6
+    as8 a4. |
+    as8 b4. |
+    b8 h4. |
+    h8 c4. |
+    des8 c4. |
+    c8 h4 b8 |
+    es,8 e4. |
+    e8 f4 g8 |
+    as8 a4. |
+    a8 b4. |
+    \mBreak
+    
+    % p2 7
+    b8 h4. |
+    h8 c4. |
+    c8 des4. |
+    \repeat unfold 2 {
+      c8 r r4 |
+      e2~ |
+      e2~ |
+      e4. d8 |
+    }
+    \mBreak
+    
+    % p2 8
+    f8\f r r4 |
+    \repeat unfold 2 {
+      R2 |
+      f8 r r4 |
+    }
+    r8 b,8\f as b |
+    as8 r r4 |
+    r8 b8\mf as b |
+    g8 r r fes\p |
+    \mBreak
+    
+    % p2 9
+    as8 r r b |
+    \mark 6
+    as8 r r4 |
+    R2*7 |
+    r8 as r b |
+    r8 c r des |
+    r8 es r b |
+    r8 c, r es |
+    r8 as r b |
+    \mBreak
+    
+    % p2 10
+    r8 c r des |
+    r8 es r b |
+    r8 c, r es |
+    R2 |
+    r4 f'\ff |
+    es4 es |
+    f4 es |
+    R2 |
+    r4 f |
+    es4 es |
+    f4 es |
+    \mBreak
+    
+    % p2 11
+    c4 es |
+    as2 |
+    f4 es |
+    f2 |
+    ges4 as |
+    b2 |
+    c4 des |
+    es4~ es8 r |
+    r4 ces\ff~ |
+    ces4 ces~ |
+    ces4 ces~ |
+    ces4 ces |
+    R2*4 |
+    \mBreak
 
     \bar "|."
   }
