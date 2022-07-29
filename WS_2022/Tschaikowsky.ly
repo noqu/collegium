@@ -598,6 +598,137 @@ clarinet_I = {
     r4 gis8 fis |
     \mBreak
     
+    % p4 1
+    gis8 r gis fis |
+    r4 e8 dis |
+    e8 r fis r |
+    gis8 r a r |
+    gis8 cis fis, r |
+    eis8 gis cis, r |
+    a'8 r h r |
+    cis8 r d r |
+    \mBreak
+    
+    % p4 2
+    cis8 ais h r |
+    b8 cis g r |
+    g4\ff r |
+    h4 r |
+    c4 r |
+    h4 r |
+    g4 r |
+    h4 r |
+    c4 r |
+    h4 r |
+    \mBreak
+    
+    % p4 3
+    \mark 11
+    g,4\sempreFf a |
+    h4 c |
+    h8 e a,4 |
+    gis8 h f4 |
+    e4 fis |
+    gis4 a |
+    gis8 cis fis,4 |
+    eis8 gis cis,4 |
+    a'4 h |
+    cis4 d |
+    \mBreak
+    
+    % p4 4
+    cis8 fis h,4 |
+    ais8 cis g4 |
+    fis4 gis |
+    ais4 h |
+    ais8 dis gis,4 |
+    % FIXME: really? why not just g?
+    fisis8 ais dis,4 |
+    as'4 b |
+    c4 des |
+    c8 f b,4 |
+    a8 c f,4 |
+    \mBreak
+    
+    % p4 5
+    b4 c |
+    d4 es |
+    d8 g c,4 |
+    h8 d g,4 |
+    c8 d e g |
+    a,8 h cis e |
+    d8 e fis a |
+    h, cis dis fis |
+    e fis gis h |
+    \mBreak
+    
+    % p4 6
+    \repeat unfold 3 {
+      cis,8 dis eis gis |
+    }
+    a,4 h |
+    cis4 d |
+    cis8 fis h,4 |
+    ais8 cis fis,4 |
+    d'4 e |
+    fis g |
+    \mBreak
+    
+    % p4 7
+    fis8 h e,4 |
+    dis8 fis dis4 |
+    e8 r r4 |
+    R2 |
+    r4 g |
+    e4 g |
+    R2*2 |
+    r4 g |
+    e4 g |
+    \mark 12
+    c,,4\mf d |
+    e4 f |
+    \mBreak
+    
+    % p4 8
+    e8 a d,4 |
+    cis8 e a,4 |
+    h4 cis |
+    dis e |
+    dis8 fis ais,4 |
+    h8 dis g,4 |
+    e'4\f fis |
+    g4 as |
+    g8 c f,4 |
+    e8 g c,4 |
+    \mBreak
+    
+    % p4 9
+    d4 e |
+    fis4 g |
+    fis8 d' e,4 |
+    d8 a' g4 |
+    R2*2 |
+    a4 h |
+    cis4 d |
+    f8 a e4 |
+    dis8 fis h,4 |
+    h4 cis |
+    \mBreak
+    
+    % p4 10
+    dis4 e |
+    c4 d |
+    e4 f |
+    d4 e |
+    fis4 g |
+    h2\ff |
+    c2 |
+    cis2 |
+    d2 |
+    \mark13
+    R2*16 |
+    \mBreak
+    
     \bar "|."
   }
 }
