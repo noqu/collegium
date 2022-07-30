@@ -18,9 +18,11 @@
 }
 
 % Adapt this for automatic line-breaks
-mBreak = {}
+% mBreak = {}
+% pBreak = {}
 mBreak = { \break }
-#(set-global-staff-size 16)
+pBreak = { \pageBreak }
+#(set-global-staff-size 18)
 
 % Useful snippets
 pCresc = _\markup { \dynamic p \italic "cresc." }
@@ -110,6 +112,15 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
   system-system-spacing.minimum-distance = #14
   % system-system-spacing.padding = #10
   
+}
+
+% This allows the use of \startMeasureCount and \stopMeasureCount
+% See https://lilypond.org/doc/v2.23/Documentation/snippets/repeats#repeats-numbering-groups-of-measures
+\layout {
+  \context {
+    \Staff
+    \consists #Measure_counter_engraver
+  }
 }
 
 % ---------------------------------------------------------
@@ -292,7 +303,7 @@ clarinet_I = {
     as2 |
     g2\ff |
     as2 |
-    \mBreak
+    \pBreak
     
     % p2 1
     g2 |
@@ -448,7 +459,7 @@ clarinet_I = {
     ces4 ces~ |
     ces4 ces |
     R2*4 |
-    \mBreak
+    \pBreak
     
     % p3 1
     \mark 7
@@ -596,7 +607,7 @@ clarinet_I = {
     r4 gis8 ais |
     d8 r d cis |
     r4 gis8 fis |
-    \mBreak
+    \pBreak
     
     % p4 1
     gis8 r gis fis |
@@ -727,7 +738,7 @@ clarinet_I = {
     d2 |
     \mark13
     R2*16 |
-    \mBreak
+    \pBreak
     
     % p5 1
     <<
@@ -888,9 +899,198 @@ clarinet_I = {
     fis2\! |
     R2\fermataMarkup
     \bar "||"
+    \pBreak
+    
+    % p6 1
+    \tempo "Presto."
+    c'4\p d |
+    e2 |
+    d4 e |
+    fis2 |
+    e4 fis |
+    gis4 a |
+    a4 as |
+    g4 h |
+    c4 d |
+    e2 |
+    d4 e |
+    fis2 |
+    e4 fis |
     \mBreak
     
+    % p6 2
+    gis4\< a |
+    a4 as |
+    g4 a |
+    a4 as |
+    g4\mf\> a |
+    a4 as |
+    g4 r\! |
+    c,,4\p d |
+    e2 |
+    d4 e |
+    fis2 |
+    e4 fis |
+    gis4 a |
+    a4 as |
+    \mBreak
+    
+    % p6 3
+    g4 h | 
+    c4 d | 
+    e2 | 
+    d4 e | 
+    fis2 | 
+    e4 fis | 
+    gis4\< a | 
+    a4 as | 
+    g4 a | 
+    a4 as | 
+    g4\mf\> a | 
+    a4 as | 
+    g4 r\! | 
+    \mark 17
+    g2\sempreFf | 
+    g2 |
+    \mBreak
+    
+    % p6 4
+    cis2 |
+    c2 |
+    c2 |
+    h2 |
+    a2 |
+    \repeat unfold 3 g2 |
+    cis2 |
+    c2 |
+    c2 |
+    h2 |
+    a2 |
+    \repeat unfold 3 g2 |
+    cis2~ |
+    cis |
+    \mBreak
+    
+    % p6 5
+    \repeat unfold 4 c2 |
+    \repeat unfold 2 {
+      c4 g |
+      c2~ |
+      c4 d |
+      c4 h 
+    }
+    h2 |
+    gis2 |
+    a2 |
+    a2 |
+    \mBreak
+    
+    % p6 6
+    gis2 |
+    a2 |
+    a2 |
+    \repeat unfold 3 g2 |
+    cis2 |
+    c2 |
+    c2 |
+    h2 |
+    a2 |
+    \repeat unfold 3 g2 |
+    cis2 |
+    c2 |
+    c2 |
+    h2 |
+    \mBreak
+    
+    % p6 7
+    a2 |
+    \repeat unfold 3 g2 |
+    cis2~ |
+    cis2 |
+    \repeat unfold 4 c2 |
+    c4 g4 |
+    c2~ |
+    c4 d |
+    c4 h |
+    c4 g |
+    c2~ |
+    c4 d |
+    \mBreak
+    
+    % p6 8
+    c4 h |
+    c2~ |
+    c2 |
+    as2~ |
+    as2 |
+    gis2~ |
+    gis |
+    a2 |
+    gis2 |
+    a4 a |
+    c2~ |
+    c4 c |
+    c4 c |
+    c4 a |
+    c2~ |
+    c4 c |
+    \mBreak
+    
+    % p6 9
+    c4 c |
+    c2 |
+    c2 |
+    d2 |
+    dis2 |
+    \mark 18
+    e4 r |
+    R2*4 |
+    d2~ |
+    d2~ |
+    d2 |
+    g,2 |
+    \startMeasureCount
+    \repeat unfold 5 c2 |
+    \mBreak
+    
+    % p6 10
+    c2 |
+    c2 |
+    \stopMeasureCount
+    cis2 |
+    cis2 |
+    c2 |
+    h2 |
+    g2 |
+    \startMeasureCount
+    \repeat unfold 7 c2 |
+    \stopMeasureCount
+    cis2 |
+    cis2 |
+    c2 |
+    \mBreak
+    
+    % p6 11
+    cis2 |
+    \repeat unfold 8 {
+      c2 |
+      h2 |
+    }
+    \mBreak
+    
+    % p6 12
+    c2 |
+    h2 |
+    \startMeasureCount
+    \repeat unfold 9 g2 |
+    \stopMeasureCount
+    R2 |
+    c2 |
+    R2 |
+    c,,2~ |
+    c2\fermata |
     \bar "|."
+    \mBreak
   }
 }
 
