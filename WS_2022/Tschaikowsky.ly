@@ -140,7 +140,9 @@ clarinet_I = {
     h4 r |
     c2~ |
     c4 r\fermata |
+    g4 h4 |
     c4 c |
+    c2 ~ |
     c4 r\fermata |
     g4 h |
     h4 d |
@@ -1105,138 +1107,130 @@ clarinet_II = {
   \clef violin
     \relative c' {
     % cl2 p1 1
-    g''4\ff r |
-    h4 r |
-    c2~ |
-    c4 r\fermata |
-    c4 c |
-    c4 r\fermata |
-    g4 h |
-    h4 d |
-    c4 h |
+    e'4\ff r |
+    g4 r |
+    g2~ |
+    g4 r\fermata |
+    e4 g4 |
+    g4 a |
+    g2 ~ |
+    g4 r\fermata |
+    e4 g |
+    g4 a |
+    g4 g |
     \mBreak
     
     % cl2 p1 2
-    a4 a |
-    cis4 d |
-    a4 a |
-    a4 d |
-    a4 a |
-    \repeat unfold 3 { c4 c } |
-    c4 r |
+    e4 d |
+    a'4 a |
+    e4 f |
+    e4 a |
+    e4 f |
+    a4 g |
+    as4 g |
+    f4 as |
+    g4 r |
     R2 |
-    h4 r |
+    g4 r |
     R2 |
     R2\fermataMarkup |
     \bar "||"
     \mBreak
-    
+
     % cl2 p1 3
     \tempo "Allegro vivo."
-    R2*12 |
+    R2*27 |
     <<
       {
         \override MultiMeasureRest.staff-position = #2
         R2*4 |
         \revert MultiMeasureRest.staff-position
+        r4 es8(\f d) |
       }
       \new CueVoice {
         \set instrumentCueName = "Viol.I"
         \stemUp {
-          c,,8 r d r |
-          e8 r f r |
-          e8 g d4 |
-          c8 a as g |
+          g,4->( e8) d |
+          h8 d h d |
+          g8 a h4 |
+          g8 a h g |
+          a8 g \hideNotes r4 \unHideNotes |
         }
       }
     >>
-    r8 c\p r d |
-    r8 e r f |
-    r8 e r d |
+    c4\p h |
+    c4 c |
+    c8 c h4-> |
+    e,8 e e4-> |
     \mBreak
     
     % cl2 p1 4
-    r8 c r d |
-    r8 c r d |
-    r8 e r f |
-    r8 e r d |
-    r8 c r c |
-    R2*7 |
-    r4 es'8(\f d) |
-    c4\p d |
-    \mBreak
-    
-    % cl2 p1 5
-    e4 f |
-    e8 g d4-> |
-    c8 a g4-> |
-    c4 d |
-    e4 f |
-    e8 g d4 |
-    c8 a g r |
-    R2 |
-    r4 g'8\p g |
-    a( g) a( fis) |
-    \mBreak
-    
-    % cl2 p1 6
-    g8 r c,4( |
-    g8) r r4 |
-    g'8( fis) fis4 |
-    e4 fis8( h,) |
-    es8( d) r4 |
+    e4 h' |
+    c4 c |
+    c8 c h4 |
+    a8 f e r |
+    R2*8 |
     \mark #1
     R2*8 |
-    c,4 d |
-    e4 f |
-    e8 c' d,4 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R2*4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Cl.I"
+        \stemUp {
+          c4 d |
+          e4 f |
+          e8 c' d,4 |
+          c8 e e,4 |
+        }
+      }
+    >>
+    R2*4 |
     \mBreak
-    
-    % cl2 p1 7
-    c8 e e,4 |
-    c'4\< d |
+
+    % cl2 p1 5
+    c''4\f d |
     e4 f |
-    e8 c' d,4 |
-    c8 e e,4\! |
-    c'''4\f c |
-    c4 c |
-    c4 h |
-    a8 e d4 |
-    c'4 c |
-    \mBreak
-    
-    % cl2 p1 8
-    c4 c |
-    c4 h |
-    a8 e d4 |
-    \mark #2 |
-    c4\mf d |
-    e4 f |
-    e8 g d4 |
-    c8 c c4 |
+    g4 g |
+    e8 c g4 |
     c4 d |
     e4 f |
-    e8 g d4 |
+    g4 g |
+    e8 c g4 |
+    \mark #2 |
+    c4\mf c |
+    c4 c |
     \mBreak
-    
-    %p1 9
+
+    % cl2 p1 6
+    c8 c h4 |
+    g8 c, c4 |
+    c'4 c |
+    c4 c |
+    c8 c h4 |
     c8 r r4 |
     R2*8 |
-    e8-.\p \repeat unfold 3 e-. |
+    h8-.\p \repeat unfold 3 h-. |
     R2 |
-    e8 e e e |
-    R2 |
-    \repeat unfold 2 { e8 e r4 } |
-    es8\cresc es r4 |
-    es8 es r4 |
     \mBreak
-    
-    % cl2 p1 10
-    \repeat unfold 2 { g8 g r4 } |
-    b8\f b r4 |
-    b8 b r4 |
+
+    % cl2 p1 7
+    \repeat unfold 4 h8
+    R2 |
+    \repeat unfold 2 { c8 c r4 } |
+    c8\cresc c r4 |
+    c8 c r4 |
+    \repeat unfold 2 { cis8 cis r4 } |
+    cis8\mf cis r4 |
+    cis8 cis r4 |
+    \mBreak
+
+    % cl2 p1 8
     \mark #3 |
-    h8\ff r r4 |
+    d8\ff r r4 |
     R2*7 |
     <<
       {
@@ -1247,7 +1241,7 @@ clarinet_II = {
       \new CueVoice {
         \set instrumentCueName = "Viol.I"
         \stemUp {
-          c,,8 r d r |
+          c,8 r d r |
           e8 r f r |
           e8 g d4 |
           c8 a g r |
@@ -1255,78 +1249,83 @@ clarinet_II = {
       }
     >>
     R2*4 |
+    e'2\mf |
+    es2\cresc |
+    e2 |
     \mBreak
     
-    % cl2 p1 11
-    c'2\mf |
-    c2 |
-    c2 \cresc |
-    c2 |
-    g2 |
-    as2 |
-    g2 |
-    as2 |
-    g'2\f |
-    as2 |
-    g2 |
-    as2 |
-    g2\ff |
-    as2 |
+    % cl2 p1 9
+    es2\< |
+    e2 |
+    es2 |
+    e2 |
+    es2 |
+    e'2\f |
+    es2 |
+    e2 |
+    es2 |
+    e2\ff |
+    es2 |
+    e2 |
+    es2 |
     \pBreak
-    
+
     % cl2 p2 1
-    g2 |
-    as2 |
-    e4\ff g |
-    c2 |
-    e,4 g |
-    c2 |
-    e,8 g c e, |
-    c8 es as c, |
-    e8 g c e, |
-    c8 es as c, |
+    c4 d |
+    e2 |
+    c4 d |
+    e2 |
+    \repeat unfold 2 {
+      c8 d e c |
+      as8 b c a |
+    }
+    gis8 h e gis, |
     \mBreak
-    
+
     % cl2 p2 2
-    e8 fis gis e |
-    c8 d e c |
-    e8 fis gis e |
-    c8 d e4 |
+    e8 g c e, |
+    gis8 h e gis, |
     e8 g c4 |
-    \repeat unfold 3 { e,8 g c4 }
-    \mBreak
-    
-    % cl2 p2 3
+    \repeat unfold 4 {
+      e,8 g c4 |
+    }
     \mark 4 |
-    r4 f, |
-    g4 as |
-    as4 as |
-    c4 h |
+    r4 c |
+    es4 f |
+    \mBreak
+
+    % cl2 p2 3
+    es4 f |
+    as4 g |
     R2*2 |
-    g4\ff h |
-    c4 c |
-    c8 c h4 |
-    a8 e e4 |
-    g4 h |
-    c4 c |
+    e4\ff g |
+    g4 a |
+    g8 g g4 |
+    e8 c h4 |
+    e4 g |
+    g4 a |
+    g8 g g4 |
+    e8 c h4 |
     \mBreak
-    
+
     % cl2 p2 4
-    c8 c h4 |
-    a8 e e4 |
-    c'2 |
-    \repeat unfold 3 c2 |
-    \repeat unfold 3 { c4 r } |
+    \repeat unfold 2 { 
+      g'2 |
+      as2 |
+    }
+    g4 r |
+    a4 r |
+    g4 r |
     R2 |
-    \repeat unfold 2 { c4 r } |
+    g4 r |
+    a4 r |
+    g4 r |
+    R2*5 
+    \mark 5 |
+    R2*28 |
     \mBreak
-    
     
     % cl2 p2 5
-    c4 r |
-    R2*5 |
-    \mark 5 |
-    R2*12 |
     <<
       {
         \override MultiMeasureRest.staff-position = #-6
@@ -1334,101 +1333,83 @@ clarinet_II = {
         \revert MultiMeasureRest.staff-position
       }
       \new CueVoice {
-        \set instrumentCueName = "Viol.I"
+        \set instrumentCueName = "Cl.I"
         \stemUp {
-          f,,8 r f g~ |
-          g4 f8( es |
-          f8) as( b c |
-          as8)
-        }
-        \set instrumentCueName = "Fl.I"
-        \stemUp {
-          es'([ as b]) |
+          b,8 h4. |
+          h8 c4. |
+          c8 des4. |
+          c8 r r4 |
         }
       }
     >>
-    es,,8\mf e4. |
-    e8 f4 g8 |
+    r8 gis8(\f c d |
+    e8) r es( d~ |
+    d8) e, c'( h |
+    a) r r4 |
     \mBreak
     
     % cl2 p2 6
-    as8 a4. |
-    as8 b4. |
-    b8 h4. |
-    h8 c4. |
-    des8 c4. |
-    c8 h4 b8 |
-    es,8 e4. |
-    e8 f4 g8 |
-    as8 a4. |
-    a8 b4. |
+    r8 gis( c d |
+    e8) r e( d~ |
+    d8) e, c'( h |
+    a8) r r4 |
+    c8\f r r4 |
+    R2 
+    c8 r r4 |
+    R2 |
     \mBreak
-    
+
     % cl2 p2 7
-    b8 h4. |
-    h8 c4. |
-    c8 des4. |
-    \repeat unfold 2 {
-      c8 r r4 |
-      e2~ |
-      e2~ |
-      e4. d8 |
-    }
+    c8 r r4 |
+    r8 des,\f c des |
+    c8 r r4 |
+    r8 ces\mf b ces |
+    b r r g\p
+    as8 r r des |
+    \mark 6
+    c8 r r4 |
+    R2*7 |
     \mBreak
-    
+
     % cl2 p2 8
-    f8\f r r4 |
-    \repeat unfold 2 {
-      R2 |
-      f8 r r4 |
-    }
-    r8 b,8\f as b |
-    as8 r r4 |
-    r8 b8\mf as b |
-    g8 r r fes\p |
+    r8 c\p r des |
+    r8 es r f |
+    r8 es r es |
+    r8 as, r b |
+    r8 c r des |
+    r8 es r f |
+    r8 es r es |
     \mBreak
     
     % cl2 p2 9
-    as8 r r b |
-    \mark 6
-    as8 r r4 |
-    R2*7 |
-    r8 as r b |
-    r8 c r des |
-    r8 es r b |
-    r8 c, r es |
-    r8 as r b |
+    r8 as, r b |
+    R2 |
+    r4 des'\ff |
+    c4 b |
+    as4 b |
+    R2 |
+    r4 des |
+    c4 b |
+    as4 b |
+    as4 b |
+    c2 |
     \mBreak
-    
+
     % cl2 p2 10
-    r8 c r des |
-    r8 es r b |
-    r8 c, r es |
-    R2 |
-    r4 f'\ff |
-    es4 es |
-    f4 es |
-    R2 |
-    r4 f |
-    es4 es |
-    f4 es |
-    \mBreak
-    
-    % cl2 p2 11
-    c4 es |
-    as2 |
-    f4 es |
-    f2 |
-    ges4 as |
-    b2 |
-    c4 des |
-    es4~ es8 r |
-    r4 ces\ff~ |
-    ces4 ces~ |
-    ces4 ces~ |
-    ces4 ces |
+    des4 as |
+    des2 |
+    b4 des |
+    ges2 |
+    es4 ges |
+    ces4. r8 |
+    r4 as\ff~ |
+    as4 as~ |
+    as4 as~ |
+    as4 as |
     R2*4 |
     \pBreak
+
+%{
     
     % cl2 p3 1
     \mark 7
@@ -2060,6 +2041,7 @@ clarinet_II = {
     c2\fermata |
     \bar "|."
     \mBreak
+%}
   }
 }
 
