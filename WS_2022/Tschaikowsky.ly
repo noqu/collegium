@@ -729,6 +729,167 @@ clarinet_I = {
     R2*16 |
     \mBreak
     
+    % p5 1
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2*4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Viol.I"
+        \stemUp {
+          a,8 r a h~ |
+          h4 a8 g |
+          a8 c d e |
+          c
+        }
+        \set instrumentCueName = "Fl.I"
+        \stemUp {
+          g'[ c d] |
+        }
+      }
+    >>
+    g,,8 gis4. |
+    gis8 a4 h8 |
+    c8 cis4. |
+    cis8 d4. |
+    d8 dis4. |
+    \mBreak
+    
+    % p5 2
+    dis8 e4. |
+    f8 e4. |
+    e8 dis4 d8 |
+    g,8 gis4. |
+    gis8 a4 h8 |
+    c8 cis4. |
+    cis8 d4. |
+    d8 dis4. |
+    dis8 e4. |
+    e8 f4. |
+    \mBreak
+    
+    % p5 3
+    e8 r r4 |
+    gis2~\f |
+    gis2~ |
+    gis4. fis8 |
+    e8 r r4 |
+    gis2~ |
+    gis2~ |
+    gis4. fis8 |
+    e8 r r4 |
+    a8\f r r4 |
+    R2 |
+    \mBreak
+    
+    % p5 4
+    a8 r r4 |
+    R2 |
+    \mark 14
+    a8 r r4 |
+    r8 d,\mf c d |
+    c8 r r4 |
+    r8 c h c |
+    h8 r r as\p |
+    g8 r r d' |
+    \mBreak
+    
+    % p5 5
+    c8 r r4 |
+    R2*7 |
+    r8 c\p r d |
+    r8 e r f |
+    r8 g r d |
+    r8 e, r g |
+    r8 c r d |
+    \mBreak
+    
+    % p5 6
+    r8 e r f |
+    r8 g r d |
+    r8 e, r g |
+    R2 |
+    r4 a'4\ff |
+    g4 g |
+    e4 d |
+    R2 |
+    r4 a' |
+    g4 g |
+    \mBreak
+    
+    % p5 7
+    e4 d |
+    c4 d |
+    e2 |
+    f4 g |
+    a2 |
+    b4 c |
+    d2 |
+    g,4 b |
+    es4. r8 |
+    r4 c~\fff |
+    c4 c~ |
+    \mBreak
+    
+    % p5 8
+    c4 c~ |
+    c4 c |
+    \mark 15
+    R2*4 |
+    e,4 g |
+    c4 d |
+    c8 e h4 |
+    b4 h |
+    e,4 g |
+    c4 d |
+    c8 e h4 |
+    \mBreak
+    
+    % p5 9
+    b4 h |
+    \mark 16
+    R2*6 |
+    % FIXME: Why not just g?
+    fis8\f e dis fisis |
+    gis8 fis f a |
+    R2*6 |
+    e8\f\cresc d cis eis |
+    fis e dis fisis |
+    r8 es r e |
+    \mBreak
+    
+    % p5 10
+    r8 f r f |
+    r8 fis r g |
+    r8 g r gis |
+    r8 a r a |
+    r8 ais r h |
+    es4\fff es |
+    es4 es |
+    fis,,2 |
+    es2 |
+    \mBreak
+    
+    % p5 11
+    es''4 es |
+    es4 es |
+    fis,,2 |
+    es2 |
+    c2 |
+    a2 |
+    es'2 |
+    as,2 |
+    R2*2
+    fis2~\> |
+    fis2~ |
+    fis2~ |
+    fis2\! |
+    R2\fermataMarkup
+    \bar "||"
+    \mBreak
+    
     \bar "|."
   }
 }
