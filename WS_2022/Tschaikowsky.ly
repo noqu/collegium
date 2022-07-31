@@ -473,7 +473,6 @@ clarinet_I = {
     c4 des |
     c8 es b4 |
     ces4 b |
-    as4 b |
     r4 es, |
     r4 es |
     r4 es |
@@ -671,8 +670,8 @@ clarinet_I = {
     c8 d e g |
     a,8 h cis e |
     d8 e fis a |
-    h, cis dis fis |
-    e fis gis h |
+    h,8 cis dis fis |
+    e8 fis gis h |
     \mBreak
     
     % cl1 p4 6
@@ -684,7 +683,7 @@ clarinet_I = {
     cis8 fis h,4 |
     ais8 cis fis,4 |
     d'4 e |
-    fis g |
+    fis4 g |
     \mBreak
     
     % cl1 p4 7
@@ -706,7 +705,7 @@ clarinet_I = {
     e8 a d,4 |
     cis8 e a,4 |
     h4 cis |
-    dis e |
+    dis4 e |
     dis8 fis ais,4 |
     h8 dis g,4 |
     e'4\f fis |
@@ -721,7 +720,8 @@ clarinet_I = {
     fis8 d' e,4 |
     d8 a' g4 |
     R2*2 |
-    a4 h |
+    % FIXME: ff only in cl2 ?
+    a4\ff h |
     cis4 d |
     f8 a e4 |
     dis8 fis h,4 |
@@ -816,7 +816,8 @@ clarinet_I = {
     r8 e r f |
     r8 g r d |
     r8 e, r g |
-    r8 c r d |
+    % FIXME: cresc only from cl2?
+    r8 c r d\cresc |
     \mBreak
     
     % cl1 p5 6
@@ -1409,33 +1410,30 @@ clarinet_II = {
     R2*4 |
     \pBreak
 
-%{
-    
     % cl2 p3 1
     \mark 7
-    as4\ff b |
-    c4 des |
-    c8 es b4 |
-    ces4 b |
+    c,4\ff es |
     as4 b |
-    c4 des |
-    c8 es b4 |
-    ces4 b |
+    as8 c g4 |
+    ges4 g |
+    c,4 es |
     as4 b |
-    r4 es, |
-    r4 es |
-    r4 es |
+    as8 c g4 |
+    ges4 g |
+    r4 c, |
+    r4 c |
+    r4 c |
     \mBreak
     
     % cl2 p3 2
-    r4 es |
-    as,2~ |
+    r4 c |
+    as2~ |
     as2 |
     f,2~ |
     f2 |
-    r4 es''4 |
-    \repeat unfold 3 { r4 es } |
-    as,2~ |
+    r4 c''4 |
+    \repeat unfold 3 { r4 c } |
+    as2~ |
     as2 |
     fes,2~ |
     fes2 |
@@ -1444,6 +1442,7 @@ clarinet_II = {
     % cl2 p3 3
     cis'2~\f |
     cis 2 |
+    % FIXME: I can't be bothered to add these Fag/Viol cues as they are probably unnecessary
     R2*6 |
     <<
       {
@@ -1461,236 +1460,78 @@ clarinet_II = {
         }
       }
     >>
-    b8\p r c r |
-    d8 r es r |
     \mBreak
-    
     % cl2 p3 4
-    d8 g c, r |
-    h8 d g, r |
-    R2*4 |
-    c8\p r d r |
-    e8 r f r |
-    e8 a d, r |
-    cis8 e a, r |
-    \mark 8
-    fis2~\p |
-    fis2 |
-    \mBreak
-    
-    % cl2 p3 4
-    g2~ |
-    g2 |
-    f2( |
-    es2) |
-    des2 |
-    ces2 |
-    b2 |
-    b'2 |
-    ces2~ |
-    ces2 |
-    a2 |
-    g2 |
-    f2 |
-    es2 |
-    R2*4 |
+    d,8\p r g r |
+    b8 r c r |
+    h8 h a r |
+    g8 h h, r |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R2*4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Ob.I"
+        \stemUp {
+          es'8 r f r |
+          g8 r as r |
+          g8 c f, r |
+          e8 g des r |
+        }
+      }
+    >>
     \mBreak
 
     % cl2 p3 5
-    g8\p r a r |
-    h8 r c r |
-    h8 e a, r |
-    gis8 h e, r |
-    R2*4 |
-    a8 r h r |
-    cis8 r d r |
-    cis8 fis h, r |
-    \mBreak
-    
-    % cl2 p3 6
-    ais8 cis fis, r |
-    dis2~\p |
-    dis2 |
-    e2~ |
-    e2 |
-    d2 |
-    c2 |
-    b2 |
-    as2 |
-    g2 |
-    g'2\cresc |
-    as2~ |
-    as2 |
-    \mBreak
-    
-    % cl2 p3 7
-    fis2 |
-    e2 |
-    d2 |
-    c2 |
-    \mark 9
-    h''8\f r h a |
-    r4 g8 f |
-    e8 r e d |
-    r4 c8 h |
-    e8 r c' h |
-    r4 a8 g |
-    \mBreak
-    
-    % cl2 p3 8
-    fis8 r fis e |
-    r4 d8 cis |
-    d8 r e\cresc r |
-    fis8 r g r |
-    fis8 h e, r |
-    dis8 fis h, r |
-    g'8 r a r |
-    h8 r c r |
-    \mBreak
-    
-    % cl2 p3 9
-    h8 e a, r |
-    gis8 h e, r |
-    c'8\ff r c d |
-    r4 dis8 e |
-    fis,8 r fis g |
-    r4 gis8 ais |
-    d8 r d cis |
-    r4 gis8 fis |
-    \pBreak
-    
-    % cl2 p4 1
-    gis8 r gis fis |
-    r4 e8 dis |
-    e8 r fis r |
-    gis8 r a r |
-    gis8 cis fis, r |
-    eis8 gis cis, r |
-    a'8 r h r |
-    cis8 r d r |
-    \mBreak
-    
-    % cl2 p4 2
-    cis8 ais h r |
-    b8 cis g r |
-    g4\ff r |
-    h4 r |
-    c4 r |
-    h4 r |
-    g4 r |
-    h4 r |
-    c4 r |
-    h4 r |
-    \mBreak
-    
-    % cl2 p4 3
-    \mark 11
-    g,4\sempreFf a |
-    h4 c |
-    h8 e a,4 |
-    gis8 h f4 |
-    e4 fis |
-    gis4 a |
-    gis8 cis fis,4 |
-    eis8 gis cis,4 |
-    a'4 h |
-    cis4 d |
-    \mBreak
-    
-    % cl2 p4 4
-    cis8 fis h,4 |
-    ais8 cis g4 |
-    fis4 gis |
-    ais4 h |
-    ais8 dis gis,4 |
-    % FIXME: really? why not just g?
-    fisis8 ais dis,4 |
-    as'4 b |
-    c4 des |
-    c8 f b,4 |
-    a8 c f,4 |
-    \mBreak
-    
-    % cl2 p4 5
-    b4 c |
-    d4 es |
-    d8 g c,4 |
-    h8 d g,4 |
-    c8 d e g |
-    a,8 h cis e |
-    d8 e fis a |
-    h, cis dis fis |
-    e fis gis h |
-    \mBreak
-    
-    % cl2 p4 6
-    \repeat unfold 3 {
-      cis,8 dis eis gis |
-    }
-    a,4 h |
-    cis4 d |
-    cis8 fis h,4 |
-    ais8 cis fis,4 |
-    d'4 e |
-    fis g |
-    \mBreak
-    
-    % cl2 p4 7
-    fis8 h e,4 |
-    dis8 fis dis4 |
-    e8 r r4 |
-    R2 |
-    r4 g |
-    e4 g |
-    R2*2 |
-    r4 g |
-    e4 g |
-    \mark 12
-    c,,4\mf d |
-    e4 f |
-    \mBreak
-    
-    % cl2 p4 8
-    e8 a d,4 |
-    cis8 e a,4 |
-    h4 cis |
-    dis e |
-    dis8 fis ais,4 |
-    h8 dis g,4 |
-    e'4\f fis |
-    g4 as |
-    g8 c f,4 |
-    e8 g c,4 |
-    \mBreak
-    
-    % cl2 p4 9
-    d4 e |
-    fis4 g |
-    fis8 d' e,4 |
-    d8 a' g4 |
-    R2*2 |
-    a4 h |
-    cis4 d |
-    f8 a e4 |
-    dis8 fis h,4 |
-    h4 cis |
-    \mBreak
-    
-    % cl2 p4 10
-    dis4 e |
-    c4 d |
-    e4 f |
-    d4 e |
-    fis4 g |
-    h2\ff |
-    c2 |
+    e,8\p r g r |
+    c8 r d r |
+    cis8 cis b r |
+    a8 cis cis, r |
+    \mark 8
+    a2\p |
+    ais2 |
+    h2 |
     cis2 |
     d2 |
-    \mark13
-    R2*16 |
-    \pBreak
-    
-    % cl2 p5 1
+    es2 |
+    e |
+    f2 |
+    \mBreak
+
+    % cl2 p3 6
+    ges4( des) |
+    d2 |
+    es2 |
+    f2 |
+    fis2 |
+    g2 |
+    gis2 |
+    a2 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R2*4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Viol.I"
+        \stemUp {
+          b8 r c r |
+          d8 r es r |
+          d8 g c, r |
+          h8 d as r |
+        }
+      }
+    >>
+    \mBreak
+
+    % cl2 p3 7
+    b,8\p r d r |
+    g8 r a r |
+    gis8 gis fis r |
+    e8 gis gis, r |
     <<
       {
         \override MultiMeasureRest.staff-position = #-6
@@ -1700,142 +1541,333 @@ clarinet_II = {
       \new CueVoice {
         \set instrumentCueName = "Viol.I"
         \stemUp {
-          a,8 r a h~ |
-          h4 a8 g |
-          a8 c d e |
-          c
-        }
-        \set instrumentCueName = "Fl.I"
-        \stemUp {
-          g'[ c d] |
+          c'8 r d r |
+          e8 r f r |
+          e8 a d, r |
+          cis8 e b r |
         }
       }
     >>
-    g,,8 gis4. |
-    gis8 a4 h8 |
-    c8 cis4. |
-    cis8 d4. |
-    d8 dis4. |
+    \mBreak
+
+    % cl2 p3 8
+    cis,8 r e r |
+    a8 r h r |
+    ais8 ais gis r |
+    fis8 ais ais, r |
+    fis2\p |
+    % FIXME: See above
+    fisis2 |
+    gis2 |
+    ais2 |
+    h2 |
+    c2 |
+    \mBreak
+
+    % cl2 p3 9
+    des2 |
+    d2\cresc |
+    es4( b) |
+    h2 |
+    c2 |
+    d2 |
+    dis2 |
+    e2 |
+    f2 |
+    fis2 |
+    \mark 9
+    h8\f r h c |
+    r4 cis8 d |
     \mBreak
     
+    % cl2 p3 10
+    e,8 r e f |
+    r4 fis8 gis |
+    a8 r c d |
+    r4 dis8 e |
+    fis,8 r fis g |
+    r4 gis8 ais |
+    fis8 r a\cresc r |
+    d8 r e r |
+    \mBreak
+
+    % cl2 p3 11
+    dis8 dis cis r |
+    h8 dis dis, r |
+    h'8 r d r |
+    g8 r a r |
+    gis8 gis fis r |
+    e8 gis gis, r |
+    e'8\ff r e f |
+    \pBreak
+
+    % cl2 p4 1
+    r4 fis8 e |
+    ais,8 r ais ais |
+    r4 h8 ais |
+    fis'8 r fis g |
+    r4 eis8 fis |
+    gis,8 r gis a |
+    r4 ais8 his |
+    gis8 r h r |
+    \mBreak
+
+    % cl2 p4 2
+    e8 r fis r |
+    eis8 eis dis r |
+    cis8 eis eis, r |
+    cis'8 r e r |
+    a8 r h r |
+    ais8 fis gis r |
+    g8 b b, r |
+    \mBreak
+    
+    % cl2 p4 3
+    h4\ff r |
+    g'4 r |
+    g4 r |
+    g4 r |
+    h,4 r |
+    g'4 r |
+    g4 r |
+    g4 r |
+    \mark 11
+    h,,4\sempreFf d |
+    g4 a |
+    gis8 gis fis4 |
+    \mBreak
+
+    % cl2 p4 4
+    e8 gis a,4 |
+    gis4 h |
+    e4 fis |
+    eis8 eis dis4 |
+    cis8 eis eis,4 |
+    cis'4 e |
+    a4 h |
+    ais8 ais gis4 |
+    fis8 ais h,4 |
+    ais4 cis |
+    \mBreak
+
+    % cl2 p4 5
+    fis4 gis |
+    % FIXME: See above
+    fisis8 fisis eis4 |
+    dis8 fisis fisis,4 |
+    c'4 es |
+    as4 b |
+    a8 a g4 |
+    f8 a a,4 |
+    d4 f |
+    b4 c |
+    h8 h a4 |
+    \mBreak
+    
+    % cl2 p4 6
+    g8 h h,4 |
+    e8 g c e |
+    cis,8 e a cis |
+    fis,8 a d fis |
+    dis,8 fis h dis |
+    gis,8 h e gis |
+    eis,8 gis cis eis |
+    \mBreak
+
+    % cl2 p4 7
+    eis,8 gis cis eis |
+    eis,8 gis cis eis |
+    cis,4 e |
+    ais4 h |
+    ais8 ais gis4 |
+    fis8 ais ais,4 |
+    fis'4 a |
+    d e |
+    dis8 dis cis4 |
+    \mBreak
+    
+    % cl2 p4 8
+    h8 dis c4 |
+    c8 r r4 |
+    R2 |
+    r4 g' |
+    e4 g |
+    R2*2 |
+    r4 g |
+    e4 g |
+    \mark 12
+    e,,4\mf g |
+    c4 d |
+    cis8 cis h4 |
+    \mBreak
+    
+    % cl2 p4 9
+    % FIXME: Hand-written cresc.?
+    a8\cresc cis f,4 |
+    h4 fis |
+    h4 cis |
+    h8 dis g,4 |
+    fis8 h e,4 |
+    g4\f h |
+    e4 f |
+    e8 e d4 |
+    c8 e as,4 |
+    \mBreak
+    
+    % cl2 p4 10
+    fis4 a |
+    d4 e |
+    d8 fis b,4 |
+    a8 d h4 |
+    R2*2 |
+    % FIXME: No ff in cl1 ?
+    a'4\ff h |
+    cis4 d |
+    f8 a e4 |
+    dis8 fis h,4 |
+    h4 cis |
+    \mBreak
+
+    % cl2 p4 11
+    dis4 e |
+    c4 d |
+    e4 f |
+    d4 e |
+    fis4 g |
+    g2\ff |
+    as2 |
+    a2 |
+    h2 |
+    \mark13
+    R2*32 |
+    \pBreak
+    
+    % cl2 p5 1
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2*4 |
+        \revert MultiMeasureRest.staff-position
+        r8\f c,8( e fis |
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Cl.I"
+        \stemUp {
+          d8 dis4. |
+          dis8 e4. |
+          e8 f4. |
+          e8 r r4 |
+          gis2 |
+        }
+      }
+    >>
+    gis8) r8 gis( fis~ |
+    fis8) gis, e'( dis |
+    cis8) r r4 |
+    \mBreak
+
     % cl2 p5 2
-    dis8 e4. |
-    f8 e4. |
-    e8 dis4 d8 |
-    g,8 gis4. |
-    gis8 a4 h8 |
-    c8 cis4. |
-    cis8 d4. |
-    d8 dis4. |
-    dis8 e4. |
-    e8 f4. |
-    \mBreak
-    
-    % cl2 p5 3
-    e8 r r4 |
-    gis2~\f |
-    gis2~ |
-    gis4. fis8 |
-    e8 r r4 |
-    gis2~ |
-    gis2~ |
-    gis4. fis8 |
-    e8 r r4 |
+    r8 c8( e fis |
+    gis8) r8 gis( fis~ |
+    fis8) gis, e'( dis |
+    cis8) r r4 |
     a8\f r r4 |
     R2 |
+    a8 r r4 |
+    R2 |
+    \mBreak
+   
+    
+    % cl2 p5 3
+    \mark 14
+    a8 r r4 |
+    r8 f\mf e f |
+    e8 r r4 |
+    r8 es d es |
+    d8 r r h\p |
+    c8 r r f |
+    e8 r r4 |
+    R2*7 |
     \mBreak
     
     % cl2 p5 4
-    a8 r r4 |
-    R2 |
-    \mark 14
-    a8 r r4 |
-    r8 d,\mf c d |
-    c8 r r4 |
-    r8 c h c |
-    h8 r r as\p |
-    g8 r r d' |
+    r8 e\p r f |
+    r8 g r a |
+    r8 g r g |
+    r8 c, r d |
+    % FIXME: cresc only in cl2?
+    r8 e r f\cresc |
+    r8 g r a |
     \mBreak
     
     % cl2 p5 5
-    c8 r r4 |
-    R2*7 |
-    r8 c\p r d |
-    r8 e r f |
-    r8 g r d |
-    r8 e, r g |
-    r8 c r d |
+    r8 g r g |
+    r8 c, r d |
+    R2 |
+    r4 d'4\ff |
+    c4 h |
+    a4 g |
+    R2 |
+    r4 d' |
+    c4 h |
+    a4 g |
     \mBreak
-    
+
     % cl2 p5 6
-    r8 e r f |
-    r8 g r d |
-    r8 e, r g |
-    R2 |
-    r4 a'4\ff |
-    g4 g |
-    e4 d |
-    R2 |
-    r4 a' |
-    g4 g |
-    \mBreak
-    
-    % cl2 p5 7
-    e4 d |
-    c4 d |
-    e2 |
-    f4 g |
-    a2 |
-    b4 c |
-    d2 |
+    e4 g |
+    c2 |
+    a4 c |
+    f2 |
+    d4 f |
+    b2 |
     g,4 b |
     es4. r8 |
-    r4 c~\fff |
-    c4 c~ |
+    r4 es~\fff |
+    es4 es~ |
+    es4 es~ |
     \mBreak
-    
-    % cl2 p5 8
-    c4 c~ |
-    c4 c |
+
+    % cl2 p5 7
+    es4 es |
     \mark 15
     R2*4 |
     e,4 g |
     c4 d |
-    c8 e h4 |
-    b4 h |
+    c8 e g4 |
+    g4 g |
     e,4 g |
     c4 d |
-    c8 e h4 |
-    \mBreak
-    
-    % cl2 p5 9
-    b4 h |
+    c8 e g4 |
+    g4 g |
     \mark 16
     R2*6 |
-    % FIXME: Why not just g?
+    \mBreak
+    
+    % cl2 p5 8
+    % FIXME: See above
     fis8\f e dis fisis |
     gis8 fis f a |
     R2*6 |
     e8\f\cresc d cis eis |
     fis e dis fisis |
-    r8 es r e |
-    \mBreak
-    
-    % cl2 p5 10
-    r8 f r f |
-    r8 fis r g |
-    r8 g r gis |
+    r8 g, r g |
     r8 a r a |
-    r8 ais r h |
-    es4\fff es |
-    es4 es |
+    \mBreak
+
+    % cl2 p5 9
+    r8 a r h |
+    r8 h r h |
+    r8 cis r cis |
+    r8 cis r dis |
+    c'4\fff c |
+    c4 c |
     fis,,2 |
     es2 |
     \mBreak
     
     % cl2 p5 11
-    es''4 es |
-    es4 es |
+    c''4 c |
+    c4 c |
     fis,,2 |
     es2 |
     c2 |
@@ -1851,6 +1883,7 @@ clarinet_II = {
     \bar "||"
     \pBreak
     
+%{
     % cl2 p6 1
     \tempo "Presto."
     c'4\p d |
