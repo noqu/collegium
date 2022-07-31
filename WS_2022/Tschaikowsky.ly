@@ -407,6 +407,7 @@ clarinet_I = {
       e2~ |
       e4. d8 |
     }
+    c8 r r4 |
     \mBreak
     
     % cl1 p2 8
@@ -417,7 +418,7 @@ clarinet_I = {
     }
     r8 b,8\f as b |
     as8 r r4 |
-    r8 b8\mf as b |
+    r8 as8\mf g as |
     g8 r r fes\p |
     \mBreak
     
@@ -1883,198 +1884,214 @@ clarinet_II = {
     \bar "||"
     \pBreak
     
-%{
     % cl2 p6 1
     \tempo "Presto."
-    c'4\p d |
-    e2 |
-    d4 e |
-    fis2 |
-    e4 fis |
-    gis4 a |
-    a4 as |
-    g4 h |
-    c4 d |
-    e2 |
-    d4 e |
-    fis2 |
-    e4 fis |
+    e4\p g |
+    cis2 |
+    fis,4 a |
+    dis2 |
+    gis,4 h |
+    e4 cis |
+    c4 c |
+    h4 d |
+    e4 g |
+    cis2 |
+    f,4 a |
+    dis2 |
+    gis,4 h |
     \mBreak
     
     % cl2 p6 2
-    gis4\< a |
-    a4 as |
-    g4 a |
-    a4 as |
-    g4\mf\> a |
-    a4 as |
-    g4 r\! |
-    c,,4\p d |
-    e2 |
-    d4 e |
-    fis2 |
-    e4 fis |
-    gis4 a |
-    a4 as |
+    e4\< e |
+    f4 f |
+    e4 e |
+    f4 f |
+    e4\mf\> e |
+    f4 f |
+    d4 r\! |
+    e,,4\p g |
+    cis2 |
+    fis,4 a |
+    dis2 |
+    gis,4 h |
+    e4 cis |
+    c4 c | 
     \mBreak
     
     % cl2 p6 3
-    g4 h | 
-    c4 d | 
-    e2 | 
-    d4 e | 
-    fis2 | 
-    e4 fis | 
-    gis4\< a | 
-    a4 as | 
-    g4 a | 
-    a4 as | 
-    g4\mf\> a | 
-    a4 as | 
-    g4 r\! | 
+    h4 d |
+    e4 g |
+    cis2 |
+    f,4 a |
+    dis2 |
+    gis,4 h |
+    e4\< e |
+    f4 f |
+    e4 e |
+    f4 f |
+    e4\mf\> e |
+    f4 f |
+    d4 r\! |
     \mark 17
-    g2\sempreFf | 
-    g2 |
+    e2\sempreFf | 
+    d2 |
     \mBreak
     
     % cl2 p6 4
-    cis2 |
-    c2 |
-    c2 |
-    h2 |
-    a2 |
-    \repeat unfold 3 g2 |
-    cis2 |
-    c2 |
-    c2 |
-    h2 |
-    a2 |
-    \repeat unfold 3 g2 |
-    cis2~ |
-    cis |
+    g2 |
+    as2 |
+    g2 |
+    g2 |
+    c,2 |
+    d2 |
+    e2 |
+    d2 |
+    g2 |
+    as2 |
+    g2 |
+    g2 |
+    e2 |
+    d2 |
+    e2 |
+    d2 |
+    g2~ |
+    g |
     \mBreak
     
     % cl2 p6 5
-    \repeat unfold 4 c2 |
-    \repeat unfold 2 {
-      c4 g |
-      c2~ |
-      c4 d |
-      c4 h 
-    }
-    h2 |
-    gis2 |
+    f2 |
+    g2 |
+    as2 |
     a2 |
-    a2 |
+    g4 g | 
+    e2~ |
+    e4 g |
+    c,4 d |
+    e4 g |
+    e2~ |
+    e4 g |
+    c,4 d |
+    g2 |
+    e2 |
+    e2 |
+    f2 |
     \mBreak
     
     % cl2 p6 6
-    gis2 |
-    a2 |
-    a2 |
-    \repeat unfold 3 g2 |
-    cis2 |
-    c2 |
-    c2 |
-    h2 |
-    a2 |
-    \repeat unfold 3 g2 |
-    cis2 |
-    c2 |
-    c2 |
-    h2 |
+    e2 |
+    e2 |
+    d2 |
+    d2 |
+    e2 |
+    d2 |
+    g2 |
+    as2 |
+    g2 |
+    g2 |
+    c,2 |
+    d2 |
+    e2 |
+    d2 |
+    g2 |
+    as2 |
+    g2 |
+    g2 |
     \mBreak
     
     % cl2 p6 7
+    c,2 |
+    d2 |
+    e2 |
+    d2 |
+    g2~ |
+    g2 |
+    f2 |
+    g2 |
+    as2 |
     a2 |
-    \repeat unfold 3 g2 |
-    cis2~ |
-    cis2 |
-    \repeat unfold 4 c2 |
-    c4 g4 |
-    c2~ |
-    c4 d |
-    c4 h |
-    c4 g |
-    c2~ |
-    c4 d |
+    g4 g |
+    e2~ |
+    e4 g |
+    c,4 d |
+    e4 g |
+    e2~ |
+    e4 g |
     \mBreak
     
     % cl2 p6 8
-    c4 h |
-    c2~ |
-    c2 |
-    as2~ |
-    as2 |
-    gis2~ |
-    gis |
-    a2 |
-    gis2 |
+    c,4 d |
+    e2~ |
+    e2 |
+    es2~ |
+    es2 |
+    e2~ |
+    e |
+    e2 |
+    e2 |
+    e4 a |
+    a2~ |
     a4 a |
-    c2~ |
-    c4 c |
-    c4 c |
-    c4 a |
-    c2~ |
-    c4 c |
+    g4 a |
+    a4 a |
+    a2~ |
+    a4 a |
     \mBreak
     
     % cl2 p6 9
-    c4 c |
+    g4 a |
+    a2 |
+    g2 |
     c2 |
     c2 |
-    d2 |
-    dis2 |
     \mark 18
-    e4 r |
+    c4 r |
     R2*4 |
-    d2~ |
-    d2~ |
-    d2 |
-    g,2 |
+    c2~ |
+    c2 |
+    h2 |
+    e,2 |
     \startMeasureCount
-    \repeat unfold 5 c2 |
+    \repeat unfold 6 as2 |
+    \stopMeasureCount
     \mBreak
     
     % cl2 p6 10
-    c2 |
-    c2 |
-    \stopMeasureCount
-    cis2 |
-    cis2 |
-    c2 |
-    h2 |
     g2 |
+    g2 |
+    gis2 |
+    a2 |
+    g2 |
+    e2 |
     \startMeasureCount
-    \repeat unfold 7 c2 |
+    \repeat unfold 6 as2 |
     \stopMeasureCount
-    cis2 |
-    cis2 |
-    c2 |
+    g2 |
+    g2 |
+    gis2 |
+    a2 |
+    gis2 |
     \mBreak
     
     % cl2 p6 11
-    cis2 |
-    \repeat unfold 8 {
-      c2 |
-      h2 |
-    }
+    a2 |
+    \startMeasureCount
+    \repeat unfold 15 g2 |
     \mBreak
     
     % cl2 p6 12
-    c2 |
-    h2 |
+    g2 |
+    g2 |
+    \stopMeasureCount
     \startMeasureCount
-    \repeat unfold 9 g2 |
+    \repeat unfold 9 e2 |
     \stopMeasureCount
     R2 |
-    c2 |
+    g2 |
     R2 |
     c,,2~ |
     c2\fermata |
     \bar "|."
     \mBreak
-%}
   }
 }
 
@@ -2107,7 +2124,6 @@ clarinet_II = {
 }
 %}
 
-%{
 \bookpart {
   \header{
     instrument = "Klarinette I in C"
@@ -2124,8 +2140,6 @@ clarinet_II = {
     }
   }
 }
-%}
-
 
 \bookpart {
   \header{
