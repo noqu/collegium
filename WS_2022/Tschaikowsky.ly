@@ -2126,7 +2126,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in C"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
@@ -2135,7 +2135,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose c c \clarinet_I
+        \transpose c d \clarinet_I
       }
     }
   }
@@ -2143,7 +2143,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in C"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
@@ -2152,7 +2152,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose c c \clarinet_II
+        \transpose c d \clarinet_II
       }
     }
   }

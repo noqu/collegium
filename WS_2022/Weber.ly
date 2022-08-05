@@ -19,8 +19,8 @@
 
 % Adapt this for automatic line-breaks
 mBreak = {}
-mBreak = { \break }
-#(set-global-staff-size 16)
+% mBreak = { \break }
+#(set-global-staff-size 18.5)
 
 % Useful snippets
 pCresc = _\markup { \dynamic p \italic "cresc." }
@@ -737,7 +737,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
@@ -746,7 +746,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a a \clarinet_I
+        \transpose b a \clarinet_I
       }
     }
   }
@@ -755,7 +755,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
@@ -764,7 +764,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a a \clarinet_II
+        \transpose b a \clarinet_II
       }
     }
   }
