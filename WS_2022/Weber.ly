@@ -18,9 +18,9 @@
 }
 
 % Adapt this for automatic line-breaks
-mBreak = {}
-% mBreak = { \break }
-#(set-global-staff-size 18.5)
+% mBreak = {}
+mBreak = { \break }
+#(set-global-staff-size 17)
 
 % Useful snippets
 pCresc = _\markup { \dynamic p \italic "cresc." }
@@ -62,11 +62,13 @@ pocoAPocoAccel = ^\markup {\italic {"poco a poco accel."} }
 pocoAPocoAccelAlD = ^\markup {\italic {"poco a poco accel. al D"} }
 sempreAccel = ^\markup {\italic {"sempre accel."} }
 solo = ^\markup { "Solo" }
+tutti = ^\markup { "Tutti" }
 piuF = _\markup { \italic "più" \dynamic f }
 piuP = _\markup { \italic "più" \dynamic p }
 lento = ^\markup { \italic "Lento" }
 accel = ^\markup { \bold { "accel." } }
 tempoPrimo = ^\markup { \italic { "Tempo I" } }
+cadenza = ^\markup { \italic {"Cadenza"} }
 
 % Adapted from http://lsr.di.unimi.it/LSR/Snippet?id=655
 % Make title, subtitle, instrument appear on pages other than the first
@@ -115,7 +117,7 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
 % ---------------------------------------------------------
 
 clarinet_I = {
-  \set Score.markFormatter = #format-mark-alphabet
+  \set Score.markFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \compressFullBarRests
   \defaultTimeSignature
@@ -125,23 +127,24 @@ clarinet_I = {
   \clef violin
   \relative c' {
     % p1 1
+    \tutti
     g''1\ff~ |
     g2 r \fermata |
     d1\pp\<~ |
     d2\> r\! \fermata
-    \mBreak
-    
-    % p1 2
+    \mark #1
     \time 6/8
+    \tempo "Andante"
+    \solo
     R1*6/8*6 |
     a2.(\p |
     b4. f |
     g4. es |
-    d4.) r |
-    R1*6/8*7 |
     \mBreak
     
-    %p1 3
+    % p1 2
+    d4.) r |
+    R1*6/8*7 |
     r8 d'(\pp d d cis c |
     b8) r8 r r4. |
     r8 d( d d cis c |
@@ -151,264 +154,372 @@ clarinet_I = {
     \bar "||"
     \mBreak
     
-    %p1 4
+    % p1 3
+    \mark #2
     \time 2/4
+    \tempo "Andante con moto"
     \key g \major
     \repeat volta 2 {
       R1*2/4*8
     }
+    \mark #3
     \repeat volta 2 {
       R1*2/4*8
     }
+    \mark #4
+    \tutti
     h'4(\f g) |
     e8( fis g a) |
     \slashedGrace g8 fis8-. e-. fis4 |
     g4( d) |
-    \mBreak
-    
-    %p1 5
     h'4( g) |
     e8( fis g a) |
-    \slashedGrace g8 fis8-. e-. fis4 |
-    g4.-. r8 |
-    \repeat volta 2 {
-      R1*2/4*8
-    }
-    \repeat volta 2 {
-      R1*2/4*8
-    }
     \mBreak
     
-    %p1 6
-    R1*2/4 |
-    r4 r8 c, |
+    % p1 4
+    \slashedGrace g8 fis8-. e-. fis4 |
+    g4. r8 |
+    \mark #5
+    \solo
+    \repeat volta 2 {
+      R1*2/4*8
+    }
+    \mark #6
+    \repeat volta 2 {
+      R1*2/4*8
+    }
+    \mark #7
+    \tutti
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #0
+        R1*2/4 |
+        r4 r8 c,\p |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Viol.I"
+        \stemUp {
+          c'8^( h a g |
+          fis8 e d) 
+        }
+      }
+    >>
     h( c d e |
     h4 a8) r |
     R1*2/4*4 |
     \mBreak
     
-    %p1 7
+    % p1 5
+    \mark #8
+    \solo
     \repeat volta 2 {
       g'8\f r r4 |
       R1*2/4 |
-      a8 r r a |
+      a8\f r r a |
       g8 r r4 |
-      g8 r r4 |
+      g8\f r r4 |
       R1*2/4 |
-      a8 r r a |
+      a8\f r r a |
       g8 r r4 |
     }
-    \mBreak
-    
-    %p1 8
+    \mark #9
     \repeat volta 4 {
       R1*2/4*4 |
-      g8\ff r r4 |
-      R1*2/4 |
-      a8 r r a |
-      g8 r r4 |
-    }
-    fis4(\ff g8) r |
-    R1*2/4 |
-    a8\p a a a |
     \mBreak
     
-    %p1 9
-    g2 |
-    fis4(\ff\> g8)\! r |
+    % p1 6
+      g8\f r r4 |
+      R1*2/4 |
+      a8\f r r a |
+      g8 r r4 |
+    }
+    \mark #10
+    \tutti
+    fis4->(\ff g8) r |
     R1*2/4 |
-    a8\pp a a a |
+    a8\p a a a |
+    g2 |
+    fis4(->\ff g8) r |
+    R1*2/4 |
+    \mBreak
+    
+    % p1 7
+    a8\p a a a |
+    \mark #11
+    \solo
     \repeat volta 2 {
-      g4\f r |
+      g4 r |
       R1*2/4*7 |
     }
+    \mark #12
     \repeat volta 2 {
       R1*2/4*8 |
     }
-    \mBreak
-    
-    %p1 10
+    \mark #13
+    \tutti
     R1*2/4*7
-    \mBreak
-    
-    %p2 1
+    \mark #14
     \repeat volta 2 {
-      R1*2/4 |
-      r8. h,16-.\< \grace d32 c16-. h-. c8~\! |
-      c8 r r4 |
+      <<
+        {
+          \solo
+          \override MultiMeasureRest.staff-position = #-4
+          R1*2/4 |
+          r8. h,16-.\p\< \grace d32 c16-. h-. c8~\! |
+          \revert MultiMeasureRest.staff-position
+        }
+        \new CueVoice {
+          \set instrumentCueName = "Viol.I"
+          \stemUp {
+            h16 h[ h h] h h h h|
+            r32 e[ a h] c16
+          }
+        }
+      >>
+      \mBreak
+      
+      %p1 8
+      c,8 r r4 |
       r16 d-.\< g-. h-. d-.\> h-. c-. a-.\! |
       h8 r r4 |
       r8. h,16-.\< c-. h-. c8~\! |
       c8 r r4 |
+      r16 h'-.\p g-. h-. g8 r |
+    }
+    \mark #15
+    \repeat volta 2 {
+      fis8\f r g r |
       \mBreak
       
-      %p2 2
-      r16 h' g h g8 r |
-    }
-    \repeat volta 2 {
-      fis8 r g r |
+      %p1 9
       fis8 r r4 |
       R1*2/4 |
       d32\ff( e fis g a h c h a g fis e d c h a) |
       g8 r r4 |
+      r8. h16-.\p\< c-. h-. c8~\! |
+      c8 r r4 |
       \mBreak
 
-      %p2 3
-      r8. h16-.\< c-. h-. c8~\! |
-      c8 r r4 |
+      %p1 10
       r16 d-.\< g-. h-. d-.\> h-. c-. a-.\! |
       h8 r r4 |
       r8. h,16-.\< c-. h-. c8~\! |
       c8 r r4 |
-      \mBreak
-
-      %p2 4
-      r16 h' g h g8 r |
+      r16 h'-.\p g-. h-. g8-. r |
     }
+    \mark #16
+    \tutti
     h2~\ff |
     h2~ |
     h2 |
     c2 |
+    \mBreak
+
+    % p1 10
     r16 fis,( g a b a b g) |
     fis8 fis4.~ |
     fis2~ |
+    \mark #17
+    \bar "||"
+    \time 4/4
+    fis4 r\fermata ^\markup { "Recit." } \solo r2 |
+    R1*8 |
+    \mark #18
+    R1*16 |
+    \mark #19
+    R1\fermataMarkup\cadenza
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R1 |
+        R1\fermataMarkup |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Timp."
+        \clef bass
+        \stemDown {
+          d,,1 |
+          d4 r r2\fermata |
+        }
+      }
+    >>
+    \clef violin
+    \bar "||"
     \mBreak
     
-    %p2 5
-    fis4\fermata r |
-    \bar "||"
-    R1*2/4*26 ^\markup { "Recit." } |
-    R1*2/4\fermataMarkup
-    \bar "||"
-    \mBreak
-    
-    %p2 6
+    % p2 1
     \time 3/4
+    \mark #20
     \tempo "Polacca"
+    \solo
     R1*3/4*8 |
-    h8\ff \repeat unfold 5 { h8 } |
+    \mark #21
+    \tutti
+    h'''8\ff \repeat unfold 5 { h8 } |
     r8 \repeat unfold 5 { c8 } |
-    \repeat unfold 3 { a16 fis d8 } |
+    \repeat unfold 3 { a16( fis) d8-.-> } |
     \repeat unfold 4 h'8 h4-> |
-    \mBreak
-    
-    %p2 7
     h8 \repeat unfold 5 { h8 } |
     r8 \repeat unfold 5 { c8 } |
-    \repeat unfold 3 { a16 fis d8 } |
-    \repeat unfold 4 h'8 h4-> |
-    R1*3/4*8 |
+    \repeat unfold 3 { a16( fis) d8-.-> } |
     \mBreak
     
-    %p2 8
+    % p2 2
+    \repeat unfold 4 h'8 h4-> |
+    \mark #22
+    \solo
+    R1*3/4*8 |
+    \mark #23
+    \tutti
     r8 fis\ff fis fis g g |
     r8 \repeat unfold 5 { fis } |
     r8 \repeat unfold 3 f e e |
-    d8 fis4 \repeat unfold 3 fis8 |
+    d8 fis4-> \repeat unfold 3 fis8 |
     r8 \repeat unfold 5 h |
     r8 \repeat unfold 5 c |
     \mBreak
     
-    %p2 9
-    \repeat unfold 3 { a16 fis d8 } |
+    % p2 3
+    \repeat unfold 3 { a16( fis) d8-.-> } |
     \repeat unfold 4 h'8 h4 |
+    \mark #24
+    \solo
     R1*3/4*2 |
     c2.(\p |
     h8) r8 r4 r |
-    R1*3/4*8 |
-    \mBreak
-    
-    %p2 10
-    fis2.\f |
-    g2.~ |
-    g4 r r |
     R1*3/4*4 |
+    \mark #25
+    R1*3/4*4 |
+    \tutti
+    fis2.(\f |
+    g2.)~ |
+    g4 r r |
+    R1*3/4 |
+    \mark #26
+    \solo
+    R1*3/4*3 |
+    \mBreak
+    
+    % p2 4
     r8 c,8-.(\pp \repeat unfold 3 c-. c-.)|
-    R1*3/4*5 |
+    R1*3/4*4 |
+    \mark #27
+    \solo
+    R1*3/4*1 |
+    r8 g'16(\p fis f e f d c h \grace h32 a16 g) |
+    R1*3/4*6 |
+    \mark #28
+    R1*3/4*3 |
+    \tutti
+    r8 \grace { as'32 g fis } g8\ff r g\turn r g\turn |
+    r8 b8 r b g,4-> |
+    R1*3/4*2 |
     \mBreak
     
-    %p3 1
-    r8 g'16( fis f e f d c h \grace h32 a16 g) |
-    R1*3/4*9 |
+    % p2 5
     r8 \grace { as'32 g fis } g8\ff r g\turn r g\turn |
-    r8 \grace { c32 b a } b8 r b\turn g,4 |
-    \mBreak
-    
-    %p3 2
+    r8 b8 r b g,4-> |
     R1*3/4*2 |
-    r8 \grace { as'32 g fis } g8\ff r g\turn r g\turn |
-    r8 \grace { c32 b a } b8 r b\turn g,4 |
-    R1*3/4*2 |
+    \mark #29
     es'2.\ff |
     as2. |
-    \mBreak
-    
-    %p3 3
     g2. |
-    \repeat unfold 4 f8 f4 |
-    es,8\p b''4-> a16 b c b as g |
-    as8 c4 h16 c d c b as |
+    \repeat unfold 4 f8 f4-> |
+    \mBreak
+    
+    % p2 6
+    \solo
+    es,8\p b''4->( a16 b c b as g) |
+    as8-. c4( h16 c d c b as) |
     g4. es16 g g fis es d |
+    d8 d16 es d4(-> es8) r |
     \mBreak
     
-    %p3 4
-    d8 d16 es d4(\> es8)\! r |
-    es,8 b''4 a16 b c b as g |
-    as8 c4 h16 c d c b as |
+    % p2 7
+    \mark #30
+    es,8 b''4->( a16 b c b as g) |
+    as8-. c4( h16 c d c b as) |
     g8 b4 g16 b b as g fis |
-    \mBreak
-    
-    %p3 5
     \repeat unfold 4 f8 g r |
     g2\ff as8 c |
+    \mBreak
+    
+    % p2 8
     b2. |
     b4. g8 as c |
     b2.~\> |
     b2.~ |
     b4\! r r |
-    \mBreak
-    
-    %p3 6
-    R1*3/4*11 |
+    R1*3/4*3 |
+    \mark #31
+    \solo
+    R1*3/4*8 |
+    \mark #32
+    \tutti
     h8\ff \repeat unfold 5 h8 |
     r8 \repeat unfold 5 c |
-    \repeat unfold 3 { a16 fis d8 } |
+    \mBreak
+    
+    % p2 9
+    \repeat unfold 3 { a16( fis) d8-.-> } |
     \repeat unfold 4 h'8 h4-> |
-    \repeat unfold 6 h8 |
+    r8 \repeat unfold 5 h8 |
     r8 \repeat unfold 5 c |
-    \mBreak
-    
-    %p3 7
-    \repeat unfold 3 { a16 fis d8 } |
+    \repeat unfold 3 { a16( fis) d8-.-> } |
     \repeat unfold 4 h'8 h4-> |
-    R1*3/4*20 |
-    r8 g,-.\pp\< h-. d-. g-. h-.\! |
-    d4 r c |
+    \mark #33
+    R1*3/4*8 |
+    \mark #34
+    R1*3/4*11 |
     \mBreak
     
-    %p3 8
+    % p2 10
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R1*3/4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Cor. primo"
+        \stemUp {
+          c,4. g'16 e c g e c |
+        }
+      }
+    >>
+    \mark #35
+    r8 g'-.\pp\< h-. d-. g-. h-.\! |
+    d4-. r c-. |
     h8 r r4 r |
     R1*3/4*3 |
     d,2.~\pp |
     d2. |
     r8 \repeat unfold 5 a' |
-    r8 \repeat unfold 5 a |
-    R1*3/4*5 |
     \mBreak
     
-    %p3 9
-    d,8-. h'4(\> a16 g\! fis a g e) |
+    % p2 11
+    r8 \repeat unfold 5 a |
+    \mark #36
+    R1*3/4*5 |
+    \solo
+    d,8-. h'4(-> a16 g fis a g e) |
     d8 r r4 r |
     d8-. h'4( a16 g fis a g e) |
-    d4 r r |
     \mBreak
     
-    %p3 10
-    R1*3/4*8 |
+    % p2 12
+    \mark #37
+    d4 r r |
+    R1*3/4*7 |
+    \mark #38
+    R1*3/4 |
+    \tutti
     c'2.\ff
     h2.~ |
     h2. |
-    g8 h g h g h |
+    g8-. h-. g-. h-. g-. h-. |
     g4 g g |
     g4 r r 
     \bar "|."
@@ -416,7 +527,7 @@ clarinet_I = {
 }
 
 clarinet_II = {
-  \set Score.markFormatter = #format-mark-alphabet
+  \set Score.markFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \compressFullBarRests
   \defaultTimeSignature
@@ -718,7 +829,7 @@ clarinet_II = {
   \score {
     \new Staff {
       \compressFullBarRests
-      \set Score.markFormatter = #format-mark-box-alphabet
+      \set Score.markFormatter = #format-mark-box-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       <<
@@ -737,16 +848,16 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in Bb"
+    instrument = "Klarinette I in A"
   }
   \score {
     \new Staff {
       \compressFullBarRests
-      \set Score.markFormatter = #format-mark-box-alphabet
+      \set Score.markFormatter = #format-mark-box-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose b a \clarinet_I
+        \transpose b b \clarinet_I
       }
     }
   }
@@ -760,11 +871,11 @@ clarinet_II = {
   \score {
     \new Staff {
       \compressFullBarRests
-      \set Score.markFormatter = #format-mark-box-alphabet
+      \set Score.markFormatter = #format-mark-box-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose b a \clarinet_II
+        \transpose b b \clarinet_II
       }
     }
   }
