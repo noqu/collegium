@@ -533,6 +533,7 @@ clarinet_II = {
   \defaultTimeSignature
   \time 4/4
   \tempo "Adagio"
+  \tutti
   \key c \major
   \clef violin
   \relative c' {
@@ -542,6 +543,7 @@ clarinet_II = {
     d1\pp\<~ |
     d2\> r\! \fermata
     \mark #1
+    \solo
     \time 6/8
     R1*5/8*6 |
     r4. f,4.~\p |
@@ -574,6 +576,7 @@ clarinet_II = {
       R1*2/4*8
     }
     \mark #4
+    \tutti
     d'2(\f |
     c2~ |
     c2 |
@@ -586,6 +589,7 @@ clarinet_II = {
     
     %p1 4
     \mark #5
+    \solo
     \repeat volta 2 {
       R1*2/4*8
     }
@@ -594,6 +598,7 @@ clarinet_II = {
       R1*2/4*8
     }
     \mark #7
+    \tutti
     R1*2/4
     R1*2/4*3 |
     R1*2/4*4 |
@@ -624,6 +629,7 @@ clarinet_II = {
       h,8 r r4 |
     }
     \mark #10
+    \tutti
     dis4(\ff e8) r |
     R1*2/4 |
     c8\p c c c |
@@ -636,6 +642,7 @@ clarinet_II = {
     % p1 7
     \repeat volta 2 {
       \mark #11
+      \solo
       h4\f r |
       R1*2/4*7 |
     }
@@ -644,8 +651,10 @@ clarinet_II = {
       R1*2/4*8 |
     }
     \mark #13
+    \tutti
     R1*2/4*7
     \mark #14
+    \solo
     \repeat volta 2 {
       R1*2/4 |
       r8. gis16-.\< a-. gis-. a8~\! |
@@ -681,6 +690,7 @@ clarinet_II = {
       r16 d h d h8 r |
     }
     \mark #16
+    \tutti
     e4\ff fis |
     e2 |
     f4 d |
@@ -722,10 +732,12 @@ clarinet_II = {
 
     % p2 1
     \mark #20
+    \solo
     \time 3/4
     \tempo "Polacca"
     R1*3/4*8 |
     \mark #21
+    \tutti
     d''8\ff \repeat unfold 5 { d8 } |
     r8 \repeat unfold 5 { e8 } |
     \repeat unfold 3 { a16 fis d8 } |
@@ -738,8 +750,10 @@ clarinet_II = {
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
     \mark #22
+    \solo
     R1*3/4*8 |
     \mark #23
+    \tutti
     r8 d\ff d d cis cis |
     r8 \repeat unfold 5 { d } |
     r8 \repeat unfold 3 d cis cis |
@@ -752,6 +766,7 @@ clarinet_II = {
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
     \mark #24
+    \solo
     R1*3/4*2 |
     fis2.(\p |
     \mBreak
@@ -761,11 +776,13 @@ clarinet_II = {
     R1*3/4*4 |
     \mark #25
     R1*3/4*4 |
+    \tutti
     dis2.\f |
     e2.~ |
     e4 r r |
     R1*3/4
     \mark #26
+    \solo
     R1*3/4*3 |
     r8 a,8-.(\pp \repeat unfold 3 a-. a-.) |
     R1*3/4*4 |
@@ -776,6 +793,7 @@ clarinet_II = {
     \mBreak
     
     % p2 5
+    \tutti
     r8 \grace { fis'32 es d } es8\ff r es\turn r es\turn |
     r8 d8 r d g,4 |
     R1*3/4*2 |
@@ -811,8 +829,10 @@ clarinet_II = {
     des4\! r r |
     R1*3/4*3 |
     \mark #31
+    \solo
     R1*3/4*8 |
     \mark #32
+    \tutti
     d8\ff \repeat unfold 5 d8 |
     r8 \repeat unfold 5 e |
     \repeat unfold 3 { a16 fis d8 } |
@@ -825,6 +845,7 @@ clarinet_II = {
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
     \mark #33
+    \solo
     R1*3/4*8 |
     \mark #34
     R1*3/4*11 |
@@ -862,6 +883,7 @@ clarinet_II = {
     R1*3/4*8 |
     \mark #38
     R1*3/4*1 |
+    \tutti
     fis2.\ff
     d2.~ |
     d2. |
