@@ -541,21 +541,17 @@ clarinet_II = {
     g2 r \fermata |
     d1\pp\<~ |
     d2\> r\! \fermata
-    \mBreak
-    
-    % p1 2
     \time 6/8
     R1*5/8*6 |
     r4. f,4.~\p |
     f2. |
     b2. |
     es4. f, |
-    b4. r |
-    R1*6/8*7 |
     \mBreak
     
-    
-    %p1 3
+    % p1 2
+    b4. r |
+    R1*6/8*7 |
     r8 a'(\pp a a a a |
     g8) r8 r r4. |
     r8 a( a a a a |
@@ -565,7 +561,7 @@ clarinet_II = {
     \bar "||"
     \mBreak
     
-    %p1 4
+    %p1 3
     \time 2/4
     \key g \major
     \repeat volta 2 {
@@ -578,30 +574,29 @@ clarinet_II = {
     c2~ |
     c2 |
     h2) |
-    \mBreak
-    
-    %p1 5
     h8 c d dis |
     e8 c d e |
     d8-. cis-. c-. a-. |
     h4. r8 |
+    \mBreak
+    
+    %p1 4
     \repeat volta 2 {
       R1*2/4*8
     }
     \repeat volta 2 {
       R1*2/4*8
     }
-    \mBreak
-    
-    %p1 6
-    R1*2/4*8 |
-    \mBreak
-    
-    %p1 7
+    R1*2/4
+    R1*2/4*3 |
+    R1*2/4*4 |
     \repeat volta 2 {
       d8\f r r4 |
       R1*2/4 |
       fis8 r r fis |
+      \mBreak
+      
+      % p1 5
       d8 r r4 |
       d8 r r4 |
       R1*2/4 |
@@ -609,24 +604,26 @@ clarinet_II = {
       d8 r r4 |
     }
     
-    %p1 8
     \repeat volta 2 {
       R1*2/4*4 |
       h8\ff r r4 |
       R1*2/4 |
+      \mBreak
+      
+      % p1 6
       fis'8 r r fis |
       h,8 r r4 |
     }
     dis4(\ff e8) r |
     R1*2/4 |
     c8\p c c c |
-    \mBreak
-    
-    %p1 9
     h2 |
     dis4(\ff\> e8)\! r |
     R1*2/4 |
     c8\pp c c c |
+    \mBreak
+    
+    % p1 7
     \repeat volta 2 {
       h4\f r |
       R1*2/4*7 |
@@ -634,56 +631,50 @@ clarinet_II = {
     \repeat volta 2 {
       R1*2/4*8 |
     }
-    \mBreak
-    
-    %p1 10
     R1*2/4*7
-    \mBreak
-    
-    %p2 1
     \repeat volta 2 {
       R1*2/4 |
       r8. gis16-.\< a-. gis-. a8~\! |
       a8 r r4 |
+      \mBreak
+      
+      % p1 8
       r16 h-.\< d-. g-. h-.\> g-. a-. d,-.\! |
       d8 r r4 |
       r8. gis,16-.\< a-. gis-. a8~\! |
       a8 r r4 |
-      \mBreak
-      
-      %p2 2
       r16 d h d h8 r |
     }
     \repeat volta 2 {
       d8 r e r |
+      \mBreak
+      
+      % p1 9
       d8 r r4 |
       R1*2/4 |
       d32\ff( e fis g a h c h a g fis e d c h a) |
       g8 r r4 |
-      \mBreak
-
-      %p2 3
       r8. gis16-.\< a-. gis-. a8~\! |
       a8 r r4 |
+      \mBreak
+
+      % p1 10
       r16 h-.\< d-. g-. h-.\> g-. a-. d,-.\! |
       d8 r r4 |
       r8. gis,16-.\< a-. gis-. a8~\! |
       a8 r r4 |
-      \mBreak
-      
-      %p2 4
       r16 d h d h8 r |
     }
     e4\ff fis |
     e2 |
     f4 d |
+    \mBreak
+    
+    % p1 11
     es 2|
     r16 fis,( g a b a b g) |
     fis8 a4.~ |
     a2~ |
-    \mBreak
-    
-    %p2 5
     a4\fermata r |
     \bar "||"
     R1*2/4*26 ^\markup { "Recit." } |
@@ -691,7 +682,7 @@ clarinet_II = {
     \bar "||"
     \mBreak
     
-    %p2 6
+    % p2 1
     \time 3/4
     \tempo "Polacca"
     R1*3/4*8 |
@@ -699,115 +690,104 @@ clarinet_II = {
     r8 \repeat unfold 5 { e8 } |
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
-    \mBreak
-    
-    %p2 7
     d8 \repeat unfold 5 { d8 } |
     r8 \repeat unfold 5 { e8 } |
+    \mBreak
+    
+    % p2 2
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
     R1*3/4*8 |
-    \mBreak
-    
-    %p2 8
     r8 d\ff d d cis cis |
     r8 \repeat unfold 5 { d } |
     r8 \repeat unfold 3 d cis cis |
     d8 d4 \repeat unfold 3 d8 |
-    r8 \repeat unfold 5 d |
-    r8 \repeat unfold 5 e |
     \mBreak
     
-    %p2 9
+    % p2 3
+    r8 \repeat unfold 5 d |
+    r8 \repeat unfold 5 e |
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
     R1*3/4*2 |
     fis2.(\p |
-    d8) r8 r4 r |
-    R1*3/4*8 |
     \mBreak
     
-    %p2 10
+    % p2 4
+    d8) r8 r4 r |
+    R1*3/4*8 |
     dis2.\f |
     e2.~ |
     e4 r r |
     R1*3/4*4 |
     r8 a,8-.(\pp \repeat unfold 3 a-. a-.) |
-    R1*3/4*5 |
-    \mBreak
-    
-    %p3 1
-    R1*3/4*10 |
-    r8 \grace { fis'32 es d } es8\ff r es\turn r es\turn |
-    r8 d8 r d g,4 |
-    \mBreak
-    
-    %p3 2
-    R1*3/4*2 |
-    r8 \grace { fis'32 es d } es8\ff r es\turn r es\turn |
-    r8 d8 r d g,4 |
-    R1*3/4*2 |
-    b2.\ff |
-    f'2. |
-    \mBreak
-    
-    %p3 3
-    es2. |
-    \repeat unfold 4 d8 d4 |
+    R1*3/4*4 |
+    R1*3/4*8 |
     R1*3/4*3 |
     \mBreak
     
-    %p3 4
+    % p2 5
+    r8 \grace { fis'32 es d } es8\ff r es\turn r es\turn |
+    r8 d8 r d g,4 |
+    R1*3/4*2 |
+    r8 \grace { fis'32 es d } es8\ff r es\turn r es\turn |
+    r8 d8 r d g,4 |
+    R1*3/4*2 |
+    \mBreak
+    
+    % p2 6
+    b2.\ff |
+    f'2. |
+    es2. |
+    \repeat unfold 4 d8 d4 |
+    R1*3/4*3 |
     R1*3/4 |
     es,8 g'4 f16 g as g f es |
     es8 es4 d16 es f es d c |
-    b8 g'4 es16 g g f es d |
     \mBreak
-
-    %p3 5
+    
+    % p2 7
+    b8 g'4 es16 g g f es d |
     \repeat unfold 4 d8 es r |
     b4\ff es2~ |
     es4 g2 |
     g4. es8 es4 |
     des2.~\> |
     des2.~ |
-    des4\! r r |
     \mBreak
-    
-    %p3 6
+
+    % p2 8
+    des4\! r r |
     R1*3/4*11 |
     d8\ff \repeat unfold 5 d8 |
     r8 \repeat unfold 5 e |
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4 |
     \repeat unfold 6 d8 |
-    r8 \repeat unfold 5 e |
     \mBreak
     
-    %p3 7
+    % p2 9
+    r8 \repeat unfold 5 e |
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
     R1*3/4*20 |
-    r8 d,-.\pp\< g-. h-. d-. d-.\! |
-    h'4 r a |
     \mBreak
     
-    %p3 8
+    % p2 10
+    r8 d,-.\pp\< g-. h-. d-. d-.\! |
+    h'4 r a |
     g8 r r4 r |
     R1*3/4*3 |
     h,2.~\pp |
     h2. |
     r8 \repeat unfold 5 c |
     r8 \repeat unfold 5 c |
-    R1*3/4*5 |
     \mBreak
     
-    %p3 9
-    R1*3/4*4 |
-    \mBreak
-    
-    %p3 10
+    % p2 11
     R1*3/4*8 |
+    R1*3/4*8 |
+    R1*3/4*1 |
     fis2.\ff
     d2.~ |
     d2. |
