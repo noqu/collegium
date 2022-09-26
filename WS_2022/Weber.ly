@@ -538,7 +538,7 @@ clarinet_II = {
   \clef violin
   \relative c' {
     % p1 1
-    g'1 |
+    g'1~ |
     g2 r \fermata |
     d1\pp\<~ |
     d2\> r\! \fermata
@@ -547,13 +547,13 @@ clarinet_II = {
     \time 6/8
     R1*5/8*6 |
     r4. f,4.~\p |
-    f2. |
+    f2.( |
     b2. |
     es4. f, |
     \mBreak
     
     % p1 2
-    b4. r |
+    b4.) r |
     R1*6/8*7 |
     r8 a'(\pp a a a a |
     g8) r8 r r4. |
@@ -568,6 +568,7 @@ clarinet_II = {
     \mark #2
     \time 2/4
     \key g \major
+    \tempo "Andante con moto"
     \repeat volta 2 {
       R1*2/4*8
     }
@@ -581,9 +582,9 @@ clarinet_II = {
     c2~ |
     c2 |
     h2) |
-    h8 c d dis |
+    h8\< c d dis\! |
     e8 c d e |
-    d8-. cis-. c-. a-. |
+    d8-.\> cis-. c-. a-.\! |
     h4. r8 |
     \mBreak
     
@@ -600,27 +601,41 @@ clarinet_II = {
     \mark #7
     \tutti
     R1*2/4
-    R1*2/4*3 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R1*2/4*3 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Cl.I"
+        \stemUp {
+          r4 r8 c |
+          h8( c d e |
+          h4 a8) r |
+        }
+      }
+    >>
     R1*2/4*4 |
     \mark #8
     \repeat volta 2 {
       d8\f r r4 |
       R1*2/4 |
-      fis8 r r fis |
+      fis8\f r r fis |
       \mBreak
       
       % p1 5
       d8 r r4 |
-      d8 r r4 |
+      d8\f r r4 |
       R1*2/4 |
-      fis8 r r fis |
+      fis8\f r r fis |
       d8 r r4 |
     }
     
     \repeat volta 2 {
       \mark #9
       R1*2/4*4 |
-      h8\ff r r4 |
+      h8\f r r4 |
       R1*2/4 |
       \mBreak
       
@@ -630,11 +645,11 @@ clarinet_II = {
     }
     \mark #10
     \tutti
-    dis4(\ff e8) r |
+    dis4->(\ff e8) r |
     R1*2/4 |
     c8\p c c c |
     h2 |
-    dis4(\ff\> e8)\! r |
+    dis4->(\ff e8)\! r |
     R1*2/4 |
     c8\pp c c c |
     \mBreak
@@ -643,7 +658,7 @@ clarinet_II = {
     \repeat volta 2 {
       \mark #11
       \solo
-      h4\f r |
+      h4 r |
       R1*2/4*7 |
     }
     \mark #12
@@ -656,9 +671,23 @@ clarinet_II = {
     \mark #14
     \solo
     \repeat volta 2 {
-      R1*2/4 |
-      r8. gis16-.\< a-. gis-. a8~\! |
-      a8 r r4 |
+      <<
+        {
+          \solo
+          \override MultiMeasureRest.staff-position = #-4
+          R1*2/4 |
+          r8. gis16-.\p\< a-. gis-. a8~\! |
+          \revert MultiMeasureRest.staff-position
+        }
+        \new CueVoice {
+          \set instrumentCueName = "Viol.I"
+          \stemUp {
+            h16 h[ h h] h h h h|
+            r32 e[ a h] c16
+          }
+        }
+      >>
+      a,8 r r4 |
       \mBreak
       
       % p1 8
@@ -666,11 +695,11 @@ clarinet_II = {
       d8 r r4 |
       r8. gis,16-.\< a-. gis-. a8~\! |
       a8 r r4 |
-      r16 d h d h8 r |
+      r16 d-.\p h-. d-. h8 r |
     }
-    \mark #115
+    \mark #15
     \repeat volta 2 {
-      d8 r e r |
+      d8\f r e r |
       \mBreak
       
       % p1 9
@@ -678,7 +707,7 @@ clarinet_II = {
       R1*2/4 |
       d32\ff( e fis g a h c h a g fis e d c h a) |
       g8 r r4 |
-      r8. gis16-.\< a-. gis-. a8~\! |
+      r8. gis16-.\p\< a-. gis-. a8~\! |
       a8 r r4 |
       \mBreak
 
@@ -687,7 +716,7 @@ clarinet_II = {
       d8 r r4 |
       r8. gis,16-.\< a-. gis-. a8~\! |
       a8 r r4 |
-      r16 d h d h8 r |
+      r16 d-. h-. d-. h8 r |
     }
     \mark #16
     \tutti
@@ -740,14 +769,14 @@ clarinet_II = {
     \tutti
     d''8\ff \repeat unfold 5 { d8 } |
     r8 \repeat unfold 5 { e8 } |
-    \repeat unfold 3 { a16 fis d8 } |
+    \repeat unfold 3 { a16( fis) d8-.-> } |
     \repeat unfold 4 d8 d4-> |
     d8 \repeat unfold 5 { d8 } |
     r8 \repeat unfold 5 { e8 } |
     \mBreak
     
     % p2 2
-    \repeat unfold 3 { a16 fis d8 } |
+    \repeat unfold 3 { a16( fis) d8-.-> } |
     \repeat unfold 4 d8 d4-> |
     \mark #22
     \solo
@@ -757,13 +786,14 @@ clarinet_II = {
     r8 d\ff d d cis cis |
     r8 \repeat unfold 5 { d } |
     r8 \repeat unfold 3 d cis cis |
-    d8 d4 \repeat unfold 3 d8 |
+    d8 d4-> \repeat unfold 3 d8 |
+    d8 d4-> \repeat unfold 3 d8 |
     \mBreak
     
     % p2 3
     r8 \repeat unfold 5 d |
     r8 \repeat unfold 5 e |
-    \repeat unfold 3 { a16 fis d8 } |
+    \repeat unfold 3 { a16( fis) d8-.-> } |
     \repeat unfold 4 d8 d4-> |
     \mark #24
     \solo
@@ -795,10 +825,10 @@ clarinet_II = {
     % p2 5
     \tutti
     r8 \grace { fis'32 es d } es8\ff r es\turn r es\turn |
-    r8 d8 r d g,4 |
+    r8 d8 r d g,4-> |
     R1*3/4*2 |
     r8 \grace { fis'32 es d } es8\ff r es\turn r es\turn |
-    r8 d8 r d g,4 |
+    r8 d8 r d g,4-> |
     R1*3/4*2 |
     \mBreak
     
@@ -807,12 +837,12 @@ clarinet_II = {
     b2.\ff |
     f'2. |
     es2. |
-    \repeat unfold 4 d8 d4 |
+    \repeat unfold 4 d8 d4-> |
     R1*3/4*3 |
     R1*3/4 |
     \mark #30
-    es,8 g'4 f16 g as g f es |
-    es8 es4 d16 es f es d c |
+    es,8 g'4-> f16( g as g f es) |
+    es8 es4( d16 es f es d c) |
     \mBreak
     
     % p2 7
@@ -835,14 +865,14 @@ clarinet_II = {
     \tutti
     d8\ff \repeat unfold 5 d8 |
     r8 \repeat unfold 5 e |
-    \repeat unfold 3 { a16 fis d8 } |
-    \repeat unfold 4 d8 d4 |
+    \repeat unfold 3 { a16( fis) d8-.-> } |
+    \repeat unfold 4 d8 d4-> |
     \repeat unfold 6 d8 |
     \mBreak
     
     % p2 9
     r8 \repeat unfold 5 e |
-    \repeat unfold 3 { a16 fis d8 } |
+    \repeat unfold 3 { a16( fis) d8-.-> } |
     \repeat unfold 4 d8 d4-> |
     \mark #33
     \solo
@@ -866,8 +896,8 @@ clarinet_II = {
     
     % p2 10
     \mark #35
-    r8 d-.\pp\< g-. h-. d-. d-.\! |
-    h'4 r a |
+    r8 d-.\p\< g-. h-. d-. d-.\! |
+    h'4-.\f r a-. |
     g8 r r4 r |
     R1*3/4*3 |
     h,2.~\pp |
@@ -887,7 +917,7 @@ clarinet_II = {
     fis2.\ff
     d2.~ |
     d2. |
-    h8 d h d h d |
+    h8-. d-. h-. d-. h-. d-. |
     h4 h h |
     h4 r r |
     \bar "|."
@@ -942,7 +972,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in Bb"
+    instrument = "Klarinette II in A"
   }
   \score {
     \new Staff {
