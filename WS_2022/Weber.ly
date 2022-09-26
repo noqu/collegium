@@ -541,6 +541,7 @@ clarinet_II = {
     g2 r \fermata |
     d1\pp\<~ |
     d2\> r\! \fermata
+    \mark #1
     \time 6/8
     R1*5/8*6 |
     r4. f,4.~\p |
@@ -562,14 +563,17 @@ clarinet_II = {
     \mBreak
     
     %p1 3
+    \mark #2
     \time 2/4
     \key g \major
     \repeat volta 2 {
       R1*2/4*8
     }
+    \mark #3
     \repeat volta 2 {
       R1*2/4*8
     }
+    \mark #4
     d'2(\f |
     c2~ |
     c2 |
@@ -581,15 +585,19 @@ clarinet_II = {
     \mBreak
     
     %p1 4
+    \mark #5
     \repeat volta 2 {
       R1*2/4*8
     }
+    \mark #6
     \repeat volta 2 {
       R1*2/4*8
     }
+    \mark #7
     R1*2/4
     R1*2/4*3 |
     R1*2/4*4 |
+    \mark #8
     \repeat volta 2 {
       d8\f r r4 |
       R1*2/4 |
@@ -605,6 +613,7 @@ clarinet_II = {
     }
     
     \repeat volta 2 {
+      \mark #9
       R1*2/4*4 |
       h8\ff r r4 |
       R1*2/4 |
@@ -614,6 +623,7 @@ clarinet_II = {
       fis'8 r r fis |
       h,8 r r4 |
     }
+    \mark #10
     dis4(\ff e8) r |
     R1*2/4 |
     c8\p c c c |
@@ -625,13 +635,17 @@ clarinet_II = {
     
     % p1 7
     \repeat volta 2 {
+      \mark #11
       h4\f r |
       R1*2/4*7 |
     }
+    \mark #12
     \repeat volta 2 {
       R1*2/4*8 |
     }
+    \mark #13
     R1*2/4*7
+    \mark #14
     \repeat volta 2 {
       R1*2/4 |
       r8. gis16-.\< a-. gis-. a8~\! |
@@ -645,6 +659,7 @@ clarinet_II = {
       a8 r r4 |
       r16 d h d h8 r |
     }
+    \mark #115
     \repeat volta 2 {
       d8 r e r |
       \mBreak
@@ -665,6 +680,7 @@ clarinet_II = {
       a8 r r4 |
       r16 d h d h8 r |
     }
+    \mark #16
     e4\ff fis |
     e2 |
     f4 d |
@@ -675,18 +691,42 @@ clarinet_II = {
     r16 fis,( g a b a b g) |
     fis8 a4.~ |
     a2~ |
-    a4\fermata r |
+    \mark #17
     \bar "||"
-    R1*2/4*26 ^\markup { "Recit." } |
-    R1*2/4\fermataMarkup
+    \time 4/4
+    a4 r\fermata ^\markup { "Recit." } \solo r2 |
+    R1*8 |
+    \mark #18
+    R1*16 |
+    \mark #19
+    R1\fermataMarkup\cadenza
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R1 |
+        R1\fermataMarkup |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Timp."
+        \clef bass
+        \stemDown {
+          d,,1 |
+          d4 r r2\fermata |
+        }
+      }
+    >>
+    \clef violin
     \bar "||"
     \mBreak
-    
+
     % p2 1
+    \mark #20
     \time 3/4
     \tempo "Polacca"
     R1*3/4*8 |
-    d8\ff \repeat unfold 5 { d8 } |
+    \mark #21
+    d''8\ff \repeat unfold 5 { d8 } |
     r8 \repeat unfold 5 { e8 } |
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
@@ -697,7 +737,9 @@ clarinet_II = {
     % p2 2
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
+    \mark #22
     R1*3/4*8 |
+    \mark #23
     r8 d\ff d d cis cis |
     r8 \repeat unfold 5 { d } |
     r8 \repeat unfold 3 d cis cis |
@@ -709,20 +751,27 @@ clarinet_II = {
     r8 \repeat unfold 5 e |
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
+    \mark #24
     R1*3/4*2 |
     fis2.(\p |
     \mBreak
     
     % p2 4
     d8) r8 r4 r |
-    R1*3/4*8 |
+    R1*3/4*4 |
+    \mark #25
+    R1*3/4*4 |
     dis2.\f |
     e2.~ |
     e4 r r |
-    R1*3/4*4 |
+    R1*3/4
+    \mark #26
+    R1*3/4*3 |
     r8 a,8-.(\pp \repeat unfold 3 a-. a-.) |
     R1*3/4*4 |
+    \mark #27
     R1*3/4*8 |
+    \mark #28
     R1*3/4*3 |
     \mBreak
     
@@ -736,12 +785,14 @@ clarinet_II = {
     \mBreak
     
     % p2 6
+    \mark #29
     b2.\ff |
     f'2. |
     es2. |
     \repeat unfold 4 d8 d4 |
     R1*3/4*3 |
     R1*3/4 |
+    \mark #30
     es,8 g'4 f16 g as g f es |
     es8 es4 d16 es f es d c |
     \mBreak
@@ -758,7 +809,10 @@ clarinet_II = {
 
     % p2 8
     des4\! r r |
-    R1*3/4*11 |
+    R1*3/4*3 |
+    \mark #31
+    R1*3/4*8 |
+    \mark #32
     d8\ff \repeat unfold 5 d8 |
     r8 \repeat unfold 5 e |
     \repeat unfold 3 { a16 fis d8 } |
@@ -770,11 +824,28 @@ clarinet_II = {
     r8 \repeat unfold 5 e |
     \repeat unfold 3 { a16 fis d8 } |
     \repeat unfold 4 d8 d4-> |
-    R1*3/4*20 |
+    \mark #33
+    R1*3/4*8 |
+    \mark #34
+    R1*3/4*11 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R1*3/4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Cor. primo"
+        \stemUp {
+          c4. g'16 e c g e c |
+        }
+      }
+    >>
     \mBreak
     
     % p2 10
-    r8 d,-.\pp\< g-. h-. d-. d-.\! |
+    \mark #35
+    r8 d-.\pp\< g-. h-. d-. d-.\! |
     h'4 r a |
     g8 r r4 r |
     R1*3/4*3 |
@@ -785,8 +856,11 @@ clarinet_II = {
     \mBreak
     
     % p2 11
+    \mark #36
     R1*3/4*8 |
+    \mark #37
     R1*3/4*8 |
+    \mark #38
     R1*3/4*1 |
     fis2.\ff
     d2.~ |
