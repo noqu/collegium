@@ -119,7 +119,7 @@ cadenza = ^\markup { \italic {"Cadenza"} }
 clarinet_I = {
   \set Score.markFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
-  \compressFullBarRests
+  \compressEmptyMeasures
   \defaultTimeSignature
   \time 4/4
   \tempo "Adagio"
@@ -150,7 +150,7 @@ clarinet_I = {
     r8 d( d d cis c |
     b8) r8 r r4. |
     R1*6/8 |
-    R1*6/8  \fermataMarkup |
+    R1*6/8  \fermata |
     \bar "||"
     \mBreak
     
@@ -295,7 +295,7 @@ clarinet_I = {
       %p1 9
       fis8 r r4 |
       R1*2/4 |
-      d32\ff( e fis g a h c h a g fis e d c h a) |
+      d32\ff( [e fis g] a [h c h] a [g fis e] d [c h a)] |
       g8 r r4 |
       r8. h16-.\p\< c-. h-. c8~\! |
       c8 r r4 |
@@ -306,7 +306,7 @@ clarinet_I = {
       h8 r r4 |
       r8. h,16-.\< c-. h-. c8~\! |
       c8 r r4 |
-      r16 h'-.\p g-. h-. g8-. r |
+      r16 h'-.\p g-. h-. g8 r |
     }
     \mark #16
     \tutti
@@ -317,23 +317,23 @@ clarinet_I = {
     \mBreak
 
     % p1 10
-    r16 fis,( g a b a b g) |
+    r16 fis!,( g a b a b g) |
     fis8 fis4.~ |
     fis2~ |
     \mark #17
     \bar "||"
     \time 4/4
-    fis4 r\fermata ^\markup { "Recit." } \solo r2 |
-    R1*8 |
+    fis4 r\fermata ^\markup { "Recit." } r2 \solo |
+    R1*8 | % ist mir hier im Original unklar. Ich lese das so: die Pause ist 16 Takte lang. Die Marke "18" kommt nach den ersten 8 Takten, dann kommen weitere 8. Dann wäre hier ein Fehler, aber wie gesagt könnte es auch anders gemeint sein.
     \mark #18
     R1*16 |
     \mark #19
-    R1\fermataMarkup\cadenza
+    R1\fermata\cadenza
     <<
       {
         \override MultiMeasureRest.staff-position = #2
         R1 |
-        R1\fermataMarkup |
+        R1\fermata |
         \revert MultiMeasureRest.staff-position
       }
       \new CueVoice {
@@ -361,7 +361,7 @@ clarinet_I = {
     r8 \repeat unfold 5 { c8 } |
     \repeat unfold 3 { a16( fis) d8-.-> } |
     \repeat unfold 4 h'8 h4-> |
-    h8 \repeat unfold 5 { h8 } |
+    r8 \repeat unfold 5 { h8 } |
     r8 \repeat unfold 5 { c8 } |
     \repeat unfold 3 { a16( fis) d8-.-> } |
     \mBreak
@@ -406,20 +406,19 @@ clarinet_I = {
     r8 c,8-.(\pp \repeat unfold 3 c-. c-.)|
     R1*3/4*4 |
     \mark #27
-    \solo
     R1*3/4*1 |
-    r8 g'16(\p fis f e f d c h \grace h32 a16 g) |
+    r8 g'16 \solo (\p fis! f e f d c h \appoggiatura h32 a16 g) |
     R1*3/4*6 |
     \mark #28
     R1*3/4*3 |
     \tutti
-    r8 \grace { as'32 g fis } g8\ff r g\turn r g\turn |
+    r8 \appoggiatura { as'32 g fis! } g8\ff r g\turn r g\turn |
     r8 b8 r b g,4-> |
     R1*3/4*2 |
     \mBreak
     
     % p2 5
-    r8 \grace { as'32 g fis } g8\ff r g\turn r g\turn |
+    r8 \appoggiatura { as'32 g fis! } g8\ff r g\turn r g\turn |
     r8 b8 r b g,4-> |
     R1*3/4*2 |
     \mark #29
@@ -490,7 +489,7 @@ clarinet_I = {
       }
     >>
     \mark #35
-    r8 g'-.\pp\< h-. d-. g-. h-.\! |
+    r8 g'-.\pp\< h-. d-. g-. h-.\! | % wo steht das pp???
     d4-. r c-. |
     h8 r r4 r |
     R1*3/4*3 |
@@ -529,7 +528,7 @@ clarinet_I = {
 clarinet_II = {
   \set Score.markFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
-  \compressFullBarRests
+  \compressEmptyMeasures
   \defaultTimeSignature
   \time 4/4
   \tempo "Adagio"
@@ -560,7 +559,7 @@ clarinet_II = {
     r8 a( a a a a |
     g8) r8 r r4. |
     R1*6/8 |
-    R1*6/8  \fermataMarkup |
+    R1*6/8  \fermata |
     \bar "||"
     \mBreak
     
@@ -582,8 +581,8 @@ clarinet_II = {
     c2~ |
     c2 |
     h2) |
-    h8\< c d dis\! |
-    e8 c d e |
+    h8\< (c d dis\! |
+    e8 c d e) |
     d8-.\> cis-. c-. a-.\! |
     h4. r8 |
     \mBreak
@@ -705,7 +704,7 @@ clarinet_II = {
       % p1 9
       d8 r r4 |
       R1*2/4 |
-      d32\ff( e fis g a h c h a g fis e d c h a) |
+      d32\ff( [e fis g] a [h c h] a [g fis e] d [c h a]) |
       g8 r r4 |
       r8. gis16-.\p\< a-. gis-. a8~\! |
       a8 r r4 |
@@ -734,16 +733,16 @@ clarinet_II = {
     \bar "||"
     \time 4/4
     a4 r\fermata ^\markup { "Recit." } \solo r2 |
-    R1*8 |
+    R1*8 | % s.o.
     \mark #18
     R1*16 |
     \mark #19
-    R1\fermataMarkup\cadenza
+    R1\fermata\cadenza
     <<
       {
         \override MultiMeasureRest.staff-position = #2
         R1 |
-        R1\fermataMarkup |
+        R1\fermata |
         \revert MultiMeasureRest.staff-position
       }
       \new CueVoice {
@@ -771,7 +770,7 @@ clarinet_II = {
     r8 \repeat unfold 5 { e8 } |
     \repeat unfold 3 { a16( fis) d8-.-> } |
     \repeat unfold 4 d8 d4-> |
-    d8 \repeat unfold 5 { d8 } |
+    r8 \repeat unfold 5 { d8 } |
     r8 \repeat unfold 5 { e8 } |
     \mBreak
     
@@ -824,10 +823,10 @@ clarinet_II = {
     
     % p2 5
     \tutti
-    r8 \grace { fis'32 es d } es8\ff r es\turn r es\turn |
+    r8 \appoggiatura { f'32 es d } es!8\ff r es\turn r es\turn |
     r8 d8 r d g,4-> |
     R1*3/4*2 |
-    r8 \grace { fis'32 es d } es8\ff r es\turn r es\turn |
+    r8 \appoggiatura { f'32 es d } es!8\ff r es\turn r es\turn |
     r8 d8 r d g,4-> |
     R1*3/4*2 |
     \mBreak
@@ -838,8 +837,7 @@ clarinet_II = {
     f'2. |
     es2. |
     \repeat unfold 4 d8 d4-> |
-    R1*3/4*3 |
-    R1*3/4 |
+    R1*3/4*4 |
     \mark #30
     es,8 g'4-> f16( g as g f es) |
     es8 es4( d16 es f es d c) |
@@ -852,11 +850,11 @@ clarinet_II = {
     es4 g2 |
     g4. es8 es4 |
     des2.~\> |
-    des2.~ |
+    des2.~\! |
     \mBreak
 
     % p2 8
-    des4\! r r |
+    des4 r r |
     R1*3/4*3 |
     \mark #31
     \solo
@@ -934,7 +932,7 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-      \compressFullBarRests
+      \compressEmptyMeasures
       \set Score.markFormatter = #format-mark-box-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
@@ -958,7 +956,7 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-      \compressFullBarRests
+      \compressEmptyMeasures
       \set Score.markFormatter = #format-mark-box-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
@@ -976,7 +974,7 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-      \compressFullBarRests
+      \compressEmptyMeasures
       \set Score.markFormatter = #format-mark-box-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
