@@ -119,7 +119,7 @@ cadenza = ^\markup { \italic {"Cadenza"} }
 clarinet_I = {
   \set Score.markFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
-  \compressEmptyMeasures
+  \compressFullBarRests
   \defaultTimeSignature
   \time 4/4
   \tempo "Adagio"
@@ -150,7 +150,7 @@ clarinet_I = {
     r8 d( d d cis c |
     b8) r8 r r4. |
     R1*6/8 |
-    R1*6/8  \fermata |
+    R1*6/8  \fermataMarkup |
     \bar "||"
     \mBreak
     
@@ -317,23 +317,23 @@ clarinet_I = {
     \mBreak
 
     % p1 10
-    r16 fis!,( g a b a b g) |
+    r16 fis,!( g a b a b g) |
     fis8 fis4.~ |
     fis2~ |
     \mark #17
     \bar "||"
     \time 4/4
     fis4 r\fermata ^\markup { "Recit." } r2 \solo |
-    R1*8 | % ist mir hier im Original unklar. Ich lese das so: die Pause ist 16 Takte lang. Die Marke "18" kommt nach den ersten 8 Takten, dann kommen weitere 8. Dann wäre hier ein Fehler, aber wie gesagt könnte es auch anders gemeint sein.
+    R1*8 |
     \mark #18
-    R1*16 |
+    R1*8 |
     \mark #19
-    R1\fermata\cadenza
+    R1\fermataMarkup\cadenza
     <<
       {
         \override MultiMeasureRest.staff-position = #2
         R1 |
-        R1\fermata |
+        R1\fermataMarkup |
         \revert MultiMeasureRest.staff-position
       }
       \new CueVoice {
@@ -489,7 +489,7 @@ clarinet_I = {
       }
     >>
     \mark #35
-    r8 g'-.\pp\< h-. d-. g-. h-.\! | % wo steht das pp???
+    r8 g'-.\p\< h-. d-. g-. h-.\! | 
     d4-. r c-. |
     h8 r r4 r |
     R1*3/4*3 |
@@ -528,7 +528,7 @@ clarinet_I = {
 clarinet_II = {
   \set Score.markFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
-  \compressEmptyMeasures
+  \compressFullBarRests
   \defaultTimeSignature
   \time 4/4
   \tempo "Adagio"
@@ -559,7 +559,7 @@ clarinet_II = {
     r8 a( a a a a |
     g8) r8 r r4. |
     R1*6/8 |
-    R1*6/8  \fermata |
+    R1*6/8  \fermataMarkup |
     \bar "||"
     \mBreak
     
@@ -733,16 +733,16 @@ clarinet_II = {
     \bar "||"
     \time 4/4
     a4 r\fermata ^\markup { "Recit." } \solo r2 |
-    R1*8 | % s.o.
+    R1*8 |
     \mark #18
-    R1*16 |
+    R1*8 |
     \mark #19
-    R1\fermata\cadenza
+    R1\fermataMarkup\cadenza
     <<
       {
         \override MultiMeasureRest.staff-position = #2
         R1 |
-        R1\fermata |
+        R1\fermataMarkup |
         \revert MultiMeasureRest.staff-position
       }
       \new CueVoice {
@@ -932,7 +932,7 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-      \compressEmptyMeasures
+      \compressFullBarRests
       \set Score.markFormatter = #format-mark-box-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
@@ -956,7 +956,7 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-      \compressEmptyMeasures
+      \compressFullBarRests
       \set Score.markFormatter = #format-mark-box-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
@@ -974,7 +974,7 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-      \compressEmptyMeasures
+      \compressFullBarRests
       \set Score.markFormatter = #format-mark-box-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
