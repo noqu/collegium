@@ -11,7 +11,7 @@
 
 \header{
   title = "Sinfonie Nr.2 c-moll"
-  subtitle = ""
+  subtitle = "4. Satz"
   composerShort = "Pjotr Iljitsch Tschaikowsky"
   composer = "Pjotr Iljitsch Tschaikowsky (1840 - 1893)"
   tagline = ""
@@ -220,7 +220,7 @@ clarinet_I = {
     es8( d) r4 |
     \mark #1
     R2*8 |
-    c,4 d |
+    c,4\mf d |
     e4 f |
     e8 c' d,4 |
     \mBreak
@@ -241,9 +241,9 @@ clarinet_I = {
     % cl1 p1 8
     c4 c |
     c4 h |
-    a8 e d4 |
+    a8 e g4 |
     \mark #2 |
-    c4\mf d |
+    c,4\mf d |
     e4 f |
     e8 g d4 |
     c8 c c4 |
@@ -423,7 +423,7 @@ clarinet_I = {
     \mBreak
     
     % cl1 p2 9
-    as8 r r b |
+    es8 r r b' |
     \mark 6
     as8 r r4 |
     R2*7 |
@@ -565,7 +565,7 @@ clarinet_I = {
     dis2 |
     e2~ |
     e2 |
-    d2 |
+    d?2 |
     c2 |
     b2 |
     as2 |
@@ -624,7 +624,7 @@ clarinet_I = {
     
     % cl1 p4 2
     cis8 ais h r |
-    b8 cis g r |
+    b8 cis g? r |
     g4\ff r |
     h4 r |
     c4 r |
@@ -640,7 +640,7 @@ clarinet_I = {
     g,4\sempreFf a |
     h4 c |
     h8 e a,4 |
-    gis8 h f4 |
+    gis8 h f?4 |
     e4 fis |
     gis4 a |
     gis8 cis fis,4 |
@@ -651,7 +651,7 @@ clarinet_I = {
     
     % cl1 p4 4
     cis8 fis h,4 |
-    ais8 cis g4 |
+    ais8 cis g?4 |
     fis4 gis |
     ais4 h |
     ais8 dis gis,4 |
@@ -659,15 +659,15 @@ clarinet_I = {
     fisis8 ais dis,4 |
     as'4 b |
     c4 des |
-    c8 f b,4 |
-    a8 c f,4 |
+    c8 f? b,4 |
+    a?8 c f,4 |
     \mBreak
     
     % cl1 p4 5
     b4 c |
     d4 es |
     d8 g c,4 |
-    h8 d g,4 |
+    h?8 d g,4 |
     c8 d e g |
     a,8 h cis e |
     d8 e fis a |
@@ -683,7 +683,7 @@ clarinet_I = {
     cis4 d |
     cis8 fis h,4 |
     ais8 cis fis,4 |
-    d'4 e |
+    d'?4 e |
     fis4 g |
     \mBreak
     
@@ -731,7 +731,7 @@ clarinet_I = {
     
     % cl1 p4 10
     dis4 e |
-    c4 d |
+    c?4 d |
     e4 f |
     d4 e |
     fis4 g |
@@ -817,8 +817,7 @@ clarinet_I = {
     r8 e r f |
     r8 g r d |
     r8 e, r g |
-    % FIXME: cresc only from cl2?
-    r8 c r d\cresc |
+    r8 c\cresc r d |
     \mBreak
     
     % cl1 p5 6
@@ -876,7 +875,7 @@ clarinet_I = {
     \mBreak
     
     % cl1 p5 10
-    r8 f r f |
+    r8 f? r f |
     r8 fis r g |
     r8 g r gis |
     r8 a r a |
@@ -940,7 +939,7 @@ clarinet_I = {
     \mBreak
     
     % cl1 p6 3
-    g4 h | 
+    g?4 h | 
     c4 d | 
     e2 | 
     d4 e | 
@@ -1050,7 +1049,7 @@ clarinet_I = {
     e4 r |
     R2*4 |
     d2~ |
-    d2~ |
+    d2 |
     d2 |
     g,2 |
     \startMeasureCount
@@ -2126,7 +2125,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in Bb"
+    instrument = "Klarinette I in C"
   }
   \score {
     \new Staff {
@@ -2135,7 +2134,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose c d \clarinet_I
+        \transpose c c \clarinet_I
       }
     }
   }
@@ -2143,7 +2142,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in Bb"
+    instrument = "Klarinette II in C"
   }
   \score {
     \new Staff {
@@ -2152,7 +2151,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose c d \clarinet_II
+        \transpose c c \clarinet_II
       }
     }
   }
