@@ -1200,7 +1200,7 @@ clarinet_II = {
     c4 d |
     e4 f |
     g4 g |
-    e8 c g4 |
+    e8 c d4 |
     \mark #2 |
     c4\mf c |
     c4 c |
@@ -1278,7 +1278,7 @@ clarinet_II = {
     e2 |
     \repeat unfold 2 {
       c8 d e c |
-      as8 b c a |
+      as8 b c as |
     }
     gis8 h e gis, |
     \mBreak
@@ -1315,7 +1315,7 @@ clarinet_II = {
       as2 |
     }
     g4 r |
-    a4 r |
+    a?4 r |
     g4 r |
     R2 |
     g4 r |
@@ -1343,17 +1343,18 @@ clarinet_II = {
         }
       }
     >>
-    r8 gis8(\f c d |
-    e8) r es( d~ |
-    d8) e, c'( h |
-    a) r r4 |
+    r8 gis8\f c d |
+    e8
+    r es d~ |
+    d e, c' h |
+    a r r4 |
     \mBreak
     
     % cl2 p2 6
-    r8 gis( c d |
-    e8) r e( d~ |
-    d8) e, c'( h |
-    a8) r r4 |
+    r8 gis c d |
+    e8 r e d~ |
+    d8 e, c' h |
+    a8 r r4 |
     c8\f r r4 |
     R2 
     c8 r r4 |
@@ -1362,10 +1363,10 @@ clarinet_II = {
 
     % cl2 p2 7
     c8 r r4 |
-    r8 des,\f c des |
-    c8 r r4 |
-    r8 ces\mf b ces |
-    b r r g\p
+    r8 des,-.\f c-. des-. |
+    c8-. r r4 |
+    r8 h\mf ais h |
+    ais r r g\p
     as8 r r des |
     \mark 6
     c8 r r4 |
@@ -1400,9 +1401,9 @@ clarinet_II = {
     des4 as |
     des2 |
     b4 des |
-    ges2 |
-    es4 ges |
-    ces4. r8 |
+    fis2 |
+    es4 fis |
+    h4. r8 |
     r4 as\ff~ |
     as4 as~ |
     as4 as~ |
@@ -1415,11 +1416,11 @@ clarinet_II = {
     c,4\ff es |
     as4 b |
     as8 c g4 |
-    ges4 g |
+    fis4 g |
     c,4 es |
     as4 b |
     as8 c g4 |
-    ges4 g |
+    fis4 g |
     r4 c, |
     r4 c |
     r4 c |
@@ -1435,8 +1436,8 @@ clarinet_II = {
     \repeat unfold 3 { r4 c } |
     as2~ |
     as2 |
-    fes,2~ |
-    fes2 |
+    e,2~ |
+    e2 |
     \mBreak
     
     % cl2 p3 3
@@ -1462,7 +1463,7 @@ clarinet_II = {
     >>
     \mBreak
     % cl2 p3 4
-    d,8\p r g r |
+    d,8\p r f r |
     b8 r c r |
     h8 h a r |
     g8 h h, r |
@@ -1585,7 +1586,7 @@ clarinet_II = {
     r4 fis8 gis |
     a8 r c d |
     r4 dis8 e |
-    fis,8 r fis g |
+    fis,8 r fis g? |
     r4 gis8 ais |
     fis8 r a\cresc r |
     d8 r e r |
@@ -1608,7 +1609,7 @@ clarinet_II = {
     fis'8 r fis g |
     r4 eis8 fis |
     gis,8 r gis a |
-    r4 ais8 his |
+    r4 b8 c |
     gis8 r h r |
     \mBreak
 
@@ -1641,21 +1642,21 @@ clarinet_II = {
     e8 gis a,4 |
     gis4 h |
     e4 fis |
-    eis8 eis dis4 |
-    cis8 eis eis,4 |
+    f8 f es4 |
+    des8 f f,4 |
     cis'4 e |
     a4 h |
     ais8 ais gis4 |
     fis8 ais h,4 |
-    ais4 cis |
+    b4 des |
     \mBreak
 
     % cl2 p4 5
     fis4 gis |
     % FIXME: See above
-    fisis8 fisis eis4 |
-    dis8 fisis fisis,4 |
-    c'4 es |
+    g8 g f4 |
+    es8 g g,4 |
+    c4 es |
     as4 b |
     a8 a g4 |
     f8 a a,4 |
@@ -1671,12 +1672,12 @@ clarinet_II = {
     fis,8 a d fis |
     dis,8 fis h dis |
     gis,8 h e gis |
-    eis,8 gis cis eis |
+    f,?8 gis cis f |
     \mBreak
 
     % cl2 p4 7
-    eis,8 gis cis eis |
-    eis,8 gis cis eis |
+    f,8 gis cis f |
+    f,8 gis cis f |
     cis,4 e |
     ais4 h |
     ais8 ais gis4 |
@@ -1706,10 +1707,10 @@ clarinet_II = {
     a8\cresc cis f,4 |
     h4 fis |
     h4 cis |
-    h8 dis g,4 |
+    h8 dis g,?4 |
     fis8 h e,4 |
     g4\f h |
-    e4 f |
+    e4 f? |
     e8 e d4 |
     c8 e as,4 |
     \mBreak
@@ -1748,7 +1749,7 @@ clarinet_II = {
         \override MultiMeasureRest.staff-position = #-6
         R2*4 |
         \revert MultiMeasureRest.staff-position
-        r8\f c,8( e fis |
+        r8\f c,8 e fis |
       }
       \new CueVoice {
         \set instrumentCueName = "Cl.I"
@@ -1761,16 +1762,16 @@ clarinet_II = {
         }
       }
     >>
-    gis8) r8 gis( fis~ |
-    fis8) gis, e'( dis |
-    cis8) r r4 |
+    gis8 r8 gis fis~ |
+    fis8 gis, e' dis |
+    cis8 r r4 |
     \mBreak
 
     % cl2 p5 2
-    r8 c8( e fis |
-    gis8) r8 gis( fis~ |
-    fis8) gis, e'( dis |
-    cis8) r r4 |
+    r8 c8 e fis |
+    gis8 r8 gis fis~ |
+    fis8 gis, e' dis |
+    cis8 r r4 |
     a8\f r r4 |
     R2 |
     a8 r r4 |
@@ -1845,11 +1846,11 @@ clarinet_II = {
     
     % cl2 p5 8
     % FIXME: See above
-    fis8\f e dis fisis |
+    fis8\f e dis g |
     gis8 fis f a |
     R2*6 |
     e8\f\cresc d cis eis |
-    fis e dis fisis |
+    fis e dis g |
     r8 g, r g |
     r8 a r a |
     \mBreak
@@ -1921,7 +1922,7 @@ clarinet_II = {
     h4 d |
     e4 g |
     cis2 |
-    f,4 a |
+    fis,4 a |
     dis2 |
     gis,4 h |
     e4\< e |
