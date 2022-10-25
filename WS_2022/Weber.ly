@@ -517,10 +517,8 @@ clarinet_I = {
     \tutti
     c'2.\ff
     h2.~ |
-    h2. |
-    g8-. h-. g-. h-. g-. h-. |
-    g4 g g |
-    g4 r r 
+    h8 d-. h-. d-. h-. d-. |
+    d8.-> d16 d4 r |
     \bar "|."
   }
 }
@@ -786,7 +784,6 @@ clarinet_II = {
     r8 \repeat unfold 5 { d } |
     r8 \repeat unfold 3 d cis cis |
     d8 d4-> \repeat unfold 3 d8 |
-    d8 d4-> \repeat unfold 3 d8 |
     \mBreak
     
     % p2 3
@@ -914,10 +911,8 @@ clarinet_II = {
     \tutti
     fis2.\ff
     d2.~ |
-    d2. |
-    h8-. d-. h-. d-. h-. d-. |
-    h4 h h |
-    h4 r r |
+    d8 d-. d-. d-. d-. d-. |
+    d8. d16 d4 r |
     \bar "|."
   }
 }
@@ -952,7 +947,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
@@ -961,7 +956,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose b b \clarinet_I
+        \transpose b a \clarinet_I
       }
     }
   }
@@ -970,7 +965,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
@@ -979,7 +974,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose b b \clarinet_II
+        \transpose b a \clarinet_II
       }
     }
   }
