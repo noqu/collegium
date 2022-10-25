@@ -386,7 +386,7 @@ clarinet_I = {
     
     % cl1 p2 6
     as8 a4. |
-    as8 b4. |
+    a8 b4. |
     b8 h4. |
     h8 c4. |
     des8 c4. |
@@ -455,7 +455,7 @@ clarinet_I = {
     f2 |
     ges4 as |
     b2 |
-    c4 des |
+    ces4 des |
     es4~ es8 r |
     r4 ces\ff~ |
     ces4 ces~ |
