@@ -14,7 +14,7 @@
   subtitle = "4. Satz"
   composerShort = "Pjotr Iljitsch Tschaikowsky"
   composer = "Pjotr Iljitsch Tschaikowsky (1840 - 1893)"
-  tagline = ""
+  version = "v2"
 }
 
 % Adapt this for automatic line-breaks
@@ -103,13 +103,19 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     }
     " "
   }
+  oddFooterMarkup = \markup
+  \fill-line \fontsize #-2.0 {
+    " "
+    \fromproperty #'header:version
+    " "
+  }
   % Distance between title stuff and music
   markup-system-spacing.basic-distance = #12
   markup-system-spacing.minimum-distance = #12
   markup-system-spacing.padding = #10
   % Distance between music systems
-  system-system-spacing.basic-distance = #14
-  system-system-spacing.minimum-distance = #14
+  system-system-spacing.basic-distance = #13
+  system-system-spacing.minimum-distance = #13
   % system-system-spacing.padding = #10
   
 }
@@ -2125,7 +2131,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in C"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
@@ -2134,7 +2140,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose c c \clarinet_I
+        \transpose c d \clarinet_I
       }
     }
   }
@@ -2142,7 +2148,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in C"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
@@ -2151,7 +2157,7 @@ clarinet_II = {
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose c c \clarinet_II
+        \transpose c d \clarinet_II
       }
     }
   }
