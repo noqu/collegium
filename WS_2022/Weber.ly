@@ -14,7 +14,7 @@
   subtitle = "Op.45 e-moll"
   composerShort = "Carl Maria von Weber"
   composer = "Carl Maria von Weber (1786 - 1826)"
-  tagline = ""
+  version = "v3"
 }
 
 % Adapt this for automatic line-breaks
@@ -101,6 +101,12 @@ cadenza = ^\markup { \italic {"Cadenza"} }
       "     -     "
       \fromproperty #'header:instrument
     }
+    " "
+  }
+  oddFooterMarkup = \markup
+  \fill-line \fontsize #-2.0 {
+    " "
+    \fromproperty #'header:version
     " "
   }
   % Distance between title stuff and music
