@@ -1261,7 +1261,7 @@ clarinet_II = {
     es2 |
     e2 |
     es2 |
-    e'2\f |
+    e'?2\f |
     es2 |
     e2 |
     es2 |
@@ -1278,7 +1278,7 @@ clarinet_II = {
     e2 |
     \repeat unfold 2 {
       c8 d e c |
-      as8 b c as |
+      gis8 b c gis |
     }
     gis8 h e gis, |
     \mBreak
@@ -1344,8 +1344,7 @@ clarinet_II = {
       }
     >>
     r8 gis8\f c d |
-    e8
-    r es d~ |
+    e8 r e d~ |
     d e, c' h |
     a r r4 |
     \mBreak
@@ -1529,7 +1528,7 @@ clarinet_II = {
     \mBreak
 
     % cl2 p3 7
-    b,8\p r d r |
+    h,8\p r d r |
     g8 r a r |
     gis8 gis fis r |
     e8 gis gis, r |
@@ -1731,7 +1730,7 @@ clarinet_II = {
 
     % cl2 p4 11
     dis4 e |
-    c4 d |
+    c?4 d |
     e4 f |
     d4 e |
     fis4 g |
@@ -1896,7 +1895,7 @@ clarinet_II = {
     h4 d |
     e4 g |
     cis2 |
-    f,4 a |
+    fis,4 a |
     dis2 |
     gis,4 h |
     \mBreak
