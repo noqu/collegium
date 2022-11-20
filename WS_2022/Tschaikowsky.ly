@@ -1,4 +1,4 @@
-\version "2.22.1"
+\version "2.18.2"
 \language "deutsch"
 
 \paper {
@@ -128,12 +128,12 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
 clarinet_I = {
   \set Score.markFormatter = #format-mark-alphabet
   \accidentalStyle Score.modern-cautionary
-  \compressEmptyMeasures
-%   \defaultTimeSignature
+  \compressFullBarRests
+  \defaultTimeSignature
   \time 2/4
   \tempo "Moderato assai."
   \key c \major
-%   \clef violin
+  \clef violin
   \relative c' {
     % cl1 p1 1
     g''4\ff r |
@@ -160,7 +160,7 @@ clarinet_I = {
     R2 |
     h4 r |
     R2 |
-    R2\fermata |
+    R2\fermataMarkup |
     \bar "||"
     \mBreak
     
@@ -901,7 +901,7 @@ clarinet_I = {
     fis2~ |
     fis2~ |
     fis2\! |
-    R2\fermata
+    R2\fermataMarkup
     \bar "||"
     \pBreak
     
@@ -1101,9 +1101,8 @@ clarinet_I = {
 clarinet_II = {
   \set Score.markFormatter = #format-mark-alphabet
   \accidentalStyle Score.modern-cautionary
-  \compressEmptyMeasures
-  %   \defaultTimeSignature
-  \override DynamicTextSpanner.style = #'none % keine Fortsetzungsstriche nach crescendo - für mich eine reine Stilfrage. Im Original stehen die nicht
+  \compressFullBarRests
+  \defaultTimeSignature
   \time 2/4
   \tempo "Moderato assai."
   \key c \major
@@ -1136,7 +1135,7 @@ clarinet_II = {
     R2 |
     g4 r |
     R2 |
-    R2\fermata |
+    R2\fermataMarkup |
     \bar "||"
     \mBreak
 
@@ -1263,7 +1262,7 @@ clarinet_II = {
     es2 |
     e2 |
     es2 |
-    e'!2\f |
+    e'2\f |
     es2 |
     e2 |
     es2 |
@@ -1280,14 +1279,14 @@ clarinet_II = {
     e2 |
     \repeat unfold 2 {
       c8 d e c |
-      as8 b c as |
+      as8 b c a |
     }
-    gis8 h e! gis, |
+    gis8 h e gis, |
     \mBreak
 
     % cl2 p2 2
     e8 g c e, |
-    gis8 h e! gis, |
+    gis8 h e gis, |
     e8 g c4 |
     \repeat unfold 4 {
       e,8 g c4 |
@@ -1317,7 +1316,7 @@ clarinet_II = {
       as2 |
     }
     g4 r |
-    a!4 r |
+    a4 r |
     g4 r |
     R2 |
     g4 r |
@@ -1346,7 +1345,7 @@ clarinet_II = {
       }
     >>
     r8 gis8(\f c d |
-    e8) r e( d~ |
+    e8) r es( d~ |
     d8) e, c'( h |
     a) r r4 |
     \mBreak
@@ -1464,7 +1463,7 @@ clarinet_II = {
     >>
     \mBreak
     % cl2 p3 4
-    d,8\p r f r |
+    d,8\p r g r |
     b8 r c r |
     h8 h a r |
     g8 h h, r |
@@ -1530,7 +1529,7 @@ clarinet_II = {
     \mBreak
 
     % cl2 p3 7
-    h,8\p r d r |
+    b,8\p r d r |
     g8 r a r |
     gis8 gis fis r |
     e8 gis gis, r |
@@ -1711,7 +1710,7 @@ clarinet_II = {
     h8 dis g,4 |
     fis8 h e,4 |
     g4\f h |
-    e4 f! |
+    e4 f |
     e8 e d4 |
     c8 e as,4 |
     \mBreak
@@ -1732,7 +1731,7 @@ clarinet_II = {
 
     % cl2 p4 11
     dis4 e |
-    c!4 d |
+    c4 d |
     e4 f |
     d4 e |
     fis4 g |
@@ -1881,7 +1880,7 @@ clarinet_II = {
     fis2~ |
     fis2~ |
     fis2\! |
-    R2\fermata
+    R2\fermataMarkup
     \bar "||"
     \pBreak
     
@@ -1897,7 +1896,7 @@ clarinet_II = {
     h4 d |
     e4 g |
     cis2 |
-    fis,4 a |
+    f,4 a |
     dis2 |
     gis,4 h |
     \mBreak
@@ -2107,7 +2106,7 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-      \compressEmptyMeasures
+      \compressFullBarRests
       \set Score.markFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
@@ -2131,12 +2130,12 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-%       \compressEmptyMeasures
+      \compressFullBarRests
       \set Score.markFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
-%       \accidentalStyle Score.modern-cautionary
+      \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose c c {\clarinet_I}
+        \transpose c d \clarinet_I
       }
     }
   }
@@ -2148,12 +2147,12 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-%       \compressEmptyMeasures
+      \compressFullBarRests
       \set Score.markFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
-%       \accidentalStyle Score.modern-cautionary
+      \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose c c \clarinet_II
+        \transpose c d \clarinet_II
       }
     }
   }
