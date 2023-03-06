@@ -143,8 +143,6 @@ swaz_hie_gat_umbe_clarinet_I_II = {
   \relative c' {
     R1*3/4*24 |
     \bar "||"
-    \mark 69
-    \aTempo
     g''4->-.\ff g8[-> f]-. e-. f-. |
     \repeat unfold 3 {
       g8(-> a-.) g[-. f]-. e-. f-. |
@@ -170,21 +168,23 @@ olim_lacus_colueram_clarinet_I = {
   \relative c' {
     R1*3 |
     <<
-      {
+      \new Voice {
+        \voiceOne
         \override MultiMeasureRest.staff-position = #2
         R1*3 |
-        \revert MultiMeasureRest.staff-position
         % \clef violin
         r4 e''8->-.\f r r2 |
+        \revert MultiMeasureRest.staff-position
       }
       \new CueVoice {
+        \voiceTwo
         \set instrumentCueName = "Fag.I"
         % \clef tenor
-        \stemDown {
+        {
           f,,8(-> e)-. r dis-. r e-. f8[(-> e)]-. |
           f8(-> e)-. dis(-> e-.) h(-> c-.) \tuplet 3/2 { gis-> a-.-- c-.-- }
           % \clef bass 
-          e,1~\sf\>\stemUp
+          e,1~\sf\>
           e8-.\! \hideNotes{ r r4 r2 } |
         }
       }
@@ -215,29 +215,31 @@ olim_lacus_colueram_clarinet_II = {
   \relative c' {
     R1*3 |
     <<
-      {
-        \override MultiMeasureRest.staff-position = #-6
+      \new Voice {
+        \voiceOne
+        \override MultiMeasureRest.staff-position = #2
         R1*3 |
-        \revert MultiMeasureRest.staff-position
         % \clef violin
         r4 a''8->-.\f r r2 |
+        \revert MultiMeasureRest.staff-position
       }
       \new CueVoice {
+        \voiceTwo
         \set instrumentCueName = "Fag.I"
         % \clef tenor
-        \stemDown {
+        {
           f,8(-> e)-. r dis-. r e-. f8[(-> e)]-. |
           f8(-> e)-. dis(-> e-.) h(-> c-.) \tuplet 3/2 { gis-> a-.-- c-.-- }
           % \clef bass 
-          e,1~\sf\>\stemUp
+          e,1~\sf\>
           e8-.\! \hideNotes{ r r4 r2 } |
         }
       }
     >>
     \bar ".|:"
-    e'8(\pp a,)-. e'([ a,]) e'( a,) e'([ a,]) |
+    e'8(\pp a,)---. e'([ a,---.]) e'( a,---.) e'([ a,---.]) |
     \repeat unfold 6 {
-      e'( a,) e'([ a,]) e'( a,) e'([ a,]) |
+      e'( a,---.) e'([ a,---.]) e'( a,---.) e'([ a,---.]) |
     }
     \bar "||"
     R1*4 |
@@ -366,19 +368,15 @@ stetit_puella_clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \header {
       piece = \markup { \fontsize #3 \bold "Swaz hie gat umbe" }
     }
     \new Staff {
-      \compressEmptyMeasures
-      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a a \swaz_hie_gat_umbe_clarinet_I_II
+        \transpose b a \swaz_hie_gat_umbe_clarinet_I_II
       }
     }
   }
@@ -387,12 +385,8 @@ stetit_puella_clarinet_II = {
       piece = \markup { \fontsize #3 \bold "Olim lacus colueram" }
     }
     \new Staff {
-      \compressEmptyMeasures
-      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a a \olim_lacus_colueram_clarinet_I
+        \transpose b a \olim_lacus_colueram_clarinet_I
       }
     }
   }
@@ -401,12 +395,8 @@ stetit_puella_clarinet_II = {
       piece = \markup { \fontsize #3 \bold "Amor volat undique" }
     }
     \new Staff {
-      \compressEmptyMeasures
-      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a a \amor_volat_undique_clarinet_I
+        \transpose b a \amor_volat_undique_clarinet_I
       }
     }
   }
@@ -415,12 +405,8 @@ stetit_puella_clarinet_II = {
       piece = \markup { \fontsize #3 \bold "Stetit puella" }
     }
     \new Staff {
-      \compressEmptyMeasures
-      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a a \stetit_puella_clarinet_I
+        \transpose b a \stetit_puella_clarinet_I
       }
     }
   }
@@ -428,19 +414,15 @@ stetit_puella_clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \header {
       piece = \markup { \fontsize #3 \bold "Swaz hie gat umbe" }
     }
     \new Staff {
-      \compressEmptyMeasures
-      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a a \swaz_hie_gat_umbe_clarinet_I_II
+        \transpose b a \swaz_hie_gat_umbe_clarinet_I_II
       }
     }
   }
@@ -449,12 +431,8 @@ stetit_puella_clarinet_II = {
       piece = \markup { \fontsize #3 \bold "Olim lacus colueram" }
     }
     \new Staff {
-      \compressEmptyMeasures
-      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a a \olim_lacus_colueram_clarinet_II
+        \transpose b a \olim_lacus_colueram_clarinet_II
       }
     }
   }
@@ -463,12 +441,8 @@ stetit_puella_clarinet_II = {
       piece = \markup { \fontsize #3 \bold "Amor volat undique" }
     }
     \new Staff {
-      \compressEmptyMeasures
-      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a a \amor_volat_undique_clarinet_II
+        \transpose b a \amor_volat_undique_clarinet_II
       }
     }
   }
@@ -477,12 +451,8 @@ stetit_puella_clarinet_II = {
       piece = \markup { \fontsize #3 \bold "Stetit puella" }
     }
     \new Staff {
-      \compressEmptyMeasures
-      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
       \new Voice {
-        \transpose a a \stetit_puella_clarinet_II
+        \transpose b a \stetit_puella_clarinet_II
       }
     }
   }
