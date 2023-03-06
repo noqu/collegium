@@ -110,12 +110,12 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     " "
   }
   % Distance between title stuff and music
-  markup-system-spacing.basic-distance = #12
-  markup-system-spacing.minimum-distance = #12
-  markup-system-spacing.padding = #10
+  % markup-system-spacing.basic-distance = #12
+  % markup-system-spacing.minimum-distance = #12
+  % markup-system-spacing.padding = #10
   % Distance between music systems
-  system-system-spacing.basic-distance = #13
-  system-system-spacing.minimum-distance = #13
+  % system-system-spacing.basic-distance = #13
+  % system-system-spacing.minimum-distance = #13
   % system-system-spacing.padding = #10
   
 }
@@ -171,7 +171,7 @@ olim_lacus_colueram_clarinet_I = {
     R1*3 |
     <<
       {
-        \override MultiMeasureRest.staff-position = #-6
+        \override MultiMeasureRest.staff-position = #2
         R1*3 |
         \revert MultiMeasureRest.staff-position
         % \clef violin
@@ -315,6 +315,17 @@ stetit_puella_clarinet_I = {
     g2)\!\breathe e4(\< f |
     g4 a\> g f |
     g2--\! g)-- |
+    R1*18 |
+    c4(\ppDolcissimo h a2~ |
+    a4 c h a |
+    h4 \tuplet 3/2 { a8 h a } g2~ |
+    g2)\breathe e4(\< f |
+    g2)\!\breathe e4(\< f |
+    g2)\!\breathe e4(\< f |
+    g4 a\> g f |
+    g2--\! g)-- |
+    R1*2 |
+    \bar "|."
   }
 }
 
@@ -336,6 +347,17 @@ stetit_puella_clarinet_II = {
     e2)\!\breathe c4(\< d |
     e4 f\> e d |
     e2--\! e)-- |
+    R1*18 |
+    a4(\ppDolcissimo g f2~ |
+    f4 a g f |
+    g4 \tuplet 3/2 { f8 g f } e2~ |
+    e2)\breathe c4(\< d |
+    e2)\!\breathe c4(\< d |
+    e2)\!\breathe c4(\< d |
+    e4 f\> e d |
+    e2--\! e)-- |
+    R1*2 |
+    \bar "|."
   }
 }
 
@@ -344,132 +366,125 @@ stetit_puella_clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette in A"
-    subtitle = "Swaz hie gat umbe"
+    instrument = "Klarinette I in A"
   }
   \score {
+    \header {
+      piece = \markup { \fontsize #3 \bold "Swaz hie gat umbe" }
+    }
     \new Staff {
       \compressEmptyMeasures
       \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
-      <<
-      {
+      \new Voice {
         \transpose a a \swaz_hie_gat_umbe_clarinet_I_II
       }
-      \\
-      {
-        \transpose a a \swaz_hie_gat_umbe_clarinet_I_II
-      }
-      >>
     }
   }
-}
-
-\bookpart {
-  \header{
-    instrument = "Klarinette in A"
-    subtitle = "Olim lacus colueram"
-  }
   \score {
+    \header{
+      piece = \markup { \fontsize #3 \bold "Olim lacus colueram" }
+    }
     \new Staff {
       \compressEmptyMeasures
       \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
-      <<
-      {
+      \new Voice {
         \transpose a a \olim_lacus_colueram_clarinet_I
       }
-      \\
-      {
-        \transpose a a \olim_lacus_colueram_clarinet_II
-      }
-      >>
     }
   }
-}
-
-\bookpart {
-  \header{
-    instrument = "Klarinette in A"
-    subtitle = "Amor volat undique"
-  }
   \score {
+    \header{
+      piece = \markup { \fontsize #3 \bold "Amor volat undique" }
+    }
     \new Staff {
       \compressEmptyMeasures
       \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
-      <<
-      {
+      \new Voice {
         \transpose a a \amor_volat_undique_clarinet_I
       }
-      \\
-      {
-        \transpose a a \amor_volat_undique_clarinet_II
-      }
-      >>
     }
   }
-}
-
-\bookpart {
-  \header{
-    instrument = "Klarinette in A"
-    subtitle = "Stetit puella"
-  }
   \score {
+    \header{
+      piece = \markup { \fontsize #3 \bold "Stetit puella" }
+    }
     \new Staff {
       \compressEmptyMeasures
       \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
-      <<
-      {
+      \new Voice {
         \transpose a a \stetit_puella_clarinet_I
       }
-      \\
-      {
+    }
+  }
+}
+
+\bookpart {
+  \header{
+    instrument = "Klarinette II in A"
+  }
+  \score {
+    \header {
+      piece = \markup { \fontsize #3 \bold "Swaz hie gat umbe" }
+    }
+    \new Staff {
+      \compressEmptyMeasures
+      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+      \override DynamicLineSpanner.staff-padding = #3
+      \accidentalStyle Score.modern-cautionary
+      \new Voice {
+        \transpose a a \swaz_hie_gat_umbe_clarinet_I_II
+      }
+    }
+  }
+  \score {
+    \header{
+      piece = \markup { \fontsize #3 \bold "Olim lacus colueram" }
+    }
+    \new Staff {
+      \compressEmptyMeasures
+      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+      \override DynamicLineSpanner.staff-padding = #3
+      \accidentalStyle Score.modern-cautionary
+      \new Voice {
+        \transpose a a \olim_lacus_colueram_clarinet_II
+      }
+    }
+  }
+  \score {
+    \header{
+      piece = \markup { \fontsize #3 \bold "Amor volat undique" }
+    }
+    \new Staff {
+      \compressEmptyMeasures
+      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+      \override DynamicLineSpanner.staff-padding = #3
+      \accidentalStyle Score.modern-cautionary
+      \new Voice {
+        \transpose a a \amor_volat_undique_clarinet_II
+      }
+    }
+  }
+  \score {
+    \header{
+      piece = \markup { \fontsize #3 \bold "Stetit puella" }
+    }
+    \new Staff {
+      \compressEmptyMeasures
+      \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+      \override DynamicLineSpanner.staff-padding = #3
+      \accidentalStyle Score.modern-cautionary
+      \new Voice {
         \transpose a a \stetit_puella_clarinet_II
       }
-      >>
     }
   }
 }
 
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette I in Bb"
-  }
-  \score {
-    \new Staff {
-      \compressEmptyMeasures
-      \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose c d \clarinet_I
-      }
-    }
-  }
-}
-
-\bookpart {
-  \header{
-    instrument = "Klarinette II in Bb"
-  }
-  \score {
-    \new Staff {
-      \compressEmptyMeasures
-      \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose c d \clarinet_II
-      }
-    }
-  }
-}
-%}
