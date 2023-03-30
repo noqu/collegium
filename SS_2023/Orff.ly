@@ -54,6 +54,7 @@ rall = ^\markup {\italic {"rall."} }
 riten = ^\markup {\italic {"riten."} }
 ritATempo = ^\markup { \center-align \italic {"  rit. a tempo"} }
 aTempo = ^\markup { \italic {"a tempo"} }
+aTempoComePrima = ^\markup { \italic {"a tempo come prima"} }
 moltoRit = ^\markup { \italic {"molto rit."} }
 pocoRit = ^\markup {\italic {"poco rit."} }
 pocoRiten = ^\markup {\italic {"poco riten."} }
@@ -69,6 +70,7 @@ piuP = _\markup { \italic "più" \dynamic p }
 lento = ^\markup { \italic "Lento" }
 accel = ^\markup { \bold { "accel." } }
 tempoPrimo = ^\markup { \italic { "Tempo I" } }
+attaca = ^\markup { \bold { "attaca" } }
 
 % Adapted from http://lsr.di.unimi.it/LSR/Snippet?id=655
 % Make title, subtitle, instrument appear on pages other than the first
@@ -120,53 +122,188 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
   
 }
 
-% This allows the use of \startMeasureCount and \stopMeasureCount
-% See https://lilypond.org/doc/v2.23/Documentation/snippets/repeats#repeats-numbering-groups-of-measures
+% Do not print bar numbers at all
 \layout {
   \context {
-    \Staff
-    \consists #Measure_counter_engraver
+    \Score
+    \omit BarNumber
   }
 }
 
 % ---------------------------------------------------------
 
-swaz_hie_gat_umbe_clarinet_I_II = {
-  \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+nine_clarinet_I = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \compressEmptyMeasures
   \defaultTimeSignature
-  \time 3/4
-  \tempo "Allegro molto."
+  \time 2/4
   \key c \major
   \clef violin
   \relative c' {
-    R1*3/4*24 |
+    R1*2/4 |
+    \break
+    \autoLineBreaksOff
+    <<
+      \new Voice {
+        \override MultiMeasureRest.staff-position = #-4
+        R1*2/4*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Coro"
+        \voiceOne
+        \autoBeamOff
+        \time 2/4
+        a''8\fermata g->\pocoRit f-> e-> |
+        d4-> d-> |
+        \autoBeamOn
+      } \addlyrics { ""8 le di -- sen su4 -- mer }
+    >>
+    \time 3/4
     \bar "||"
-    g''4->-.\ff g8[-> f]-. e-. f-. |
+    \mark #69
+    \tempo "a tempo" 2.=84
+    g4->-.\ff g8[-> f]-. e-. f-. |
     \repeat unfold 3 {
       g8(-> a-.) g[-. f]-. e-. f-. |
     }
+    \break
     \repeat unfold 2 {
       g8(-> c-.) g[-. f]-. e-. f-. |
     }
     g8( c-.) g[-. f]-. e-. f-. |
     g8(-> c-.) g[-. f]-. e-. d-. |
-    c4->-. c'->-. r |
+    c4->-. c'->-. r\attaca |
+    \bar "|."
+    \break
+    R1*3/4
+    \break
+    \time 1/4
+    <<
+      \new Voice {
+        \override MultiMeasureRest.staff-position = #-4
+        R1*1/4 |
+        \mark #77
+        \time 3/4
+        R1*3/4*3 |
+        \time 2/4
+        R1*2/4*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \voiceOne
+        \set instrumentCueName = "Oboe"
+        <e, g>4 |
+        \time 3/4
+        \repeat unfold 3 {
+          r4 <c e g> r |
+        }
+        \time 2/4
+                
+        \set instrumentCueName = "Coro"
+        \autoBeamOff
+          a'8\fermata g->\pocoRit f-> e-> |
+          d4-> d-> |
+        
+        \autoBeamOn
+      } \addlyrics { ""4 ""2. ""2. ""2. ""8 le di -- sen su4 -- mer }
+    >>
+    \time 3/4
+    \bar "||"
+    \tempo "a tempo" 2.=84
+    g4->-.\ff g8[-> f]-. e-. f-. |
+    \break
+    \repeat unfold 3 {
+      g8(-> a-.) g[-. f]-. e-. f-. |
+    }
+    g8(-> c-.) g[-. f]-. e-. f-. |
+    \mark #78
+    g8(-> c-.) g[-. f]-. e-. f-. |
+    g8( c-.) g[-. f]-. e-. f-. |
+    g8(-> c-.) g[-. f]-. e-. d-. |
+    c4->-. c'->-. r\attaca |
+    \bar "|."
+    \autoLineBreaksOn
+  }
+  
+}
+
+nine_clarinet_II = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \compressEmptyMeasures
+  \defaultTimeSignature
+  \time 2/4
+  \key c \major
+  \clef violin
+  \relative c' {
+    R1*2/4 |
+    \break
+    <<
+      \new Voice {
+        \override MultiMeasureRest.staff-position = #-4
+        R1*2/4*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \set instrumentCueName = "Coro"
+        \voiceOne
+        \autoBeamOff
+        \time 2/4
+        a''8\fermata g->\pocoRit f-> e-> |
+        d4-> d-> |
+        \autoBeamOn
+      } \addlyrics { ""8 le di -- sen su4 -- mer }
+    >>
+    \time 3/4
+    \bar "||"
+    \mark #69
+    \tempo "a tempo" 2.=84
+    g4->-.\ff g8[-> f]-. e-. f-. |
+    \repeat unfold 3 {
+      g8(-> a-.) g[-. f]-. e-. f-. |
+    }
+    \break
+    \repeat unfold 2 {
+      g8(-> c-.) g[-. f]-. e-. f-. |
+    }
+    g8( c-.) g[-. f]-. e-. f-. |
+    g8(-> c-.) g[-. f]-. e-. d-. |
+    c4->-. c'->-. r\attaca |
+    \bar "|."
+    \break
+    R1*3/4
+    \break
+    \tempo "allegro molto" 2.=84
+    g4->-.\ff g8[-> f]-. e-. f-. |
+    \repeat unfold 3 {
+      g8(-> a-.) g[-. f]-. e-. f-. |
+    }
+    \break
+    g8(-> c-.) g[-. f]-. e-. f-. |
+    \mark #78
+    g8(-> c-.) g[-. f]-. e-. f-. |
+    g8( c-.) g[-. f]-. e-. f-. |
+    g8(-> c-.) g[-. f]-. e-. d-. |
+    c4->-. c'->-. r\attaca |
     \bar "|."
   }
 }
 
-olim_lacus_colueram_clarinet_I = {
-  \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+twelve_clarinet_I = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \compressEmptyMeasures
   \defaultTimeSignature
   \time 4/4
+  \tempo "" 4 = 84
   \key c \major
   \clef violin
   \relative c' {
-    R1*3 |
+    R1*2 |
+    \mark #89
+    R1
     <<
       \new Voice {
         \voiceOne
@@ -174,6 +311,7 @@ olim_lacus_colueram_clarinet_I = {
         R1*3 |
         % \clef violin
         r4 e''8->-.\f r r2 |
+        \break
         \revert MultiMeasureRest.staff-position
       }
       \new CueVoice {
@@ -182,38 +320,50 @@ olim_lacus_colueram_clarinet_I = {
         % \clef tenor
         {
           f,,8(-> e)-. r dis-. r e-. f8[(-> e)]-. |
-          f8(-> e)-. dis(-> e-.) h(-> c-.) \tuplet 3/2 { gis-> a-.-- c-.-- }
+          f8(-> e)-. dis(-> e-.) h(-> c-.) \tuplet 3/2 { gis->\rit a-.-- c-.-- }
           % \clef bass 
-          e,1~\sf\>
+          e,1~\sf\>\aTempo
           e8-.\! \hideNotes{ r r4 r2 } |
         }
       }
     >>
     \bar ".|:"
+    \tempo "" 4 = 44
     f'4->\pp f-> f-> f-> |
-    \repeat unfold 6 {
+    \repeat unfold 4 {
+      f4-> f-> f-> f-> |
+    }
+    \mark #90
+    \repeat unfold 2 {
       f4-> f-> f-> f-> |
     }
     \bar "||"
-    R1*4 |
-    \tuplet 3/2 { r8 e''8-.\ff\> e-. } \repeat unfold 3 { \tuplet 3/2 { e-. e-. e-. } } |
-    e8-. e-. r e-. r e-. e-. e-. |
+    \break
+    \time 4/2
+    \tempo "" 4 = 132
+    R1*4/2*3 |
+    \time 4/4
+    \tuplet 3/2 { r8 e''8-.\ff\>^\markup\italic {"staccatissimo"} e-. } \repeat unfold 2 { \tuplet 3/2 { e-. e-. e-. } } \tuplet 3/2 { e-.\string e-. e-. } |
+    e8-. e-. r e-. r e-.^\markup\italic{"(senza rit.)"} e-. e-. |
     r4 e-. r e8-. e-.\pp |
-    R1\fermata |
+    R1\fermata\attaca_\markup\bold {"3 Strophen"} |
     \bar ":|."
   }
 }
 
-olim_lacus_colueram_clarinet_II = {
-  \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+twelve_clarinet_II = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \compressEmptyMeasures
   \defaultTimeSignature
   \time 4/4
+  \tempo "" 4 = 84
   \key c \major
   \clef violin
   \relative c' {
-    R1*3 |
+    R1*2 |
+    \mark #89
+    R1
     <<
       \new Voice {
         \voiceOne
@@ -229,30 +379,39 @@ olim_lacus_colueram_clarinet_II = {
         % \clef tenor
         {
           f,8(-> e)-. r dis-. r e-. f8[(-> e)]-. |
-          f8(-> e)-. dis(-> e-.) h(-> c-.) \tuplet 3/2 { gis-> a-.-- c-.-- }
+          f8(-> e)-. dis(-> e-.) h(-> c-.) \tuplet 3/2 { gis->\rit a-.-- c-.-- }
           % \clef bass 
-          e,1~\sf\>
+          e,1~\sf\>\aTempo
           e8-.\! \hideNotes{ r r4 r2 } |
         }
       }
     >>
     \bar ".|:"
+    \break
+    \tempo "" 4 = 44
     e'8(\pp a,)---. e'([ a,---.]) e'( a,---.) e'([ a,---.]) |
-    \repeat unfold 6 {
+    \repeat unfold 4 {
+      e'( a,---.) e'([ a,---.]) e'( a,---.) e'([ a,---.]) |
+    }
+    \mark #90
+    \repeat unfold 2 {
       e'( a,---.) e'([ a,---.]) e'( a,---.) e'([ a,---.]) |
     }
     \bar "||"
-    R1*4 |
-    \tuplet 3/2 { r8 a''8-.\ff\> a-. } \repeat unfold 3 { \tuplet 3/2 { a-. a-. a-. } } |
-    a8-. a-. r a-. r a-. a-. a-. |
+    \time 4/2
+    \tempo "" 4 = 132
+    R1*4/2*3 |
+    \time 4/4
+    \tuplet 3/2 { r8 a''8-.\ff\>^\markup\italic {"staccatissimo"} a-. } \repeat unfold 2 { \tuplet 3/2 { a-. a-. a-. } } \tuplet 3/2 { a-.\string a-. a-. } |
+    a8-. a-. r a-. r a-.^\markup\italic{"(senza rit.)"} a-. a-. |
     r4 a-. r a8-. a-.\pp |
-    R1\fermata |
+    R1\fermata\attaca_\markup\bold {"3 Strophen"} |
     \bar ":|."
   }
 }
 
-amor_volat_undique_clarinet_I = {
-  \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+fifteen_clarinet_I = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \compressEmptyMeasures
   \defaultTimeSignature
@@ -260,23 +419,27 @@ amor_volat_undique_clarinet_I = {
   \key f \major
   \clef violin
   \relative c' {
-    R1*24 |
+    R1 |
+    \break
     \time 3/4
-    a'16(->\ppDolcissimo b a b c2)-- |
+    a'16(->\ppDolcissimo\aTempoComePrima b a b c2)-- |
     b16(-> a c b a2)-- |
     a16(-> b a b c8-- c-- b-- b)-- |
-    c16(-> b a g << a2)\fermata { s4\> s4\! } >> |
-    R1*3/4*31 |
-    a16(->\ppDolcissimo b a b c2)-- |
+    c16(->^\markup\italic "pochissimo rit." b a g a2)\fermata |
+    \break
+    R1*3/4 |
+    \break
+    \time 3/4
+    a16(->\ppDolcissimo\aTempo b a b c2)-- |
     b16(-> a c b a2)-- |
     a16(-> b a b c8-- c-- b-- b)-- |
-    c16(-> b a g << a2)\fermata { s4\> s4\! } >> |
+    c16(->^\markup\italic "poch. rit." b a g a2)\fermata\attaca |
     \bar "|."
   }
 }
 
-amor_volat_undique_clarinet_II = {
-  \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+fifteen_clarinet_II = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \compressEmptyMeasures
   \defaultTimeSignature
@@ -284,23 +447,31 @@ amor_volat_undique_clarinet_II = {
   \key f \major
   \clef violin
   \relative c' {
-    R1*24 |
+    R1 |
+    \break
+    \tempo "" 4 = 112
+    R1
+    \mark #105
+    R1\fermata
     \time 3/4
-    f16(->\ppDolcissimo g f g a2)-- |
+    f16(->\ppDolcissimo\aTempoComePrima g f g a2)-- |
     g16(-> f a g f2)-- |
     f16(-> g f g a8-- a-- g-- g)-- |
-    a16(-> g f e << f2)\fermata { s4\> s4\! } >> |
-    R1*3/4*31 |
-    f16(->\ppDolcissimo g f g a2)-- |
+    a16(->^\markup\italic "pochissimo rit." g f e << f2)\fermata { s4\> s4\! } >> |
+    \break
+    R1*3/4 |
+    \break
+    \time 3/4
+    f16(->\ppDolcissimo\aTempoComePrima g f g a2)-- |
     g16(-> f a g f2)-- |
     f16(-> g f g a8-- a-- g-- g)-- |
-    a16(-> g f e << f2)\fermata { s4\> s4\! } >> |
+    a16(->^\markup\italic "poch. rit." g f e << f2)\fermata\attaca { s4\> s4\! } >> |
     \bar "|."
   }
 }
 
-stetit_puella_clarinet_I = {
-  \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+seventeen_clarinet_I = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \compressEmptyMeasures
   \defaultTimeSignature
@@ -308,31 +479,62 @@ stetit_puella_clarinet_I = {
   \key c \major
   \clef violin
   \relative c' {
-    R1*16 |
-    c''4(\ppDolcissimo h a2~ |
+    R1 |
+    \break
+    R1*5 |
+    \mark #114
+    R1*3
+    R1\pocoRit\breathe
+    c''4(\ppDolcissimo\aTempo h a2~ |
     a4 c h a |
     h4 \tuplet 3/2 { a8 h a } g2~ |
     g2)\breathe e4(\< f |
+    \break
     g2)\!\breathe e4(\< f |
     g2)\!\breathe e4(\< f |
-    g4 a\> g f |
-    g2--\! g)-- |
-    R1*18 |
-    c4(\ppDolcissimo h a2~ |
-    a4 c h a |
-    h4 \tuplet 3/2 { a8 h a } g2~ |
-    g2)\breathe e4(\< f |
-    g2)\!\breathe e4(\< f |
-    g2)\!\breathe e4(\< f |
+    \mark #115
     g4 a\> g f |
     g2--\! g)-- |
     R1*2 |
+    \bar "||"
+    R1*6\aTempo
+    \mark #116
+    R1*8 |
+    \break
+    <<
+      \new Voice {
+        \voiceOne
+        \override MultiMeasureRest.staff-position = #-10
+        R1*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \voiceTwo
+        \set instrumentCueName = "Viol.I div."
+        {
+          <fis, a e' h'>8 <fis a e' h'>4 <fis a e' h'>8 <fis a e' h'>4 <fis a e' h'> |
+          <fis a e' h'>8 <fis a e' h'>4 <fis a e' h'>8 <fis a e' h'>4 <fis a e' h'> |
+        }
+      }
+    >>
+    \mark #117
+    \breathe
+    c''4(\aTempo\ppDolcissimo h a2~ |
+    a4 c h a |
+    h4 \tuplet 3/2 { a8 h a } g2~ |
+    g2)\breathe e4(\< f |
+    \break
+    g2)\!\breathe e4(\< f |
+    g2)\!\breathe e4(\< f |
+    g4 a\> g f |
+    g2--\! g)-- |
+    R1*2\attaca |
     \bar "|."
   }
 }
 
-stetit_puella_clarinet_II = {
-  \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+seventeen_clarinet_II = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \compressEmptyMeasures
   \defaultTimeSignature
@@ -340,25 +542,56 @@ stetit_puella_clarinet_II = {
   \key c \major
   \clef violin
   \relative c' {
-    R1*16 |
-    a''4(\ppDolcissimo g f2~ |
+    R1 |
+    \break
+    R1*5 |
+    \mark #114
+    R1*3
+    R1\pocoRit\breathe
+    a''4(\ppDolcissimo\aTempo g f2~ |
     f4 a g f |
     g4 \tuplet 3/2 { f8 g f } e2~ |
     e2)\breathe c4(\< d |
+    \break
     e2)\!\breathe c4(\< d |
     e2)\!\breathe c4(\< d |
-    e4 f\> e d |
-    e2--\! e)-- |
-    R1*18 |
-    a4(\ppDolcissimo g f2~ |
-    f4 a g f |
-    g4 \tuplet 3/2 { f8 g f } e2~ |
-    e2)\breathe c4(\< d |
-    e2)\!\breathe c4(\< d |
-    e2)\!\breathe c4(\< d |
+    \mark #115
     e4 f\> e d |
     e2--\! e)-- |
     R1*2 |
+    \bar "||"
+    R1*6\aTempo
+    \mark #116
+    R1*8 |
+    \break
+    <<
+      \new Voice {
+        \voiceOne
+        \override MultiMeasureRest.staff-position = #-10
+        R1*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \voiceTwo
+        \set instrumentCueName = "Viol.I div."
+        {
+          <fis, a e' h'>8 <fis a e' h'>4 <fis a e' h'>8 <fis a e' h'>4 <fis a e' h'> |
+          <fis a e' h'>8 <fis a e' h'>4 <fis a e' h'>8 <fis a e' h'>4 <fis a e' h'> |
+        }
+      }
+    >>
+    \mark #117
+    \breathe
+    a'4(\ppDolcissimo\aTempo g f2~ |
+    f4 a g f |
+    g4 \tuplet 3/2 { f8 g f } e2~ |
+    e2)\breathe c4(\< d |
+    \break
+    e2)\!\breathe c4(\< d |
+    e2)\!\breathe c4(\< d |
+    e4 f\> e d |
+    e2--\! e)-- |
+    R1*2\attaca |
     \bar "|."
   }
 }
@@ -372,41 +605,41 @@ stetit_puella_clarinet_II = {
   }
   \score {
     \header {
-      piece = \markup { \fontsize #3 \bold "Swaz hie gat umbe" }
+      piece = \markup { \fontsize #5 \bold "Nr. 9" }
     }
     \new Staff {
       \new Voice {
-        \transpose b a \swaz_hie_gat_umbe_clarinet_I_II
+        \transpose b a \nine_clarinet_I
       }
     }
   }
   \score {
     \header{
-      piece = \markup { \fontsize #3 \bold "Olim lacus colueram" }
+      piece = \markup { \fontsize #5 \bold "Nr. 12" }
     }
     \new Staff {
       \new Voice {
-        \transpose b a \olim_lacus_colueram_clarinet_I
+        \transpose b a \twelve_clarinet_I
       }
     }
   }
   \score {
     \header{
-      piece = \markup { \fontsize #3 \bold "Amor volat undique" }
+      piece = \markup { \fontsize #5 \bold "Nr. 15" }
     }
     \new Staff {
       \new Voice {
-        \transpose b a \amor_volat_undique_clarinet_I
+        \transpose b a \fifteen_clarinet_I
       }
     }
   }
   \score {
     \header{
-      piece = \markup { \fontsize #3 \bold "Stetit puella" }
+      piece = \markup { \fontsize #5 \bold "Nr. 17" }
     }
     \new Staff {
       \new Voice {
-        \transpose b a \stetit_puella_clarinet_I
+        \transpose b a \seventeen_clarinet_I
       }
     }
   }
@@ -418,41 +651,41 @@ stetit_puella_clarinet_II = {
   }
   \score {
     \header {
-      piece = \markup { \fontsize #3 \bold "Swaz hie gat umbe" }
+      piece = \markup { \fontsize #5 \bold "Nr. 9" }
     }
     \new Staff {
       \new Voice {
-        \transpose b a \swaz_hie_gat_umbe_clarinet_I_II
+        \transpose b a \nine_clarinet_II
       }
     }
   }
   \score {
     \header{
-      piece = \markup { \fontsize #3 \bold "Olim lacus colueram" }
+      piece = \markup { \fontsize #5 \bold "Nr. 12" }
     }
     \new Staff {
       \new Voice {
-        \transpose b a \olim_lacus_colueram_clarinet_II
+        \transpose b a \twelve_clarinet_II
       }
     }
   }
   \score {
     \header{
-      piece = \markup { \fontsize #3 \bold "Amor volat undique" }
+      piece = \markup { \fontsize #5 \bold "Nr. 15" }
     }
     \new Staff {
       \new Voice {
-        \transpose b a \amor_volat_undique_clarinet_II
+        \transpose b a \fifteen_clarinet_II
       }
     }
   }
   \score {
     \header{
-      piece = \markup { \fontsize #3 \bold "Stetit puella" }
+      piece = \markup { \fontsize #5 \bold "Nr. 17" }
     }
     \new Staff {
       \new Voice {
-        \transpose b a \stetit_puella_clarinet_II
+        \transpose b a \seventeen_clarinet_II
       }
     }
   }
