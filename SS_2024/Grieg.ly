@@ -255,6 +255,131 @@ clarinet_I = {
     g8-.-> g-. r4 |
     R2*2 |
     \mBreak
+
+    % cl1 p2 1
+    r4 c8-.-> c-. |
+    R2 |
+    \mark #4
+    b4-> c-> |
+    b4-> c-> |
+    b2-> |
+    b8-.-> b-. r4 |
+    b4-> c-> |
+    b4-> c-> |
+    b2-> |
+    \mBreak
+
+    % cl1 p2 2
+    b8-.-> a-.-> r4 |
+    R2*2 |
+    r4 f8-.-> f-. |
+    R2 |
+    g8-.[\p r16 es16( c8) r16 es(] |
+    g4->)~ g8 r8 |
+    g16( a g es c es g c) |
+    \mBreak
+
+    % cl1 p2 3
+    g4->~ g8 r8 |
+    \repeat unfold 2 {
+      b,-. r b-. r |
+      b4->~ b8 r |
+    }
+    R2*4 |
+    f'8-.[ r16 d16( _\markup \italic "più cresc." b8) r16 d(] |
+    f4->)~ f8 r8 |
+    \mBreak
+
+    % cl1 p2 4
+    f16( g f d b d f b) |
+    f4->~ f8 r8 |
+    d'4->~\f d8 r8 |
+    c4->~ c8 r8 |
+    R2*2 |
+    h4->~ h8 r8 |
+    a4->~ a8 r8 |
+    R2*2 |
+    \mBreak
+
+    % cl1 p2 5
+    \mark #5
+    R2*3 
+    c2->\f |
+    a8-.\ff a-. b-. b-. |
+    a8-. a-. b-. b-. |
+    \repeat unfold 4 { a8-.-> a-. a-. a-. } |
+    R2 |
+    \mBreak
+
+    % cl1 p2 6
+    f8-.[ r16 as16( g8) r16 as(] |
+    f8) r r4 |
+    f16 g f e c e f as |
+    g16->( e) f8-. r4 |
+    f8-.[ r16 as16(\cresc g8)\! r16 as(] |
+    f8) r r4 |
+    \mBreak
+
+    % cl1 p2 7
+    f16 g f e h e f as |
+    R2 |
+    g8-.[\p r16 b16( a8) r16 b(] |
+    g8) r r4 |
+    g16 a g fis d fis g b |
+    a16->( fis) g8-. r4 |
+    \mBreak
+
+    % cl1 p2 8
+    g8-.[ r16 b16(\cresc a8)\! r16 b(] |
+    g8) r r4 |
+    g16-> a g fis d fis g b |
+    R2 |
+    a16->\f h a gis dis g a c |
+    R2 |
+    \mBreak
+
+    % cl1 p2 9
+    h16->\ff cis h ais eis a b d |
+    \mark #6
+    R2*4 |
+    a,2\pCresc |
+    c2 |
+    e2\f\< |
+    g2 |
+    f8.->(\ff a16) g8.->( a16) |
+    f8.->( a16) g8.->( a16) |
+    \mBreak
+
+    % cl1 p2 10
+    g16->( e) f8-. r4 |
+    R2 |
+    f16-> g f d b d f a |
+    f16-> g f d b d f a |
+    g16->( e) f8-. r4 |
+    R2 |
+    f16-> g f d b d f a |
+    \mBreak
+
+    % cl1 p2 11
+    g16->( e) f8-. r4 |
+    f16-> g f d b d f a |
+    g16->( e) f8-. r4 |
+    r4 \acciaccatura e'8 d16->( h) c8-. |
+    r4 \acciaccatura a8 g16->( e) f8-. |
+    r4 \acciaccatura e'8 d16->( h) c8-. |
+    r4 \acciaccatura a8 g16->( e) f8-. |
+    \mBreak
+
+    % cl1 p2 12
+    r4 \acciaccatura a8 g16->( e) f8-. |
+    r4 \acciaccatura a8 g16->( e) f8-. |
+    R2*2
+    \acciaccatura a8 g16->(\f e) f8-. \acciaccatura a8 g16->( e) f8-. |
+    \acciaccatura a8 g16->(\piuF e) f8-. \acciaccatura a8 g16->( e) f8-. |
+    r4 c'8-.->\fff c-.-> _\markup \italic "attacca"
+    \bar "|."
+    \mBreak
+
   }
 }
 
