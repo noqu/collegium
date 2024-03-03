@@ -233,6 +233,7 @@ clarinet_I = {
     \mBreak
     
     % cl1 p1 9
+    \bar "||"
     \key g \major
     r4 dis,(\f\< e h')
     ais4(\ff\>^\markup \italic "molto ten." a gis g)\!
@@ -280,6 +281,7 @@ clarinet_I = {
     \mBreak
 
     % cl1 p2 3
+    % FIXME: check again
     g4->~ g8 r8 |
     \repeat unfold 2 {
       b,-. r b-. r |
@@ -379,7 +381,6 @@ clarinet_I = {
     r4 c'8-.->\fff c-.-> _\markup \italic "attacca"
     \bar "|."
     \mBreak
-
   }
 }
 
@@ -388,11 +389,235 @@ clarinet_II = {
   \defaultTimeSignature
   \compressEmptyMeasures
   \time 2/4
-  \tempo "Moderato assai."
-  \key c \major
+  \tempo "Allegro con brio."
+  \key f \major
   \clef violin
-    \relative c' {
+  \relative c' {
     % cl2 p1 1
+    f'4->\f e-> |
+    f4-> e-> |
+    f2-> |
+    e8-.-> e-. r4 |
+    f4-> e-> |
+    f4-> e-> |
+    f2-> |
+    \mBreak
+    
+    % cl2 p1 2
+    f8-.-> e-. r4 |
+    b8-.\p r b-. r |
+    b4->~ b8 r |
+    b8-. r b-. r |
+    b4->~ b8 r |
+    b8-. r b-. r|
+    \mBreak
+    
+    % cl2 p1 3
+    b4->~ b8 r |
+    b8-. r b-. r |
+    b4->~ b8 r |
+    b'4->~\f b8 r |
+    a4->~ a8 r |
+    R2*2 |
+    \mBreak
+    
+    % cl2 p1 4
+    g4->~\f g8 r |
+    f4->~ f8 r |
+    R2*2 |
+    \mark #1
+    R2*3 |
+    c2->\f\< |
+    f8-.->\ff f-. e-. e-. |
+    f8-.-> f-. e-. e-. |
+    \mBreak
+    
+    % cl2 p1 5
+    \repeat unfold 4 { f8-.-> f-. f-. f-. } |
+    R2 |
+    R2 \fermata |
+    \mBreak
+    
+    % cl2 p1 6
+    \time 4/4
+    \tempo "Poco Andante."
+    R1*4 |
+    % FIXME: Add clar1 cue notes
+    R1 |
+    d2\p~ d4 r |
+    R1*10 |
+    \mark #2
+    \time 2/4
+    \tempo "Un poco Allegro."
+    R2*16 |
+    % FIXME: Add cello cue notes from clar1
+    R2 |
+    R2 |
+    \mBreak
+    
+    % cl2 p1 7
+    \time 4/4
+    \tempo "Poco Andante."
+    R1*2 |
+    \time 2/4
+    R2 |
+    \time 3/4
+    \tempo "Vivace."
+    R2.*18 |
+    R2.\fermata |
+    \bar "||"
+    \mark 3
+    \time 4/4
+    % FIXME: Add oboe cue notes (maybe also for clar1?)
+    R1 |
+    R1 |
+    \mBreak
+    
+    % cl2 p1 8
+    R1*2 |
+    \bar "||"
+    \key g \major
+    r4 h2(\f\< e4) |
+    e1->\ff\> |
+    c2(->\p\> h4 a) |
+    g2\pp( g4)\fermata r4
+    \bar "||"
+    \key f \major
+    \time 2/4
+    \tempo "Allegro con brio."
+    f'4->\f e-> |
+    f4-> e-> |
+    \mBreak
+    
+    % cl2 p1 9
+    f2-> |
+    e8-.-> e-. r4 |
+    f4-> e-> |
+    f4-> e-> |
+    f2-> |
+    f8-.-> e-. r4 |
+    R2*2 |
+    \mBreak
+    
+    % cl2 p2 1
+    r4 c8-.-> c-. |
+    R2 |
+    \mark #4
+    g'4-> fis-> |
+    g4-> fis-> |
+    g2-> |
+    f8-.-> f-. r4 |
+    g4-> fis-> |
+    g4-> fis-> |
+    g2-> |
+    \mBreak
+
+    % cl2 p2 2
+    e8-.-> f-. r4 |
+    R2*2 |
+    r4 f8-.-> f-. |
+    R2 |
+    a,8-.\p r a-. r |
+    a4->~ a8 r8 |
+    a8-. r a-. r |
+    a4->~ a8 r8 |
+    \mBreak
+
+    % cl2 p2 3
+    g8-. r g-. r |
+    g4->~ g8 r8 |
+    g8 r g r |
+    g4->~ g8 r8 |
+    b8\pCresc r b r |
+    b4->~ b8 r8 |
+    b8 r b r |
+    b4->~ b8 r8 |
+    \mBreak
+
+    % cl2 p2 4
+    b8 _\markup \italic "più cresc." r b r |
+    b4->~ b8 r8 |
+    b8 r b r |
+    b4->~ b8 r8 |
+    b'4->~\f b8 r8 |
+    a4->~ a8 r8 |
+    R2*2 |
+    g4->~ g8 r8 |
+    \mBreak
+
+    % cl2 p2 5
+    f4->~ f8 r8 |
+    R2*2 |
+    \mark #5
+    R2*3 
+    c2->\f |
+    f8-.\ff f-. e-. e-. |
+    f8-. f-. e-. e-. |
+    \repeat unfold 2 { f8-.-> f-. f-. f-. } |
+    \mBreak
+
+    % cl2 p2 6
+    \repeat unfold 2 { f8-.-> f-. f-. f-. } |
+    R2*5 |
+    f8[ r16 as16(\cresc g8)\! r16 as(] |
+    f8) r r4 |
+    f16 g f e h e f as |
+    R2*5 |
+    \mBreak
+
+    % cl2 p2 7
+    g8-.[ r16 b16(\cresc a8)\! r16 b(] |
+    g8) r r4 |
+    g16-> a g fis d fis g b |
+    R2 |
+    a16->\f h a gis dis g a c |
+    R2 |
+    \mBreak
+
+    % cl2 p2 8
+    \mBreak
+
+    % cl2 p2 9
+    h16->\ff cis h ais eis a b d |
+    \mark #6
+    R2*4 |
+    e,,4.(\p f8\cresc) |
+    g4.( a8) |
+    b4.(\f\< c8) |
+    d4.( e8) |
+    f8.->(\ff a16) g8.->( a16) |
+    f8.->( a16) g8.->( a16) |
+    \mBreak
+
+    % cl2 p2 10
+    g16->( e) f8-. r4 |
+    R2 |
+    f16-> g f d b d f a |
+    f16-> g f d b d f a |
+    g16->( e) f8-. r4 |
+    R2 |
+    f16-> g f d b d f a |
+    \mBreak
+
+    % cl2 p2 11
+    g16->( e) f8-. r4 |
+    f16-> g f d b d f a |
+    g16->( e) f8 r4 |
+    r4 \acciaccatura e8 d16->( h) c8-. |
+    r4 \acciaccatura a8 g16->( e) f8-. |
+    r4 \acciaccatura e'8 d16->( h) c8-. |
+    r4 \acciaccatura a8 g16->( e) f8-. |
+    \mBreak
+
+    % cl2 p2 12
+    r4 \acciaccatura a8 g16->( e) f8-. |
+    r4 \acciaccatura a8 g16->( e) f8-. |
+    R2*2
+    \acciaccatura a8 g16->(\f e) f8-. \acciaccatura a8 g16->( e) f8-. |
+    \acciaccatura a8 g16->(\piuF e) f8-. \acciaccatura a8 g16->( e) f8-. |
+    r4 a'8-.->\fff a-.-> _\markup \italic "attacca"
+    \bar "|."
+    \mBreak
   }
 }
 
@@ -425,9 +650,10 @@ clarinet_II = {
 }
 %}
 
+
 \bookpart {
   \header{
-    instrument = "Klarinette I in Bb"
+    instrument = "Klarinette I in A"
   }
   \score {
     \new Staff {
@@ -440,14 +666,13 @@ clarinet_II = {
   }
 }
 
-%{
+
 \bookpart {
   \header{
-    instrument = "Klarinette II in Bb"
+    instrument = "Klarinette II in A"
   }
   \score {
     \new Staff {
-      \set Score.markFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
@@ -456,4 +681,3 @@ clarinet_II = {
     }
   }
 }
-%}
