@@ -298,7 +298,6 @@ clarinet_I = {
     R2*16
     \bar "|."
     \mBreak
-
   }
 }
 
@@ -307,11 +306,155 @@ clarinet_II = {
   \defaultTimeSignature
   \compressEmptyMeasures
   \time 2/4
-  \tempo "Moderato assai."
-  \key c \major
+  \tempo "Alla marcia."
+  \key g \major
   \clef violin
-    \relative c' {
+  \relative c' {
     % cl2 p1 1
+    R2*16 |
+    \mark #1
+    R2*2 |
+    % FIXME: Add flute cue notes
+    R2*2 |
+    \mBreak
+
+    % cl2 p1 2
+    r4 d16\pp r8. |
+    r4 d16 r8. |
+    r4 d16 r8. |
+    r4 d16 r8. |
+    \mark #2
+    R2*3 |
+    \mBreak
+    
+    % cl2 p1 3
+    r4 r8.. fis'32\mf |
+    fis16[ r32 e32 e16 r32 e32] g8[ r16. e32] | 
+    e16[ r32 d32 d16 r32 d32] fis8[ r16. d32] | 
+    \mBreak
+    
+    % cl2 p1 4
+    d16[ r32 a32 a16 r32 a32] e'16[ r32 a,32 a16 r32 a32] | 
+    a16[ r32 fis32 fis16 r32 fis32] fis8 r |
+    r4 fis,8(\< g\fz\> |
+    \after 4 \! fis2) |
+    \mBreak
+    
+    % cl2 p1 5
+    r4 fis8(\< g\> |
+    \after 4 \! fis2) |
+    R2*4 |
+    \mark #3
+    g''16.-.\prall\mf fis32-. e16.-. fis32-. g4~\< |
+    g2\f |
+    g16.-.\prall\mf fis32-.\cresc e16.-. fis32-. g4~ |
+    \mBreak
+    
+    % cl2 p1 6
+    g2\ff |
+    R2*4 |
+    g,2(\pp |
+    as2) |
+    b2(\< |
+    \after 8\! as4.) r8 |
+    R2*3 |
+    \mBreak
+    
+    % cl2 p1 7
+    \mark #4
+    r8 e\pp r4 |
+    r8 es r4 |
+    r8 e r4 |
+    r8 es r4 |
+    R2*3 |
+    \mBreak
+    
+    % cl2 p2 1
+    e16.\mf g32(\cresc e16.) c32( e16.-.) c32( a16.-.) g'32( |
+    e16.) c32( a16.) g'32( e16.-.) c32( a16.-.) g'32( |
+    e16.) c32( a16.) g'32( e16.-.) c32-.( a16.-.) h'32-.( |
+    \mBreak
+    
+    % cl2 p2 2
+    a16.-.) fis32-.( d16.-.) h'32-.( a16.-.) fis32-. f16.-. e32-. |
+    es16.-. d32-. cis16.-. c32-. h16.-. b32-. a16.-. as32-. |
+    \mark #5
+    g16.-.\ff d'32-. g16.-. d32-. g,16.-. d'32-. g16.-. d32-. |
+    \mBreak
+    
+    % cl2 p2 3
+    g,16.-. d'32-. g16.-. d32-. g,16.-. d'32-. g16.-. d'32-.\ffSempre |
+    \appoggiatura { c16 d } c16.-> h32-. c16.-. e32-. a,8..-> c32 |
+    \appoggiatura { h16 c } h16.-> a32-. h16.-. d32-. g,8..-> g32 |
+    \mBreak
+
+    % cl2 p2 4
+    a16.-. d,32-. a'16.-. c32-. a16.-. d,32-. a'16.-. c32-. |
+    \acciaccatura h8 d-. d4-> r16. d32( |
+    % FIXME: or tuplets?? also in clar 1
+    \appoggiatura { c16 d } c16-> a16-. c16-.) e16-. r8.. c32( |
+    \appoggiatura { h16 c } h16-> g16-. h16-.) d16-. r8.. h32( |
+    \mBreak
+
+    % cl2 p2 5
+    a16.-.) d,32-.( a'16.-.) c32-.( a16.-.) d,32-.( a'16.-.) c32-.( |
+    \acciaccatura h8 d-.) d4-> r8 |
+    c16.-. fis,32-.( c'16.-.) e32-.( c16.-.) fis,32-.( c'16.-.) e32-.( |
+    d8-.) d4-> r8 |
+    \mBreak
+
+    % cl2 p2 6
+    \mark #6
+    g,2~\ff |
+    g2~ |
+    g2~ |
+    g4 r|
+    c16.-.->\ff h32-. c16.-. e32-. a,8..-> h32 |
+    c16.-.-> h32-. c16.-. e32-. a4->~ |
+    \mBreak
+
+    % cl2 p2 7
+    a8 r r4 |
+    r8 d,4-> d,8->~ |
+    d4 r |
+    r4 r8 d->~ |
+    d8 fis'4-> fis,8->~ |
+    fis8 fis'4-> fis,8->~ |
+    \mBreak
+
+    % cl2 p2 8
+    fis8 a4-> a'8->~ |
+    a8 d,,32( cis d e fis g a h c d e fis |
+    \mark #7
+    g8-.) r r4 |
+    R2 |
+    \mBreak
+
+    % cl2 p2 9
+    r8 h,8-.\ff h4-> |
+    r8 h8-. h4-> |
+    r8 c,16.\ff d32 \tuplet 3/2 { e16([ g c] } \tuplet 3/2 { h16[ g h] } |
+    \tuplet 3/2 { a16[ f a]) } g16. f32( e16.) c32( g16-.) r16 |
+    \mBreak
+
+    % cl2 p2 10
+    r8 c'8-. c4-> |
+    r8 c-. c4->( |
+    h8) r r4 |
+    R2 |
+    \mark #8
+    R2*2 |
+    r4 \tuplet 3/2 { e,16([\mf g c] } \tuplet 3/2 { h16[ g h] } |
+    \mBreak
+
+    % cl2 p2 11
+    \tuplet 3/2 { a16[ f a]) } g16. f32( e16.) c32( g16-.) r16 |
+    R2*2 |
+    a'8-.\p a-. a4-> |
+    a8-. a-. a4-> |
+    R2*18
+    \bar "|."
+    \mBreak
   }
 }
 
@@ -344,9 +487,10 @@ clarinet_II = {
 }
 %}
 
+
 \bookpart {
   \header{
-    instrument = "Klarinette I in Bb"
+    instrument = "Klarinette I in A"
   }
   \score {
     \new Staff {
@@ -359,14 +503,12 @@ clarinet_II = {
   }
 }
 
-%{
 \bookpart {
   \header{
-    instrument = "Klarinette II in Bb"
+    instrument = "Klarinette II in A"
   }
   \score {
     \new Staff {
-      \set Score.markFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
@@ -375,4 +517,3 @@ clarinet_II = {
     }
   }
 }
-%}
