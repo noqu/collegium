@@ -13,7 +13,7 @@
   title = "Peer Gynt"
   subtitle = "Vorspiel"
   composerShort = "Edvard Grieg"
-  composer = "Pjotr Iljitsch Tschaikowsky (1843 - 1907)"
+  composer = "Edvard Grieg (1843 - 1907)"
   version = "v1"
 }
 
@@ -206,7 +206,7 @@ clarinet_I = {
     \time 2/4
     \tempo "Un poco Allegro."
     R2*16 |
-    % FIXME: Add cello grace notes
+    % FIXME: Add cello cue notes
     R2 |
     R2 |
     \time 4/4
@@ -226,7 +226,7 @@ clarinet_I = {
     \bar "||"
     \mark 3
     \time 4/4
-    % FIXME: Add violin grace notes
+    % FIXME: Add violin cue notes
     R1
     R1
     R1*2
