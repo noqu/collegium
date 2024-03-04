@@ -230,7 +230,6 @@ clarinet_I = {
     R1\fermata
     \bar "|."
     \mBreak
-
   }
 }
 
@@ -238,12 +237,73 @@ clarinet_II = {
   \accidentalStyle Score.modern-cautionary
   \defaultTimeSignature
   \compressEmptyMeasures
-  \time 2/4
-  \tempo "Moderato assai."
-  \key c \major
+  \time 4/4
+  \tempo "Poco Andante."
+  \key es \major
   \clef violin
-    \relative c' {
+  \relative c' {
     % cl2 p1 1
+    R1*6 |
+    r2\fermata r4\fermata r |
+    \bar "||"
+    R1*5 |
+    c'2~\p c4 r |
+    R1*3 |
+    es2~ es4 r |
+    \mark #1 |
+    R1*3\pocoRit |
+    r2\aTempo r4 g,4\f |
+    \mBreak
+
+    % cl2 p1 2
+    c2->~ c4 r |
+    R1 |
+    r2 r4\fermata r\fermata |
+    \bar "||"
+    \key c \major
+    \time 3/4
+    \tempo "Allegretto tranquillamente."
+    R1*12 
+    \bar "||"
+    \time 4/4
+    \tempo "Andante. (Tempo 1)" 
+    r2 c,2~\pp |
+    c4 r\fermata r\fermata r |
+    \bar "||"
+    \mBreak
+
+    % cl2 p1 3
+    \key es \major
+    R1*5 |
+    c'2\p~ c4 r |
+    R1*3 |
+    es2~ es4 r |
+    \mark #2 |
+    R1*3\rit |
+    r2\aTempo r4 g\f |
+    c2->~ c4 r |
+    R1 |
+    r2 r4\fermata r\fermata |
+    \bar "||"
+    \mBreak
+
+    % cl2 p1 4
+    \key c \major
+    \time 3/4
+    \tempo "Allegretto tranquillamente."
+    \pocoRit
+    R2.*12 |
+    \bar "||"
+    \time 4/4
+    \tempo "Andante. (Tempo 1)" 
+    r2 g4(\pp a |
+    g4) r4\fermata r\fermata r 
+    \bar "||"
+    \key es \major
+    R1*6 |
+    R1\fermata
+    \bar "|."
+    \mBreak
   }
 }
 
@@ -278,7 +338,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in Bb"
+    instrument = "Klarinette I in A"
   }
   \score {
     \new Staff {
@@ -291,14 +351,12 @@ clarinet_II = {
   }
 }
 
-%{
 \bookpart {
   \header{
-    instrument = "Klarinette II in Bb"
+    instrument = "Klarinette II in A"
   }
   \score {
     \new Staff {
-      \set Score.markFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
@@ -307,4 +365,3 @@ clarinet_II = {
     }
   }
 }
-%}
