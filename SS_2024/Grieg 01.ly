@@ -189,13 +189,13 @@ clarinet_I = {
     r2 r4 a,4(\p |
     d4 e8\< f g4 a8 b) |
     b8(\> a) a f\! d4 d8(\< f) |
-    f8(\> e) e cis\! \acciaccatura cis8 a4~ a8 r |
+    f8(\> e) e %{ QQ cis\! %} des\! \acciaccatura %{ QQ cis8 %} des8 a4~ a8 r |
     \mBreak
     
     % cl1 p1 6
     a'2\p~ a4 r |
     R1*4 |
-    a,8( cis e f d4\< a'8 gis |
+    a,8( %{ QQ cis %} des  e f d4\< a'8 gis |
     e4 g8 fis d4.)\! d8( |
     f8\> e) e-. d-. a'4~ a8\! r |
     R1*3 |
@@ -357,12 +357,12 @@ clarinet_I = {
     g8) r r4 |
     g16-> a g fis d fis g b |
     R2 |
-    a16->\f h a gis dis g a c |
+    a16->\f h a gis %{ QQ dis %} es g a c |
     R2 |
     \mBreak
 
     % cl1 p2 9
-    h16->\ff cis h ais eis a b d |
+    h16->\ff %{ QQ cis %} des h ais %{ QQ eis %} f a b d |
     \mark #6
     R2*4 |
     a,2\pCresc |
@@ -610,7 +610,7 @@ clarinet_II = {
     g8) r r4 |
     g16-> a g fis d fis g b |
     R2 |
-    a16->\f h a gis dis g a c |
+    a16->\f h a gis %{ QQ dis %} es g a c |
     R2 |
     \mBreak
 
@@ -618,7 +618,7 @@ clarinet_II = {
     \mBreak
 
     % cl2 p2 9
-    h16->\ff cis h ais eis a b d |
+    h16->\ff %{ QQ cis %} des h ais %{ QQ eis %} f a b d |
     \mark #6
     R2*4 |
     e,,4.(\p f8\cresc) |

@@ -261,8 +261,8 @@ clarinet_I = {
     % cl1 p2 4
     g8-.) g4-> r8 |
     \mark #6
-    r8 cis,\ff r cis |
-    r8 cis r cis |
+    r8 %{ QQ cis,\ff %} des\ff r %{ QQ cis %} des |
+    r8 %{ QQ cis %} des r %{ QQ cis %} des |
     r4 r8 e'->~ |
     e4 r |
     \mBreak

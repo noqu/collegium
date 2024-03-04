@@ -167,7 +167,7 @@ clarinet_I = {
     f4. c'4) r8 |
     a,2.->~\f |
     a8 r r r4 r8 |
-    d4.~(\p d8 e\< cis |
+    d4.~(\p d8 e\< %{ QQ cis %} des |
     \mBreak
 
     % cl1 p2 2
@@ -194,7 +194,7 @@ clarinet_I = {
 
     % cl1 p2 4
     h8\dim r r r4 r8 |
-    gis8 r r r4 r8 |
+    %{ QQ gis8 %} as r r r4 r8 |
     R2.*2 |
     r4 h8\pp h8-.[ r e-.] |
     e8-.[ r h'-.] h4.-> |
@@ -229,9 +229,9 @@ clarinet_I = {
     \mBreak
 
     % cl1 p2 7
-    dis8\p r r r4 r8 |
+    %{ QQ dis8\p %} es8\p r r r4 r8 |
     fis8-. r r r4 r8 |
-    dis8-.\dim r r r4 r8 |
+    %{ QQ dis8-.\dim %} es8-.\dim r r r4 r8 |
     h8-.\! r r r4 r8 |
     R2.*4 |
     f2.~\fp |
@@ -258,7 +258,7 @@ clarinet_I = {
     R2. |
     cis4.~->\cresc cis4 r8 |
     R2. |
-    dis4.~-> dis4 r8 |
+    %{ QQ dis4.~-> dis4 %} es4.~-> es4 r8 |
     R2. |
     \mBreak
 
@@ -397,7 +397,7 @@ clarinet_II = {
 
     % cl2 p1 4
     h8 r r r4 r8 |
-    gis8\dim r\! r r4 r8 |
+    %{ QQ gis8\dim %} as8\dim r\! r r4 r8 |
     e8 r r r4 r8 |
     R2.*21 |
     <<
@@ -418,7 +418,7 @@ clarinet_II = {
     \mBreak
 
     % cl2 p1 5
-    fis2.(\p\cresc |
+    %{ QQ fis2.(\p\cresc %} ges2.(\p\cresc |
     e2.)\! |
     g2.~ |
     g2.~\< |
@@ -437,7 +437,7 @@ clarinet_II = {
     fis4.:8->\mf fis4.:8 |
     fis4.:8\> fis4.:8\! |
     fis8\p r r r4 r8 |
-    dis'8-. r r r4 r8 |
+    %{ QQ dis'8-. %} es'8-. r r r4 r8 |
     h8-.\dim r\! r r4 r8 |
     fis8-. r r r4 r8 |
     R2.*4 |
@@ -459,30 +459,41 @@ clarinet_II = {
     % cl2 p1 8
     fis8 r r r4 r8 |
     R2. |
+    %{
     gis2.~\fp |
     gis2.~ |
     gis8 r r r4 r8 |
+    %}
+    as2.~\fp |
+    as2.~ |
+    as8 r r r4 r8 |
     R2. |
+    %{
     ais4.~->\cresc ais4 r8 |
+    %}
+    b4.~->\cresc b4 r8 |
     R2. |
+    %{
     his4.~-> his4 r8 |
+    %}
+    c4.~-> c4 r8 |
     R2. |
     \mBreak
 
     % cl2 p1 9
     \mark #3
-    e8(\fff dis d cis c h |
-    b8 a gis g fis f |
-    e8 dis d cis\> c h |
-    b8 a gis g fis f) \! |
+    e8(\fff %{ QQ dis %} es d cis c h |
+    b8 a %{ QQ gis %} as g fis f |
+    e8 %{ QQ dis %} es d cis\> c h |
+    b8 a %{ QQ gis %} as g fis f) \! |
     R2.*4 |
     \mBreak
 
     % cl2 p2 1
-    e''8(\fff dis d cis c h |
-    b8 a gis g fis f |
-    e8 dis d cis\> c h |
-    b8 a gis g fis f) \! |
+    e''8(\fff %{ QQ dis %} es d cis c h |
+    b8 a %{ QQ gis %} as g fis f |
+    e8 %{ QQ dis %} es d cis\> c h |
+    b8 a %{ QQ gis %} as g fis f) \! |
     R2.*4 |
     \mBreak
 
@@ -499,7 +510,8 @@ clarinet_II = {
 
     % cl2 p2 3
     a4.:8-> a8 r r |
-    gis4.:8-> gis8 r r |
+    %{ QQ gis4.:8-> gis8 r r | %}
+    as4.:8-> as8 r r |
     c8-> r r c8-> r r |
     h8-> r r h8-> r r |
     \mark #4
@@ -512,7 +524,7 @@ clarinet_II = {
     a4.:8 a4.:8 |
     r4 \after 16\! a8(\< b4.~\ffp |
     b8 a as g ges f |
-    e8 es d cis d\< dis |
+    e8 es d cis d\< %{ QQ dis %} es |
     \mBreak
 
     % cl2 p2 5
