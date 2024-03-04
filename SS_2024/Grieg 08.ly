@@ -10,8 +10,8 @@
 }
 
 \header{
-  title = "Peer Gynt"
-  subtitle = "Solvejgs Lied"
+  title = "08 Solvejgs Lied"
+  subtitle = "Peer Gynt"
   composerShort = "Edvard Grieg"
   composer = "Edvard Grieg (1843 - 1907)"
   version = "v1"

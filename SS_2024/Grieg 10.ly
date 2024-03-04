@@ -10,8 +10,8 @@
 }
 
 \header{
-  title = "Peer Gynt"
-  subtitle = "Peer Gynts Heimkehr"
+  title = "10 Peer Gynts Heimkehr"
+  subtitle = "Peer Gynt"
   composerShort = "Edvard Grieg"
   composer = "Edvard Grieg (1843 - 1907)"
   version = "v1"
@@ -521,7 +521,7 @@ clarinet_II = {
     a4.:8 a4.:8 |
     a4.:8 a4.:8 |
     a4.:8 a4.:8 |
-    r4 \after 16\! e8(\< f4.~\fp |
+    r4 \after 16\! e8(\< f4.~\ffp |
     \mBreak
 
     % cl2 p2 6
@@ -578,7 +578,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in Bb"
+    instrument = "Klarinette I in A"
   }
   \score {
     \new Staff {
@@ -593,7 +593,7 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in Bb"
+    instrument = "Klarinette II in A"
   }
   \score {
     \new Staff {

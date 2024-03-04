@@ -10,8 +10,8 @@
 }
 
 \header{
-  title = "Peer Gynt"
-  subtitle = "Norwegischer Brautzug im Vorüberziehen"
+  title = "02 Norwegischer Brautzug im Vorüberziehen"
+  subtitle = "Peer Gynt"
   composerShort = "Edvard Grieg"
   composer = "Edvard Grieg (1843 - 1907)"
   version = "v1"
@@ -171,8 +171,8 @@ clarinet_I = {
       }
       \new CueVoice {
         \stemUp
-        f16.-.\prall e32-. dis16.-. e32-. f16.( h32 gis16. h32 |
-        f8) r r4\hide |
+        fis16.-.\prall e32-. dis16.-. e32-. fis16.( h32 gis16. h32 |
+        fis8) r r4\hide |
         \stemNeutral
       }
     >>
@@ -417,7 +417,7 @@ clarinet_II = {
     % cl2 p2 3
     g,16.-. d'32-. g16.-. d32-. g,16.-. d'32-. g16.-. d'32-.\ffSempre |
     \appoggiatura { c16 d } c16.-> h32-. c16.-. e32-. a,8..-> c32 |
-    \appoggiatura { h16 c } h16.-> a32-. h16.-. d32-. g,8..-> g32 |
+    \appoggiatura { h16 c } h16.-> a32-. h16.-. d32-. g,8..-> h32-. |
     \mBreak
 
     % cl2 p2 4

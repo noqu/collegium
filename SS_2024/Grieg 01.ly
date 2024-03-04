@@ -10,8 +10,8 @@
 }
 
 \header{
-  title = "Peer Gynt"
-  subtitle = "Vorspiel"
+  title = "01 Vorspiel"
+  subtitle = "Peer Gynt"
   composerShort = "Edvard Grieg"
   composer = "Edvard Grieg (1843 - 1907)"
   version = "v1"
@@ -606,7 +606,7 @@ clarinet_II = {
     \mBreak
 
     % cl2 p2 7
-    g8-.[ r16 b16(\cresc a8)\! r16 b(] |
+    g8[ r16 b16(\cresc a8)\! r16 b(] |
     g8) r r4 |
     g16-> a g fis d fis g b |
     R2 |
