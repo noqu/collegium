@@ -227,8 +227,8 @@ clarinet_I = {
 
     % cl1 p2 2
     g8-. g4-> r16. d'32( |
-    \appoggiatura { c16 d } c16-> a16-. c16-.) e16-. r8.. c32( |
-    \appoggiatura { h16 c } h16-> g16-. h16-.) d16-. r8.. g,32( |
+    \appoggiatura { c16 d } \tuplet 3/2 { c16-> a16-. c16-.) } e8-. r8.. c32( |
+    \appoggiatura { h16 c } \tuplet 3/2 { h16-> g16-. h16-.) } d8-. r8.. g,32( |
     \mBreak
 
     % cl1 p2 3
@@ -391,9 +391,8 @@ clarinet_II = {
     % cl2 p2 4
     a16.-. d,32-. a'16.-. c32-. a16.-. d,32-. a'16.-. c32-. |
     \acciaccatura h8 d-. d4-> r16. d32( |
-    % FIXME: or tuplets?? also in clar 1
-    \appoggiatura { c16 d } c16-> a16-. c16-.) e16-. r8.. c32( |
-    \appoggiatura { h16 c } h16-> g16-. h16-.) d16-. r8.. h32( |
+    \appoggiatura { c16 d } \tuplet 3/2 { c16-> a16-. c16-.) } e8-. r8.. c32( |
+    \appoggiatura { h16 c } \tuplet 3/2 { h16-> g16-. h16-.) } d8-. r8.. h32( |
     \mBreak
 
     % cl2 p2 5

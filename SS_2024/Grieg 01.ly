@@ -281,7 +281,6 @@ clarinet_I = {
     \mBreak
 
     % cl1 p2 3
-    % FIXME: check again
     g4->~ g8 r8 |
     \repeat unfold 2 {
       b,-. r b-. r |
