@@ -355,12 +355,184 @@ clarinet_II = {
   \accidentalStyle Score.modern-cautionary
   \defaultTimeSignature
   \compressEmptyMeasures
-  \time 2/4
-  \tempo "Moderato assai."
+  \time 6/8
+  \tempo "Allegro agitato."
   \key c \major
   \clef violin
-    \relative c' {
+  \relative c' {
     % cl2 p1 1
+    a2.->~\f |
+    a8 r r r4 r8 |
+    a2.->~ |
+    a8 r r r4 r8 |
+    R2.*4 |
+    a2.->~\f |
+    a8 r r r4 r8 |
+    \mBreak
+
+    % cl2 p1 2
+    a2.->~ |
+    a8 r r r4 r8 |
+    R2.*4 |
+    a2.->~\f |
+    a8 r r r4 r8 |
+    R2.*2 |
+    a2.->~\f |
+    a8 r r r4 r8 |
+    R2.*2 |
+    \mBreak
+
+    % cl2 p1 3
+    gis'4-.\p r8 r4 r8 |
+    R2. |
+    \mark #1
+    a'4.:8->\f\> a4.:8 |
+    a4.:8 a4.:8 |
+    gis8\! r r r4 r8 |
+    R2. |
+    h,4.:8-> h4.:8\dim |
+    h4.:8\!\> h4.:8 |
+    h8\p r r r4 r8 |
+    \mBreak
+
+    % cl2 p1 4
+    h8 r r r4 r8 |
+    gis8\dim r\! r r4 r8 |
+    e8 r r r4 r8 |
+    R2.*21 |
+    % FIXME: Add fagott cue notes (or clar1?)
+    R2. |
+    R2. |
+    R2. |
+    \mBreak
+
+    % cl2 p1 5
+    fis2.(\p\cresc |
+    e2.)\! |
+    g2.~ |
+    g2.~\< |
+    g2.(\! |
+    fis2.~)\> |
+    fis4\p r8 r4 r8 |
+    R2. |
+    \mark #2
+    c'2.->~\f\> |
+    c2.( |
+    h8)\! r8 r r4 r8 |
+    R2. |
+    \mBreak
+
+    % cl2 p1 6
+    fis4.:8->\mf fis4.:8 |
+    fis4.:8\> fis4.:8\! |
+    fis8\p r r r4 r8 |
+    dis'8-. r r r4 r8 |
+    h8-.\dim r\! r r4 r8 |
+    fis8-. r r r4 r8 |
+    R2.*4 |
+    \mBreak
+
+    % cl2 p1 7
+    d2.~\fp |
+    d2.~ |
+    d8 r r r4 r8 |
+    R2.*5 |
+    e2.~\fp |
+    e2.~ |
+    e8 r r r4 r8 |
+    R2. |
+    fis2.~\fp |
+    fis2.~ |
+    \mBreak
+
+    % cl2 p1 8
+    fis8 r r r4 r8 |
+    R2. |
+    gis2.~\fp |
+    gis2.~ |
+    gis8 r r r4 r8 |
+    R2. |
+    ais4.~->\cresc ais4 r8 |
+    R2. |
+    his4.~-> his4 r8 |
+    R2. |
+    \mBreak
+
+    % cl2 p1 9
+    \mark #3
+    e8(\fff dis d cis c h |
+    b8 a gis g fis f |
+    e8 dis d cis\> c h |
+    b8 a gis g fis f) \! |
+    R2.*4 |
+    \mBreak
+
+    % cl2 p2 1
+    e''8(\fff dis d cis c h |
+    b8 a gis g fis f |
+    e8 dis d cis\> c h |
+    b8 a gis g fis f) \! |
+    R2.*4 |
+    \mBreak
+
+    % cl2 p2 2
+    c''4.:8\ff c4.:8 |
+    c4.:8 c4.:8 |
+    d8 r r r4 r8 |
+    R2. |
+    h4.:8 h4.:8 |
+    h4.:8 h4.:8 |
+    c8 r r r4 r8 |
+    R2. |
+    \mBreak
+
+    % cl2 p2 3
+    a4.:8-> a8 r r |
+    gis4.:8-> gis8 r r |
+    c8-> r r c8-> r r |
+    h8-> r r h8-> r r |
+    \mark #4
+    a4.:8\ff a4.:8 |
+    a4.:8 a4.:8 |
+    \mBreak
+
+    % cl2 p2 4
+    a4.:8 a4.:8 |
+    a4.:8 a4.:8 |
+    r4 \after 16\! a8(\< b4.~\ffp |
+    b8 a as g ges f |
+    e8 es d cis d\< dis |
+    \mBreak
+
+    % cl2 p2 5
+    e8 f fis\! g)\f r r |
+    a4.:8\ff a4.:8 |
+    a4.:8 a4.:8 |
+    a4.:8 a4.:8 |
+    a4.:8 a4.:8 |
+    r4 \after 16\! e8(\< f4.~\fp |
+    \mBreak
+
+    % cl2 p2 6
+    f8 e es d des c |
+    h8 b a gis a\< b |
+    h8 c cis d)\f r r |
+    \mark #5
+    R2.*4 |
+    e2.->~\p\> |
+    \mBreak
+
+    % cl2 p2 7
+    e8 r\! r r4 r8 |
+    R2.*6 |
+    h2.->~\p\> |
+    h8 r\! r r4 r8 |
+    R2.*2 |
+    \mark #6
+    R2.*25 \rit |
+    R2.\fermata _\markup \italic "attacca" |
+    \bar "|."
+    \mBreak
   }
 }
 
@@ -408,14 +580,12 @@ clarinet_II = {
   }
 }
 
-%{
 \bookpart {
   \header{
     instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
-      \set Score.markFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
@@ -424,4 +594,3 @@ clarinet_II = {
     }
   }
 }
-%}
