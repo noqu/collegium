@@ -400,9 +400,20 @@ clarinet_II = {
     gis8\dim r\! r r4 r8 |
     e8 r r r4 r8 |
     R2.*21 |
-    % FIXME: Add fagott cue notes (or clar1?)
-    R2. |
-    R2. |
+    <<
+      { 
+        \override MultiMeasureRest.staff-position = #-6
+        R2.*2
+        \cueClefUnset |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \stemDown 
+        r4 \cueClef "bass" a,8^"Fagott" a[ r dis]  |
+        dis8[ r a'8] a4. |
+        \stemNeutral |
+      }
+    >>
     R2. |
     \mBreak
 

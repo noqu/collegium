@@ -206,12 +206,24 @@ clarinet_I = {
     \time 2/4
     \tempo "Un poco Allegro."
     R2*16 |
-    % FIXME: Add cello cue notes
-    R2 |
-    R2 |
+    <<
+      { 
+        \override MultiMeasureRest.staff-position = #0
+        R2*2
+        \cueClefUnset |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \cueClef "alto"
+        \stemDown 
+        g,,2^"Viola Solo" |
+        d2\fermata
+        \stemNeutral |
+      }
+    >>
     \time 4/4
     \tempo "Poco Andante."
-    b,8(\p d f ges\< es4 b'8 a |
+    b''8(\p d f ges\< es4 b'8 a |
     f4 as8 \! g es4.) es8 |
     \time 2/4
     ges8(\> f) f es \! |
@@ -226,16 +238,26 @@ clarinet_I = {
     \bar "||"
     \mark 3
     \time 4/4
-    % FIXME: Add violin cue notes
-    R1
-    R1
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R1*2
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \stemUp
+        r4 h,(^"Viol.I" c) g' |
+        fis4 f e es |
+        \stemNeutral
+      }
+    >>
     R1*2
     \mBreak
     
     % cl1 p1 9
     \bar "||"
     \key g \major
-    r4 dis,(\f\< e h')
+    r4 dis(\f\< e h')
     ais4(\ff\>^\markup \italic "molto ten." a gis g)\!
     e2(->\p\> dis4 cis) |
     h2\pp( b4)\fermata r4
@@ -440,18 +462,27 @@ clarinet_II = {
     % cl2 p1 6
     \time 4/4
     \tempo "Poco Andante."
-    R1*4 |
-    % FIXME: Add clar1 cue notes
-    R1 |
+    R1*3 |
+    << 
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R1*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \stemUp
+        b8(^"Clar.I" a) a f d4 d8( f) |
+        f8( e) e cis \acciaccatura cis8 a4~ a8 r |
+        \stemNeutral
+      }
+    >>
     d2\p~ d4 r |
     R1*10 |
     \mark #2
     \time 2/4
     \tempo "Un poco Allegro."
-    R2*16 |
-    % FIXME: Add cello cue notes from clar1
-    R2 |
-    R2 |
+    R2*17 |
+    R2\fermata |
     \mBreak
     
     % cl2 p1 7
@@ -467,9 +498,19 @@ clarinet_II = {
     \bar "||"
     \mark 3
     \time 4/4
-    % FIXME: Add oboe cue notes (maybe also for clar1?)
-    R1 |
-    R1 |
+    << 
+      {
+        \override MultiMeasureRest.staff-position = #-8
+        R1*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \stemUp
+        g,8(^"Oboe" h d es c4 g'8 fis) |
+        d4( f8 e c4.) c8 |
+        \stemNeutral
+      }
+    >>
     \mBreak
     
     % cl2 p1 8

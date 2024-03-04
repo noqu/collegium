@@ -146,15 +146,36 @@ clarinet_I = {
     \mark #1
     R2*8 |
     \mark #2
-    % FIXME: Add oboe cue notes
-    R2 |
-    R2 |
+    << 
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R2*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \stemUp
+        fis'16.-.\prall^"Oboe I" e32-. dis16.-. e32-. fis8( h) |
+        fis8 r r4 |
+        \stemNeutral
+      }
+    >>
     \mBreak
 
     % cl1 p1 2
-    % FIXME: Add oboe cue notes
-    R2 |
-    r4 r8.. a''32\mf |
+    << 
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R2 |
+        r4 r8.. a32\mf |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \stemUp
+        f16.-.\prall e32-. dis16.-. e32-. f16.( h32 gis16. h32 |
+        f8) r r4\hide |
+        \stemNeutral
+      }
+    >>
     a16[ r32 g32 g16 r32 g32] h8[ r16. g32] | 
     \mBreak
     
@@ -314,12 +335,23 @@ clarinet_II = {
     R2*16 |
     \mark #1
     R2*2 |
-    % FIXME: Add flute cue notes
-    R2*2 |
+    << 
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice {
+        \stemUp
+        r4 \tuplet 3/2 { dis'16(^"Flauto I" fis dis } \tuplet 3/2 { cis16 fis dis } |
+        h16) r8. h16 r8. |
+        \stemNeutral
+      }
+    >>
     \mBreak
 
     % cl2 p1 2
-    r4 d16\pp r8. |
+    r4 d,16\pp r8. |
     r4 d16 r8. |
     r4 d16 r8. |
     r4 d16 r8. |
