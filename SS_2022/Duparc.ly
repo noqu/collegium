@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.1"
 \language "deutsch"
 
 \paper {
@@ -87,11 +87,11 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
       "     -     "
       \fromproperty #'header:instrument
     }
-    \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string
+    \if \should-print-page-number \fromproperty #'page:page-number-string
   }
   evenHeaderMarkup = \markup
   \fill-line {
-    \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string
+    \if \should-print-page-number \fromproperty #'page:page-number-string
     \on-the-fly #part-not-first-page \fontsize #-1.0 \concat {
       \fromproperty #'header:composerShort
       "     -     "
@@ -115,9 +115,9 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
 % ---------------------------------------------------------
 
 clarinet_I = {
-  \set Score.markFormatter = #format-mark-alphabet
+  \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
   \accidentalStyle Score.modern-cautionary
-  \compressFullBarRests
+  \compressEmptyMeasures
   \defaultTimeSignature
   \time 4/4
   \tempo "Andante sostenuto" 4 = 56
@@ -160,7 +160,7 @@ clarinet_I = {
       }
       {
         \override MultiMeasureRest.staff-position = #-6
-        R1 _\fermataMarkup |
+        R1 _\fermata |
         \revert MultiMeasureRest.staff-position
       }
     >>
@@ -313,7 +313,7 @@ clarinet_I = {
     >>
     a,4.(\f\< c8\sfz\> h)\!\rall r r4 |
     \tempo "Lento"
-    R1\fermataMarkup |
+    R1\fermata |
     \bar "||"
     \tempo Andante
     d4(\ppiuEspress\solo f8 es? d c~ \tuplet 3/2 { c d es } |
@@ -461,7 +461,7 @@ clarinet_I = {
     e8) r\! r4 r2 |
     cis4.(\f\< e8\sfz\> dis)\rall r8\! r4 |
     \tempo "Lento"
-    R1\fermataMarkup |
+    R1\fermata |
     \bar "||"
     \tempo Andante
     R1 |
@@ -653,9 +653,9 @@ clarinet_I = {
 }
 
 clarinet_II = {
-  \set Score.markFormatter = #format-mark-alphabet
+  \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
   \accidentalStyle Score.modern-cautionary
-  \compressFullBarRests
+  \compressEmptyMeasures
   \defaultTimeSignature
   \time 4/4
   \tempo "Andante sostenuto" 4 = 56
@@ -811,7 +811,7 @@ clarinet_II = {
     \tempo "Più largamente"
     R1*12 |
     \tempo "Lento"
-    R1 \fermataMarkup |
+    R1 \fermata |
     \bar "||"
     \tempo Andante
     <<
@@ -950,7 +950,7 @@ clarinet_II = {
     R1*6\pocoString |
     R1*5\rall |
     \tempo "Lento"
-    R1\fermataMarkup |
+    R1\fermata |
     \bar "||"
     \tempo "Andante"
     R1 |
@@ -1142,8 +1142,8 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-      \compressFullBarRests
-      \set Score.markFormatter = #format-mark-box-alphabet
+      \compressEmptyMeasures
+      \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
@@ -1160,8 +1160,8 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-      \compressFullBarRests
-      \set Score.markFormatter = #format-mark-box-alphabet
+      \compressEmptyMeasures
+      \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
@@ -1178,8 +1178,8 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-      \compressFullBarRests
-      \set Score.markFormatter = #format-mark-box-alphabet
+      \compressEmptyMeasures
+      \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
@@ -1196,8 +1196,8 @@ clarinet_II = {
   }
   \score {
     \new Staff {
-      \compressFullBarRests
-      \set Score.markFormatter = #format-mark-box-alphabet
+      \compressEmptyMeasures
+      \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
       \override DynamicLineSpanner.staff-padding = #3
       \accidentalStyle Score.modern-cautionary
       \new Voice {
