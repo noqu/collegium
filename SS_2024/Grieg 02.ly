@@ -14,7 +14,7 @@
   subtitle = "Peer Gynt"
   composerShort = "Edvard Grieg"
   composer = "Edvard Grieg (1843 - 1907)"
-  version = "v1"
+  version = "v2"
 }
 
 % Adapt this for automatic line-breaks
@@ -180,8 +180,8 @@ clarinet_I = {
     \mBreak
     
     % cl1 p1 3
-    g16[ r32 fis32 fis16 r32 f32] a8[ r16. f32] | 
-    f16[ r32 e32 e16 r32 e32] h'16[ r32 e,32 e16 r32 e32] | 
+    g16[ r32 fis32 fis16 r32 fis32] a8[ r16. fis32] | 
+    fis16[ r32 e32 e16 r32 e32] h'16[ r32 e,32 e16 r32 e32] | 
     e16[ r32 d32 d16 r32 d32] d8 r |
     \mBreak
     

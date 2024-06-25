@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.1"
 \language "deutsch"
 
 \paper {
@@ -14,7 +14,7 @@
   subtitle = "Peer Gynt"
   composerShort = "Edvard Grieg"
   composer = "Edvard Grieg (1843 - 1907)"
-  version = "v1"
+  version = "v2"
 }
 
 % Adapt this for automatic line-breaks
@@ -312,7 +312,7 @@ clarinet_II = {
     gis'1~\pp\< |
     gis2 g4(\> fis)\! |
     \after 2\< \after 2\rit e1 |
-    d1->\p\> |
+    dis1->\p\> |
     \after 4\< \after 2\f \after 2.\> \after 1\! e1\pp\fermata
     \bar "|."
     \mBreak

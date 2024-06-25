@@ -14,7 +14,7 @@
   subtitle = "Peer Gynt"
   composerShort = "Edvard Grieg"
   composer = "Edvard Grieg (1843 - 1907)"
-  version = "v1"
+  version = "v2"
 }
 
 % Adapt this for automatic line-breaks
@@ -263,7 +263,7 @@ clarinet_II = {
     \key c \major
     \time 3/4
     \tempo "Allegretto tranquillamente."
-    R1*12 
+    R2.*12 
     \bar "||"
     \time 4/4
     \tempo "Andante. (Tempo 1)" 
