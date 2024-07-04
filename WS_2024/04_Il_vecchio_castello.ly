@@ -538,6 +538,185 @@ clarinet_bass = {
   }
 }
 
+saxophone_alto = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 6/8
+  \tempo "Andante"
+  \key as \major
+  \clef violin
+  \relative c'' {
+    % sax p1 1
+    \mark #19
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R2.*6 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \transpose c c \relative {
+        \stemDown
+        \voiceTwo
+        \clef bass
+        r4. c4.->~^"Fag. Solo" |
+        c4 \repeat unfold 4 { c8-.-- } |
+        c8.( des16) c8  es-.( des-. c-.) |
+        b8.( c16) b8  des-.( c-. b-.) |
+        as4( b8 c b as) |
+        \mBreak
+        
+        % sax p2 1
+        g8.( as16) g8 b-.( as-. g-.) |
+        \clef violin
+        \stemNeutral
+      }
+    >>
+    \mark #20
+    r4^"Sax."^"molto cantabile con dolore" r8 r4\solo c8(\p_"vibrato" |
+    f2.~)( |
+    % Score says this is has a slur, not just a grace, dito for following
+    f8 as g \appoggiatura { f16 g } f8 des f |
+    \mBreak
+    
+    % sax p2 2
+    f4) c8( es4.~ |
+    es8 des c \appoggiatura c des c b |
+    c8-> f,4~ f4.~ |
+    f8 g as \appoggiatura { b16 c } b8 as g |
+    \mark #21
+    a4. f~ |
+    \mBreak
+    
+    % sax p2 3
+    f4) r8 r4 r8 |
+    R2.*3 |
+    r4 r8 r4 c'8( |
+    \mark #22
+    f2.~ |
+    f8 as g \appoggiatura { f16 g } f8 des f |
+    f4) c8( des4.~ |
+    \mBreak
+    
+    % sax p2 4
+    des8\< es f ges as b\! |
+    es,4.~ es8\> f ges |
+    f4) c8( f4 es8\! |
+    des4. c8 b as) |
+    g8.( as16) g8-- b8( as) g |
+    \mBreak
+    
+    % sax p2 5
+    as4.( f4.~ |
+    f4) r8 r4 r8 |
+    \mark #23
+    R2.*6 |
+    c'4.(\espress b4 as8) |
+    g8.( as16) g8-- b8( as) g |
+    \mBreak
+    
+    % sax p2 6
+    as4.( f4) r8 |
+    \mark #24
+    R2.*6 |
+    c'4.(\espress b4 as8) |
+    g8.( as16) g8-- b8( as) g |
+    \mark #25
+    as4.( f4) r8 |
+    R2.*8 |
+    \mBreak
+    
+    % sax p2 7
+    \mark #26
+    R2.*6 |
+    \mark #27
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2.*4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \transpose c c \relative {
+        \stemUp
+        c''4.--^"Oboe" h8( b h) |
+        c4.-- h8( b h) |
+        c4.( h |
+        b4.) f'( |
+        es4. des) |
+        \stemNeutral
+      }
+    >>
+    c'4.(\espress^"Sax" b4 as8) |
+    \mBreak
+    
+    % sax p2 8
+    g8.( as16) g8-- b8( as) g |
+    as4.( f4) r8 |
+    \mark #28
+    R2.*9 |
+    \mark #29
+    R2.*5 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2.*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \transpose c c \relative {
+        \stemUp
+        \voiceOne
+        r4.^"Oboe" f''4.( |
+        es4. des8 f es) |
+        \stemNeutral
+      }
+    >>
+    \mBreak
+    
+    % sax p2 9
+    c'4.(\espress^"Sax" b4 as8) |
+    g8.( as16) g8-- b8( as) g |
+    R2. |
+    \mark #30
+    R2.*6 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2. |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \transpose c c \relative {
+        \stemDown
+        \voiceTwo
+        g'8.(^"Viol.I" as16) g8-- b8( as) g | 
+        \stemNeutral
+      }
+    >>
+    \mark #31
+    r4 r8 r4^"Sax" c8(\pp\espress |
+    \mBreak
+    
+    % sax p2 10
+    f2.~)( |
+    f8\< as g \appoggiatura { f16 g } f8 des f |
+    f4-.)\! c8( es4.~ |
+    es8\> des c \appoggiatura c des c b |
+    c8->\! f,4~ f4) r8 |
+    R2. |
+    \mBreak
+    
+    % sax p2 11
+    \mark #32
+    des'4--\p\> r8 c4-- r8\! |
+    R2. |
+    ces4-- r8 b4-- r8 |
+    r4 r8 r4 c8(\f |
+    f2.~\> |
+    f4.~ f4)\fermata\! r8 |
+    \bar "|."
+  }
+}
+
 % ---------------------------------------------------------
 
 \bookpart {
@@ -563,6 +742,18 @@ clarinet_bass = {
   \score {
     \new Staff {
       \transpose a a \clarinet_bass
+    }
+  }
+}
+
+\bookpart {
+  \header{
+    instrument = "Altsaxophon in Es"
+  }
+  \score {
+    \new Staff {
+      % \transpose b es \saxophone_alto
+      \transpose a a \saxophone_alto
     }
   }
 }
