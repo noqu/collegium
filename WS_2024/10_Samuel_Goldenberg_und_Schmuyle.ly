@@ -130,8 +130,8 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     % This allows the use of \startMeasureCount and \stopMeasureCount
     % See https://lilypond.org/doc/v2.23/Documentation/snippets/repeats#repeats-numbering-groups-of-measures
     \consists #Measure_counter_engraver
-    \RemoveEmptyStaves
-    % \RemoveAllEmptyStaves
+    % \RemoveEmptyStaves
+    \RemoveAllEmptyStaves
   }
 }
 
@@ -149,7 +149,7 @@ clarinet_I = {
   \relative c'' {
     % cl1 p13 1
     \mark #56
-    \partial 32 cis,32(\f |
+    \partial 32 cis,32(\f^"a 2" |
     gis'8) r16 r32 fisis64( gisis) fisis4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32( |
     \mBreak
     
@@ -224,10 +224,8 @@ clarinet_II = {
   \clef violin
   \relative c'' {
     % cl2 p13 1
-    \mark #56
-    \partial32 cis,32(\f |
-    gis'8) r16 r32 fisis64( gisis) fisis4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32 |
-    R1*5 |
+    \partial32 r32 |
+    R1*6 |
     \time 3/4
     R2. |
     \mBreak
@@ -270,12 +268,11 @@ clarinet_II = {
     instrument = "Klarinette I und II in A"
   }
   \score {
-    <<
+    \new GrandStaff <<
       \new Staff {
         \transpose a a \clarinet_I
       }
       \new Staff {
-        \accidentalStyle Score.modern-cautionary
         \transpose a a \clarinet_II
       }
     >>

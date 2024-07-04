@@ -129,8 +129,8 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     % This allows the use of \startMeasureCount and \stopMeasureCount
     % See https://lilypond.org/doc/v2.23/Documentation/snippets/repeats#repeats-numbering-groups-of-measures
     \consists #Measure_counter_engraver
-    \RemoveEmptyStaves
-    % \RemoveAllEmptyStaves
+    % \RemoveEmptyStaves
+    \RemoveAllEmptyStaves
   }
 }
 
@@ -231,7 +231,7 @@ clarinet_II = {
     instrument = "Klarinette I und II in A"
   }
   \score {
-    <<
+    \new GrandStaff <<
       \new Staff {
         \transpose a a \clarinet_I
       }

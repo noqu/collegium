@@ -216,6 +216,7 @@ clarinet_I = {
     instrument = "Klarinette I und II in A"
   }
   \score {
+    % For simplicity, we treat this as if there was only one voice
     <<
       \new Staff {
         \transpose a a \clarinet_I
