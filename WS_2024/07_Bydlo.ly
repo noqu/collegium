@@ -297,7 +297,111 @@ clarinet_II = {
   }
 }
 
+clarinet_bass = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 2/4
+  \tempo "Sempre moderato pesante"
+  \key d \major
+  \clef violin
+  \relative c'' {
+    % clb p4 1
+    R2*9
+    \mark #38
+    R2*4
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2*7 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \transpose c c \relative {
+        \clef bass
+        \stemUp
+        c'4(^"Tuba" e8) r |
+        e4 e-- |
+        d2~( |
+        d4 his8) r |
+        c4( g'8) g |
+        d8-- h-- a4--( |
+        \mBreak
+        % clb p4 2
+        g4~ g8) r |
+        \mark #39
+        \stemNeutral
+        \clef violin
+      }
+    >>
+    e,,4--\mf\cresc fis--\! |
+    g4-- a-- |
+    e4-- fis-- |
+    g4-- a-- |
+    e4-- fis-- |
+    g4-- a-- |
+    \mBreak
+    
+    % clb p4 3
+    \mark #40
+    e4 a |
+    e4 a |
+    e4 a |
+    a4 h |
+    h4 a |
+    \mark #41
+    h4 \pocoDim e |
+    e4 e |
+    \mBreak
+    
+    % clb p4 4
+    e4 fis |
+    fis4\< cis |
+    fis4 fis, |
+    h4 ais |
+    \mark #42
+    h8\! r fis'4~\fff |
+    fis8 a16 g fis8-- g-- |
+    \mBreak
+    
+    % clb p5 1
+    fis8-- h-- cis-- d-- |
+    cis4-> h8-- r |
+    e,,8 g h d |
+    e,8\pocoDim\> g h d  |
+    fis'4-- e-- |
+    \mBreak
+    
+    % clb p5 2
+    d8( fis cis4-.) |
+    h4--( a8 g |
+    \mark #43
+    fis8)\! r r4 |
+    R2*3
+    \mark #44
+    R2*6 |
+    <<
+      {
+        R2*2 |
+      }
+      \new CueVoice \transpose c c \relative {
+        \stemDown
+        r4 eis~\mp  |
+        \mBreak
 
+        % clb p5 3
+        eis8 gis16 fis eis8 fis |
+        \stemNeutral
+      }
+    >>
+    \mark #45
+    R2*2 |
+    r4 fis4~\pp\solo^"Clar.Bass" |
+    fis8 r r4 |
+    R2*2 |
+    \bar "|."
+  }
+}
 
 % ---------------------------------------------------------
 
@@ -315,6 +419,17 @@ clarinet_II = {
         \transpose a a \clarinet_II
       }
     >>
+  }
+}
+
+\bookpart {
+  \header{
+    instrument = "Bassklarinette in A"
+  }
+  \score {
+    \new Staff {
+      \transpose a a \clarinet_bass
+    }
   }
 }
 

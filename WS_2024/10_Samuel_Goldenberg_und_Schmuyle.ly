@@ -155,7 +155,7 @@ clarinet_I = {
     
     % cl1 p13 2
     gis'8)^"a 2" r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e4->~ e8 r his16( cis dis e) |
-    fis8.[\< gis16( a8-.) his-.]\! c4\( h8\> a |
+    fis8.[\< gis16( a8-.) his-.]\! cis4\( h8\> a |
     \mBreak
     
     % cl1 p13 3
@@ -259,7 +259,78 @@ clarinet_II = {
   }
 }
 
+clarinet_bass = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 4/4
+  \tempo "Andante"
+  \key e \major
+  \clef violin
+  \relative c'' {
+    % clb p5 1
+    \mark #56
+    \partial 32 cis,32(\f |
+    gis'8) r16 r32 fisis64( gisis) fisis4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32( |
+    gis'8)^"a 2" r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e4->~ e8 r his16( cis dis e) |
+    \mBreak
+    
+    % clb p5 2
+    fis8.[\< gis16( a8-.) his-.]\! cis4\( h8\> a |
+    \tuplet 3/2 { his8( a gis) } gis8..\)\! his32( gis8) r his,16-- cis-- dis-- e-- |
+    \mark #57 
+    fis8.[\< gis16( a8) his] cis4(\> his8 a)\! |
+    \mBreak
+    
+    % clb p5 3
+    \tuplet 3/2 { h8( a gis) } gis2~ gis8 r16 r32 cis,32( |
+    \time 3/4
+    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e8.. \tuplet 3/2 { dis64( e his) } e8..[ \appoggiatura { dis16 e } \tuplet 3/2 { dis64( cis his)] } |
+    \time 4/4
+    e2.~ e8 r |
+    \mBreak
+    
+    % clb p5 4
+    \mark #58
+    e2~\mf e8 r r4 |
+    r2 e2~ |
+    e8 r r4 r2 |
+    \mark #59
+    e2~\mf e8 r r4 |
+    r2 e2~\> |
+    e8 r\! r4 r2 |
+    \mBreak
+    
+    % clb p6 1
+    R1*2
+    \mark #60
+    r2 r4 r8. cis16\f( |
+    gis4~ gis8 fisis16 gis e2\sf |
+    g8)\sf r8 r8 r16 cis16(\f gis4)\(~ gis8 \tuplet 3/2 { fisis16( gis fisis) } |
+    \mBreak
 
+    % clb p6 2
+    e2\sf g8\)\sf r r4 |
+    \mark #61
+    fis8.[\< gis16( a8) his] cis4\> h8 a |
+    his8( a16 gis)\! gis8 r r4 r8 cis |
+    \mBreak
+    
+    % clb p6 3
+    fis,8.[ gis16(\cresc a8)\! his] cis4( his8 a) |
+    h8(\< a16 gis) gis'8\ff r8 r4\fermata \mark #62 gis,\p |
+    \after 2 \> cis2.~\< cis8\< \acciaccatura fis,8 gis-. |
+    \mBreak
+    
+    % clb p6 4
+    \after 2 \> cis2.~\< cis8\< \acciaccatura fis,8 gis-.\sf |
+    r8\! r16 \tuplet 3/2 { fisis'32(\f gis fisis) } e4\sf~ e8 r r \tuplet 3/2 { dis16(\ff e dis) } |
+    cis8 r r4 r2\fermata |
+    \bar "|."
+    \mBreak
+  }
+}
 
 % ---------------------------------------------------------
 
@@ -276,6 +347,17 @@ clarinet_II = {
         \transpose a a \clarinet_II
       }
     >>
+  }
+}
+
+\bookpart {
+  \header{
+    instrument = "Bassklarinette in A"
+  }
+  \score {
+    \new Staff {
+      \transpose a a \clarinet_bass
+    }
   }
 }
 

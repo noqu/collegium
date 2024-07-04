@@ -233,10 +233,10 @@ clarinet_I = {
     \mBreak
     
     % cl1 p7 2
-    c4.~( c8 h c) |
+    c4.~(\< c8 h c) |
     cis8.( gis'16) cis,8 cis4 r8 |
     dis4.~( dis8 d dis) |
-    e8.( h'16) e,8 e4 r8 |
+    e8.( h'16) e,8\! e4 r8 |
     \mark #29
     c2.~\f\> |
     \mBreak
@@ -389,7 +389,154 @@ clarinet_II = {
   }
 }
 
+clarinet_bass = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 6/8
+  \tempo "Andante"
+  \key d \major
+  \clef violin
+  \relative c'' {
+    % clb p3 1
+    \mark #19
+    R2.*6 |
+    \mark #20
+    R2.*7 |
+    \mark #21
+    R2.*6 |
+    \mark #22
+    R2.*10 |
+    \mark #23
+    R2.*6 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2.*3 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \transpose c c \relative {
+        \stemUp
+        eis''4.(^"Ob." dis4 cis8) |
+        his8.( cis16 his8 dis cis his |
+        cis4.) a4 r8 |
+        \stemNeutral
+      }
+    >>
+    \mBreak
+    
+    % clb p3 2
+    \mark #24
+    \startMeasureCount h,2.~\p^"Cl.Bass." |
+    \repeat unfold 5 { h2.~ } \stopMeasureCount|
+    h8 r r r4 r8 |
+    R2. |
+    \mark #25
+    R2.*9
+    \mBreak
+    
+    % clb p3 3
+    \mark #26
+    R2.*2 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2.*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \transpose c c \relative {
+        \stemUp
+        dis''4.~(\mf\<^"Clar.I." dis8 d dis) |
+        e4( h'8) e,4\! r8 |
+        \stemNeutral
+      }
+    >>
+    a'2.~(\f\>^"Cl.Bass." |
+    a2. |
+    \mark #27
+    gis8)\pp r8 r r4 r8 |
+    R2.*2 |
+    \mBreak
+    
+    % clb p3 4
+    r4 r8 e4.(\mf\> |
+    fis4. h |
+    fis8)\! r r r4 r8 |
+    R2.*2 |
+    \mark #28
+    R2.*5 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2.*4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \transpose c c \relative {
+        \stemUp
+        c''4.~(^"Clar.I."\< c8 h c) |
+        cis8.( gis'16) cis,8 cis4 r8 |
+        \mBreak
+        
+        % clb p3 5
+        dis4.~( dis8 d dis) |
+        e8.( h'16) e,8\! e4 r8 |
+        \stemNeutral
+      }
+    >>
+    \mark #29
+    a2.~\f^"Clar.Bass" |
+    a2. |
+    h,4-.\pp h8-. h4-. h8-. |
+    h4-. h8-. h4-. h8-. |
+    \mBreak
+    
+    % clb p3 6
+    h4-. h8-. h4-. h8-. |
+    h8 r r e4.(\mf\> |
+    fis4. h4.) |
+    b,2.~\p |
+    b2.~ |
+    b8 r r r4 r8 |
+    \mBreak
+    
+    % clb p4 1
+    \mark #30
+    R2.*7 |
+    \mark #31
+    R2.*2 |
+    <<
+      {
+        R2.*2 |
+        c'8\rest ais4(\p\>^"Clar.Bass" dis, e8\! |
+        \mBreak
+      }
+      \new CueVoice \transpose c c \relative {
+        \stemDown
+        fis4.(\pp\<^"Clar.I" g |
+        d'4.~d4\> c8 |
+        % Note that h ais is indeed correct (as in clarinet 1 - the cue notes here are wrong)
+        h8 ais)\! s8 s4 s8 |
+        \stemNeutral
+      }
+    >>
+    
+    % clb p4 2
+    h4.) r4 r8 |
+    R2. |
+    \mark #32
+    R2. |
+    % The piano is missing in the printed voice
+    h4--\p\>\solo h8 h4-- h8~\! |
+    h8 r r r4 r8 |
+    h2.\pp~ |
+    h4. r4 r8 |
+    R2.\fermata |
+    \mBreak
 
+    \bar "|."
+  }
+}
 
 % ---------------------------------------------------------
 
@@ -403,10 +550,20 @@ clarinet_II = {
         \transpose a a \clarinet_I
       }
       \new Staff {
-        \accidentalStyle Score.modern-cautionary
         \transpose a a \clarinet_II
       }
     >>
+  }
+}
+
+\bookpart {
+  \header{
+    instrument = "Bassklarinette in A"
+  }
+  \score {
+    \new Staff {
+      \transpose a a \clarinet_bass
+    }
   }
 }
 

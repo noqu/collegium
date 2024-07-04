@@ -208,6 +208,44 @@ clarinet_I = {
   }
 }
 
+clarinet_bass = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 3/4
+  \tempo "Largo"
+  \key f \major
+  \clef violin
+  \relative c'' {
+    % clb p6 1
+    \mark #72
+    R2.*11 |
+    \mark #73
+    R2.*11 |
+    \mark #74
+    R2.*2
+    <<
+      {
+        R2.*5 |
+      }
+      \new CueVoice \transpose c c \relative {
+        \stemDown
+        \clef bass
+        % Dynamics as written here is correct from score, wrong in cue notes
+        g,2.~^"Fagott"\f\> |
+        g2.~ |
+        g2.~ |
+        g2.\p |
+        c2.\ff\fermata
+        \clef violin
+        \stemNeutral
+      }
+    >>
+    d,2\pp\fermata^"Clar.Bass." r4 |
+    \bar "|."
+  }
+}
 
 % ---------------------------------------------------------
 
@@ -222,6 +260,17 @@ clarinet_I = {
         \transpose a a \clarinet_I
       }
     >>
+  }
+}
+
+\bookpart {
+  \header{
+    instrument = "Bassklarinette in A"
+  }
+  \score {
+    \new Staff {
+      \transpose a a \clarinet_bass
+    }
   }
 }
 

@@ -225,6 +225,39 @@ clarinet_II = {
 }
 
 
+clarinet_bass = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 5/4
+  \tempo "Moderato non tanto pesante"
+  \key a \major
+  \clef violin
+  \relative c {
+    % clb p4 1
+    r2 fis4\f cis' d |
+    \time 6/4
+    cis4 d fis, g gis a |
+    \time 5/4
+    R1*5/4 |
+    \time 6/4
+    R1*6/4 |
+    \mBreak
+    
+    % clb p4 2
+    \mark #33
+    \time 5/4
+    r2 gis2 g4~ |
+    \time 6/4
+    g4 fis2~ fis4 gis a |
+    \time 5/4
+    R1*5/4\rit
+    \time 4/4
+    R1\fermata
+    \bar "|."
+  }
+}
 
 % ---------------------------------------------------------
 
@@ -242,6 +275,17 @@ clarinet_II = {
         \transpose a a \clarinet_II
       }
     >>
+  }
+}
+
+\bookpart {
+  \header{
+    instrument = "Bassklarinette in A"
+  }
+  \score {
+    \new Staff {
+      \transpose a a \clarinet_bass
+    }
   }
 }
 

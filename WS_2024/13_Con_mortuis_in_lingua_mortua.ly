@@ -147,6 +147,7 @@ clarinet_I = {
   \clef violin
   \relative c'' {
     % cl1 p17 1
+    \mark #75
     R1.*3 |
     <<
       {
@@ -162,6 +163,7 @@ clarinet_I = {
         \stemDown
         r2 r4_"Clar.basso" r4 e\p( a |
         f4 e a f4~ f8) r r4 |
+        \mark #76
         \key d \major 
         r2 r4\fermata r fis'(^"Oboe" g |
         \key f \major
@@ -222,7 +224,43 @@ clarinet_II = {
   }
 }
 
-
+clarinet_bass = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 6/4
+  \tempo "Andante non troppo con lamento"
+  \key f \major
+  \clef violin
+  \relative c'' {
+    % clb p6 1
+    \mark #75
+    R1.*3 |
+    r2 r4 r e,,\p( a |
+    f4 e a f4~ f8) r r4 |
+    \mark #76
+    R1.\fermata |
+    R1.*2 |
+    \mBreak
+    
+    % clb p6 2
+    r4 a( b g) a( b |
+    g4) c( d a2.) |
+    f'4( e d a) r r |
+    \mark #77
+    R1.*4 |
+    \mark #78
+    R1.*6 |
+    % Magic taken from https://lsr.di.unimi.it/LSR/Item?id=10
+    % for a fermata hovering over the last bar line
+    \context Staff = "one" {
+      \bar "|."
+      \override Score.TextMark.self-alignment-X = #CENTER
+      \textEndMark \markup { \musicglyph "scripts.ufermata" }
+    }
+  }
+}
 
 % ---------------------------------------------------------
 
@@ -240,6 +278,17 @@ clarinet_II = {
         \transpose a a \clarinet_II
       }
     >>
+  }
+}
+
+\bookpart {
+  \header{
+    instrument = "Bassklarinette in A"
+  }
+  \score {
+    \new Staff {
+      \transpose a a \clarinet_bass
+    }
   }
 }
 
