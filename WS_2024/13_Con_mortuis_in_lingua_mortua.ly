@@ -151,22 +151,28 @@ clarinet_I = {
     R1.*3 |
     <<
       {
-        \override MultiMeasureRest.staff-position = #-4
         R1.*2 |
-        \revert MultiMeasureRest.staff-position
-        \override MultiMeasureRest.staff-position = #-6
-        R1.*1 |
-        \revert MultiMeasureRest.staff-position
-        r4 cis,(^"Clar.I" d e-.) r r |
       }
-      \new CueVoice \transpose c c \relative {
+      \new CueVoice \relative {
         \stemDown
+        \voiceTwo
         r2 r4_"Clar.basso" r4 e\p( a |
         f4 e a f4~ f8) r r4 |
+        \stemNeutral
+      }
+    >>
+    <<
+      {
+        R1.*1 |
+        r4 cis,(^"Clar." d e-.) r r |
+      }
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
+        \stemDown
+        \voiceTwo
         \mark #76
         \key d \major 
         r2 r4\fermata r fis'(^"Oboe" g |
-        \key f \major
         \mBreak
         
         % cl1 p18 1
@@ -174,6 +180,7 @@ clarinet_I = {
         \stemNeutral
       }
     >>
+    \key f \major
     e2( f'8) r r2 r4 |
     R1.*3 |
     \mark #77
@@ -206,7 +213,7 @@ clarinet_II = {
     \mBreak
     
     % cl2 p18 1
-    r4 a,( b c-.) r r |
+    r4 a,( b c?-.) r r |
     r4
     a( c'8) r r2 r4 |
     R1.*3 |
@@ -274,7 +281,6 @@ clarinet_bass = {
         \transpose a a \clarinet_I
       }
       \new Staff {
-        \accidentalStyle Score.modern-cautionary
         \transpose a a \clarinet_II
       }
     >>
@@ -291,37 +297,3 @@ clarinet_bass = {
     }
   }
 }
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette I in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_I
-      }
-    }
-  }
-}
-%}
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette II in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_II
-      }
-    }
-  }
-}
-%}

@@ -157,7 +157,8 @@ clarinet_I = {
         R2*7 |
         \revert MultiMeasureRest.staff-position
       }
-      \new CueVoice \transpose c c \relative {
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
         \clef bass
         \key h \major
         \stemUp
@@ -173,9 +174,9 @@ clarinet_I = {
         g4~ g8) r |
         \stemNeutral
         \clef violin
-        \key d \major
       }
     >>
+    \key d \major
     \mBreak
     
     % cl1 p10 3
@@ -317,28 +318,30 @@ clarinet_bass = {
         R2*7 |
         \revert MultiMeasureRest.staff-position
       }
-      \new CueVoice \transpose c c \relative {
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
         \clef bass
+        \key h \major
         \stemUp
+        \voiceOne
         c'4(^"Tuba" e8) r |
         e4 e-- |
         d2~( |
         d4 his8) r |
         c4( g'8) g |
         d8-- h-- a4--( |
-        \mBreak
-        % clb p4 2
         g4~ g8) r |
-        \mark #39
         \stemNeutral
         \clef violin
       }
     >>
+    \key d \major
     e,,4--\mf\cresc fis--\! |
     g4-- a-- |
     e4-- fis-- |
     g4-- a-- |
     e4-- fis-- |
+    % Extra accidentals make no sense here (no gis/ais but loads of g/a around)
     g4-- a-- |
     \mBreak
     
@@ -374,7 +377,7 @@ clarinet_bass = {
     
     % clb p5 2
     d8( fis cis4-.) |
-    h4--( a8 g |
+    h4-- a8( g |
     \mark #43
     fis8)\! r r4 |
     R2*3
@@ -384,9 +387,11 @@ clarinet_bass = {
       {
         R2*2 |
       }
-      \new CueVoice \transpose c c \relative {
+      % Transposition adapted to clarinet (written in Bb ??) 
+      \new CueVoice \transpose a b \relative {
         \stemDown
-        r4 eis~\mp  |
+        \voiceTwo
+        r4 eis~\mp^"Horn m.Dämpfer" |
         \mBreak
 
         % clb p5 3
@@ -415,7 +420,6 @@ clarinet_bass = {
         \transpose a a \clarinet_I
       }
       \new Staff {
-        \accidentalStyle Score.modern-cautionary
         \transpose a a \clarinet_II
       }
     >>
@@ -432,37 +436,3 @@ clarinet_bass = {
     }
   }
 }
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette I in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_I
-      }
-    }
-  }
-}
-%}
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette II in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_II
-      }
-    }
-  }
-}
-%}

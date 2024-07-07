@@ -150,7 +150,7 @@ clarinet_I = {
     % cl1 p13 1
     \mark #56
     \partial 32 cis,32(\f^"a 2" |
-    gis'8) r16 r32 fisis64( gisis) fisis4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32( |
+    gis'8) r16 r32 fisis64( gis) fisis!4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32( |
     \mBreak
     
     % cl1 p13 2
@@ -194,8 +194,8 @@ clarinet_I = {
     g8)\sf^"Clar.I" r8 r8 r16 cis16(\f gis4)\(~ gis8 \tuplet 3/2 { fisis16( gis fisis) } |
     e2\sf g8\)\sf r r4 |
     \mark #61
-    fis8.[\< gis16( a8) his] cis4\> h8 a |
-    \mBreak
+    fis8.[\< gis16( a8) his] cis4(\> h8 a) |
+    \pBreak
     
     % cl1 p14 3
     his8( a16 gis)\! gis8 r r4 r4 |
@@ -232,7 +232,7 @@ clarinet_II = {
     
     % cl2 p13 5
     \time 4/4
-    e2.~ e8 r |
+    e,2.~ e8 r |
     \mark #58
     R1*6 |
     \mBreak
@@ -272,15 +272,15 @@ clarinet_bass = {
     % clb p5 1
     \mark #56
     \partial 32 cis,32(\f |
-    gis'8) r16 r32 fisis64( gisis) fisis4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32( |
-    gis'8)^"a 2" r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e4->~ e8 r his16( cis dis e) |
+    gis'8) r16 r32 fisis64( gis) fisis4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32( |
+    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e4->~ e8 r his16( cis dis e) |
     \mBreak
     
     % clb p5 2
-    fis8.[\< gis16( a8-.) his-.]\! cis4\( h8\> a |
+    fis8.[\< gis16( a8) his]\! cis4\( h8\> a |
     \tuplet 3/2 { his8( a gis) } gis8..\)\! his32( gis8) r his,16-- cis-- dis-- e-- |
     \mark #57 
-    fis8.[\< gis16( a8) his] cis4(\> his8 a)\! |
+    fis8.[\< gis16( a8) his] cis4(\> his?8 a)\! |
     \mBreak
     
     % clb p5 3
@@ -313,7 +313,7 @@ clarinet_bass = {
     % clb p6 2
     e2\sf g8\)\sf r r4 |
     \mark #61
-    fis8.[\< gis16( a8) his] cis4\> h8 a |
+    fis8.[\< gis16( a8) his] cis4(\> h8 a) |
     his8( a16 gis)\! gis8 r r4 r8 cis |
     \mBreak
     
@@ -360,37 +360,3 @@ clarinet_bass = {
     }
   }
 }
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette I in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_I
-      }
-    }
-  }
-}
-%}
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette II in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_II
-      }
-    }
-  }
-}
-%}

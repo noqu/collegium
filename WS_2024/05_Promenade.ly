@@ -271,7 +271,6 @@ clarinet_bass = {
         \transpose a a \clarinet_I
       }
       \new Staff {
-        \accidentalStyle Score.modern-cautionary
         \transpose a a \clarinet_II
       }
     >>
@@ -288,37 +287,3 @@ clarinet_bass = {
     }
   }
 }
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette I in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_I
-      }
-    }
-  }
-}
-%}
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette II in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_II
-      }
-    }
-  }
-}
-%}

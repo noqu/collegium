@@ -155,9 +155,11 @@ clarinet_I = {
       {
         R2.*5 |
       }
-      \new CueVoice \transpose c c \relative {
+      % Transposition adapted to clarinet (written in C, and partly wrong)
+      \new CueVoice \transpose a, c \relative {
         \stemDown
         \clef bass
+        \key d \major
         h,,2.\fermata^"Fagott" |
         b2.\fermata
         \mBreak
@@ -170,7 +172,7 @@ clarinet_I = {
             e2. |
           } 
           {
-            ges'2~\fermata ges8 r |
+            g'2~\fermata g8 r |
             a,2.~ |
             a2. |
           }
@@ -179,6 +181,7 @@ clarinet_I = {
         \stemNeutral
       }
     >>
+    \key f \major
     e,,2.(\p\<^"Clar. a 2" |
     f2.) |
     a2.( |
@@ -195,15 +198,18 @@ clarinet_I = {
         R2. |
         f2\!\fermata\pp^"Clar.I"
       }
-      \new CueVoice \transpose c c \relative {
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
         \stemUp
         \clef bass
+        \key d \major
         fis2.^"Kontrafagott"\ff\>
         \clef violin
         s2.\!\hideNotes |
         \stemNeutral
       }
     >>
+    \key f \major
     \bar "|."
   }
 }
@@ -227,11 +233,15 @@ clarinet_bass = {
     R2.*2
     <<
       {
+        \override MultiMeasureRest.staff-position = #2
         R2.*5 |
+        \revert MultiMeasureRest.staff-position
       }
-      \new CueVoice \transpose c c \relative {
+      % Transposition adapted to clarinet (written in Es?)
+      \new CueVoice \transpose a h \relative {
         \stemDown
         \clef bass
+        \key es \major
         % Dynamics as written here is correct from score, wrong in cue notes
         g,2.~^"Fagott"\f\> |
         g2.~ |
@@ -242,6 +252,7 @@ clarinet_bass = {
         \stemNeutral
       }
     >>
+    \key f \major
     d,2\pp\fermata^"Clar.Bass." r4 |
     \bar "|."
   }
@@ -273,37 +284,3 @@ clarinet_bass = {
     }
   }
 }
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette I in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_I
-      }
-    }
-  }
-}
-%}
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette II in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_II
-      }
-    }
-  }
-}
-%}

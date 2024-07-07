@@ -129,10 +129,7 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     % This allows the use of \startMeasureCount and \stopMeasureCount
     % See https://lilypond.org/doc/v2.23/Documentation/snippets/repeats#repeats-numbering-groups-of-measures
     \consists #Measure_counter_engraver
-    % FIXME: We can't use \RemoveAllEmptyStaves to get the first staff printed only once,
-    % because it consists only of rests and would thus be removed completely.
-    \RemoveEmptyStaves
-    % \RemoveAllEmptyStaves
+    \RemoveAllEmptyStaves
   }
 }
 
@@ -153,7 +150,11 @@ clarinet_I = {
     R2.*6 |
     \mark #20
     R2.*7 |
+    % This hidden grace note is required so that \RemoveAllEmptyStaves doesn't remove the whole staff (rests only)
+    \hideNotes
     \mark #21
+    \grace c16
+    \unHideNotes
     R2.*6 |
     \mBreak
 
@@ -167,7 +168,8 @@ clarinet_I = {
         R2.*6 |
         \revert MultiMeasureRest.staff-position
       }
-      \new CueVoice \transpose c c \relative {
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
         \key h \major
         \stemUp
         e''4\p^"Vl.I" e8 fis8.( e16) dis8 |
@@ -183,7 +185,7 @@ clarinet_I = {
       }
     >>
     \key d \major
-    c2.(\p |
+    cis2.(\p |
     ais2.) |
     h4.--( d,4) r8 |
     \mark #24
@@ -220,7 +222,7 @@ clarinet_I = {
     r4 r8 h'4.(\mf\> |
     a4. g |
     fis8)\! r r r4 r8 |
-    \pBreak
+    \mBreak
     
     % cl1 p7 1
     R2.*2 |
@@ -263,7 +265,8 @@ clarinet_I = {
         R2.*2 |
         \revert MultiMeasureRest.staff-position
       }
-      \new CueVoice \transpose c c \relative {
+      % Transposition adapted to clarinet (written in Es)
+      \new CueVoice \transpose a dis \relative {
         \key as \major
         \stemUp
         r4^"Sax Alto" r8 r4 c''8(\pp\espress |
@@ -304,7 +307,9 @@ clarinet_II = {
     R2.*6 |
     \mark #20
     R2.*7 |
-    \mark #21
+    % We need to leave this mark out because the one in the 1st clarinet is shifted
+    % by an invisible grace note, so we would see two marks
+    % \mark #21
     R2.*6 |
     \mBreak
 
@@ -368,12 +373,12 @@ clarinet_II = {
     fis4.\p eis8( e eis) |
     fis4. eis8( e eis) |
     fis4.( eis) |
-    e4.(\< h'\> |
+    e4.\(\< h'\> |
     \mBreak
     
     % cl2 p7 4
-    a4. g8 h g) |
-    ais,2.(\p |
+    a4. g8( h g)\) |
+    ais2.(\p |
     fis2.) |
     R2. |
     \mark #30
@@ -416,7 +421,8 @@ clarinet_bass = {
         R2.*3 |
         \revert MultiMeasureRest.staff-position
       }
-      \new CueVoice \transpose c c \relative {
+      % Transposition adapted to clarinet (written in Bb ??)
+      \new CueVoice \transpose a b \relative {
         \stemUp
         eis''4.(^"Ob." dis4 cis8) |
         his8.( cis16 his8 dis cis his |
@@ -556,6 +562,7 @@ saxophone_alto = {
         R2.*6 |
         \revert MultiMeasureRest.staff-position
       }
+      % Transposition fits for alto saxophone (written in Es)
       \new CueVoice \transpose c c \relative {
         \stemDown
         \voiceTwo
@@ -674,8 +681,8 @@ saxophone_alto = {
     \mBreak
     
     % sax p2 9
-    c'4.(\espress^"Sax" b4 as8) |
-    g8.( as16) g8-- b8( as) g |
+    c'4.(\espress^"Sax" b8 c as) |
+    g8.( as16) g8 b8( as g) |
     R2. |
     \mark #30
     R2.*6 |
@@ -752,42 +759,7 @@ saxophone_alto = {
   }
   \score {
     \new Staff {
-      % \transpose b es \saxophone_alto
-      \transpose a a \saxophone_alto
+      \transpose es es \saxophone_alto
     }
   }
 }
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette I in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_I
-      }
-    }
-  }
-}
-%}
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette II in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_II
-      }
-    }
-  }
-}
-%}

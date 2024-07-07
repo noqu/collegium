@@ -153,7 +153,7 @@ clarinet_I = {
     % cl1 p8 4
     h4-> fis8-. r h4-> fis8-. r |
     d'4->~ d8-. r d4->~ d8-. r |
-    h4->\< fis8-. r h4-> fis8-. r |
+    h4->(\< fis8-.) r h4->( fis8-.) r |
     \mark #34
     c''4->(\mf\< fis,8-.) r c'8->( e16 d) c( b a g) |
     \mBreak
@@ -184,7 +184,7 @@ clarinet_I = {
     \pBreak
     
     % cl1 p9 4
-    a4->\mf d,16(\< dis e f) a4-> d,16( dis e f) |
+    a4->\mf d,16(\< dis e f) a4-> d,16( dis e f?) |
     c'4->(\f fis,8-.) r c'4->( fis,8-.) r |
     c'4->(\ff fis,8-.) r c'4->( fis,8-.) r |
     \mBreak
@@ -192,6 +192,7 @@ clarinet_I = {
     % cl1 p9 5
     d4->~\p d8-. r d4->~ d8-. r |
     \mark #37
+    % Extra accidentals for g make no sense here - no gis anywhere to be seen
     g'4(\< fis8 e ais,\> h e fis) |
     d,4->~\pp d8-. r d4->~ d8-. r |
     \mBreak
@@ -228,7 +229,7 @@ clarinet_II = {
 
     % cl2 p8 5
     e4->~ e8-. r c'8->( e16 d) c( b a g) |
-    g'16\ff\> r r8 r4 h,,,16( his cis d dis e g gis)\! |
+    g'16\ff r r8 r4 h,,,16(\mf his cis d dis e g gis) |
     \mBreak
     
     % cl2 p9 1
@@ -285,37 +286,3 @@ clarinet_II = {
     >>
   }
 }
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette I in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_I
-      }
-    }
-  }
-}
-%}
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette II in Bb"
-  }
-  \score {
-    \new Staff {
-      \override DynamicLineSpanner.staff-padding = #3
-      \accidentalStyle Score.modern-cautionary
-      \new Voice {
-        \transpose b b \clarinet_II
-      }
-    }
-  }
-}
-%}
