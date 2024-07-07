@@ -320,11 +320,11 @@ clarinet_bass = {
     % clb p6 3
     fis,8.[ gis16(\cresc a8)\! his] cis4( his8 a) |
     h8(\< a16 gis) gis'8\ff r8 r4\fermata \mark #62 gis,\p |
-    \after 2 \> cis2.~\< cis8\< \acciaccatura fis,8 gis-. |
+    \after 2 \> cis2.~\< cis8\< \acciaccatura fisis,8 gis-. |
     \mBreak
     
     % clb p6 4
-    \after 2 \> cis2.~\< cis8\< \acciaccatura fis,8 gis-.\sf |
+    \after 2 \> cis2.~\< cis8\< \acciaccatura fisis,8 gis-.\sf |
     r8\! r16 \tuplet 3/2 { fisis'32(\f gis fisis) } e4\sf~ e8 r r \tuplet 3/2 { dis16(\ff e dis) } |
     cis8 r r4 r2\fermata |
     \bar "|."
