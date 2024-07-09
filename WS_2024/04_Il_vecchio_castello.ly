@@ -170,7 +170,7 @@ clarinet_I = {
       }
       % Transposition adapted to clarinet (written in C)
       \new CueVoice \transpose a, c \relative {
-        \key h \major
+        \key h \major 
         \stemUp
         e''4\p^"Vl.I" e8 fis8.( e16) dis8 |
         e4 e8 fis8.( e16) dis8 |
@@ -184,7 +184,7 @@ clarinet_I = {
         \stemNeutral
       }
     >>
-    \key d \major
+    \key d \major % würde ich entsprechend der Korrektur wegmachen. Die 2 Kreuze mitten in der Zeile verwirren mich.
     cis2.(\p |
     ais2.) |
     h4.--( d,4) r8 |
@@ -240,12 +240,12 @@ clarinet_I = {
     dis4.~( dis8 d dis) |
     e8.( h'16) e,8\! e4 r8 |
     \mark #29
-    c2.~\f\> |
+    cis2.~\f\> |
     \mBreak
     
     % cl1 p7 3
-    c2. |
-    fis4.\p eis8( e eis) |
+    c2. \!|
+    fis4._\markup{\dynamic p \italic Soli} eis8( e eis) |
     fis4. eis8( e eis) |
     fis4.( eis) |
     e4.(\< h'\> |
@@ -369,8 +369,8 @@ clarinet_II = {
     \mBreak
     
     % cl2 p7 3
-    fis2. |
-    fis4.\p eis8( e eis) |
+    fis2.\! |
+    fis4._\markup{\dynamic p \italic Soli} eis8( e eis) |
     fis4. eis8( e eis) |
     fis4.( eis) |
     e4.\(\< h'\> |
