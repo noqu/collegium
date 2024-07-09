@@ -180,7 +180,6 @@ clarinet_I = {
         \stemNeutral
       }
     >>
-    \key f \major
     e2( f'8) r r2 r4 |
     R1.*3 |
     \mark #77
