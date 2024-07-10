@@ -171,7 +171,6 @@ clarinet_I = {
         \stemDown
         \voiceTwo
         \mark #76
-        \key d \major 
         r2 r4\fermata r fis'(^"Oboe" g |
         \mBreak
         
