@@ -256,13 +256,13 @@ clarinet_bass = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I und II in A"
+    instrument = "Klarinette I und II in Bb"
   }
   \score {
     % For simplicity, we treat this as if there was only one voice
     <<
       \new Staff {
-        \transpose a a \clarinet_I
+        \transpose b a \clarinet_I
       }
     >>
   }
@@ -270,11 +270,11 @@ clarinet_bass = {
 
 \bookpart {
   \header{
-    instrument = "Bassklarinette in A"
+    instrument = "Bassklarinette in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \clarinet_bass
+      \transpose b a \clarinet_bass
     }
   }
 }

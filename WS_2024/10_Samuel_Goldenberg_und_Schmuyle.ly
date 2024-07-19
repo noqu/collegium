@@ -114,12 +114,12 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     " "
   }
   % Distance between title stuff and music
-  markup-system-spacing.basic-distance = #12
-  markup-system-spacing.minimum-distance = #12
-  markup-system-spacing.padding = #10
+  markup-system-spacing.basic-distance = #4
+  markup-system-spacing.minimum-distance = #4
+  markup-system-spacing.padding = #4
   % Distance between music systems
-  system-system-spacing.basic-distance = #13
-  system-system-spacing.minimum-distance = #13
+  % system-system-spacing.basic-distance = #6
+  % system-system-spacing.minimum-distance = #6
   % system-system-spacing.padding = #10
   
 }
@@ -195,7 +195,7 @@ clarinet_I = {
     e2\sf g8\)\sf r r4 |
     \mark #61
     fis8.[\< gis16( a8) his] cis4(\> h8 a) |
-    \pBreak
+    \mBreak
     
     % cl1 p14 3
     his8( a16 gis)\! gis8 r r4 r4 |
@@ -341,10 +341,10 @@ clarinet_bass = {
   \score {
     \new GrandStaff <<
       \new Staff {
-        \transpose a a \clarinet_I
+        \transpose ais a \clarinet_I
       }
       \new Staff {
-        \transpose a a \clarinet_II
+        \transpose ais a \clarinet_II
       }
     >>
   }
@@ -356,7 +356,7 @@ clarinet_bass = {
   }
   \score {
     \new Staff {
-      \transpose a a \clarinet_bass
+      \transpose ais a \clarinet_bass
     }
   }
 }

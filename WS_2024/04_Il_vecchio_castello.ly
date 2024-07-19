@@ -113,9 +113,9 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     " "
   }
   % Distance between title stuff and music
-  markup-system-spacing.basic-distance = #12
-  markup-system-spacing.minimum-distance = #12
-  markup-system-spacing.padding = #10
+  markup-system-spacing.basic-distance = #4
+  markup-system-spacing.minimum-distance = #4
+  markup-system-spacing.padding = #4
   % Distance between music systems
   system-system-spacing.basic-distance = #13
   system-system-spacing.minimum-distance = #13
@@ -129,7 +129,7 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     % This allows the use of \startMeasureCount and \stopMeasureCount
     % See https://lilypond.org/doc/v2.23/Documentation/snippets/repeats#repeats-numbering-groups-of-measures
     \consists #Measure_counter_engraver
-    \RemoveAllEmptyStaves
+    % \RemoveAllEmptyStaves
   }
 }
 
@@ -589,7 +589,7 @@ saxophone_alto = {
     c8-> f,4~ f4.~ |
     f8 g as \appoggiatura { b16 c } b8 as g |
     \mark #21
-    a4. f~ |
+    as4. f~ |
     \mBreak
     
     % sax p2 3
@@ -724,15 +724,20 @@ saxophone_alto = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I und II in A"
+    instrument = "Klarinette I und II in Bb"
   }
   \score {
-    \new GrandStaff <<
-      \new Staff {
-        \transpose a a \clarinet_I
+    \new GrandStaff \with {
+        \RemoveAllEmptyStaves
+    }
+    <<
+      \new Staff  {
+        \transpose b a \clarinet_I
       }
-      \new Staff {
-        \transpose a a \clarinet_II
+      \new Staff \with {
+        \RemoveAllEmptyStaves
+      } {
+        \transpose b a \clarinet_II
       }
     >>
   }
@@ -740,22 +745,22 @@ saxophone_alto = {
 
 \bookpart {
   \header{
-    instrument = "Bassklarinette in A"
+    instrument = "Bassklarinette in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \clarinet_bass
+      \transpose b a \clarinet_bass
     }
   }
 }
 
 \bookpart {
   \header{
-    instrument = "Altsaxophon in Es"
+    instrument = "Altsaxophon in Bb"
   }
   \score {
     \new Staff {
-      \transpose es es \saxophone_alto
+      \transpose b dis \saxophone_alto
     }
   }
 }

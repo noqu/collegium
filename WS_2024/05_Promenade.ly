@@ -263,15 +263,15 @@ clarinet_bass = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I und II in A"
+    instrument = "Klarinette I und II in Bb"
   }
   \score {
     \new GrandStaff <<
       \new Staff {
-        \transpose a a \clarinet_I
+        \transpose ais a \clarinet_I
       }
       \new Staff {
-        \transpose a a \clarinet_II
+        \transpose ais a \clarinet_II
       }
     >>
   }
@@ -279,11 +279,11 @@ clarinet_bass = {
 
 \bookpart {
   \header{
-    instrument = "Bassklarinette in A"
+    instrument = "Bassklarinette in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \clarinet_bass
+      \transpose ais a \clarinet_bass
     }
   }
 }
