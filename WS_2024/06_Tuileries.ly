@@ -151,7 +151,7 @@ clarinet_I = {
     \mBreak
     
     % cl1 p8 4
-    h4-> fis8-. r h4-> fis8-. r |
+    h4(-> fis8-.) r h4(-> fis8-.) r |
     d'4->~ d8-. r d4->~ d8-. r |
     h4->(\< fis8-.) r h4->( fis8-.) r |
     \mark #34

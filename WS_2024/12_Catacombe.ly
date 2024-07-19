@@ -159,7 +159,6 @@ clarinet_I = {
       \new CueVoice \transpose a, c \relative {
         \stemDown
         \clef bass
-        \key d \major
         h,,2.\fermata^"Fagott" |
         b2.\fermata
         \mBreak
@@ -181,7 +180,6 @@ clarinet_I = {
         \stemNeutral
       }
     >>
-    \key f \major
     e,,2.(\p\<^"Clar. a 2" |
     f2.) |
     a2.( |
@@ -202,14 +200,12 @@ clarinet_I = {
       \new CueVoice \transpose a, c \relative {
         \stemUp
         \clef bass
-        \key d \major
         fis2.^"Kontrafagott"\ff\>
         \clef violin
         s2.\!\hideNotes |
         \stemNeutral
       }
     >>
-    \key f \major
     \bar "|."
   }
 }
@@ -241,7 +237,6 @@ clarinet_bass = {
       \new CueVoice \transpose a h \relative {
         \stemDown
         \clef bass
-        \key es \major
         % Dynamics as written here is correct from score, wrong in cue notes
         g,2.~^"Fagott"\f\> |
         g2.~ |
@@ -252,7 +247,6 @@ clarinet_bass = {
         \stemNeutral
       }
     >>
-    \key f \major
     d,2\pp\fermata^"Clar.Bass." r4 |
     \bar "|."
   }

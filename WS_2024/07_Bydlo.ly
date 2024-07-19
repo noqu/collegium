@@ -160,7 +160,6 @@ clarinet_I = {
       % Transposition adapted to clarinet (written in C)
       \new CueVoice \transpose a, c \relative {
         \clef bass
-        \key h \major
         \stemUp
         c'4(^"Tuba" e8) r |
         \mBreak
@@ -176,7 +175,6 @@ clarinet_I = {
         \clef violin
       }
     >>
-    \key d \major
     \mBreak
     
     % cl1 p10 3
@@ -321,7 +319,6 @@ clarinet_bass = {
       % Transposition adapted to clarinet (written in C)
       \new CueVoice \transpose a, c \relative {
         \clef bass
-        \key h \major
         \stemUp
         \voiceOne
         c'4(^"Tuba" e8) r |
@@ -335,7 +332,6 @@ clarinet_bass = {
         \clef violin
       }
     >>
-    \key d \major
     e,,4--\mf\cresc fis--\! |
     g4-- a-- |
     e4-- fis-- |

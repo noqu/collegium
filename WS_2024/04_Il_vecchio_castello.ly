@@ -170,7 +170,6 @@ clarinet_I = {
       }
       % Transposition adapted to clarinet (written in C)
       \new CueVoice \transpose a, c \relative {
-        \key h \major
         \stemUp
         e''4\p^"Vl.I" e8 fis8.( e16) dis8 |
         e4 e8 fis8.( e16) dis8 |
@@ -184,7 +183,6 @@ clarinet_I = {
         \stemNeutral
       }
     >>
-    \key d \major
     cis2.(\p |
     ais2.) |
     h4.--( d,4) r8 |
@@ -240,12 +238,12 @@ clarinet_I = {
     dis4.~( dis8 d dis) |
     e8.( h'16) e,8\! e4 r8 |
     \mark #29
-    c2.~\f\> |
+    cis2.~\f\> |
     \mBreak
     
     % cl1 p7 3
-    c2. |
-    fis4.\p eis8( e eis) |
+    cis2. \!|
+    fis4._\markup{\dynamic p \italic Soli} eis8( e eis) |
     fis4. eis8( e eis) |
     fis4.( eis) |
     e4.(\< h'\> |
@@ -267,7 +265,6 @@ clarinet_I = {
       }
       % Transposition adapted to clarinet (written in Es)
       \new CueVoice \transpose a dis \relative {
-        \key as \major
         \stemUp
         r4^"Sax Alto" r8 r4 c''8(\pp\espress |
         \mBreak
@@ -275,7 +272,6 @@ clarinet_I = {
         \stemNeutral
       }
     >>
-    \key d \major
     fis,4.(\pp\<^"Clar.I" g |
     d'4.~d4\> c8 |
     h8 ais) \! r r4 r8 |
@@ -369,8 +365,8 @@ clarinet_II = {
     \mBreak
     
     % cl2 p7 3
-    fis2. |
-    fis4.\p eis8( e eis) |
+    fis2.\! |
+    fis4._\markup{\dynamic p \italic Soli} eis8( e eis) |
     fis4. eis8( e eis) |
     fis4.( eis) |
     e4.\(\< h'\> |
