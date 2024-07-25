@@ -9,8 +9,8 @@
     ragged-last = ##f
 }
 
-\header{
-  title = "II Il vecchio castello"
+\header {
+  title = "2. Il vecchio castello"
   subtitle = "(Das alte Schloss)"
   composerShort = "Modest Mussorgsky"
   composer = "Modest Mussorgsky (1839 - 1881)"
@@ -135,7 +135,7 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
 
 % ---------------------------------------------------------
 
-clarinet_I = {
+il_veccio_castello_clarinet_I = {
   \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \defaultTimeSignature
@@ -145,20 +145,13 @@ clarinet_I = {
   \key d \major
   \clef violin
   \relative c'' {
-    % cl1 p6 1
+    % cl1 p3 1
     \mark #19
     R2.*6 |
     \mark #20
     R2.*7 |
-    % This hidden grace note is required so that \RemoveAllEmptyStaves doesn't remove the whole staff (rests only)
-    \hideNotes
     \mark #21
-    \grace c16
-    \unHideNotes
     R2.*6 |
-    \mBreak
-
-    % cl1 p6 2
     \mark #22
     R2.*10 |
     \mark #23
@@ -175,11 +168,11 @@ clarinet_I = {
         e4 e8 fis8.( e16) dis8 |
         e4.-- d--\<( |
         a'4.--~\! a8 gis-- fis) |
-        e4.-- gis-- |
         \mBreak
 
-        % cl1 p6 3
-        fis4.-- e-- |
+        % cl1 p3 2
+        e4.--\> gis-- |
+        fis4.-- e--\! |
         \stemNeutral
       }
     >>
@@ -189,30 +182,27 @@ clarinet_I = {
     \mark #24
     \repeat unfold 4 e'4.-- |
     e4.(\< c\! |
-    \mBreak
-    
-    % cl1 p6 4
     c'4. h8 c a |
     g4.)\> h4.( |
+    \mBreak
+    
+    % cl1 p3 3
     a8 h fis g fis g)\! |
     cis,2.( |
     ais2.) |
     \mark #25 h4.( fis4) r8 |
     R2.*4 |
-    \mBreak
-    
-    % cl1 p6 5
-    fis,2.~(^"a 2" |
+    fis,2.~( |
     fis4. g |
     fis4. h~ |
     h4.) r4 r8 |
     \mark #26 |
     R2.*2 |
     dis'4.~(\mf\<  dis8 d dis) |
-    e4( h'8) e,4\! r8 |
     \mBreak
     
-    % cl1 p6 6
+    % cl1 p3 4
+    e4( h'8) e,4\! r8 |
     cis2.~(\f\> |
     cis2. |
     \mark #27 h8)\pp r r r4 r8 |
@@ -220,39 +210,36 @@ clarinet_I = {
     r4 r8 h'4.(\mf\> |
     a4. g |
     fis8)\! r r r4 r8 |
-    \mBreak
-    
-    % cl1 p7 1
     R2.*2 |
     \mark #28
     r4 r8 r4 fis,8(\espress |
     h2.~ |
+    \mBreak
+    
+    % cl1 p3 5
     h8 d cis \appoggiatura {h16 cis16} h8 g h) |
     h8.( g'16) h,8 h4.~ |
     h4. r4 r8 |
-    \mBreak
-    
-    % cl1 p7 2
     c4.~(\< c8 h c) |
     cis8.( gis'16) cis,8 cis4 r8 |
     dis4.~( dis8 d dis) |
     e8.( h'16) e,8\! e4 r8 |
-    \mark #29
-    cis2.~\f\> |
     \mBreak
     
-    % cl1 p7 3
+    % cl1 p3 6
+    \mark #29
+    cis2.~\f\> |
     cis2. \!|
     fis4._\markup{\dynamic p \italic Soli} eis8( e eis) |
     fis4. eis8( e eis) |
     fis4.( eis) |
     e4.(\< h'\> |
-    \mBreak
-    
-    % cl1 p7 4
     a4. g8 h g) |
     cis,2.(\p |
     ais2.) |
+    \mBreak
+    
+    % cl1 p3 7
     R2. |
     \mark #30
     R2.*7 |
@@ -267,28 +254,21 @@ clarinet_I = {
       \new CueVoice \transpose a dis \relative {
         \stemUp
         r4^"Sax Alto" r8 r4 c''8(\pp\espress |
-        \mBreak
         f2.) |
         \stemNeutral
       }
     >>
-    fis,4.(\pp\<^"Clar.I" g |
+    fis,4.(\pp\< g |
     d'4.~d4\> c8 |
     h8 ais) \! r r4 r8 |
     R2.* 2 |
     \mark #32
-    R2.*6 |
-    % Magic taken from https://lsr.di.unimi.it/LSR/Item?id=10
-    % for a fermata hovering over the last bar line
-    \context Staff = "one" {
-      \bar "|."
-      \override Score.TextMark.self-alignment-X = #CENTER
-      \textEndMark \markup { \musicglyph "scripts.ufermata" }
-    }
+    R2.*5 |
+    R2.\fermata |
   }
 }
 
-clarinet_II = {
+il_veccio_castello_clarinet_II = {
   \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \defaultTimeSignature
@@ -298,48 +278,77 @@ clarinet_II = {
   \key d \major
   \clef violin
   \relative c'' {
-    % cl2 p6 1
+    % cl2 p3 1
     \mark #19
-    R2.*6 |
+    R2.*6_"Fagott" |
     \mark #20
     R2.*7 |
-    % We need to leave this mark out because the one in the 1st clarinet is shifted
-    % by an invisible grace note, so we would see two marks
-    % \mark #21
+    \mark #21
     R2.*6 |
-    \mBreak
-
-    % cl2 p6 2
     \mark #22
-    R2.*10 |
+    R2.*10_"Sax" |
     \mark #23
-    R2.*6 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2.*6 |
+        \revert MultiMeasureRest.staff-position
+      }
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
+        \stemUp
+        e''4\p^"Vl.I" e8 fis8.( e16) dis8 |
+        e4 e8 fis8.( e16) dis8 |
+        e4.-- d--\<( |
+        a'4.--~\! a8 gis-- fis) |
+        \mBreak
 
-    % cl2 p6 3
+        % cl2 p3 2
+        e4.--\> gis-- |
+        fis4.-- e--\! |
+        \stemNeutral
+      }
+    >>
     ais2.(\p |
     fis2.) |
     fis4.--( h,4) r8 |
     \mark #24
     \repeat unfold 4 c'4.-- |
     c4.(\< a\! |
-    \mBreak
-    
-    % cl2 p6 4
     c4. h8 c a |
     g4.)\> h4.( |
+    \mBreak
+    
+    % cl2 p3 3
     a8 h fis g fis g)\! |
     ais2.( |
     fis2.) |
     \mark #25 fis4.( d4) r8 |
     R2.*4 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R2.*6 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \relative {
+        \voiceTwo
+        \stemDown
+        fis2.~(\p^"Cl.I" |
+        fis4. g |
+        fis4. h~ |
+        h4.) r |
+        \stemNeutral
+      }
+    >>
+    \mark #26
+    R2.*2
     \mBreak
     
-    % cl2 p6 5
-    R2.*8 |
-    \mBreak
-    
-    % cl2 p6 6
-    fis2.~(\f\> |
+    % cl2 p3 4
+    dis'4.~(\mf\< dis8 d dis) |
+    e4( h'8) e,4\! r8 |
+    fis,2.~(\f\> |
     fis2. |
     \mark #27 h8)\pp r r r4 r8 |
     R2.*2 
@@ -348,7 +357,7 @@ clarinet_II = {
     fis8)\! r r r4 r8 |
     \mBreak
     
-    % cl2 p7 1
+    % cl2 p3 5
     R2.*2 |
     \mark #28
     R2. |
@@ -356,23 +365,17 @@ clarinet_II = {
     fis4. g |
     d'2.~ |
     d4.) r4 r8 |
-    \mBreak
-    
-    % cl2 p7 2
     R2.*4
     \mark #29
     fis2.~\f\> |
+    fis2. |
+    fis4.\pp eis8( e eis) |
+    fis4. eis8( e eis) |
     \mBreak
     
-    % cl2 p7 3
-    fis2.\! |
-    fis4._\markup{\dynamic p \italic Soli} eis8( e eis) |
-    fis4. eis8( e eis) |
+    % cl2 p3 6
     fis4.( eis) |
     e4.\(\< h'\> |
-    \mBreak
-    
-    % cl2 p7 4
     a4. g8( h g)\) |
     ais2.(\p |
     fis2.) |
@@ -380,167 +383,15 @@ clarinet_II = {
     \mark #30
     R2.*7 |
     \mark #31
-    R2.*1
-
-    % cl2 p7 5
-    R2.*6
+    R2.*7
     \mark #32
-    R2.*6
+    R2.*5
+    R2.\fermata
     \bar "|."
   }
 }
 
-clarinet_bass = {
-  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
-  \accidentalStyle Score.modern-cautionary
-  \defaultTimeSignature
-  \compressEmptyMeasures
-  \time 6/8
-  \tempo "Andante"
-  \key d \major
-  \clef violin
-  \relative c'' {
-    % clb p3 1
-    \mark #19
-    R2.*6 |
-    \mark #20
-    R2.*7 |
-    \mark #21
-    R2.*6 |
-    \mark #22
-    R2.*10 |
-    \mark #23
-    R2.*6 |
-    <<
-      {
-        \override MultiMeasureRest.staff-position = #-6
-        R2.*3 |
-        \revert MultiMeasureRest.staff-position
-      }
-      % Transposition adapted to clarinet (written in Bb ??)
-      \new CueVoice \transpose a b \relative {
-        \stemUp
-        eis''4.(^"Ob." dis4 cis8) |
-        his8.( cis16 his8 dis cis his |
-        cis4.) a4 r8 |
-        \stemNeutral
-      }
-    >>
-    \mBreak
-    
-    % clb p3 2
-    \mark #24
-    \startMeasureCount h,2.~\p^"Cl.Bass." |
-    \repeat unfold 5 { h2.~ } \stopMeasureCount|
-    h8 r r r4 r8 |
-    R2. |
-    \mark #25
-    R2.*9
-    \mBreak
-    
-    % clb p3 3
-    \mark #26
-    R2.*2 |
-    <<
-      {
-        \override MultiMeasureRest.staff-position = #-6
-        R2.*2 |
-        \revert MultiMeasureRest.staff-position
-      }
-      \new CueVoice \transpose c c \relative {
-        \stemUp
-        dis''4.~(\mf\<^"Clar.I." dis8 d dis) |
-        e4( h'8) e,4\! r8 |
-        \stemNeutral
-      }
-    >>
-    a'2.~(\f\>^"Cl.Bass." |
-    a2. |
-    \mark #27
-    gis8)\pp r8 r r4 r8 |
-    R2.*2 |
-    \mBreak
-    
-    % clb p3 4
-    r4 r8 e4.(\mf\> |
-    fis4. h |
-    fis8)\! r r r4 r8 |
-    R2.*2 |
-    \mark #28
-    R2.*5 |
-    <<
-      {
-        \override MultiMeasureRest.staff-position = #-6
-        R2.*4 |
-        \revert MultiMeasureRest.staff-position
-      }
-      \new CueVoice \transpose c c \relative {
-        \stemUp
-        c''4.~(^"Clar.I."\< c8 h c) |
-        cis8.( gis'16) cis,8 cis4 r8 |
-        \mBreak
-        
-        % clb p3 5
-        dis4.~( dis8 d dis) |
-        e8.( h'16) e,8\! e4 r8 |
-        \stemNeutral
-      }
-    >>
-    \mark #29
-    a2.~\f^"Clar.Bass" |
-    a2. |
-    h,4-.\pp h8-. h4-. h8-. |
-    h4-. h8-. h4-. h8-. |
-    \mBreak
-    
-    % clb p3 6
-    h4-. h8-. h4-. h8-. |
-    h8 r r e4.(\mf\> |
-    fis4. h4.) |
-    b,2.~\p |
-    b2.~ |
-    b8 r r r4 r8 |
-    \mBreak
-    
-    % clb p4 1
-    \mark #30
-    R2.*7 |
-    \mark #31
-    R2.*2 |
-    <<
-      {
-        R2.*2 |
-        c'8\rest ais4(\p\>^"Clar.Bass" dis, e8\! |
-        \mBreak
-      }
-      \new CueVoice \transpose c c \relative {
-        \stemDown
-        fis4.(\pp\<^"Clar.I" g |
-        d'4.~d4\> c8 |
-        % Note that h ais is indeed correct (as in clarinet 1 - the cue notes here are wrong)
-        h8 ais)\! s8 s4 s8 |
-        \stemNeutral
-      }
-    >>
-    
-    % clb p4 2
-    h4.) r4 r8 |
-    R2. |
-    \mark #32
-    R2. |
-    % The piano is missing in the printed voice
-    h4--\p\>\solo h8 h4-- h8~\! |
-    h8 r r r4 r8 |
-    h2.\pp~ |
-    h4. r4 r8 |
-    R2.\fermata |
-    \mBreak
-
-    \bar "|."
-  }
-}
-
-saxophone_alto = {
+il_veccio_castello_saxophone_alto = {
   \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \defaultTimeSignature
@@ -720,8 +571,114 @@ saxophone_alto = {
   }
 }
 
+promenade_clarinet_I = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 5/4
+  \tempo "Moderato non tanto pesante"
+  \key d \major
+  \clef violin
+  \relative c'' {
+    % cl1 p3 1
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R1*5/4 |
+        \time 6/4
+        R1*6/4 |
+        \time 5/4
+        \override MultiMeasureRest.staff-position = #2
+        R1*5/4 |
+        \time 6/4
+        fis2\rest
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \transpose a, c \relative {
+        \stemDown
+        gis'4\f^"Trp.I" fis h cis8 fis dis4 |
+        \time 6/4
+        cis8 fis dis4 h cis gis fis |
+        \time 5/4
+        \clef bass gis,,4\f^"Tbn.III" fis \clef violin fis''\f^"Cl.II" cis fis |
+        \mBreak
+        
+        % cl1 p3 2
+        \time 6/4
+        ais4 h
+        \stemNeutral
+      }
+    >>
+    
+    fis4 e h cis |
+    \mark #33
+    \time 5/4
+    a'4 h e, a8 h e,4 |
+    \time 6/4
+    h'8 cis a4 a' fis e8 d a4 |
+    \time 5/4
+    R1*5/4\rit
+    \time 4/4
+    R1\fermata
+    \bar "|."
+  }
+}
+
+promenade_clarinet_II = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 5/4
+  \tempo "Moderato non tanto pesante"
+  \key a \major
+  \clef violin
+  \relative c'' {
+    % cl1 p3 1
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R1*5/4 |
+        \time 6/4
+        R1*6/4 |
+        \time 5/4
+        f,,2\rest
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \transpose a, c \relative {
+        \stemDown
+        gis'4\f^"Trp.I" fis h cis8 fis dis4 |
+        \time 6/4
+        cis8 fis dis4 h cis gis fis |
+        \time 5/4
+        \clef bass gis,,4\f^"Tbn.III" fis 
+        \stemNeutral
+      }
+    >>
+    \clef violin
+    a'4\f e a |
+    \time 6/4
+    \mBreak
+    
+    % cl1 p3 2
+    cis4 d d h r r |
+    \mark #33
+    \time 5/4
+    a'4 h e, a8 h e,4 |
+    \time 6/4
+    h'8 cis a4 a' fis e8 d a4 |
+    \time 5/4
+    R1*5/4\rit
+    \time 4/4
+    R1
+
+    \bar "|."
+  }
+}
 % ---------------------------------------------------------
 
+%{
 \bookpart {
   \header{
     instrument = "Klarinette I und II in Bb"
@@ -742,14 +699,44 @@ saxophone_alto = {
     >>
   }
 }
+%}
 
 \bookpart {
   \header{
-    instrument = "Bassklarinette in Bb"
+    instrument = "Klarinette I in A"
   }
   \score {
     \new Staff {
-      \transpose b a \clarinet_bass
+      \transpose a a \il_veccio_castello_clarinet_I
+    }
+  }
+
+  \markup \fill-line { \fontsize #4 " " }
+  \markup \fill-line { \fontsize #4 \bold \center-column { "Promenade" } }
+
+  \score {
+    \new Staff {
+      \transpose a a \promenade_clarinet_I
+    }
+  }
+}
+
+\bookpart {
+  \header{
+    instrument = "Klarinette II in A"
+  }
+  \score {
+    \new Staff {
+      \transpose a a \il_veccio_castello_clarinet_II
+    }
+  }
+
+  \markup \fill-line { \fontsize #4 " " }
+  \markup \fill-line { \fontsize #4 \bold \center-column { "Promenade" } }
+
+  \score {
+    \new Staff {
+      \transpose a a \promenade_clarinet_II
     }
   }
 }
@@ -760,7 +747,7 @@ saxophone_alto = {
   }
   \score {
     \new Staff {
-      \transpose b dis \saxophone_alto
+      \transpose b dis \il_veccio_castello_saxophone_alto
     }
   }
 }
