@@ -620,8 +620,14 @@ promenade_clarinet_I = {
     \time 5/4
     R1*5/4\rit
     \time 4/4
-    R1\fermata
-    \bar "|."
+    R1
+    % Magic taken from https://lsr.di.unimi.it/LSR/Item?id=10
+    % for a fermata hovering over the last bar line
+    \context Staff  {
+      \bar "|."
+      \override Score.TextMark.self-alignment-X = #CENTER
+      \textEndMark \markup { \musicglyph "scripts.ufermata" }
+    }
   }
 }
 
@@ -671,9 +677,14 @@ promenade_clarinet_II = {
     \time 5/4
     R1*5/4\rit
     \time 4/4
-    R1
-
-    \bar "|."
+    R1 |
+    % Magic taken from https://lsr.di.unimi.it/LSR/Item?id=10
+    % for a fermata hovering over the last bar line
+    \context Staff  {
+      \bar "|."
+      \override Score.TextMark.self-alignment-X = #CENTER
+      \textEndMark \markup { \musicglyph "scripts.ufermata" }
+    }
   }
 }
 % ---------------------------------------------------------
