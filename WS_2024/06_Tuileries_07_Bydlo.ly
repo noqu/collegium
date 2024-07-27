@@ -10,7 +10,7 @@
 }
 
 \header{
-  title = "IV Bydlo"
+  title = "3. Tuileries"
   subtitle = ""
   composerShort = "Modest Mussorgsky"
   composer = "Modest Mussorgsky (1839 - 1881)"
@@ -41,7 +41,6 @@ sempreCresc = _\markup { \italic "sempre cresc." }
 ppEspr = _\markup { \dynamic pp \italic "espr." }
 ppiuEspress = _\markup { \dynamic p \italic "più espress." }
 pocoCresc = _\markup { \italic "poco cresc." }
-pocoDim = _\markup { \italic "poco dim." }
 espress = _\markup { \italic "espress." }
 mfEspress = _\markup { \dynamic mf \italic "espress." }
 pEspress = _\markup { \dynamic p \italic "espress." }
@@ -59,11 +58,13 @@ riten = ^\markup {\italic {"riten."} }
 ritATempo = ^\markup { \center-align \italic {"  rit. a tempo"} }
 aTempo = ^\markup { \italic {"a tempo"} }
 moltoRit = ^\markup { \italic {"molto rit."} }
+pocoDim = _\markup { \italic "poco dim." }
 pocoRit = ^\markup {\italic {"poco rit."} }
 pocoRiten = ^\markup {\italic {"poco riten."} }
 sec = ^\markup {\italic {"sec."} }
 pocoRall = ^\markup {\italic {"poco rall."} }
 pocoAPocoRall = ^\markup {\italic {"poco a poco rall."} }
+pocoAPocoCresc = _\markup {\italic {"poco a poco cresc."} }
 pocoAPocoAccel = ^\markup {\italic {"poco a poco accel."} }
 pocoAPocoAccelAlD = ^\markup {\italic {"poco a poco accel. al D"} }
 sempreAccel = ^\markup {\italic {"sempre accel."} }
@@ -114,14 +115,13 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     " "
   }
   % Distance between title stuff and music
-  markup-system-spacing.basic-distance = #12
-  markup-system-spacing.minimum-distance = #12
-  markup-system-spacing.padding = #10
+  markup-system-spacing.basic-distance = #5
+  markup-system-spacing.minimum-distance = #5
+  markup-system-spacing.padding = #5
   % Distance between music systems
-  system-system-spacing.basic-distance = #13
-  system-system-spacing.minimum-distance = #13
+  system-system-spacing.basic-distance = #14
+  system-system-spacing.minimum-distance = #14
   % system-system-spacing.padding = #10
-  
 }
 
 \layout {
@@ -131,13 +131,141 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     % See https://lilypond.org/doc/v2.23/Documentation/snippets/repeats#repeats-numbering-groups-of-measures
     \consists #Measure_counter_engraver
     % \RemoveEmptyStaves
-    \RemoveAllEmptyStaves
+    % \RemoveAllEmptyStaves
   }
 }
 
 % ---------------------------------------------------------
 
-clarinet_I = {
+tuileries_clarinet_I = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 4/4
+  \tempo "Allegretto non troppo capriccioso"
+  \key d \major
+  \clef violin
+  \relative c'' {
+    % cl1 p4 1
+    d4->\p d8-. r d4-> d8-. r |
+    \repeat unfold 3 { d4-> d8-. r d4-> d8-. r | }
+    h4(-> fis8-.) r h4(-> fis8-.) r |
+    \mBreak
+    
+    % cl1 p4 2
+    d'4-> d8-. r d4-> d8-. r |
+    h4->(\< fis8-.) r h4->( fis8-.) r |
+    \mark #34
+    c''4->(\mf\< fis,8-.) r c'8->( e16 d) c( b a g) |
+    c4->( fis,8-.) r c'8->( e16 d) c( b a g) |
+    \mBreak
+    
+    % cl1 p4 3
+    g'16(\ff\> fis e d c h a g) gis8( a h e,)\! |
+    d4->\p d8-. r d4-> d8-. r |
+    d4-> d8-. r d4-> d8-. r |
+    cis,16( d eis fis gis a cis d eis fis gis a) r4 |
+    \bar "||"
+    \mBreak
+
+    % cl1 p4 4
+    \mark #35
+    R1
+    r2 r8 d16(\mf h a f d a-.) |
+    R1*3 |
+    r2 r4 cis16(\p\solo d e f |
+    \mark 36
+    b4~ b16 a c b) e,( f fis g a g c b) |
+    \mBreak
+    
+    % cl1 p4 5
+    b4~(\< b16 a c b) e,( f fis g a g a b) |
+    a4->\mf d,16(\< dis e f) a4-> d,16( dis e f?) |
+    c'4->(\f fis,8-.) r c'4->( fis,8-.) r |
+    c'4->(\ff fis,8-.) r c'4->( fis,8-.) r |
+    d4~->\p d8-. r d4->~ d8-. r |
+    \mBreak
+    
+    % cl1 p4 6
+    \mark #37
+    % Extra accidentals for g make no sense here - no gis anywhere to be seen
+    g'4(\< fis8 e ais,\> h e fis) |
+    d,4->\pp d8-. r d4-> d8-. r |
+    d4->~ d8-. r d4->~ d8-. r |
+    cis4->(d8-.) r eis16( fis eis fis gis a cis d |
+    fis8) r8 r4 r2 |
+    \bar "|."
+  }
+}
+
+tuileries_clarinet_II = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 4/4
+  \tempo "Allegretto non troppo capriccioso"
+  \key d \major
+  \clef violin
+  \relative c'' {
+    % cl2 p4 1
+    fis,4->\p fis8-. r fis4-> fis8-. r |
+    \repeat unfold 3 {  fis4-> fis8-. r fis4-> fis8-. r | }
+    \mBreak
+
+    % cl2 p4 2
+    R1 |
+    h4-> h8-. r h4-> h8-. r |
+    R1 |
+    \mark #34
+    e4->~\mf\< e8-. r c'8->( e16 d) c( b a g) |
+    e4->~ e8-. r c'8->( e16 d) c( b a g) |
+    \mBreak
+
+    % cl2 p4 3
+    g'16\ff r r8 r4 h,,,16(\mf\> his cis d dis e g gis) |
+    fis4->~\p fis8-. r fis4->~ fis8-. r |
+    fis4->~ fis8-. r fis4->~ fis8-. r |
+    R1 |
+    \bar "||"
+    \mark #35
+    R1*6
+    \mBreak
+    
+    % cl2 p4 4
+    \mark 36
+    R1*2^"Cl.I"
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R1 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \relative {
+        \stemUp
+        \voiceOne
+        a''4->\mf d,16(\< dis e f) a4-> d,16( dis e f\!) |
+        \stemNeutral
+      }
+    >>
+    e'4->~\f e8-. r e4->~ e8-. r |
+    e4->~\ff e8-. r e4->~ e8-. r |
+    h4->(\p a8-.) r h4->( a8-.) r |
+    \mBreak
+    
+    % cl2 p4 5
+    \mark #37
+    g'4(\< fis8 e ais,\> h e fis) |
+    fis,4->~\pp fis8-. r fis4->~ fis8-. r |
+    fis4->~ fis8-. r fis4->~ fis8-. r |
+    cis16( d eis fis gis a cis d eis) r16 r8 r4 |
+    R1 |
+    \bar "|."
+  }
+}
+
+bydlo_clarinet_I = {
   \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \defaultTimeSignature
@@ -147,80 +275,85 @@ clarinet_I = {
   \key d \major
   \clef violin
   \relative c'' {
-    % cl1 p10 1
-    R2*9
-    \mark #38
-    R2*4
+    % cl1 p4 1
     <<
       {
         \override MultiMeasureRest.staff-position = #-6
-        R2*7 |
+        R2*4 |
         \revert MultiMeasureRest.staff-position
       }
       % Transposition adapted to clarinet (written in C)
       \new CueVoice \transpose a, c \relative {
         \clef bass
         \stemUp
-        c'4(^"Tuba" e8) r |
-        \mBreak
-        
-        % cl1 p10 2
-        e4_"Tuba" e-- |
-        d2~( |
-        d4 his8) r |
-        c4( g'8) g |
-        d8-- h-- a4--( |
-        g4~ g8) r |
+        \voiceOne
+        r4^"Tb. solo" dis~(\pp\pocoAPocoCresc |
+        dis8 fis16 e) dis8-- cis-- |
+        dis8-- gis-- ais-- h-- |
+        ais4--( gis8) r |
+        \stemNeutral
+      }
+    >>
+    R2*5
+    \mark #38
+    R2*8
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2*3 |
+        \revert MultiMeasureRest.staff-position
+      }
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
+        \clef bass
+        \stemUp
+        \voiceOne
+        cis'4(^"Tb." gis'8) gis |
+        dis8-- h-- ais4--( |
+        gis4~ gis8) r |
         \stemNeutral
         \clef violin
       }
     >>
     \mBreak
     
-    % cl1 p10 3
+    % cl1 p4 2
     \mark #39
     c4--\mf\cresc a--\! |
     g4-- c,-- |
     c'4--^"simile" a-- |
     g4 c, |
-    g'8-- e-- fis^"simile" d |
+    g'8-- e-- fis d |
     e8 c c4 |
-    \mBreak
-    
-    % cl1 p10 4
     \mark #40
     e4 c |
     e4 d |
     c'4 f, |
     e'4 fis |
     g8( h) f4 |
-    \mark #41
-    dis4 \pocoDim e8( h) |
     \mBreak
     
-    % cl1 p10 5
+    % cl1 p4 3
+    \mark #41
+    dis4 \pocoDim e8( h) |
     e4 e |
     e4 fis |
+    % Absolutely no reason to repeat the C sharp here
     cis2\< |
     d8 r h'4 |
     g4 fis8 d|
     \mark #42
     h8 r fis4~\fff |
-    % Avoid line break here because otherwise the slur hangs empty
-    fis8 a16 g fis8-- g |
+    fis8 a16 g fis8-- g-- |
+    fis8-- h-- cis-- d-- |
     \mBreak
     
-    % cl1 p10 6
-    % By starting the " a 2" a bar later, we avoid the hanging slur
-    fis8--^"a 2" h-- cis-- d-- |
+    % cl1 p4 4
     cis4-> h8-- r |
     e4->( h'8) r |
-    e,4->(\pocoDim\> h'8) h |
-    fis4-- e-- |
-    \mBreak
-    
-    % cl1 p10 7
-    d8( fis cis4-.) |
+    e,4->( h'8) h |
+    fis4--\pocoDim e-- |
+    d8(\> fis cis4-.) |
     h4--( a8 g |
     \mark #43
     fis8)\! r r4 |
@@ -232,7 +365,7 @@ clarinet_I = {
 
     % Magic taken from https://lsr.di.unimi.it/LSR/Item?id=10
     % for a fermata hovering over the last bar line
-    \context Staff = "one" {
+    \context Staff  {
       \bar "|."
       \override Score.TextMark.self-alignment-X = #CENTER
       \textEndMark \markup { \musicglyph "scripts.ufermata" }
@@ -240,7 +373,7 @@ clarinet_I = {
   }
 }
 
-clarinet_II = {
+bydlo_clarinet_II = {
   \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \defaultTimeSignature
@@ -250,70 +383,11 @@ clarinet_II = {
   \key d \major
   \clef violin
   \relative c'' {
-    % cl2 p10 1
-    R2*14 |
-    \mBreak
-
-    % cl2 p10 2
-    R2*6 |
-    
-    % cl2 p10 3
-    \mark #39
-    e,,4--\mf\cresc fis--\! |
-    g4-- a-- |
-    e4^"simile" fis |
-    g4 a |
-    e4-- fis-- |
-    g4 a4 |
-    \mBreak
-
-    % cl2 p10 4
-    \mark #40
-    e4 a |
-    e4 h'8( a)|
-    e4 a |
-    c'4 dis |
-    e4 c |
-    \mark #41
-    h4 \pocoDim h |
-    \mBreak
-
-    % cl2 p10 5
-    fis4 g |
-    fis4 c' |
-    ais2\< |
-    h8 r fis'4 |
-    e4 d |
-    \mark #42
-    h8 r fis4~\fff |
-    % Avoid line break here because otherwise the slur hangs empty
-    fis8 a16 g fis8-- g |
-    \mBreak
-    
-    % cl2 p10 6
-    R2*25 |
-
-  }
-}
-
-clarinet_bass = {
-  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
-  \accidentalStyle Score.modern-cautionary
-  \defaultTimeSignature
-  \compressEmptyMeasures
-  \time 2/4
-  \tempo "Sempre moderato pesante"
-  \key d \major
-  \clef violin
-  \relative c'' {
-    % clb p4 1
-    R2*9
-    \mark #38
-    R2*4
+    % cl2 p4 1
     <<
       {
         \override MultiMeasureRest.staff-position = #-6
-        R2*7 |
+        R2*4 |
         \revert MultiMeasureRest.staff-position
       }
       % Transposition adapted to clarinet (written in C)
@@ -321,91 +395,93 @@ clarinet_bass = {
         \clef bass
         \stemUp
         \voiceOne
-        c'4(^"Tuba" e8) r |
-        e4 e-- |
-        d2~( |
-        d4 his8) r |
-        c4( g'8) g |
-        d8-- h-- a4--( |
-        g4~ g8) r |
+        r4^"Tb. solo" dis~(\pp\pocoAPocoCresc |
+        dis8 fis16 e) dis8-- cis-- |
+        dis8-- gis-- ais-- h-- |
+        ais4--( gis8) r |
+        \stemNeutral
+      }
+    >>
+    R2*5
+    \mark #38
+    R2*8
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R2*3 |
+        \revert MultiMeasureRest.staff-position
+      }
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
+        \clef bass
+        \stemUp
+        \voiceOne
+        cis'4(^"Tb." gis'8) gis |
+        dis8-- h-- ais4--( |
+        gis4~ gis8) r |
         \stemNeutral
         \clef violin
       }
     >>
+    \mBreak
+    
+    % cl2 p4 2
+    \mark #39
     e,,4--\mf\cresc fis--\! |
     g4-- a-- |
-    e4-- fis-- |
-    g4-- a-- |
-    e4-- fis-- |
-    % Extra accidentals make no sense here (no gis/ais but loads of g/a around)
-    g4-- a-- |
-    \mBreak
-    
-    % clb p4 3
+    e4^"simile" fis |
+    g4 a |
+    e4 fis |
+    g4 a4 |
     \mark #40
     e4 a |
+    e4 h'8( a)|
     e4 a |
-    e4 a |
-    a4 h |
-    h4 a |
+    c'4 dis |
+    \mBreak
+
+    % cl2 p4 3
+    e4 c |
     \mark #41
-    h4 \pocoDim e |
-    e4 e |
-    \mBreak
-    
-    % clb p4 4
-    e4 fis |
-    fis4\< cis |
-    fis4 fis, |
-    h4 ais |
+    h4 \pocoDim h |
+    fis4 g |
+    fis4 c' |
+    ais2\< |
+    h8 r fis'4 |
+    e4 d\! |
     \mark #42
-    h8\! r fis'4~\fff |
+    h8 r fis4~\fff |
     fis8 a16 g fis8-- g-- |
-    \mBreak
-    
-    % clb p5 1
     fis8-- h-- cis-- d-- |
-    cis4-> h8-- r |
-    e,,8 g h d |
-    e,8\pocoDim\> g h d  |
-    fis'4-- e-- |
     \mBreak
     
-    % clb p5 2
-    d8( fis cis4-.) |
-    h4-- a8( g |
+    % cl1 p4 4
+    cis4-> h8-- r |
+    e4->( h'8) r |
+    e,4->( h'8) h |
+    fis4--\pocoDim e-- |
+    d8(\> fis cis4-.) |
+    h4--( a8 g |
     \mark #43
     fis8)\! r r4 |
     R2*3
     \mark #44
-    R2*6 |
-    <<
-      {
-        R2*2 |
-      }
-      % Transposition adapted to clarinet (written in Bb ??) 
-      \new CueVoice \transpose a b \relative {
-        \stemDown
-        \voiceTwo
-        r4 eis~\mp^"Horn m.Dämpfer" |
-        \mBreak
-
-        % clb p5 3
-        eis8 gis16 fis eis8 fis |
-        \stemNeutral
-      }
-    >>
+    R2*8 |
     \mark #45
-    R2*2 |
-    r4 fis4~\pp\solo^"Clar.Bass" |
-    fis8 r r4 |
-    R2*2 |
-    \bar "|."
+    R2*6
+
+    % Magic taken from https://lsr.di.unimi.it/LSR/Item?id=10
+    % for a fermata hovering over the last bar line
+    \context Staff  {
+      \bar "|."
+      \override Score.TextMark.self-alignment-X = #CENTER
+      \textEndMark \markup { \musicglyph "scripts.ufermata" }
+    }
   }
 }
-
 % ---------------------------------------------------------
 
+%{
 \bookpart {
   \header{
     instrument = "Klarinette I und II in Bb"
@@ -413,22 +489,53 @@ clarinet_bass = {
   \score {
     \new GrandStaff <<
       \new Staff {
-        \transpose b a \clarinet_I
+        \transpose b a \tuileries_clarinet_I
       }
       \new Staff {
-        \transpose b a \clarinet_II
+        \transpose b a \tuileries_clarinet_II
       }
     >>
+  }
+}
+%}
+
+\bookpart {
+  \header{
+    instrument = "Klarinette I in A"
+  }
+  \score {
+    \new Staff {
+      \transpose a a \tuileries_clarinet_I
+    }
+  }
+
+  \markup \fill-line { \fontsize #4 " " }
+  \markup \fill-line { \fontsize #4 \bold \center-column { "4. Bydlo" } }
+
+  \score {
+    \new Staff {
+      \transpose a a \bydlo_clarinet_I
+    }
   }
 }
 
 \bookpart {
   \header{
-    instrument = "Bassklarinette in Bb"
+    instrument = "Klarinette II in A"
   }
   \score {
     \new Staff {
-      \transpose b a \clarinet_bass
+      \transpose a a \tuileries_clarinet_II
+    }
+  }
+
+  \markup \fill-line { \fontsize #4 " " }
+  \markup \fill-line { \fontsize #4 \bold \center-column { "4. Bydlo" } }
+
+  \score {
+    \new Staff {
+      \transpose a a \bydlo_clarinet_II
     }
   }
 }
+
