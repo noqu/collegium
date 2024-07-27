@@ -10,8 +10,8 @@
 }
 
 \header{
-  title = "Con mortuis, in lingua mortua"
-  subtitle = ""
+  title = "6. Catacombae"
+  subtitle = "(Sepulchrum romanum)"
   composerShort = "Modest Mussorgsky"
   composer = "Modest Mussorgsky (1839 - 1881)"
   version = "v1"
@@ -113,14 +113,13 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     " "
   }
   % Distance between title stuff and music
-  markup-system-spacing.basic-distance = #12
-  markup-system-spacing.minimum-distance = #12
-  markup-system-spacing.padding = #10
+  markup-system-spacing.basic-distance = #5
+  markup-system-spacing.minimum-distance = #5
+  markup-system-spacing.padding = #5
   % Distance between music systems
-  system-system-spacing.basic-distance = #13
-  system-system-spacing.minimum-distance = #13
+  system-system-spacing.basic-distance = #14
+  system-system-spacing.minimum-distance = #14
   % system-system-spacing.padding = #10
-  
 }
 
 \layout {
@@ -130,13 +129,152 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     % See https://lilypond.org/doc/v2.23/Documentation/snippets/repeats#repeats-numbering-groups-of-measures
     \consists #Measure_counter_engraver
     % \RemoveEmptyStaves
-    \RemoveAllEmptyStaves
+    % \RemoveAllEmptyStaves
   }
 }
 
 % ---------------------------------------------------------
 
-clarinet_I = {
+catacombe_clarinet_I = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 3/4
+  \tempo "Largo"
+  \key f \major
+  \clef violin
+  \relative c'' {
+    % cl1 p7 1
+    \mark #72
+    \repeat unfold 3 { R2.\fermata | }
+    R2.*4 |
+    R2.\fermata |
+    R2.*2 |
+    R2.\fermata |
+    \mark #73
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R2.*3 |
+        \override MultiMeasureRest.staff-position = #2
+        R2.*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a c \relative {
+        \stemDown
+        \clef bass
+        h,?2.^"Bn.I"\fermata |
+        b2.\fermata
+        g''2~\fermata g8 r |
+        a,2.~\p |
+        a2. |
+        \clef violin
+        \stemNeutral
+      }
+    >>
+    \mBreak
+    
+    % cl1 p7 2
+    e,,2.(\p\< |
+    f2.) |
+    a2.( |
+    a2.) |
+    f2.~\> |
+    f4~ f8\! r r4 |
+    \mark #74
+    R2.*6 |
+    <<
+      {
+        R2. |
+      }
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
+        \stemDown
+        \voiceTwo
+        % Invisible grace note makes slur and decrescendo visible
+        d'2.(^"Trp.I"\ff\fermata\> \grace s8)\! |
+        \stemNeutral
+      }
+    >>
+    \clef violin
+    f2\!\fermata\pp r4
+    \bar "|."
+  }
+}
+
+catacombe_clarinet_II = {
+  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
+  \accidentalStyle Score.modern-cautionary
+  \defaultTimeSignature
+  \compressEmptyMeasures
+  \time 3/4
+  \tempo "Largo"
+  \key f \major
+  \clef violin
+  \relative c'' {
+    % cl1 p7 1
+    \mark #72
+    \repeat unfold 3 { R2.\fermata | }
+    R2.*4 |
+    R2.\fermata |
+    R2.*2 |
+    R2.\fermata |
+    \mark #73
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R2.*3 |
+        \override MultiMeasureRest.staff-position = #2
+        R2.*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a c \relative {
+        \stemDown
+        \clef bass
+        h,?2.\fermata^"Bn.I" |
+        b2.\fermata
+        g''2~\fermata g8 r |
+        a,2.~\p |
+        a2. |
+        \clef violin
+        \stemNeutral
+      }
+    >>
+    \mBreak
+    
+    % cl1 p7 2
+    e,,2.(\p\< |
+    f2.) |
+    a2.( |
+    a2.) |
+    f2.~\> |
+    f4~ f8\! r r4 |
+    \mark #74
+    R2.*6 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R2.*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
+        \stemDown
+        \clef bass
+        fis2.^"Cbn"\ff\fermata\>
+        \clef violin
+        d2\!\fermata\pp^"Clar.I" r4
+        \stemNeutral
+      }
+    >>
+    \bar "|."
+  }
+}
+
+cum_mortuis_clarinet_I = {
   \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \defaultTimeSignature
@@ -146,7 +284,7 @@ clarinet_I = {
   \key f \major
   \clef violin
   \relative c'' {
-    % cl1 p17 1
+    % cl1 p8 1
     \mark #75
     R1.*3 |
     <<
@@ -164,39 +302,40 @@ clarinet_I = {
     <<
       {
         R1.*1 |
-        r4 cis,(^"Clar." d e-.) r r |
+        r4 cis,(\p d e-.) r r |
       }
       % Transposition adapted to clarinet (written in C)
       \new CueVoice \transpose a, c \relative {
         \stemDown
         \voiceTwo
         \mark #76
-        r2 r4\fermata r fis'(^"Oboe" g |
-        \mBreak
-        
-        % cl1 p18 1
+        r2 r4\fermata r fis'(^"Hb.I" g |
         e) s2 s2. |
         \stemNeutral
       }
     >>
+    \mBreak
     e2( f'8) r r2 r4 |
+    
+    % cl1 p8 2
     R1.*3 |
     \mark #77
     dis1.--( |
     e4) r r r2 r4 |
     dis1.--( |
-    e4) r r r2 r4\solo |
+    e4) r r r2 r4 |
+    \mBreak
     \mark #78
     fis2.(\pEspress c2 cis4 |
     e4) r r r2 r4 |
     R1.*2
     fis1.~\pp |
-    fis8 r r4 r r2 r4\fermata
+    fis8 r r4 r r2\fermata r4 |
     \bar "|."
   }
 }
 
-clarinet_II = {
+cum_mortuis_clarinet_II = {
   \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \defaultTimeSignature
@@ -206,92 +345,96 @@ clarinet_II = {
   \key f \major
   \clef violin
   \relative c'' {
-    % cl2 p17 1
-    R1.*6 |
-    \mBreak
-    
-    % cl2 p18 1
-    r4 a,( b c?-.) r r |
-    r4
-    a( c'8) r r2 r4 |
+    % cl2 p8 1
+    \mark #75
     R1.*3 |
+    <<
+      {
+        R1.*2 |
+      }
+      \new CueVoice \relative {
+        \stemDown
+        \voiceTwo
+        r2 r4_"Clar.basso" r4 e\p( a |
+        f4 e a f4~ f8) r r4 |
+        \stemNeutral
+      }
+    >>
+    <<
+      {
+        R1.*1 |
+        r4 a,(\p b c-.) r r |
+      }
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
+        \stemDown
+        \voiceTwo
+        \mark #76
+        r2 r4\fermata r fis'(^"Hb.I" g |
+        e) s2 s2. |
+        \voiceOne
+        \stemNeutral
+      }
+    >>
+    \mBreak
+    r4 a( c'8) r r2 r4 |
+    
+    R1.*3 |
+    % cl1 p8 2
+    \mark #77
     f,,1.--( |
     a4) r r r2 r4 |
     f1.--( |
+    a4) r r r2 r4 |
     \mBreak
     
-    % cl2 p18 2
-    a4) r r r2 r4 |
+    \mark #78
     R1.*4
     d'1.~\pp |
-    d8 r r4 r r2 r4\fermata
+    d8 r r4 r r2\fermata r4
     \bar "|."
-  }
-}
-
-clarinet_bass = {
-  \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
-  \accidentalStyle Score.modern-cautionary
-  \defaultTimeSignature
-  \compressEmptyMeasures
-  \time 6/4
-  \tempo "Andante non troppo con lamento"
-  \key f \major
-  \clef violin
-  \relative c'' {
-    % clb p6 1
-    \mark #75
-    R1.*3 |
-    r2 r4 r e,,\p( a |
-    f4 e a f4~ f8) r r4 |
-    \mark #76
-    R1.\fermata |
-    R1.*2 |
-    \mBreak
-    
-    % clb p6 2
-    r4 a( b g) a( b |
-    g4) c( d a2.) |
-    f'4( e d a) r r |
-    \mark #77
-    R1.*4 |
-    \mark #78
-    R1.*6 |
-    % Magic taken from https://lsr.di.unimi.it/LSR/Item?id=10
-    % for a fermata hovering over the last bar line
-    \context Staff = "one" {
-      \bar "|."
-      \override Score.TextMark.self-alignment-X = #CENTER
-      \textEndMark \markup { \musicglyph "scripts.ufermata" }
-    }
   }
 }
 
 % ---------------------------------------------------------
 
+
 \bookpart {
   \header{
-    instrument = "Klarinette I und II in Bb"
+    instrument = "Klarinette I in A"
   }
   \score {
-    \new GrandStaff <<
-      \new Staff {
-        \transpose b a \clarinet_I
-      }
-      \new Staff {
-        \transpose b a \clarinet_II
-      }
-    >>
+    \new Staff {
+      \transpose a a \catacombe_clarinet_I
+    }
+  }
+
+  \markup \fill-line { \fontsize #4 " " }
+  \markup \fill-line { \fontsize #4 \bold \center-column { "Cum mortuis in lingua mortua" } }
+
+  \score {
+    \new Staff {
+      \transpose a a \cum_mortuis_clarinet_I
+    }
   }
 }
 
 \bookpart {
   \header{
-    instrument = "Bassklarinette in Bb"
+    instrument = "Klarinette II in A"
   }
   \score {
     \new Staff {
-      \transpose b a \clarinet_bass
+      \transpose a a \catacombe_clarinet_II
+    }
+  }
+
+  \markup \fill-line { \fontsize #4 " " }
+  \markup \fill-line { \fontsize #4 \bold \center-column { "Cum mortuis in lingua mortua" } }
+
+  \score {
+    \new Staff {
+      \transpose a a \cum_mortuis_clarinet_II
     }
   }
 }
