@@ -129,7 +129,7 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     % This allows the use of \startMeasureCount and \stopMeasureCount
     % See https://lilypond.org/doc/v2.23/Documentation/snippets/repeats#repeats-numbering-groups-of-measures
     \consists #Measure_counter_engraver
-    \RemoveEmptyStaves
+    % \RemoveEmptyStaves
     % \RemoveAllEmptyStaves
   }
 }
@@ -146,46 +146,41 @@ clarinet_I = {
   \key f \major
   \clef violin
   \relative c'' {
-    % cl1 p17 1
-    % FIXME: How to get two fermatas hovering over the multi-measure rest ?
+    % cl1 p7 1
     \mark #72
-    R2.*11 |
+    \repeat unfold 3 { R2.\fermata | }
+    R2.*4 |
+    R2.\fermata |
+    R2.*2 |
+    R2.\fermata |
     \mark #73
     <<
       {
-        R2.*5 |
+        \override MultiMeasureRest.staff-position = #-4
+        R2.*3 |
+        \override MultiMeasureRest.staff-position = #2
+        R2.*2 |
+        \revert MultiMeasureRest.staff-position
       }
-      % Transposition adapted to clarinet (written in C, and partly wrong)
-      \new CueVoice \transpose a, c \relative {
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a c \relative {
         \stemDown
         \clef bass
-        h,,2.\fermata^"Fagott" |
+        h,?2.^"Bn.I"\fermata |
         b2.\fermata
-        \mBreak
-        
-        % cl1 p17 2
-        <<
-          { 
-            b'2~\fermata b8 r |
-            e,2.~\p |
-            e2. |
-          } 
-          {
-            g'2~\fermata g8 r |
-            a,2.~ |
-            a2. |
-          }
-        >>
+        g''2~\fermata g8 r |
+        a,2.~\p |
+        a2. |
         \clef violin
         \stemNeutral
       }
     >>
-    e,,2.(\p\<^"Clar. a 2" |
-    f2.) |
-    a2.( |
     \mBreak
     
-    % cl1 p17 3
+    % cl1 p7 2
+    e,,2.(\p\< |
+    f2.) |
+    a2.( |
     a2.) |
     f2.~\> |
     f4~ f8\! r r4 |
@@ -194,23 +189,23 @@ clarinet_I = {
     <<
       {
         R2. |
-        f2\!\fermata\pp^"Clar.I"
       }
       % Transposition adapted to clarinet (written in C)
       \new CueVoice \transpose a, c \relative {
-        \stemUp
-        \clef bass
-        fis2.^"Kontrafagott"\ff\>
-        \clef violin
-        s2.\!\hideNotes |
+        \stemDown
+        \voiceTwo
+        % Invisible grace note makes slur and decrescendo visible
+        d'2.(^"Trp.I"\ff\fermata\> \grace s8)\! |
         \stemNeutral
       }
     >>
+    \clef violin
+    f2\!\fermata\pp r4
     \bar "|."
   }
 }
 
-clarinet_bass = {
+clarinet_II = {
   \set Score.rehearsalMarkFormatter = #format-mark-box-numbers
   \accidentalStyle Score.modern-cautionary
   \defaultTimeSignature
@@ -220,61 +215,87 @@ clarinet_bass = {
   \key f \major
   \clef violin
   \relative c'' {
-    % clb p6 1
+    % cl1 p7 1
     \mark #72
-    R2.*11 |
+    \repeat unfold 3 { R2.\fermata | }
+    R2.*4 |
+    R2.\fermata |
+    R2.*2 |
+    R2.\fermata |
     \mark #73
-    R2.*11 |
-    \mark #74
-    R2.*2
     <<
       {
+        \override MultiMeasureRest.staff-position = #-4
+        R2.*3 |
         \override MultiMeasureRest.staff-position = #2
-        R2.*5 |
+        R2.*2 |
         \revert MultiMeasureRest.staff-position
       }
-      % Transposition adapted to clarinet (written in Es?)
-      \new CueVoice \transpose a h \relative {
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a c \relative {
         \stemDown
         \clef bass
-        % Dynamics as written here is correct from score, wrong in cue notes
-        g,2.~^"Fagott"\f\> |
-        g2.~ |
-        g2.~ |
-        g2.\p |
-        c2.\ff\fermata
+        h,?2.\fermata^"Bn.I" |
+        b2.\fermata
+        g''2~\fermata g8 r |
+        a,2.~\p |
+        a2. |
         \clef violin
         \stemNeutral
       }
     >>
-    d,2\pp\fermata^"Clar.Bass." r4 |
+    \mBreak
+    
+    % cl1 p7 2
+    e,,2.(\p\< |
+    f2.) |
+    a2.( |
+    a2.) |
+    f2.~\> |
+    f4~ f8\! r r4 |
+    \mark #74
+    R2.*6 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-4
+        R2.*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      % Transposition adapted to clarinet (written in C)
+      \new CueVoice \transpose a, c \relative {
+        \stemDown
+        \clef bass
+        fis2.^"Cbn"\ff\fermata\>
+        \clef violin
+        d2\!\fermata\pp^"Clar.I" r4
+        \stemNeutral
+      }
+    >>
     \bar "|."
   }
 }
 
 % ---------------------------------------------------------
 
+
 \bookpart {
   \header{
-    instrument = "Klarinette I und II in Bb"
+    instrument = "Klarinette I in A"
   }
   \score {
-    % For simplicity, we treat this as if there was only one voice
-    <<
-      \new Staff {
-        \transpose b a \clarinet_I
-      }
-    >>
+    \new Staff {
+      \transpose a a \clarinet_I
+    }
   }
 }
 
 \bookpart {
   \header{
-    instrument = "Bassklarinette in Bb"
+    instrument = "Klarinette II in A"
   }
   \score {
     \new Staff {
-      \transpose b a \clarinet_bass
+      \transpose a a \clarinet_II
     }
   }
 }
