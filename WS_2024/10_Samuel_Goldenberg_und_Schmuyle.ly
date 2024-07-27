@@ -147,28 +147,23 @@ clarinet_I = {
   \key e \major
   \clef violin
   \relative c'' {
-    % cl1 p13 1
+    % cl1 p6 1
     \mark #56
-    \partial 32 cis,32(\f^"a 2" |
-    gis'8) r16 r32 fisis64( gis) fisis!4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32( |
+    \partial 32 cis,32(\f |
+    gis'8) r16 r32 fisis64( gis) fisis?4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32( |
+    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e4->~ e8 r his16( cis dis e) |
     \mBreak
     
-    % cl1 p13 2
-    gis'8)^"a 2" r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e4->~ e8 r his16( cis dis e) |
+    % cl1 p6 2
     fis8.[\< gis16( a8-.) his-.]\! cis4\( h8\> a |
+    \tuplet 3/2 { his8( a gis) } gis8..\)\! his32( gis8) r \mark #57 his,16-- cis-- dis-- e-- |
+    fis8.[\< gis16( a8-.) his-.] cis4(\> his8 a)\! |
+    \tuplet 3/2 { h8( a gis) } gis2~ gis8 r16 r32 cis,32( |
     \mBreak
     
-    % cl1 p13 3
-    \tuplet 3/2 { his8(^"a 2" a gis) } gis8..\)\! his32( gis8) r \mark #57 his,16-- cis-- dis-- e-- |
-    fis8.[\< gis16( a8) his] cis4(\> his8 a)\! |
-    \mBreak
-    
-    % cl1 p13 4
-    \tuplet 3/2 { h8(^"a 2" a gis) } gis2~ gis8 r16 r32 cis,32( |
+    % cl1 p6 3
     \time 3/4
     gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e8.. \tuplet 3/2 { dis64( e his) } e8..[ \appoggiatura { dis16 e } \tuplet 3/2 { dis64( cis his)] } |
-    \mBreak
-    
     % cl1 p13 5
     \time 4/4
     e2.~ e8 r |
@@ -178,34 +173,31 @@ clarinet_I = {
     r2 e2(\> |
     \mark #59
     e'8) r\! r4 r2 |
-    R1 |
     \mBreak
 
-    % cl1 p14 1
-    e,2~\mf^"Clar.I" e8 r r4 |
+    % cl1 p6 4
+    R1 |
+    e,2~\mf e8 r r4 |
     r2 e2(\> |
     c'8) r\! r4 r2 |
     \mark #60
-    r2 r4 r8. cis16\f( |
-    gis4~ gis8 fisis16 gis e2\sf |
+    R1  |
+    gis4~\f( gis8 fisis16 gis e2\sf |
+    g8)\sf r8 r4 gis4(\f(~ gis8 \tuplet 3/2 { fisis16 gis fisis } |
     \mBreak
     
-    % cl1 p14 2
-    g8)\sf^"Clar.I" r8 r8 r16 cis16(\f gis4)\(~ gis8 \tuplet 3/2 { fisis16( gis fisis) } |
-    e2\sf g8\)\sf r r4 |
+    % cl1 p6 5
+    e2\sf g8)\sf r r4 |
     \mark #61
     fis8.[\< gis16( a8) his] cis4(\> h8 a) |
-    \mBreak
-    
-    % cl1 p14 3
     his8( a16 gis)\! gis8 r r4 r4 |
     fis8.[ gis16(\cresc a8)\! his] cis4( his8 a) |
-    h8(\< a16 gis) gis'8\ff \mark #62 r8 r2\fermata |
     \mBreak
     
     % cl1 p14 4
+    h8(\< a16 gis) gis'8\ff \mark #62 r8 r2\fermata |
     gis,4(\p\< a gis~\> gis8) r\! |
-    gis4(\< a gis~\> gis8) r\! |
+    gis4(\<\p a gis~\> gis8) r\! |
     r8 r16 \tuplet 3/2 { fisis'32(\f gis fisis) } e4\sf~ e8 r r \tuplet 3/2 { dis''16(\ff e dis) } |
     cis8 r r4 r2\fermata |
     \bar "|."
@@ -223,35 +215,93 @@ clarinet_II = {
   \key e \major
   \clef violin
   \relative c'' {
-    % cl2 p13 1
-    \partial32 r32 |
-    R1*6 |
+    % cl2 p5 1
+    \mark #56
+    \partial 32 cis,32(\f |
+    gis'8) r16 r32 fisis64( gis) fisis?4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32( |
+    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e4->~ e8 r his16( cis dis e) |
+    \mBreak
+    
+    % cl2 p5 2
+    fis8.[\< gis16( a8-.) his-.]\! cis4\( h8\> a |
+    \tuplet 3/2 { his8( a gis) } gis8..\)\! his32( gis8) r \mark #57 his,16-- cis-- dis-- e-- |
+    fis8.[\< gis16( a8-.) his-.] cis4(\> his8 a)\! |
+    \tuplet 3/2 { h8( a gis) } gis2~ gis8 r16 r32 cis,32( |
+    \mBreak
+    
+    % cl2 p5 3
     \time 3/4
-    R2. |
-    \mBreak
-    
-    % cl2 p13 5
+    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e8.. \tuplet 3/2 { dis64( e his) } e8..[ \appoggiatura { dis16 e } \tuplet 3/2 { dis64( cis his)] } |
+    % cl1 p13 5
     \time 4/4
-    e,2.~ e8 r |
+    e2.~ e8 r |
     \mark #58
-    R1*6 |
-    \mBreak
-    
-    % cl2 p14 1
-    R1*5 |
+    R1*2 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R1*3 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \relative {
+        \stemDown
+        \voiceTwo
+        e2~\mf^"Cl.I" e8 r r4 |
+        r2 e2(\> |
+        \mark #59
+        e'8) r\! r4 r2 |
+        \stemNeutral
+      }
+    >>
     \mBreak
 
-    % cl2 p14 2
-    R1*3 |
+    % cl2 p6 1
+    R1 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R1*3 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \relative {
+        \stemDown
+        \voiceTwo
+        e2~\mf^"Cl.I" e8 r r4 |
+        r2 e2(\> |
+        c'8) r\! r4 r2 |
+        \stemNeutral
+      }
+    >>
+    \mark #60
+    R1  |
+    gis,4~\f( gis8 fisis16 gis e2\sf |
+    g8)\sf r8 r4 gis4(\f(~ gis8 \tuplet 3/2 { fisis16 gis fisis } |
     \mBreak
     
-    % cl2 p14 3
-    R1*2 |
-    r4 e8 r r2\fermata
+    % cl2 p6 2
+    e2\sf g8)\sf r r4 |
+    \mark #61
+    fis8.[\< gis16( a8) his] cis4(\> h8 a) |
+    his8( a16 gis)\! gis8 r r4 r4 |
+    fis8.[ gis16(\cresc a8)\! his] cis4( his8 a) |
     \mBreak
     
-    % cl2 p14 4
-    R1*2 |
+    % cl2 p6 3
+    h8(\< a16 gis) e'8\ff \mark #62 r8 r2\fermata |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R1*3 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \relative {
+        \stemDown
+        \voiceTwo
+        gis4(\p\<^"Cl.I" a gis~\> gis8) r\! |
+        gis4(\<\p a gis~\> gis8) r\! |
+        \stemNeutral
+      }
+    >>
     r8 r16 \tuplet 3/2 { fisis,32(\f gis fisis) } e4\sf~ e8 r r \tuplet 3/2 { dis'''16(\ff e dis) } |
     cis8 r r4 r2\fermata |
     \bar "|."
