@@ -10,7 +10,7 @@
 }
 
 \header{
-  title = "III Tuileries"
+  title = "3. Tuileries"
   subtitle = ""
   composerShort = "Modest Mussorgsky"
   composer = "Modest Mussorgsky (1839 - 1881)"
@@ -113,14 +113,13 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     " "
   }
   % Distance between title stuff and music
-  markup-system-spacing.basic-distance = #12
-  markup-system-spacing.minimum-distance = #12
-  markup-system-spacing.padding = #10
+  markup-system-spacing.basic-distance = #5
+  markup-system-spacing.minimum-distance = #5
+  markup-system-spacing.padding = #5
   % Distance between music systems
-  system-system-spacing.basic-distance = #13
-  system-system-spacing.minimum-distance = #13
+  system-system-spacing.basic-distance = #14
+  system-system-spacing.minimum-distance = #14
   % system-system-spacing.padding = #10
-  
 }
 
 \layout {
@@ -130,7 +129,7 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
     % See https://lilypond.org/doc/v2.23/Documentation/snippets/repeats#repeats-numbering-groups-of-measures
     \consists #Measure_counter_engraver
     % \RemoveEmptyStaves
-    \RemoveAllEmptyStaves
+    % \RemoveAllEmptyStaves
   }
 }
 
@@ -146,58 +145,51 @@ clarinet_I = {
   \key d \major
   \clef violin
   \relative c'' {
-    % cl1 p8 3
-    \repeat percent 4 { d4->~\p d8-. r d4->~ d8-. r | }
+    % cl1 p4 1
+    d4->\p d8-. r d4-> d8-. r |
+    \repeat unfold 3 { d4-> d8-. r d4-> d8-. r | }
+    h4(-> fis8-.) r h4(-> fis8-.) r |
     \mBreak
     
-    % cl1 p8 4
-    h4(-> fis8-.) r h4(-> fis8-.) r |
-    d'4->~ d8-. r d4->~ d8-. r |
+    % cl1 p4 2
+    d'4-> d8-. r d4-> d8-. r |
     h4->(\< fis8-.) r h4->( fis8-.) r |
     \mark #34
     c''4->(\mf\< fis,8-.) r c'8->( e16 d) c( b a g) |
-    \mBreak
-    
-    % cl1 p8 5
     c4->( fis,8-.) r c'8->( e16 d) c( b a g) |
-    g'16(\ff\> fis e d c h a g) gis8( a h e,)\! |
     \mBreak
     
-    % cl1 p9 1
-    d4->~\p d8-. r d4->~ d8-. r |
-    d4->~ d8-. r d4->~ d8-. r |
+    % cl1 p4 3
+    g'16(\ff\> fis e d c h a g) gis8( a h e,)\! |
+    d4->\p d8-. r d4-> d8-. r |
+    d4-> d8-. r d4-> d8-. r |
     cis,16( d eis fis gis a cis d eis fis gis a) r4 |
+    \bar "||"
     \mBreak
 
-    % cl1 p9 2
+    % cl1 p4 4
     \mark #35
     R1
-    r2 r8 d16(\mf^"Clar.I" h a f d a-.) |
+    r2 r8 d16(\mf h a f d a-.) |
     R1*3 |
     r2 r4 cis16(\p\solo d e f |
+    \mark 36
+    b4~ b16 a c b) e,( f fis g a g c b) |
     \mBreak
     
-    % cl1 p9 3
-    \mark 36
-    b4~_"Clar.I" b16 a c b) e,(\cresc f fis g a g c b) |
+    % cl1 p4 5
     b4~(\< b16 a c b) e,( f fis g a g a b) |
-    \pBreak
-    
-    % cl1 p9 4
     a4->\mf d,16(\< dis e f) a4-> d,16( dis e f?) |
     c'4->(\f fis,8-.) r c'4->( fis,8-.) r |
     c'4->(\ff fis,8-.) r c'4->( fis,8-.) r |
+    d4~->\p d8-. r d4->~ d8-. r |
     \mBreak
     
-    % cl1 p9 5
-    d4->~\p d8-. r d4->~ d8-. r |
+    % cl1 p4 6
     \mark #37
     % Extra accidentals for g make no sense here - no gis anywhere to be seen
     g'4(\< fis8 e ais,\> h e fis) |
-    d,4->~\pp d8-. r d4->~ d8-. r |
-    \mBreak
-    
-    % cl1 p9 6
+    d,4->\pp d8-. r d4-> d8-. r |
     d4->~ d8-. r d4->~ d8-. r |
     cis4->(d8-.) r eis16( fis eis fis gis a cis d |
     fis8) r8 r4 r2 |
@@ -215,53 +207,55 @@ clarinet_II = {
   \key d \major
   \clef violin
   \relative c'' {
-    % cl2 p8 3
-    \repeat percent 4 { fis,4->~\p fis8-. r fis4->~ fis8-. r | }
+    % cl2 p4 1
+    fis,4->\p fis8-. r fis4-> fis8-. r |
+    \repeat unfold 3 {  fis4-> fis8-. r fis4-> fis8-. r | }
     \mBreak
 
-    % cl2 p8 4
+    % cl2 p4 2
     R1 |
-    h4->~ h8-. r h4->~ h8-. r |
+    h4-> h8-. r h4-> h8-. r |
     R1 |
     \mark #34
     e4->~\mf\< e8-. r c'8->( e16 d) c( b a g) |
+    e4->~ e8-. r c'8->( e16 d) c( b a g) |
     \mBreak
 
-    % cl2 p8 5
-    e4->~ e8-. r c'8->( e16 d) c( b a g) |
-    g'16\ff r r8 r4 h,,,16(\mf his cis d dis e g gis) |
-    \mBreak
-    
-    % cl2 p9 1
+    % cl2 p4 3
+    g'16\ff r r8 r4 h,,,16(\mf\> his cis d dis e g gis) |
     fis4->~\p fis8-. r fis4->~ fis8-. r |
     fis4->~ fis8-. r fis4->~ fis8-. r |
     R1 |
-    \mBreak
-
-    % cl2 p9 2
+    \bar "||"
     \mark #35
     R1*6
     \mBreak
     
-    % cl2 p9 3
+    % cl2 p4 4
     \mark 36
-    R1*2
-    \mBreak
-    
-    % cl2 p9 4
-    R1 |
-    e'4->(\f e8-.) r e4->( e8-.) r |
-    e4->(\ff e8-.) r e4->( e8-.) r |
-    \mBreak
-    
-    % cl2 p9 5
+    R1*2^"Cl.I"
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R1 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \new CueVoice \relative {
+        \stemUp
+        \voiceOne
+        a''4->\mf d,16(\< dis e f) a4-> d,16( dis e f\!) |
+        \stemNeutral
+      }
+    >>
+    e'4->~\f e8-. r e4->~ e8-. r |
+    e4->~\ff e8-. r e4->~ e8-. r |
     h4->(\p a8-.) r h4->( a8-.) r |
+    \mBreak
+    
+    % cl2 p4 5
     \mark #37
     g'4(\< fis8 e ais,\> h e fis) |
     fis,4->~\pp fis8-. r fis4->~ fis8-. r |
-    \mBreak
-    
-    % cl2 p9 6
     fis4->~ fis8-. r fis4->~ fis8-. r |
     cis16( d eis fis gis a cis d eis) r16 r8 r4 |
     R1 |
@@ -271,6 +265,7 @@ clarinet_II = {
 
 % ---------------------------------------------------------
 
+%{
 \bookpart {
   \header{
     instrument = "Klarinette I und II in Bb"
@@ -286,3 +281,27 @@ clarinet_II = {
     >>
   }
 }
+%}
+
+\bookpart {
+  \header{
+    instrument = "Klarinette I in A"
+  }
+  \score {
+    \new Staff {
+      \transpose a a \clarinet_I
+    }
+  }
+}
+
+\bookpart {
+  \header{
+    instrument = "Klarinette II in A"
+  }
+  \score {
+    \new Staff {
+      \transpose a a \clarinet_II
+    }
+  }
+}
+
