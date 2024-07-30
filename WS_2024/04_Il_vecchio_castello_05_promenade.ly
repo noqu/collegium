@@ -437,7 +437,7 @@ il_veccio_castello_saxophone_alto = {
     r4^"Sax."^"molto cantabile con dolore" r8 r4\solo c8(\p_"vibrato" |
     f2.~)( |
     % Score says this is has a slur, not just a grace, dito for following
-    f8 as g \appoggiatura { f16 g } f8 des f |
+    f8 as g? \appoggiatura { f16 g } f8 des f |
     \mBreak
     
     % sax p2 2
@@ -455,7 +455,7 @@ il_veccio_castello_saxophone_alto = {
     r4 r8 r4 c'8(\p |
     \mark #22
     f2.~ |
-    f8 as g \appoggiatura { f16 g } f8 des f |
+    f8 as g? \appoggiatura { f16 g } f8 des f |
     f4-.) c8( des4.~ |
     \mBreak
     
@@ -464,7 +464,7 @@ il_veccio_castello_saxophone_alto = {
     es,4.~ es8\> f ges |
     f4) c8( f4 es8\! |
     des4. c8 b as) |
-    g8.( as16) g8 b8( as) g |
+    g?8.( as16) g8 b8( as) g |
     \mBreak
     
     % sax p2 5
@@ -473,7 +473,7 @@ il_veccio_castello_saxophone_alto = {
     \mark #23
     R2.*6 |
     c'4.(\p b4 as8) |
-    g8.( as16) g8 b8( as) g |
+    g?8.( as16) g8 b8( as) g |
     \mBreak
     
     % sax p2 6
@@ -481,7 +481,7 @@ il_veccio_castello_saxophone_alto = {
     \mark #24
     R2.*6 |
     c'4.(\espress b4 as8) |
-    g8.( as16) g8 b8( as) g |
+    g?8.( as16) g8 b8( as) g |
     \mark #25
     as4.( f4) r8 |
     R2.*8 |
@@ -498,7 +498,7 @@ il_veccio_castello_saxophone_alto = {
         \revert MultiMeasureRest.staff-position
       }
       % Transposition adapted to Sax (written in C)
-      \new CueVoice \transpose es, c \relative {
+      \new CueVoice \transpose dis, c \relative {
         \stemUp
         \voiceOne
         c''4.--\pp^"Hb.I" h8( b h) |
@@ -509,11 +509,11 @@ il_veccio_castello_saxophone_alto = {
         \stemNeutral
       }
     >>
-    c'4.(\espress^"Sax" b4 as8) |
+    c'4.(\espress b4 as8) |
     \mBreak
     
     % sax p2 8
-    g8.( as16) g8 b8( as) g |
+    g?8.( as16) g8 b8( as) g |
     as4.--( f4) r8 |
     \mark #28
     R2.*9 |
@@ -538,7 +538,7 @@ il_veccio_castello_saxophone_alto = {
     
     % sax p2 9
     c'4.(\espress b8 c as) |
-    g8.( as16) g8 b8( as g) |
+    g?8.( as16) g8 b8( as g) |
     R2. |
     \mark #30
     R2.*6 |
@@ -565,7 +565,7 @@ il_veccio_castello_saxophone_alto = {
     
     % sax p2 10
     f2.~)( |
-    f8\< as g \appoggiatura { f16 g } f8 des f |
+    f8\< as g? \appoggiatura { f16 g } f8 des f |
     f4-.)\! c8( es4.~ |
     es8\> des c \appoggiatura c des c b |
     c8->\! f,4~ f4) r8 |
