@@ -181,8 +181,8 @@ il_veccio_castello_clarinet_I = {
         \stemNeutral
       }
     >>
-    cis2.(\p |
-    ais2.) |
+    des2.(\p |
+    b2.) |
     h4.--( d,4) r8 |
     \mark #24
     \repeat unfold 4 e'4.-- |
@@ -193,8 +193,8 @@ il_veccio_castello_clarinet_I = {
     
     % cl1 p3 3
     a8 h fis g fis g)\! |
-    cis,2.( |
-    ais2.) |
+    des2.( |
+    b2.) |
     \mark #25 h4.( fis4) r8 |
     R2.*4 |
     fis,2.~( |
@@ -203,13 +203,13 @@ il_veccio_castello_clarinet_I = {
     h4.) r4 r8 |
     \mark #26 |
     R2.*2 |
-    dis'4.~(\mf\<  dis8 d dis) |
+    es'4.~(\mf\<  es8 d es) |
     \mBreak
     
     % cl1 p3 4
     e4( h'8) e,4\! r8 |
-    cis2.~(\f\> |
-    cis2. |
+    des2.~(\f\> |
+    des2. |
     \mark #27 h8)\pp r r r4 r8 |
     R2.*2 
     r4 r8 h'4.(\mf\> |
@@ -222,26 +222,26 @@ il_veccio_castello_clarinet_I = {
     \mBreak
     
     % cl1 p3 5
-    h8 d cis \appoggiatura {h16 cis16} h8 g h) |
+    h8 d cis? \appoggiatura {h16 cis16} h8 g h) |
     h8.( g'16) h,8 h4.~ |
     h4. r4 r8 |
     c4.~(\< c8 h c) |
-    cis8.( gis'16) cis,8 cis4 r8 |
-    dis4.~( dis8 d dis) |
+    des8.( as'16) des,8 des4 r8 |
+    es4.~( es8 d es) |
     e8.( h'16) e,8\! e4 r8 |
     \mBreak
     
     % cl1 p3 6
     \mark #29
-    cis2.~\f\> |
-    cis2. |
-    fis4.\pp eis8( e eis) |
-    fis4. eis8( e eis) |
-    fis4.( eis) |
+    des2.~\f\> |
+    des2. |
+    fis4.\pp f8( e f) |
+    fis4. f8( e f) |
+    fis4.( f) |
     e4.(\< h'\> |
     a4. g8 h g) |
-    cis,2.(\p |
-    ais2.) |
+    des2.(\p |
+    b2.) |
     \mBreak
     
     % cl1 p3 7
@@ -315,7 +315,7 @@ il_veccio_castello_clarinet_II = {
         \stemNeutral
       }
     >>
-    ais2.(\p |
+    b2.(\p |
     fis2.) |
     fis4.--( h,4) r8 |
     \mark #24
@@ -327,7 +327,7 @@ il_veccio_castello_clarinet_II = {
     
     % cl2 p3 3
     a8 h fis g fis g)\! |
-    ais2.( |
+    b2.( |
     fis2.) |
     \mark #25 fis4.( d4) r8 |
     R2.*4 |
@@ -352,7 +352,7 @@ il_veccio_castello_clarinet_II = {
     \mBreak
     
     % cl2 p3 4
-    dis'4.~(\mf\< dis8 d dis) |
+    es'4.~(\mf\< es8 d es) |
     e4( h'8) e,4\! r8 |
     fis,2.~(\f\> |
     fis2. |
@@ -375,15 +375,15 @@ il_veccio_castello_clarinet_II = {
     \mark #29
     fis2.~\f\> |
     fis2. |
-    fis4.\pp eis8( e eis) |
-    fis4. eis8( e eis) |
+    fis4.\pp f8( e f) |
+    fis4. f8( e f) |
     \mBreak
     
     % cl2 p3 6
-    fis4.( eis) |
+    ges4.( f) |
     e4.\(\< h'\> |
     a4. g8( h g)\) |
-    ais2.(\p |
+    b2.(\p |
     fis2.) |
     R2. |
     \mark #30
@@ -624,12 +624,12 @@ promenade_clarinet_I = {
       }
     >>
     
-    fis4 e h cis |
+    fis4 e h des |
     \mark #33
     \time 5/4
     a'4 h e, a8 h e,4 |
     \time 6/4
-    h'8 cis a4 a' fis e8 d a4 |
+    h'8 des a4 a' fis e8 d a4 |
     \time 5/4
     R1*5/4\rit
     \time 4/4
@@ -681,12 +681,12 @@ promenade_clarinet_II = {
     \mBreak
     
     % cl1 p3 2
-    cis4 d d h r r |
+    cis?4 d d h r r |
     \mark #33
     \time 5/4
     a'4 h e, a8 h e,4 |
     \time 6/4
-    h'8 cis a4 a' fis e8 d a4 |
+    h'8 cis? a4 a' fis e8 d a4 |
     \time 5/4
     R1*5/4\rit
     \time 4/4
@@ -727,11 +727,11 @@ promenade_clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \il_veccio_castello_clarinet_I
+      \transpose b a \il_veccio_castello_clarinet_I
     }
   }
 
@@ -740,18 +740,18 @@ promenade_clarinet_II = {
 
   \score {
     \new Staff {
-      \transpose a a \promenade_clarinet_I
+      \transpose b a \promenade_clarinet_I
     }
   }
 }
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \il_veccio_castello_clarinet_II
+      \transpose b a \il_veccio_castello_clarinet_II
     }
   }
 
@@ -760,7 +760,7 @@ promenade_clarinet_II = {
 
   \score {
     \new Staff {
-      \transpose a a \promenade_clarinet_II
+      \transpose b a \promenade_clarinet_II
     }
   }
 }
@@ -770,11 +770,11 @@ promenade_clarinet_II = {
     print-first-page-number = ##f 
   }
   \header{
-    instrument = "Altsaxophon in Eb"
+    instrument = "Altsaxophon in Bb"
   }
   \score {
     \new Staff {
-      \transpose dis dis \il_veccio_castello_saxophone_alto
+      \transpose b dis \il_veccio_castello_saxophone_alto
     }
   }
 }

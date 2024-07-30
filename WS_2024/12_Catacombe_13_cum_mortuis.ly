@@ -174,10 +174,10 @@ catacombe_clarinet_I = {
         \stemNeutral
       }
     >>
-    \mBreak
+    % \mBreak
     
     % cl1 p7 2
-    e,,2.(\p\< |
+    <e,, e'>2.(\p\< |
     f2.) |
     a2.( |
     a2.) |
@@ -214,7 +214,7 @@ catacombe_clarinet_II = {
   \key f \major
   \clef violin
   \relative c'' {
-    % cl1 p7 1
+    % cl2 p7 1
     \mark #72
     \repeat unfold 3 { R2.\fermata | }
     R2.*4 |
@@ -243,10 +243,10 @@ catacombe_clarinet_II = {
         \stemNeutral
       }
     >>
-    \mBreak
+    % \mBreak
     
-    % cl1 p7 2
-    e,,2.(\p\< |
+    % cl2 p7 2
+    <e,, e'>2.(\p\< |
     f2.) |
     a2.( |
     a2.) |
@@ -320,13 +320,13 @@ cum_mortuis_clarinet_I = {
     % cl1 p8 2
     R1.*3 |
     \mark #77
-    dis1.--( |
+    es1.--( |
     e4) r r r2 r4 |
-    dis1.--( |
+    es1.--( |
     e4) r r r2 r4 |
     \mBreak
     \mark #78
-    fis2.(\pEspress c2 cis4 |
+    ges2.(\pEspress c,2 cis4 |
     e4) r r r2 r4 |
     R1.*2
     % Originally already in Bb for the change in 79
@@ -403,11 +403,11 @@ cum_mortuis_clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \catacombe_clarinet_I
+      \transpose b a \catacombe_clarinet_I
     }
   }
 
@@ -416,18 +416,18 @@ cum_mortuis_clarinet_II = {
 
   \score {
     \new Staff {
-      \transpose a a \cum_mortuis_clarinet_I
+      \transpose b a \cum_mortuis_clarinet_I
     }
   }
 }
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \catacombe_clarinet_II
+      \transpose b a \catacombe_clarinet_II
     }
   }
 
@@ -436,7 +436,7 @@ cum_mortuis_clarinet_II = {
 
   \score {
     \new Staff {
-      \transpose a a \cum_mortuis_clarinet_II
+      \transpose b a \cum_mortuis_clarinet_II
     }
   }
 }

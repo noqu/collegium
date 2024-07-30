@@ -154,8 +154,8 @@ clarinet_I = {
     % cl1 p6 1
     \mark #56
     \partial 32 cis,32(\f |
-    gis'8) r16 r32 fisis64( gis) fisis?4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32( |
-    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e4->~ e8 r his16( cis dis e) |
+    gis'8) r16 r32 fisis64( gis) fisis?4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e?16.) cis32( |
+    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e?4->~ e8 r his16( cis dis e) |
     \mBreak
     
     % cl1 p6 2
@@ -167,31 +167,31 @@ clarinet_I = {
     
     % cl1 p6 3
     \time 3/4
-    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e8.. \tuplet 3/2 { dis64( e his) } e8..[ \appoggiatura { dis16 e } \tuplet 3/2 { dis64( cis his)] } |
+    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e?8.. \tuplet 3/2 { dis64( e his) } e8..[ \appoggiatura { dis16 e } \tuplet 3/2 { dis64( cis his)] } |
     % cl1 p13 5
     \time 4/4
     e2.~ e8 r |
     \mark #58
     R1*2 |
-    e,2~\mf e8 r r4 |
-    r2 e2(\> |
+    <e, e'>2~\mf <e e'>8 r r4 |
+    r2 <e e'>2(\> |
     \mark #59
     e'8) r\! r4 r2 |
     \mBreak
 
     % cl1 p6 4
     R1 |
-    e,2~\mf e8 r r4 |
-    r2 e2(\> |
+    <e, e'>2~\mf <e e'>8 r r4 |
+    r2 <e e'>2(\> |
     c'8) r\! r4 r2 |
     \mark #60
     R1  |
-    gis4~\f( gis8 fisis16 gis e2\sf |
-    g8)\sf r8 r4 gis4(\f(~ gis8 \tuplet 3/2 { fisis16 gis fisis } |
+    gis4~\f( gis8 fisis16 gis <e? e'?>2\sf |
+    fisis8)\sf r8 r4 gis4(\f(~ gis8 \tuplet 3/2 { fisis16 gis fisis } |
     \mBreak
     
     % cl1 p6 5
-    e2\sf g8)\sf r r4 |
+    <e? e'?>2\sf fisis8)\sf r r4 |
     \mark #61
     fis8.[\< gis16( a8) his] cis4(\> h8 a) |
     his8( a16 gis)\! gis8 r r4 r4 |
@@ -202,7 +202,7 @@ clarinet_I = {
     h8(\< a16 gis) gis'8\ff \mark #62 r8 r2\fermata |
     gis,4(\p\< a gis~\> gis8) r\! |
     gis4(\<\p a gis~\> gis8) r\! |
-    r8 r16 \tuplet 3/2 { fisis'32(\f gis fisis) } e4\sf~ e8 r r \tuplet 3/2 { dis''16(\ff e dis) } |
+    r8 r16 \tuplet 3/2 { fisis'32(\f gis fisis) } e?4\sf~ e8 r r \tuplet 3/2 { dis''16(\ff e dis) } |
     cis8 r r4 r2\fermata |
     \bar "|."
     \mBreak
@@ -222,8 +222,8 @@ clarinet_II = {
     % cl2 p5 1
     \mark #56
     \partial 32 cis,32(\f |
-    gis'8) r16 r32 fisis64( gis) fisis?4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e16.) cis32( |
-    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e4->~ e8 r his16( cis dis e) |
+    gis'8) r16 r32 fisis64( gis) fisis?4->~ fisis8 r \tuplet 3/2 { his,16( cis dis } e?16.) cis32( |
+    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e?4->~ e8 r his16( cis dis e) |
     \mBreak
     
     % cl2 p5 2
@@ -235,7 +235,7 @@ clarinet_II = {
     
     % cl2 p5 3
     \time 3/4
-    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e8.. \tuplet 3/2 { dis64( e his) } e8..[ \appoggiatura { dis16 e } \tuplet 3/2 { dis64( cis his)] } |
+    gis'8) r16 r32 \tuplet 3/2 { fisis64( gis fisis) } e?8.. \tuplet 3/2 { dis64( e his) } e8..[ \appoggiatura { dis16 e } \tuplet 3/2 { dis64( cis his)] } |
     % cl1 p13 5
     \time 4/4
     e2.~ e8 r |
@@ -278,12 +278,12 @@ clarinet_II = {
     >>
     \mark #60
     R1  |
-    gis,4~\f( gis8 fisis16 gis e2\sf |
-    g8)\sf r8 r4 gis4(\f(~ gis8 \tuplet 3/2 { fisis16 gis fisis } |
+    gis,4~\f( gis8 fisis16 gis <e? e'?>2\sf |
+    fisis8)\sf r8 r4 gis4(\f(~ gis8 \tuplet 3/2 { fisis16 gis fisis } |
     \mBreak
     
     % cl2 p6 2
-    e2\sf g8)\sf r r4 |
+    <e e'>2\sf fisis8)\sf r r4 |
     \mark #61
     fis8.[\< gis16( a8) his] cis4(\> h8 a) |
     his8( a16 gis)\! gis8 r r4 r4 |
@@ -306,7 +306,7 @@ clarinet_II = {
         \stemNeutral
       }
     >>
-    r8 r16 \tuplet 3/2 { fisis,32(\f gis fisis) } e4\sf~ e8 r r \tuplet 3/2 { dis'''16(\ff e dis) } |
+    r8 r16 \tuplet 3/2 { fisis,32(\f gis fisis) } <e? e'?>4\sf~ e8 r r \tuplet 3/2 { dis'''16(\ff e dis) } |
     cis8 r r4 r2\fermata |
     \bar "|."
     \mBreak
@@ -336,22 +336,22 @@ clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \clarinet_I
+      \transpose ais a \clarinet_I
     }
   }
 }
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \clarinet_II
+      \transpose ais a \clarinet_II
     }
   }
 }

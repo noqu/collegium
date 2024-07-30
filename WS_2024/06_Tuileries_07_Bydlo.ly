@@ -162,15 +162,15 @@ tuileries_clarinet_I = {
     d'4-> d8-. r d4-> d8-. r |
     h4->(\< fis8-.) r h4->( fis8-.) r |
     \mark #34
-    c''4->(\mf\< fis,8-.) r c'8->( e16 d) c( b a g) |
-    c4->( fis,8-.) r c'8->( e16 d) c( b a g) |
+    c''4->(\mf\< fis,8-.) r c'8->( e16 d) c?( b a g) |
+    c4->( fis,8-.) r c'8->( e16 d) c?( b a g) |
     \mBreak
     
     % cl1 p4 3
-    g'16(\ff\> fis e d c h a g) gis8( a h e,)\! |
+    g'16(\ff\> fis e d c h a g) as8( a h e,)\! |
     d4->\p d8-. r d4-> d8-. r |
     d4-> d8-. r d4-> d8-. r |
-    cis,16( d eis fis gis a cis d eis fis gis a) r4 |
+    cis,?16( d f ges as a cis? d f ges as a) r4 |
     \bar "||"
     \mBreak
 
@@ -179,14 +179,14 @@ tuileries_clarinet_I = {
     R1
     r2 r8 d16(\mf h a f d a-.) |
     R1*3 |
-    r2 r4 cis16(\p\solo d e f |
+    r2 r4 cis?16(\p\solo d e f |
     \mark 36
     b4~ b16 a c b) e,( f fis g a g c b) |
     \mBreak
     
     % cl1 p4 5
     b4~(\< b16 a c b) e,( f fis g a g a b) |
-    a4->\mf d,16(\< dis e f) a4-> d,16( dis e f?) |
+    a4->\mf d,16(\< es e f) a4-> d,16( es e f?) |
     c'4->(\f fis,8-.) r c'4->( fis,8-.) r |
     c'4->(\ff fis,8-.) r c'4->( fis,8-.) r |
     d4~->\p d8-. r d4->~ d8-. r |
@@ -195,10 +195,10 @@ tuileries_clarinet_I = {
     % cl1 p4 6
     \mark #37
     % Extra accidentals for g make no sense here - no gis anywhere to be seen
-    g'4(\< fis8 e ais,\> h e fis) |
+    g'4(\< fis8 e b\> h e fis) |
     d,4->\pp d8-. r d4-> d8-. r |
     d4->~ d8-. r d4->~ d8-. r |
-    cis4->(d8-.) r eis16( fis eis fis gis a cis d |
+    cis?4->(d8-.) r f16( ges f ges as a cis? d |
     fis8) r8 r4 r2 |
     \bar "|."
   }
@@ -229,7 +229,7 @@ tuileries_clarinet_II = {
     \mBreak
 
     % cl2 p4 3
-    g'16\ff r r8 r4 h,,,16(\mf\> his cis d dis e g gis) |
+    g'16\ff r r8 r4 h,,,16(\mf\> c des d es e g as) |
     fis4->\p fis8-. r fis4-> fis8-. r |
     fis4-> fis8-. r fis4-> fis8-. r |
     R1 |
@@ -261,10 +261,10 @@ tuileries_clarinet_II = {
     
     % cl2 p4 5
     \mark #37
-    g'4(\< fis8 e ais,\> h e fis) |
+    g'4(\< fis8 e b\> h e fis) |
     fis,4->\pp fis8-. r fis4-> fis8-. r |
     fis4-> fis8-. r fis4-> fis8-. r |
-    cis16( d eis fis gis a cis d eis) r16 r8 r4 |
+    cis16( d f ges as a cis d f) r16 r8 r4 |
     R1 |
     \bar "|."
   }
@@ -340,25 +340,25 @@ bydlo_clarinet_I = {
     
     % cl1 p4 3
     \mark #41
-    dis4 \pocoDim e8( h) |
+    es4 \pocoDim e8( h) |
     e4 e |
     e4 fis |
     % Absolutely no reason to repeat the C sharp here
-    cis2\< |
+    cis?2\< |
     d8 r h'4 |
     g4 fis8 d|
     \mark #42
     h8 r fis4~\fff |
     fis8 a16 g fis8-- g-- |
-    fis8-- h-- cis-- d-- |
+    fis8-- h-- cis?-- d-- |
     \mBreak
     
     % cl1 p4 4
-    cis4-> h8-- r |
+    cis?4-> h8-- r |
     e4->( h'8) r |
     e,4->( h'8) h |
     fis4--\pocoDim e-- |
-    d8(\> fis cis4-.) |
+    d8(\> fis cis?4-.) |
     h4--( a8 g |
     \mark #43
     fis8)\! r r4 |
@@ -432,17 +432,17 @@ bydlo_clarinet_II = {
     
     % cl2 p4 2
     \mark #39
-    e,,4--\mf\cresc fis--\! |
+    <e, e,>4--\mf\cresc fis,--\! |
     g4-- a-- |
-    e4^"simile" fis |
+    <e e'>4^"simile" fis |
     g4 a |
-    e4 fis |
+    <e e'>4 fis |
     g4 a4 |
     \mark #40
-    e4 a |
-    e4 h'8( a)|
-    e4 a |
-    c'4 dis |
+    <e e'>4 a |
+    <e e'>4 h'8( a)|
+    <e e'>4 a |
+    c'4 es |
     \mBreak
 
     % cl2 p4 3
@@ -451,21 +451,21 @@ bydlo_clarinet_II = {
     h4 \pocoDim h |
     fis4 g |
     fis4 c' |
-    ais2\< |
+    b2\< |
     h8 r fis'4 |
     e4 d\! |
     \mark #42
     h8 r fis4~\fff |
     fis8 a16 g fis8-- g-- |
-    fis8-- h-- cis-- d-- |
+    fis8-- h-- cis?-- d-- |
     \mBreak
     
     % cl1 p4 4
-    cis4-> h8-- r |
+    cis?4-> h8-- r |
     e4->( h'8) r |
     e,4->( h'8) h |
     fis4--\pocoDim e-- |
-    d8(\> fis cis4-.) |
+    d8(\> fis cis?4-.) |
     h4--( a8 g |
     \mark #43
     fis8)\! r r4 |
@@ -506,11 +506,11 @@ bydlo_clarinet_II = {
 
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \tuileries_clarinet_I
+      \transpose b a \tuileries_clarinet_I
     }
   }
 
@@ -519,18 +519,18 @@ bydlo_clarinet_II = {
 
   \score {
     \new Staff {
-      \transpose a a \bydlo_clarinet_I
+      \transpose b a \bydlo_clarinet_I
     }
   }
 }
 
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \tuileries_clarinet_II
+      \transpose b a \tuileries_clarinet_II
     }
   }
 
@@ -539,7 +539,7 @@ bydlo_clarinet_II = {
 
   \score {
     \new Staff {
-      \transpose a a \bydlo_clarinet_II
+      \transpose b a \bydlo_clarinet_II
     }
   }
 }
