@@ -120,6 +120,11 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
   system-system-spacing.basic-distance = #14
   system-system-spacing.minimum-distance = #14
   % system-system-spacing.padding = #10
+
+% Always print page numbers, starting with 6, on each part
+  first-page-number = #8
+  print-first-page-number = ##t
+  bookpart-level-page-numbering = ##t
 }
 
 \layout {
@@ -326,12 +331,12 @@ cum_mortuis_clarinet_I = {
     e4) r r r2 r4 |
     \mBreak
     \mark #78
-    ges2.(\pEspress c,2 cis4 |
+    ges2.(\pEspress c,2 des4 |
     e4) r r r2 r4 |
     R1.*2
     % Originally already in Bb for the change in 79
-    fis1.~\pp |
-    fis8 r r4 r r2\fermata r4 |
+    ges1.~\pp |
+    ges8 r r4 r r2\fermata r4 |
     \bar "|."
   }
 }
