@@ -121,6 +121,10 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
   system-system-spacing.minimum-distance = #13
   % system-system-spacing.padding = #10
   
+  % Always print page numbers, starting with 3, on each part
+  first-page-number = #3
+  print-first-page-number = ##t
+  bookpart-level-page-numbering = ##t
 }
 
 \layout {
@@ -147,13 +151,13 @@ il_veccio_castello_clarinet_I = {
   \relative c'' {
     % cl1 p3 1
     \mark #19
-    R2.*6 |
+    R2.*6_"Bn." |
     \mark #20
     R2.*7 |
     \mark #21
     R2.*6 |
     \mark #22
-    R2.*10 |
+    R2.*10_"Sax. alto" |
     \mark #23
     <<
       {
@@ -164,6 +168,7 @@ il_veccio_castello_clarinet_I = {
       % Transposition adapted to clarinet (written in C)
       \new CueVoice \transpose a, c \relative {
         \stemUp
+        \voiceOne
         e''4\p^"Vl.I" e8 fis8.( e16) dis8 |
         e4 e8 fis8.( e16) dis8 |
         e4.-- d--\<( |
@@ -229,8 +234,8 @@ il_veccio_castello_clarinet_I = {
     % cl1 p3 6
     \mark #29
     cis2.~\f\> |
-    cis2. \!|
-    fis4._\markup{\dynamic p \italic Soli} eis8( e eis) |
+    cis2. |
+    fis4.\pp eis8( e eis) |
     fis4. eis8( e eis) |
     fis4.( eis) |
     e4.(\< h'\> |
@@ -253,13 +258,13 @@ il_veccio_castello_clarinet_I = {
       % Transposition adapted to clarinet (written in Es)
       \new CueVoice \transpose a dis \relative {
         \stemUp
-        r4^"Sax Alto" r8 r4 c''8(\pp\espress |
+        r4^"Sax. alto" r8 r4 c''8(\pp\espress |
         f2.) |
         \stemNeutral
       }
     >>
     fis,4.(\pp\< g |
-    d'4.~d4\> c8 |
+    d'4.~\> d4 c8 |
     h8 ais) \! r r4 r8 |
     R2.* 2 |
     \mark #32
@@ -280,13 +285,13 @@ il_veccio_castello_clarinet_II = {
   \relative c'' {
     % cl2 p3 1
     \mark #19
-    R2.*6_"Fagott" |
+    R2.*6_"Bn." |
     \mark #20
     R2.*7 |
     \mark #21
     R2.*6 |
     \mark #22
-    R2.*10_"Sax" |
+    R2.*10_"Sax. alto" |
     \mark #23
     <<
       {
@@ -297,6 +302,7 @@ il_veccio_castello_clarinet_II = {
       % Transposition adapted to clarinet (written in C)
       \new CueVoice \transpose a, c \relative {
         \stemUp
+        \voiceOne
         e''4\p^"Vl.I" e8 fis8.( e16) dis8 |
         e4 e8 fis8.( e16) dis8 |
         e4.-- d--\<( |
@@ -361,7 +367,7 @@ il_veccio_castello_clarinet_II = {
     R2.*2 |
     \mark #28
     R2. |
-    fis,2.~( |
+    fis,2.~(\p |
     fis4. g |
     d'2.~ |
     d4.) r4 r8 |
@@ -412,7 +418,7 @@ il_veccio_castello_saxophone_alto = {
       % Transposition fits for alto saxophone (written in Es)
       \new CueVoice \transpose c c \relative {
         \stemDown
-        \voiceTwo
+        \voiceOne
         \clef bass
         r4. c4.->~^"Fag. Solo" |
         c4 \repeat unfold 4 { c8-.-- } |
@@ -435,7 +441,7 @@ il_veccio_castello_saxophone_alto = {
     \mBreak
     
     % sax p2 2
-    f4) c8( es4.~ |
+    f4-.) c8( es4.~ |
     es8 des c \appoggiatura c des c b |
     c8-> f,4~ f4.~ |
     f8 g as \appoggiatura { b16 c } b8 as g |
@@ -446,11 +452,11 @@ il_veccio_castello_saxophone_alto = {
     % sax p2 3
     f4) r8 r4 r8 |
     R2.*3 |
-    r4 r8 r4 c'8( |
+    r4 r8 r4 c'8(\p |
     \mark #22
     f2.~ |
     f8 as g \appoggiatura { f16 g } f8 des f |
-    f4) c8( des4.~ |
+    f4-.) c8( des4.~ |
     \mBreak
     
     % sax p2 4
@@ -458,7 +464,7 @@ il_veccio_castello_saxophone_alto = {
     es,4.~ es8\> f ges |
     f4) c8( f4 es8\! |
     des4. c8 b as) |
-    g8.( as16) g8-- b8( as) g |
+    g8.( as16) g8 b8( as) g |
     \mBreak
     
     % sax p2 5
@@ -466,16 +472,16 @@ il_veccio_castello_saxophone_alto = {
     f4) r8 r4 r8 |
     \mark #23
     R2.*6 |
-    c'4.(\espress b4 as8) |
-    g8.( as16) g8-- b8( as) g |
+    c'4.(\p b4 as8) |
+    g8.( as16) g8 b8( as) g |
     \mBreak
     
     % sax p2 6
-    as4.( f4) r8 |
+    as4.--( f4) r8 |
     \mark #24
     R2.*6 |
     c'4.(\espress b4 as8) |
-    g8.( as16) g8-- b8( as) g |
+    g8.( as16) g8 b8( as) g |
     \mark #25
     as4.( f4) r8 |
     R2.*8 |
@@ -491,9 +497,11 @@ il_veccio_castello_saxophone_alto = {
         R2.*4 |
         \revert MultiMeasureRest.staff-position
       }
-      \new CueVoice \transpose c c \relative {
+      % Transposition adapted to Sax (written in C)
+      \new CueVoice \transpose es, c \relative {
         \stemUp
-        c''4.--^"Oboe" h8( b h) |
+        \voiceOne
+        c''4.--\pp^"Hb.I" h8( b h) |
         c4.-- h8( b h) |
         c4.( h |
         b4.) f'( |
@@ -505,8 +513,8 @@ il_veccio_castello_saxophone_alto = {
     \mBreak
     
     % sax p2 8
-    g8.( as16) g8-- b8( as) g |
-    as4.( f4) r8 |
+    g8.( as16) g8 b8( as) g |
+    as4.--( f4) r8 |
     \mark #28
     R2.*9 |
     \mark #29
@@ -517,32 +525,37 @@ il_veccio_castello_saxophone_alto = {
         R2.*2 |
         \revert MultiMeasureRest.staff-position
       }
-      \new CueVoice \transpose c c \relative {
+      % Transposition adapted to Sax (written in C)
+      \new CueVoice \transpose es, c \relative {
         \stemUp
         \voiceOne
-        r4.^"Oboe" f''4.( |
-        es4. des8 f es) |
+        r4.^"Fl.I" gis''4.( |
+        fis4. e8 gis e) |
         \stemNeutral
       }
     >>
     \mBreak
     
     % sax p2 9
-    c'4.(\espress^"Sax" b8 c as) |
+    c'4.(\espress b8 c as) |
     g8.( as16) g8 b8( as g) |
     R2. |
     \mark #30
     R2.*6 |
     <<
       {
-        \override MultiMeasureRest.staff-position = #-6
+        \override MultiMeasureRest.staff-position = #-12
         R2. |
         \revert MultiMeasureRest.staff-position
       }
-      \new CueVoice \transpose c c \relative {
-        \stemDown
+      % Transposition adapted to Sax (written in C)
+      \new CueVoice \transpose dis, c \relative {
         \voiceTwo
-        g'8.(^"Viol.I" as16) g8-- b8( as) g | 
+        \stemUp
+        <<
+        { ais8.(^"Viol.I" h16) ais8 cis8( h) ais | }
+        { ais'8.( h16) ais8 cis8( h) ais | }
+        >>
         \stemNeutral
       }
     >>
@@ -638,7 +651,7 @@ promenade_clarinet_II = {
   \compressEmptyMeasures
   \time 5/4
   \tempo "Moderato non tanto pesante"
-  \key a \major
+  \key d \major
   \clef violin
   \relative c'' {
     % cl1 p3 1
@@ -753,12 +766,15 @@ promenade_clarinet_II = {
 }
 
 \bookpart {
+  \paper {
+    print-first-page-number = ##f 
+  }
   \header{
-    instrument = "Altsaxophon in Bb"
+    instrument = "Altsaxophon in Eb"
   }
   \score {
     \new Staff {
-      \transpose b dis \il_veccio_castello_saxophone_alto
+      \transpose dis dis \il_veccio_castello_saxophone_alto
     }
   }
 }

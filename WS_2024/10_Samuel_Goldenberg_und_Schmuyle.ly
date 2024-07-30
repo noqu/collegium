@@ -122,6 +122,10 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
   system-system-spacing.minimum-distance = #14
   % system-system-spacing.padding = #10
   
+  % Always print page numbers, starting with 6, on each part
+  first-page-number = #6
+  print-first-page-number = ##t
+  bookpart-level-page-numbering = ##t
 }
 
 \layout {

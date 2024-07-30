@@ -122,6 +122,11 @@ tempoPrimo = ^\markup { \italic { "Tempo I" } }
   system-system-spacing.basic-distance = #14
   system-system-spacing.minimum-distance = #14
   % system-system-spacing.padding = #10
+  
+  % Always print page numbers, starting with 4, on each part
+  first-page-number = #4
+  print-first-page-number = ##t
+  bookpart-level-page-numbering = ##t
 }
 
 \layout {
@@ -225,8 +230,8 @@ tuileries_clarinet_II = {
 
     % cl2 p4 3
     g'16\ff r r8 r4 h,,,16(\mf\> his cis d dis e g gis) |
-    fis4->~\p fis8-. r fis4->~ fis8-. r |
-    fis4->~ fis8-. r fis4->~ fis8-. r |
+    fis4->\p fis8-. r fis4-> fis8-. r |
+    fis4-> fis8-. r fis4-> fis8-. r |
     R1 |
     \bar "||"
     \mark #35
@@ -257,8 +262,8 @@ tuileries_clarinet_II = {
     % cl2 p4 5
     \mark #37
     g'4(\< fis8 e ais,\> h e fis) |
-    fis,4->~\pp fis8-. r fis4->~ fis8-. r |
-    fis4->~ fis8-. r fis4->~ fis8-. r |
+    fis,4->\pp fis8-. r fis4-> fis8-. r |
+    fis4-> fis8-. r fis4-> fis8-. r |
     cis16( d eis fis gis a cis d eis) r16 r8 r4 |
     R1 |
     \bar "|."
@@ -321,9 +326,9 @@ bydlo_clarinet_I = {
     \mark #39
     c4--\mf\cresc a--\! |
     g4-- c,-- |
-    c'4--^"simile" a-- |
+    c'4^"simile" a |
     g4 c, |
-    g'8-- e-- fis d |
+    g'8 e fis d |
     e8 c c4 |
     \mark #40
     e4 c |

@@ -10,8 +10,8 @@
 }
 
 \header{
-  title = "6. Catacombae"
-  subtitle = "(Sepulchrum romanum)"
+  title = "8. Catacombae (Sepulchrum romanum)"
+  subtitle = ""
   composerShort = "Modest Mussorgsky"
   composer = "Modest Mussorgsky (1839 - 1881)"
   version = "v1"
@@ -294,7 +294,7 @@ cum_mortuis_clarinet_I = {
       \new CueVoice \relative {
         \stemDown
         \voiceTwo
-        r2 r4_"Clar.basso" r4 e\p( a |
+        r2_"Clar.basso" r4 r4 e\p( a |
         f4 e a f4~ f8) r r4 |
         \stemNeutral
       }
@@ -309,7 +309,7 @@ cum_mortuis_clarinet_I = {
         \stemDown
         \voiceTwo
         \mark #76
-        r2 r4\fermata r fis'(^"Hb.I" g |
+        r2 r4 r\fermata fis'(^"Hb.I" g |
         e) s2 s2. |
         \stemNeutral
       }
@@ -329,6 +329,7 @@ cum_mortuis_clarinet_I = {
     fis2.(\pEspress c2 cis4 |
     e4) r r r2 r4 |
     R1.*2
+    % Originally already in Bb for the change in 79
     fis1.~\pp |
     fis8 r r4 r r2\fermata r4 |
     \bar "|."
@@ -355,7 +356,7 @@ cum_mortuis_clarinet_II = {
       \new CueVoice \relative {
         \stemDown
         \voiceTwo
-        r2 r4_"Clar.basso" r4 e\p( a |
+        r2 r4^"Clar.basso" r4 e\p( a |
         f4 e a f4~ f8) r r4 |
         \stemNeutral
       }
@@ -370,7 +371,7 @@ cum_mortuis_clarinet_II = {
         \stemDown
         \voiceTwo
         \mark #76
-        r2 r4\fermata r fis'(^"Hb.I" g |
+        r2 r4 r\fermata fis'(^"Hb.I" g |
         e) s2 s2. |
         \voiceOne
         \stemNeutral
@@ -390,6 +391,7 @@ cum_mortuis_clarinet_II = {
     
     \mark #78
     R1.*4
+    % Originally already in Bb for the change in 79
     d'1.~\pp |
     d8 r r4 r r2\fermata r4
     \bar "|."
