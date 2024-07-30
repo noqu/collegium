@@ -526,7 +526,7 @@ il_veccio_castello_saxophone_alto = {
         \revert MultiMeasureRest.staff-position
       }
       % Transposition adapted to Sax (written in C)
-      \new CueVoice \transpose es, c \relative {
+      \new CueVoice \transpose dis, c \relative {
         \stemUp
         \voiceOne
         r4.^"Fl.I" gis''4.( |
