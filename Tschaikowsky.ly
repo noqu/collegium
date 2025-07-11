@@ -152,11 +152,24 @@ tschaikowsky_I_clarinet_II = {
   \relative c' {
     % cl2 p1 1
     R1*9 |
-    % FIXME: Cues
-    R1 |
-    R1 |
-    R1 |
-    R1 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R1 |
+        R1 |
+        R1 |
+        R1 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        r2 r4 f,8_"Viola" g |
+        a1~ |
+        a8 r r4 r4 h_"Klar.I" |
+        cis2. cis8 r |
+      }
+    >>
     r2 r4 d |
     g,2~ g8 r8 r4 |
     R1 |
@@ -165,11 +178,20 @@ tschaikowsky_I_clarinet_II = {
     \mBreak
     
     % cl2 p1 19
-    \tempo "Allegro non troppo"
     R1*4 |
-    % FIXME: Cues
-    r2 r4 f8 g |
-    gis4 a8 r r4 f16 e f g |
+    \tempo "Allegro non troppo"
+    r2
+    <<
+      {
+        f4\rest f8 g |
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        r16 a'_"Fl.I" h cis s4 |
+      }
+    >>
+    gis,4 a8 r r4 f16 e f g |
     gis4 a8 r r4 r8 e' |
     r8 f r b, r c r a |
     \mBreak
@@ -182,20 +204,46 @@ tschaikowsky_I_clarinet_II = {
     R2 |
     \rMark
     \time 4/4
-    % FIXME: Cues
-    R1*18 |
-    R1 |
+    R1*17 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R1 |
+        \override MultiMeasureRest.staff-position = #-8
+        R1 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        s2 s8 e'^"Klar.I" d c |
+        h a g fis e d c h |
+      }
+    >>
     \mBreak
     
     % cl2 p1 50
     \rMark
-    % FIXME: Cues
-    R1 |
-    R1 |
-    R1 |
-    R1 |
-    r2 r16 g'' g g e e cis cis |
-    h8 g fis r r16 c' c c c c a a |
+    <<
+      \voiceTwo {
+        \override MultiMeasureRest.staff-position = #-6
+        R1 |
+        R1 |
+        R1 |
+        R1 |
+        r2 r16 g'' g g g g e e |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        h16 c h c h c h c h8 r r4 |
+        r2 r8 e^"Fl." g h |
+        dis,8 fis h4~ h8 r8 r4 |
+        r2 r8 e, g h |
+        dis,8 fis h4~ h8 s8 s4 |
+      }
+    >>
+    d,8 g, fis r r16 c' c c c c a a |
     \mBreak
     
     % cl2 p1 56
@@ -249,12 +297,26 @@ tschaikowsky_I_clarinet_II = {
 
     % cl2 p2 89
     \tempo "Andante"
-    % FIXME: Cues
-    R1 |
-    R1 |
-    R1 |
-    r2 g |
-    f8 r r4 fis2 |
+    <<
+      \voiceTwo {
+        \override MultiMeasureRest.staff-position = #-6
+        R1 |
+        R1 |
+        R1 |
+        \stemUp
+        r2 g |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        r2 r8 a'' g f |
+        d8 c a c f4. d8 |
+        c2~ c8 a' g f |
+        c8 a f a s2 |
+      }
+    >>
+    f,8 r r4 fis2 |
     g2 e |
     f2 a'~ |
     a8 r r4 r2 |
@@ -348,17 +410,30 @@ tschaikowsky_I_clarinet_II = {
     R1*2 |
     \tempo "Adagio mosso"
     R1*4 |
-    % FIXME: Cues
-    R1 |
-    R1 |
-    R1\fermata |
+    <<
+      \voiceTwo {
+        \override MultiMeasureRest.staff-position = #2
+        R1 |
+        R1 |
+        \override MultiMeasureRest.staff-position = #4
+        R1\fermata |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        c2~_"Klar.I" c8 a' g f |
+        c2~ c8 a' g f |
+        d8 c a f \clef bass d_"Fag.I" b g e\fermata | \clef violin
+      }
+    >>
     \bar "||"
     \mBreak
     
     % cl2 p3 161
     \tempo "Allegro vivo"
     \key c \major
-    b'8 r r4 b,,16 b b8~ b4~ |
+    b''''8 r r4 b,,16 b b8~ b4~ |
     b8 a gis a b r r4 |
     a8 r gis r r4 r8 gis |
     a8 r b r r4 b'8 ges' |
@@ -434,11 +509,25 @@ tschaikowsky_I_clarinet_II = {
     
     % cl2 p4 205
     r2 \tuplet 7/4 { e''16 f g as b c des } e8 r |
-    % FIXME: Cues
-    R1 |
-    R1 |
-    R1 |
-    r2 r4 r8. a,,,16 |
+    <<
+      \voiceOne {
+        \override MultiMeasureRest.staff-position = #2
+        R1 |
+        R1 |
+        R1 |
+        \override MultiMeasureRest.staff-position = #0
+        r2 r4 r8. a,,,16 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        as2_"Pos.II" g |
+        f2_"Fag.II" g4~ g8. ces16 |
+        ces2 b2 |
+        as2 b4~ b8. s16 |
+      }
+    >>
     a8 r b r r4 r8. c16 |
     \mBreak
     
@@ -573,9 +662,21 @@ tschaikowsky_I_clarinet_II = {
     \bar "||"
     \tempo "Andante como prima"
     \key d \major
-    % FIXME: Cues
-    R1 |
-    r4 fis g8 a h cis |
+    <<
+      \voiceTwo {
+        \stemUp
+        \override MultiMeasureRest.staff-position = #-6
+        R1 |
+        r4 fis g8 a h cis |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        r2 r8 fis'_"Fl.III" e d |
+        h8 a s4 s2 |
+      }
+    >>
     \mBreak
     
     % cl2 p5 307
@@ -611,14 +712,28 @@ tschaikowsky_I_clarinet_II = {
     \rMark
     fis8 r r4 r2 |
     \tempo "Meno"
-    % FIXME: Cues
-    R1 |
-    R1 |
-    \mBreak
-    
-    % cl2 p5 328
-    R1 |
-    R1 |
+    <<
+      \voiceTwo {
+        \stemUp
+        \override MultiMeasureRest.staff-position = #2
+        R1 |
+        R1 |
+        \mBreak
+        
+        % cl2 p5 328
+        R1 |
+        R1 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        r4 a,_"Hr.III" as2 |
+        a2~ a8 r r4 |
+        a2 a |
+        a2 a |
+      }
+    >>
     R1 |
     r2 fis |
     fis2 g |
@@ -661,8 +776,18 @@ tschaikowsky_II_clarinet_II = {
       % cl2 p6 1
       % Enforce repeat marking at beginning
       \bar ".|:"
-      % FIXME: Cues
-      r2 r4 f'4 a,8 r |
+      <<
+        \voiceOne {
+          \stemUp
+          r2 r4 f'4 a,8 r |
+        }
+        \\
+        \new CueVoice {
+          \stemDown
+          a,4 b \tuplet 3/2 { c8 b c } s2 |
+          
+        }
+      >>
       r2 r4 c4 g8 r |
       r2 r4 c4 e,8 r |
       r2 r4 c'4 e,8 r |
@@ -1717,7 +1842,7 @@ tschaikowsky_IV_clarinet_II = {
 
 % ---------------------------------------------------------
 
-% %{
+%{
 \bookpart {
   \header{
     instrument = "Klarinette II in A"
@@ -1729,7 +1854,9 @@ tschaikowsky_IV_clarinet_II = {
     }
   }
 }
+%}
 
+% %{
 \bookpart {
   \header{
     instrument = "Klarinette II in A"
@@ -1741,7 +1868,9 @@ tschaikowsky_IV_clarinet_II = {
     }
   }
 }
+% %}
 
+%{
 \bookpart {
   \header{
     instrument = "Klarinette II in A"
@@ -1753,8 +1882,9 @@ tschaikowsky_IV_clarinet_II = {
     }
   }
 }
-% %}
+%}
 
+%{
 \bookpart {
   \header{
     instrument = "Klarinette II in A"
@@ -1766,3 +1896,5 @@ tschaikowsky_IV_clarinet_II = {
     }
   }
 }
+
+%}
