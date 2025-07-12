@@ -1071,10 +1071,22 @@ tschaikowsky_III_clarinet_II = {
   \clef violin
   \relative c' {
     % c2 p8 1
-    % FIXME: Cues
-    R1*12/8 |
-    R1*12/8 |
-    es'8 a, es' a, es' a, es' b es c es c |
+    <<
+      \voiceTwo {
+        \stemUp
+        \override MultiMeasureRest.staff-position = #-4
+        R1*12/8 |
+        R1*12/8 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        d'8_"Viol.I" b d c h c es c es d cis d |
+        es8 f g a g f g a b a b c |
+      }
+    >>
+    es,8 a, es' a, es' a, es' b es c es c |
     r2. cis8 d c b ges f |
     R1*12/8*2 |
     \mBreak
@@ -1091,10 +1103,22 @@ tschaikowsky_III_clarinet_II = {
     \mBreak
 
     % c2 p8 27
-    % FIXME: Cues
-    R1*12/8 |
-    R1*12/8 |
-    f1. |
+    <<
+      \voiceTwo {
+        \stemUp
+        \override MultiMeasureRest.staff-position = #-2
+        R1*12/8 |
+        R1*12/8 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        f'1*12/8~_"Ob.I" |
+        f8 r s8 f8 r16 f s8 fis8 r s8 g r s8 |
+      }
+    >>
+    f,1. |
     fis4. g8 r r r2. |
     \rMark
     r4. ais8 cis fis g r r r4. |
@@ -1222,11 +1246,23 @@ tschaikowsky_III_clarinet_II = {
     r2 r4 a' |
     d,8 r d4 g,8 r g4~ |
     g4 e c a8 r |
-    % FIXME: Cues
-    R1 |
-    R1 |
-    r4 h8 r a r g r |
-    a8 r a r r2 |
+    <<
+      \voiceOne {
+        \override MultiMeasureRest.staff-position = #2
+        R1 |
+        R1 |
+        r4 h8 r a r g r |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        r2 e'2_"Ob.II"  |
+        dis2 es2 |
+        es8 r s4 s2 | 
+      }
+    >>
+    a,8 r a r r2 |
     \mBreak
     
     % c2 p10 113
@@ -1299,10 +1335,21 @@ tschaikowsky_III_clarinet_II = {
     R1*12/8*8 |
     \rMark
     R1*12/8*4
-    % FIXME: Cues
-    R1*12/8 |
-    R1*12/8 |
-    f1. |
+    <<
+      \voiceTwo {
+        \override MultiMeasureRest.staff-position = #-6
+        R1*12/8 |
+        R1*12/8 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        s2 f'1~_"Ob.I"  |
+        f8 r s8 f8 r16 f s8 fis8 r s g r s |
+      }
+    >>
+    f,1. |
     fis4. g8 r r r2. |
     \rMark
     r4. ais8 cis fis g r r r4. |
@@ -1747,16 +1794,30 @@ tschaikowsky_IV_clarinet_II = {
     \rMark
     R2.*13 |
     \rMark
-    % FIXME: Cues
-    R2. |
-    R2. |
-    R2. |
-    R2. |
-    R2. |
+    <<
+      \voiceTwo {
+        \override MultiMeasureRest.staff-position = #-6
+        R2. |
+        R2. |
+        R2. |
+        R2. |
+        R2. |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \stemUp
+        r8 \tuplet 3/2 { e'16_"Viol.I" f g } \tuplet 3/2 { a b h } \tuplet 3/2 { c cis d }\tuplet 3/2 { es e f } \tuplet 3/2 { fis g as } |
+        a4 g8 f e8. d16 |
+        e2~ e8 r |
+        a4 g8 f e8. d16 |
+        f8 e~ e4~ e8 r |
+      }
+    >>
     \mBreak
    
     % cl2 p15 108
-    d'2. |
+    d2. |
     f2 a,4 |
     g'2 f4 |
     b2 d,4 |
@@ -1813,9 +1874,20 @@ tschaikowsky_IV_clarinet_II = {
     R2.*2 |
     \tempo "Andante gusto"
     \rMark
-    % FIXME: Cues
-    r4 r d4 |
-    es2 e4 |
+    <<
+      \voiceOne {
+        r4 r 
+        \clef violin
+        d,4 |
+      }
+      \\
+      \new CueVoice {
+        \stemDown
+        \clef bass
+        \tuplet 3/2 { d,8_"Kb." d d~ } \tuplet 3/2 { d8 d d } s4 |
+      }
+    >>
+    es'2 e4 |
     f2 d4 |
     es2 e4 |
     f2. |
@@ -1836,7 +1908,6 @@ tschaikowsky_IV_clarinet_II = {
 }
 
 %{  
-    \tuplet 3/2 { r8 g g~ } \tuplet 3/2 { g g g } c,4 |
 
 %}
 
@@ -1856,7 +1927,7 @@ tschaikowsky_IV_clarinet_II = {
 }
 %}
 
-% %{
+%{
 \bookpart {
   \header{
     instrument = "Klarinette II in A"
@@ -1868,7 +1939,7 @@ tschaikowsky_IV_clarinet_II = {
     }
   }
 }
-% %}
+%}
 
 %{
 \bookpart {
@@ -1884,7 +1955,7 @@ tschaikowsky_IV_clarinet_II = {
 }
 %}
 
-%{
+% %{
 \bookpart {
   \header{
     instrument = "Klarinette II in A"
@@ -1897,4 +1968,4 @@ tschaikowsky_IV_clarinet_II = {
   }
 }
 
-%}
+% %}
