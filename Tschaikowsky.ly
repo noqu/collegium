@@ -1092,12 +1092,12 @@ tschaikowsky_III_clarinet_II = {
       }
     >>
     es,8-. a,-. es'-. a,-. es'-. a,-. es'-. b-. es-. c-. es-. c-. |
-    r2. cis8( d c b ges f) |
+    r2. des8( d c b ges f) |
     R1*12/8*2 |
     \mBreak
 
     % c2 p8 7
-    c'8-. fis,-. c'-. fis,-. c'-. fis,-. c'-. g-. c-. a-. c-. a-. |
+    c'8-. ges-. c-. ges-. c-. ges-. c-. g-. c-. a-. c-. a-. |
     \rMark
     r2. a8( b a g es d) |
     R1*12/8*6 |
@@ -1124,15 +1124,15 @@ tschaikowsky_III_clarinet_II = {
       }
     >>
     f,1. |
-    fis4.( g8) r r r2. |
+    ges4.( g8) r r r2. |
     \rMark
-    r4. ais8-. cis-. fis-. g-. r r r4. |
-    r4. ais,8-. cis-. fis-. g-. r r r4. |
+    r4. b8-. des-. ges-. g-. r r r4. |
+    r4. b,8-. des-. ges-. g-. r r r4. |
     \mBreak
     
     % c2 p8 33
-    r4. ais,,8-. cis-. fis-. g-. r r r4. |
-    r4. ais,8-. cis-. fis-. g-. r r r4. |
+    r4. b,,8-. des-. ges-. g-. r r r4. |
+    r4. b,8-. des-. ges-. g-. r r r4. |
     r4. c,8-. f-. a-. r4. c,8-. f-. a-. |
     r4. c,8-. f-. a-. r4. c,8-. f-. a-. |
     R1*12/8*2 |
@@ -1158,18 +1158,18 @@ tschaikowsky_III_clarinet_II = {
 
     % c2 p9 51
     \rMark
-    a8( h cis d cis h a) r r r4. |
-    a,8( h cis d cis h a) r r r4. |
+    a8( h des d des h a) r r r4. |
+    a,8( h des d des h a) r r r4. |
     R1*12/8*2 |
     \time 4/4
     d'4 d8 r16 d g,4~ g8 r |
     \mBreak
 
     % c2 p9 56
-    fis''4 fis8 r16 fis a,8 r r4 |
+    ges''4 ges8 r16 ges a,8 r r4 |
     R1*2 |
     d,4 d8 r16 d g,4~ g8 r |
-    fis''4 fis8 r16 fis a,8 r r4 |
+    ges''4 ges8 r16 ges a,8 r r4 |
     \rMark
     d,1 |
     b1 |
@@ -1180,31 +1180,31 @@ tschaikowsky_III_clarinet_II = {
     % c2 p9 65
     d1 |
     es1 |
-    fis1 |
+    ges1 |
     b1 |
     d,8 r d,-! e,-! f-! fis-! g-! a-! |
-    b8-! h-! c-! cis-! d-! e-! f-! fis-! |
+    b8-! h-! c-! des-! d-! e-! f-! ges-! |
     \mBreak
 
     % c2 p9 71
-    \key g \major
+    \key c \major
     \rMark
     g8 r d r16 d g8 r d r |
     g8-. c~ c2 h8 r16 a( |
-    d8) r \appoggiatura a8 g8 r16 fis-. g8-. r d r |
+    d8) r \appoggiatura a8 g8 r16 ges-. g8-. r d r |
     g2. h8 r16 d( |
     \mBreak
 
     % c2 p9 75
-    e8) r \appoggiatura a,8 g8 r16 fis-. g8-. r d r |
+    e8) r \appoggiatura a,8 g8 r16 ges-. g8-. r d r |
     g2~ g8 r  h8-. r16 d-. |
-    g4( fis8) r16 g e4 dis8 r16 e |
+    g4( ges8) r16 g e4 es8 r16 e |
     c4 h8 r16 c a4( g8) r16 a( |
     \mBreak
 
     % c2 p9 79
-    e8) r16 fis( g8) r16 h( e8) r16 fis( g8) r16 a-. |
-    h2~ h8 a16( g \tuplet 6/4 { fis16 e d c h a } |
+    e8) r16 fis( g8) r16 h( e8) r16 ges( g8) r16 a-. |
+    h2~ h8 a16( g \tuplet 6/4 { ges16 e d c h a } |
     \rMark
     g8) r r4 r2 |
     c,8 r c r16 c16 c8 r d r16 d |
@@ -1221,12 +1221,12 @@ tschaikowsky_III_clarinet_II = {
     b8) r r4 d8 r r4 |
     b8 r r4 b8( h) r4 |
     h8 h16 h h4~ h8 h16 h h4~ |
-    h8 h16 h h4~ h8 h16 h dis4 |
-    h4 h c gis |
+    h8 h16 h h4~ h8 h16 h es4 |
+    h4 h c as |
     \mBreak
 
     % c2 p9 92
-    a4 e' g, gis |
+    a4 e' g, as |
     \mark #11
     a8 r \tuplet 3/2 { c8 c c } c2~ |
     c8 r \tuplet 3/2 { h8 h h } h2~ |
@@ -1240,9 +1240,9 @@ tschaikowsky_III_clarinet_II = {
     d,8) r d4( g,8) r g4~ |
     g4 e( c a8) r |
     R1 |
-    r2 r4 fis''4( |
+    r2 r4 ges''4( |
     h,8) r h4( e,8) r e'4~ |
-    e4 c( a fis8) r |
+    e4 c( a ges8) r |
     \rMark
     R1 |
     \mBreak
@@ -1274,21 +1274,21 @@ tschaikowsky_III_clarinet_II = {
     % FIXME: Duplicates H
     g'8 r d r16 d g8 r d r |
     g8-. c~ c2 h8-. r16 a( |
-    d8) r \appoggiatura a8 g8 r16 fis-. g8-. r d r |
+    d8) r \appoggiatura a8 g8 r16 ges-. g8-. r d r |
     g2. h8-. r16 d( |
-    e8) r \appoggiatura a,8 g8 r16 fis-. g8-. r d r |
+    e8) r \appoggiatura a,8 g8 r16 ges-. g8-. r d r |
     \mBreak
     
     % c2 p10 118
     g2~ g8 r h8-. r16 d-. |
     \rMark
-    g4( fis8) r16 g e4( dis8) r16 e |
+    g4( ges8) r16 g e4( es8) r16 e |
     c4( h8) r16 c a4( g8) r16 a( |
-    e8) r16 fis( g8) r16 h( e8) r16 fis( g8) r16 a-. |
+    e8) r16 ges( g8) r16 h( e8) r16 ges( g8) r16 a-. |
     \mBreak
     
     % c2 p10 122
-    h2~ h8 a16( g \tuplet 6/4 { fis16 e d c h a } |
+    h2~ h8 a16( g \tuplet 6/4 { ges16 e d c h a } |
     g8) r r4 r2 |
     c,8 r c r16 c16 c8 r d r16 d |
     d8 r c r16 c h8 r a r |
@@ -1298,20 +1298,20 @@ tschaikowsky_III_clarinet_II = {
     g8 r g r16 g g4( g'8) r |
     des8 r c r16 c h8 r a r |
     g8 r g r16 g g8 r \tuplet 3/2 { d'8( c h } |
-    b8) f( g a) b( c cis d) |
+    b8) f( g a) b( c des d) |
     \mBreak
     
     % c2 p10 130
     es8( f g a b16) es( d c b as g f) |
     \rMark
-    es4( d8) r16 c b8 r f'-.( r16 fis-.) |
+    es4( d8) r16 c b8 r f'-.( r16 ges-.) |
     g4( f8) r16 es d8 r r4 |
-    r8 f,( g a) b( c cis d) |
+    r8 f,( g a) b( c des d) |
     \mBreak
     
     % c2 p10 134
     es8( f g a b16) es( d c b as g f) |
-    es4( d8) r16 c b8 r f'-.( r16 fis-.) |
+    es4( d8) r16 c b8 r f'-.( r16 ges-.) |
     g4( f8) r16 es d8 r r4 |
     \mBreak
     
@@ -1328,9 +1328,9 @@ tschaikowsky_III_clarinet_II = {
     \mBreak
     
     % c2 p10 142
-    r2. cis8( d c b ges f) |
+    r2. des8( d c b ges f) |
     R1*12/8*2 |
-    c'8-. fis,-. c'-. fis,-. c'-. fis,-. c'-. g-. c-. a-. c-. a-. |
+    c'8-. ges-. c-. ges-. c-. ges-. c-. g-. c-. a-. c-. a-. |
     r2. a8( b a g es d) |
     R1*12/8*6 |
     \mBreak
@@ -1355,15 +1355,15 @@ tschaikowsky_III_clarinet_II = {
       }
     >>
     f,1. |
-    fis4.( g8) r r r2. |
+    ges4.( g8) r r r2. |
     \rMark
-    r4. ais8-. cis-. fis-. g-. r r r4. |
+    r4. b8-. des-. ges-. g-. r r r4. |
     \mBreak
     
     % c2 p11 170
-    r4. ais,8-. cis-. fis-. g-. r r r4. |
-    r4. ais,,8-. cis-. fis-. g-. r r r4. |
-    r4. ais,8-. cis-. fis-. g-. r r r4. |
+    r4. b,8-. des-. ges-. g-. r r r4. |
+    r4. b,,8-. des-. ges-. g-. r r r4. |
+    r4. b,8-. des-. ges-. g-. r r r4. |
     r4. c,8-. f-. a-. r4. c,8-. f-. a-. |
     \mBreak
     
@@ -1475,7 +1475,7 @@ tschaikowsky_III_clarinet_II = {
     \mBreak
     
     % c2 p12 235
-    b4( a8) r16 b g4( fis8) r16 g |
+    b4( a8) r16 b g4( ges8) r16 g |
     es'4( d8) r16 es c4( b8) r16 c-. |
     g8-. r16 a( b8) r16 d( g,8) r16 a( b8) r16 c-. |
     \rMark
@@ -1596,7 +1596,7 @@ tschaikowsky_III_clarinet_II = {
     \mBreak
     
     % c2 p13 310
-    g'4( f8) r16 c g'4( fis8) r16 c |
+    g'4( f8) r16 c g'4( ges8) r16 c, |
     as'4( g8) r16 c, b'4( a8) r16 es  |
     c'8( b f b) c( b ges b) |
     c8( b g b) c( b ges b) |
@@ -1618,9 +1618,9 @@ tschaikowsky_III_clarinet_II = {
     
     % c2 p13 324
     \mark #297
-    a8 r \tuplet 7/4 { b,,16( c d e fis g a } b8) r16 a-. b8-. r16 f-. |
+    a8 r \tuplet 7/4 { b,,16( c d e ges g a } b8) r16 a-. b8-. r16 f-. |
     g8-. r \tuplet 7/4 { es16( f g a h c d } es8) r16 d-. es8-. r16 h-. |
-    c8-. r r4 r4 \tuplet 7/4 { cis16( dis eis fis gis ais his } |
+    c8-. r r4 r4 \tuplet 7/4 { des16( es f ges as b c } |
     \mBreak
     
     % c2 p13 327
@@ -1638,13 +1638,13 @@ tschaikowsky_III_clarinet_II = {
     
     % c2 p13 334
     \mark #324
-    b8) r f'16( fis g a b8) r f16( fis g a |
-    b8) r f16( fis g a b8) r f16( fis g a |
-    b8) r f16( fis g a b8) r f16( fis g a |
+    b8) r f'16( ges g a b8) r f16( ges g a |
+    b8) r f16( ges g a b8) r f16( ges g a |
+    b8) r f16( ges g a b8) r f16( ges g a |
     \mBreak
     
     % c2 p13 337
-    b8) r f16( fis g a b8) r f16( fis g a |
+    b8) r f16( ges g a b8) r f16( ges g a |
     b8) b a g f es d c |
     b8 a' g ges f es d c |
     b8 r r4 f'8 r r4 |
@@ -1959,7 +1959,7 @@ tschaikowsky_IV_clarinet_II = {
 }
 %}
 
-%%{
+%{
 \bookpart {
   \header{
     instrument = "Klarinette II in Bb"
@@ -1971,21 +1971,21 @@ tschaikowsky_IV_clarinet_II = {
     }
   }
 }
-%%}
+%}
 
-%{
+%%{
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
     subtitle = "3. Satz"
   }
   \score {
     \new Staff {
-      \transpose a a \tschaikowsky_III_clarinet_II
+      \transpose b a \tschaikowsky_III_clarinet_II
     }
   }
 }
-%}
+%%}
 
 %{
 \bookpart {
