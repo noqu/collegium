@@ -796,7 +796,7 @@ tschaikowsky_II_clarinet_II = {
       r2 r4 c'4( g8) r |
       r2 r4 c4( e,8) r |
       r2 r4 c'4( e,8) r |
-      r2 r4 cis'4( a8) r |
+      r2 r4 des'4( a8) r |
       \mBreak
       
       % cl2 p6 6
@@ -811,7 +811,7 @@ tschaikowsky_II_clarinet_II = {
       c4( d) \tuplet 3/2 { e8( d e } f4 g) |
       a4( f) g2. |
       g4( a) \tuplet 3/2 { g8( a g } f4 e) |
-      d8 r16 e( d8) r16 cis( d2.) |
+      d8 r16 e( d8) r16 des( d2.) |
       f4( g) \tuplet 3/2 { f8( g f } e4 d) |
       \mBreak
       
@@ -837,7 +837,7 @@ tschaikowsky_II_clarinet_II = {
     \mBreak
     
     % cl2 p6 23
-    r8 e,( gis h e) r r4 r4 |
+    r8 e,( as h e) r r4 r4 |
     r8 a,( c e a) r r4 r4 |
     \rMark
     e,4( b') \tuplet 3/2 { b8( a b } a4 g) |
@@ -863,7 +863,7 @@ tschaikowsky_II_clarinet_II = {
     % cl2 p6 37
     \rMark
     b4( a) \tuplet 3/2 { g8( a g } f4 e) |
-    a8-. r16 b( a8) r16 gis( a2.) |
+    a8-. r16 b( a8) r16 as( a2.) |
     a4( g) \tuplet 3/2 { f8( g f } e4) d( |
     d'8) c-. b-. a-. g-. ges-. f-. e-. d-. des-. |
     \mBreak
@@ -879,7 +879,7 @@ tschaikowsky_II_clarinet_II = {
     \rMark
     es4( c) \tuplet 3/2 { d8( c d } e4 f) |
     g4( es) f2. |
-    es4( f8 f') \tuplet 3/2 { es8( d es } f4 fis) |
+    es4( f8 f') \tuplet 3/2 { es8( d es } f4 ges) |
     g4( es) d2( es4) |
     \mBreak
     
@@ -896,11 +896,11 @@ tschaikowsky_II_clarinet_II = {
     % cl2 p7 57
     \rMark
     \repeat volta 2 {
-      d,2 cis2. |
+      d,2 des2. |
       d2 g,2. |
       a2 b2. |
       a2 g2( f4) |
-      d'2 cis2. |
+      d'2 des2. |
       d2 g,2. |
       a2 b2. |
       a2 g2( f4) |
@@ -916,38 +916,38 @@ tschaikowsky_II_clarinet_II = {
       f''4.( g8) a2( f4) |
     }
     \rMark
-    d,2 cis2. |
+    d,2 des2. |
     d2 g,2. |
     a2 b2. |
     \mBreak
     
     % cl2 p7 76
     a2 g2( f4) |
-    d'2 cis2. |
+    d'2 des2. |
     d2 g,2. |
     a2 b2. |
     a2 g2( f4) |
     \rMark
     R1*5/4
-    h4( cis \tuplet 3/2 { d8 cis d } e4 f |
+    h4( des \tuplet 3/2 { d8 des d } e4 f |
     g8) r r4 r2 r4 |
     \mBreak
     
     % cl2 p7 84
     d4( e \tuplet 3/2 { f8 e f } g4 a) |
     R1*5/4
-    h,4( cis \tuplet 3/2 { d8 cis d } e4 f |
+    h,4( des \tuplet 3/2 { d8 des d } e4 f |
     g8) r r4 r2 r4 |
     d4( e \tuplet 3/2 { f8 e f } g4 a) |
     b2~ b8 r r4 r4 |
     \mBreak
     
     % cl2 p7 90
-    d,4( e \tuplet 3/2 { f8 e f } g4 gis |
+    d,4( e \tuplet 3/2 { f8 e f } g4 as |
     a8) r r4 r2 r4 |
     d,4( e \tuplet 3/2 { f8 e f } g4 a) |
     b2~ b8 r r4 r4 |
-    d,4( e, \tuplet 3/2 { f8 e f } g4 gis |
+    d,4( e, \tuplet 3/2 { f8 e f } g4 as |
     \mBreak
     
     % cl2 p7 95
@@ -958,7 +958,7 @@ tschaikowsky_II_clarinet_II = {
     r2 r4 c4( g8) r |
     r2 r4 c4( e,8) r |
     r2 r4 c'4( e,8) r |
-    r2 r4 cis'4( a8) r |
+    r2 r4 des'4( a8) r |
     \mBreak
     
     % cl2 p7 101
@@ -974,7 +974,7 @@ tschaikowsky_II_clarinet_II = {
     c4( d) \tuplet 3/2 { e8( d e } f4 g) |
     a4( f) g2. |
     g4( a) \tuplet 3/2 { g8( a g } f4 e) |
-    d8-. r16 e( d8) r16 cis( d2.) |
+    d8-. r16 e( d8) r16 des( d2.) |
     f4( g) \tuplet 3/2 { f8( g f } e4 d) |
     \mBreak
     
@@ -989,7 +989,7 @@ tschaikowsky_II_clarinet_II = {
     r8 c,( e g c) r r4 r4 |
     r8 c,( e g c) r r4 r4 |
     r8 c,( f a c) r r4 r4 |
-    r8 e,( gis h e) r r4 r4 |
+    r8 e,( as h e) r r4 r4 |
     r8 a,( c e a) r r4 r4 |
     \mBreak
     
@@ -1015,7 +1015,7 @@ tschaikowsky_II_clarinet_II = {
     a4( f) g2. |
     \rMark
     b4( a) \tuplet 3/2 { g8( a g } f4 e) |
-    a8-. r16 b( a8) r16 gis( a2.) |
+    a8-. r16 b( a8) r16 as( a2.) |
     a4( g) \tuplet 3/2 { f8( g f } e4) d( |
     \mBreak
     
@@ -1031,7 +1031,7 @@ tschaikowsky_II_clarinet_II = {
     \rMark
     es4( c) \tuplet 3/2 { d8( c d } e4 f) |
     g4( es) f2. |
-    es4( f8 f') \tuplet 3/2 { es8( d es } f4 fis) |
+    es4( f8 f') \tuplet 3/2 { es8( d es } f4 ges) |
     g4( es) d2( es4) |
     \mBreak
     
@@ -1945,10 +1945,10 @@ tschaikowsky_IV_clarinet_II = {
 
 % ---------------------------------------------------------
 
-%%{
+%{
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
     subtitle = "1. Satz"
   }
   \score {
@@ -1957,21 +1957,21 @@ tschaikowsky_IV_clarinet_II = {
     }
   }
 }
-%%}
+%}
 
-%{
+%%{
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
     subtitle = "2. Satz"
   }
   \score {
     \new Staff {
-      \transpose a a \tschaikowsky_II_clarinet_II
+      \transpose b a \tschaikowsky_II_clarinet_II
     }
   }
 }
-%}
+%%}
 
 %{
 \bookpart {
