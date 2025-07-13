@@ -1695,14 +1695,14 @@ tschaikowsky_IV_clarinet_II = {
         s2. |
       }
     >>
-    g4-- fis4. e8 |
+    g4-- ges4. e8 |
     \rMark
-    h'4-- a4.( gis8) |
+    h'4-- a4.( as8) |
     e'4( d8.) c16-- h8-- c-- |
     \mBreak
     
     % cl2 p14 13
-    h8( a) gis8.-- a16-- g8-- f-- |
+    h8( a) as8.-- a16-- g8-- f-- |
     e8( f) e-- d-- c( d) |
     c8( b) r4 r |
     \tempo "Andante"
@@ -1853,7 +1853,7 @@ tschaikowsky_IV_clarinet_II = {
     f2( a,4) |
     g'2 f4 |
     b2 d,4 |
-    h4 ais8( h) c4 |
+    h4 b8( h) c4 |
     h8( c) d'4 c8( d) |
     \mBreak
    
@@ -1877,23 +1877,23 @@ tschaikowsky_IV_clarinet_II = {
     b2 f4 |
     \tempo "Andante"
     \mark #11
-    a8 r r4 \tuplet 3/2 { cis16( d e } f32 g as b) |
+    a8 r r4 \tuplet 3/2 { des16( d e } f32 g as b) |
     \mBreak
    
     % cl2 p15 127
     h4 a8-- g-- g-- f-- |
-    a,4 r \tuplet 3/2 { cis16( d e } f32 g as b) |
-    h4 a8-- gis-- g-- f-- |
+    a,4 r \tuplet 3/2 { des16( d e } f32 g as b) |
+    h4 a8-- as-- g-- f-- |
     \mBreak
    
     % cl2 p15 130
-    a,4-- r \tuplet 3/2 { a16( b h } cis32 d e fis) |
-    g4 fis8-- e-- d-- cis-- |
-    e4 r \tuplet 3/2 { a,16( b h } cis32 d e fis) |
+    a,4-- r \tuplet 3/2 { a16( b h } des32 d e ges) |
+    g4 ges8-- e-- d-- des-- |
+    e4 r \tuplet 3/2 { a,16( b h } des32 d e ges) |
     \mBreak
    
     % cl2 p15 133
-    g4 fis8-- e-- d-- cis-- |
+    g4 ges8-- e-- d-- des-- |
     e4 r r |
     d4 r r |
     d4 r r |
@@ -1973,7 +1973,7 @@ tschaikowsky_IV_clarinet_II = {
 }
 %}
 
-%%{
+%{
 \bookpart {
   \header{
     instrument = "Klarinette II in Bb"
@@ -1985,19 +1985,19 @@ tschaikowsky_IV_clarinet_II = {
     }
   }
 }
-%%}
+%}
 
-%{
+%%{
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in BB"
     subtitle = "4. Satz"
   }
   \score {
     \new Staff {
-      \transpose a a \tschaikowsky_IV_clarinet_II
+      \transpose b a \tschaikowsky_IV_clarinet_II
     }
   }
 }
 
-%}
+%%}
