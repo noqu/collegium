@@ -140,12 +140,12 @@ conEspressione = ^\markup { \italic "con espressione" }
     " "
   }
   % Distance between title stuff and music
-  markup-system-spacing.basic-distance = #4
-  markup-system-spacing.minimum-distance = #4
+  markup-system-spacing.basic-distance = #5
+  markup-system-spacing.minimum-distance = #5
   markup-system-spacing.padding = #4
   % Distance between music systems
-  system-system-spacing.basic-distance = #13
-  system-system-spacing.minimum-distance = #13
+  system-system-spacing.basic-distance = #14
+  system-system-spacing.minimum-distance = #14
   % system-system-spacing.padding = #10
   }
 
@@ -1375,7 +1375,7 @@ tschaikowsky_III_clarinet_II = {
       \\
       \new CueVoice {
         \voiceOne \stemUp
-        s2 f'1~_"Ob.I"  |
+        s2 f'1~^"Ob.I"  |
         f8 r s8 f8-. r16 f-. s8 fis8-. r s g-. r s |
       }
     >>
@@ -1973,59 +1973,58 @@ tschaikowsky_IV_clarinet_II = {
 
 % ---------------------------------------------------------
 
-%{
+%%{
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
     subtitle = "1. Satz"
   }
   \score {
     \new Staff {
-      \transpose a a \tschaikowsky_I_clarinet_II
+      \transpose b a \tschaikowsky_I_clarinet_II
     }
   }
 }
-%}
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette II in A"
-    subtitle = "2. Satz"
-  }
-  \score {
-    \new Staff {
-      \transpose a a \tschaikowsky_II_clarinet_II
-    }
-  }
-}
-%}
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette II in A"
-    subtitle = "3. Satz"
-  }
-  \score {
-    \new Staff {
-      \transpose a a \tschaikowsky_III_clarinet_II
-    }
-  }
-}
-%}
+%%}
 
 %%{
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
+    subtitle = "2. Satz"
+  }
+  \score {
+    \new Staff {
+      \transpose b a \tschaikowsky_II_clarinet_II
+    }
+  }
+}
+%%}
+
+%%{
+\bookpart {
+  \header{
+    instrument = "Klarinette II in Bb"
+    subtitle = "3. Satz"
+  }
+  \score {
+    \new Staff {
+      \transpose b a \tschaikowsky_III_clarinet_II
+    }
+  }
+}
+%%}
+
+%%{
+\bookpart {
+  \header{
+    instrument = "Klarinette II in Bb"
     subtitle = "4. Satz"
   }
   \score {
     \new Staff {
-      \transpose a a \tschaikowsky_IV_clarinet_II
+      \transpose b a \tschaikowsky_IV_clarinet_II
     }
   }
 }
-
 %%}
