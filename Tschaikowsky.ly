@@ -36,6 +36,7 @@ mfDim = _\markup { \dynamic mf \italic "dim." }
 fCantabile = _\markup { \dynamic f \italic "cantabile" }
 smorz = _\markup { \italic "smorz." }
 sempreFf = _\markup { \italic "sempre" \dynamic ff }
+semprePp = _\markup { \italic "sempre" \dynamic pp }
 ffSempre = _\markup { \dynamic ff \italic "sempre" }
 sempreFff = _\markup { \italic "sempre" \dynamic fff }
 pocoF = _\markup { \italic "poco" \dynamic f }
@@ -61,6 +62,7 @@ pocoMenoMosso = ^\markup {\italic \bold {"Poco meno mosso."} }
 rit = ^\markup {\italic {"rit."} }
 rall = ^\markup {\italic {"rall."} }
 riten = ^\markup {\italic {"riten."} }
+ritenMolto = ^\markup {\italic {"riten. molto"} }
 ritATempo = ^\markup { \center-align \italic {"  rit. a tempo"} }
 aTempo = ^\markup { \italic {"a tempo"} }
 moltoRit = ^\markup { \italic {"molto rit."} }
@@ -78,6 +80,12 @@ piuP = _\markup { \italic "più" \dynamic p }
 lento = ^\markup { \italic "Lento" }
 accel = ^\markup { \bold { "accel." } }
 tempoPrimo = ^\markup { \italic { "Tempo I" } }
+incalcando = ^\markup { \italic "incalcando" }
+comePrima = ^\markup { \italic "come prima" }
+sff = _\markup { \dynamic { sff } } 
+dimUnPoco = _\markup { \italic "dim. un poco" }
+animando = ^\markup { \italic "animando" }
+cantabile = ^\markup { \italic "cantabile" }
 
 % Adapted from http://lsr.di.unimi.it/LSR/Snippet?id=655
 % Make title, subtitle, instrument appear on pages other than the first
@@ -166,14 +174,14 @@ tschaikowsky_I_clarinet_II = {
         \stemUp
         r2 r4 f,8(_"Viola" g) |
         a1~ |
-        a8 r r4 r4 h_"Klar.I" |
-        des2.~ des8 r |
+        a8 r r4 r4 h_"Klar.I"\< |
+        des2.~\mf\> des8\! r |
       }
     >>
-    r2 r4 d |
-    g,2~ g8 r8 r4 |
+    r2 r4\p d\< |
+    g,2~\mf\> g8\! r8 r4 |
     R1 |
-    R1 |
+    R1\riten |
     R1\fermata |
     \mBreak
     
@@ -185,7 +193,7 @@ tschaikowsky_I_clarinet_II = {
       \voiceTwo
       {
         \stemUp
-        f4\rest f8-.( g-.) |
+        f4\rest f8-.(\p\< g-.)\! |
       }
       \\
       \new CueVoice {
@@ -193,14 +201,14 @@ tschaikowsky_I_clarinet_II = {
         r16 a'_"Fl.I" h des s4 |
       }
     >>
-    as,4( a8) r r4 f16( e f g) |
-    as4( a8) r r4 r8 e' |
+    as,4(\> a8)\! r r4 f16(\p\< e f g) |
+    as4(\> a8)\! r r4 r8 e'\p |
     r8 f r b, r c r a |
     \mBreak
     
     % cl2 p1 27
     r8 b r g8~ g r r4 |
-    r4 r8 g8~ g b~ b r |
+    r4 r8 g8~\p g b~ b r |
     R1 |
     \time 2/4
     R2 |
@@ -233,7 +241,7 @@ tschaikowsky_I_clarinet_II = {
         R1 |
         R1 |
         R1 |
-        r2 r16 g''-. g-. g-. g-. g-. e-. e-. |
+        r2 r16 g''-.\pp\< g-. g-. g-. g-. e-. e-.\! |
         \revert MultiMeasureRest.staff-position
       }
       \\
@@ -246,29 +254,29 @@ tschaikowsky_I_clarinet_II = {
         es,8-.( ges-.) h4~ h8 s8 s4 |
       }
     >>
-    d,8-- g,-- ges-- r r16 c-. c-. c-. c-. c-. a-. a-. |
+    d,8--\> g,-- ges--\! r r16 c-.\pp\< c-. c-. c-. c-. a-. a-.\! |
     \mBreak
     
     % cl2 p1 56
-    g8-- e-- d-- r r16 d-. d-. d-. d( h') g-. g-. |
-    ges8-- ges'-- b,-- r r16 e-. e-. e-. e-. e-. des-. des-. |
-    h8-- g-- ges-- r r2 |
+    g8--\> e-- d--\! r r16 d-.\p\< d-. d-. d( h') g-. g-. |
+    ges8--\> ges'-- b,--\! r r16 e-.\p\< e-. e-. e-. e-. des-. des-. |
+    h8--\> g-- ges--\! r r2 |
     R1*3 |
     \mBreak
     
     % cl2 p1 62
-    r2 r16 d'-. d-. d-. d-. d-. h-. h-. |
+    r2 r16 d'-.\p\< d-. d-. d-. d-. h-. h-. |
     \rMark
-    a8-- es-- des-- r r16 g-. g-. g-. g-. g-. e-. e-. |
-    d8-- h-- a-- r r16 d'-. d-. d-. d( ges) d-. d-. |
+    a8--\> es-- des--\! r r16 g-.\p\< g-. g-. g-. g-. e-. e-. |
+    d8--\> h-- a--\! r r16 d'-.\mp\< d-. d-. d( ges) d-. d-. |
     \mBreak
     
     % cl2 p1 65
-    des8-- g,-- f-- r r16 h-. h-. h-. h-. h-. as-. as-. |
-    ges8-- d-- des-- r r16 fis fis fis fis( a) as fis |
+    des8--\> g,-- f--\! r r16 h-.\mp\< h-. h-. h-. h-. as-. as-. |
+    ges8--\> d-- des--\! r r16 fis\f\solo fis fis fis( a) as fis |
     \tempo "Un poco animando"
     f2( ges8) r r4 |
-    r2 r16 a a a a( c) h a |
+    r2 r16 a\ff a a a( c) h a |
     \mBreak
     
     % cl2 p1 69
@@ -281,19 +289,20 @@ tschaikowsky_I_clarinet_II = {
     % cl2 p1 73
     \tempo "Un poco più animato"
     r4 c,16( es d c) r4 c'16( es d c) |
-    r4 c,16( es d c) ges,4( g8) r |
-    ges4( g8) r es4( e8) r |
-    es4( e8) r r2 |
+    r4 c,16( es d c) ges,4(-> g8) r |
+    ges4(-> g8) r es4(-> e8) r |
+    es4(-> e8) r r2 |
     \mBreak
     
     % cl2 p1 77
     \rMark
-    r2 e4~ e8 r |
-    e4~ e8 r r4 e~ |
-    e4~ e8 r r4 e4~ |
+    r2 e4~->\mf e8 r |
+    e4~-> e8 r r4 e~\mp\> |
+    e4~ e8\! r r4 e4~\p |
     e8 r r4 r2 |
     R1*3 |
-    R1*3 |
+    R1*3\ritenMolto |
+    \tempo "Adagio"
     R1 |
     R1\fermata |
     \mBreak
@@ -307,8 +316,8 @@ tschaikowsky_I_clarinet_II = {
         R1 |
         R1 |
         \stemUp
-        r2 g( |
-        f8) r r4 ges2 |
+        r2 g(\mp\> |
+        f8)\incalcando r\pp r4 ges2\mf |
         \revert MultiMeasureRest.staff-position
       }
       \\
@@ -321,103 +330,103 @@ tschaikowsky_I_clarinet_II = {
         s1 |
       }
     >>
-    g,2 e |
-    f2 a'~ |
-    a8 r r4 r2 |
-    r2 ges, |
-    g2 e |
+    g,2 e\> |
+    f2\p\riten a'~\mf\> |
+    a8 r\p r4 r2 |
+    r2\comePrima ges,\mf |
+    g2 e\> |
     \mBreak
     
     % cl2 p2 99
-    f2 a'~ |
-    a8 r r4 r2 |
+    f2\p\riten a'~\mf\> |
+    a8\p r r4 r2 |
     \bar "||"
     \tempo "Moderato mosso"
     R1*5 |
-    a,4~ \tuplet 3/2 { a8 h( des } \tuplet 3/2 { d) d-.( e-.) } \tuplet 3/2 { f16( g a } \tuplet 3/2 { h c des } |
-    d8) r r4 r2 |
+    a,4~\mp\< \tuplet 3/2 { a8 h( des } \tuplet 3/2 { d) d-.( e-.) } \tuplet 3/2 { f16( g a } \tuplet 3/2 { h c des } |
+    d8)\f r r4 r2 |
     R1 |
     \mBreak
     
     % cl2 p2 109
     \rMark
     R1*5 |
-    e,,4~ \tuplet 3/2 { e8 fis( as } \tuplet 3/2 { a) a--( h--) } \tuplet 3/2 { c16( d e } \tuplet 3/2 { fis g as } |
-    a8) r r4 r2 |
+    e,,4~\mp\< \tuplet 3/2 { e8 fis( as } \tuplet 3/2 { a) a--( h--) } \tuplet 3/2 { c16( d e } \tuplet 3/2 { fis g as } |
+    a8)\f r r4 r2 |
     R1 |
     \rMark
-    d,4~ \tuplet 3/2 { d8 e( fis } \tuplet 3/2 { g) g--( a-- } \tuplet 3/2 { h-- c-- des--) } |
+    d,4~\p\< \tuplet 3/2 { d8 e( fis } \tuplet 3/2 { g) g--( a-- } \tuplet 3/2 { h-- c-- des--) } |
     \mBreak
     
     % cl2 p2 118
-    d4~( d16 h g d h8) r r4 |
-    d4~ \tuplet 3/2 { d8 e( fis } \tuplet 3/2 { g) g--( a-- } \tuplet 3/2 { b-- c-- des--) } |
-    d4~( d16 b g d b8) r r4 |
+    d4~->(\> d16 h g d\! h8) r r4 |
+    d4~\piuF \tuplet 3/2 { d8 e( fis } \tuplet 3/2 { g) g--( a-- } \tuplet 3/2 { b-- c-- des--) } |
+    d4~->( d16 b g d b8) r r4 |
     R1 |
     \mBreak
     
     % cl2 p2 122
-    c'4~( c16 g f c) g''4~( g16 c, g e) |
+    c'4~(\f c16 g f c) g''4~( g16 c, g e) |
     d2 \tuplet 6/4 { d16( e d e d des } d8) r |
-    r2 f'4~( f16 c f, c) |
+    r2 f'4~(\ff f16 c f, c) |
     r8 f'~( f16 c a c,) r8 f'~( f16 c f, c) |
     \mBreak
     
     % cl2 p2 126
     r8 b''~( b16 e, b e,) r8 b''~( b16 e, b e,) |
-    r4 b'( a g) |
+    r4 b'(\ff\riten a g) |
     f4( e2) d4( |
-    des2 c4~ c8) r\fermata |
+    des2\sff\> c4~ c8)\! r\fermata |
     \bar "||" 
     \mBreak
     
     % cl2 p2 130
     \tempo "Andante"
     \time 12/8
-    r8 a a a a a a4.~ a8 r r |
-    r8 f' f f f f r d d d d f |
+    r8\p^\markup { \italic "pesante, non stacc."} a a a a a a4.~ a8 r r |
+    r8\semprePp f' f f f f r d d d d f |
     r8 f f f f f f r r r4 r8 |
     r8 c c c c c r g' g g g g |
     \mBreak
     
     % cl2 p2 134
-    r8 a a a a r c2. |
+    r8\incalcando a\p\< a a a r c2.\mf |
     b8 b b b b b b2. |
-    a8 a a a a a d,2. |
-    c8 c c c c c e2.
+    a8\<\riten a a a a a d,2.\sf\> |
+    c8\p\< c c c c c e2.\mf\>
     \mBreak
     
     % cl2 p2 138
-    r8 a a a a r c2. |
+    r8\!\incalcando a\mf\> a a a r c2.\mf |
     b8 b b b b b b2. |
-    a8 a a a a a d,2. |
-    c8 c c c c c e2.
+    a8\<\riten a a a a a d,2.\sf\> |
+    c8\p\< c c c c c e2.\mf\>
     \mBreak
     
     % cl2 p2 142
     \tempo "Moderato assai"
-    r8 f f f f f f4. ges |
+    r8\! f\mf\> f f f f f4.\mp ges |
     \time 4/4 
     ges4( g) d( e) |
-    e4( f) f( ges) |
+    e4( f) f(\p ges) |
     g4( h) d,( e) |
     \rMark
-    f4( a) f( ges) |
+    f4( a) f(\p ges) |
     ges( g) d( e) |
     \mBreak
     
     % cl2 p2 148
-    e4( f) f( ges) |
+    e4( f) f(\pp ges) |
     g4( h) d,( e |
     f8) r r4 r2 |
     R1
-    R1*2 |
+    R1*2\rall |
     \tempo "Adagio mosso"
     R1*4 |
     <<
       \voiceTwo {
         \override MultiMeasureRest.staff-position = #2
-        R1 |
+        R1\ritenMolto |
         R1 |
         \override MultiMeasureRest.staff-position = #4
         R1\fermata |
@@ -437,49 +446,49 @@ tschaikowsky_I_clarinet_II = {
     % cl2 p3 161
     \tempo "Allegro vivo"
     \key c \major
-    b''''8 r r4 b,,16 b b8~ b4~ |
-    b8 a as a b r r4 |
-    a8 r as r r4 r8 gis |
-    a8 r b r r4 b'8( ges') |
+    b''''8\ff r r4 b,,16\sff b b8~ b4~ |
+    b8 a-> as-> a-> b-> r r4 |
+    a8\sf r as\sf r r4 r8 as\sf |
+    a8\sf r b\sf r r4 b'8(\ff ges') |
     \mBreak
     
     % cl2 p3 165
-    b,8 r r4 b,16 b b8~ b4~ |
-    b8 a as a b r r4 |
-    a8 r b r r4 r8 b |
-    a8 r g r r4 b'8( g') |
+    b,8 r r4 b,16\sff b b8~ b4~ |
+    b8 a-> as-> a-> b-> r r4 |
+    a8\sf r b\sf r r4 r8 b\sf |
+    a8\sf r g\sf r r4 b'8(\ff g') |
     \mBreak
     
     % cl2 p3 169
-    f8 r r4 \tuplet 3/2 { f16 f f } f8~ f4~ |
-    f8 g,,f g as as r4 |
+    f8 r r4 \tuplet 3/2 { f16\sff f f } f8~ f4~ |
+    f8 g,,-> f-> g-> as-> as-> r4 |
     \rMark
     R1 |
-    r2 r4 r8 f''~ f4. f8~ f4. f8~ |
+    r2 r4 r8 f''~\f f4. f8~ f4. f8~ |
     \mBreak
     
     % cl2 p3 174
     f8 r r4 r2 |
-    r4 r8 f,( as,) r r4 |
-    r4 r8 f'( as,) r r4 |
+    r4 r8 f,(\ff as,) r r4 |
+    r4 r8 f'(\ff as,) r r4 |
     R1 |
-    d''8 r8 r4 r2 |
+    d''8\sf r8 r4 r2 |
     R1 |
-    r4 es,8-. c( b) c~ c g'~ |
+    r4 es,8-.\mf c( b) c~ c g'~\f |
     \mBreak
     
     % cl2 p3 181
     g4. g8~ g4. g8~ |
     g8 r8 r4 r2 |
     \rMark
-    r4 r8 g ( b,) r r4 |
-    r4 r8 g'( b,) r r4 |
-    r2 r4 c16( f e c) |
+    r4 r8 g (\ff b,) r r4 |
+    r4 r8 g'(\ff b,) r r4 |
+    r2 r4 c16(\ff f e c) |
     \mBreak
     
     % cl2 p3 186
     d16( g f d) e( a g e) f( b a f e8) r |
-    r2 r4 a,16( d c a) |
+    r2 r4 a,16(\fff d c a) |
     b( e d b) c( f e c) d( g f d) des( as' ges des) |
     \mBreak
     
@@ -512,97 +521,100 @@ tschaikowsky_I_clarinet_II = {
     \mBreak
     
     % cl2 p4 205
-    r2 \tuplet 7/4 { e''16( f g as b c des } e8) r |
     <<
       \voiceOne {
+        \stemDown
         \override MultiMeasureRest.staff-position = #2
+        r2 \tuplet 7/4 { e''16(\p\< f g as b c des } e8)\! r |
         R1 |
         R1 |
         R1 |
         \override MultiMeasureRest.staff-position = #0
-        r2 r4 r8. a,,,16 |
+        \stemUp
+        r2 r4 r8. a,,,16\mf |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
         \stemUp
-        as2_"Pos.II" g |
+        s2 s4 s8 s16 as_"Pos.II" |
+        as2-> g-> |
         f2_"Fag.II" g4~ g8. ces16 |
         ces2 b2 |
         as2 b4~ b8. s16 |
       }
     >>
-    a8 r b r r4 r8. c16 |
+    a8\pocoCresc r b r r4 r8. c16 |
     \mBreak
     
     % cl2 p4 211
     c8 r des r r2 |
     R1*2 |
     \rMark
-    as'4-- a-- d,-- c-- |
+    as'4--\ff a-- d,-- c-- |
     d4-- a-- c-- h-- |
-    e4-- a-- d,-- g-- |
+    e4--\dimUnPoco a-- d,-- g-- |
     \mBreak
     
     % cl2 p4 217
     h,4-- e-- b( e8) r |
-    r2 d4-- c-- |
+    r2 d4--\f c-- |
     d4-- a-- c-- h-- |
-    r4 a-- r g-- |
+    r4 a--\dim r g-- |
     r4 e-- r e-- |
     r4 e-- r e-- |
     \mBreak
     
     % cl2 p4 223
-    r4 e4~ e8 r r4 |
+    r4 e4~\p e8 r r4 |
     R1*5 |
     \rMark
     R1*9 |
-    r2 e4~ e8. e16 |
-    a2. ges4 |
-    des'2 c |
+    r2 e4~->\mp e8. e16 |
+    a2.->\cresc ges4 |
+    des'2-> c-> |
     \mBreak
     
     % cl2 p4 241
-    des2 h4.. h16 |
+    des2 h4..\f\cresc h16 |
     ges'8 r f r ges r r4 |
     \rMark
-    e16( d) d8 des16( d e d) f16( e) e8 es16( e f e) |
+    e16(\ff d) d8 des16( d e d) f16( e) e8 es16( e f e) |
     \mBreak
     
     % cl2 p4 244
     g16( f) f8 a16( g) g8 b16( a) a8 r4 |
-    r4 r16 a( as a) b( a) a8 r4 |
+    r4 r16 a(\fff as a) b( a) a8 r4 |
     r4 r16 a( as a) b( a) a8 a16( g) g8 |
     \mBreak
     
     % cl2 p4 247
     b16( a) a8 d,16( des) des8 e16( d) d8 a'16( g) g8 |
     b16( a g f) e( f e d des8) r r4 |
-    r4 e'8 f g4 f8 r |
+    r4 e'8\ff f g4-> f8 r |
     \mBreak
     
     % cl2 p4 250
-    r4 e8 f g4 f8 r |
-    r4 g8 a b4 a8 r |
-    r4 g8 a b4 a8 r |
-    r4 e8 f ges( as) r4 |
-    r4 e8 f ges( as) r4 |
+    r4 e8 f g4-> f8 r |
+    r4 g8 a b4-> a8 r |
+    r4 g8 a b4-> a8 r |
+    r4 e8 f ges(-> as) r4 |
+    r4 e8 f ges(-> as) r4 |
     \mBreak
     
     % cl2 p4 255
-    r4 r8 d, r e r4 |
+    r4 r8 d,\ff r e r4 |
     r4 r8 d r d r4 |
     r4 r8 c r d r4 |
     \rMark
     r4 r8 c r c r4 |
-    r2 r4 es,~ |
+    r2 r4 es,~\pCresc |
     \mBreak
     
     % cl2 p4 260
-    es4 es( d) ges,8( g |
-    a8 ges) a( h c a) c( d |
-    es c) es( f ges es) ges' as |
+    es4 es( d) ges,8(\mf g |
+    a8 ges) a(\cresc h c a) c( d |
+    es c) es( f ges es) ges'\ff as |
     a8 r ges r r4 \tuplet 3/2 { ges8 as a } |
     \mBreak
     
@@ -611,7 +623,7 @@ tschaikowsky_I_clarinet_II = {
     c8 r a r8 r4 \tuplet 3/2 { a8 h c } |
     c8 r a r8 r4 \tuplet 3/2 { a8 h c } |
     \rMark
-    \repeat tremolo 4 { c16( h) } c( h c gis) a( gis a f) |
+    \repeat tremolo 4 { c16(\fff h) } c( h c gis) a( gis a f) |
     \mBreak
     
     % cl2 p5 268
@@ -622,20 +634,20 @@ tschaikowsky_I_clarinet_II = {
     \mBreak
     
     % cl2 p5 272
-    r2 a,4. h8 |
+    r2 a,4.\ff h8 |
     c2.( h8) r |
-    c8 r \tuplet 3/2 { c8 c c~ } c8 c r4 |
-    r4 \tuplet 3/2 { c8 c c } r4 r8 r |
-    r4 c8 r r2 |
+    c8 r \tuplet 3/2 { c8 c c~ } c8 c-> r4 |
+    r4 \tuplet 3/2 { c8 c c } r4 r8 c-> |
+    r4 c8-> r r2 |
     \mBreak
     
     % cl2 p5 277
     \rMark
     R1*4 |
-    h1~ |
+    h1~\ff |
     h1 |
     f'2 e~ |
-    e2. e4 |
+    e2. e4\fff |
     a1~ |
     a1 |
     a,1~ |
@@ -654,15 +666,15 @@ tschaikowsky_I_clarinet_II = {
     R1 |
     \rMark
     R1 |
-    f1~ |
-    f2~ f8 r r4 |
+    f1~\ffff\> |
+    f2~ f8\p r r4 |
     \mBreak
     
     % cl2 p5 301
+    e1~\ff\> |
     e1~ |
     e1~ |
-    e1~ |
-    e8 r r4 r2\fermata |
+    e8\pp r r4 r2\fermata |
     \bar "||"
     \tempo "Andante como prima"
     \key c \major
@@ -671,7 +683,7 @@ tschaikowsky_I_clarinet_II = {
         \stemUp
         \override MultiMeasureRest.staff-position = #-6
         R1 |
-        r4 ges g8( a h des) |
+        r4 ges\pp g8( a h des) |
         \revert MultiMeasureRest.staff-position
       }
       \\
@@ -684,37 +696,37 @@ tschaikowsky_I_clarinet_II = {
     \mBreak
     
     % cl2 p5 307
-    d,4 e8. f16 ges4 g8( ges) |
-    a,4-- ges-- e'-- g-- |
-    ges4-- e8( d) a'2 |
-    g2 g |
-    ges2 h, |
+    d,4\< e8. f16 ges4\> g8( ges) |
+    a,4--\! ges-- e'-- g-- |
+    ges4--\< e8(\incalcando d) a'2\mp |
+    g2\pocoCresc g |
+    ges2\riten h,\mf\> |
     \mBreak
     
     % cl2 p5 312
-    a2 h'4..( a16) |
+    a2\pp\< h'4..(\mf\> a16) |
     \rMark
-    \tuplet 3/2 { a16 a,( b } \tuplet 3/2 { h c des) } d32( es e f ges g as a) a4-- g8.( ges16) |
-    ges4 e g-- ges8.( e16) |
+    \tuplet 3/2 { a16\p\<\incalcando a,( b } \tuplet 3/2 { h c des) } d32( es e f ges g as a) a4--\fff g8.( ges16) |
+    ges4-> e g-- ges8.( e16) |
     \mBreak
     
     % cl2 p5 315
-    e4( d) r8 ges8( e d) |
-    a8( f d' f,) h4..( a16) |
+    e4->( d) r8 ges8(\> e d) |
+    a8(\mf\< f d' f,) h4..(\ff\> a16) |
     \tempo "Tempo I"
-    a2 ges' |
+    a2\mf ges' |
     g2 e |
     ges2 f4( g8 f) |
-    ges2 r8 e4. |
+    ges2 r8 e4.-> |
     \mBreak
     
     % cl2 p5 321
-    ges2 ges, |
+    ges2 ges,\mf |
     g2 e |
     ges2 f4( g8 f |
-    ges8) ges4. g2( |
+    ges8) ges4. g2(\> |
     \rMark
-    ges8) r r4 r2 |
+    ges8)\p\riten r r4 r2 |
     \tempo "Meno"
     <<
       \voiceTwo {
@@ -725,39 +737,39 @@ tschaikowsky_I_clarinet_II = {
         \mBreak
         
         % cl2 p5 328
-        R1 |
+        R1\animando |
         R1 |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
         \stemUp
-        r4 a_"Hr.III" as2 |
-        a2~ a8 r r4 |
-        a2 a |
-        a2 a |
+        r4 a\pppp_"Hr.III" as2\pp |
+        a2~\pppp a8 r r4 |
+        a2\pppp a\pp |
+        a2\pppp a\pp |
       }
     >>
     R1 |
-    r2 ges |
-    ges2 g |
-    ges2 des'4.. d16 |
-    d2 des4.. d16 |
+    r2 ges\p\>\rall |
+    ges2\pppp g\pp |
+    ges2\pppp des'4..\pp\> d16 |
+    d2\pppp des4..\pp\> d16 |
     \bar "||"
     \tempo "Andante mosso"
-    d4~ d8 r r2 |
+    d4~\pppp d8 r r2 |
     R1*4 |
     \mBreak
     
     % cl2 p5 340
-    d2 d4. e8 |
-    g8( ges~ fis2~ ges8) r |
-    d2 d4. e8 |
-    ges1 |
-    d2.~ d8 d |
-    d1 |
+    d2\p\cantabile d4.\< e8 |
+    g8(\mf\> ges~ ges2~ ges8)\! r |
+    d2\p d4.\< e8 |
+    ges1\mf\> |
+    d2.~\p d8 d |
+    d1\> |
     \rMark
-    R1*8 |
+    R1*8\! |
     R1\fermata
     \bar "|."
     \mBreak
@@ -1945,19 +1957,19 @@ tschaikowsky_IV_clarinet_II = {
 
 % ---------------------------------------------------------
 
-%{
+%%{
 \bookpart {
   \header{
-    instrument = "Klarinette II in Bb"
+    instrument = "Klarinette II in A"
     subtitle = "1. Satz"
   }
   \score {
     \new Staff {
-      \transpose b a \tschaikowsky_I_clarinet_II
+      \transpose a a \tschaikowsky_I_clarinet_II
     }
   }
 }
-%}
+%%}
 
 %{
 \bookpart {
@@ -1987,7 +1999,7 @@ tschaikowsky_IV_clarinet_II = {
 }
 %}
 
-%%{
+%{
 \bookpart {
   \header{
     instrument = "Klarinette II in BB"
@@ -2000,4 +2012,4 @@ tschaikowsky_IV_clarinet_II = {
   }
 }
 
-%%}
+%}
