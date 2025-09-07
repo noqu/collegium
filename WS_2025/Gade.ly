@@ -25,7 +25,7 @@
 % pBreak = {}
 mBreak = { \break }
 pBreak = { \pageBreak }
-#(set-global-staff-size 17.9)
+#(set-global-staff-size 17.4)
 
 % Just to make it easier to add rehearsal marks
 rMark = { \mark \default }
@@ -142,12 +142,12 @@ grandioso = _\markup { \italic "grandioso" }
     " "
   }
   % Distance between title stuff and music
-  markup-system-spacing.basic-distance = #5
-  markup-system-spacing.minimum-distance = #5
-  markup-system-spacing.padding = #3
+  markup-system-spacing.basic-distance = #4
+  markup-system-spacing.minimum-distance = #4
+  markup-system-spacing.padding = #2
   % Distance between music systems
-  system-system-spacing.basic-distance = #13
-  system-system-spacing.minimum-distance = #13
+  system-system-spacing.basic-distance = #12
+  system-system-spacing.minimum-distance = #12
   % system-system-spacing.padding = #10
   }
 
@@ -334,7 +334,7 @@ gade_clarinet_I = {
     \mBreak
     
     % cl1 p2 134
-    g\< g'\> f e)\! |
+    g4\< g'\> f e)\! |
     e4( d c h) |
     c4.( g8) g4( e') |
     e4(\< d g\> h,)\! |
@@ -538,8 +538,8 @@ gade_clarinet_I = {
     f,4( \tuplet 3/2 { c8 a' g } f4) f8-. f-. |
     \appoggiatura a8 g->( f) f-. f-. \appoggiatura a8 g->( f) f-. f-. |
     \appoggiatura c'8 b->( a) a-. a-. \appoggiatura c8 b->( a) a-. a-. |
-    b->( a) a-. a-. b->( a) a-. a-. |
-    d->( cis) cis-. cis-. d->( cis) cis-. cis-. |
+    b8->( a) a-. a-. b->( a) a-. a-. |
+    d8->( cis) cis-. cis-. d->( cis) cis-. cis-. |
     \mBreak
     
     % cl1 p3 316
@@ -558,7 +558,7 @@ gade_clarinet_I = {
     a'4 g d b |
     c4 c d a' |
     f4 r g r |
-    \mark #9
+    \mark #8
     a4..-> a16 g4 d |
     a'4 g d b |
     a'4..-> a16 g4 d |
@@ -628,8 +628,469 @@ gade_clarinet_II = {
   \time 4/4
   \tempo "Andante"
   \clef violin
+  \key f \major
   \relative c' {
-    R1
+    % cl2 1 1
+    R1*16
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+         R1*4 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \voiceOne \stemUp
+        g'4(_"Clar.I" a d g,) |
+        c8( f4.) f2( |
+        c4 a) c4( a8 f) |
+        a4( g2.) |
+      }
+    >>
+    R1*5 |
+    r2 f2~\fz |
+    \mark #1
+    f4\pDolce h8.( d16) d4.(\< c8 |
+    e4) \tuplet 3/2 { c8(\! d e) } e4.(\< d8\! |
+    f8) d8(\< f a) a2~( |
+    a4\> f e8 d c4) |
+    h2(\p d4.\dim c8) |
+    c2\pp r |
+    \mBreak
+    
+    % cl2 1 33
+    R1*10 |
+    \bar "|."
+    \tempo "Allegro moderato"
+    R1*2 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+         R1*3 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \voiceOne \stemDown
+        a4_"Clar.I" g8.-. f16-. e4-. g-. |
+        f4-. \tuplet 3/2 { e8-. f-. g-. } f4-. a~-> |
+        a4 g8.-. f16-. e4-. g-. |
+      }
+    >>
+    f4-.\pp d8.-. e16-. f4-. a4~-> |
+    a4 g8.-. f16-. e4-. g-. |
+    f4-. \tuplet 3/2 { e8-. f-. g-. } f4-. a~-> |
+    a4 g8.-. f16-. e4-. a-. |
+    \mBreak
+    
+    % cl2 1 52
+    d4-. d2\fz f,8.-. g16-. |
+    a4( c8.) a16-. f4-. a-. |
+    g4 f2\fz f8.-. g16-. |
+    a4( c8.) a16-. f4-. a-. |
+    g4 c8.(-> g16)\cresc g4\accel c8.(-> g16) |
+    g4 c8.(-> g16 c4) c8.(-> g16 |
+    c1~)\f-> |
+    c1 |
+    \mBreak
+
+    % cl2 1 60
+    c1~-> |
+    c1~ |
+    c4 c2-> c4~-> |
+    c4 c2-> r4 |
+    R1 |
+    e,2.\f g4 |
+    g4 g g g |
+    g2. f4 |
+    \bar "|." |
+    \time 2/2
+    \tempo "Allegro di molto"
+    c'2(\ff a4) r |
+    c2( a4) r |
+    a2. a8 a |
+    \mBreak
+    
+    % cl2 1 71
+    b4->( a8) a-. b4->( a8) a-. |
+    b8-.-> a-. b-.-> a-. b-.-> a-. g'4-> |
+    g2.\fermata r4 |
+    c,2( a4) r |
+    c2( a4) r |
+    a2. a8-. a-. |
+    b4->( a8) a-. b4->( a8) a-. |
+    \mBreak
+    
+    % cl2 1 78
+    b8-.-> a-. b-.-> a-. b-.-> a-. g'8.(-> c,16) |
+    c2.-> g8.( d'16) |
+    g,2.-> g8.( g'16) |
+    g2.-> c,8.( c'16) |
+    c4( \tuplet 3/2 { a8 f c } a4) f' |
+    f4( \tuplet 3/2 { d8 b g } f4) f |
+    f4 b8 b a2-> |
+    \mBreak
+    
+    % cl2 1 85
+    a2 a4 b |
+    c4 r r2 |
+    R1 |
+    c2\f c |
+    c1 |
+    c1->~ |
+    c2. \tuplet 3/2 { c8(\ff f a } |
+    a2 f4) \tuplet 3/2 { c8( f a } |
+    a4.) f8 a,4-. a-. |
+    b4 r r2 |
+    r2 r4 \tuplet 3/2 { f8( b d } |
+    \mBreak
+
+    % cl2 1 96
+    d2 b4) \tuplet 3/2 { f8( b d } |
+    d4.) b8 d4 b8-. g-. |
+    \mark #2
+    g4 \tuplet 3/2 { d'8( e f } e4) f4-. |
+    a2->( e4) r |
+    r4 \tuplet 3/2 { e8( f g } f4) e-. |
+    a2( f4) r |
+    r4 \tuplet 3/2 { f8( g a } g4) f-. |
+    \mBreak
+    
+    % cl2 1 103
+    f4->( c) r2 |
+    f4->( c) r2 |
+    R1 |
+    f4->(\mf c) r2 |
+    f4->( c) r2 |
+    r4 c,(\< des d) |
+    es4\f r r2 |
+    R1*9 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R1 |
+        r2 r4 es'4-.\p |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \voiceTwo \stemDown
+        r2_"Clar.I" b2~ |
+        b2. s4 |
+      }
+    >>
+    es4.( d8) c4-. h-. |
+    h4( c) r2 |
+    R1 |
+    \mBreak
+    
+    % cl2 p1 124
+    r2 r4 es4-. |
+    es4(\< f8) d-.\! c4-. h-. |
+    h4( c) c-. r |
+    as1\< |
+    a1(\f\> |
+    h4) r4\! r2 |
+    R1*8
+    r2 g4\p(\< c8 e |
+    f4\> e a,\! h) |
+    d2( c4) r |
+    \mark #3 
+    R1 |
+    \mBreak
+    
+    % cl2 p1 142
+    f2.\p r4 |
+    R1 |
+    f2. r4 |
+    f,2->( e4)\cresc g8-. h-. |
+    d1->(\fz\> |
+    c2.)\! r4 |
+    R1*4 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #2
+        R1 |
+        r2 r4 e4-.\p |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \voiceTwo \stemDown
+        h4-._"Clar.I" h-. \appoggiatura c8 h4( a8) h-. |
+        c4( e a,) s4 |
+      }
+    >>
+    c2.\cresc c4 |
+    b2. b4 |
+    a4\f r r2 |
+    R1 |
+    \pBreak
+    
+    % cl2 p2 158
+    c2->\f c-> |
+    h2 r |
+    \mark #4 
+    e,1~\ff |
+    e4 r r \tuplet 3/2 { g8(\ff c e } |
+    e2 c4) \tuplet 3/2 { c8( e g } |
+    e2 \tuplet 3/2 { e8)[ c,( e] } \tuplet 3/2 { g8 c e) } |
+    e4..->( d16) c4 h |
+    \mBreak
+    
+    % cl2 p2 165
+    e4 es( e) c8.( e16) |
+    e4..->( d16) c4 h |
+    e4 es( e) c8.( e16) |
+    e4..->( d16) c4 h |
+    c4..->( h16) a4 gis |
+    a4..->( g16) f4 e |
+    f4 a c f,8.( a16) |
+    \mBreak
+
+    % cl2 p2 172
+    a4..(-> g16) f4 e |
+    f4 a4 c4 c8.( a'16) |
+    f4.->\marcato e8 d4 a |
+    e'4 d a f |
+    e e f g-> |
+    e4 g8.( g'16) g4 g,8.( a'16) |
+    a4.->e8 d4 a |
+    \mBreak
+    
+    % cl2 p2 179
+    e'4 d a f |
+    e4 g a h-> |
+    c4 g a h |
+    c4 r r2 |
+    r4 g a h |
+    c4 r r8. e,16 g8. c16 |
+    e4 r r8. e,16 g8. c16 |
+    \mBreak
+    
+    % cl2 p2 186
+    c8. e,16 g8. c16 e8. g,16 c8. e16 
+    c2 d |
+    e8. g,16 e8. g16 e'8. g,16 c8. e16 
+    g,2 g |
+    c1 |
+    c1 |
+    g1 |
+    g1 |
+    g1~\dim |
+    g1~\p 
+    \mBreak
+    
+    % cl2 p2 196
+    g1 |
+    R1*3 |
+    \mark #5
+    R1*3
+    r4 \tuplet 3/2 { c8\p( d e } d4\< c |
+    a'2\> f |
+    c4)\p r r2 |
+    R1*6 
+    r4 \tuplet 3/2 { cis8\p( d e } d4 c |
+    f2 d |
+    a4) r cis,2(\< |
+    \mBreak
+    
+    % cl2 p2 215
+    dis1\>)( |
+    e4)\! r r2 |
+    R1*7 |
+    r2 r4 e'8.(\p g16) |
+    g2 r4 e8.( g16) |
+    g2 r4 e8.( g16) |
+    g2 r4 e8.( g16) |
+    g2 r4 e8.(\cresc g16) |
+    g2 r4 e8.( g16) |
+    g4 g2 g4~\< |
+    \mBreak
+    
+    % cl1 p2 231
+    g4 g2 g4(\! |
+    f4) r r2 |
+    d2.->\ff f4 |
+    d4 d e f |
+    d4 r r2 |
+    r2 r4 d8.( f16) |
+    f4 d8.( f16) f4 r |
+    R1 |
+    b,2.-> d4 |
+    b4 b c d |
+    \mBreak
+    
+    % cl2 p2 241
+    b4 r r b8.( d16) |
+    d4 b8.( d16) d4 b |
+    R1 |
+    es2.-> g4 |
+    es4 g, as b |
+    h4 h2-> c4~-> |
+    c4 c d es |
+    es4 as,2-> as4~-> |
+    \mBreak
+    
+    % cl2 p2 249
+    as2 g~-> |
+    g2 f-> |
+    f'1-> |
+    g,2( as) |
+    g2( as) |
+    g2( as) |
+    \mark #6 
+    as4 r r2 |
+    as4 r r2 |
+    f4 r r2 |
+    f4 r r2 |
+    R1*13 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R1*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \voiceOne \stemDown
+        a2._"Clar.I" c8( f |
+        b4 a d, e) |
+      }
+    >>
+    \pBreak
+    
+    % cl2 p3 274
+    c2.\p r4 |
+    R1 |
+    b2.\p r4 |
+    f'4( e a, b) |
+    g2~ g4 c8.( b16) |
+    b2(-> a4) c8-. e-. |
+    \mark #7
+    g2\fz r |
+    r2 r4 f4 |
+    f4.( e8) d4-. cis-. |
+    cis4( d) r2 |
+    R1 |
+    \mBreak
+    
+    % cl2 p3 285
+    r2 r4 f |
+    f4( g8) e-. d4 cis |
+    cis4( d) d d |
+    d1~\cresc |
+    d2->~ d4\! r |
+    R1*11 |
+    <<
+      {
+        \override MultiMeasureRest.staff-position = #-6
+        R1*2 |
+        \revert MultiMeasureRest.staff-position
+      }
+      \\
+      \new CueVoice {
+        \voiceOne \stemDown
+        c4_"Clar.I" c( f e) |
+        c4( c' b a) |
+      }
+    >>
+    c,2.(\f b4) |
+    a4( g f e) |
+    c'2.(\f b4) |
+    a4( g f e) |
+    \mBreak
+    
+    % cl2 p3 307
+    g'2(-> c,4) c |
+    g'2(-> c,4) c |
+    a'2(-> f4) \tuplet 3/2 { c8( f a) } |
+    a2( f4) r | 
+    c2( a4) a8 a |
+    b( a) a-. a-. b( a) a-. a-. |
+    d( c) c-. c-. d( c) c-. c-. |
+    \mBreak
+    
+    % cl2 p3 314
+    d( c) c-. c-. d( c) c-. c-. |
+    f( e) e-. e-. f( e) e-. e-. |
+    e4 a,2.-> |
+    a2.-> c8.( c'16) |
+    c4 r r c,8.( c'16) |
+    c4 r r c,8.( c'16) |
+    \mBreak
+    
+    % cl2 p3 320
+    c,4..-> b16 a4 g |
+    a4 as( a) a8.( c16) |
+    c4..-> b16 a4 g |
+    a4 r c r |
+    c4..-> c16 b4 a |
+    c4 b a g |
+    a4 a b c |
+    a4 r c r |
+    \mBreak
+    
+    % cl2 p3 328
+    \mark #8
+    c4..-> c16 b4 a |
+    c4 b a g |
+    c4..-> c16 b4 a |
+    c4 b a g |
+    d'4..->\marcato c16 b4-> a-> |
+    g4(-> c) c f |
+    b4..-> a16 g4-> f->
+    f4( e) e c( |
+    \mBreak
+    
+    % cl2 p3 336
+    b4..)-> a16 g4 f |
+    e4( g c) a4 |
+    d4..-> c16 b4 a |
+    a4( g c) a |
+    a4( g c) a |
+    c2 c |
+    a4->\ff\marcato b-> a2-> |
+    a4-> b-> a2-> |
+    f'2 d |
+    \mBreak
+    
+    % cl2 p3 345
+    a4. b8 c2 |
+    a4-> b-> a2-> |
+    a4-> b-> a2-> |
+    cis2-> d4. f,8 |
+    f2( e) |
+    f4-> g-> a2-> |
+    a4-> b-> a2-> |
+    a1( |
+    c4) c c2~ |
+    \mBreak
+    
+    % cl2 p3 354
+    c4 g a2 |
+    a4 b a2 |
+    c1~ |
+    c4 c c2~ |
+    c4 c c2~ |
+    c4 c2 c4~ |
+    c4 c2 c4~ |
+    c4 \appoggiatura d8 c2-> \appoggiatura d8 c4~-> |
+    c4 \appoggiatura d8 c2-> \appoggiatura d8 c4~-> |
+    \mBreak
+    
+    % cl2 p3 363
+    c4 \appoggiatura d8 c2-> \appoggiatura d8 c4~-> |
+    c4 \appoggiatura d8 c2-> \appoggiatura d8 c4~-> |
+    c4 r a' r |
+    f4 r c r |
+    a4 r8 f8 f4 \appoggiatura g8 f4 |
+    a4 r8 f8 f4 \appoggiatura g8 f4 |
+    \appoggiatura g'8 f1~-> |
+    f1 |
+    f,1->\fermata ||
+    \bar "|."
+    \pBreak
   }
 }
 
@@ -653,7 +1114,7 @@ gade_clarinet_II = {
 }
 %%}
 
-%{
+%%{
 \bookpart {
   \header{
     instrument = "Klarinette II in A"
@@ -664,4 +1125,4 @@ gade_clarinet_II = {
     }
   }
 }
-%}
+%%}
