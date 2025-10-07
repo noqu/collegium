@@ -1104,11 +1104,11 @@ gade_clarinet_II = {
 %%{
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \gade_clarinet_I
+      \transpose b a \gade_clarinet_I
     }
   }
 }
@@ -1117,11 +1117,11 @@ gade_clarinet_II = {
 %%{
 \bookpart {
   \header{
-    instrument = "Klarinette II in A"
+    instrument = "Klarinette II in Bb"
   }
   \score {
     \new Staff {
-      \transpose a a \gade_clarinet_II
+      \transpose b a \gade_clarinet_II
     }
   }
 }
