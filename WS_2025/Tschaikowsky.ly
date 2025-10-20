@@ -141,12 +141,12 @@ dolcePossibile = ^\markup { \italic "dolce possibile" }
     " "
   }
   % Distance between title stuff and music
-  markup-system-spacing.basic-distance = #5
-  markup-system-spacing.minimum-distance = #5
-  markup-system-spacing.padding = #4
+  markup-system-spacing.basic-distance = #4
+  markup-system-spacing.minimum-distance = #4
+  markup-system-spacing.padding = #3
   % Distance between music systems
-  system-system-spacing.basic-distance = #14
-  system-system-spacing.minimum-distance = #14
+  system-system-spacing.basic-distance = #13
+  system-system-spacing.minimum-distance = #13
   % system-system-spacing.padding = #10
   }
 
@@ -3912,43 +3912,15 @@ tschaikowsky_IV_clarinet_II = {
 
 % ---------------------------------------------------------
 
-%{
+%%{
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
     subtitle = "1. Satz"
   }
   \score {
     \new Staff {
-      \transpose a a \tschaikowsky_I_clarinet_I
-    }
-  }
-}
-%}
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette I in A"
-    subtitle = "2. Satz"
-  }
-  \score {
-    \new Staff {
-      \transpose a a \tschaikowsky_II_clarinet_I
-    }
-  }
-}
-%}
-
-%{
-\bookpart {
-  \header{
-    instrument = "Klarinette I in A"
-    subtitle = "3. Satz"
-  }
-  \score {
-    \new Staff {
-      \transpose a a \tschaikowsky_III_clarinet_I
+      \transpose b a \tschaikowsky_I_clarinet_I
     }
   }
 }
@@ -3957,20 +3929,48 @@ tschaikowsky_IV_clarinet_II = {
 %%{
 \bookpart {
   \header{
-    instrument = "Klarinette I in A"
+    instrument = "Klarinette I in Bb"
+    subtitle = "2. Satz"
+  }
+  \score {
+    \new Staff {
+      \transpose b a \tschaikowsky_II_clarinet_I
+    }
+  }
+}
+%}
+
+%%{
+\bookpart {
+  \header{
+    instrument = "Klarinette I in Bb"
+    subtitle = "3. Satz"
+  }
+  \score {
+    \new Staff {
+      \transpose b a \tschaikowsky_III_clarinet_I
+    }
+  }
+}
+%}
+
+%%{
+\bookpart {
+  \header{
+    instrument = "Klarinette I in Bb"
     subtitle = "4. Satz"
   }
   \score {
     \new Staff {
-      \transpose a a \tschaikowsky_IV_clarinet_I
+      \transpose b a \tschaikowsky_IV_clarinet_I
     }
   }
 }
-%%}
+%}
 
 % ---------------------------------------------------------
 
-%{
+%%{
 \bookpart {
   \header{
     instrument = "Klarinette II in Bb"
@@ -3984,7 +3984,7 @@ tschaikowsky_IV_clarinet_II = {
 }
 %}
 
-%{
+%%{
 \bookpart {
   \header{
     instrument = "Klarinette II in Bb"
@@ -3998,7 +3998,7 @@ tschaikowsky_IV_clarinet_II = {
 }
 %}
 
-%{
+%%{
 \bookpart {
   \header{
     instrument = "Klarinette II in Bb"
@@ -4012,7 +4012,7 @@ tschaikowsky_IV_clarinet_II = {
 }
 %}
 
-%{
+%%{
 \bookpart {
   \header{
     instrument = "Klarinette II in Bb"
