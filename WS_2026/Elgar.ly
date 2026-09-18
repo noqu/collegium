@@ -210,8 +210,8 @@ elgar_I_clarinet_I = {
         \clef violin
       }
     >>
-    d''2--\p\<\aTempo g2--\f\breathe |
-    f'8->(\pp\rit es d \acciaccatura f es)\breathe r4 r8\fermata r8 |
+    d'''2--\p\<\aTempo g2--\f\breathe |
+    f8->(\pp\rit es d \acciaccatura f es)\breathe r4 r8\fermata r8 |
     R1\collaParte
     r1\fermata\rit |
     \bar "||"
@@ -385,13 +385,14 @@ elgar_I_clarinet_I = {
     \mBreak
   
     % cl1 p2 4
-    a4( f8 es4 f8 f4) r8 |
-    b4( c8\< b4 d8 e-!)\ffz r r |
+    a4( f8 es4 f8 d4) r8 |
+    b'4( c8\< b4 d8 es-!)\ffz r r |
     R1*9/8 |
     r4. r4. b,4.->(\mf |
     a4.~\> a4)\p r8 r4. |
     \rMark
     R1*9/8*7 |
+    \once \override Score.BarNumber.break-visibility = #all-visible 
     R1*9/8\fermata
     \bar "||"
     \time 4/4
@@ -601,7 +602,7 @@ elgar_II_clarinet_I = {
     \mBreak
     
     % cl1 p3 5
-    r4 c,-. r2 |
+    r4 c,-.\mf r2 |
     R1\pocoAllarg |
     \rMark
     d2-^(\f\> c2\p |
@@ -681,6 +682,7 @@ elgar_II_clarinet_I = {
     \rMark
     R1*2 |
     r2 r8 f8-.\pp b-. f'-. |
+    \once \override Score.BarNumber.break-visibility = #all-visible 
     d4-. r r2\fermata |
     \bar "|."
     \mBreak
@@ -786,6 +788,7 @@ elgar_III_clarinet_I = {
     \rMark
     R4.*6 |
     R4.\rit |
+    \once \override Score.BarNumber.break-visibility = #all-visible 
     R4.\fermata
     \bar "|."
     \mBreak
@@ -1004,6 +1007,7 @@ elgar_IV_clarinet_I = {
     ges'8-.\p r r4 |
     R2 |
     \rMark
+    R2*6 |
     g2\pEspress\<\allargando |
     c4->( \> as8)\! r |
     R2*2 |
@@ -1098,7 +1102,7 @@ elgar_IV_clarinet_I = {
     d,8-.\ff g-. d'-. r\breathe |
     \rMark
     R2*5\tempoPrimo |
-    g,,,8(\f a16 g e8 f16 g) |
+    g,,,8(\f f16 g e8 f16 g) |
     a8( h16 cis d8 cis16 d) |
     \tuplet 3/2 {e8.( cis16 a8) } \tuplet 3/2 {g8( a e) } |
     \rMark
@@ -1358,6 +1362,7 @@ elgar_IV_clarinet_I = {
     d'4-. r |
     g,,2~ |
     g2(\< |
+    \once \override Score.BarNumber.break-visibility = #all-visible 
     d'8-.)\!_\markup{ \dynamic "ff sf" } r r4\fermata
     \bar "|."
     \mBreak
@@ -1578,12 +1583,13 @@ elgar_I_clarinet_II = {
     \mBreak
   
     % cl2 p2 4
-    b4( c8\< b4 d8\! e-!)\ffz r r |
+    b4( c8\< b4 d8\! es-!)\ffz r r |
     R1*9/8 |
     r4. r4. e,4.->(\mf |
     d4.~\> d4)\p r8 r4. |
     \rMark
     R1*9/8*7 |
+    \once \override Score.BarNumber.break-visibility = #all-visible 
     R1*9/8\fermata
     \bar "||"
     \time 4/4
@@ -1815,7 +1821,7 @@ elgar_II_clarinet_II = {
     % cl2 p3 4
     e4-. f-. e-. r |
     R1 |
-    r4 fis,-. r2 |
+    r4 fis,-.\mf r2 |
     R1\pocoAllarg |
     \rMark
     d2-^(\f\> c2\p |
@@ -1906,6 +1912,7 @@ elgar_II_clarinet_II = {
     R1*2 |
     \rMark
     R1*3 |
+    \once \override Score.BarNumber.break-visibility = #all-visible 
     r1\fermata |
     \bar "|."
     \mBreak
@@ -2011,6 +2018,7 @@ elgar_III_clarinet_II = {
     \rMark
     R4.*6 |
     R4.\rit |
+    \once \override Score.BarNumber.break-visibility = #all-visible 
     R4.\fermata
     \bar "|."
     \mBreak
@@ -2571,6 +2579,7 @@ elgar_IV_clarinet_II = {
     d4-. r |
     g,,2~ |
     g2\< |
+    \once \override Score.BarNumber.break-visibility = #all-visible 
     b'8-.\!_\markup{ \dynamic "ff sf" } r r4\fermata
     \bar "|."
     \mBreak
@@ -2579,7 +2588,7 @@ elgar_IV_clarinet_II = {
 
 % ---------------------------------------------------------
 
-%{
+%%{
 \book {
   \bookOutputSuffix "1"
   \paper {
@@ -2632,7 +2641,7 @@ elgar_IV_clarinet_II = {
     }
   }
 }
-%}
+%%}
   
 %%{
 \book {
