@@ -426,7 +426,7 @@ elgar_II_clarinet_I = {
         \clef violin
       }
     >>
-    f''2~\p\moltoCresc\accell f4( es8-.)\ff r\fermata |
+    f''2~\p\moltoCresc\accell f4( es?8-.)\ff r\fermata |
     \bar "||"
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
@@ -476,7 +476,7 @@ elgar_II_clarinet_I = {
     s1^\markup { "CADENZA: " \italic "ends = " } s2 s2
     {
       \tiny \stemDown
-      <b,, g'(>4 ges') <as, g'(> f') <a, f'(> fes') <ges, fes'(> <ges es')>\fermata
+      <b,, g'(>4 ges') <as, ges'(> f') <a, f'(> fes') <ges, fes'(> <ges es')>\fermata
       \normalsize
       \stemNeutral
     }
@@ -592,7 +592,7 @@ elgar_II_clarinet_I = {
     \rMark
     R1*2 |
     b'4->(\p a g4.\< g,8\! |
-    f8) r r4 r g'16(\ff as b h |
+    f8) r r4 r g'16(\ff as b? h |
     c8) r r4 r2 |
     R1 |
     \rMark
@@ -675,7 +675,7 @@ elgar_II_clarinet_I = {
     \mBreak
     
     % cl1 p3 10
-    r2 r4 es,,-. |
+    r2 r4 es,,-.\pp |
     d4-. r f-. r |
     c'---> r h-. r |
     R1*2 |
@@ -781,7 +781,7 @@ elgar_III_clarinet_I = {
     
     % cl1 p4 4
     \rMark
-    as'8(\pp ges f~ |
+    as'8(\ppp ges f~ |
     f8 ges d |
     es8 f b16)\fermata r\fermata |
     c,4~ c16 r\fermata |
@@ -897,7 +897,7 @@ elgar_IV_clarinet_I = {
     \mBreak
     
     % cl1 p4 10
-    as,16(\ff\brillante b c des es f ges g |
+    as,16(\ff\brillante b? c des es? f ges g |
     as\< a b c des8)\! r |
     h8 a16 h gis8 fis16 gis |
     e8 r e4-^( |
@@ -1072,7 +1072,7 @@ elgar_IV_clarinet_I = {
     R2 |
     c8\p r r4 |
     R2*4 |
-    d4(\p\< g~\! |
+    d4(\p\< g?~\! |
     g8) r r4 |
     \mBreak
     
@@ -1080,7 +1080,7 @@ elgar_IV_clarinet_I = {
     R2 |
     e8-!\f dis16-. e-. d8-. r |
     fis,8-! e16( fis e cis a his |
-    cis8) his16-. cis-. a8->( g |
+    cis8) his16-. cis-. a?8->( g? |
     \rMark
     gis8) r h4-^(\f |
     a8) gis16-. a-. e8\< fis16-. g-.\! |
@@ -1090,7 +1090,7 @@ elgar_IV_clarinet_I = {
     
     % cl1 p6 3
     b8-.\f r \acciaccatura b8 des4-^ |
-    \acciaccatura { ces16 des } c8-! b16-. c-. ges8\< as16-. a-. \! |
+    \acciaccatura { ces16 des } ces8-! b16-. c-. ges8\< as16-. a-. \! |
     b8 r r4 |
     R2*5 |
     g'8\f r h4-^ |
@@ -1130,8 +1130,8 @@ elgar_IV_clarinet_I = {
     \mBreak
     
     % cl1 p6 7
-    fis,16( gis ais h cis d e eis |
-    fis16 g gis ais h8) r |
+    fis,16( gis ais h cis d? e eis |
+    fis16 g? gis ais h8) r |
     a8 g16 a fis8 eis16 fis |
     d8 r g4-^ |
     fis8 e16 fis d8 cis16 d |
@@ -1273,8 +1273,8 @@ elgar_IV_clarinet_I = {
     
     % cl1 p7 5
     \time 3/4
-    c'4->( ces) b8( ges) |
-    b4( a as8 f |
+    c'4->(\f ces) b8( ges) |
+    b4( a? as8 f |
     \rMark
     as4 g\> ges8)\! r |
     \tempo "Più lento"
@@ -1482,9 +1482,9 @@ elgar_I_clarinet_II = {
     \mBreak
     
     %cl2 p1 8
-    d4 b8) ais8.([ b16a8] b4.~ b8. gis16 a8] |
+    d4 h8) ais8.([ h16ais8] h4.~ h8. gis16 a8] |
     g8) r r r4. r2. |
-    d'4(\pp b8 ais8.[ b16 a8] b4.~ b8. b16~ b8~] |
+    d'4(\pp h8 ais8.[ h16 ais8] h4.~ h8. b16~ b8~] |
     \rMark
     b8) r r g4.( f4) r8 r4. |
     R1*12/8*3 |
@@ -1499,7 +1499,7 @@ elgar_I_clarinet_II = {
     \rMark
     \time 12/8
     g4.(\pp\<\aTempo a4.~ a4\> g8~\! g4) r8 |
-    d'4( b8 ais4. b2. |
+    d'4( h8 ais4. h2. |
     b4) r8 r4. r2. |
     R1*12/8 |
     \mBreak
@@ -1623,7 +1623,7 @@ elgar_II_clarinet_II = {
         \clef violin
       }
     >>
-    g'2~\p\moltoCresc\accell g8( r es''-.)\ff r\fermata |
+    g'2~\p\moltoCresc\accell g8( r es''?-.)\ff r\fermata |
     \bar "||"
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
@@ -1673,7 +1673,7 @@ elgar_II_clarinet_II = {
     s1^\markup { "CADENZA: " \italic "ends = " } s2 s2
     {
       \tiny \stemDown
-      <b,, g'(>4 ges') <as, g'(> f') <a, f'(> fes') <ges, fes'(> <ges es')>\fermata
+      <b,, g'(>4 ges') <as, ges'(> f') <a, f'(> fes') <ges, fes'(> <ges es')>\fermata
       \normalsize
       \stemNeutral
     }
@@ -1800,7 +1800,7 @@ elgar_II_clarinet_II = {
         \override MultiMeasureRest.staff-position = #-6
         R1 |
         \voiceTwo
-        r2 r4 g''16(\ff as b h |
+        r2 r4 g''16(\ff as b? h |
         c8) \voiceOne r r4 r2 |
         \revert MultiMeasureRest.staff-position
       }
@@ -1830,7 +1830,7 @@ elgar_II_clarinet_II = {
     \mBreak
     
     % cl2 p3 5
-    d8( b'-.) a8[ r16 gis] a4-. r |
+    d8(\< b'-.)\! a8[ r16 gis] a4-. r |
     h,2(\fp\> c |
     d4~\< d8)\! r r2 |
     f4.(\f dis8) e4.( a,8) |
@@ -1890,7 +1890,7 @@ elgar_II_clarinet_II = {
     \mBreak
     
     % cl2 p3 8
-    r2 h,(\< |
+    r2 h,(\p\< |
     c4)\> r4\! r2 |
     R1*3 |
     \rMark
@@ -1906,7 +1906,7 @@ elgar_II_clarinet_II = {
     R1 |
     \rMark
     R1 |
-    r2 r4 a,-. |
+    r2 r4 a,-.\pp |
     b4-. r d-. r |
     d4---> r d-. r |
     R1*2 |
@@ -1972,7 +1972,7 @@ elgar_III_clarinet_II = {
         d8 c' b |
       }
     >>
-    h,4~\pp h16 r |
+    h,?4~\pp h16 r |
     R4.*3 |
     b?4~\pp b16 r |
     R4. |
@@ -2011,7 +2011,7 @@ elgar_III_clarinet_II = {
     
     % cl2 p4 4
     \rMark
-    des8(\pp c des~ |
+    des8(\ppp c des~ |
     des4 ces8 |
     b4 ges'16)\fermata r\fermata |
     as,4~ as16 r\fermata |
@@ -2040,7 +2040,7 @@ elgar_IV_clarinet_II = {
     R2 |
     r8 b\cresc r\! b |
     R2 |
-    r8 h'\p r e |
+    r8 h'\f r e |
     r8 e r es |
     r8 es c4-^ |
     d8\ff cis16(\sff d) d8-. r\fermata |
@@ -2301,7 +2301,7 @@ elgar_IV_clarinet_II = {
     a'8\p r r4 |
     R2*2 |
     fis8-! e16( fis e cis a his |
-    cis8) his16-. cis-. a8->( g |
+    cis8) his16-. cis-. a?8->( g? |
     \mBreak
     
     % cl2 p6 4
@@ -2310,8 +2310,8 @@ elgar_IV_clarinet_II = {
     a8) gis16-. a-. e8\< fis16-. g-.\! |
     gis8 r r4 |
     R2 |
-    b8-.\f r \acciaccatura b8 des4-^ |
-    \acciaccatura { ces16 des } c8-! b16-. c-. ges8\< as16-. a-. \! |
+    b?8-.\f r \acciaccatura b8 des4-^ |
+    \acciaccatura { ces16 des } ces8-! b16-. ces-. ges8\< as16-. a-. \! |
     b8 r r4 |
     \mBreak
     
@@ -2323,7 +2323,7 @@ elgar_IV_clarinet_II = {
     d8-.\ff g-. d'-. r\breathe |
     \rMark
     R2*5\tempoPrimo |
-    g,,,8(\f a16 g e8 f16 g) |
+    g,,,8(\f f16 g e8 f16 g) |
     a8( h16 cis d8 cis16 d) |
     \mBreak
     
@@ -2341,7 +2341,7 @@ elgar_IV_clarinet_II = {
     % cl2 p6 7
     c8 h16 c cis8 his16 cis |
     d8 es?16 f g8 as16 b |
-    c8 des16 es es8 ges16 as |
+    c8 des16 es f8 ges16 as |
     \rMark
     b8 r es,4-^\ff |
     des8 ces16 des b8 a?16 b |
@@ -2351,8 +2351,8 @@ elgar_IV_clarinet_II = {
     % cl2 p6 8
     a8 g16 a fis8 e16 fis |
     d8 r r4 |
-    fis,16( gis ais h cis d e eis |
-    fis16 g gis ais h8) r |
+    fis,16( gis ais h cis d? e eis |
+    fis16 g? gis ais h8) r |
     a8 g16 a fis8 eis16 fis |
     d8 r g4-^ |
     \mBreak
@@ -2439,7 +2439,7 @@ elgar_IV_clarinet_II = {
     
     % cl2 p7 4
     r4 a(\p |
-    e8) r r4 |
+    e8)\rall r r4 |
     R2*3 |
     \bar "||"
     \time 4/4
@@ -2484,10 +2484,10 @@ elgar_IV_clarinet_II = {
     
     % cl2 p7 6
     \time 3/4
-    c4->(\stringendo ces) b8( ges) |
-    b4( a as8 f |
+    c4->(\f\stringendo ces) b8( ges) |
+    b4(\< a?\! as8 f |
     \rMark
-    as4 g\> ges8)\! r |
+    as4 g?\> ges8)\! r |
     \tempo "Più lento"
     g4.\p\collaParte r8 r4 |
     es4. r8 r4 |
@@ -2498,7 +2498,7 @@ elgar_IV_clarinet_II = {
     % cl2 p7 7
     fes'4->(\f es) des8( b) |
     des4( c) a8->(\p\ten fis |
-    d2 fis,8 a) |
+    d2\pp fis,8 a) |
     d2.\< |
     \rMark
     as''4->(\ff g) f8( d) |
@@ -2511,7 +2511,7 @@ elgar_IV_clarinet_II = {
     R2. |
     R2.*2\calando |
     \rMark
-    e''2(\piuTranquillo es4~) |
+    e''2(\pp\piuTranquillo es4~) |
     es2.~\> |
     es2\! r4\rit |
     b2 r4 |
