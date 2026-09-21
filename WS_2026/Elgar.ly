@@ -210,6 +210,7 @@ elgar_I_clarinet_I = {
         \clef violin
       }
     >>
+    \key b \major
     d'''2--\p\<\aTempo g2--\f\breathe |
     f8->(\pp\rit es d \acciaccatura f es)\breathe r4 r8\fermata r8 |
     R1\collaParte
@@ -426,7 +427,8 @@ elgar_II_clarinet_I = {
         \clef violin
       }
     >>
-    f''2~\p\moltoCresc\accell f4( es?8-.)\ff r\fermata |
+    \key b \major
+    f''2~\p\moltoCresc\accell f4( es8-.)\ff r\fermata |
     \bar "||"
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
@@ -862,7 +864,7 @@ elgar_IV_clarinet_I = {
       \new CueVoice {
         \voiceTwo
         \stemDown
-        g,,8-> r \acciaccatura g8 b4-^ |
+        g,,8->\solo r \acciaccatura g8 b4-^ |
         \acciaccatura { a16 b } a8-! g16 a f8 es16 f |
         R2*3 |
         \acciaccatura { es16 f } es8-! d16 es c8 d16 es |
@@ -1397,6 +1399,7 @@ elgar_I_clarinet_II = {
         \clef violin
       }
     >>
+    \key b \major
     g''2--\p\<\aTempo g2--\f\breathe |
     g2\pp\rit\breathe r4 r8\fermata r8 |
     R1\collaParte
@@ -2092,7 +2095,7 @@ elgar_IV_clarinet_II = {
       \new CueVoice {
         \voiceTwo
         \stemDown
-        g,,8-> r \acciaccatura g8 b4-^ |
+        g,,8->\solo r \acciaccatura g8 b4-^ |
         \acciaccatura { a16 b } a8-! g16 a f8 es16 f |
         R2*3 |
         \acciaccatura { es16 f } es8-! d16 es c8 d16 es |
@@ -2588,6 +2591,9 @@ elgar_IV_clarinet_II = {
 
 % ---------------------------------------------------------
 
+targetKey = b
+targetKeyName = "Bb"
+
 %%{
 \book {
   \bookOutputSuffix "1"
@@ -2595,7 +2601,7 @@ elgar_IV_clarinet_II = {
     print-all-headers = ##t
   }
   \header {
-    instrument = "Klarinette I in A"
+    instrument = \markup { "Klarinette I in " \targetKeyName }
   }
   
   \bookpart {
@@ -2606,7 +2612,7 @@ elgar_IV_clarinet_II = {
         composer = ##f
       }
       \new Staff {
-        \transpose a a \elgar_I_clarinet_I
+        \transpose \targetKey a \elgar_I_clarinet_I
       }
     }
     \score {
@@ -2616,7 +2622,7 @@ elgar_IV_clarinet_II = {
         composer = ##f
       }
       \new Staff {
-        \transpose a a \elgar_II_clarinet_I
+        \transpose \targetKey a \elgar_II_clarinet_I
       }
     }
     \score {
@@ -2626,7 +2632,7 @@ elgar_IV_clarinet_II = {
         composer = ##f
       }
       \new Staff {
-        \transpose a a \elgar_III_clarinet_I
+        \transpose \targetKey a \elgar_III_clarinet_I
       }
     }
     \score {
@@ -2636,13 +2642,13 @@ elgar_IV_clarinet_II = {
         composer = ##f
       }
       \new Staff {
-        \transpose a a \elgar_IV_clarinet_I
+        \transpose \targetKey a \elgar_IV_clarinet_I
       }
     }
   }
 }
 %%}
-  
+
 %%{
 \book {
   \bookOutputSuffix "2"
@@ -2650,7 +2656,7 @@ elgar_IV_clarinet_II = {
     print-all-headers = ##t
   }
   \header {
-    instrument = "Klarinette II in A"
+    instrument = \markup { "Klarinette II in " \targetKeyName }
   }
   
   \bookpart {
@@ -2661,7 +2667,7 @@ elgar_IV_clarinet_II = {
         composer = ##f
       }
       \new Staff {
-        \transpose a a \elgar_I_clarinet_II
+        \transpose \targetKey a \elgar_I_clarinet_II
       }
     }
     \score {
@@ -2671,7 +2677,7 @@ elgar_IV_clarinet_II = {
         composer = ##f
       }
       \new Staff {
-        \transpose a a \elgar_II_clarinet_II
+        \transpose \targetKey a \elgar_II_clarinet_II
       }
     }
     \score {
@@ -2681,7 +2687,7 @@ elgar_IV_clarinet_II = {
         composer = ##f
       }
       \new Staff {
-        \transpose a a \elgar_III_clarinet_II
+        \transpose \targetKey a \elgar_III_clarinet_II
       }
     }
     \score {
@@ -2691,7 +2697,7 @@ elgar_IV_clarinet_II = {
         composer = ##f
       }
       \new Staff {
-        \transpose a a \elgar_IV_clarinet_II
+        \transpose \targetKey a \elgar_IV_clarinet_II
       }
     }
   }
