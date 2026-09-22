@@ -857,7 +857,7 @@ elgar_IV_clarinet_I = {
     \rMark
     <<
       {
-        \override MultiMeasureRest.staff-position = #2
+        \override MultiMeasureRest.staff-position = #0
         \voiceOne
         R2*7 |
         \revert MultiMeasureRest.staff-position
@@ -868,7 +868,7 @@ elgar_IV_clarinet_I = {
         \stemDown
         g,,8->\solo r \acciaccatura g8 b4-^ |
         \acciaccatura { a16 b } a8-! g16 a f8 es16 f |
-        R2*3 |
+        s2*3 |
         \acciaccatura { es16 f } es8-! d16 es c8 d16 es |
         d8 es16 f g8 a16 b |
       }
@@ -896,7 +896,7 @@ elgar_IV_clarinet_I = {
     c8 r f4-^ |
     es8 des16 es c8 b16 c |
     as8 r des4-^ |
-    es4-. ges4-. |
+    es?4-. ges4-. |
     fes8 r r4 |
     \mBreak
     
@@ -959,25 +959,23 @@ elgar_IV_clarinet_I = {
     \rMark
     R2 |
     r4 g'~(\p\< |
-    g8\! as) r4 |
+    \after 16\! g8 as) r4 |
     \mBreak
     
     % cl1 p5 4
     r4 r8 es'~(\mf\< |
-    es4\collaParte d8-!) r\fermata
+    \after 8\! es4\collaParte d8-!) r\fermata
     <<
       {
-        \override MultiMeasureRest.staff-position = #4
-        \voiceOne
-        \stemDown
-        R2 |
+        \override MultiMeasureRest.staff-position = #-8
+        R2\aTempo |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
-        \voiceTwo
+        \voiceOne
         \stemDown
-        d8(\solo\aTempo es) b8.( g16) |
+        d8(\solo es) b8.( g16) |
       }
     >>
     es4(\p\< d~\! |
@@ -1032,22 +1030,22 @@ elgar_IV_clarinet_I = {
     
     % cl1 p5 8
     \rMark
-    r4 h-^(\f |
+    r4 h^^(\f |
     a8) gis16-. a-. e8\< fis16-. g-.\! |
-    gis8-. r h4-^(\p |
+    gis8-. r h4^^(\p |
     a8) gis16-. a-. e8-. \tuplet 3/2 { fis16( gis a } |
-    ais8) r cis4-^(\f |
+    ais8) r cis4^^(\f |
     h8) ais16-. h-. fis8-.\< gis16-. a-.\! |
     \mBreak
     
     % cl1 p5 9
-    ais8-. r cis4-^(\p |
+    ais8-. r cis4^^(\p |
     h8) ais16-. h-. fis8( fis'~ |
     fis8) r r4 |
     R2*3 |
     \rMark
     R2*2\animato |
-    ges4(\p\< es |
+    ges4(\p\< es? |
     b'8)\! r r4 |
     R2*2 |
     b4(\< g\! |
@@ -1086,14 +1084,14 @@ elgar_IV_clarinet_I = {
     fis,8-! e16( fis e cis a his |
     cis8) his16-. cis-. a?8->( g? |
     \rMark
-    gis8) r h4-^(\f |
+    gis8) r h4^^(\f |
     a8) gis16-. a-. e8\< fis16-. g-.\! |
     gis8 r r4 |
     R2 |
     \mBreak
     
     % cl1 p6 3
-    b8-.\f r \acciaccatura b8 des4-^ |
+    b8-.\f r \acciaccatura b8 des4^^ |
     \acciaccatura { ces16 des } ces8-! b16-. c-. ges8\< as16-. a-. \! |
     b8 r r4 |
     R2*5 |
@@ -1202,12 +1200,12 @@ elgar_IV_clarinet_I = {
     \acciaccatura { a,16 b } a8-! g16-. a-. f8 es16-. f-. |
     d8 r \acciaccatura d8 f4-^ |
     \acciaccatura { es16 f } es8-! d16-. es-. c8 d16-. es-. |
-    d8 \cresc r\! \acciaccatura d8 f4-^ |
+    d8 \cresc r\! \acciaccatura d8 f4^^ |
     \mBreak
     \pBreak
     
     % cl1 p7 1
-    \acciaccatura { g16 a } g8-! f16-. g-. e8 f16-. g |
+    \acciaccatura { g16 a } g8-! f16-. g-. e8 f16-. g-. |
     a8-. r a4(\pp |
     h4 cis |
     a8) r r4 |
