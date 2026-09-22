@@ -230,10 +230,12 @@ elgar_I_clarinet_I = {
       }
       \\
       \new CueVoice {
+        \voiceOne
         \stemUp
         a,4(_"Vla." b8 a4 c8 d4 c8) |
         R1*9/8*4 |
         \clef bass
+        % "Tutti Celli" from Cl2
         f,,4(^"Tutti Celli" d8) c4( d8 b4 a8) |
         \clef violin
       }
@@ -306,7 +308,7 @@ elgar_I_clarinet_I = {
     R1*12/8 |
     \rMark
     r2. \pocoString c'8->(\p es,8. g16 d8 fis a |
-    g8) r r r4. c8->\p es,8. g16 d8 r r |
+    g8) r r r4. c8(->\p es,8. g16 d8) r r |
     r2. f4.(\pp\rit g,4) r8 |
     \mBreak
 
@@ -333,7 +335,7 @@ elgar_I_clarinet_I = {
     \rMark
     \key b \major
     \time 12/8
-    g8(\pp\aTempo b) r16 a(\< d4 c8) g'4-^(\mf d8\> c4 g8)\! |
+    g8(\pp[\aTempo b) r16 a(]\< d4 c8) g'4-^(\mf d8\> c4 g8)\! |
     \mBreak
   
     % cl1 p2 2
@@ -387,7 +389,7 @@ elgar_I_clarinet_I = {
   
     % cl1 p2 4
     a4( f8 es4 f8 d4) r8 |
-    b'4( c8\< b4 d8 es-!)\ffz r r |
+    b'4( c8\< b4 d8\! es-!)\ffz r r |
     R1*9/8 |
     r4. r4. b,4.->(\mf |
     a4.~\> a4)\p r8 r4. |
@@ -512,7 +514,7 @@ elgar_II_clarinet_I = {
     <<
       {
         \override MultiMeasureRest.staff-position = #0
-        r4 a'-.\p b-. r |
+        r4 a'_.\p b_. r |
         \revert MultiMeasureRest.staff-position
       }
       \\
@@ -552,7 +554,7 @@ elgar_II_clarinet_I = {
     R1\pocoAllarg |
     \rMark
     es2(\f\> des\p |
-    es,4\<\collaParte f8-.) r des8(\<\aTempo ges b des) |
+    es,4\<\collaParte f8-.)\! r des8(\<\aTempo ges b des) |
     es4.(\f f,8) des'4.( ges,8) |
     es8(\< ces'-.)\! b8[ r16 a] b4-. r |
     \mBreak
@@ -638,12 +640,12 @@ elgar_II_clarinet_I = {
     <<
       {
         \override MultiMeasureRest.staff-position = #-6
-        R1*2 |
+        R1*2\collaParte |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
-        \acciaccatura c,8 c'8 c4 c'8~ c c4 g'8~ |
+        \acciaccatura c,8 c'8\solo c4 c'8~ c c4 g'8~ |
         g8 g4 g8~( g8 g,) g-- g-- |
      }
     >>
@@ -715,8 +717,8 @@ elgar_III_clarinet_I = {
       }
       \\
       \new CueVoice {
+        \voiceOne
         \stemDown
-        \voiceTwo
         f,8(\solo as) des |
         as'8( a b) |
       }
@@ -734,8 +736,8 @@ elgar_III_clarinet_I = {
       }
       \\
       \new CueVoice {
+        \voiceOne
         \stemDown
-        \voiceTwo
         b8(\solo c) des~ |
         des8 fes,->( es) |
         d8 c' b |
@@ -762,7 +764,7 @@ elgar_III_clarinet_I = {
     <<
       {
         \override MultiMeasureRest.staff-position = #2
-        R4. |
+        R4.\largamente |
         \revert MultiMeasureRest.staff-position
       }
       \\
@@ -784,7 +786,7 @@ elgar_III_clarinet_I = {
     % cl1 p4 4
     \rMark
     as'8(\ppp ges f~ |
-    f8 ges d |
+    f8 ges d? |
     es8 f b16)\fermata r\fermata |
     c,4~ c16 r\fermata |
     \rMark
@@ -2591,8 +2593,8 @@ elgar_IV_clarinet_II = {
 
 % ---------------------------------------------------------
 
-targetKey = b
-targetKeyName = "Bb"
+targetKey = a
+targetKeyName = "A"
 
 %%{
 \book {
