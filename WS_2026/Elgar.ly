@@ -74,6 +74,7 @@ aTempo = ^\markup { \italic {"a tempo"} }
 moltoRit = ^\markup { \italic {"molto rit."} }
 pocoRit = ^\markup {\italic {"poco rit."} }
 pocoRiten = ^\markup {\italic {"poco riten."} }
+pocoSostenuto = ^\markup {\italic {"poco sostenuto"} }
 sec = ^\markup {\italic {"sec."} }
 pesante = ^\markup {\italic {"pesante"} }
 pocoRall = ^\markup {\italic {"poco rall."} }
@@ -497,14 +498,14 @@ elgar_II_clarinet_I = {
       {
         \override MultiMeasureRest.staff-position = #0
         \voiceOne
-        R1 |
+        r2\piuLento r2\rit |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
         \voiceTwo
         \stemDown
-        d'16-.\piuLento\solo d-. d-. d-. d( f) f f f(\rit d) d d d( cis) cis cis\fermata |
+        d'16-.\solo d-. d-. d-. d( f) f f f( d) d d d( cis) cis cis\fermata |
       }
     >>
     \bar "||"
@@ -710,14 +711,12 @@ elgar_III_clarinet_I = {
     <<
       {
         \override MultiMeasureRest.staff-position = #2
-        R4. |
-        \override MultiMeasureRest.staff-position = #4
-        R4. |
+        R4.*2 |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
-        \voiceOne
+        \voiceTwo
         \stemDown
         f,8(\solo as) des |
         as'8( a b) |
@@ -730,13 +729,13 @@ elgar_III_clarinet_I = {
     R4.*2 |
     <<
       {
-        \override MultiMeasureRest.staff-position = #4
+        \override MultiMeasureRest.staff-position = #2
         R4.*3 |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
-        \voiceOne
+        \voiceTwo
         \stemDown
         b8(\solo c) des~ |
         des8 fes,->( es) |
@@ -832,7 +831,8 @@ elgar_IV_clarinet_I = {
     a2 f) |
     \rMark
     R1 |
-    r2 r4.\fermata r8 |
+    % "rit" from cl2
+    r2\rit r4.\fermata r8 |
     s4\fermata^\markup{"CADENZA:" \italic "ends ="} s4 s4 s16 \tiny r16\fermata fis,32(\aTempo a fis a) \normalsize |
     <<
       {
@@ -1413,12 +1413,13 @@ elgar_I_clarinet_II = {
     \tempo "Moderato"
     <<
       {
-        \override MultiMeasureRest.staff-position = #-6
+        \override MultiMeasureRest.staff-position = #-4
         R1*9/8*6 |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
+        \voiceOne
         \stemUp
         a4(_"Vla." b8 a4 c8 d4 c8) |
         R1*9/8*4 |
@@ -1434,18 +1435,19 @@ elgar_I_clarinet_II = {
     \mBreak
     
     % cl2 p1 3
-    r4. b'4.~ b4 r8 |
+    r4. b'4.--~ b4 r8 |
     r4. cis,4.~ cis4 r8 |
     R1*9/8
     \rMark
     R1*9/8*6
     \rMark
-    b2.-^\mf c4.-- |
+    b2.^^\mf c4.-- |
     c2. es4.-- |
     d4.-- d4.--\< es-- |
     \mBreak
 
     % cl2 p1 4
+    % p from cl1
     es4.~\sfp es4\p r8 d4-- r8 |
     d4.( c4) r8 e4.( |
     d4)\pocoAllarg r8 r4. r |
@@ -1455,7 +1457,7 @@ elgar_I_clarinet_II = {
     \mBreak
 
     % cl2 p1 5
-    b4( c8)\< b4( d8) es4-^(\! d8) |
+    b4( c8)\< b4( d8)\! es4-^( d8) |
     c4( a8 g4 a8 fis4 d8) |
     g4 r8 r4. b4-- r8 |
     a4-- r8 r4. r4. |
@@ -1475,13 +1477,13 @@ elgar_I_clarinet_II = {
     \mBreak
 
     % cl2 p1 7
-    d8([\p g)\< r16 es16] a4~ a8\mf d4-^( a8)\> g4( d8 |
+    d8([\p g) r16 es16]\< a4~ a8\mf d4-^( a8)\> g4( d8 |
     cis8)\ppp r r r4. r2. |
     R1*12/8*4 |
     \bar "||"
     \key g \major
     \rMark
-    r4. a'4~(\p\< a8~ a4\! d8 cis8.[d16 c8] |
+    r4. a'4.~(\p\< a4\! d8 cis8.[d16 c8] |
     \mBreak
     
     %cl2 p1 8
@@ -1529,7 +1531,7 @@ elgar_I_clarinet_II = {
     \rMark
     \key b \major
     \time 12/8
-    d8(\pp\aTempo g) r16 fis(\< b4 a8) d4-^(\mf a8\> g4 d8 |
+    d8([\pp\aTempo g) r16 fis(]\< b4 a8) d4-^(\mf a8\> g4 d8 |
     cis8)\pp r r r4. r2. |
     \mBreak
   
@@ -1542,16 +1544,20 @@ elgar_I_clarinet_II = {
     \time 9/8
     <<
       {
-        \override MultiMeasureRest.staff-position = #2
-        R1*9/8*4\comePrima |
+        \override MultiMeasureRest.staff-position = #-4
+        R1*9/8*1\comePrima |
+        \override MultiMeasureRest.staff-position = #0
+        R1*9/8*3 |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
-        \voiceTwo
-        \stemDown
+        \voiceOne
+        \stemUp
         a'4(\solo b8 a4 c8 d4 c8) |
         R1*9/8*2 |
+        \voiceTwo
+        \stemDown
         d,4( b8 a4 b8 g4 f8) |
       }
     >>
@@ -1564,19 +1570,21 @@ elgar_I_clarinet_II = {
     R1*9/8*3 |
     <<
       {
-        \override MultiMeasureRest.staff-position = #2
-        \voiceTwo
+        \override MultiMeasureRest.staff-position = #0
+        \voiceOne
         \stemUp
         R1*9/8 |
-        r4. r4. es'4.(\p |
+        r4.\largamente r4. es'4.(\p |
         d4)\inTempo r8 r4. r4. |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
+        % Cue notes from cl1
+        \voiceTwo
         \stemDown
         d4^"Solo" d8 es4 fis8 g4( f8) |
-        f8->(\larg es) b a->( g) b s4. |
+        f8->( es) b a->( g) b s4. |
         s2. s4. |
       }
     >>
@@ -1586,10 +1594,10 @@ elgar_I_clarinet_II = {
     \mBreak
   
     % cl2 p2 4
-    b4( c8\< b4 d8\! es-!)\ffz r r |
+    b4(\< c8 b4 d8\! es-!)\ffz r r |
     R1*9/8 |
-    r4. r4. e,4.->(\mf |
-    d4.~\> d4)\p r8 r4. |
+    r4. r4. e,4.->(\mf\> |
+    d4.~ d4)\p r8 r4. |
     \rMark
     R1*9/8*7 |
     \once \override Score.BarNumber.break-visibility = #all-visible 
@@ -1626,7 +1634,8 @@ elgar_II_clarinet_II = {
         \clef violin
       }
     >>
-    g'2~\p\moltoCresc\accell g8( r es''?-.)\ff r\fermata |
+    \key b \major
+    g'2~\p\moltoCresc\accell g8( r es''-.)\ff r\fermata |
     \bar "||"
     \override Score.TextMark.self-alignment-X = #CENTER
     \textEndMark \markup { \musicglyph "scripts.ufermata" }
@@ -1636,15 +1645,16 @@ elgar_II_clarinet_II = {
         \override MultiMeasureRest.staff-position = #0
         R1 |
         R1\collaParte\fermata
-        R1
+        r2\aTempo r2\rit
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
+        % Cue notes from cl1
         \stemDown
         \repeat tremolo 4 d,16-. d( f) f f f( d) d d d( c) c c |
         s1
-        \repeat tremolo 4 d16-.\solo\aTempo d( f) f f f(\rit d) d d d( c) c c |
+        \repeat tremolo 4 d16-.\solo d( f) f f f( d) d d d( c) c c |
       }
     >>
     \mBreak
@@ -1693,14 +1703,14 @@ elgar_II_clarinet_II = {
       {
         \override MultiMeasureRest.staff-position = #0
         \voiceOne
-        R1 |
+        r2\piuLento r2\rit |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
         \voiceTwo
         \stemDown
-        d'16-.\piuLento\solo d-. d-. d-. d( f) f f f(\rit d) d d d( cis) cis cis\fermata |
+        d'16-.\solo d-. d-. d-. d( f) f f f( d) d d d( cis) cis cis\fermata |
       }
     >>
     \bar "||"
@@ -1754,7 +1764,7 @@ elgar_II_clarinet_II = {
     R1\pocoAllarg |
     \rMark
     es?2(\f\> des\p |
-    ces4~\<\collaParte ces8-.) r r2\aTempo |
+    ces4~\<\collaParte ces8-.)\! r r2\aTempo |
     es'4.(\f f,8) des'4.( ges,8) |
     \mBreak
     \pBreak
@@ -1770,8 +1780,8 @@ elgar_II_clarinet_II = {
     <<
       {
         \override MultiMeasureRest.staff-position = #0
-        R1 |
         \mBreak
+        R1 |
         % cl2 p3 2
         \rMark
         R1 |
@@ -1780,6 +1790,7 @@ elgar_II_clarinet_II = {
       }
       \\
       \new CueVoice {
+        % Cue notes from cl1
         \voiceTwo
         \stemDown
         c'16(^"Cl.I" h b a as g ges f e es d des c h b a) |
@@ -1793,6 +1804,7 @@ elgar_II_clarinet_II = {
     \mBreak
     
     % cl2 p3 3
+    % p from cl1
     r2 r4 b8(\p\< h |
     c4)\> r\! r2 |
     R1*4 |
@@ -1803,14 +1815,15 @@ elgar_II_clarinet_II = {
         \override MultiMeasureRest.staff-position = #-6
         R1 |
         \voiceTwo
-        r2 r4 g''16(\ff as b? h |
-        c8) \voiceOne r r4 r2 |
+        r2 \voiceOne \stemDown r4 g''16(\ff as b? h |
+        c8) r r4 r2 |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
+        % Cue notes from cl1
         \voiceOne
-        \stemDown
+        \stemUp
         b4->(^"Cl.I" a g4. g8 |
         f8) s s4 s2 |
         s1 |
@@ -1827,7 +1840,7 @@ elgar_II_clarinet_II = {
     r4 fis,-.\mf r2 |
     R1\pocoAllarg |
     \rMark
-    d2-^(\f\> c2\p |
+    d2^^(\f\> c2\p |
     b4~\<\collaParte b8-.)\! r r2\aTempo  |
     d'4.(\f e,8) c'4.( f,8) |
     \mBreak
@@ -1861,12 +1874,13 @@ elgar_II_clarinet_II = {
     <<
       {
         \override MultiMeasureRest.staff-position = #-6
-        R1*2 |
+        % Cl1 has "colla parte" instead
+        R1*2\pocoSostenuto |
         \revert MultiMeasureRest.staff-position
       }
       \\
       \new CueVoice {
-        \acciaccatura c8 c'8 c4 c'8~ c c4 g'8~ |
+        \acciaccatura c8 c'8\solo c4 c'8~ c c4 g'8~ |
         g8 g4 g8~( g8 g,) g-- g-- |
      }
     >>
@@ -1939,9 +1953,7 @@ elgar_III_clarinet_II = {
     <<
       {
         \override MultiMeasureRest.staff-position = #2
-        R4. |
-        \override MultiMeasureRest.staff-position = #4
-        R4. |
+        R4.*2 |
         \revert MultiMeasureRest.staff-position
       }
       \\
@@ -1959,7 +1971,7 @@ elgar_III_clarinet_II = {
     R4.*2 |
     <<
       {
-        \override MultiMeasureRest.staff-position = #4
+        \override MultiMeasureRest.staff-position = #2
         R4.*3 |
         \revert MultiMeasureRest.staff-position
       }
@@ -1987,6 +1999,7 @@ elgar_III_clarinet_II = {
     \mBreak
     
     % cl2 p4 3
+    % "molto" from cl1
     R4.*2\stringMolto |
     \rMark
     R4.*4\rit 
@@ -1998,6 +2011,7 @@ elgar_III_clarinet_II = {
       }
       \\
       \new CueVoice {
+        % Cue notes from cl1
         \stemDown
         \voiceTwo
         cis8\solo h' a |
@@ -2054,14 +2068,15 @@ elgar_IV_clarinet_II = {
     % cl2 p4 6
     \tempo "Moderato"
     \mark #42
+    % "colla parte" from cl1
     b,1\fp\>\collaParte |
     R1*3\!
-    g'2-^\p\< b-^ |
+    g'2^^\p\< b-^ |
     a1~(\pp |
     a2 b) |
     \rMark
     R1 |
-    r2 r4.\fermata r8 |
+    r2\rit r4.\fermata r8 |
     s4\fermata^\markup{"CADENZA:" \italic "ends ="} s4 s4 s16 \tiny r16\fermata fis32(\aTempo a fis a) \normalsize |
     \mBreak
     
@@ -2109,7 +2124,7 @@ elgar_IV_clarinet_II = {
     \rMark
     g8\ff r \acciaccatura g8 b4-^ |
     \acciaccatura { a16 b } a8-! g16-. a-. f8 es16-. f-. |
-    d8 r \acciaccatura d8 f4-^ |
+    d8 r \acciaccatura d8 f4^^ |
     \acciaccatura { es16 f } es8-! d16-. es-. c8\> d16-. es-.\! |
     d8 r r4 |
     r8 b4(\f\> cis8)\! |
@@ -2128,11 +2143,12 @@ elgar_IV_clarinet_II = {
     \mBreak
     
     % cl2 p5 2
-    as8 r as4-^ |
+    as8 r as4^^ |
+    % staccato from cl1
     a4-. c4-. |
     des8 r r4 |
     as16(\ff\brillante b c des es f ges g |
-    as\< a b c des8)\! r |
+    as\< a b c\! des8) r |
     h,8 a16 h gis8 fis16 gis |
     e8 r a4( |
     \mBreak
@@ -2141,6 +2157,7 @@ elgar_IV_clarinet_II = {
     h4\dim gis\! |
     a8) r r4 |
     r4 as,8.(\mf\< ces16~ |
+    % descrescendo from cl1
     ces8\> b a)\! r |
     r4 as8.(\< ces16~ |
     ces8\> b a)\! r |
@@ -2195,7 +2212,7 @@ elgar_IV_clarinet_II = {
         \voiceTwo
         R2 |
         % cl2 p5 6
-        R2\accel
+        R2\accell
         R2*2\aTempo
         \revert MultiMeasureRest.staff-position
       }
@@ -2216,6 +2233,7 @@ elgar_IV_clarinet_II = {
     a4\>\collaParte es4~\! |
     es4 d8) r |
     R2 |
+    % staccato from cl1
     r4\aTempo des8-.\p r |
     R2 |
     ges8-.\p r r4 |
@@ -2231,7 +2249,7 @@ elgar_IV_clarinet_II = {
     \rMark
     <<
       {
-        \override MultiMeasureRest.staff-position = #4
+        \override MultiMeasureRest.staff-position = #2
         \voiceTwo
         R2*2\aTempo |
         \revert MultiMeasureRest.staff-position
@@ -2255,21 +2273,23 @@ elgar_IV_clarinet_II = {
     R2*2 |
     e,16(\f cis b? g) r4 |
     \rMark
-    r4 h-^(\f |
+    r4 h^^(\f |
     \mBreak
     
     % cl2 p5 9
-    a8) gis16-. a-. e8\< fis16-. g-.\! |
-    gis8-. r r4 |
+    a8) gis16-. a-. e8\< fis16-. g-. |
+    % staccato from cl1
+    \after 32\! gis8-.  r r4 |
     R2 |
     r4 cis-^(\f |
-    h8) ais16-. h-. fis8-.\< gis16-. a-.\! |
-    ais8-. r r4 |
+    h8) ais16-. h-. fis8-. gis16-.\< a-. |
+    % staccato from cl1
+    \after 32\! ais8-. r r4 |
     \mBreak
     \pBreak
     
     % cl2 p6 1
-    r4 fis~ |
+    r4 fis~\p |
     fis8 r r4 |
     R2*3 |
     \rMark
@@ -2309,11 +2329,11 @@ elgar_IV_clarinet_II = {
     
     % cl2 p6 4
     \rMark
-    gis8) r h4-^(\f |
-    a8) gis16-. a-. e8\< fis16-. g-.\! |
+    gis8) r h4^^(\f |
+    a8) gis16-. a-. e8 fis16-.\< g-.\! |
     gis8 r r4 |
     R2 |
-    b?8-.\f r \acciaccatura b8 des4-^ |
+    b?8-.\f r \acciaccatura b8 des4^^ |
     \acciaccatura { ces16 des } ces8-! b16-. ces-. ges8\< as16-. a-. \! |
     b8 r r4 |
     \mBreak
@@ -2354,7 +2374,7 @@ elgar_IV_clarinet_II = {
     % cl2 p6 8
     a8 g16 a fis8 e16 fis |
     d8 r r4 |
-    fis,16( gis ais h cis d? e eis |
+    fis,16(\ff gis ais h cis d? e eis |
     fis16 g? gis ais h8) r |
     a8 g16 a fis8 eis16 fis |
     d8 r g4-^ |
@@ -2464,7 +2484,6 @@ elgar_IV_clarinet_II = {
         \override MultiMeasureRest.staff-position = #2
         R1*2 |
         \rMark
-        \override MultiMeasureRest.staff-position = #4
         R1 |
         \revert MultiMeasureRest.staff-position
       }
@@ -2490,16 +2509,17 @@ elgar_IV_clarinet_II = {
     c4->(\f\stringendo ces) b8( ges) |
     b4(\< a?\! as8 f |
     \rMark
-    as4 g?\> ges8)\! r |
+    \after 8\> as4 g? ges8)\! r |
     \tempo "Più lento"
     g4.\p\collaParte r8 r4 |
     es4. r8 r4 |
     d4. r8 r4 |
-    b4. r8 ges'4\< |
+    b4. r8 ges'4(\< |
     \mBreak
     
     % cl2 p7 7
-    fes'4->(\f es) des8( b) |
+    fes'4->\f es) des8( b) |
+    % "ten" from cl1
     des4( c) a8->(\p\ten fis |
     d2\pp fis,8 a) |
     d2.\< |
@@ -2516,7 +2536,7 @@ elgar_IV_clarinet_II = {
     \rMark
     e''2(\pp\piuTranquillo es4~) |
     es2.~\> |
-    es2\! r4\rit |
+    \after 16\! es2 r4\rit |
     b2 r4 |
     \tempo "Lento"
     R2.*4 |
