@@ -2128,7 +2128,7 @@ elgar_IV_clarinet_II = {
     d8 r \acciaccatura d8 f4^^ |
     \acciaccatura { es16 f } es8-! d16-. es-. c8\> d16-. es-.\! |
     d8 r r4 |
-    r8 b4(\f\> cis8)\! |
+    r8 b4(\f\> des8)\! |
     R2 |
     \mBreak
     \pBreak
@@ -2282,8 +2282,8 @@ elgar_IV_clarinet_II = {
     % staccato from cl1
     \after 32\! as8-.  r r4 |
     R2 |
-    r4 des-^(\f |
-    h8) ais16-. h-. fis8-. as16-.\< a-. |
+    r4 des^^(\f |
+    h8) ais16-. h-. ges8-. as16-.\< a-. |
     % staccato from cl1
     \after 32\! b8-. r r4 |
     \mBreak
@@ -2341,7 +2341,7 @@ elgar_IV_clarinet_II = {
     
     % cl2 p6 5
     R2*5 |
-    g'8\f r h4-^ |
+    g'8\f r h4^^ |
     b8\cresc a16\! b g8 a16 b |
     c8-.\pocoRit es-. g,-. b-. |
     d8-.\ff g-. d'-. r\breathe |
